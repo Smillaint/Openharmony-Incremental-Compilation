@@ -1,0 +1,1209 @@
+
+[32m	*********Welcome to OpenHarmony!*********[0m
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[32mSystem shell: bash 5.1.16(1)-release[0m
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[32mCurrent time: 2026-08-04 10:44:22[0m
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[32mBuild args: -p rk3568 --build-target third_party/jsframework:ark_jsf[0m
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[OHOS INFO] Current Node.js version is v14.21.1
+[32m[OHOS INFO] Node.js version check passed![0m
+[OHOS INFO] Ohpm initialization started...
+[OHOS INFO] Current ohpm version is 5.0.8
+ohpm [33mWARN: [39m[33mYour "NodeJs" version is less than the recommended version "18.x.x", please upgrade it as soon as possible.[39m
+ohpm [90mDEBUG: [39m[90mconfig set registry https://repo.harmonyos.com/ohpm/[39m
+ohpm [90mDEBUG: [39m[90mstart to write trace data[39m
+ohpm [90mDEBUG: [39m[90mstart to get key[39m
+ohpm [90mDEBUG: [39m[90mstart to get root key[39m
+ohpm [90mDEBUG: [39m[90mstart to get trace log dir[39m
+ohpm [90mDEBUG: [39m[90mAudit failed, detail: the trace log file path is not exist! trace path: /root/Library/Caches/Huawei/DevEcoStudio5.0/TraceLogData[39m
+ohpm [33mWARN: [39m[33mYour "NodeJs" version is less than the recommended version "18.x.x", please upgrade it as soon as possible.[39m
+ohpm [90mDEBUG: [39m[90mconfig set strict_ssl false[39m
+ohpm [90mDEBUG: [39m[90mstart to write trace data[39m
+ohpm [90mDEBUG: [39m[90mstart to get key[39m
+ohpm [90mDEBUG: [39m[90mstart to get root key[39m
+ohpm [90mDEBUG: [39m[90mstart to get trace log dir[39m
+ohpm [90mDEBUG: [39m[90mAudit failed, detail: the trace log file path is not exist! trace path: /root/Library/Caches/Huawei/DevEcoStudio5.0/TraceLogData[39m
+ohpm [33mWARN: [39m[33mYour "NodeJs" version is less than the recommended version "18.x.x", please upgrade it as soon as possible.[39m
+ohpm [90mDEBUG: [39m[90mconfig set log_level debug[39m
+ohpm [90mDEBUG: [39m[90mstart to write trace data[39m
+ohpm [90mDEBUG: [39m[90mstart to get key[39m
+ohpm [90mDEBUG: [39m[90mstart to get root key[39m
+ohpm [90mDEBUG: [39m[90mstart to get trace log dir[39m
+ohpm [90mDEBUG: [39m[90mAudit failed, detail: the trace log file path is not exist! trace path: /root/Library/Caches/Huawei/DevEcoStudio5.0/TraceLogData[39m
+[OHOS INFO] installing pnpm...
+[OHOS INFO] installing hypium...
+[32m[OHOS INFO] ohpm initialization successful![0m
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[32m[OHOS INFO] Start building...[0m
+
+[OHOS INFO]  Set cache size limit to 100.0 GB
+[OHOS INFO] [PRELOAD] generated build prop info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/build.prop
+[OHOS INFO] [PRELOAD] generated build config info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/build_config.json
+[OHOS INFO] [PRELOAD] generated product parts info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/parts.json
+[OHOS INFO] [PRELOAD] generated parts config info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/parts_config.json
+[OHOS INFO] [PRELOAD] generated build gnargs prop info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/build_gnargs.prop
+[OHOS INFO] [PRELOAD] generated features info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/features.json
+[OHOS INFO] [PRELOAD] generated syscap info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/syscap.json
+[OHOS INFO] [PRELOAD] generated exclusion modules info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/exclusion_modules.json
+[OHOS INFO] [PRELOAD] generated dependency pruning info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/dependency_pruning.json
+[OHOS INFO] [PRELOAD] generated platforms build info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/platforms.build
+[OHOS INFO] [PRELOAD] generated subsystem config info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/subsystem_config.json
+[OHOS INFO] [PRELOAD] generated system capability info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/systemcapability.json
+[OHOS INFO] [PRELOAD] generated compile_standard_whitelist info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/compile_standard_whitelist.json
+[OHOS INFO] [PRELOAD] generated compile_env_allowlist info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/compile_env_allowlist.json
+[OHOS INFO] [PRELOAD] generated hvigor_compile_whitelist info to /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/hvigor_compile_hap_whitelist.json
+[OHOS INFO]  The run time for _prebuild_and_preload is 0.01 s
+[OHOS INFO] [LOAD] Checking all build args...
+[OHOS INFO] [LOAD] subsytem config scan completed costed is 3.36 s
+[93m[OHOS WARNING][0m [LOAD] condition target '//arkcompiler/ets_runtime/compiler_service:static_app_install_aot_enable_list.conf' in '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/arkcompiler/ets_runtime/bundle.json' does not exist in 'sub_component', 'modules', 'group_type', 'inner_kits', 'inner_api' or 'test'
+warning: subsystem name config incorrect in '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/vendor/hihope/rk3568/ohos.build', build file subsystem name is product_hihope,configured subsystem name is product_rk3568.
+warning: subsystem name config incorrect in '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/device/board/hihope/rk3568/ohos.build', build file subsystem name is rockchip_products,configured subsystem name is device_rk3568.
+[OHOS INFO] [LOAD] all parts scan completed
+[OHOS INFO] [LOAD] Loading configuration file...
+
+[OHOS INFO] [LOAD] loader args:['platforms_config_file="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/platforms.build"', 'subsystem_config_file="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/subsystem_config.json"', 'example_subsystem_file=""', 'exclusion_modules_config_file="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/exclusion_modules.json"', 'source_root_dir="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/"', 'gn_root_out_dir="out/rk3568"', 'build_platform_name=phone', 'build_xts=False', 'load_test_config=True', 'target_os=ohos', 'target_cpu=arm', 'os_level=standard', "ignore_api_check=['xts', 'common', 'testfwk']", 'scalable_build=False', 'skip_partlist_check=False', 'enable_scan_optimization=False']
+[OHOS INFO] [LOAD] Checking parts config...
+[OHOS INFO] [LOAD] generated subsystem build config to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/subsystem_info/subsystem_build_config.json'
+[OHOS INFO] [LOAD] generated src subsystem info to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/subsystem_info/src_subsystem_info.json'
+[OHOS INFO] [LOAD] generated no src subsystem info to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/subsystem_info/no_src_subsystem_info.json'
+[OHOS INFO] [LOAD] generate target platform parts to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/target_platforms_parts.json'
+[OHOS INFO] [LOAD] generated system capabilities to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/phone_system_capabilities.json'
+[OHOS INFO] [LOAD] generated platforms parts by src to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/platforms_parts_by_src.json'
+[OHOS INFO] [LOAD] generate required parts targets to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/required_parts_targets.json'
+[OHOS INFO] [LOAD] generate build targets list file to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/required_parts_targets_list.json'
+[OHOS INFO] [LOAD] generated parts src flag to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/subsystem_info/parts_src_flag.json'
+[OHOS INFO] [LOAD] generate auto install part to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/auto_install_parts.json'
+[OHOS INFO] [LOAD] generate platforms list to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/platforms_list.gni'
+[OHOS INFO] [LOAD] generate part different info to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/parts_different_info.json'
+[OHOS INFO] [LOAD] generate infos for testfwk to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/build_configs/infos_for_testfwk.json'
+[OHOS INFO] [LOAD] Checking all product features...
+[OHOS INFO] [LOAD] generate syscap info file to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/system/etc/SystemCapability.json'
+[OHOS INFO] [LOAD] generate syscap info with part name list to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/system/etc/syscap.json'
+[OHOS INFO] [LOAD] generate target syscap for init list to '/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/preloader/rk3568/system/etc/param/syscap.para'
+
+[OHOS INFO] [GN] Excuting gn command: /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/prebuilts/build-tools/linux-x86/bin/gn gen --args="product_name=\"rk3568\" target_cpu=\"arm\" precise_branch=\"\" is_standard_system=true product_path=\"/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/vendor/hihope/rk3568\" product_config_path=\"/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/vendor/hihope/rk3568\" device_name=\"rk3568\" device_path=\"/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/device/board/rockchip/rk3568\" device_company=\"rockchip\" device_config_path=\"/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/device/board/rockchip/rk3568\" ohos_build_compiler_specified=\"\" ohos_build_time=1785782669923 ohos_build_datetime=\"2026-08-04 10:44:29\" ace_engine_feature_enable_accessibility=true ace_engine_feature_enable_web=true ace_engine_feature_enable_upgrade_skia=true os_account_multiple_active_accounts=false datamgr_service_udmf=true access_token_enhance_capability=false code_signature_support_oh_code_sign=false code_signature_support_oh_release_app=true code_signature_support_app_allow_list=false init_feature_ab_partition=true hiview_feature_bbox_userspace=true hiview_enable_leak_detector=true hiview_enable_performance_monitor=true t2stack_feature_vtp=true t2stack_feature_coap=true t2stack_feature_dfile=true dsoftbus_feature_coap=true dsoftbus_feature_vtp=true dsoftbus_feature_dfile=true dsoftbus_feature_disc_ble=true dsoftbus_feature_disc_coap=true dsoftbus_feature_disc_lnn_coap=true dsoftbus_feature_conn_pv1=true dsoftbus_feature_conn_br=true dsoftbus_feature_conn_ble=true dsoftbus_feature_conn_tcp_proxy=true dsoftbus_feature_conn_tcp_comm=true dsoftbus_feature_trans_udp_stream=true dsoftbus_feature_trans_udp_file=true dsoftbus_feature_trans_udp=true dsoftbus_feature_trans_proxy_file=true dsoftbus_feature_trans_qos=true dsoftbus_feature_trans_br_proxy=true dsoftbus_feature_lnn_ble=true dsoftbus_feature_lnn_wifi=true dsoftbus_feature_lnn_cloud_sync=true dsoftbus_feature_lnn_channel_rating=true dsoftbus_feature_lnn_lane_mgr=true dsoftbus_feature_lnn_lane_qos=true dsoftbus_feature_lnn_frame=true wifi_feature_non_seperate_p2p=true wifi_feature_non_hdf_driver=true wifi_feature_p2p_random_mac_addr=true fusion_connectivity_partner_agent_feature=true updater_feature_use_ptable=false updater_feature_updater_gen_executable=true updater_feature_sign_on_server=false sys_installer_feature_ohos_cfg=true graphic_2d_feature_rs_enable_eglimage=true graphic_2d_feature_use_texgine=true graphic_2d_feature_upgrade_skia=true audio_framework_feature_dtmf_tone=true audio_framework_feature_opensl_es=true audio_framework_feature_support_os_account=false audio_framework_feature_audiosuite_support=true audio_framework_feature_hdmi_detect_audio=true image_framework_feature_upgrade_skia=true input_feature_combination_key=true input_feature_pointer_drawing=true input_feature_interceptor=true input_feature_monitor=true input_feature_keyboard=true input_feature_mouse=true input_feature_touchscreen=true input_feature_input_device=true battery_manager_feature_enable_charger=true memmgr_purgeable_memory=true memmgr_hyperhold_memory=true usb_manager_feature_pop_up_func_switch_model=false usb_manager_feature_host=true usb_manager_feature_device=true usb_manager_feature_port=true device_status_interaction_coordination=false wpa_supplicant_driver_nl80211=true skia_feature_upgrade=true libuv_use_ffrt=true hdf_core_platform_test_support=false hdf_core_default_peripheral_config=false drivers_interface_display_community=true drivers_interface_display_vdi_default=true drivers_peripheral_input_feature_model=true drivers_peripheral_input_feature_support_ddk=true drivers_peripheral_display_community=true drivers_peripheral_display_vdi_default=true drivers_peripheral_wlan_feature_enable_HDF_NL80211=true drivers_peripheral_wlan_feature_enable_HDF_UT=false drivers_peripheral_wlan_feature_vendor=\"default\" drivers_peripheral_wlan_p2p_name=\"p2p-dev-wlan0\" drivers_peripheral_sensor_feature_model=true drivers_peripheral_audio_feature_full_test_suite=true drivers_peripheral_audio_feature_alsa_lib=false drivers_peripheral_audio_feature_effect=true drivers_peripheral_light_feature_model=true drivers_peripheral_vibrator_feature_model=true drivers_peripheral_codec_feature_support_omx_extend_test=true drivers_peripheral_codec_feature_support_hdi_v1=true smartperf_host_device=true drivers_interface_audio_community=true qrcodegen_feature_ace_engine_qrcode_able=true alsa_lib_feature_config_enable=true ohos_build_enable_ccache=true ohos_build_type=\"debug\" device_type=\"default\" build_variant=\"root\" ohos_components_checktype=4 ohos_interception_rule_switch=1023 root_perf_main=\"main\" runtime_mode=\"release\"" --args=product_name="rk3568" target_cpu="arm" precise_branch="" is_standard_system=true product_path="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/vendor/hihope/rk3568" product_config_path="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/vendor/hihope/rk3568" device_name="rk3568" device_path="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/device/board/rockchip/rk3568" device_company="rockchip" device_config_path="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/device/board/rockchip/rk3568" ohos_build_compiler_specified="" ohos_build_time=1785782669923 ohos_build_datetime="2026-08-04 10:44:29" ace_engine_feature_enable_accessibility=true ace_engine_feature_enable_web=true ace_engine_feature_enable_upgrade_skia=true os_account_multiple_active_accounts=false datamgr_service_udmf=true access_token_enhance_capability=false code_signature_support_oh_code_sign=false code_signature_support_oh_release_app=true code_signature_support_app_allow_list=false init_feature_ab_partition=true hiview_feature_bbox_userspace=true hiview_enable_leak_detector=true hiview_enable_performance_monitor=true t2stack_feature_vtp=true t2stack_feature_coap=true t2stack_feature_dfile=true dsoftbus_feature_coap=true dsoftbus_feature_vtp=true dsoftbus_feature_dfile=true dsoftbus_feature_disc_ble=true dsoftbus_feature_disc_coap=true dsoftbus_feature_disc_lnn_coap=true dsoftbus_feature_conn_pv1=true dsoftbus_feature_conn_br=true dsoftbus_feature_conn_ble=true dsoftbus_feature_conn_tcp_proxy=true dsoftbus_feature_conn_tcp_comm=true dsoftbus_feature_trans_udp_stream=true dsoftbus_feature_trans_udp_file=true dsoftbus_feature_trans_udp=true dsoftbus_feature_trans_proxy_file=true dsoftbus_feature_trans_qos=true dsoftbus_feature_trans_br_proxy=true dsoftbus_feature_lnn_ble=true dsoftbus_feature_lnn_wifi=true dsoftbus_feature_lnn_cloud_sync=true dsoftbus_feature_lnn_channel_rating=true dsoftbus_feature_lnn_lane_mgr=true dsoftbus_feature_lnn_lane_qos=true dsoftbus_feature_lnn_frame=true wifi_feature_non_seperate_p2p=true wifi_feature_non_hdf_driver=true wifi_feature_p2p_random_mac_addr=true fusion_connectivity_partner_agent_feature=true updater_feature_use_ptable=false updater_feature_updater_gen_executable=true updater_feature_sign_on_server=false sys_installer_feature_ohos_cfg=true graphic_2d_feature_rs_enable_eglimage=true graphic_2d_feature_use_texgine=true graphic_2d_feature_upgrade_skia=true audio_framework_feature_dtmf_tone=true audio_framework_feature_opensl_es=true audio_framework_feature_support_os_account=false audio_framework_feature_audiosuite_support=true audio_framework_feature_hdmi_detect_audio=true image_framework_feature_upgrade_skia=true input_feature_combination_key=true input_feature_pointer_drawing=true input_feature_interceptor=true input_feature_monitor=true input_feature_keyboard=true input_feature_mouse=true input_feature_touchscreen=true input_feature_input_device=true battery_manager_feature_enable_charger=true memmgr_purgeable_memory=true memmgr_hyperhold_memory=true usb_manager_feature_pop_up_func_switch_model=false usb_manager_feature_host=true usb_manager_feature_device=true usb_manager_feature_port=true device_status_interaction_coordination=false wpa_supplicant_driver_nl80211=true skia_feature_upgrade=true libuv_use_ffrt=true hdf_core_platform_test_support=false hdf_core_default_peripheral_config=false drivers_interface_display_community=true drivers_interface_display_vdi_default=true drivers_peripheral_input_feature_model=true drivers_peripheral_input_feature_support_ddk=true drivers_peripheral_display_community=true drivers_peripheral_display_vdi_default=true drivers_peripheral_wlan_feature_enable_HDF_NL80211=true drivers_peripheral_wlan_feature_enable_HDF_UT=false drivers_peripheral_wlan_feature_vendor="default" drivers_peripheral_wlan_p2p_name="p2p-dev-wlan0" drivers_peripheral_sensor_feature_model=true drivers_peripheral_audio_feature_full_test_suite=true drivers_peripheral_audio_feature_alsa_lib=false drivers_peripheral_audio_feature_effect=true drivers_peripheral_light_feature_model=true drivers_peripheral_vibrator_feature_model=true drivers_peripheral_codec_feature_support_omx_extend_test=true drivers_peripheral_codec_feature_support_hdi_v1=true smartperf_host_device=true drivers_interface_audio_community=true qrcodegen_feature_ace_engine_qrcode_able=true alsa_lib_feature_config_enable=true ohos_build_enable_ccache=true ohos_build_type="debug" device_type="default" build_variant="root" ohos_components_checktype=4 ohos_interception_rule_switch=1023 root_perf_main="main" runtime_mode="release" /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568
+[OHOS INFO] [GN] root_out_dir=//out/rk3568
+[OHOS INFO] [GN] root_build_dir=//out/rk3568
+[OHOS INFO] [GN] root_gen_dir=//out/rk3568/gen
+[OHOS INFO] [GN] current_toolchain=//build/toolchain/ohos:ohos_clang_arm
+[OHOS INFO] [GN] host_toolchain=//build/toolchain/linux:clang_x64
+[OHOS INFO] [GN] backends_action is exec
+[OHOS INFO] [GN] drivers_peripheral_fingerprint_auth
+[OHOS INFO] [GN] midi
+[OHOS INFO] [GN] nnrt
+[OHOS INFO] [GN] nnrt
+[OHOS INFO] [GN] nnrt
+[OHOS INFO] [GN] accessibility_feature_display_manager = true
+[OHOS INFO] [GN] accessibility_feature_power_manager = true
+[OHOS INFO] [GN] accessibility_use_rosen_drawing = true
+[OHOS INFO] [GN] accessibility_feature_data_share = true
+[OHOS INFO] [GN] accessibility_feature_hiviewdfx_hitrace = true
+[OHOS INFO] [GN] accessibility_feature_hiviewdfx_hisysevent = true
+[OHOS INFO] [GN] distributed_bundle_framework_graphics = true
+[OHOS INFO] [GN] ability_runtime_enable_dbms = true
+[OHOS INFO] [GN] account_enable_dbms = true
+[OHOS INFO] [GN] distributed_bundle_framework_enable = true
+[OHOS INFO] [GN] hisysevent_enable_dbms = true
+[OHOS INFO] [GN] distributed_bundle_image_framework_enable = true
+[OHOS INFO] [GN] miscdevice_feature_vibrator_custom = true
+[OHOS INFO] [GN] intell_voice_engine_service
+[OHOS INFO] [GN] intell_voice_engine_service
+[OHOS INFO] [GN] intell_voice_engine_service
+[OHOS INFO] [GN] intell_voice_trigger_service
+[OHOS INFO] [GN] intell_voice_trigger_service
+[OHOS INFO] [GN] intell_voice_engine_service
+[OHOS INFO] [GN] intell_voice_trigger_service
+[OHOS INFO] [GN] vibrator_service
+[OHOS INFO] [GN] ril_service
+[OHOS INFO] [GN] ril_service
+[OHOS INFO] [GN] ril_service
+[OHOS INFO] [GN] ril_service
+[OHOS INFO] [GN] ril_service
+[OHOS INFO] [GN] //out/rk3568/obj/foundation/arkui/advanced_ui_component/customappbar/atomicservicemenubar/atomicservicemenubar.abc
+[OHOS INFO] [GN] ["--haptobin", "../../developtools/packing_tool/adapter/ohos", "--haptobinOutput", "obj/developtools/packing_tool/jar/haptobin_tool.jar", "--unpackOutput", "obj/developtools/packing_tool/jar/app_unpacking_tool.jar", "--packOutput", "obj/developtools/packing_tool/jar/app_packing_tool.jar", "--outpath", "obj/developtools/packing_tool/jar", "--checkOutput", "obj/developtools/packing_tool/jar/app_check_tool.jar", "--toolchain", "//build/toolchain/ohos:ohos_clang_arm", "--compileTarget", "image"]
+[OHOS INFO] [GN] sensor_service
+[OHOS INFO] [GN] openssl detecting os now...
+[OHOS INFO] [GN] current_cpu = arm
+[OHOS INFO] [GN] current_os = ohos
+[OHOS INFO] [GN] host_os = linux
+[OHOS INFO] [GN] is_mingw = false
+[OHOS INFO] [GN] openssl selected linux-armv4
+[OHOS INFO] [GN] openssl detecting os done. openssl_selected_platform = linux-armv4
+[OHOS INFO] [GN] sensor_convert_service
+[OHOS INFO] [GN] sensor_service
+[OHOS INFO] [GN] thermal_interface_service
+[OHOS INFO] [GN] window_manager_use_sceneboard = false
+[OHOS INFO] [GN] window_manager_feature_subscribe_motion = false
+[OHOS INFO] [GN] imf_enable:  true
+[OHOS INFO] [GN] window_scene_common imf_enable:  true
+[OHOS INFO] [GN] imf_enable:  true
+[OHOS INFO] [GN] imf_enable:  true
+[OHOS INFO] [GN] imf_enable:  true
+[OHOS INFO] [GN] imf_enable:  true
+[OHOS INFO] [GN] imf_enable:  true
+[OHOS INFO] [GN] window manager fold ability is enabled.
+[OHOS INFO] [GN] window manager active mode ability is enabled.
+[OHOS INFO] [GN] window manager screen color gamut ability is enabled.
+[OHOS INFO] [GN] window manager screen hdr format ability is enabled.
+[OHOS INFO] [GN] window manager screen color space ability is enabled.
+[OHOS INFO] [GN] window manager screen multi screen ability is enabled.
+[OHOS INFO] [GN] window manager screen multi screen frame ctl ability is enabled.
+[OHOS INFO] [GN] window manager screen camera mode ability is enabled.
+[OHOS INFO] [GN] window manager screen multi usr ability is enabled.
+[OHOS INFO] [GN] window manager screen lock manager ability is enabled.
+[OHOS INFO] [GN] imf_enable:  true
+[OHOS INFO] [GN] ["OS_ACCOUNT_EDM_ENABLE"]
+[OHOS INFO] [GN] codec_service
+[OHOS INFO] [GN] codec_service
+[OHOS INFO] [GN] codec_service
+[OHOS INFO] [GN] battery_interface_service
+[OHOS INFO] [GN] bluetooth_a2dp
+[OHOS INFO] [GN] bluetooth_hci
+[OHOS INFO] [GN] bluetooth_lp_ble
+[OHOS INFO] [GN] account_enable_bm = true
+[OHOS INFO] [GN] overlay_install_bm = true
+[OHOS INFO] [GN] quick_fix_bm = true
+[OHOS INFO] [GN] distributed_bundle_framework_bm = true
+[OHOS INFO] [GN] Support dsoftbus.
+[OHOS INFO] [GN] support hearing aid
+[OHOS INFO] [GN] hisysevent_usage = false
+[OHOS INFO] [GN] ans_hitrace_usage = true
+[OHOS INFO] [GN] Build curl is_cares_on: true
+[OHOS INFO] [GN] Build curl support_gmssl: true
+[OHOS INFO] [GN] wlan_service
+[OHOS INFO] [GN] wlan_service
+[OHOS INFO] [GN] wlan_service
+[OHOS INFO] [GN] hostapd_service
+[OHOS INFO] [GN] chip
+[OHOS INFO] [GN] chip
+[OHOS INFO] [GN] wpa_service
+[OHOS INFO] [GN] rk3568_group in
+[OHOS INFO] [GN] drivers_peripheral_face_auth
+[OHOS INFO] [GN] current_cpu = arm
+[OHOS INFO] [GN] current_os = ohos
+[OHOS INFO] [GN] host_os = linux
+[OHOS INFO] [GN] openhitls detecting os done, openhitls_selected_platform = 
+[OHOS INFO] [GN] hid_ddk
+[OHOS INFO] [GN] hid_ddk
+[OHOS INFO] [GN] input_service
+[OHOS INFO] [GN] location_geofence
+[OHOS INFO] [GN] location_geofence
+[OHOS INFO] [GN] libunwind_action is exec
+[OHOS INFO] [GN] drivers_peripheral_user_auth
+[OHOS INFO] [GN] drivers_peripheral_user_auth
+[OHOS INFO] [GN] memory_tracker_interface_service
+[OHOS INFO] [GN] E2FSPROGS_DIR is /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/gen/third_party/e2fsprogs/e2fsprogs
+[OHOS INFO] [GN] cups_action is exec
+[OHOS INFO] [GN] av_codec_support_fcodec = true
+[OHOS INFO] [GN] av_codec_support_avc_encoder = true
+[OHOS INFO] [GN] av_codec_support_hevc_decoder = true
+[OHOS INFO] [GN] av_codec_support_hcodec = true
+[OHOS INFO] [GN] av_codec_support_vp8_decoder = false
+[OHOS INFO] [GN] av_codec_support_vp9_decoder = false
+[OHOS INFO] [GN] av_codec_support_av1_decoder = false
+[OHOS INFO] [GN] av_codec_enable_start_stop_on_demand = false
+[OHOS INFO] [GN] input_feature_combination_key = true
+[OHOS INFO] [GN] input_feature_pointer_drawing = true
+[OHOS INFO] [GN] input_feature_monitor = true
+[OHOS INFO] [GN] input_feature_interceptor = true
+[OHOS INFO] [GN] input_feature_keyboard = true
+[OHOS INFO] [GN] input_feature_switch = true
+[OHOS INFO] [GN] input_feature_mouse = true
+[OHOS INFO] [GN] input_feature_joystick = true
+[OHOS INFO] [GN] input_feature_touchscreen = true
+[OHOS INFO] [GN] input_feature_input_device = true
+[OHOS INFO] [GN] input_feature_short_key = true
+[OHOS INFO] [GN] input_ext_feature_keyboard_ext_flag = false
+[OHOS INFO] [GN] input_feature_one_hand_mode_enable = false
+[OHOS INFO] [GN] input_feature_move_event_filters = false
+[OHOS INFO] [GN] input_feature_external_screen = true
+[OHOS INFO] [GN] input_feature_touchpad = true
+[OHOS INFO] [GN] input_feature_pen = true
+[OHOS INFO] [GN] input_feature_touch_gesture = true
+[OHOS INFO] [GN] input_controller_inject_enable = false
+[OHOS INFO] [GN] motion_service
+[OHOS INFO] [GN] motion_service
+[OHOS INFO] [GN] native_media_venc: FAST_KIT_ENABLED=false
+[OHOS INFO] [GN] nearlink_hci
+[OHOS INFO] [GN] off_find
+[OHOS INFO] [GN] nearlink_hci
+[OHOS INFO] [GN] drivers_peripheral_huks
+[OHOS INFO] [GN] drivers_peripheral_huks
+[OHOS INFO] [GN] audio_service
+[OHOS INFO] [GN] audio_service
+[OHOS INFO] [GN] effect_host
+[OHOS INFO] [GN] camera_service
+[OHOS INFO] [GN] camera_service
+[OHOS INFO] [GN] camera_service
+[OHOS INFO] [GN] current_cpu = arm
+[OHOS INFO] [GN] current_os = ohos
+[OHOS INFO] [GN] host_os = linux
+[OHOS INFO] [GN] is_mingw = false
+[OHOS INFO] [GN] ffmpeg selected cplatform
+[OHOS INFO] [GN] camera_service
+[OHOS INFO] [GN] camera_service
+[OHOS INFO] [GN] camera_service
+[OHOS INFO] [GN] camera_service
+[OHOS INFO] [GN] camera_service
+[OHOS INFO] [GN] Reading plugin sources: ets (//build/toolchain/ohos:ohos_clang_arm)
+[OHOS INFO] [GN] has_hisysevent_part = true
+[OHOS INFO] [GN] event ces_hitrace_usage = true
+[OHOS INFO] [GN] Msdp motion ability is disabled.
+[OHOS INFO] [GN] Cares install
+[OHOS INFO] [GN] output_values: ["//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/igame_controller_server_interface.h", "//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/game_controller_server_interface_proxy.cpp", "//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/game_controller_server_interface_stub.cpp", "//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/game_controller_server_interface_proxy.h", "//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/game_controller_server_interface_stub.h"]
+[OHOS INFO] [GN] ************libhilog_base use_musl ***************
+[OHOS INFO] [GN] ########## ets_runtime disable cmc-gc ##############
+[OHOS INFO] [GN] location_agnss
+[OHOS INFO] [GN] location_agnss
+[OHOS INFO] [GN] drivers_peripheral_pin_auth
+[OHOS INFO] [GN] default_toolchain =  //build/toolchain/ohos:ohos_clang_arm
+[OHOS INFO] [GN] current_toolchain =  //build/toolchain/ohos:ohos_clang_arm
+[OHOS INFO] [GN] host_toolchain =  //build/toolchain/linux:clang_x64
+[OHOS INFO] [GN] root_out_dir =  //out/rk3568
+[OHOS INFO] [GN] root_output_dir_proto =  out/rk3568/clang_x64
+[OHOS INFO] [GN] daudio
+[OHOS INFO] [GN] daudio
+[OHOS INFO] [GN] daudioext
+[OHOS INFO] [GN] daudioext
+[OHOS INFO] [GN] drm_interface_service
+[OHOS INFO] [GN] drm_interface_service
+[OHOS INFO] [GN] wpa_supplicant_vendor_ext = false
+[OHOS INFO] [GN] wpa_supplicant_wapi = false
+[OHOS INFO] [GN] Debug info gen_utils_abc file path:  //out/rk3568/obj/commonlibrary/ets_utils/js_concurrent_module/utils/utils.abc
+[OHOS INFO] [GN] usbd
+[OHOS INFO] [GN] usbd
+[OHOS INFO] [GN] usb_ddk
+[OHOS INFO] [GN] usb_ddk
+[OHOS INFO] [GN] usbd
+[OHOS INFO] [GN] usbd
+[OHOS INFO] [GN] usbfn_mtp
+[OHOS INFO] [GN] serial
+[OHOS INFO] [GN] usbd
+[OHOS INFO] [GN] scsi_ddk
+[OHOS INFO] [GN] usb_ddk
+[OHOS INFO] [GN] partitionslot_interface_service
+[OHOS INFO] [GN] distributed_camera_provider_service
+[OHOS INFO] [GN] usb_serial_ddk
+[OHOS INFO] [GN] ethernet_service
+[OHOS INFO] [GN] bundle_framework_power_mgr_enable = true
+[OHOS INFO] [GN] bundle_framework_graphics = true
+[OHOS INFO] [GN] bundle_framework_free_install = true
+[OHOS INFO] [GN] bundle_framework_default_app = true
+[OHOS INFO] [GN] bundle_framework_launcher = true
+[OHOS INFO] [GN] bundle_framework_sandbox_app = true
+[OHOS INFO] [GN] bundle_framework_quick_fix = true
+[OHOS INFO] [GN] bundle_framework_app_control = true
+[OHOS INFO] [GN] distributed_bundle_framework = true
+[OHOS INFO] [GN] ability_runtime_enable = true
+[OHOS INFO] [GN] account_enable = true
+[OHOS INFO] [GN] configpolicy_enable = true
+[OHOS INFO] [GN] global_resmgr_enable = true
+[OHOS INFO] [GN] hicollie_enable = true
+[OHOS INFO] [GN] support_jsapi = true
+[OHOS INFO] [GN] hisysevent_enable = true
+[OHOS INFO] [GN] bundle_framework_overlay_install = true
+[OHOS INFO] [GN] bundle_framework_bundle_resource = true
+[OHOS INFO] [GN] verify_abc_enabled = true
+[OHOS INFO] [GN] user_auth_framework_impl_enabled = true
+[OHOS INFO] [GN] bundle_framework_bss_enable = false
+[OHOS INFO] [GN] bundle_framework_npapi_enable = false
+[OHOS INFO] [GN] bms_accesscontrol_sandbox_manager = true
+[OHOS INFO] [GN] power_interface_service
+[OHOS INFO] [GN] power_interface_service
+[OHOS INFO] [GN] power_interface_service
+[OHOS INFO] [GN] time_system_ability_static output_values: ["//out/rk3568/gen/base/time/time_service/services/itime_service.h", "//out/rk3568/gen/base/time/time_service/services/time_service_proxy.cpp", "//out/rk3568/gen/base/time/time_service/services/time_service_stub.cpp", "//out/rk3568/gen/base/time/time_service/services/time_service_proxy.h", "//out/rk3568/gen/base/time/time_service/services/time_service_stub.h", "//out/rk3568/gen/base/time/time_service/services/itimer_callback.h", "//out/rk3568/gen/base/time/time_service/services/timer_callback_proxy.cpp", "//out/rk3568/gen/base/time/time_service/services/timer_callback_stub.cpp", "//out/rk3568/gen/base/time/time_service/services/timer_callback_proxy.h", "//out/rk3568/gen/base/time/time_service/services/timer_callback_stub.h"]
+[OHOS INFO] [GN] light_service
+[OHOS INFO] [GN] display_buffer
+[OHOS INFO] [GN] display_buffer
+[OHOS INFO] [GN] display_composer
+[OHOS INFO] [GN] display_composer
+[OHOS INFO] [GN] display_commontype
+[OHOS INFO] [GN] display_composer
+[OHOS INFO] [GN] display_buffer
+[OHOS INFO] [GN] display_composer
+[OHOS INFO] [GN] display_commontype
+[OHOS INFO] [GN] display_buffer
+[OHOS INFO] [GN] display_commontype
+[OHOS INFO] [GN] display_commontype
+[OHOS INFO] [GN] display_composer
+[OHOS INFO] [GN] display_commontype
+[OHOS INFO] [GN] display_composer
+[OHOS INFO] [GN] display_buffer
+[OHOS INFO] [GN] display_commontype
+[OHOS INFO] [GN] location_gnss
+[OHOS INFO] [GN] low_power_player_service
+[OHOS INFO] [GN] include_dirs= ["//out/rk3568/gen/foundation/multimedia/audio_framework/services/audio_service/idl", "//foundation/multimedia/audio_framework/services/audio_service/idl/"]
+[OHOS INFO] [GN] target_gen_dir= //out/rk3568/gen/foundation/multimedia/audio_framework/services/audio_service/idl
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/systemabilitymgr/selectionfwk/test/unittest/PerformanceTest:performanceTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] histreamer plugin: ffmpeg_adapter = true
+[OHOS INFO] [GN] histreamer plugin: wav_demuxer = false
+[OHOS INFO] [GN] histreamer plugin: hdi_adapter = false
+[OHOS INFO] [GN] histreamer plugin: file_source = false
+[OHOS INFO] [GN] histreamer plugin: file_fd_source = false
+[OHOS INFO] [GN] histreamer plugin: std_stream_source = false
+[OHOS INFO] [GN] histreamer plugin: http_source = false
+[OHOS INFO] [GN] histreamer plugin: stream_source = false
+[OHOS INFO] [GN] histreamer plugin: audio_server_sink = false
+[OHOS INFO] [GN] histreamer plugin: lite_aac_decoder = false
+[OHOS INFO] [GN] histreamer plugin: std_video_surface_sink = false
+[OHOS INFO] [GN] histreamer plugin: std_video_capture = false
+[OHOS INFO] [GN] histreamer plugin: file_fd_sink = false
+[OHOS INFO] [GN] histreamer plugin: codec_adapter = true
+[OHOS INFO] [GN] imf_enable:  true
+[OHOS INFO] [GN] target_out_dir //out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] target_dir /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] test_abc_dir /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] target_out_dir //out/rk3568/clang_x64/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] target_dir /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/clang_x64/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] test_abc_dir /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/clang_x64/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] Reading plugin sources: ets (//build/toolchain/linux:clang_x64)
+[OHOS INFO] [GN] ########## ets_runtime disable cmc-gc ##############
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/datashare_proxy_bundle:proxydatas_with_permission(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/errorcode_ext_bundle:errorcode_ext(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/datashare_ext_bundle:datashare_ext(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/errorcode_ext_bundle:errorcode_ext_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/datashareproxy_bundle:proxydatas_with_permission_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/datashare_ext_bundle:datashare_ext_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] E2FSPROGS_DIR is /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/clang_x64/gen/third_party/e2fsprogs/e2fsprogs
+[OHOS INFO] [GN] ************libhilog_base use_musl ***************
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_tool/test/sceneProject/tools/bm/test_app_one:test_app_one(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] ************libhilog_base use_musl ***************
+[OHOS INFO] [GN] ########## ets_runtime disable cmc-gc ##############
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/resourceManagerTest:resourceManagerTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] openssl detecting os now...
+[OHOS INFO] [GN] current_cpu = x64
+[OHOS INFO] [GN] current_os = linux
+[OHOS INFO] [GN] host_os = linux
+[OHOS INFO] [GN] is_mingw = false
+[OHOS INFO] [GN] openssl selected linux-x86_64
+[OHOS INFO] [GN] openssl detecting os done. openssl_selected_platform = linux-x86_64
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/ability/ability_runtime/test/moduletest/ui_extension_ability_test/ui_extension_user_bundle:ui_extension_user_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/ability/ability_runtime/test/moduletest/ui_extension_ability_test/ui_extension_provider_bundle:ui_extension_provider_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/ability/ability_runtime/tools/test/resource/aa/pageAbilityBundleForStart:pageAbilityBundleForStart(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/ability/ability_runtime/tools/test/resource/aa/serviceAbilityBundleForStart:serviceAbilityBundleForStart(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/ability/ability_runtime/tools/test/resource/aa/serviceAbilityBundleForStop:serviceAbilityBundleForStop(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/ability/ability_runtime/tools/test/resource/aa/pageAbilityBundleForDump:pageAbilityBundleForDump(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/ability/ability_runtime/tools/test/resource/aa/dataAbilityBundleForDump:dataAbilityBundleForDump(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/distributed_bundle_framework/services/dbms/test/sceneProject/unittest/system_module:distributed_system_module(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] ########## ets_runtime disable cmc-gc ##############
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/moduletest/other_bundle/bmsThirdBundle2:mstbmsThirdBundle2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/moduletest/other_bundle/bmsThirdBundle14:mstbmsThirdBundle14(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/moduletest/other_bundle/bmsThirdBundle1:mstbmsThirdBundle1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_app_service/app_service_version1_library1:appService_v1_library1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/defaultAppTest:defaultAppTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsAccessTokentest3:bmsAccessTokentest3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsAccessTokentest1:bmsAccessTokentest1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_right:first_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/benchmark/benchmarktesthap:benchmarktesthap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/parse_bundle/new:new(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsThirdBundle1:bmsThirdBundle1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/thumbnailTest:thumbnailTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsThirdBundle2:bmsThirdBundle2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/backupTest:backupTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission3:bmsGrantPermission3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission4:bmsGrantPermission4(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission6:bmsGrantPermission6(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission1:bmsGrantPermission1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission7:bmsGrantPermission7(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/wrong_bundle_name:wrong_bundle_name(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_so/compressNativeLibsFalse:compressNativeLibsFalse01(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_so/compressNativeLibsTrue:compressNativeLibsTrue01(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsAccessTokentest2:bmsAccessTokentest2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/thumbnailTest2:thumbnailTest2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_A:hsp_A(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/sandboxTest:sandboxTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_dependencies/dependencies_entry_A:dependencies_entry_A(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_dependencies/dependencies_entry_B:dependencies_entry_B(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_dependencies/dependencies_entry_C:dependencies_entry_C(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/fourth_right:fourth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/third_right:third_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionTest2:versionTest2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/fifth_right:fifth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/rightTest:rightTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/rightTest1:rightTest1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/second_right:second_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/seventh_right:seventh_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionTest3:versionTest3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionTest1:versionTest1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/system_module:system_module(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/moduleJsonTest:moduleJsonTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/signatureTest:signatureTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_v10000:libA_v10000(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionNormalHapTest1:versionNormalHapTest1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionNormalHapTest2:versionNormalHapTest2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/install_daemon/right:right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle1:bmsThirdBundle1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle3:bmsThirdBundle3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle2:bmsThirdBundle2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle4:bmsThirdBundle4(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle5:bmsThirdBundle5(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle6:bmsThirdBundle6(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundleDataAbility:bmsThirdBundleDataAbility(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle2:permissionGrantBundle2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle3:permissionGrantBundle3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle5:permissionGrantBundle5(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle4:permissionGrantBundle4(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/BundleClient/bundleClient1:bundleClient1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stMatchShareBundle/matchShareBundle1:matchShareBundle1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stMatchShareBundle/matchShareBundle2:matchShareBundle2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stMatchShareBundle/matchShareBundle3:matchShareBundle3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stVendorBundle/bmsVendorBundle1:bmsVendorBundle1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/CodeSignature/CodeSignatureWithoutLibs:CodeSignatureWithoutLibs(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/CodeSignature/CodeSignatureWithoutLibs2:CodeSignatureWithoutLibs2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/CodeSignature/CodeSigntureWithLibs:CodeSigntureWithLibs(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_entry_higher_version:higher_version_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_feature1:feature1_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_entry:entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle3:stbmsThirdBundle3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_B:hsp_B(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_C:hsp_C(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_C2:hsp_C2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_without_provision:libA_without_provision(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_normal_hap:libA_normal_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_v10001:libA_v10001(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_v10002:libA_v10002(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libB_v10001:libB_v10001(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionUpdateTest2:versionUpdateTest2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionUpdateTest4:versionUpdateTest4(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionUpdateTest1:versionUpdateTest1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionUpdateTest3:versionUpdateTest3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestAppField:otaUpdateTestAppField(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestAplDown:otaUpdateTestAplDown(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestAppField2:otaUpdateTestAppField2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestBasis:otaUpdateTestBasis(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestBasis/feature1:otaUpdateTestBasisFeature1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestBasis/feature2:otaUpdateTestBasisFeature2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestSignaIcon:otaUpdateTestSignaIcon(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestSoChanged/feature1:otaUpdateTestSoChangedFeature1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestAplUp:otaUpdateTestAplUp(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestBasis2:otaUpdateTestBasis2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestModuleField:otaUpdateTestModuleField(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestSoChanged:otaUpdateTestSoChanged(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestSoChanged/feature2:otaUpdateTestSoChangedFeature2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_diff_minCompCode:first_diff_minCompCode(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/fourteenth_right:fourteenth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/tenth_right:tenth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_right_with_diff_moduleType:first_right_with_diff_moduleType(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/sixth_right:sixth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/thirteenth_right:thirteenth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/eleventh_right:eleventh_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/fifteenth_right:fifteenth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_diff_release_type:first_diff_release_type(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_right_compCode:first_right_compCode(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/sixteenth_right:sixteenth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/eighth_right:eighth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/ninth_right:ninth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/second_backup_right:second_backup_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/twelfth_right:twelfth_right(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/driver_test/lower_version_non_driver_feature12:lower_version_non_driver_feature12_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/driver_test/lower_version_driver_feature14:lower_version_driver_feature14_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/driver_test/high_version_non_driver_feature11:high_version_non_driver_feature11_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_app_service/app_service_version1_library2:appService_v1_library2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_app_service/app_service_version2_library1:appService_v2_library1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_app_service/app_service_version2_library2:appService_v2_library2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso2:hapSectionContainso2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature3:hapIncludeso5Feature3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature2:hspASystemtestFeature2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso2:hapNotIncludeso2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso1/feature3:hapSectionContainsoFeature3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature4:hspASystemtestFeature4(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso1:hapNotIncludeso1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature1:hapIncludeso5Feature1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso1/feature2:hapSectionContainsoFeature2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso7/hapnoso3:hapnoso3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature3:hspASystemtestFeature3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso1/feature1:hapSectionContainsoFeature1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso2/feature4:hapSectionContainsoFeature4(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso7/feature1:hapIncludeso7Feature1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso1:hapSectionContainso1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso7:hapIncludeso7(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A:hsp_A(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso2/feature5:hapSectionContainsoFeature5(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso3:hapIncludeso3(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature1:hspASystemtestFeature1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso2/feature6:hapSectionContainsoFeature6(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso6/feature2:hapIncludeso6Feature2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature7:hspASystemtestFeature7(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature5:hspASystemtestFeature5(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature6:hspASystemtestFeature6(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature8:hspASystemtestFeature8(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version1/entry:version1_oneExtension_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version1/feature:version1_oneExtension_feature_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version2/feature:version2_oneExtension_feature_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version2/entry_ex2:version2_oneExtension2_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/twoExtensionDir/version2/feature:version2_twoExtension_feature_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/twoExtensionDir/version1/feature:version1_twoExtension_feature_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version1_form/entry:version1_withoutExtension_entry_form_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version2/feature:version2_withoutExtension_feature_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version1/entry_ex2:version1_oneExtension2_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version2/entry:version2_oneExtension_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/twoExtensionDir/version2/entry:version2_twoExtension_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version1/entry:version1_withoutExtension_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] target_out_dir //out/rk3568/mingw_x86_64/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] target_dir /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/mingw_x86_64/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] test_abc_dir /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/mingw_x86_64/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/twoExtensionDir/version1/entry:version1_twoExtension_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version1/feature:version1_withoutExtension_feature_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version2/entry:version2_withoutExtension_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version2_form/entry:version2_withoutExtension_entry_form_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/multiUser/lower_versionCode_entry/feature:lower_versionCode_entry_hapB(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/driverBundle/driverBundle2:driverBundle2(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/multiUser/lower_versionCode_entry:lower_versionCode_entry_hap(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] Set module_install_dir or relative_install_dir field in the //foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/driverBundle/driverBundle1:driverBundle1(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+[OHOS INFO] [GN] ########## ets_runtime disable cmc-gc ##############
+[OHOS INFO] [GN] ************libhilog_base use_musl ***************
+[OHOS INFO] [GN] ########## ets_runtime disable cmc-gc ##############
+[OHOS INFO] [GN] WARNING at the command-line "--args":1:477: Build argument has no effect.
+[OHOS INFO] [GN] product_name="rk3568" target_cpu="arm" precise_branch="" is_standard_system=true product_path="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/vendor/hihope/rk3568" product_config_path="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/vendor/hihope/rk3568" device_name="rk3568" device_path="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/device/board/rockchip/rk3568" device_company="rockchip" device_config_path="/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/device/board/rockchip/rk3568" ohos_build_compiler_specified="" ohos_build_time=1785782669923 ohos_build_datetime="2026-08-04 10:44:29" ace_engine_feature_enable_accessibility=true ace_engine_feature_enable_web=true ace_engine_feature_enable_upgrade_skia=true os_account_multiple_active_accounts=false datamgr_service_udmf=true access_token_enhance_capability=false code_signature_support_oh_code_sign=false code_signature_support_oh_release_app=true code_signature_support_app_allow_list=false init_feature_ab_partition=true hiview_feature_bbox_userspace=true hiview_enable_leak_detector=true hiview_enable_performance_monitor=true t2stack_feature_vtp=true t2stack_feature_coap=true t2stack_feature_dfile=true dsoftbus_feature_coap=true dsoftbus_feature_vtp=true dsoftbus_feature_dfile=true dsoftbus_feature_disc_ble=true dsoftbus_feature_disc_coap=true dsoftbus_feature_disc_lnn_coap=true dsoftbus_feature_conn_pv1=true dsoftbus_feature_conn_br=true dsoftbus_feature_conn_ble=true dsoftbus_feature_conn_tcp_proxy=true dsoftbus_feature_conn_tcp_comm=true dsoftbus_feature_trans_udp_stream=true dsoftbus_feature_trans_udp_file=true dsoftbus_feature_trans_udp=true dsoftbus_feature_trans_proxy_file=true dsoftbus_feature_trans_qos=true dsoftbus_feature_trans_br_proxy=true dsoftbus_feature_lnn_ble=true dsoftbus_feature_lnn_wifi=true dsoftbus_feature_lnn_cloud_sync=true dsoftbus_feature_lnn_channel_rating=true dsoftbus_feature_lnn_lane_mgr=true dsoftbus_feature_lnn_lane_qos=true dsoftbus_feature_lnn_frame=true wifi_feature_non_seperate_p2p=true wifi_feature_non_hdf_driver=true wifi_feature_p2p_random_mac_addr=true fusion_connectivity_partner_agent_feature=true updater_feature_use_ptable=false updater_feature_updater_gen_executable=true updater_feature_sign_on_server=false sys_installer_feature_ohos_cfg=true graphic_2d_feature_rs_enable_eglimage=true graphic_2d_feature_use_texgine=true graphic_2d_feature_upgrade_skia=true audio_framework_feature_dtmf_tone=true audio_framework_feature_opensl_es=true audio_framework_feature_support_os_account=false audio_framework_feature_audiosuite_support=true audio_framework_feature_hdmi_detect_audio=true image_framework_feature_upgrade_skia=true input_feature_combination_key=true input_feature_pointer_drawing=true input_feature_interceptor=true input_feature_monitor=true input_feature_keyboard=true input_feature_mouse=true input_feature_touchscreen=true input_feature_input_device=true battery_manager_feature_enable_charger=true memmgr_purgeable_memory=true memmgr_hyperhold_memory=true usb_manager_feature_pop_up_func_switch_model=false usb_manager_feature_host=true usb_manager_feature_device=true usb_manager_feature_port=true device_status_interaction_coordination=false wpa_supplicant_driver_nl80211=true skia_feature_upgrade=true libuv_use_ffrt=true hdf_core_platform_test_support=false hdf_core_default_peripheral_config=false drivers_interface_display_community=true drivers_interface_display_vdi_default=true drivers_peripheral_input_feature_model=true drivers_peripheral_input_feature_support_ddk=true drivers_peripheral_display_community=true drivers_peripheral_display_vdi_default=true drivers_peripheral_wlan_feature_enable_HDF_NL80211=true drivers_peripheral_wlan_feature_enable_HDF_UT=false drivers_peripheral_wlan_feature_vendor="default" drivers_peripheral_wlan_p2p_name="p2p-dev-wlan0" drivers_peripheral_sensor_feature_model=true drivers_peripheral_audio_feature_full_test_suite=true drivers_peripheral_audio_feature_alsa_lib=false drivers_peripheral_audio_feature_effect=true drivers_peripheral_light_feature_model=true drivers_peripheral_vibrator_feature_model=true drivers_peripheral_codec_feature_support_omx_extend_test=true drivers_peripheral_codec_feature_support_hdi_v1=true smartperf_host_device=true drivers_interface_audio_community=true qrcodegen_feature_ace_engine_qrcode_able=true alsa_lib_feature_config_enable=true ohos_build_enable_ccache=true ohos_build_type="debug" device_type="default" build_variant="root" ohos_components_checktype=4 ohos_interception_rule_switch=1023 root_perf_main="main" runtime_mode="release"
+[OHOS INFO] [GN]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^---------
+[OHOS INFO] [GN] The variable "device_company" was set as a build argument
+[OHOS INFO] [GN] but never appeared in a declare_args() block in any buildfile.
+[OHOS INFO] [GN] 
+[OHOS INFO] [GN] To view all possible args, run "gn args --list <out_dir>"
+[OHOS INFO] [GN] 
+[OHOS INFO] [GN] The build continued as if that argument was unspecified.
+[OHOS INFO] [GN] 
+[OHOS INFO] [GN] Done. Made 140472 targets from 18023 files in 20240ms
+[OHOS INFO]  The run time for _gn is 20.45 s
+
+[OHOS INFO] [NINJA] Excuting ninja command: /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/prebuilts/build-tools/linux-x86/bin/ninja -w dupbuild=warn -C /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568 third_party/jsframework:ark_jsf
+[OHOS INFO]  The run time for _ninja is 12.1 s
+[OHOS INFO] [POSTBUILD] unrecognized ninja log format, we need # ninja log v5
+[OHOS INFO] [POSTBUILD] 
+[OHOS INFO] [POSTBUILD] c targets overlap rate statistics
+[OHOS INFO] [POSTBUILD] subsystem       	files NO.	percentage	builds NO.	percentage	overlap rate
+[OHOS INFO] [POSTBUILD] thirdparty      	   11533	21.5%	   14931	25.8%	1.29
+[OHOS INFO] [POSTBUILD] arkcompiler     	    3967	7.4%	    4663	8.0%	1.18
+[OHOS INFO] [POSTBUILD] updater         	     375	0.7%	     401	0.7%	1.07
+[OHOS INFO] [POSTBUILD] ability         	    2176	4.1%	    2323	4.0%	1.07
+[OHOS INFO] [POSTBUILD] developtools    	     608	1.1%	     640	1.1%	1.05
+[OHOS INFO] [POSTBUILD] commonlibrary   	     218	0.4%	     222	0.4%	1.02
+[OHOS INFO] [POSTBUILD] hiviewdfx       	    1138	2.1%	    1152	2.0%	1.01
+[OHOS INFO] [POSTBUILD] arkui           	    5139	9.6%	    5165	8.9%	1.01
+[OHOS INFO] [POSTBUILD] accesscontrol   	      34	0.1%	      34	0.1%	1.00
+[OHOS INFO] [POSTBUILD] account         	     271	0.5%	     271	0.5%	1.00
+[OHOS INFO] [POSTBUILD] advertising     	      49	0.1%	      49	0.1%	1.00
+[OHOS INFO] [POSTBUILD] ai              	     248	0.5%	     248	0.4%	1.00
+[OHOS INFO] [POSTBUILD] applications    	     130	0.2%	     130	0.2%	1.00
+[OHOS INFO] [POSTBUILD] barrierfree     	     154	0.3%	     154	0.3%	1.00
+[OHOS INFO] [POSTBUILD] bundlemanager   	     601	1.1%	     601	1.0%	1.00
+[OHOS INFO] [POSTBUILD] castplus        	     212	0.4%	     212	0.4%	1.00
+[OHOS INFO] [POSTBUILD] communication   	    2497	4.7%	    2497	4.3%	1.00
+[OHOS INFO] [POSTBUILD] customization   	     460	0.9%	     460	0.8%	1.00
+[OHOS INFO] [POSTBUILD] deviceprofile   	      90	0.2%	      90	0.2%	1.00
+[OHOS INFO] [POSTBUILD] distributeddatamgr	    1366	2.5%	    1366	2.4%	1.00
+[OHOS INFO] [POSTBUILD] distributedhardware	     803	1.5%	     803	1.4%	1.00
+[OHOS INFO] [POSTBUILD] filemanagement  	    1060	2.0%	    1060	1.8%	1.00
+[OHOS INFO] [POSTBUILD] game            	      63	0.1%	      63	0.1%	1.00
+[OHOS INFO] [POSTBUILD] global          	     231	0.4%	     231	0.4%	1.00
+[OHOS INFO] [POSTBUILD] graphic         	    2151	4.0%	    2151	3.7%	1.00
+[OHOS INFO] [POSTBUILD] hdf             	    1501	2.8%	    1501	2.6%	1.00
+[OHOS INFO] [POSTBUILD] inputmethod     	     235	0.4%	     235	0.4%	1.00
+[OHOS INFO] [POSTBUILD] location        	     243	0.5%	     243	0.4%	1.00
+[OHOS INFO] [POSTBUILD] msdp            	     199	0.4%	     199	0.3%	1.00
+[OHOS INFO] [POSTBUILD] multimedia      	    4482	8.4%	    4482	7.7%	1.00
+[OHOS INFO] [POSTBUILD] multimodalinput 	     335	0.6%	     335	0.6%	1.00
+[OHOS INFO] [POSTBUILD] notification    	     597	1.1%	     597	1.0%	1.00
+[OHOS INFO] [POSTBUILD] officeservice   	      55	0.1%	      55	0.1%	1.00
+[OHOS INFO] [POSTBUILD] ostest          	      56	0.1%	      56	0.1%	1.00
+[OHOS INFO] [POSTBUILD] powermgr        	     297	0.6%	     297	0.5%	1.00
+[OHOS INFO] [POSTBUILD] print           	     200	0.4%	     200	0.3%	1.00
+[OHOS INFO] [POSTBUILD] request         	     105	0.2%	     105	0.2%	1.00
+[OHOS INFO] [POSTBUILD] resourceschedule	     598	1.1%	     598	1.0%	1.00
+[OHOS INFO] [POSTBUILD] security        	    1434	2.7%	    1434	2.5%	1.00
+[OHOS INFO] [POSTBUILD] sensors         	     135	0.3%	     135	0.2%	1.00
+[OHOS INFO] [POSTBUILD] startup         	     342	0.6%	     342	0.6%	1.00
+[OHOS INFO] [POSTBUILD] systemabilitymgr	     122	0.2%	     122	0.2%	1.00
+[OHOS INFO] [POSTBUILD] tee             	      37	0.1%	      37	0.1%	1.00
+[OHOS INFO] [POSTBUILD] telephony       	     636	1.2%	     636	1.1%	1.00
+[OHOS INFO] [POSTBUILD] test            	     160	0.3%	     160	0.3%	1.00
+[OHOS INFO] [POSTBUILD] testfwk         	      65	0.1%	      65	0.1%	1.00
+[OHOS INFO] [POSTBUILD] theme           	      80	0.1%	      80	0.1%	1.00
+[OHOS INFO] [POSTBUILD] time            	      59	0.1%	      59	0.1%	1.00
+[OHOS INFO] [POSTBUILD] usb             	      52	0.1%	      52	0.1%	1.00
+[OHOS INFO] [POSTBUILD] useriam         	     419	0.8%	     419	0.7%	1.00
+[OHOS INFO] [POSTBUILD] web             	     855	1.6%	     855	1.5%	1.00
+[OHOS INFO] [POSTBUILD] window          	     549	1.0%	     549	0.9%	1.00
+[OHOS INFO] [POSTBUILD] xts             	      39	0.1%	      39	0.1%	1.00
+[OHOS INFO] [POSTBUILD] 
+[OHOS INFO] [POSTBUILD] c overall build overlap rate: 1.08
+[OHOS INFO] [POSTBUILD] 
+[OHOS INFO] [POSTBUILD] 
+Scanning 3327 ELF files now ...
+Build dependence tree for 3327 ELF files now ...
+Warning: can not find depended library [libadlt_app.so] for hiperf
+Warning: can not find depended library [libarktsplugin.z.so] for hiprofiler_plugins
+Warning: can not find depended library [libhiebpfplugin.z.so] for hiprofiler_plugins
+Warning: can not find depended library [libaccount_posix_adapter.z.so] for toybox
+Warning: can not find depended library [libgpu_reclaim.so] for init
+Warning: can not find depended library [libchrome_crashpad_handler.so] for arkweb_crashpad_handler
+Warning: can not find depended library [libsecurity_component_client_enhance.z.so] for libsecurity_component_common.z.so
+Warning: can not find depended library [libsecurity_component_service_enhance.z.so] for libsecurity_component_common.z.so
+Warning: can not find depended library [libedmplugin.z.so] for libedmservice.z.so
+Warning: can not find depended library [libavsession_migration.z.so] for libavsession_service.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_napi_base.z.so
+Warning: can not find depended library [libsuspend_manager_service.z.so] for libresschedexesvc.z.so
+Warning: can not find depended library [libble_scan_filter.z.so] for libbtservice.z.so
+Warning: can not find depended library [libarkweb_engine.so] for libohos_adapter_glue_source.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libaccessibleBlinking.z.so
+Warning: can not find depended library [libvideoprocessingengineservice_ext.z.so] for libvideoprocessingserviceimpl.z.so
+Warning: can not find depended library [libarkweb_engine.so] for libarkweb_core_loader_glue.z.so
+Warning: can not find depended library [libVkLayer_Trace3DCapture.so] for libVkLayer_Trace3D.so
+Warning: can not find depended library [libmemleak_tracker.so] for ld-musl-arm.so.1
+Warning: can not find depended library [libliveview.z.so] for libans_base.z.so
+Warning: can not find depended library [libnotification_voice.z.so] for libans_base.z.so
+Warning: can not find depended library [libprocess_utility_ex.z.so] for libadft.z.so
+Warning: can not find depended library [libhevcdec_ohos.z.so] for libhevc_decoder.z.so
+Warning: can not find depended library [libmodule-effect-sink.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-receiver-sink.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-cluster-sink.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-inner-capturer-sink.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-split-stream-sink.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-hdi-sink.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-pipe-sink.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-hdi-source.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-pipe-source.z.so] for libaudio_policy_service.z.so
+Warning: can not find depended library [libmodule-inner-capturer-sink.z.so] for libhpae_engine_manager.z.so
+Warning: can not find depended library [libmodule-split-stream-sink.z.so] for libhpae_engine_manager.z.so
+Warning: can not find depended library [libmodule-hdi-source.z.so] for libhpae_engine_manager.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libdistributed_camera_client.z.so
+Warning: can not find depended library [libspatial_awareness_client.z.so] for libspatialawareness_ani.z.so
+Warning: can not find depended library [libdistributed_screen_dbg_itf.z.so] for libdistributed_screen_sourcetrans.z.so
+Warning: can not find depended library [libyuv.z.so] for libdistributed_camera_utils.z.so
+Warning: can not find depended library [libtheme_manager_client.z.so] for libaccountmgr.z.so
+Warning: can not find depended library [librecovery_key_service_client.z.so] for libaccountmgr.z.so
+Warning: can not find depended library [libactivation_lock_sdk.z.so] for libaccountmgr.z.so
+Warning: can not find depended library [libdomain_account_plugin.z.so] for libaccountmgr.z.so
+Warning: can not find depended library [libsuspend_manager_service.z.so] for libstandby_utils_policy.z.so
+Warning: can not find depended library [libinfrared_emitter_adapter.z.so] for libmmi-server.z.so
+Warning: can not find depended library [libedm_customize.z.so] for libmmi-server.z.so
+Warning: can not find depended library [libcfwk_allconnect_client.z.so] for libdistributed_camera_channel.z.so
+Warning: can not find depended library [libdevicemanagerriskdetect.z.so] for libdevicemanagerservicetest.z.so
+Warning: can not find depended library [libdevicemanagerresident.z.so] for libdevicemanagerservicetest.z.so
+Warning: can not find depended library [libbackup_ext_interface.z.so] for libbackup_sa.z.so
+Warning: can not find depended library [libdevice_auth_ext.z.so] for libdeviceauth_service.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libmovie_file.z.so
+Warning: can not find depended library [libtelephony_ext_service.z.so] for libtel_cellular_call.z.so
+Warning: can not find depended library [libtel_vsim_symbol.z.so] for libtel_cellular_data.z.so
+Warning: can not find depended library [libtelephony_ext_service.z.so] for libtel_cellular_data.z.so
+Warning: can not find depended library [libtel_dynamic_load_service.z.so] for libtel_cellular_data.z.so
+Warning: can not find depended library [libtel_vsim_symbol.z.so] for libtel_core_service.z.so
+Warning: can not find depended library [libtelephony_ext_service.z.so] for libtel_core_service.z.so
+Warning: can not find depended library [libtel_dynamic_load_service.z.so] for libtel_core_service.z.so
+Warning: can not find depended library [libwifi_self_cure.z.so] for libwifi_manager_service.z.so
+Warning: can not find depended library [libwifi_scan_service.z.so] for libwifi_manager_service.z.so
+Warning: can not find depended library [libwifi_aware_service.z.so] for libwifi_manager_service.z.so
+Warning: can not find depended library [libwifi_sta_service.z.so] for libwifi_manager_service.z.so
+Warning: can not find depended library [libwifi_enhance_interface.z.so] for libwifi_manager_service.z.so
+Warning: can not find depended library [libdistributed_call_client.z.so] for libtel_call_manager.z.so
+Warning: can not find depended library [libtelephony_ext_innerkits.z.so] for libtel_call_manager.z.so
+Warning: can not find depended library [libdia_sdk.z.so] for libtel_call_manager.z.so
+Warning: can not find depended library [libtelephony_cust_api.z.so] for libtel_call_manager.z.so
+Warning: can not find depended library [libtelephony_ext_service.z.so] for libtel_call_manager.z.so
+Warning: can not find depended library [libanti_fraud_service_client.so] for libtel_call_manager.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_service.z.so
+Warning: can not find depended library [libhuks_ext.z.so] for libhuks_service.z.so
+Warning: can not find depended library [libresource_quota_manager.z.so] for libbgtaskmgr_service.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libdistributed_camera_source.z.so
+Warning: can not find depended library [libdm_auth_cert.z.so] for libdevicemanagerserviceimpl.z.so
+Warning: can not find depended library [libdevicemanagerext_decision.z.so] for libdevicemanagerserviceimpl.z.so
+Warning: can not find depended library [libcgroup_sched_ext.z.so] for libcgroup_sched.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_dynamic_moving_photo.z.so
+Warning: can not find depended library [libvideo_mv_analyzer.z.so] for libav_codec_service.z.so
+Warning: can not find depended library [libvideo_nalu_analyzer.z.so] for libav_codec_service.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libdistributed_camera_handler.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_utils.z.so
+Warning: can not find depended library [libchipset_vsync.z.so] for librender_service.z.so
+Warning: can not find depended library [libprevalidate_client.z.so] for librender_service.z.so
+Warning: can not find depended library [libans_ext.z.so] for libans.z.so
+Warning: can not find depended library [libtelephony_cust_api.z.so] for libans.z.so
+Warning: can not find depended library [libnotification_ai.z.so] for libans.z.so
+Warning: can not find depended library [libuser_status_client.z.so] for libbms.z.so
+Warning: can not find depended library [libtelephony_ext_service.z.so] for libtel_sms_mms.z.so
+Warning: can not find depended library [libcfwk_allconnect_client.z.so] for libdistributedfiledaemon.z.so
+Warning: can not find depended library [libaps_client.z.so] for libvulkan_swapchain.so
+Warning: can not find depended library [libgameservice_graphic_plugin.z.so] for libvulkan_swapchain.so
+Warning: can not find depended library [libcgroup_sched_ext.z.so] for libresschedsvc.z.so
+Warning: can not find depended library [libapp_preload_plugin.z.so] for libresschedsvc.z.so
+Warning: can not find depended library [libsuspend_manager_service.z.so] for libresschedsvc.z.so
+Warning: can not find depended library [libipc_core.z.so] for libbdfr_base.z.so
+Warning: can not find depended library [libart.so] for libbdfr_base.z.so
+Warning: can not find depended library [libc_fdleak_debug.so] for libbdfr_base.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libmechbody_service.z.so
+Warning: can not find depended library [libsecurity_component_client_enhance.z.so] for libsecurity_component_sdk.z.so
+Warning: can not find depended library [libsecurity_component_service_enhance.z.so] for libsecurity_component_sdk.z.so
+Warning: can not find depended library [libtask_controller.z.so] for libconcurrentsvc.z.so
+Warning: can not find depended library [libliveview.z.so] for libdans.z.so
+Warning: can not find depended library [libai_nlu_innerapi.z.so] for libpasteboard_service.z.so
+Warning: can not find depended library [libabnormal_mgr.z.so] for libmedialibrary_data_extension.z.so
+Warning: can not find depended library [libarkdata_db_core.z.so] for libmedialibrary_data_extension.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libmedialibrary_data_extension.z.so
+Warning: can not find depended library [libfile_monitor_ipc_interface.z.so] for libmedialibrary_data_extension.z.so
+Warning: can not find depended library [libarkweb_engine.so] for libmedialibrary_data_extension.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_napi_ex.z.so
+Warning: can not find depended library [libdevicemanagerresident.z.so] for libdevicemanagerservice.z.so
+Warning: can not find depended library [libdevicemanagerriskdetect.z.so] for libdevicemanagerservice.z.so
+Warning: can not find depended library [libvideoprocessingengine_ext.z.so] for libvideoprocessingengine.z.so
+Warning: can not find depended library [libGLES_mali.so] for libvideoprocessingengine.z.so
+Warning: can not find depended library [libdistributedmodem_ext.z.so] for libdistributedhardwarefwksvr.z.so
+Warning: can not find depended library [libdwarf.so] for libets_sdk_native.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libdeferred_processing_service.z.so
+Warning: can not find depended library [libams_broker_ext.z.so] for libupms.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libdistributed_camera_sink.z.so
+Warning: can not find depended library [libtel_ext_symbol.z.so] for libtel_state_registry.z.so
+Warning: can not find depended library [libha_client_lite.z.so] for libavsession_item.z.so
+Warning: can not find depended library [libuser_status_client.z.so] for libaccessibleabilityms.z.so
+Warning: can not find depended library [libdwarf.so] for libarktsbase.so
+Warning: can not find depended library [libpower_manager_ext.z.so] for libpowermgrservice.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libmedia_stream.z.so
+Warning: can not find depended library [libaam_connection_inner_client.z.so] for libintelligentvoice_engine.z.so
+Warning: can not find depended library [libswing_client.z.so] for libintelligentvoice_engine.z.so
+Warning: can not find depended library [libavcenc_ohos.z.so] for libavc_encoder.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libtel_cm_deps_adapter.z.so
+Warning: can not find depended library [libdeviceprofileadapter.z.so] for libdistributed_device_profile_svr.z.so
+Warning: can not find depended library [libvideo_dragging_player.z.so] for libmedia_engine_histreamer.z.so
+Warning: can not find depended library [libav_codec_reference_parser.z.so] for libmedia_plugin_Mpeg4Demuxer.z.so
+Warning: can not find depended library [libav_codec_vvc_parser.z.so] for libmedia_plugin_Mpeg4Demuxer.z.so
+Warning: can not find depended library [libav_codec_hevc_parser.z.so] for libmedia_plugin_Mpeg4Demuxer.z.so
+Warning: can not find depended library [libav_codec_hevc_parser.z.so] for libmedia_plugin_FFmpegMuxer.z.so
+Warning: can not find depended library [libav_codec_reference_parser.z.so] for libmedia_plugin_FFmpegDemuxer.z.so
+Warning: can not find depended library [libav_codec_vvc_parser.z.so] for libmedia_plugin_FFmpegDemuxer.z.so
+Warning: can not find depended library [libav_codec_hevc_parser.z.so] for libmedia_plugin_FFmpegDemuxer.z.so
+Warning: can not find depended library [libav_codec_hevc_parser.z.so] for libmedia_plugin_Mpeg4Muxer.z.so
+Warning: can not find depended library [libarkweb_render.so] for libappspawn_nweb.z.so
+Warning: can not find depended library [libarkweb_engine.so] for libappspawn_nweb.z.so
+Warning: can not find depended library [libhvgr.so] for libPluginAGPRender.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libohcamera.so
+Warning: can not find depended library [libhispeed_compress.so] for liboharchive.so
+Warning: can not find depended library [libgewu_client.z.so] for libqos.so
+Warning: can not find depended library [libmindspore-lite-turbo.so] for libmindspore_lite_ndk.so
+Warning: can not find depended library [libAudioVividMetaBuilder.z.so] for libnative_media_core.so
+Warning: can not find depended library [lib_cpuboost.so] for libffrt.so
+Warning: can not find depended library [libneural_network_runtime_ext.so] for libneural_network_core.so
+Warning: can not find depended library [libdllite_service_client.z.so] for libneural_network_core.so
+Warning: can not find depended library [libapp_nap_client.z.so] for libbackground_process_manager.z.so
+Warning: can not find depended library [libpartner_agent_extension_ani.z.so] for libpartner_agent_extension_module.z.so
+Warning: can not find depended library [libhmos_distribute.z.so] for libinsightintentdriver_napi.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_napi.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamerapicker_napi.z.so
+Warning: can not find depended library [libuser_status_client.z.so] for libuserstatus_napi.z.so
+Warning: can not find depended library [libuser_status_client.z.so] for libmotion_napi.z.so
+Warning: can not find depended library [libspatial_awareness_client.z.so] for libspatialawareness_napi.z.so
+Warning: can not find depended library [libuser_status_client.z.so] for libunderageModel_so.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_picker_taihe.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_taihe.z.so
+Warning: can not find depended library [libz.so] for libcj_environment.z.so
+Warning: can not find depended library [libohosadaptor.so] for libcj_environment.z.so
+Warning: can not find depended library [libnative_buffer.so] for libcj_environment.z.so
+Warning: can not find depended library [libclang_rt.tsan.so] for libcj_environment.z.so
+Warning: can not find depended library [libm.so] for libcj_environment.z.so
+Warning: can not find depended library [libdl.so] for libcj_environment.z.so
+Warning: can not find depended library [libcangjie-runtime.so] for libcj_environment.z.so
+Warning: can not find depended library [libcj_debugger.z.so] for libcj_environment.z.so
+Warning: can not find depended library [libarkweb_engine.so] for libarkweb_utils.z.so
+Warning: can not find depended library [libz.so] for libace_napi.z.so
+Warning: can not find depended library [libohosadaptor.so] for libace_napi.z.so
+Warning: can not find depended library [libnative_buffer.so] for libace_napi.z.so
+Warning: can not find depended library [libclang_rt.tsan.so] for libace_napi.z.so
+Warning: can not find depended library [libclang_rt.hwasan.so] for libace_napi.z.so
+Warning: can not find depended library [libm.so] for libace_napi.z.so
+Warning: can not find depended library [libdl.so] for libace_napi.z.so
+Warning: can not find depended library [libOpenCL.so] for libace_napi.z.so
+Warning: can not find depended library [libav_codec_ext_base.z.so] for libav_codec_client.z.so
+Warning: can not find depended library [libfast_image.so] for libav_codec_client.z.so
+Warning: can not find depended library [libhiretrieval_ext.z.so] for libhiretrieval.z.so
+Warning: can not find depended library [libarkdata_db_core.z.so] for libdistributeddb.z.so
+Warning: can not find depended library [libdataflow_engine.z.so] for libdistributeddb.z.so
+Warning: can not find depended library [libgaussdb_rd.z.so] for libdistributeddb.z.so
+Warning: can not find depended library [libapipolicy_client.z.so] for libstack_utils_common.z.so
+Warning: can not find depended library [libhianimation_client.z.so] for librender_service_base.z.so
+Warning: can not find depended library [libgraphic_innovation.z.so] for librender_service_base.z.so
+Warning: can not find depended library [libmhc_client.so] for librender_service_base.z.so
+Warning: can not find depended library [libaps_client.z.so] for librender_service_base.z.so
+Warning: can not find depended library [libyuv.z.so] for libimage_utils.z.so
+Warning: can not find depended library [libimage_codec_ext_native.so] for libimage_utils.z.so
+Warning: can not find depended library [libhispeed_image.so] for libimage_utils.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libnweb_ohos_adapter.z.so
+Warning: can not find depended library [libjsvm.so] for libappkit_native.z.so
+Warning: can not find depended library [libaps_client.z.so] for libace_compatible.z.so
+Warning: can not find depended library [libha_ace_engine.z.so] for libace_compatible.z.so
+Warning: can not find depended library [libGLES_mali.so] for libopencl_wrapper.so
+Warning: can not find depended library [libhvgr_v200.so] for libopencl_wrapper.so
+Warning: can not find depended library [libams_broker_ext.z.so] for libwmutil.z.so
+Warning: can not find depended library [libzstd.z.so] for libsqlitecompressvfs.z.so
+Warning: can not find depended library [libimage_effect_ext.so] for libimage_effect_impl.so
+Warning: can not find depended library [libhmos_pageconfig.z.so] for libpage_config_manager.z.so
+Warning: can not find depended library [libdvsync.z.so] for libvsync.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcj_camera_ffi.z.so
+Warning: can not find depended library [libarkdata_db_core.z.so] for libdistributeddb_client.z.so
+Warning: can not find depended library [libace.z.so] for libace_forward_compatibility.z.so
+Warning: can not find depended library [libda_register.z.so] for libruntime.z.so
+Warning: can not find depended library [libcangjie-runtime.so] for libruntime.z.so
+Warning: can not find depended library [libtelephony_ext_innerkits.z.so] for libtel_common.z.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_framework_ex.z.so
+Warning: can not find depended library [libarkdata_tokenizer.z.so] for libcustomtokenizer.z.so
+Warning: can not find depended library [libyuv.z.so] for libextplugin.z.so
+Warning: can not find depended library [libimage_cuva_parser.z.so] for libextplugin.z.so
+Warning: can not find depended library [libaps_client.z.so] for libEGL.so
+Warning: can not find depended library [libgameservice_graphic_plugin.z.so] for libEGL.so
+Warning: can not find depended library [libiGraphicsCore.z.so] for libEGL.so
+Warning: can not find depended library [libsquid.so] for libEGL.so
+Warning: can not find depended library [libdeobfuscator_lib.z.so] for libmindspore-lite.so
+Warning: can not find depended library [libcameraextend_service.z.so] for libcamera_framework.z.so
+Warning: can not find depended library [libarkdata_db_core.z.so] for libsqlite.z.so
+Warning: can not find depended library [libclang_rt.hwasan.so] for libasan_logger.z.so
+Warning: can not find depended library [libclang_rt.hwasan.so] for libark_jsruntime.so
+Warning: can not find depended library [libark_jsoptimizer.so] for libark_jsruntime.so
+Warning: can not find depended library [libaip_knowledge_processor.z.so] for libnative_rdb.z.so
+Warning: can not find depended library [libarkdata_db_core.z.so] for libnative_rdb.z.so
+Warning: can not find depended library [libarkweb_engine.so] for libunwinder.z.so
+Warning: can not find depended library [libv8_shared.so] for libunwinder.z.so
+Warning: can not find depended library [libjsvm.so] for libunwinder.z.so
+Warning: can not find depended library [libgame_acc_sched_client.z.so] for libsurface.z.so
+Warning: can not find depended library [libdelegator.z.so] for libsurface.z.so
+Warning: can not find depended library [libaps_client.z.so] for libsurface.z.so
+Warning: can not find depended library [libwifi_hal_hw.z.so] for libchip_controller_chip_interface_service_2.0.z.so
+Warning: can not find depended library [libnb_mac.z.so] for libhci_interface_service_1.0.z.so
+Warning: can not find depended library [libnearlink_mac.z.so] for libsle_hci_interface_service_1.1.z.so
+Warning: can not find depended library [libdisplay_composer_vdi_impl_default.z.so] for libdisplay_composer_service_1.5.z.so
+Warning: can not find depended library [libdisplay_buffer_vdi_impl_default.z.so] for liballocator_service_1.0.z.so
+Warning: can not find depended library [liboff_find_vendor_common_ext.z.so] for liboff_find_interface_service_1.0.z.so
+Warning: can not find depended library [libhdi_product_sensor_impl.z.so] for libsensor_interface_service_3.1.z.so
+Warning: can not find depended library [libhdi_motion_impl.z.so] for libmotion_interface_service_1.1.z.so
+Warning: can not find depended library [libhdi_product_vibrator_impl.z.so] for libvibrator_interface_service_2.0.z.so
+Warning: can not find depended library [libhdi_wlan_impl.z.so] for libwlan_service_extend.z.so
+Warning: can not find depended library [libzcodec_vdi_impl.z.so] for libhdi_z_factory_service_1.0.z.so
+Warning: can not find depended library [libheif_vdi_impl.z.so] for libcodec_image_service_2.1.z.so
+Warning: can not find depended library [libheifdecode_vdi_impl.z.so] for libcodec_image_service_2.1.z.so
+Warning: can not find depended library [libomx_audio_codec.z.so] for libcodec_component_manager_service_4.0.z.so
+Warning: can not find depended library [libmemorytracker.default.so] for libmemory_tracker_interface_service_1.0.z.so
+Warning: can not find depended library [librk_vpuapi.so] for libomxvpu_enc.z.so
+Warning: can not find depended library [librk_vpuapi.so] for libomxvpu_dec.z.so
+    Got 29972 dependencies
+Load compile information now ...
+system/lib/ndk/libipc_capi.z.so does not match in module info file
+1 modules has no component info
+/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/packages/phone/vendor/etc/hdfconfig/hdf_default.hcb or /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568/obj/drivers/hdf_core/framework/tools/hc-gen/hc-gen not exist
+Do NO-Depends-On-NAPI rule checking now:
+Do NO-Depends-On-SA rule checking now:
+[35m[WARNING][0m: sa module libethernet_manager.z.so has no shlib_type="sa", add it in //foundation/communication/netmanager_ext/services/ethernetmanager:ethernet_manager
+[35m[WARNING][0m: sa module libnet_conn_manager.z.so has no shlib_type="sa", add it in //foundation/communication/netmanager_base/services/netconnmanager:net_conn_manager
+[35m[WARNING][0m: sa module libdistributed_screen_sink.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/distributed_screen/services/screenservice/sinkservice:distributed_screen_sink
+[35m[WARNING][0m: sa module libdistributed_screen_source.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/distributed_screen/services/screenservice/sourceservice:distributed_screen_source
+[35m[WARNING][0m: sa module libsharing_service.z.so has no shlib_type="sa", add it in //foundation/CastEngine/castengine_wifi_display/services:sharing_service
+[35m[WARNING][0m: sa module libecologicalrulemgr_service.z.so has no shlib_type="sa", add it in //foundation/bundlemanager/ecological_rule_manager/services:ecologicalrulemgr_service
+[35m[WARNING][0m: sa module libmedia_service.z.so has no shlib_type="sa", add it in //foundation/multimedia/player_framework/services/services:media_service
+[35m[WARNING][0m: sa module libdevattest_service.z.so has no shlib_type="sa", add it in //test/xts/device_attest/services/devattest_ability:devattest_service
+[35m[WARNING][0m: sa module libnet_policy_manager.z.so has no shlib_type="sa", add it in //foundation/communication/netmanager_base/services/netpolicymanager:net_policy_manager
+[35m[WARNING][0m: sa module libfingerprintauthservice.z.so has no shlib_type="sa", add it in //base/useriam/fingerprint_auth/services:fingerprintauthservice
+[35m[WARNING][0m: sa module libcert_manager_service.z.so has no shlib_type="sa", add it in //base/security/certificate_manager/services/cert_manager_standard:cert_manager_service
+[35m[WARNING][0m: sa module libaudio_policy_service.z.so has no shlib_type="sa", add it in //foundation/multimedia/audio_framework/services/audio_policy:audio_policy_service
+[35m[WARNING][0m: sa module libmmi-server.z.so has no shlib_type="sa", add it in //foundation/multimodalinput/input/service:libmmi-server
+[35m[WARNING][0m: sa module libthermalservice.z.so has no shlib_type="sa", add it in //base/powermgr/thermal_manager/services:thermalservice
+[35m[WARNING][0m: sa module libsg_classify_service.z.so has no shlib_type="sa", add it in //base/security/security_guard/services/risk_classify:sg_classify_service
+[35m[WARNING][0m: sa module libsecurity_component_service.z.so has no shlib_type="sa", add it in //base/security/security_component_manager/services/security_component_service/sa:security_component_service
+[35m[WARNING][0m: sa module libnet_vpn_manager.z.so has no shlib_type="sa", add it in //foundation/communication/netmanager_ext/services/vpnmanager:net_vpn_manager
+[35m[WARNING][0m: sa module libnet_tether_manager.z.so has no shlib_type="sa", add it in //foundation/communication/netmanager_ext/services/networksharemanager:net_tether_manager
+[35m[WARNING][0m: sa module libapp_domain_verify_mgr_service.z.so has no shlib_type="sa", add it in //foundation/bundlemanager/app_domain_verify/services:app_domain_verify_mgr_service
+[35m[WARNING][0m: sa module libinputmethod_service.z.so has no shlib_type="sa", add it in //base/inputmethod/imf/services:inputmethod_service
+[35m[WARNING][0m: sa module libmedia_monitor.z.so has no shlib_type="sa", add it in //foundation/multimedia/media_foundation/services/media_monitor:media_monitor
+[35m[WARNING][0m: sa module libdrm_service.z.so has no shlib_type="sa", add it in //foundation/multimedia/drm_framework/services/drm_service:drm_service
+[35m[WARNING][0m: sa module libtest_server_service.z.so has no shlib_type="sa", add it in //test/testfwk/arkxtest/testserver/src:test_server_service
+[35m[WARNING][0m: sa module libbackup_sa.z.so has no shlib_type="sa", add it in //foundation/filemanagement/app_file_service/services/backup_sa:backup_sa
+[35m[WARNING][0m: sa module libdeviceauth_service.z.so has no shlib_type="sa", add it in //base/security/device_auth/services:deviceauth_service
+[35m[WARNING][0m: sa module libcontent_embed_service.z.so has no shlib_type="sa", add it in //foundation/officeservice/object_editor/system_ability:content_embed_service
+[35m[WARNING][0m: sa module libdlp_permission_service.z.so has no shlib_type="sa", add it in //base/security/dlp_permission_service/services/dlp_permission/sa:dlp_permission_service
+[35m[WARNING][0m: sa module libtel_cellular_call.z.so has no shlib_type="sa", add it in //base/telephony/cellular_call:tel_cellular_call
+[35m[WARNING][0m: sa module libcadaemon.z.so has no shlib_type="sa", add it in //base/tee/tee_client/services/cadaemon/build/standard:libcadaemon
+[35m[WARNING][0m: sa module libtel_cellular_data.z.so has no shlib_type="sa", add it in //base/telephony/cellular_data:tel_cellular_data
+[35m[WARNING][0m: sa module libtel_core_service.z.so has no shlib_type="sa", add it in //base/telephony/core_service:tel_core_service
+[35m[WARNING][0m: sa module libsecurity_collector_service.z.so has no shlib_type="sa", add it in //base/security/security_guard/services/security_collector:security_collector_service
+[35m[WARNING][0m: sa module libbatterystats_service.z.so has no shlib_type="sa", add it in //base/powermgr/battery_statistics/services:batterystats_service
+[35m[WARNING][0m: sa module libpinauthservice.z.so has no shlib_type="sa", add it in //base/useriam/pin_auth/services:pinauthservice
+[35m[WARNING][0m: sa module libstorage_manager.z.so has no shlib_type="sa", add it in //foundation/filemanagement/storage_service/services/storage_manager:storage_manager
+[35m[WARNING][0m: sa module libuiservice.z.so has no shlib_type="sa", add it in //foundation/arkui/ace_engine/adapter/ohos/services/uiservice:uiservice
+[35m[WARNING][0m: sa module libtel_call_manager.z.so has no shlib_type="sa", add it in //base/telephony/call_manager:tel_call_manager
+[35m[WARNING][0m: sa module libsandbox_manager_service.z.so has no shlib_type="sa", add it in //base/accesscontrol/sandbox_manager/services/sandbox_manager:sandbox_manager_service
+[35m[WARNING][0m: sa module libdisk_manager_server.z.so has no shlib_type="sa", add it in //foundation/filemanagement/disk_manager/services/disk_manager:disk_manager_server
+[35m[WARNING][0m: sa module libcamera_service.z.so has no shlib_type="sa", add it in //foundation/multimedia/camera_framework/services/camera_service:camera_service
+[35m[WARNING][0m: sa module libbatteryservice.z.so has no shlib_type="sa", add it in //base/powermgr/battery_manager/services:batteryservice
+[35m[WARNING][0m: sa module libdinput_sink.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/distributed_input/services/sink/sinkmanager:libdinput_sink
+[35m[WARNING][0m: sa module libhuks_service.z.so has no shlib_type="sa", add it in //base/security/huks/services/huks_standard:huks_service
+[35m[WARNING][0m: sa module libdistributeddataservice.z.so has no shlib_type="sa", add it in //foundation/distributeddatamgr/datamgr_service/services/distributeddataservice/app:distributeddataservice
+[35m[WARNING][0m: sa module libdistributed_camera_source.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/distributed_camera/services/cameraservice/sourceservice:distributed_camera_source
+[35m[WARNING][0m: sa module liblbsservice_network.z.so has no shlib_type="sa", add it in //base/location/location/services/location_network/network:lbsservice_network
+[35m[WARNING][0m: sa module libtime_system_ability.z.so has no shlib_type="sa", add it in //base/time/time_service/services:time_system_ability
+[35m[WARNING][0m: sa module libpartner_device_agent_server.z.so has no shlib_type="sa", add it in //foundation/communication/fusion_connectivity/partner_agent/services/server:partner_device_agent_server
+[35m[WARNING][0m: sa module libui_appearance_service.z.so has no shlib_type="sa", add it in //foundation/arkui/ui_appearance/services:ui_appearance_service
+[35m[WARNING][0m: sa module libav_codec_service.z.so has no shlib_type="sa", add it in //foundation/multimedia/av_codec/services/services:av_codec_service
+[35m[WARNING][0m: sa module libdistributed_audio_sink.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/distributed_audio/services/audiomanager/servicesink:distributed_audio_sink
+[35m[WARNING][0m: sa module liboaid_service.z.so has no shlib_type="sa", add it in //domains/advertising/oaid/services:oaid_service
+[35m[WARNING][0m: sa module libmemmgrservice.z.so has no shlib_type="sa", add it in //foundation/resourceschedule/memmgr/services/memmgrservice:memmgrservice
+[35m[WARNING][0m: sa module libnet_stats_manager.z.so has no shlib_type="sa", add it in //foundation/communication/netmanager_base/services/netstatsmanager:net_stats_manager
+[35m[WARNING][0m: sa module libsane_service.z.so has no shlib_type="sa", add it in //base/print/print_fwk/services/sane_service:sane_service
+[35m[WARNING][0m: sa module libcast_engine_service.z.so has no shlib_type="sa", add it in //foundation/CastEngine/castengine_cast_framework/service:cast_engine_service
+[35m[WARNING][0m: sa module libbms.z.so has no shlib_type="sa", add it in //foundation/bundlemanager/bundle_framework/services/bundlemgr:libbms
+[35m[WARNING][0m: sa module libasset_service.dylib.so has no shlib_type="sa", add it in //base/security/asset/services/asset/core_service:asset_service
+[35m[WARNING][0m: sa module libtel_sms_mms.z.so has no shlib_type="sa", add it in //base/telephony/sms_mms:tel_sms_mms
+[35m[WARNING][0m: sa module libdistributedfiledaemon.z.so has no shlib_type="sa", add it in //foundation/filemanagement/dfs_service/services/distributedfiledaemon:libdistributedfiledaemon
+[35m[WARNING][0m: sa module libscan_service.z.so has no shlib_type="sa", add it in //base/print/print_fwk/services/scan_service:scan_service
+[35m[WARNING][0m: sa module libdistributed_audio_source.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/distributed_audio/services/audiomanager/servicesource:distributed_audio_source
+[35m[WARNING][0m: sa module libintell_voice_server.z.so has no shlib_type="sa", add it in //foundation/ai/intelligent_voice_framework/services/intell_voice_service:intell_voice_server
+[35m[WARNING][0m: sa module libdistributed_ability_manager_svr.z.so has no shlib_type="sa", add it in //foundation/ability/dmsfwk/services/dtbabilitymgr:distributed_ability_manager_svr
+[35m[WARNING][0m: sa module libbluetooth_server.z.so has no shlib_type="sa", add it in //foundation/communication/bluetooth_service/services/bluetooth/server:bluetooth_server
+[35m[WARNING][0m: sa module libmidi_service.z.so has no shlib_type="sa", add it in //foundation/multimedia/midi_framework/services:midi_service
+[35m[WARNING][0m: sa module libfusion_ranging_server.z.so has no shlib_type="sa", add it in //foundation/communication/fusion_connectivity/fusion_ranging/services/server:fusion_ranging_server
+[35m[WARNING][0m: sa module libmechbody_service.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/mechbody_controller/services:mechbody_service
+[35m[WARNING][0m: sa module libuserauthservice.z.so has no shlib_type="sa", add it in //base/useriam/user_auth_framework/services:userauthservice
+[35m[WARNING][0m: sa module liblbsservice_gnss.z.so has no shlib_type="sa", add it in //base/location/location/services/location_gnss/gnss:lbsservice_gnss
+[35m[WARNING][0m: sa module libsrms.z.so has no shlib_type="sa", add it in //foundation/ability/ability_runtime/service_router_framework/services/srms:libsrms
+[35m[WARNING][0m: sa module libi18n_sa.z.so has no shlib_type="sa", add it in //base/global/i18n/services:i18n_sa
+[35m[WARNING][0m: sa module libapp_domain_verify_agent_service.z.so has no shlib_type="sa", add it in //foundation/bundlemanager/app_domain_verify/services:app_domain_verify_agent_service
+[35m[WARNING][0m: sa module liblbsservice_passive.z.so has no shlib_type="sa", add it in //base/location/location/services/location_passive/passive:lbsservice_passive
+[35m[WARNING][0m: sa module libcompaniondeviceauthservice.z.so has no shlib_type="sa", add it in //base/useriam/companion_device_auth/services:companiondeviceauthservice
+[35m[WARNING][0m: sa module libpasteboard_service.z.so has no shlib_type="sa", add it in //foundation/distributeddatamgr/pasteboard/services:pasteboard_service
+[35m[WARNING][0m: sa module liblbsservice_geocode.z.so has no shlib_type="sa", add it in //base/location/location/services/location_geocode/geocode:lbsservice_geocode
+[35m[WARNING][0m: sa module libdevicemanagerservice.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/device_manager/services/service:devicemanagerservice
+[35m[WARNING][0m: sa module libselection_service.z.so has no shlib_type="sa", add it in //foundation/systemabilitymgr/selectionfwk/service:selection_service
+[35m[WARNING][0m: sa module libsecure_access_fence_service.dylib.so has no shlib_type="sa", add it in //base/security/asset/services/secure_access_fence/core_service:secure_access_fence_service
+[35m[WARNING][0m: sa module libdistributed_camera_sink.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/distributed_camera/services/cameraservice/sinkservice:distributed_camera_sink
+[35m[WARNING][0m: sa module libtel_state_registry.z.so has no shlib_type="sa", add it in //base/telephony/state_registry:tel_state_registry
+[35m[WARNING][0m: sa module libprint_service.z.so has no shlib_type="sa", add it in //base/print/print_fwk/services/print_service:print_service
+[35m[WARNING][0m: sa module libwallpaper_service.z.so has no shlib_type="sa", add it in //base/theme/wallpaper_mgr/services:wallpaper_service
+[35m[WARNING][0m: sa module libaccessibleabilityms.z.so has no shlib_type="sa", add it in //foundation/barrierfree/accessibility/services/aams:accessibleabilityms
+[35m[WARNING][0m: sa module libinstalls.z.so has no shlib_type="sa", add it in //foundation/bundlemanager/bundle_framework/services/bundlemgr:installs
+[35m[WARNING][0m: sa module libpowermgrservice.z.so has no shlib_type="sa", add it in //base/powermgr/power_manager/services:powermgrservice
+[35m[WARNING][0m: sa module libwms.z.so has no shlib_type="sa", add it in //foundation/window/window_manager/wmserver:libwms
+[35m[WARNING][0m: sa module libaudio_service.z.so has no shlib_type="sa", add it in //foundation/multimedia/audio_framework/services/audio_service:audio_service
+[35m[WARNING][0m: sa module libdownload_server.dylib.so has no shlib_type="sa", add it in //base/request/request/services:download_server
+[35m[WARNING][0m: sa module libsys_installer.z.so has no shlib_type="sa", add it in //base/update/sys_installer/frameworks/ipc_server:sys_installer
+[35m[WARNING][0m: sa module libdinput_source.z.so has no shlib_type="sa", add it in //foundation/distributedhardware/distributed_input/services/source/sourcemanager:libdinput_source
+[35m[WARNING][0m: sa module libfaceauthservice.z.so has no shlib_type="sa", add it in //base/useriam/face_auth/services:faceauthservice
+[35m[WARNING][0m: sa module libmdns_manager.z.so has no shlib_type="sa", add it in //foundation/communication/netmanager_ext/services/mdnsmanager:mdns_manager
+[35m[WARNING][0m: sa module libdistributed_device_profile_svr.z.so has no shlib_type="sa", add it in //foundation/deviceprofile/device_info_manager/services/core:distributed_device_profile_svr
+[35m[WARNING][0m: sa module libdistributedschedsvr.z.so has no shlib_type="sa", add it in //foundation/ability/dmsfwk/services/dtbschedmgr:distributedschedsvr
+[35m[WARNING][0m: sa module libagentmgr.z.so has no shlib_type="sa", add it in //foundation/ability/ability_runtime/agent_runtime_framework/services/agentmgr:agentmgr
+[35m[WARNING][0m: non sa module libcloudfiledaemon.z.so with shlib_type="sa", //foundation/filemanagement/dfs_service/services/cloudfiledaemon:cloudfiledaemon
+Do NO-Depends-On-HDI rule checking now:
+[35m[WARNING][0m: non hdi module libdisplay_composer_driver_1.0.z.so with shlib_type="hdi", //drivers/peripheral/display/composer/hdi_service:libdisplay_composer_driver_1.0
+[35m[WARNING][0m: non hdi module libchip_hdi_driver.z.so with shlib_type="hdi", //drivers/peripheral/wlan/chip/hdi_service:libchip_hdi_driver
+[35m[WARNING][0m: non hdi module liblocation_agnss_hdi_driver.z.so with shlib_type="hdi", //drivers/peripheral/location/agnss/hdi_service:liblocation_agnss_hdi_driver
+[35m[WARNING][0m: non hdi module libwifi_hdi_c_device.z.so with shlib_type="hdi", //drivers/peripheral/wlan/hdi_service:libwifi_hdi_c_device
+[35m[WARNING][0m: non hdi module libusbhost_acm_rawapi.z.so with shlib_type="hdi", //drivers/peripheral/usb/serial:libusbhost_acm_rawapi
+[35m[WARNING][0m: non hdi module libeffect_model_service.z.so with shlib_type="hdi", //drivers/peripheral/audio/effect/host:effect_model_service
+[35m[WARNING][0m: non hdi module libusbhost_rndis_rawapi.z.so with shlib_type="hdi", //drivers/peripheral/usb/net:libusbhost_rndis_rawapi
+[35m[WARNING][0m: non hdi module libusb_ddk_driver.z.so with shlib_type="hdi", //drivers/peripheral/usb/ddk_service/usb_service:libusb_ddk_driver
+[35m[WARNING][0m: non hdi module libmetadata_driver_1.1.z.so with shlib_type="hdi", //drivers/peripheral/display/buffer/hdi_service:libmetadata_driver_1.1
+[35m[WARNING][0m: non hdi module libsensor_driver.z.so with shlib_type="hdi", //drivers/peripheral/sensor/hdi_service_3.0:libsensor_driver
+[35m[WARNING][0m: non hdi module libbattery_driver.z.so with shlib_type="hdi", //drivers/peripheral/battery/interfaces/hdi_service:libbattery_driver
+[35m[WARNING][0m: non hdi module liblight_driver.z.so with shlib_type="hdi", //drivers/peripheral/light/hdi_service:liblight_driver
+[35m[WARNING][0m: non hdi module libface_auth_driver.z.so with shlib_type="hdi", //drivers/peripheral/face_auth/hdi_service:libface_auth_driver
+[35m[WARNING][0m: non hdi module liboff_find_hdi_driver.z.so with shlib_type="hdi", //drivers/peripheral/nearlink/off_find/hdi_service:liboff_find_hdi_driver
+[35m[WARNING][0m: non hdi module liblocation_gnss_hdi_driver.z.so with shlib_type="hdi", //drivers/peripheral/location/gnss/hdi_service:liblocation_gnss_hdi_driver
+[35m[WARNING][0m: non hdi module libthermal_driver.z.so with shlib_type="hdi", //drivers/peripheral/thermal/interfaces/hdi_service:libthermal_driver
+[35m[WARNING][0m: non hdi module libclearplay_driver.z.so with shlib_type="hdi", //drivers/peripheral/clearplay/interfaces:libclearplay_driver
+[35m[WARNING][0m: non hdi module libnearlink_hci_hdi_driver.z.so with shlib_type="hdi", //drivers/peripheral/nearlink/dli/dli_service:libnearlink_hci_hdi_driver
+[35m[WARNING][0m: non hdi module libusbfn_cdcecm.z.so with shlib_type="hdi", //drivers/peripheral/usb/gadget/function/ecm:libusbfn_cdcecm
+[35m[WARNING][0m: non hdi module libintell_voice_engine_driver.z.so with shlib_type="hdi", //drivers/peripheral/intelligent_voice/hdi_service/engine:intell_voice_engine_driver
+[35m[WARNING][0m: non hdi module libbluetooth_hci_hdi_driver.z.so with shlib_type="hdi", //drivers/peripheral/bluetooth/hci/hdi_service:libbluetooth_hci_hdi_driver
+[35m[WARNING][0m: non hdi module libintell_voice_trigger_driver.z.so with shlib_type="hdi", //drivers/peripheral/intelligent_voice/hdi_service/trigger:intell_voice_trigger_driver
+[35m[WARNING][0m: non hdi module libpartitionslot_driver.z.so with shlib_type="hdi", //drivers/peripheral/partitionslot/hdi_service:libpartitionslot_driver
+[35m[WARNING][0m: non hdi module libusb_serial_ddk_driver.z.so with shlib_type="hdi", //drivers/peripheral/usb/ddk_service/serial_service:libusb_serial_ddk_driver
+[35m[WARNING][0m: non hdi module libhid_ddk_driver.z.so with shlib_type="hdi", //drivers/peripheral/input/ddk_service:libhid_ddk_driver
+[35m[WARNING][0m: non hdi module libdistributed_camera_provider_config.z.so with shlib_type="hdi", //drivers/peripheral/distributed_camera/hdi_service:libdistributed_camera_provider_config
+[35m[WARNING][0m: non hdi module libusbhost_ecm.z.so with shlib_type="hdi", //drivers/peripheral/usb/net:libusbhost_ecm
+[35m[WARNING][0m: non hdi module libvibrator_driver.z.so with shlib_type="hdi", //drivers/peripheral/vibrator/hdi_service_2.0:libvibrator_driver
+[35m[WARNING][0m: non hdi module liblocation_geofence_hdi_driver.z.so with shlib_type="hdi", //drivers/peripheral/location/geofence/hdi_service:liblocation_geofence_hdi_driver
+[35m[WARNING][0m: non hdi module libdistributed_camera_host_config.z.so with shlib_type="hdi", //drivers/peripheral/distributed_camera/hdi_service:libdistributed_camera_host_config
+[35m[WARNING][0m: non hdi module libusb_device_driver.z.so with shlib_type="hdi", //drivers/peripheral/usb/hdi_service:libusb_device_driver
+[35m[WARNING][0m: non hdi module libusbfn_cdcacm.z.so with shlib_type="hdi", //drivers/peripheral/usb/gadget/function/acm:libusbfn_cdcacm
+[35m[WARNING][0m: non hdi module libpin_auth_driver.z.so with shlib_type="hdi", //drivers/peripheral/pin_auth/hdi_service:libpin_auth_driver
+[35m[WARNING][0m: non hdi module libwpa_hdi_c_device.z.so with shlib_type="hdi", //drivers/peripheral/wlan/wpa/interfaces/hdi_service:libwpa_hdi_c_device
+[35m[WARNING][0m: non hdi module libusb_port_driver.z.so with shlib_type="hdi", //drivers/peripheral/usb/hdi_service:libusb_port_driver
+[35m[WARNING][0m: non hdi module libmotion_driver.z.so with shlib_type="hdi", //drivers/peripheral/motion/hdi_service:libmotion_driver
+[35m[WARNING][0m: non hdi module libcodec_image_driver.z.so with shlib_type="hdi", //drivers/peripheral/codec/image:libcodec_image_driver
+[35m[WARNING][0m: non hdi module libdaudio_primary_driver.z.so with shlib_type="hdi", //drivers/peripheral/distributed_audio/hdi_service/audio/v1_0:libdaudio_primary_driver
+[35m[WARNING][0m: non hdi module libcamera_host_service_1.0.z.so with shlib_type="hdi", //drivers/peripheral/camera/hdi_service/v1_0:camera_host_service_1.0
+[35m[WARNING][0m: non hdi module liballocator_driver_1.0.z.so with shlib_type="hdi", //drivers/peripheral/display/buffer/hdi_service:liballocator_driver_1.0
+[35m[WARNING][0m: non hdi module libpower_driver.z.so with shlib_type="hdi", //drivers/peripheral/power/interfaces/hdi_service:libpower_driver
+[35m[WARNING][0m: non hdi module libscsi_ddk_driver.z.so with shlib_type="hdi", //drivers/peripheral/usb/ddk_service/scsi_service:libscsi_ddk_driver
+[35m[WARNING][0m: non hdi module libusbhost_acm.z.so with shlib_type="hdi", //drivers/peripheral/usb/serial:libusbhost_acm
+[35m[WARNING][0m: non hdi module libaudio_bluetooth_hdi_adapter_server.z.so with shlib_type="hdi", //drivers/peripheral/bluetooth/audio/hal/hdi_binder/server:audio_bluetooth_hdi_adapter_server
+[35m[WARNING][0m: non hdi module libcodec_driver.z.so with shlib_type="hdi", //drivers/peripheral/codec/hal/idl_service:libcodec_driver
+[35m[WARNING][0m: non hdi module libfingerprint_auth_driver.z.so with shlib_type="hdi", //drivers/peripheral/fingerprint_auth/hdi_service:libfingerprint_auth_driver
+[35m[WARNING][0m: non hdi module libusbfn_mtp_driver.z.so with shlib_type="hdi", //drivers/peripheral/usb/gadget/function/mtp:libusbfn_mtp_driver
+[35m[WARNING][0m: non hdi module libethernet_hdi_c_device.z.so with shlib_type="hdi", //drivers/peripheral/ethernet/eth_interfaces/hdi_service:libethernet_hdi_c_device
+[35m[WARNING][0m: non hdi module libusbfn.z.so with shlib_type="hdi", //drivers/peripheral/usb/gadget/function/usbfn:libusbfn
+[35m[WARNING][0m: non hdi module libmapper_driver_1.0.z.so with shlib_type="hdi", //drivers/peripheral/display/buffer/hdi_service:libmapper_driver_1.0
+[35m[WARNING][0m: non hdi module libril_driver.z.so with shlib_type="hdi", //drivers/peripheral/ril/interfaces/hdi_service:libril_driver
+[35m[WARNING][0m: non hdi module libdaudio_ext_driver.z.so with shlib_type="hdi", //drivers/peripheral/distributed_audio/hdi_service/audio_ext/v1_0:libdaudio_ext_driver
+[35m[WARNING][0m: non hdi module libhdi_audio_a2dp_server.z.so with shlib_type="hdi", //drivers/peripheral/audio/hal/hdi_binder/server:hdi_audio_a2dp_server
+[35m[WARNING][0m: non hdi module libuser_auth_driver.z.so with shlib_type="hdi", //drivers/peripheral/user_auth/hdi_service:libuser_auth_driver
+[35m[WARNING][0m: non hdi module libaudio_primary_driver.z.so with shlib_type="hdi", //drivers/peripheral/audio/hdi_service/primary:audio_primary_driver
+[35m[WARNING][0m: non hdi module libhostapd_hdi_c_device.z.so with shlib_type="hdi", //drivers/peripheral/wlan/hostapd/interfaces/hdi_service:libhostapd_hdi_c_device
+[35m[WARNING][0m: non hdi module libserial_interface_service_1.0.z.so with shlib_type="hdi", //drivers/peripheral/usb/serial:libserial_interface_service_1.0
+[35m[WARNING][0m: non hdi module libusb_adapter.z.so with shlib_type="hdi", //drivers/peripheral/usb/libusb_adapter:libusb_adapter
+****add chipsetsdk_rules_path path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+Do ChipsetSDK rule checking now:
+****add chipsetsdk_rules_path path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+****add chipsetsdk_rules_path path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_indirect.json****
+****chipsetsdk dep whitelist file is /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/chipsetsdk_dep_whitelist.json****
+****chipsetsdk dep whitelist file is /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/chipsetsdk_dep_whitelist.json****
+****check_depends_on_chipsetsdk result:True****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+****check_if_deps_correctly result:True****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+****check_if_deps_correctly indirect result:True****
+****check_tagged_correctly result:True****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+Do BaseInnerApi rule checking now:
+****chipsetsdk dep whitelist file is /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/chipsetsdk_dep_whitelist.json****
+****add chipsetsdk_sp_rules_path path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+Do ChipsetsdkSP rule checking now:
+****add chipsetsdk_sp_rules_path path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add chipsetsdk_sp_rules_path path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_indirect.json****
+****chipsetsdk dep whitelist file is /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/chipsetsdk_dep_whitelist.json****
+****check_depends_on_chipsetsdk_sp result:True****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+****check_if_deps_correctly result:True****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+****check_if_deps_correctly indirect result:True****
+****check_tagged_correctly result:True****
+****add more llndk info in dir:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+Do LLndk rule checking now:
+****chipsetsdk dep whitelist file is /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/chipsetsdk_dep_whitelist.json****
+****add more llndk info in dir:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****check_if_tagged_correctly result:True****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+****check_if_deps_correctly result:True****
+****add more passthrough info in dir:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+Do Passthrough rule checking now:
+****add more passthrough info in dir:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add more passthrough info in dir:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_indirect.json****
+****chipsetsdk dep whitelist file is /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/chipsetsdk_dep_whitelist.json****
+****check_depends_on_passthrough result:True****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+****check_if_deps_correctly result:True****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/Passthrough/passthrough_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/LLndk/llndk_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetsdkSP/chipsetsdk_sp_info.json****
+****add path:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules****
+****Parsing rules file in /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/integration_verification/tools/deps_guard/rules_checker/../rules/ChipsetSDK/chipsetsdk_info.json****
+****check_if_deps_correctly indirect result:True****
+****check_tagged_correctly result:True****
+All rules passed
+Do NO-Config-Cmds-In-Init rule checking now:
+[35m[WARNING][0m: cupsd is not in start cmd list. path:/system/etc/init/cups_service.cfg
+[35m[WARNING][0m: nwebspawn is not in start cmd list. path:/system/etc/init/nwebspawn.cfg
+[35m[WARNING][0m: telephony is not in start cmd list. path:/system/etc/init/telephony.cfg
+[35m[WARNING][0m: accesstoken_service is not in start cmd list. path:/system/etc/init/access_token.cfg
+[35m[WARNING][0m: faultloggerd is not in start cmd list. path:/system/etc/init/faultloggerd.cfg
+[35m[WARNING][0m: foundation is not in start cmd list. path:/system/etc/init/foundation.cfg
+[35m[WARNING][0m: teecd is not in start cmd list. path:/system/etc/init/teecd.cfg
+[35m[WARNING][0m: write_updater is not in start cmd list. path:/system/etc/init/updater_normal.cfg
+[35m[WARNING][0m: intell_voice_service is not in start cmd list. path:/system/etc/init/intell_voice_service.cfg
+[35m[WARNING][0m: hybridspawn is not in start cmd list. path:/system/etc/init/hybridspawn.cfg
+[35m[WARNING][0m: audio_server is not in start cmd list. path:/system/etc/init/audio_server.cfg
+[35m[WARNING][0m: el5_filekey_manager is not in start cmd list. path:/system/etc/init/el5_filekey_manager.cfg
+[35m[WARNING][0m: key_enable is not in start cmd list. path:/system/etc/init/key_enable.cfg
+[35m[WARNING][0m: cadaemon is not in start cmd list. path:/system/etc/init/cadaemon.cfg
+[35m[WARNING][0m: hiprofiler_daemon_sa is not in start cmd list. path:/system/etc/init/hiprofilerd.cfg
+[35m[WARNING][0m: resource_schedule_executor is not in start cmd list. path:/system/etc/init/resource_schedule_executor.cfg
+[35m[WARNING][0m: msdp is not in start cmd list. path:/system/etc/init/msdp_musl.cfg
+[91m[NOT ALLOWED][0m: device_usage_stats_service 'secon' is empty
+[91m[NOT ALLOWED][0m: 'load_access_token_id' is timeout command, in /system/etc/init.cfg
+[35m[WARNING][0m: 'nativespawn' cannot be started in boot mode
+[35m[WARNING][0m: 'cupsd' cannot be started in conditional mode
+[35m[WARNING][0m: 'tlogcat' cannot be started in conditional mode
+[35m[WARNING][0m: 'nwebspawn' cannot be started in conditional mode
+[35m[WARNING][0m: 'accesstoken_service' cannot be started in conditional mode
+[35m[WARNING][0m: 'cjappspawn' cannot be started in boot mode
+[35m[WARNING][0m: 'audio_server' cannot be started in conditional mode
+[35m[WARNING][0m: 'memory_collector' cannot be started in conditional mode
+[35m[WARNING][0m: 'key_enable' cannot be started in conditional mode
+  Please refer to: [91mhttps://gitee.com/openharmony/developtools_integration_verification/tree/master/tools/startup_guard/rules/NO-Config-Cmds-In-Init/README.md[0m
+Do NO-Config-SystemParameter-In-INIT rule checking now:
+[91m[NOT ALLOWED][0m: DAC overallocated memory
+  Please refer to: [91mhttps://gitee.com/openharmony/developtools_integration_verification/tree/master/tools/startup_guard/rules/NO-Config-SystemParameter-In-INIT/README.md[0m
+Do NO-User-Group_In-Init rule checking now:
+[91m[NOT ALLOWED][0m: quickfix has different passwd and group values
+  Please refer to: [91mhttps://gitee.com/openharmony/developtools_integration_verification/tree/master/tools/startup_guard/rules/NO-User-Group_In-Init/README.md[0m
+Do NO-Plug-In_Module-Init rule checking now:
+[91m[NOT ALLOWED][0m: the dependent shared library libbegetutil.z.so of librebootmodule.z.so is not in whitelist
+[91m[NOT ALLOWED][0m: the dependent shared library libhisysevent.z.so of librebootmodule.z.so is not in whitelist
+[91m[NOT ALLOWED][0m: libmodule_update_init.z.so is not in whitelists
+  Please refer to: [91mhttps://gitee.com/openharmony/developtools_integration_verification/tree/master/tools/startup_guard/rules/NO-Plug-In_Module-Init/README.md[0m
+Do NO-Illegal-SA-Directory-Creation rule checking now:
+Please modify according to README.md
+[OHOS INFO]  rk3568 build success
+[OHOS INFO]  Cost Time:  0:01:04
+[32m=====build  successful=====[0m
+2026-08-04 10:45:33
+++++++++++++++++++++++++++++++++++++++++

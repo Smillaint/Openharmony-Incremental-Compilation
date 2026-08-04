@@ -1,0 +1,794 @@
+ninja: warning: multiple rules generate obj/applications/standard/contacts_data/Contacts_DataAbility.stamp
+ninja: warning: multiple rules generate obj/applications/standard/dlp_manager/dlp_manager.stamp
+ninja: warning: multiple rules generate obj/applications/standard/permission_manager/permission_manager.stamp
+ninja: warning: multiple rules generate obj/applications/standard/user_certificate_manager/user_cert_manager.stamp
+ninja: warning: multiple rules generate obj/base/customization/enterprise_device_management/test/unittest/test_bundle/right_hap/right.stamp
+ninja: warning: multiple rules generate obj/base/powermgr/power_manager/power_dialog/power_dialog_hap.stamp
+ninja: warning: multiple rules generate obj/base/security/access_token/frameworks/common/permission_definition_check.stamp
+ninja: warning: multiple rules generate obj/base/telephony/telephony_data/Telephony_Data_Storage.stamp
+ninja: warning: multiple rules generate obj/developtools/ace_ets2bundle/install_arkguard_tsc_declgen.stamp
+ninja: warning: multiple rules generate obj/foundation/ability/ability_runtime/services/dialog_ui/ams_system_dialog/ams_system_dialog_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/ability/ability_runtime/test/moduletest/ui_extension_ability_test/ui_extension_provider_bundle/ui_extension_provider_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/ability/ability_runtime/test/moduletest/ui_extension_ability_test/ui_extension_user_bundle/ui_extension_user_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/ability/ability_runtime/tools/test/resource/aa/dataAbilityBundleForDump/dataAbilityBundleForDump.stamp
+ninja: warning: multiple rules generate obj/foundation/ability/ability_runtime/tools/test/resource/aa/pageAbilityBundleForDump/pageAbilityBundleForDump.stamp
+ninja: warning: multiple rules generate obj/foundation/ability/ability_runtime/tools/test/resource/aa/pageAbilityBundleForStart/pageAbilityBundleForStart.stamp
+ninja: warning: multiple rules generate obj/foundation/ability/ability_runtime/tools/test/resource/aa/serviceAbilityBundleForStart/serviceAbilityBundleForStart.stamp
+ninja: warning: multiple rules generate obj/foundation/ability/ability_runtime/tools/test/resource/aa/serviceAbilityBundleForStop/serviceAbilityBundleForStop.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/benchmark/benchmarktesthap/benchmarktesthap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/moduletest/other_bundle/bmsThirdBundle1/mstbmsThirdBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/moduletest/other_bundle/bmsThirdBundle14/mstbmsThirdBundle14.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/moduletest/other_bundle/bmsThirdBundle2/mstbmsThirdBundle2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/BundleClient/bundleClient1/bundleClient1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/CodeSignature/CodeSignatureWithoutLibs/CodeSignatureWithoutLibs.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/CodeSignature/CodeSignatureWithoutLibs2/CodeSignatureWithoutLibs2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/CodeSignature/CodeSigntureWithLibs/CodeSigntureWithLibs.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/hsp_A.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature1/hspASystemtestFeature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature2/hspASystemtestFeature2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature3/hspASystemtestFeature3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature4/hspASystemtestFeature4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature5/hspASystemtestFeature5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature6/hspASystemtestFeature6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature7/hspASystemtestFeature7.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/bundle_hsp/hsp_A/feature8/hspASystemtestFeature8.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/driverBundle/driverBundle1/driverBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/driverBundle/driverBundle2/driverBundle2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version1/entry/version1_oneExtension_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version1/entry_ex2/version1_oneExtension2_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version1/feature/version1_oneExtension_feature_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version2/entry/version2_oneExtension_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version2/entry_ex2/version2_oneExtension2_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/oneExtensionDir/version2/feature/version2_oneExtension_feature_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/twoExtensionDir/version1/entry/version1_twoExtension_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/twoExtensionDir/version1/feature/version1_twoExtension_feature_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/twoExtensionDir/version2/entry/version2_twoExtension_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/twoExtensionDir/version2/feature/version2_twoExtension_feature_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version1/entry/version1_withoutExtension_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version1/feature/version1_withoutExtension_feature_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version1_form/entry/version1_withoutExtension_entry_form_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version2/entry/version2_withoutExtension_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version2/feature/version2_withoutExtension_feature_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/extensionDirTest/withoutExtensionDir/version2_form/entry/version2_withoutExtension_entry_form_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle1/bmsThirdBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle2/bmsThirdBundle2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle3/bmsThirdBundle3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle4/bmsThirdBundle4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle5/bmsThirdBundle5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundle6/bmsThirdBundle6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/jsBundle/jsThirdBundle/bmsThirdBundleDataAbility/bmsThirdBundleDataAbility.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/multiUser/lower_versionCode_entry/lower_versionCode_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/multiUser/lower_versionCode_entry/feature/lower_versionCode_entry_hapB.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle1/permissionGrantBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle2/permissionGrantBundle2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle3/permissionGrantBundle3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle4/permissionGrantBundle4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/permissionBundle/permissionGrantBundle5/permissionGrantBundle5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stMatchShareBundle/matchShareBundle1/matchShareBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stMatchShareBundle/matchShareBundle2/matchShareBundle2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stMatchShareBundle/matchShareBundle3/matchShareBundle3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stSystemBundle/bmsSystemBundle1/bmsSystemBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle1/stbmsThirdBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle10/stbmsThirdBundle10.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle12/stbmsThirdBundle12.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle13/stbmsThirdBundle13.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle17/stbmsThirdBundle17.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle2/stbmsThirdBundle2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle24/stbmsThirdBundle24.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle25/stbmsThirdBundle25.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle26/stbmsThirdBundle26.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle28/stbmsThirdBundle28.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle3/stbmsThirdBundle3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle4/stbmsThirdBundle4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle41/stbmsThirdBundle41.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle42/stbmsThirdBundle42.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle43/stbmsThirdBundle43.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle44/stbmsThirdBundle44.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle45/stbmsThirdBundle45.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle5/stbmsThirdBundle5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle6/stbmsThirdBundle6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle7/stbmsThirdBundle7.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle8/stbmsThirdBundle8.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundle9/stbmsThirdBundle9.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/bmsThirdBundles1/stbmsThirdBundles1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/e21Test/e21Test.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/e23Test/e23Test.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/e3Test/e3Test.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/e4Test/e4Test.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/e5Test/e5Test.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stThirdBundle/e6Test/e6Test.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/stVendorBundle/bmsVendorBundle1/bmsVendorBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso1/hapNotIncludeso1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso2/hapNotIncludeso2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso3/hapNotIncludeso3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso4/hapNotIncludeso4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso5/hapNotIncludeso5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso5/feature1/hapNotIncludesoFeature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso5/feature2/hapNotIncludesoFeature2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso5/feature3/hapNotIncludesoFeature3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso6/hapNotIncludeso6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso6/feature4/hapNotIncludesoFeature4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso6/feature5/hapNotIncludesoFeature5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapNotIncludeso6/feature6/hapNotIncludesoFeature6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso1/hapSectionContainso1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso1/feature1/hapSectionContainsoFeature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso1/feature2/hapSectionContainsoFeature2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso1/feature3/hapSectionContainsoFeature3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso2/hapSectionContainso2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso2/feature4/hapSectionContainsoFeature4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso2/feature5/hapSectionContainsoFeature5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapNoSo/hapSectionContainso2/feature6/hapSectionContainsoFeature6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso1/hapIncludeso1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso2/hapIncludeso2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso3/hapIncludeso3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso4/hapIncludeso4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/hapIncludeso5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature1/hapIncludeso5Feature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature2/hapIncludeso5Feature2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature3/hapIncludeso5Feature3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature4/hapIncludeso5Feature4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature5/hapIncludeso5Feature5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature6/hapIncludeso5Feature6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature7/hapIncludeso5Feature7.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/feature8/hapIncludeso5Feature8.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso5/hapnoso1/hapnoso1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso6/hapIncludeso6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso6/feature1/hapIncludeso6Feature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso6/feature2/hapIncludeso6Feature2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso6/feature3/hapIncludeso6Feature3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso6/hapnoso2/hapnoso2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso7/hapIncludeso7.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso7/feature1/hapIncludeso7Feature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso7/hapnoso3/hapnoso3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso8/hapIncludeso8.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso8/feature1/hapIncludeso8Feature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso8/feature2/hapIncludeso8Feature2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso8/feature3/hapIncludeso8Feature3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testHapSo/hapIncludeso8/hapnoso4/hapnoso4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test1/internalOverlayTest1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test12/internalOverlayTest12.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test14/internalOverlayTest14.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test15/internalOverlayTest15.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test18/internalOverlayTest18.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test19/priority_101.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test2/priority_0.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test3/internalOverlayTest3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test4/internalOverlayTest4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test5/internalOverlayTest5.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/internal_overlay_install_test6/internalOverlayTest6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_entry/entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_entry/feature/entry_hapB.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_entry_fa_model/entry_fa.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_entry_higher_version/higher_version_entry_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_entry_higher_version/feature/higher_version_entry_hapB.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_entry_lower_version_fa/entry_fa_lower_version.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_feature/feature_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_feature1/feature1_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/systemtest/testOverlay/target_module_feature_higher_version/higher_version_feature_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_app_service/app_service_version1_library1/appService_v1_library1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_app_service/app_service_version1_library2/appService_v1_library2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_app_service/app_service_version2_library1/appService_v2_library1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_app_service/app_service_version2_library2/appService_v2_library2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_dependencies/dependencies_entry/dependencies_entry.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_dependencies/dependencies_entry_A/dependencies_entry_A.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_dependencies/dependencies_entry_B/dependencies_entry_B.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_dependencies/dependencies_entry_C/dependencies_entry_C.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_A/hsp_A.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_B/hsp_B.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_C/hsp_C.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_C2/hsp_C2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_hsp/hsp_entry/hsp_entry.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_kit/test/test.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_normal_hap/libA_normal_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_v10000/libA_v10000.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_v10001/libA_v10001.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_v10002/libA_v10002.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libA_without_provision/libA_without_provision.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_share_library/libB_v10001/libB_v10001.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_so/compressNativeLibsFalse/compressNativeLibsFalse01.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_so/compressNativeLibsFalse/feature/compressNativeLibsFalse02.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_so/compressNativeLibsTrue/compressNativeLibsTrue01.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/bundle_so/compressNativeLibsTrue/feature/compressNativeLibsTrue02.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/driver_test/high_version_non_driver_feature11/high_version_non_driver_feature11_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/driver_test/lower_version_driver_feature14/lower_version_driver_feature14_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/driver_test/lower_version_non_driver_feature12/lower_version_non_driver_feature12_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/install_daemon/right/right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/parse_bundle/new/new.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission1/bmsGrantPermission1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission3/bmsGrantPermission3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission4/bmsGrantPermission4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission6/bmsGrantPermission6.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/permission_bundle/bmsGrantPermission7/bmsGrantPermission7.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/backupTest/backupTest.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsAccessTokentest1/bmsAccessTokentest1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsAccessTokentest2/bmsAccessTokentest2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsAccessTokentest3/bmsAccessTokentest3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsThirdBundle1/bmsThirdBundle1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/bmsThirdBundle2/bmsThirdBundle2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/defaultAppTest/defaultAppTest.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/eighth_right/eighth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/eleventh_right/eleventh_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/fifteenth_right/fifteenth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/fifth_right/fifth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_diff_minCompCode/first_diff_minCompCode.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_diff_release_type/first_diff_release_type.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_right/first_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_right_compCode/first_right_compCode.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/first_right_with_diff_moduleType/first_right_with_diff_moduleType.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/fourteenth_right/fourteenth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/fourth_right/fourth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/moduleJsonTest/moduleJsonTest.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/ninth_right/ninth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestAplDown/otaUpdateTestAplDown.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestAplUp/otaUpdateTestAplUp.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestAppField/otaUpdateTestAppField.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestAppField2/otaUpdateTestAppField2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestBasis/otaUpdateTestBasis.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestBasis/feature1/otaUpdateTestBasisFeature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestBasis/feature2/otaUpdateTestBasisFeature2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestBasis2/otaUpdateTestBasis2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestModuleField/otaUpdateTestModuleField.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestSignaIcon/otaUpdateTestSignaIcon.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestSoChanged/otaUpdateTestSoChanged.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestSoChanged/feature1/otaUpdateTestSoChangedFeature1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/otaUpdateTestSoChanged/feature2/otaUpdateTestSoChangedFeature2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/resourceManagerTest/resourceManagerTest.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/rightTest/rightTest.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/rightTest1/rightTest1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/sandboxTest/sandboxTest.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/second_backup_right/second_backup_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/second_right/second_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/seventh_right/seventh_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/signatureTest/signatureTest.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/sixteenth_right/sixteenth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/sixth_right/sixth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/system_module/system_module.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/tenth_right/tenth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/third_right/third_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/thirteenth_right/thirteenth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/thumbnailTest/thumbnailTest.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/thumbnailTest2/thumbnailTest2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/twelfth_right/twelfth_right.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionNormalHapTest1/versionNormalHapTest1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionNormalHapTest2/versionNormalHapTest2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionTest1/versionTest1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionTest2/versionTest2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionTest3/versionTest3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionUpdateTest1/versionUpdateTest1.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionUpdateTest2/versionUpdateTest2.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionUpdateTest3/versionUpdateTest3.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/versionUpdateTest4/versionUpdateTest4.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_framework/test/sceneProject/unittest/test_bundle/wrong_bundle_name/wrong_bundle_name.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/bundle_tool/test/sceneProject/tools/bm/test_app_one/test_app_one.stamp
+ninja: warning: multiple rules generate obj/foundation/bundlemanager/distributed_bundle_framework/services/dbms/test/sceneProject/unittest/system_module/distributed_system_module.stamp
+ninja: warning: multiple rules generate obj/foundation/communication/wifi/wifi/application/portal_login/portal_login_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/test/native/resource/datashare_ext_bundle/datashare_ext_native.stamp
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/test/native/resource/datashareproxy_bundle/proxydatas_with_permission_native.stamp
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/test/native/resource/errorcode_ext_bundle/errorcode_ext_native.stamp
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/call_reporter.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/datashare_abs_result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/datashare_itypes_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/datashare_result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/datashare_string_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/datashare_template.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/datashare_uri_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/ikvstore_data_service.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/ishared_result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/common/src/DataShareHelperImplTest/ishared_result_set_proxy.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/controller/provider/src/DataShareHelperImplTest/ext_special_controller.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/controller/service/src/DataShareHelperImplTest/general_controller_service_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/controller/service/src/DataShareHelperImplTest/persistent_data_controller.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/controller/service/src/DataShareHelperImplTest/published_data_controller.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/src/DataShareHelperImplTest/datashare_connection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/src/DataShareHelperImplTest/datashare_helper.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/src/DataShareHelperImplTest/datashare_helper_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/src/DataShareHelperImplTest/datashare_proxy.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/consumer/src/DataShareHelperImplTest/datashare_sa_connection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/proxy/src/DataShareHelperImplTest/ams_mgr_proxy.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/proxy/src/DataShareHelperImplTest/data_proxy_observer_stub.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/proxy/src/DataShareHelperImplTest/data_share_manager_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/proxy/src/DataShareHelperImplTest/data_share_service_proxy.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/proxy/src/DataShareHelperImplTest/idata_share_client_death_observer.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/proxy/src/DataShareHelperImplTest/published_data_subscriber_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/proxy/src/DataShareHelperImplTest/rdb_subscriber_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/frameworks/native/proxy/src/DataShareHelperImplTest/proxy_data_subscriber_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/test/unittest/native/resource/datashare_ext_bundle/datashare_ext.stamp
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/test/unittest/native/resource/datashare_proxy_bundle/proxydatas_with_permission.stamp
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/data_share/test/unittest/native/resource/errorcode_ext_bundle/errorcode_ext.stamp
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/collection_option.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/db_config.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/grd_api_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/json_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/os_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/common/src/src_file/rd_log_print.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/base/src_file/grd_db_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/check_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_document_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/document/src_file/grd_resultset_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/executor/kv/src_file/grd_kv_api_inner.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/collection.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/doc_errno.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_key.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/document_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/projection_tree.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/interface/src/src_file/result_set_common.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/kv_store_manager.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_json_object.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/rd_sqlite_utils.o
+ninja: warning: multiple rules generate obj/foundation/distributeddatamgr/kv_store/frameworks/libs/distributeddb/gaussdb_rd/src/oh_adapter/src/src_file/sqlite_store_executor_impl.o
+ninja: warning: multiple rules generate obj/foundation/distributedhardware/distributed_hardware_fwk/application/DHardware_UI.stamp
+ninja: warning: multiple rules generate obj/foundation/filemanagement/user_file_service/services/file_extension_hap/external_file_manager_hap.stamp
+ninja: warning: multiple rules generate obj/foundation/graphic/graphic_2d/rosen/test/render_service/render_service/unittest/pipeline/rs_test_common/rs_test_util.o
+ninja: warning: multiple rules generate obj/foundation/graphic/graphic_2d/rosen/test/render_service/render_service/unittest/pipeline/rs_test_common/rs_test_util.o
+ninja: warning: multiple rules generate obj/foundation/graphic/graphic_2d/rosen/test/render_service/render_service/unittest/pipeline/rs_test_common/rs_test_util.o
+ninja: warning: multiple rules generate obj/foundation/multimedia/av_codec/services/engine/codeclist/av_codec_engine_codeclist_mock/audio_codeclist_info.o
+ninja: warning: multiple rules generate obj/foundation/multimedia/av_codec/services/engine/codeclist/av_codec_engine_codeclist_mock/codec_ability_singleton.o
+ninja: warning: multiple rules generate obj/foundation/multimedia/av_codec/services/engine/codeclist/av_codec_engine_codeclist_mock/codeclist_builder.o
+ninja: warning: multiple rules generate obj/foundation/multimedia/av_codec/services/media_engine/plugins/ffmpeg_adapter/common/av_codec_engine_codeclist_mock/hdi_codec.o
+ninja: warning: multiple rules generate obj/foundation/systemabilitymgr/selectionfwk/test/unittest/PerformanceTest/performanceTest.stamp
+ninja: warning: multiple rules generate obj/third_party/skia/m133/modules/skcms/skcms/skcms.o
+ninja: warning: multiple rules generate obj/third_party/skia/m133/modules/skcms/src/skcms/skcms_TransformBaseline.o
+ninja: warning: multiple rules generate ohos_ets/build-tools/driver/build-system
+ninja: warning: multiple rules generate ohos_ets/build-tools/ets2panda/lib/etsstdlib.abc
+ninja: warning: multiple rules generate ohos_ets/build-tools/ets2panda/lib/stdlib
+ninja: warning: multiple rules generate ohos_ets/build-tools/ets2panda/bin/ark_link
+ninja: warning: multiple rules generate ohos_ets/build-tools/ets2panda/bin/es2panda
+ninja: warning: multiple rules generate ohos_ets/build-tools/ets2panda/lib/libes2panda_public.so
+ninja: warning: multiple rules generate ohos_ets/api
+ninja: warning: multiple rules generate ohos_ets/arkts
+ninja: warning: multiple rules generate ohos_ets/kits
+ninja: warning: multiple rules generate ohos_static/api
+ninja: warning: multiple rules generate ohos_static/api/@internal/full
+ninja: warning: multiple rules generate ohos_static/arkts
+ninja: warning: multiple rules generate ohos_static/kits
+obj/third_party/css-what/css_what_sources.stamp:
+  input: stamp
+    obj/third_party/jsframework/runtime
+  outputs:
+    obj/base/hiviewdfx/hichecker/interfaces/js/kits/napi/js_leak_watcher/jsleakwatchernative/js_leak_watcher_napi.o
+    obj/base/hiviewdfx/hichecker/test/JsLeakWatcherNapiTest.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_badge.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_bubble.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_button.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_calendarpicker.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_canvas.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_checkbox.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_containerreader.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_counter.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_datapanel.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_datepicker.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_dialog.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_dynamiclayout.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_folderstack.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_gauge.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_grid.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_gridlayout.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_hyperlink.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_imageanimator.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_indexer.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_lazycolumnlayout.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_lazygridlayout.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_lazywaterflowlayout.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_linearsplit.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_loadingprogress.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_marquee.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_menu.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_navigator.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_panel.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_patternlock.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_progress.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_qrcode.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_radio.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_rating.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_refresh.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_relativecontainer.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_richeditor.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_search.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_select.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_shape.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_sheet.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_sidebar.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_slider.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_spacing.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_span.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_stepper.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_symbol.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_tabswiper.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_textclock.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_textfield.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_textpicker.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_texttimer.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_timepicker.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_toggle.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_toolbaritem.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_video.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_waterflow.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/build/arkui_xcomponent.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/adapter/ohos/entrance/pa_engine/engine/js_pa_engine_ark_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/advanced_ui_component/chip.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/advanced_ui_component/dialog.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/advanced_ui_component/segmentbuttonv2.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/advanced_ui_component/chip/interfaces/chip_static_ohos/chip.o
+    obj/foundation/arkui/ace_engine/advanced_ui_component/datepickercomponent/interfaces/datepickercomponent_static_ohos/datepickercomponent.o
+    obj/foundation/arkui/ace_engine/advanced_ui_component/dialog/interfaces/dialog_static_ohos/dialog.o
+    obj/foundation/arkui/ace_engine/advanced_ui_component/navpushpathhelper/navpushpathhelper.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/advanced_ui_component/segmentbuttonv2/interfaces/segmentbuttonv2_static_ohos/segmentbuttonv2.o
+    obj/foundation/arkui/ace_engine/build/libace_compatible.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/build/libace_compatible_components.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/build/libace_engine_pa_ark.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/build/libace_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/component_ext/arc_alphabet_indexer/arcalphabetindexer.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/component_ext/arc_list/arclist.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/component_ext/arc_scroll_bar/arcscrollbar.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/component_ext/arc_swiper/arcswiper.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/component_ext/movingphoto/movingphotoview.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/component_ext/movingphoto_ani/movingphotoview_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/frameworks/bridge/arkts_frontend/arkts_frontend.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/frameworks/bridge/arkts_frontend/koala_projects/arkoala-arkts/arkui-ohos/src/ani/native/custom/arkuicustomnode_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/frameworks/bridge/arkts_frontend/koala_projects/arkoala-arkts/arkui-ohos/src/ani/native/ui_extension/arkuiuiextension_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/frameworks/bridge/cj_frontend/cj_frontend_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/frameworks/bridge/js_frontend/engine/common/js_engine_ark_ohos/js_engine.o
+    obj/foundation/arkui/ace_engine/frameworks/bridge/js_frontend/engine/jsi/js_engine_bridge_ark_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/frameworks/bridge/js_frontend/engine/jsi/js_engine_bridge_ark_ohos.stamp
+    obj/foundation/arkui/ace_engine/frameworks/core/components_ng/pattern/patternlock/components_plugins_patternlock_source_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/frameworks/core/components_ng/pattern/qrcode/components_plugins_qrcode_source_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/frameworks/core/components_ng/pattern/relative_container/components_plugins_relative_container_source_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/animator/src/animator_ani/animator.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/componentSnapshot/src/componentSnapshot_ani/componentSnapshot.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/componentUtils/src/componentUtils_ani/componentUtils.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/curves/curves_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/displaySync/src/display_sync_ani/display_sync.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/focuscontroller/src/focusController_ani/focusController.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/imagecache/src/imagecache_ani/imagecache.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/inspector/inspector_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/matrix4/src/matrix4_ani/matrix4.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/mediaquery/src/mediaquery_ani/mediaquery.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/observer/src/observer_ani/observer.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/ohosprompt/src/prompt_ani/prompt.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/overlayManager/overlayManager_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/performanceMonitor/src/performanceMonitor_ani/performanceMonitor.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/pluginComponent/pluginComponent_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/promptaction/promptAction_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/shape/shape_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/smartgesturecontroller/smartGestureController_ani.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/systemprompt/src/systemprompt_ani/systemprompt.o
+    obj/foundation/arkui/ace_engine/interfaces/ets/ani/test/src/test_ani/test.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/animator.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/atomicservicebar.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/colorsampler.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/componentsnapshot.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/componentutils.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/configuration.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/containerutils.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/device.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/displaysync.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/dragcontroller.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/focuscontroller.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/font.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/grid.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/inspector.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/luminancesampler.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/measure.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/mediaquery.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/observer.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/overlay.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/performancemonitor.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/prompt.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/promptaction.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/router.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/smartgesturecontroller.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/textmenucontroller.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/uimaterial.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/animator/animator_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/atomic_service_bar/atomicservicebar_static_ohos/js_atomic_service_bar.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/color_sampler/colorsampler_static_ohos/js_color_sampler.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/component_snapshot/componentsnapshot_static_ohos/js_component_snapshot.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/componentutils/componentutils_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/configuration/configuration_static_ohos/js_configuration.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/container_utils/containerutils_static_ohos/js_container_utils.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/device/device_static_ohos/js_device.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/dialog/dialog_napi.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/dialog/napi_dialog_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/display_sync/displaysync_static_ohos/js_display_sync.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/drag_controller/dragcontroller_static_ohos/js_drag_controller.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/focus_controller/focuscontroller_static_ohos/js_focus_controller.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/font/font_static_ohos/js_font.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/grid/grid_static_ohos/js_grid.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/inspector/inspector_static_ohos/js_inspector.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/intelligence/image_generation/imagegeneration.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/intelligence/image_generation/imagegeneration_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/luminance_sampler/luminancesampler_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/measure/measure_static_ohos/js_measure.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/mediaquery/mediaquery_static_ohos/js_media_query.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/observer/observer_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/overlay/overlay_static_ohos/js_overlay.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/performancemonitor/performancemonitor_static_ohos/napi_perf_monitor.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/plugincomponent/plugincomponent.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/prompt/prompt_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/promptaction/promptaction_static_ohos.inputdeps.stamp
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/router/router_static_ohos/js_router.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/smart_gesture_controller/smartgesturecontroller_static_ohos/js_smart_gesture_controller.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/text_menu_controller/textmenucontroller_static_ohos/js_text_menu_controller.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/ui_material/uimaterial_static_ohos/ui_material_napi.o
+    obj/foundation/arkui/ace_engine/interfaces/napi/kits/utils/napi_utils_static_ohos/napi_utils.o
+    obj/third_party/css-what/css_what_sources_info_install_info.stamp
+    obj/third_party/jsframework/dist/strip.native.min.js
+    css_what_sources
+    third_party/css-what:css_what_sources
+    all
