@@ -1,0 +1,21 @@
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.o
+*.a
+*.so
+*.dll
+*.exe
+.env
+*.pem
+*.key
+id_ed25519
+id_ed25519_*
+out/
+build_out/
+prebuilts/
+.repo/
+
+# 本项目保留远程构建日志作为问题复现和修复验证材料，不忽略 *.log。

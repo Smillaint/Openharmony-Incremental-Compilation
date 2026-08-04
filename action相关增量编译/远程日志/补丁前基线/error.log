@@ -1,0 +1,64 @@
+[122685/124282] ACTION //out/rk3568/build_configs/advertising/oaid:oaid(//build/toolchain/ohos:ohos_clang_arm)
+FAILED: [code=2] obj/out/rk3568/build_configs/advertising/oaid/oaid_install_modules.json obj/out/rk3568/build_configs/advertising/oaid/oaid_dep_modules.json 
+/usr/bin/env ../../build/ohos/generate_part_info.py --depfile gen/out/rk3568/build_configs/advertising/oaid/oaid.d --part-name oaid --origin-part-name oaid --input-file gen/out/rk3568/build_configs/advertising/oaid/oaid_modules.json --sdk-modules-info-file gen/out/rk3568/build_configs/advertising/oaid/oaid_sdk_install_modules.json --output-install-file obj/out/rk3568/build_configs/advertising/oaid/oaid_install_modules.json --output-deps-file obj/out/rk3568/build_configs/advertising/oaid/oaid_dep_modules.json --output-host-file obj/out/rk3568/build_configs/advertising/oaid/oaid_host_modules.json --current-toolchain //build/toolchain/ohos:ohos_clang_arm --host-toolchain //build/toolchain/linux:clang_x64
+../../build/ohos/generate_part_info.py: line 16: import: command not found
+../../build/ohos/generate_part_info.py: line 17: import: command not found
+../../build/ohos/generate_part_info.py: line 18: import: command not found
+../../build/ohos/generate_part_info.py: line 20: syntax error near unexpected token `os.path.dirname'
+../../build/ohos/generate_part_info.py: line 20: `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))'
+[122686/124282] ACTION //out/rk3568/build_configs/account/os_account:os_account(//build/toolchain/ohos:ohos_clang_arm)
+FAILED: [code=2] obj/out/rk3568/build_configs/account/os_account/os_account_install_modules.json obj/out/rk3568/build_configs/account/os_account/os_account_dep_modules.json 
+/usr/bin/env ../../build/ohos/generate_part_info.py --depfile gen/out/rk3568/build_configs/account/os_account/os_account.d --part-name os_account --origin-part-name os_account --input-file gen/out/rk3568/build_configs/account/os_account/os_account_modules.json --sdk-modules-info-file gen/out/rk3568/build_configs/account/os_account/os_account_sdk_install_modules.json --output-install-file obj/out/rk3568/build_configs/account/os_account/os_account_install_modules.json --output-deps-file obj/out/rk3568/build_configs/account/os_account/os_account_dep_modules.json --output-host-file obj/out/rk3568/build_configs/account/os_account/os_account_host_modules.json --current-toolchain //build/toolchain/ohos:ohos_clang_arm --host-toolchain //build/toolchain/linux:clang_x64
+../../build/ohos/generate_part_info.py: line 16: import: command not found
+../../build/ohos/generate_part_info.py: line 17: import: command not found
+../../build/ohos/generate_part_info.py: line 18: import: command not found
+../../build/ohos/generate_part_info.py: line 20: syntax error near unexpected token `os.path.dirname'
+../../build/ohos/generate_part_info.py: line 20: `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))'
+[122687/124282] ACTION //out/rk3568/build_configs/applications/auth_widget:auth_widget(//build/toolchain/ohos:ohos_clang_arm)
+FAILED: [code=2] obj/out/rk3568/build_configs/applications/auth_widget/auth_widget_install_modules.json obj/out/rk3568/build_configs/applications/auth_widget/auth_widget_dep_modules.json 
+/usr/bin/env ../../build/ohos/generate_part_info.py --depfile gen/out/rk3568/build_configs/applications/auth_widget/auth_widget.d --part-name auth_widget --origin-part-name auth_widget --input-file gen/out/rk3568/build_configs/applications/auth_widget/auth_widget_modules.json --sdk-modules-info-file gen/out/rk3568/build_configs/applications/auth_widget/auth_widget_sdk_install_modules.json --output-install-file obj/out/rk3568/build_configs/applications/auth_widget/auth_widget_install_modules.json --output-deps-file obj/out/rk3568/build_configs/applications/auth_widget/auth_widget_dep_modules.json --output-host-file obj/out/rk3568/build_configs/applications/auth_widget/auth_widget_host_modules.json --current-toolchain //build/toolchain/ohos:ohos_clang_arm --host-toolchain //build/toolchain/linux:clang_x64
+../../build/ohos/generate_part_info.py: line 16: import: command not found
+../../build/ohos/generate_part_info.py: line 17: import: command not found
+../../build/ohos/generate_part_info.py: line 18: import: command not found
+../../build/ohos/generate_part_info.py: line 20: syntax error near unexpected token `os.path.dirname'
+../../build/ohos/generate_part_info.py: line 20: `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))'
+[122688/124282] ACTION //out/rk3568/build_configs/ai/neural_network_runtime:neural_network_runtime(//build/toolchain/ohos:ohos_clang_arm)
+FAILED: [code=2] obj/out/rk3568/build_configs/ai/neural_network_runtime/neural_network_runtime_install_modules.json obj/out/rk3568/build_configs/ai/neural_network_runtime/neural_network_runtime_dep_modules.json 
+/usr/bin/env ../../build/ohos/generate_part_info.py --depfile gen/out/rk3568/build_configs/ai/neural_network_runtime/neural_network_runtime.d --part-name neural_network_runtime --origin-part-name neural_network_runtime --input-file gen/out/rk3568/build_configs/ai/neural_network_runtime/neural_network_runtime_modules.json --sdk-modules-info-file gen/out/rk3568/build_configs/ai/neural_network_runtime/neural_network_runtime_sdk_install_modules.json --output-install-file obj/out/rk3568/build_configs/ai/neural_network_runtime/neural_network_runtime_install_modules.json --output-deps-file obj/out/rk3568/build_configs/ai/neural_network_runtime/neural_network_runtime_dep_modules.json --output-host-file obj/out/rk3568/build_configs/ai/neural_network_runtime/neural_network_runtime_host_modules.json --current-toolchain //build/toolchain/ohos:ohos_clang_arm --host-toolchain //build/toolchain/linux:clang_x64
+../../build/ohos/generate_part_info.py: line 16: import: command not found
+../../build/ohos/generate_part_info.py: line 17: import: command not found
+../../build/ohos/generate_part_info.py: line 18: import: command not found
+../../build/ohos/generate_part_info.py: line 20: syntax error near unexpected token `os.path.dirname'
+../../build/ohos/generate_part_info.py: line 20: `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))'
+[122689/124282] ACTION //out/rk3568/build_configs/ability/ability_base:ability_base(//build/toolchain/ohos:ohos_clang_arm)
+FAILED: [code=2] obj/out/rk3568/build_configs/ability/ability_base/ability_base_install_modules.json obj/out/rk3568/build_configs/ability/ability_base/ability_base_dep_modules.json 
+/usr/bin/env ../../build/ohos/generate_part_info.py --depfile gen/out/rk3568/build_configs/ability/ability_base/ability_base.d --part-name ability_base --origin-part-name ability_base --input-file gen/out/rk3568/build_configs/ability/ability_base/ability_base_modules.json --sdk-modules-info-file gen/out/rk3568/build_configs/ability/ability_base/ability_base_sdk_install_modules.json --output-install-file obj/out/rk3568/build_configs/ability/ability_base/ability_base_install_modules.json --output-deps-file obj/out/rk3568/build_configs/ability/ability_base/ability_base_dep_modules.json --output-host-file obj/out/rk3568/build_configs/ability/ability_base/ability_base_host_modules.json --current-toolchain //build/toolchain/ohos:ohos_clang_arm --host-toolchain //build/toolchain/linux:clang_x64
+../../build/ohos/generate_part_info.py: line 16: import: command not found
+../../build/ohos/generate_part_info.py: line 17: import: command not found
+../../build/ohos/generate_part_info.py: line 18: import: command not found
+../../build/ohos/generate_part_info.py: line 20: syntax error near unexpected token `os.path.dirname'
+../../build/ohos/generate_part_info.py: line 20: `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))'
+[122690/124282] ACTION //out/rk3568/build_configs/ability/form_fwk:form_fwk(//build/toolchain/ohos:ohos_clang_arm)
+FAILED: [code=2] obj/out/rk3568/build_configs/ability/form_fwk/form_fwk_install_modules.json obj/out/rk3568/build_configs/ability/form_fwk/form_fwk_dep_modules.json 
+/usr/bin/env ../../build/ohos/generate_part_info.py --depfile gen/out/rk3568/build_configs/ability/form_fwk/form_fwk.d --part-name form_fwk --origin-part-name form_fwk --input-file gen/out/rk3568/build_configs/ability/form_fwk/form_fwk_modules.json --sdk-modules-info-file gen/out/rk3568/build_configs/ability/form_fwk/form_fwk_sdk_install_modules.json --output-install-file obj/out/rk3568/build_configs/ability/form_fwk/form_fwk_install_modules.json --output-deps-file obj/out/rk3568/build_configs/ability/form_fwk/form_fwk_dep_modules.json --output-host-file obj/out/rk3568/build_configs/ability/form_fwk/form_fwk_host_modules.json --current-toolchain //build/toolchain/ohos:ohos_clang_arm --host-toolchain //build/toolchain/linux:clang_x64
+../../build/ohos/generate_part_info.py: line 16: import: command not found
+../../build/ohos/generate_part_info.py: line 17: import: command not found
+../../build/ohos/generate_part_info.py: line 18: import: command not found
+../../build/ohos/generate_part_info.py: line 20: syntax error near unexpected token `os.path.dirname'
+../../build/ohos/generate_part_info.py: line 20: `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))'
+[122691/124282] ACTION //out/rk3568/build_configs/advertising/advertising:advertising(//build/toolchain/ohos:ohos_clang_arm)
+FAILED: [code=2] obj/out/rk3568/build_configs/advertising/advertising/advertising_install_modules.json obj/out/rk3568/build_configs/advertising/advertising/advertising_dep_modules.json 
+/usr/bin/env ../../build/ohos/generate_part_info.py --depfile gen/out/rk3568/build_configs/advertising/advertising/advertising.d --part-name advertising --origin-part-name advertising --input-file gen/out/rk3568/build_configs/advertising/advertising/advertising_modules.json --sdk-modules-info-file gen/out/rk3568/build_configs/advertising/advertising/advertising_sdk_install_modules.json --output-install-file obj/out/rk3568/build_configs/advertising/advertising/advertising_install_modules.json --output-deps-file obj/out/rk3568/build_configs/advertising/advertising/advertising_dep_modules.json --output-host-file obj/out/rk3568/build_configs/advertising/advertising/advertising_host_modules.json --current-toolchain //build/toolchain/ohos:ohos_clang_arm --host-toolchain //build/toolchain/linux:clang_x64
+../../build/ohos/generate_part_info.py: line 16: import: command not found
+../../build/ohos/generate_part_info.py: line 17: import: command not found
+../../build/ohos/generate_part_info.py: line 18: import: command not found
+../../build/ohos/generate_part_info.py: line 20: syntax error near unexpected token `os.path.dirname'
+../../build/ohos/generate_part_info.py: line 20: `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))'
+[122692/124282] ACTION //out/rk3568/build_configs/ability/idl_tool:idl_tool(//build/toolchain/ohos:ohos_clang_arm)
+FAILED: [code=2] obj/out/rk3568/build_configs/ability/idl_tool/idl_tool_install_modules.json obj/out/rk3568/build_configs/ability/idl_tool/idl_tool_dep_modules.json 
+/usr/bin/env ../../build/ohos/generate_part_info.py --depfile gen/out/rk3568/build_configs/ability/idl_tool/idl_tool.d --part-name idl_tool --origin-part-name idl_tool --input-file gen/out/rk3568/build_configs/ability/idl_tool/idl_tool_modules.json --sdk-modules-info-file gen/out/rk3568/build_configs/ability/idl_tool/idl_tool_sdk_install_modules.json --output-install-file obj/out/rk3568/build_configs/ability/idl_tool/idl_tool_install_modules.json --output-deps-file obj/out/rk3568/build_configs/ability/idl_tool/idl_tool_dep_modules.json --output-host-file obj/out/rk3568/build_configs/ability/idl_tool/idl_tool_host_modules.json --current-toolchain //build/toolchain/ohos:ohos_clang_arm --host-toolchain //build/toolchain/linux:clang_x64
+../../build/ohos/generate_part_info.py: line 16: import: command not found
+../../build/ohos/generate_part_info.py: line 17: import: command not found
+../../build/ohos/generate_part_info.py: line 18: import: command not found
+../../build/ohos/generate_part_info.py: line 20: syntax error near unexpected token `os.path.dirname'
+../../build/ohos/generate_part_info.py: line 20: `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))'

@@ -1,0 +1,22 @@
+#
+airscan_action
+脚本位置
+third_party/sane-airscan/BUILD.gn、patch_install.py
+问题
+声明的 gen 输出根本没有生成；
+脚本修改源码目录，并吞掉 patch 失败
+
+
+#gen_snapshot
+脚本位置
+third_party/jsframework/BUILD.gn:29、js_framework_build.sh
+问题
+脚本每次复制完整 runtime/node_modules、重新生成 JS，
+并清理工作目录，输出 mtime 被刷新
+
+#
+ark_jsf
+脚本位置
+third_party/jsframework/BUILD.gn:258、build/config/components/ets_frontend/es2abc_config.gni:51
+问题
+输入 strip.native.min.js 被 gen_snapshot 更新
