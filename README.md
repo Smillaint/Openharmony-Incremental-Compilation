@@ -16,6 +16,7 @@
 | `action相关增量编译/远程日志/补丁前基线/` | 修改前的 `build.log`、`error.log` 和 `.ninja_log` |
 | `action相关增量编译/远程日志/补丁后验证/` | 补丁构建、问题定位和最终零改动验证日志 |
 | `docs/build-action-incremental.md` | `build` 仓 SA Profile、packages 综合实验和剩余 Action 状态 |
+| `docs/parallel-analysis-prompt.md` | 供另一台主机并行分析使用的完整提示词和操作约束 |
 | `SSH远程.md` | SSH、文件传输、日志读取和人工编译操作说明 |
 
 ## 修复目标
