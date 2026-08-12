@@ -17,6 +17,8 @@
 | `action相关增量编译/远程日志/补丁后验证/` | 补丁构建、问题定位和最终零改动验证日志 |
 | `docs/build-action-incremental.md` | `build` 仓 SA Profile、packages 综合实验和剩余 Action 状态 |
 | `docs/parallel-analysis-prompt.md` | 供另一台主机并行分析使用的完整提示词和操作约束 |
+| `docs/recent-build-prs-20260812.md` | 最近两个 `build` PR（SA Profile 与 HAP signing）的修改、验证结果和后续分析方向 |
+| `docs/current-project-handoff.md` | 截至 2026-08-12 的统一交接提示词、PR 状态、待办清单和 GN/Ninja/restat 验证方法 |
 | `SSH远程.md` | SSH、文件传输、日志读取和人工编译操作说明 |
 
 ## 修复目标
