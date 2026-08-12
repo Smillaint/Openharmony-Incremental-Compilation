@@ -10,6 +10,7 @@
 - PR：<https://gitcode.com/openharmony/build/merge_requests/6965>
 - fork 分支：<https://gitcode.com/SmillySmillick/build/tree/codex/fix-sa-profile-incremental-build>
 - 提交：`0d530d7eb691276cd27d7109b1155a21c6c0c1cc`
+- 完整代码补丁：[sa-profile-incremental-0d530d7e.patch](../patches/build/sa-profile-incremental-0d530d7e.patch)
 - 标题：`Stabilize SA profile incremental outputs`
 - DCO：已包含 `Signed-off-by`
 
@@ -147,6 +148,7 @@ merged_sa_profile.zip          2026-08-06 09:30:28
 - 相关 Issue：<https://gitcode.com/openharmony/build/issues/4663>
 - fork 分支：<https://gitcode.com/SmillySmillick/build/tree/fix-hap-sign-incremental-build>
 - fork 提交：`34aa8cba Fix incremental HAP signing outputs`
+- 完整代码补丁：[hap-signing-incremental-34aa8cba.patch](../patches/build/hap-signing-incremental-34aa8cba.patch)
 - 正式补丁等价提交：`656140e1`
 - 整仓验证提交：`0dad9413`
 
