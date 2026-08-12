@@ -146,7 +146,9 @@ app_sign_pr_dry_run_console.log
 - 仓库：<https://github.com/Smillaint/Openharmony-Incremental-Compilation>
 - 本地目录：`D:\workspace\Openharmony-Incremental-Compilation`
 - 当前本地分支：`agent/document-action-incremental-fixes`
-- 当前远端 `main` 仍停在初始化提交；现有文档提交位于上述功能分支，尚未合并到 `main`。
+- 当前远端 `main` 已包含最近两个 `build` PR 的分析文档和从本地 fork 正式提交导出的完整补丁。
+
+最新统一交接入口：`docs/incremental-build-handoff-20260812.md`。
 
 该日志仓此前缺少最近的 validator、SA query 验证、HAP signing 和 `-n/restat` 方法，本文件用于补齐统一交接信息。
 
