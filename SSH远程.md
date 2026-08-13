@@ -6,7 +6,7 @@
 服务器：119.3.182.128
 SSH 端口：42247
 用户：root
-本地私钥：D:\workspace\id_ed25519
+本地私钥：C:\Users\31854\.ssh\id_ed25519
 远端 OpenHarmony 源码：/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code
 远端 Git 精简仓库：/srv/workspace/github_upload/action_incremental_fixes
 ```
@@ -16,7 +16,7 @@ SSH 端口：42247
 ### 2.1 基本连接
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" root@119.3.182.128
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" root@119.3.182.128
 ```
 
 连接成功后，当前 PowerShell 会进入远端 Linux 终端。可以执行：
@@ -53,7 +53,7 @@ yes
 自动接受新主机指纹：
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" `
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" `
   -o StrictHostKeyChecking=accept-new `
   root@119.3.182.128
 ```
@@ -63,7 +63,7 @@ ssh -p 42247 -i "D:\workspace\id_ed25519" `
 ### 2.3 非交互连接测试
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" `
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" `
   -o BatchMode=yes `
   -o ConnectTimeout=15 `
   root@119.3.182.128 "whoami; hostname; pwd"
@@ -149,7 +149,7 @@ less third_party/sane-airscan/BUILD.gn
 在本地 PowerShell 执行：
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" root@119.3.182.128 `
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" root@119.3.182.128 `
   "sed -n '1,120p' /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/third_party/sane-airscan/BUILD.gn"
 ```
 
@@ -243,7 +243,7 @@ find third_party/sane-airscan \
 ### 7.1 下载单个文件
 
 ```powershell
-scp -P 42247 -i "D:\workspace\id_ed25519" `
+scp -P 42247 -i "C:\Users\31854\.ssh\id_ed25519" `
   "root@119.3.182.128:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/third_party/sane-airscan/BUILD.gn" `
   "D:\zlby\BUILD.gn"
 ```
@@ -253,7 +253,7 @@ scp -P 42247 -i "D:\workspace\id_ed25519" `
 ### 7.2 下载目录
 
 ```powershell
-scp -P 42247 -i "D:\workspace\id_ed25519" -r `
+scp -P 42247 -i "C:\Users\31854\.ssh\id_ed25519" -r `
   "root@119.3.182.128:/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/third_party/sane-airscan" `
   "D:\zlby\remote_source"
 ```
@@ -265,7 +265,7 @@ scp -P 42247 -i "D:\workspace\id_ed25519" -r `
 ### 8.1 上传单个文件
 
 ```powershell
-scp -P 42247 -i "D:\workspace\id_ed25519" `
+scp -P 42247 -i "C:\Users\31854\.ssh\id_ed25519" `
   "D:\workspace\README.md" `
   "root@119.3.182.128:/srv/workspace/github_upload/action_incremental_fixes/README.md"
 ```
@@ -273,7 +273,7 @@ scp -P 42247 -i "D:\workspace\id_ed25519" `
 ### 8.2 上传目录
 
 ```powershell
-scp -P 42247 -i "D:\workspace\id_ed25519" -r `
+scp -P 42247 -i "C:\Users\31854\.ssh\id_ed25519" -r `
   "D:\workspace\修改后脚本" `
   "root@119.3.182.128:/srv/workspace/github_upload/action_incremental_fixes/"
 ```
@@ -314,14 +314,14 @@ rsync -anv \
 ### 10.1 执行单条命令
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" root@119.3.182.128 `
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" root@119.3.182.128 `
   "cd /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code && git status --short"
 ```
 
 ### 10.2 执行多条命令
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" root@119.3.182.128 `
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" root@119.3.182.128 `
   "cd /srv/workspace/github_upload/action_incremental_fixes; git status --short; git log -3 --oneline"
 ```
 
@@ -345,6 +345,7 @@ cd /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/cod
 
 ```bash
 prebuilts/build-tools/linux-x86/bin/ninja \
+  -w dupbuild=warn \
   -C out/rk3568 \
   -n \
   -d explain \
@@ -355,6 +356,7 @@ prebuilts/build-tools/linux-x86/bin/ninja \
 
 ```bash
 prebuilts/build-tools/linux-x86/bin/ninja \
+  -w dupbuild=warn \
   -C out/rk3568 \
   -t query \
   '目标输出路径'
@@ -415,12 +417,56 @@ GIT_SSH_COMMAND='ssh -i /root/.ssh/id_ed25519_github_openharmony -o IdentitiesOn
 
 这里引用的是远端私钥路径，不能执行 `cat /root/.ssh/id_ed25519_github_openharmony`，也不能把该私钥复制进仓库。
 
+### 12.1 虚拟机通过 SSH 访问 GitCode fork
+
+2026-08-13 已在 GitCode 账号 `SmillySmillick` 登记虚拟机构建密钥，名称为：
+
+```text
+openharmony-build-server
+```
+
+虚拟机对应私钥路径：
+
+```text
+/root/.ssh/id_ed25519_github_openharmony
+```
+
+packing_tool 仓已使用仓库级 SSH 配置，不影响其他仓库：
+
+```bash
+cd /srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/developtools/packing_tool
+
+git config --get core.sshCommand
+git remote -v
+git ls-remote fork refs/heads/master
+```
+
+预期配置：
+
+```text
+core.sshCommand = ssh -i /root/.ssh/id_ed25519_github_openharmony -o IdentitiesOnly=yes
+fork = git@gitcode.com:SmillySmillick/developtools_packing_tool.git
+```
+
+认证测试：
+
+```bash
+ssh -T \
+  -i /root/.ssh/id_ed25519_github_openharmony \
+  -o IdentitiesOnly=yes \
+  git@gitcode.com
+```
+
+GitCode 返回欢迎信息即认证成功；Git 托管服务不提供交互 Shell，命令退出码不一定为零。
+
+不得读取、复制、上传或提交 `/root/.ssh/id_ed25519_github_openharmony`。仓库中只能记录密钥路径和配置方式。
+
 ## 13. 保持 SSH 会话稳定
 
 连接时启用客户端保活：
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" `
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" `
   -o ServerAliveInterval=30 `
   -o ServerAliveCountMax=6 `
   root@119.3.182.128
@@ -486,7 +532,7 @@ export LC_ALL=C.UTF-8
 检查：
 
 ```powershell
-ssh -vvv -p 42247 -i "D:\workspace\id_ed25519" root@119.3.182.128
+ssh -vvv -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" root@119.3.182.128
 ```
 
 常见原因：
@@ -500,7 +546,7 @@ ssh -vvv -p 42247 -i "D:\workspace\id_ed25519" root@119.3.182.128
 可强制只使用指定密钥：
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" `
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" `
   -o IdentitiesOnly=yes `
   root@119.3.182.128
 ```
@@ -531,7 +577,7 @@ ssh-keygen -R "[119.3.182.128]:42247"
 远程检查：
 
 ```powershell
-ssh -p 42247 -i "D:\workspace\id_ed25519" root@119.3.182.128 `
+ssh -p 42247 -i "C:\Users\31854\.ssh\id_ed25519" root@119.3.182.128 `
   "test -f /绝对路径/文件 && echo EXISTS"
 ```
 

@@ -1,5 +1,7 @@
 # OpenHarmony Action 增量编译项目交接与分析指南
 
+> 当前状态已经更新到 2026-08-13。新会话请优先阅读 [incremental-build-handoff-20260813.md](incremental-build-handoff-20260813.md)。本文保留 2026-08-12 及以前的历史分析和方法说明。
+
 本文用于把当前 OpenHarmony Action 增量编译工作的完整上下文交给新的分析会话或另一台主机。内容截至 **2026-08-12**。
 
 开始工作前先通读全文。不得只看到日志末尾的 `xx is dirty` 就直接修改对应 Action；必须找到最早的直接 dirty 原因，并区分真实重建、输出缺失、内容变化、mtime 漂移、depfile 问题和上游派生 dirty。
@@ -148,7 +150,7 @@ app_sign_pr_dry_run_console.log
 - 当前本地分支：`agent/document-action-incremental-fixes`
 - 当前远端 `main` 已包含最近两个 `build` PR 的分析文档和从本地 fork 正式提交导出的完整补丁。
 
-最新统一交接入口：`docs/incremental-build-handoff-20260812.md`。
+2026-08-12 的统一交接入口为 `docs/incremental-build-handoff-20260812.md`；当前入口已更新为 `docs/incremental-build-handoff-20260813.md`。
 
 该日志仓此前缺少最近的 validator、SA query 验证、HAP signing 和 `-n/restat` 方法，本文件用于补齐统一交接信息。
 

@@ -19,7 +19,8 @@
 | `docs/parallel-analysis-prompt.md` | 供另一台主机并行分析使用的完整提示词和操作约束 |
 | `docs/recent-build-prs-20260812.md` | 最近两个 `build` PR（SA Profile 与 HAP signing）的修改、验证结果和后续分析方向 |
 | `docs/current-project-handoff.md` | 截至 2026-08-12 的统一交接提示词、PR 状态、待办清单和 GN/Ninja/restat 验证方法 |
-| `docs/incremental-build-handoff-20260812.md` | 最新统一交接入口，明确 DCO 身份、GitHub 完整补丁、远程环境、问题状态和验证流程 |
+| `docs/incremental-build-handoff-20260812.md` | 2026-08-12 交接快照，明确 DCO 身份、GitHub 完整补丁、远程环境和当时的问题状态 |
+| `docs/incremental-build-handoff-20260813.md` | 当前统一交接入口，新增 packing_tool HAP 修复、完整验证、剩余 dirty 链和虚拟机到 GitCode 的 SSH 配置 |
 | `patches/build/` | 从本地 GitCode fork 正式提交直接导出的 SA Profile 与 HAP signing 完整补丁 |
 | `SSH远程.md` | SSH、文件传输、日志读取和人工编译操作说明 |
 
