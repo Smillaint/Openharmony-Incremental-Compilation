@@ -1,57 +1,61 @@
-# OpenHarmony ACTION 增量编译修复材料
+# OpenHarmony Action 增量编译修复记录
 
-本目录用于整理 OpenHarmony `rk3568` 增量编译 ACTION 重复执行问题的修复代码、原因分析和验证日志。后续创建新 Git 仓库后，可直接以本目录作为 PR 工作区。
+本仓库记录 OpenHarmony `rk3568/phone` 增量构建中重复 Action 的根因、代码修改、PR 与验证证据。
 
-## 目录内容
+## 当前阶段：原始 10 项初步修复完成
 
-| 路径 | 内容 |
+最初跟踪的 `//build/ohos/packages` 下 **10 个 Action 增量问题已经初步完成修复**。前 9 项先后收敛，最后的 `phone_install_modules` 在 2026-09-01 组合工作树连续两轮构建中均未执行。
+
+完整说明见 **[原始 10 项修复交接（2026-09-10）](docs/original-ten-actions-completion-20260910.md)**，包含每个 Action 的 PR、修改文件、代码作用、两轮验证来源和未完成的正式提交链。
+
+| 原始 Action | 主要 PR | 修改与作用 |
+| --- | --- | --- |
+| `sa_profile_src_phone` | [build #6965](https://gitcode.com/openharmony/build/merge_requests/6965) | SA 输入按 label 排序，源 SA JSON 内容相同不重写；配合 parts 稳定化收敛 |
+| `sa_profile_binary_phone` | [build #6965](https://gitcode.com/openharmony/build/merge_requests/6965) | ZIP 临时生成后比较发布，已测配置下避免重复归档传播 |
+| `phone_sa_profile_install_info` | [build #6965](https://gitcode.com/openharmony/build/merge_requests/6965) | SA 合并安装 JSON 内容感知写入，截断下游 dirty |
+| `check_seccomp_filter_name` | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999) | 稳定校验输入，生成成功 result，补齐 cfg/seccomp depfile，校验异常清理旧结果 |
+| `process_field_validate` | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999) | 补齐 cfg/白名单依赖、成功输出与校验异常处理 |
+| `collect_notice_files__phone` | [build #7009](https://gitcode.com/openharmony/build/merge_requests/7009)、[#7048](https://gitcode.com/openharmony/build/merge_requests/7048) | NOTICE 收集与发布拆成两阶段；补充 LICENSE 边界查找与生成物依赖修正 |
+| `generate_host_symlink` | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999) | host 元数据规范化，collector 发布稳定中间 JSON，原 Action 消费中间结果 |
+| `phone_hisysevent_install_info` | [build #7006](https://gitcode.com/openharmony/build/merge_requests/7006) | 配置和安装 JSON 内容感知写入，实际 YAML 加入 depfile |
+| `phone_install_modules` | [build #7046](https://gitcode.com/openharmony/build/merge_requests/7046)、[iptables #62](https://gitcode.com/openharmony/third_party_iptables/merge_requests/62) 及配套修复 | 修正 SA depfile 过滤、稳定安装元数据，沿 SDK/IDL/签名/iptables 等真实输入链消除无效重建 |
+| `phone_parts_list` | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999)、[#7009](https://gitcode.com/openharmony/build/merge_requests/7009) | 稳定聚合和部件安装 JSON，避免仅 mtime 变化带动 packages 下游 |
+
+上述结果来自组合工作树和分阶段验证。#7046、#7048 等最新独立分支尚未单独整仓复验，SDK split 等调用方仍有待确认的 PR；不能将组合验证效果全部归因于某一个 PR。
+
+最终两轮主 Ninja 均执行 9 步：3 个 metadata stamp、4 个 metadata Action 和 2 个 ramdisk image Action。它们不属于原始十项，列为**后续扩展优化**，不改变原始任务初步完成的状态。39→9 是组合工作树前后对比，不是单个 PR 的收益。
+
+## PR 交付与交接入口
+
+2026-09-10 核对的 13 个已知 PR 均为 open；12 个可直接合并，airscan #22 不可直接合并。可合并状态不代表门禁或评审通过。修复效果与社区合入进度分别跟踪。
+
+| 文档 | 用途 |
 | --- | --- |
-| `action相关增量编译/airscan_action.md` | `airscan_action` 最终修复代码、注释和验证 |
-| `action相关增量编译/gen_snapshot.md` | `gen_snapshot` 最终修复代码、注释和验证 |
-| `action相关增量编译/ark_jsf.md` | `ark_jsf` 最终修复代码、注释和验证 |
-| `action相关增量编译/远程日志/修复日志.md` | 完整修复过程、根因和验证结果 |
-| `action相关增量编译/初步方案.txt` | 三个重复 ACTION 的初步问题定位 |
-| `action相关增量编译/修复脚本/` | 从远端已验证工作区同步的最终修复脚本 |
-| `action相关增量编译/原始脚本/` | 初始脚本备份，用于对比修改 |
-| `action相关增量编译/远程日志/补丁前基线/` | 修改前的 `build.log`、`error.log` 和 `.ninja_log` |
-| `action相关增量编译/远程日志/补丁后验证/` | 补丁构建、问题定位和最终零改动验证日志 |
-| `docs/build-action-incremental.md` | `build` 仓 SA Profile、packages 综合实验和剩余 Action 状态 |
-| `docs/parallel-analysis-prompt.md` | 供另一台主机并行分析使用的完整提示词和操作约束 |
-| `docs/recent-build-prs-20260812.md` | 最近两个 `build` PR（SA Profile 与 HAP signing）的修改、验证结果和后续分析方向 |
-| `docs/current-project-handoff.md` | 截至 2026-08-12 的统一交接提示词、PR 状态、待办清单和 GN/Ninja/restat 验证方法 |
-| `docs/incremental-build-handoff-20260812.md` | 2026-08-12 交接快照，明确 DCO 身份、GitHub 完整补丁、远程环境和当时的问题状态 |
-| `docs/incremental-build-handoff-20260813.md` | 当前统一交接入口，新增 packing_tool HAP 修复、完整验证、剩余 dirty 链和虚拟机到 GitCode 的 SSH 配置 |
-| `patches/build/` | 从本地 GitCode fork 正式提交直接导出的 SA Profile 与 HAP signing 完整补丁 |
-| `SSH远程.md` | SSH、文件传输、日志读取和人工编译操作说明 |
+| [原始 10 项修复交接](docs/original-ten-actions-completion-20260910.md) | 当前统一入口：逐 Action 的 PR、代码与作用、完成边界、交付缺口 |
+| [GitCode diff 证据索引](docs/evidence/20260910/README.md) | 本次公开 API 核对的 PR 状态、HEAD、文件清单及完整返回 diff |
+| [PR 时间线与历史结果](docs/current-open-pr-timeline-and-action-results-20260909.md) | 9 月 9 日 PR 时间线快照，保留历史状态 |
+| [iptables 与最终两轮验证](docs/glm52-geninit-fix-handoff-20260901.md) | 最后一项 `phone_install_modules` 收敛的日志、耗时和输出快照 |
+| [SDK split 阶段交接](docs/glm52-phone-install-final-handoff-20260828.md) | 上游 SDK/声明生成链的历史排查与验证 |
+| [全流程修复记录](docs/incremental-build-repair-process-20260825.md) | 前期根因与迭代过程 |
+| [GN/Ninja/restat 方法](docs/current-project-handoff.md) | 历史方法参考；其中旧任务状态以当前交接为准 |
+| [SSH 操作说明](SSH远程.md) | 远程连接与日志读取方法；实际源码路径以较新交接为准 |
 
-## 修复目标
+后续工作优先补齐配套 PR、跟进评审及门禁、核对组合补丁与独立分支的一致性。metadata/ramdisk 优化另行跟踪。
 
-```text
-ACTION //third_party/jsframework:ark_jsf(//build/toolchain/ohos:ohos_clang_arm)
-ACTION //third_party/jsframework:gen_snapshot(//build/toolchain/ohos:ohos_clang_arm)
-ACTION //third_party/sane-airscan:airscan_action(//build/toolchain/ohos:ohos_clang_arm)
-```
+## 早期三个独立 Action
 
-最终零改动验证结果：
+早期材料中的 `ark_jsf`、`gen_snapshot`、`airscan_action` 不计入上表的 packages 十项，保留其历史成果：
 
-```text
-rk3568 build success
-ark_jsf=0
-gen_snapshot=0
-airscan_action=0
-all_ACTION=0
-CXX=0
-CC=0
-SOLINK=0
-```
+| Action | PR | 材料 |
+| --- | --- | --- |
+| `ark_jsf`、`gen_snapshot` | [third_party_jsframework #853](https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853) | [ark_jsf](action相关增量编译/ark_jsf.md)、[gen_snapshot](action相关增量编译/gen_snapshot.md) |
+| `airscan_action` | [third_party_sane-airscan #22](https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22) | [airscan_action](action相关增量编译/airscan_action.md) |
 
-最终代码方案分别见 `airscan_action.md`、`gen_snapshot.md` 和 `ark_jsf.md`，完整处理过程见 `action相关增量编译/远程日志/修复日志.md`。
+当时三项零改动验证中均未执行，详见 [历史修复日志](action相关增量编译/远程日志/修复日志.md)。旧日志中的 `all_ACTION=0` 只适用于当时快照，不能作为当前整仓所有 Action 为 0 的结论。
 
-## 后续使用
+## 维护方式
 
-1. 新建 Git 仓库后再初始化本目录并配置远端。
-2. 提交前确认 `id_ed25519` 等密钥文件没有进入暂存区。
-3. 以 `action相关增量编译/原始脚本/` 和 `action相关增量编译/修复脚本/` 生成或审查最终 PR 差异。
-4. 编译由操作者手动执行。未收到明确编译指令时，只进行代码修改、静态分析或指定日志读取。
-
-当前目录中的 `.gitignore` 不忽略 `*.log`，因此远程验证日志可以随新仓库提交；私钥和常见构建产物仍会被忽略。
+- 文本统一使用 UTF-8；修改前保存 Git 版本，保留已有工作树修改。
+- 每项修复记录直接根因、变更文件、PR、验证日志及适用配置，区分组合效果和单 PR 效果。
+- 完整编译沿用人工执行流程；真实连续两轮日志用于验收，dry-run 用于定位依赖。
+- 正式提交保留 DCO；私钥、凭据及临时构建产物不纳入版本。

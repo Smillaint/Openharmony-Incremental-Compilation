@@ -1,5 +1,7 @@
 # OpenHarmony 增量编译 PR 时间线与 Action 收敛结果（2026-09-09）
 
+> 本文保留 2026-09-09 时间线快照。当前目标状态、逐 Action 的精确代码说明及 2026-09-10 diff 核对结果见 [原始 10 项修复交接](original-ten-actions-completion-20260910.md)。原始十项已初步修复完成，剩余 9 个 metadata/ramdisk 步骤归入扩展优化。
+
 ## 1. 小结
 
 截至 2026-09-09，本轮工作共有 13 个已创建的 PR，全部仍为 `open`。GitCode 当前计算结果中，12 个 PR 为 `mergeable=true`，`third_party_sane-airscan#22` 为 `mergeable=false`。`mergeable` 只表示当前分支能否直接合并，不等价于代码评审通过、门禁通过或已经合入。

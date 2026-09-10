@@ -1,6 +1,6 @@
 # OpenHarmony Action 增量编译项目交接与分析指南
 
-> 当前状态已经更新到 2026-08-13。新会话请优先阅读 [incremental-build-handoff-20260813.md](incremental-build-handoff-20260813.md)。本文保留 2026-08-12 及以前的历史分析和方法说明。
+> 当前统一入口为 [原始 10 项修复交接（2026-09-10）](original-ten-actions-completion-20260910.md)。原始 packages 十项增量问题已初步修复完成；剩余 metadata/ramdisk 属于扩展优化。本文保留 2026-08-12 及以前的历史分析和方法，旧待办与旧环境不得作为当前状态。
 
 本文用于把当前 OpenHarmony Action 增量编译工作的完整上下文交给新的分析会话或另一台主机。内容截至 **2026-08-12**。
 

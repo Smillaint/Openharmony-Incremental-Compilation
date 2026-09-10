@@ -1,0 +1,48 @@
+{
+  "retrieved_at": "2026-09-10T17:11:11.2359373+08:00",
+  "repository": "openharmony/build",
+  "number": 7009,
+  "url": "https://gitcode.com/openharmony/build/merge_requests/7009",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7009",
+  "title": "Fix incremental notice file collection",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-08-27T12:32:40+08:00",
+  "head": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+  "base": "e27e871ae06d947f9e06d0a954b8940739eefff6",
+  "source_branch": "fix-part-install-metadata-incremental-build",
+  "files": [
+    {
+      "filename": "ohos/generate_part_info.py",
+      "additions": 6,
+      "deletions": 3,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/edc427a875e5c0642e31c7b3dca4f7a8b0219b71/ohos/generate_part_info.py",
+      "diff": "@@ -104,13 +104,16 @@ def gen_output_file(part_name: str, origin_part_name: str, all_modules_file: str\n     part_install_modules.extend(thirdparty_module_list)\n     part_install_modules.extend(hdi_module_list)\n     # write install modules file\n-    write_json_file(install_modules_file, part_install_modules)\n+    write_json_file(install_modules_file, part_install_modules,\n+                    check_changes=True)\n \n     # add no install modules to dict, example: host target\n     modules_info_dict[part_name] = part_no_install_modules\n     # write dep modules file\n-    write_json_file(dep_modules_file, modules_info_dict)\n-    write_json_file(output_host_file, part_host_modules)\n+    write_json_file(dep_modules_file, modules_info_dict,\n+                    check_changes=True)\n+    write_json_file(output_host_file, part_host_modules,\n+                    check_changes=True)\n \n \n def main():\n",
+      "too_large": false
+    },
+    {
+      "filename": "ohos/packages/BUILD.gn",
+      "additions": 14,
+      "deletions": 3,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/edc427a875e5c0642e31c7b3dca4f7a8b0219b71/ohos/packages/BUILD.gn",
+      "diff": "@@ -11,6 +11,7 @@\n # See the License for the specific language governing permissions and\n # limitations under the License.\n \n+import(\"//build/config/ohos/copy_ex.gni\")\n import(\"//build/config/python.gni\")\n import(\"//build/ohos/sa_profile/sa_profile.gni\")\n \n@@ -161,18 +162,20 @@ foreach(_platform, target_platform_list) {\n \n   _notice_root_dir = \"${current_platform_dir}/NOTICE_FILES\"\n   _collected_notice_zipfile = \"${current_platform_dir}/system_notice_files.zip\"\n+  _staged_notice_zipfile =\n+      \"$target_gen_dir/system_notice_files_${_platform}.zip\"\n \n-  action_with_pydeps(\"collect_notice_files__${_platform}\") {\n+  action_with_pydeps(\"stage_notice_files__${_platform}\") {\n     deps = [ \":${_platform}_parts_list\" ]\n     script = \"//build/ohos/notice/collect_system_notice_files.py\"\n     depfile = \"$target_gen_dir/$target_name.d\"\n     sources = [ _system_install_info_file ]\n-    outputs = [ _collected_notice_zipfile ]\n+    outputs = [ _staged_notice_zipfile ]\n     args = [\n       \"--install-info-file\",\n       rebase_path(_system_install_info_file, root_build_dir),\n       \"--output-file\",\n-      rebase_path(_collected_notice_zipfile, root_build_dir),\n+      rebase_path(_staged_notice_zipfile, root_build_dir),\n       \"--depfile\",\n       rebase_path(depfile, root_build_dir),\n       \"--notice-root-dir\",\n@@ -180,6 +183,14 @@ foreach(_platform, target_platform_list) {\n     ]\n   }\n \n+  copy_ex(\"collect_notice_files__${_platform}\") {\n+    deps = [ \":stage_notice_files__${_platform}\" ]\n+    dest = current_platform_dir\n+    renaming_sources = [ _staged_notice_zipfile ]\n+    renaming_destinations = [ \"system_notice_files.zip\" ]\n+    outputs = [ _collected_notice_zipfile ]\n+  }\n+\n   _merged_notice_txt = \"${current_platform_dir}/NOTICE.txt\"\n   _notice_module_info_file = \"${current_platform_dir}/NOTICE_module_info.json\"\n   action_with_pydeps(\"merge_system_notice_file_${current_platform}\") {\n",
+      "too_large": false
+    },
+    {
+      "filename": "ohos/packages/parts_install_info.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/edc427a875e5c0642e31c7b3dca4f7a8b0219b71/ohos/packages/parts_install_info.py",
+      "diff": "@@ -69,7 +69,8 @@ def main():\n     platform_out_dir = os.path.dirname(args.system_install_info_file)\n     if not os.path.exists(platform_out_dir):\n         os.makedirs(platform_out_dir, exist_ok=True)\n-    write_json_file(args.system_install_info_file, _parts_list)\n+    write_json_file(args.system_install_info_file, _parts_list,\n+                    check_changes=True)\n \n     if args.depfile:\n         _dep_files = []\n",
+      "too_large": false
+    },
+    {
+      "filename": "scripts/util/file_utils.py",
+      "additions": 3,
+      "deletions": 13,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/edc427a875e5c0642e31c7b3dca4f7a8b0219b71/scripts/util/file_utils.py",
+      "diff": "@@ -16,7 +16,6 @@\n import json\n import os\n import subprocess\n-import hashlib\n import platform\n \n \n@@ -82,18 +81,9 @@ def write_json_file(output_file, content, check_changes=False):\n \n \n def __check_changes(output_file, content):\n-    if os.path.exists(output_file) and os.path.isfile(output_file):\n-        # file content md5 val\n-        sha256_obj = hashlib.sha256()\n-        sha256_obj.update(str(read_json_file(output_file)).encode())\n-        hash_value = sha256_obj.hexdigest()\n-        # new content md5 val\n-        sha256_obj_new = hashlib.sha256()\n-        sha256_obj_new.update(str(content).encode())\n-        hash_value_new = sha256_obj_new.hexdigest()\n-        if hash_value_new == hash_value:\n-            return False\n-    return True\n+    if not os.path.isfile(output_file):\n+        return True\n+    return read_json_file(output_file) != content\n \n \n # Write file data\n",
+      "too_large": false
+    }
+  ]
+}

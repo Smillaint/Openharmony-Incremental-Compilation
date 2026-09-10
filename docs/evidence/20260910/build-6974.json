@@ -1,0 +1,48 @@
+{
+  "retrieved_at": "2026-09-10T17:11:04.7751042+08:00",
+  "repository": "openharmony/build",
+  "number": 6974,
+  "url": "https://gitcode.com/openharmony/build/merge_requests/6974",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6974",
+  "title": "Fix incremental HAP signing outputs",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-08-10T13:32:13+08:00",
+  "head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+  "base": "e27e871ae06d947f9e06d0a954b8940739eefff6",
+  "source_branch": "fix-hap-sign-incremental-build",
+  "files": [
+    {
+      "filename": "ohos/app/app_internal.gni",
+      "additions": 4,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/34aa8cba0c5fcb3344e2dd652c18027d69a71396/ohos/app/app_internal.gni",
+      "diff": "@@ -561,7 +561,8 @@ template(\"app_sign\") {\n       _certificate_file,\n     ]\n \n-    outputs = [ \"${target_out_dir}/${target_name}.stamp\" ]\n+    _sign_result = \"${target_out_dir}/${target_name}.sign_result.json\"\n+    outputs = [ _sign_result ]\n \n     args = [\n       \"--keyPwd\",\n@@ -586,6 +587,8 @@ template(\"app_sign\") {\n       rebase_path(hap_out_dir, root_build_dir),\n       \"--hap-name\",\n       hap_name,\n+      \"--output-file\",\n+      rebase_path(_sign_result, root_build_dir),\n     ]\n     if (defined(invoker.hap_list)) {\n       args += [\n",
+      "too_large": false
+    },
+    {
+      "filename": "scripts/app_sign.py",
+      "additions": 11,
+      "deletions": 0,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/app_sign.py",
+      "diff": "@@ -44,6 +44,7 @@ def parse_args(args):\n     parser.add_argument('--certificate-file', help='')\n     parser.add_argument('--hap-name', help='')\n     parser.add_argument('--hap-list', help='')\n+    parser.add_argument('--output-file', help='signing result output file')\n     options = parser.parse_args(args)\n     return options\n \n@@ -76,6 +77,8 @@ def main(args):\n     if not options.hap_out_dir:\n         sign_app(options, options.inFile, options.outFile)\n     else:\n+        if not options.output_file:\n+            raise ValueError('--output-file is required when --hap-out-dir is set')\n         if not os.path.exists(options.hap_out_dir):\n             os.makedirs(options.hap_out_dir, exist_ok=True)\n         unsigned_hap_path_list = file_utils.read_json_file(options.unsigned_hap_path_list)\n@@ -90,6 +93,7 @@ def main(args):\n                     signed_hap_names[f'{names[0]}.hap'] = f'{names[1]}.hap'\n                 else:\n                     raise ValueError(f'Value hap_list {hap_list} not compliant with format')\n+        signed_hap_result = []\n         for unsigned_hap_path in unsigned_hap_path_list.get('unsigned_hap_path_list'):\n             signed_hap_path = unsigned_hap_path.replace('unsigned', 'signed')\n             output_hap_name = f'{options.hap_name}-{os.path.basename(signed_hap_path)}'\n@@ -106,6 +110,13 @@ def main(args):\n                     output_hap_name = signed_hap_names.get(unsigned_hap_name)\n             output_hap = os.path.join(options.hap_out_dir, output_hap_name)\n             sign_app(options, unsigned_hap_path, output_hap)\n+            signed_hap_result.append({\n+                'path': output_hap,\n+                'sha256': build_utils.get_file_sha256(output_hap),\n+            })\n+        build_utils.write_json_atomic({\n+            'signed_hap_list': signed_hap_result,\n+        }, options.output_file)\n \n \n if __name__ == '__main__':\n",
+      "too_large": false
+    },
+    {
+      "filename": "scripts/compile_app.py",
+      "additions": 10,
+      "deletions": 3,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/compile_app.py",
+      "diff": "@@ -199,7 +199,6 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value\n     :param cwd: app project directory\n     :return: None\n     '''\n-    unsigned_hap_path_json = {}\n     unsigned_hap_path_list = []\n     with open(build_profile, 'r') as input_f:\n         build_info = json5.load(input_f)\n@@ -216,8 +215,16 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value\n                 unsigned_hap_path, '*-unsigned.hsp')\n             if hsp_file:\n                 unsigned_hap_path_list.extend(hsp_file)\n-        unsigned_hap_path_json['unsigned_hap_path_list'] = unsigned_hap_path_list\n-    file_utils.write_json_file(options.output_file, unsigned_hap_path_json)\n+    unsigned_hap_path_list.sort()\n+    unsigned_hap_sha256 = {\n+        hap_path: build_utils.get_file_sha256(hap_path)\n+        for hap_path in unsigned_hap_path_list\n+    }\n+    unsigned_hap_path_json = {\n+        'unsigned_hap_path_list': unsigned_hap_path_list,\n+        'unsigned_hap_sha256': unsigned_hap_sha256,\n+    }\n+    build_utils.write_json_atomic(unsigned_hap_path_json, options.output_file)\n \n \n def copy_libs(cwd: str, system_lib_module_info_list: list, ohos_app_abi: str, module_libs_dir: str):\n",
+      "too_large": false
+    },
+    {
+      "filename": "scripts/util/build_utils.py",
+      "additions": 22,
+      "deletions": 0,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/util/build_utils.py",
+      "diff": "@@ -10,6 +10,7 @@ import contextlib\n from distutils import extension\n import filecmp\n import fnmatch\n+import hashlib\n import json\n import os\n import pipes\n@@ -179,6 +180,27 @@ def atomic_output(path, only_if_changed=True):\n                 os.unlink(f.name)\n \n \n+def get_file_sha256(path):\n+    \"\"\"Return the SHA-256 digest of a file.\"\"\"\n+    digest = hashlib.sha256()\n+    with open(path, 'rb') as input_file:\n+        for chunk in iter(lambda: input_file.read(1024 * 1024), b''):\n+            digest.update(chunk)\n+    return digest.hexdigest()\n+\n+\n+def write_json_atomic(obj, path):\n+    \"\"\"Write deterministic JSON atomically without touching unchanged files.\"\"\"\n+    output_dir = os.path.dirname(os.path.abspath(path))\n+    os.makedirs(output_dir, exist_ok=True)\n+    json_content = json.dumps(obj,\n+                              sort_keys=True,\n+                              indent=2,\n+                              separators=(',', ': '))\n+    with atomic_output(path) as output_file:\n+        output_file.write(json_content.encode('utf-8'))\n+\n+\n class CalledProcessError(Exception):\n     \"\"\"This exception is raised when the process run by check_output\n     exits with a non-zero exit code.\n",
+      "too_large": false
+    }
+  ]
+}

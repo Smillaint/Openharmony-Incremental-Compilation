@@ -1,0 +1,32 @@
+{
+  "retrieved_at": "2026-09-10T17:11:12.7294404+08:00",
+  "repository": "openharmony/build",
+  "number": 7046,
+  "url": "https://gitcode.com/openharmony/build/merge_requests/7046",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7046",
+  "title": "Stabilize binary install metadata and optional input dependencies",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-09-09T17:08:10+08:00",
+  "head": "5be8fa471e23084eb4a884653746a55af554e7f2",
+  "base": "e27e871ae06d947f9e06d0a954b8940739eefff6",
+  "source_branch": "fix-install-incremental-metadata",
+  "files": [
+    {
+      "filename": "ohos/common/binary_install_info.py",
+      "additions": 3,
+      "deletions": 2,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/5be8fa471e23084eb4a884653746a55af554e7f2/ohos/common/binary_install_info.py",
+      "diff": "@@ -52,7 +52,7 @@ def binary_install_subsystem(dist_parts_info_file: str,\n \n \n def output_installed_info(binary_subsystem_info: str, required_parts: list):\n-    write_json_file(binary_subsystem_info, required_parts)\n+    write_json_file(binary_subsystem_info, required_parts, check_changes=True)\n \n \n def main():\n@@ -70,7 +70,8 @@ def main():\n \n     if args.depfile:\n         _dep_files = []\n-        _dep_files.append(args.dist_parts_info_file)\n+        if os.path.exists(args.dist_parts_info_file):\n+            _dep_files.append(args.dist_parts_info_file)\n         _dep_files.append(args.parts_src_installed_info_file)\n         build_utils.write_depfile(args.depfile,\n                                  args.binary_installed_info_file,\n",
+      "too_large": false
+    },
+    {
+      "filename": "ohos/packages/modules_install.py",
+      "additions": 1,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/5be8fa471e23084eb4a884653746a55af554e7f2/ohos/packages/modules_install.py",
+      "diff": "@@ -343,7 +343,7 @@ def main():\n     if os.path.exists(args.system_image_zipfile):\n         os.unlink(args.system_image_zipfile)\n     build_utils.zip_dir(args.system_image_zipfile, args.system_dir)\n-    depfiles.extend([item for item in depfiles if item not in sa_files])\n+    depfiles = [item for item in depfiles if item not in sa_files]\n     build_utils.write_depfile(args.depfile, args.install_modules_info_file,\n                               depfiles)\n     \n",
+      "too_large": false
+    }
+  ]
+}

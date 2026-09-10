@@ -1,0 +1,32 @@
+{
+  "retrieved_at": "2026-09-10T17:11:14.2667934+08:00",
+  "repository": "openharmony/build",
+  "number": 7048,
+  "url": "https://gitcode.com/openharmony/build/merge_requests/7048",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7048",
+  "title": "ä¿®å¤ NOTICE è®¸å¯è¯æ¥æ¾ä¸èåä¾èµ",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-09-03T16:20:13+08:00",
+  "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+  "base": "e27e871ae06d947f9e06d0a954b8940739eefff6",
+  "source_branch": "fix-notice-incremental-deps",
+  "files": [
+    {
+      "filename": "ohos/notice/collect_module_notice_file.py",
+      "additions": 2,
+      "deletions": 2,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/6840a0ba024b40ca67d0ab26aceee2a3458e7dbd/ohos/notice/collect_module_notice_file.py",
+      "diff": "@@ -59,12 +59,12 @@ def find_other_files(license_file_path):\n \n \n def find_file_recursively(current_dir: str, target_files: list):\n-    if is_top_dir(current_dir):\n-        return None\n     for file in target_files:\n         candidate = os.path.join(current_dir, file)\n         if os.path.isfile(candidate):\n             return candidate\n+    if is_top_dir(current_dir):\n+        return None\n     return find_file_recursively(os.path.dirname(current_dir), target_files)\n \n \n",
+      "too_large": false
+    },
+    {
+      "filename": "ohos/notice/collect_system_notice_files.py",
+      "additions": 0,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/6840a0ba024b40ca67d0ab26aceee2a3458e7dbd/ohos/notice/collect_system_notice_files.py",
+      "diff": "@@ -77,7 +77,6 @@ def collect_notice_files(options, dest_dir: str, depfiles: str):\n                 generate_notice_files(dest_dir, module_info, depfiles)\n \n     notice_files = build_utils.get_all_files(options.notice_root_dir)\n-    depfiles.extend(notice_files)\n     for file in notice_files:\n         dest = os.path.join(dest_dir,\n                             os.path.relpath(file, options.notice_root_dir))\n",
+      "too_large": false
+    }
+  ]
+}
