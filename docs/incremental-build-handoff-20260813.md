@@ -41,11 +41,12 @@
 
 | 用途 | 身份 |
 | --- | --- |
-| 期望的正式 Git 作者/DCO | `Smillick <3185479846@qq.com>` |
+| 所有 GitCode 正式提交的作者/DCO | `Smillick <3185479846@qq.com>` |
 | GitCode 账号 | `SmillySmillick` |
 | GitHub 账号 | `Smillaint` |
 
-正式提交前建议配置：
+所有提交到 GitCode 的正式 commit 必须统一使用以下身份，禁止使用 GitCode 网页默认的
+`SmillySmillick <SmillySmillick@noreply.gitcode.com>` 身份和邮箱：
 
 ```bash
 git config user.name 'Smillick'
@@ -61,14 +62,30 @@ git log -1 --format=%B
 Signed-off-by: Smillick <3185479846@qq.com>
 ```
 
-当前 packing_tool 的 GitCode 网页提交是：
+推送前必须同时检查 Author、Committer 和 Signed-off-by：
 
-```text
-Author:        SmillySmillick <SmillySmillick@noreply.gitcode.com>
-Signed-off-by: SmillySmillick <SmillySmillick@noreply.gitcode.com>
+```bash
+git show -s --format=fuller HEAD
+git show -s --format=%B HEAD
 ```
 
-作者与 Signed-off-by 一致，通常可以通过 DCO；但若正式 PR 要统一为项目既有身份，应在创建 PR 前用本地已准备的正确身份提交覆盖远端分支。
+推送或更新 PR 后还必须重新 fetch 远端分支并检查远端 commit，不能只验证本地提交。
+如果 PR 中仍包含错误身份的旧 commit，应使用正确身份重建或 amend commit，并通过
+`git push --force-with-lease` 安全替换远端分支；不得使用无 lease 的强制推送。
+
+packing_tool PR !1556 曾因远端旧提交 `ebbb276ed54590413001979c7a501d42a7cf1cfc`
+使用 `SmillySmillick@noreply.gitcode.com` 而未通过 DCO。2026-08-13 已将 PR 分支替换为：
+
+```text
+commit：dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc
+Author：Smillick <3185479846@qq.com>
+Committer：Smillick <3185479846@qq.com>
+Signed-off-by：Smillick <3185479846@qq.com>
+Change-Id：I6d4fbc122292b2cd4925e0cb718c7aafde4ce81e
+```
+
+GitCode Git Hooks 已通过，远端重新 fetch 后的提交元数据也已核验。PR 评论区仍需输入
+`check dco` 触发 DCO 重新检查。
 
 ## 4. 远程虚拟机和 SSH
 
@@ -238,11 +255,13 @@ adapter/ohos/Compressor.java
 ```text
 fork：https://gitcode.com/SmillySmillick/developtools_packing_tool
 branch：fix/hap-reproducible-archive
-commit：ebbb276ed54590413001979c7a501d42a7cf1cfc
+commit：dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc
 base：9cac80b676fb5fe72fdd2039e7749087caaa85a9
 Change-Id：I6d4fbc122292b2cd4925e0cb718c7aafde4ce81e
 diff：1 file changed, 9 insertions(+), 1 deletion(-)
-PR：尚未创建
+PR：!1556
+PR URL：https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556
+DCO：远端提交身份已修复，需在 PR 评论区输入 `check dco` 重新触发检查
 ```
 
 直接查看：
@@ -611,9 +630,9 @@ cp out/rk3568/.ninja_log \
 
 按优先级：
 
-1. 决定 packing_tool 正式 PR 使用当前 GitCode 网页 DCO，还是用 `Smillick <3185479846@qq.com>` 覆盖远端提交。
-2. 为 `developtools_packing_tool` 修复准备中文 Issue/PR 说明并创建 PR。
-3. 在最新 `openharmony/build` 上创建独立分支，只修改 `compile_app.py`，启用 `check_changes=True`。
+1. 在 packing_tool PR !1556 评论区输入 `check dco`，确认新提交通过 DCO 检查。
+2. 完善 `developtools_packing_tool` 中文 Issue/PR 说明并推进 PR。
+3. 在最新 `openharmony/build` 上维护独立分支，只修改 `compile_app.py`，启用 `check_changes=True`。
 4. 由操作者进行两轮真实构建，确认 JSON 内容不变时 mtime 与 stamp 不刷新。
 5. 分别追踪 `libtel_telephony_data.z.so` 和 `libcontactsdataability.z.so` 的最早 dirty 根因。
 6. 从 packages 实验分支整理 `check_seccomp_filter_name` 独立 PR。

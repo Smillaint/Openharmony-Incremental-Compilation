@@ -1,0 +1,346 @@
+OpenHarmony 增量编译独立组件并行任务交接说明
+日期：2026-08-13
+文件编码：UTF-8
+
+一、交接目标
+
+本任务从原始十个 packages Action 中分出 phone_install_modules 的上游组件定位与修复，
+交给另一位 agent 并行完成。
+
+该任务与当前主会话负责的 build/compile_app、HAP signing、developtools_packing_tool、
+Telephony/Contacts HAP Action 不重叠。接手者不得修改 build 仓，只能使用 build 输出和 Ninja
+图进行只读定位；找到最早 dirty 的具体模块后，应转到该模块所属的独立源码仓建立修复。
+
+优先选择源码位于独立仓库的模块。已有记录显示 Window Manager 和 Device Attest 相关动态库或
+可执行文件曾在第二轮构建中重新链接，可先从这两类候选开始，但必须用本轮 Ninja 证据确认，
+不能把历史观察直接当成当前根因。
+
+二、当前主会话负责范围，禁止接手者修改
+
+1. build 仓 compile_app 声明输出稳定化：
+
+   build/scripts/compile_app.py
+   build/scripts/util/build_utils.py
+
+   最新上游正式分支：codex/fix-compile-app-stable-output
+   提交：918e4c5bc99f0441b5b5d2fe5afc62492ecdad01
+   Change-Id：I447d351188a26905ca234e3c62a9b7f482960ce5
+
+2. build 仓 HAP signing 声明输出：
+
+   build/scripts/app_sign.py
+   build/ohos/app/app_internal.gni
+   相关 PR：!6974
+
+3. developtools_packing_tool 的 HAP ZIP entry 固定时间：
+
+   developtools/packing_tool/adapter/ohos/Compressor.java
+   PR：https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556
+   提交：dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc
+
+4. 两个新增 HAP Action 及其 native library：
+
+   Telephony_Data_Storage_compile_app
+   Contacts_DataAbility_compile_app
+   libtel_telephony_data.z.so
+   libcontactsdataability.z.so
+
+5. 不得为 phone_install_modules 修改 packages 尾端依赖、删除真实依赖、跳过安装 Action、
+   伪造空输出或仅触碰 stamp。
+
+三、原十个 Action 当前修复状态
+
+1. sa_profile_src_phone
+
+   状态：PR !6965 已完成稳定输出修复和 rk3568 验证，但最新 gitcode/master 尚未确认合入。
+   后续：补充其他产品覆盖。不要由本并行任务修改。
+
+2. sa_profile_binary_phone
+
+   状态：PR !6965 已完成稳定输出修复。
+   后续：验证包含非空 binary SA/part_name_info.json 的 ZIP 场景。不要由本任务修改。
+
+3. phone_sa_profile_install_info
+
+   状态：PR !6965 已通过上游输出稳定化阻断无效传播。
+   后续：上游合入后复验。不要继续修改尾端 Action。
+
+4. check_seccomp_filter_name
+
+   状态：根因明确。GN 声明 check_seccomp_filter_name.txt，旧脚本成功时不生成文件。
+   后续：需要在 build 仓整理独立 PR。
+   分工：保留给主会话或其他专门处理 build 仓的任务，本接手者不得处理。
+
+5. process_field_validate
+
+   状态：根因明确。GN 声明 cfg_validate_result.txt，旧脚本不生成文件。
+   后续：在 build 仓实现稳定、原子、真实的成功输出并验证失败路径。
+   分工：本接手者不得处理。
+
+6. collect_notice_files__phone
+
+   状态：NOTICE 自身内容和 ZIP 可以稳定，仍被 phone_parts_list 上游链带起。
+   后续：不再修改 NOTICE 尾端，等待 parts 链根因处理。
+
+7. generate_host_symlink
+
+   状态：自身 JSON 可稳定，仍受 all_parts_host.json 上游变化影响。
+   后续：追 host parts 元数据最早 dirty 节点，不改本 Action 尾端。
+
+8. phone_hisysevent_install_info
+
+   状态：HiSysEvent JSON/ZIP 自身可以稳定，仍受 parts 链影响。
+   后续：parts 链稳定后复验。
+
+9. phone_parts_list
+
+   状态：尚未收敛。需要沿 generate_src_installed_info、generate_host_info、
+   gen_binary_installed_info、merge_all_parts 找最早 dirty 节点。
+   分工：不属于本次外派任务，避免与 phone_install_modules 同时扩大范围。
+
+10. phone_install_modules
+
+    状态：第二轮存在真实重新链接的 .so 或可执行文件输入，不能在 packages 尾端稳定化。
+    分工：本文件唯一授权接手者处理的原十个 Action。
+
+总体统计：
+
+- 3 个已有 PR 修复，等待确认上游合入或补充场景；
+- 2 个根因明确，待 build 仓独立修复；
+- 3 个自身稳定但受 parts 上游牵连；
+- 1 个 phone_parts_list 仍待单独追踪；
+- 1 个 phone_install_modules 交给本接手者定位独立组件仓并修复。
+
+四、虚拟机和源码位置
+
+完整源码：
+
+/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code
+
+构建输出：
+
+/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code/out/rk3568
+
+接手者日志目录必须新建，不得覆盖现有日志：
+
+/srv/workspace/action_incremental_logs_20260813/phone_install_modules_agent
+
+进入环境：
+
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+
+CODE_ROOT=/srv/workspace/openharmony_master_default_20260723175927_huawei_33e607913/code
+LOG_DIR=/srv/workspace/action_incremental_logs_20260813/phone_install_modules_agent
+
+cd "$CODE_ROOT"
+mkdir -p "$LOG_DIR"
+
+先确认没有其他构建：
+
+ps -ef | grep -E '[b]uild\.sh|[n]inja'
+
+注意：当前 build 最新 master 与整仓 ace_engine 版本不兼容，会因
+ace_engine_enable_reduce_eh_frame 重复声明在 gn gen 阶段失败。接手者不得修改该问题，
+也不得切换或修改 build 仓。分析 phone_install_modules 时应使用已经存在的 out/rk3568 Ninja
+图和已有日志；如果 Ninja 图被重新生成或不可用，应停止并汇报，不要自行重跑 gn gen。
+
+五、任务目标
+
+从 phone_install_modules 的第二轮 dirty 链中找到最早发生无效重建的具体 .so 或可执行文件，
+确认其所属独立源码仓，并在该组件仓内解决根因。
+
+完整因果链必须达到：
+
+具体源文件/生成文件/depfile/命令变化
+  -> 具体链接目标重复执行
+  -> 该二进制成为 phone_install_modules 输入
+  -> phone_install_modules 被调度
+
+不能只报告 phone_install_modules is dirty，也不能只报告某个 .so is dirty；必须继续追到最早
+没有更早 dirty 解释的节点。
+
+六、第一阶段：只读定位 phone_install_modules
+
+1. 查询 GN target：
+
+prebuilts/build-tools/linux-x86/bin/gn desc \
+  out/rk3568 \
+  //build/ohos/packages:phone_install_modules
+
+prebuilts/build-tools/linux-x86/bin/gn desc \
+  out/rk3568 \
+  //build/ohos/packages:phone_install_modules outputs
+
+prebuilts/build-tools/linux-x86/bin/gn desc \
+  out/rk3568 \
+  //build/ohos/packages:phone_install_modules inputs
+
+prebuilts/build-tools/linux-x86/bin/gn desc \
+  out/rk3568 \
+  //build/ohos/packages:phone_install_modules deps --tree \
+  > "$LOG_DIR/phone_install_modules_deps.txt"
+
+2. 目标级 Ninja dry-run：
+
+先以 gn desc 或 ninja -t query 确认准确输出路径，不要凭记忆写路径。然后执行：
+
+prebuilts/build-tools/linux-x86/bin/ninja \
+  -w dupbuild=warn \
+  -C out/rk3568 \
+  -n -d explain \
+  '<phone_install_modules 的准确输出>' \
+  > "$LOG_DIR/phone_install_modules_explain.log" 2>&1
+
+3. 提取候选二进制：
+
+grep -n -E \
+  'dirty|missing|\.z\.so|\.so|/bin/|executable' \
+  "$LOG_DIR/phone_install_modules_explain.log" \
+  | head -500 \
+  > "$LOG_DIR/phone_install_modules_candidates.txt"
+
+4. 对第一个直接 dirty 的具体二进制执行：
+
+prebuilts/build-tools/linux-x86/bin/ninja \
+  -C out/rk3568 \
+  -t query \
+  '<具体二进制输出>' \
+  > "$LOG_DIR/first_binary_query.txt"
+
+prebuilts/build-tools/linux-x86/bin/ninja \
+  -w dupbuild=warn \
+  -C out/rk3568 \
+  -n -d explain \
+  '<具体二进制输出>' \
+  > "$LOG_DIR/first_binary_explain.log" 2>&1
+
+继续逐层查询，直到找到最早 dirty 输入。
+
+七、第二阶段：区分 dirty 类型
+
+对最早候选节点记录：
+
+- 输出路径；
+- 所属 GN label；
+- 所属源码仓；
+- 直接 inputs；
+- depfile/rspfile；
+- .ninja_log 中两轮命令哈希或执行记录；
+- 文件 mtime、size、SHA-256；
+- 内容是否真实变化；
+- 命令行、输入顺序、生成文件顺序是否变化。
+
+建议命令：
+
+stat -c '%n|%Y|%y|%s' '<输出文件>'
+sha256sum '<输出文件>'
+
+prebuilts/build-tools/linux-x86/bin/ninja \
+  -C out/rk3568 \
+  -t commands \
+  '<具体二进制输出>' \
+  > "$LOG_DIR/first_binary_commands.txt"
+
+如果有此前保存的两轮 .ninja_log，应比较两轮记录，不要启动完整构建来制造新数据，除非操作者
+明确授权。
+
+将根因分类为以下一种或多种：
+
+1. 生成文件内容变化；
+2. 内容不变但 mtime 被刷新；
+3. depfile/rspfile 不稳定；
+4. 命令行或输入顺序变化；
+5. 链接产物本身不可重复；
+6. 声明输出缺失；
+7. 输入真实变化，属于必要重建。
+
+若确认是第 7 类，不得“修复”为跳过构建，应继续找到造成真实输入变化的更早节点。
+
+八、第三阶段：转入独立组件仓
+
+确定组件仓后：
+
+1. 记录仓库路径、当前分支、HEAD 和工作树；
+2. 若工作树不干净，停止修改并汇报；
+3. 从该整仓快照的组件 HEAD 建立验证分支；
+4. 正式 PR 分支应另从该组件最新上游建立，并单独处理跨仓兼容性；
+5. 只修改最早根因所在组件，不修改 build 仓；
+6. 一个提交只修一个根因；
+7. 先进行组件级或函数级测试，再给出完整构建验证命令。
+
+候选独立仓只能作为起点，必须以 GN label 和 repo 信息确认：
+
+- foundation/window/window_manager（如实际重复链接目标归属 Window Manager）；
+- 对应 Device Attest 组件仓（必须通过 repo manifest 或 git remote 确认准确路径和仓名）；
+- Ninja explain 指向的其他独立组件仓。
+
+不要因为历史记录提到 Window Manager 或 Device Attest 就直接改它们。
+
+九、GitCode DCO 强制规范
+
+所有 GitCode 正式提交统一使用：
+
+Author：Smillick <3185479846@qq.com>
+Committer：Smillick <3185479846@qq.com>
+Signed-off-by：Smillick <3185479846@qq.com>
+
+禁止使用：
+
+SmillySmillick <SmillySmillick@noreply.gitcode.com>
+
+提交前：
+
+git config user.name 'Smillick'
+git config user.email '3185479846@qq.com'
+git diff --check
+git commit --signoff -m '<message>'
+git show -s --format=fuller HEAD
+git show -s --format=%B HEAD
+
+推送后必须重新 fetch 并检查远端 commit。若需要替换错误身份提交，只能使用
+git push --force-with-lease，不允许无 lease 强制推送。
+
+不得在仓库、日志或聊天中输出 SSH 私钥、令牌、密码。
+
+十、明确禁止事项
+
+- 不修改 build 仓任何文件；
+- 不切换主会话正在使用的 build 分支；
+- 不修改 packing_tool；
+- 不修改 compile_app 或 app_sign；
+- 不处理 phone_parts_list；
+- 不处理 Telephony/Contacts HAP Action；
+- 不追 libtel_telephony_data.z.so 或 libcontactsdataability.z.so；
+- 不删除 phone_install_modules 的真实依赖；
+- 不通过 touch、伪造 stamp 或空输出隐藏 dirty；
+- 不执行 git reset --hard 或 git clean；
+- 不覆盖其他会话的工作区修改；
+- 未经操作者明确授权，不启动完整 make_all 构建；
+- 未经明确授权，不推送分支或创建 PR。
+
+十一、接手者最低交付物
+
+1. phone_install_modules 的准确 GN label、outputs、inputs、deps；
+2. 最早 dirty 的具体二进制和完整证据链；
+3. 对应独立组件仓路径、remote、快照 HEAD、上游 HEAD；
+4. 根因分类和证据日志绝对路径；
+5. 修改文件与修复原理；
+6. UTF-8、语法/静态检查、组件级测试、git diff --check 结果；
+7. 验证分支/正式分支、基线、最终提交、工作树状态；
+8. Author、Committer、Signed-off-by、Change-Id；
+9. 两轮完整构建验证命令，但不要擅自运行；
+10. 明确说明未解决的其他 dirty 节点。
+
+十二、完成判定
+
+只定位到 phone_install_modules 或某个 .so 不算完成。至少满足以下之一：
+
+A. 已定位最早 dirty 根因，确认独立组件仓，并完成可审查补丁及轻量验证；
+
+或
+
+B. 已用完整证据证明该输入是必要重建，并继续定位到造成真实变化的更早独立组件节点；如果因
+缺少两轮日志或 Ninja 图不可用而无法继续，应明确报告阻塞信息，不得猜测修复。
+
+本文优先级高于旧聊天中的临时结论。实际仓库状态若与本文不一致，应先停止修改并报告差异。
