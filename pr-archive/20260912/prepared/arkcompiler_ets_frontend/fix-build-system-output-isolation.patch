@@ -1,0 +1,44 @@
+From 5eb9bc6716570df1ebc9e60de3c7e4eead1f725f Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:53:17 +0800
+Subject: [PATCH] Isolate build system outputs from generated metadata
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ets2panda/driver/build_system/BUILD.gn | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/ets2panda/driver/build_system/BUILD.gn b/ets2panda/driver/build_system/BUILD.gn
+index f19fbfb4..c074c82d 100644
+--- a/ets2panda/driver/build_system/BUILD.gn
++++ b/ets2panda/driver/build_system/BUILD.gn
+@@ -71,17 +71,17 @@ action("build_build_system") {
+     "--work_dir",
+     rebase_path("$target_out_dir"),
+     "--output_path",
+-    rebase_path("$target_gen_dir"),
++    rebase_path("$target_gen_dir/build_system_output"),
+     "--npm",
+     rebase_path(npm_path),
+   ]
+ 
+-  outputs = [ "$target_gen_dir" ]
++  outputs = [ "$target_gen_dir/build_system_output" ]
+ }
+ 
+ ohos_copy("ets2panda_build_system") {
+   deps = [ ":build_build_system" ]
+-  sources = [ rebase_path("$target_gen_dir") ]
++  sources = [ rebase_path("$target_gen_dir/build_system_output") ]
+   outputs = [ target_out_dir + "/$target_name" ]
+   module_source_dir = target_out_dir + "/$target_name"
+   module_install_name = ""
+@@ -92,7 +92,7 @@ ohos_copy("ets2panda_build_system") {
+ ohos_copy("ohos_ets_build_system") {
+   deps = [ ":build_build_system" ]
+   external_deps = [ "runtime_core:ohos_ets_etsstdlib_abc" ]
+-  sources = [ rebase_path("$target_gen_dir") ]
++  sources = [ rebase_path("$target_gen_dir/build_system_output") ]
+   outputs = [ ohos_ets_build_system_path ]
+   part_name = "ets_frontend"
+   subsystem_name = "arkcompiler"

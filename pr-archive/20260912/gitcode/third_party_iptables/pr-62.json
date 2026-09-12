@@ -1,0 +1,37 @@
+{
+  "repository": "openharmony/third_party_iptables",
+  "number": 62,
+  "title": "修复 genInit 聚合文件无变化重写导致的 iptables 重复编译",
+  "url": "https://gitcode.com/openharmony/third_party_iptables/merge_requests/62",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/third_party_iptables/pulls/62",
+  "retrieved_at": "2026-09-12T22:31:20.736331+08:00",
+  "head": "5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+  "base": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+  "source_branch": "fix-geninit-incremental-output",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-09-02T11:12:51+08:00",
+  "patch_file": "gitcode/third_party_iptables/pr-62.patch",
+  "patch_sha256": "de4846e89563fa6b6ad08ccb8768b162158c46864aa99331baaa537986b0b70c",
+  "files": [
+    {
+      "filename": "extensions/genInit.py",
+      "additions": 13,
+      "deletions": 5,
+      "blob_url": "https://gitcode.com/openharmony/third_party_iptables/blob/5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c/extensions/genInit.py",
+      "patch": {
+        "diff": "@@ -13,6 +13,7 @@\n # limitations under the License.\n \n from dataclasses import replace\n+import io\n import os\n import shutil\n import sys\n@@ -83,10 +84,7 @@ def main():\n     _make_dir(gen_path)\n     _make_dir(md5_path)\n     new_init_file_name = gen_path + \"/\" + sys.argv[3]\n-    if os.path.exists(new_init_file_name):\n-        os.remove(new_init_file_name)\n-    os.mknod(new_init_file_name)\n-    new_init_file = open(new_init_file_name, 'a', encoding='utf-8')\n+    new_init_file = io.StringIO()\n \n     init_file_list = []\n     for filter_file in os.listdir(ori_path):\n@@ -111,7 +109,17 @@ def main():\n \n     internal_method_name = sys.argv[4]\n     _write_internal_methods(new_init_file, internal_method_name, init_file_list)\n-    new_init_file.close\n+    intended_content = new_init_file.getvalue()\n+    new_init_file.close()\n+\n+    if os.path.exists(new_init_file_name):\n+        with open(new_init_file_name, 'r', encoding='utf-8') as existing_file:\n+            existing_content = existing_file.read()\n+    else:\n+        existing_content = None\n+    if existing_content != intended_content:\n+        with open(new_init_file_name, 'w', encoding='utf-8') as output_file:\n+            output_file.write(intended_content)\n \n \n if __name__ == '__main__':\n",
+        "old_path": "extensions/genInit.py",
+        "new_path": "extensions/genInit.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 13,
+        "removed_lines": 5
+      }
+    }
+  ]
+}

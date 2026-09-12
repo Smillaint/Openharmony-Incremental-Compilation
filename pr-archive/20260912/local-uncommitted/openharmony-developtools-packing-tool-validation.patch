@@ -1,0 +1,52 @@
+diff --git a/adapter/ohos/Compressor.java b/adapter/ohos/Compressor.java
+index b63c2bc..dc92acf 100644
+--- a/adapter/ohos/Compressor.java
++++ b/adapter/ohos/Compressor.java
+@@ -32,6 +32,7 @@ import java.nio.charset.StandardCharsets;
+ import java.nio.file.Files;
+ import java.nio.file.Path;
+ import java.nio.file.Paths;
++import java.nio.file.attribute.FileTime;
+ import java.security.MessageDigest;
+ import java.security.NoSuchAlgorithmException;
+ import java.util.ArrayList;
+@@ -196,7 +197,7 @@ public class Compressor {
+     private static final int DEDUPLICATE_HAR_CHECK_MIN_API_VERSION = 21;
+     private static final int MIN_API_VERSION_ERROR_VALUE = -1;
+ 
+-    // set timestamp to get fixed MD5
++    private static final long FIXED_ZIP_ENTRY_TIME_MILLIS = 1546272000000L;
+     private static final int ATOMIC_SERVICE_ENTRY_SIZE_LIMIT_DEFAULT =  2048; // 2MB;unit is KB
+     private static final int ATOMIC_SERVICE_NON_ENTRY_SIZE_LIMIT_DEFAULT = 2048; // 2MB;unit is KB
+     private static final int ATOMIC_SERVICE_TOTAL_SIZE_LIMIT_DEFAULT = 4194304; // 4GB;unit is KB
+@@ -2719,6 +2720,7 @@ public class Compressor {
+             String entryName = (baseDir + file.getName()).replace(File.separator, LINUX_FILE_SEPARATOR);
+             ZipArchiveEntry zipEntry = new ZipArchiveEntry(entryName);
+             zipEntry.setMethod(ZipArchiveEntry.DEFLATED);
++            setFixedZipEntryTime(zipEntry);
+             InputStreamSupplier supplier = () -> {
+                 try {
+                     return Files.newInputStream(file.toPath());
+@@ -2856,9 +2858,14 @@ public class Compressor {
+         zipEntry.setSize(sourceFile.length());
+         CRC32 crc = getCrcFromFile(sourceFile);
+         zipEntry.setCrc(crc.getValue());
++        setFixedZipEntryTime(zipEntry);
+         return zipEntry;
+     }
+ 
++    private static void setFixedZipEntryTime(ZipEntry zipEntry) {
++        zipEntry.setLastModifiedTime(FileTime.fromMillis(FIXED_ZIP_ENTRY_TIME_MILLIS));
++    }
++
+     private CRC32 getCrcFromFile(File file) throws BundleException {
+         FileInputStream fileInputStream = null;
+         CRC32 crc = new CRC32();
+@@ -2916,6 +2923,7 @@ public class Compressor {
+         try {
+             String entryName = (baseDir + srcFile.getName()).replace(File.separator, LINUX_FILE_SEPARATOR);
+             ZipArchiveEntry zipEntry = new ZipArchiveEntry(entryName);
++            setFixedZipEntryTime(zipEntry);
+             isEntryOpen = true;
+             if (!entryName.contains(RAW_FILE_PATH)
+                     && !entryName.contains(RES_FILE_PATH)

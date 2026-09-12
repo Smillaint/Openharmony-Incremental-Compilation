@@ -1,0 +1,64 @@
+diff --git a/ets2panda/BUILD.gn b/ets2panda/BUILD.gn
+index aef2d2836e6eebf3b687b635e9415f244e036152..89bbab72dec596ce3e373be0117e6b75d79408f7 100644
+--- a/ets2panda/BUILD.gn
++++ b/ets2panda/BUILD.gn
+@@ -48,8 +48,17 @@ config("libes2panda_public_config") {
+ 
+ action("check_build_system_consistency") {
+   script = "./scripts/check_build_system_consistency.py"
+-  args = [ rebase_path(".", root_build_dir) ]
+-  outputs = [ "$target_gen_dir/consistency_check.stamp" ]
++  inputs = [
++    "BUILD.gn",
++    "CMakeLists.txt",
++    "public/CMakeLists.txt",
++  ]
++  _stamp_file = "$target_gen_dir/consistency_check.stamp"
++  outputs = [ _stamp_file ]
++  args = [
++    rebase_path(".", root_build_dir),
++    rebase_path(_stamp_file, root_build_dir),
++  ]
+ }
+ 
+ libes2panda_sources = [
+diff --git a/ets2panda/scripts/check_build_system_consistency.py b/ets2panda/scripts/check_build_system_consistency.py
+index ecae9d8327ee0636359f2efd43d25a32dbaa98ca..d8ab3817467387f809978c66d9eba2f3f325e98f 100755
+--- a/ets2panda/scripts/check_build_system_consistency.py
++++ b/ets2panda/scripts/check_build_system_consistency.py
+@@ -18,6 +18,7 @@ import sys
+ import os
+ import re
+ import fnmatch
++from pathlib import Path
+ 
+ 
+ def parse_cmake_file_list(text, patterns):
+@@ -158,8 +159,7 @@ def compare_file_lists(cmake_files, cmake_files_dict, gn_files, gn_files_dict, f
+     return len(only_in_cmake) == 0 and len(only_in_gn) == 0
+ 
+ 
+-def main():
+-    work_dir = sys.argv[1]
++def main(work_dir, stamp_file):
+     cmake_src, cmake_src_dict = parse_root_cmake(os.path.join(work_dir, "CMakeLists.txt"))
+     (
+         cmake_hdr,
+@@ -189,10 +189,16 @@ def main():
+ 
+     if src_consistent and hdr_consistent and yaml_consistent:
+         print("all file types are consistent beetween CMake and GN")
++        stamp_path = Path(stamp_file)
++        stamp_path.parent.mkdir(parents=True, exist_ok=True)
++        stamp_path.touch()
+         return 0
+     print("Warning! inconsistent file found beetween CMake and GN")
+     return 1
+ 
+ 
+ if __name__ == "__main__":
+-    exit(main())
++    if len(sys.argv) != 3:
++        print(f"Usage: {sys.argv[0]} <work_dir> <stamp_file>", file=sys.stderr)
++        sys.exit(2)
++    sys.exit(main(sys.argv[1], sys.argv[2]))

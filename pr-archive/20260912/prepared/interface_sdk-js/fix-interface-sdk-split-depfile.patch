@@ -1,0 +1,27 @@
+From 680b35e09702e1f625e4cb413966a686737a5f9c Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:34 +0800
+Subject: [PATCH] Declare SDK interface split stamp and dependency file
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ BUILD.gn | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/BUILD.gn b/BUILD.gn
+index 271d22e..0a0b476 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -58,7 +58,12 @@ action("ohos_base_split") {
+     "${sdk_build_check_level}",
+     "--sdk-api-version",
+     "${api_version}",
++    "--stamp",
++    rebase_path("${target_out_dir}/${target_name}.timestamp", root_build_dir),
++    "--depfile",
++    rebase_path("${target_out_dir}/${target_name}.d", root_build_dir),
+   ]
++  depfile = "${target_out_dir}/${target_name}.d"
+   outputs = [
+     "${interface_sdk_path}",
+     "${interface_sdk_path_ets1}/api/bundle/bundleStatusCallback.d.ts",

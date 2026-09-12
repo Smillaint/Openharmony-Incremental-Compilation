@@ -1,0 +1,46 @@
+diff --git a/config/components/idl_tool/idl.gni b/config/components/idl_tool/idl.gni
+index 4f61ca934f557223eaa48604bf023cb1ec0620ad..543a204c4f326248269af96f2097c8c5d0feddc3 100644
+--- a/config/components/idl_tool/idl.gni
++++ b/config/components/idl_tool/idl.gni
+@@ -131,6 +131,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -138,7 +142,8 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+     if (init_with_i) {
+-      sources_all += [ "${target_gen_dir}/" + "i" + name + ".h" ]
++      sources_all +=
++          [ "${target_gen_dir}/" + "i" + interface_header_name + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + name + ".h" ]
+     }
+@@ -180,6 +185,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -190,7 +199,8 @@ template("idl_gen_interface") {
+     out_full_name = string_replace(idl_full_name, idl_name, name)
+ 
+     if (init_with_i) {
+-      out_full_name_i = string_replace(idl_full_name, idl_name, "i" + name)
++      out_full_name_i =
++          string_replace(idl_full_name, idl_name, "i" + interface_header_name)
+       sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]

@@ -1,0 +1,72 @@
+From f03aa33b3f4d63c7fc754262a5e5de6a9adb5b66 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:31 +0800
+Subject: [PATCH] Preserve JS asset dependency tracking without transient
+ loader caches
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ scripts/build_js_assets.py | 36 ++++++++++++++++++++++++++++++++----
+ 1 file changed, 32 insertions(+), 4 deletions(-)
+
+diff --git a/scripts/build_js_assets.py b/scripts/build_js_assets.py
+index 265ef9c4..0155d801 100755
+--- a/scripts/build_js_assets.py
++++ b/scripts/build_js_assets.py
+@@ -197,6 +197,26 @@ def get_all_js_sources(base) -> list:
+     return sources
+ 
+ 
++def get_loader_files(base):
++    """Collect every file under |base|, pruning transient artifacts that are
++    rewritten by other actions after this one completes: any directory whose
++    final path component is '.cache' (e.g. node_modules/.cache) and TypeScript
++    incremental build-info files (.tsbuildinfo*). Stable loader source files
++    are kept.
++    """
++    result = []
++    for root, dirs, files in os.walk(base):
++        dirs[:] = [d for d in dirs if d != '.cache']
++        result.extend([os.path.join(root, f) for f in files
++                       if not f.startswith('.tsbuildinfo')])
++    return result
++
++
++def _write_empty_zip(output_path):
++    with ZipFile(output_path, 'w'):
++        pass
++
++
+ def main(args):
+     options = parse_args(args)
+ 
+@@ -206,8 +226,16 @@ def main(args):
+     ]
+     depfiles = []
+     if not options.js_assets_dir and not options.ets_assets_dir:
+-        with ZipFile(options.output, 'w') as file:
+-            return
++        build_utils.call_and_write_depfile_if_stale(
++            lambda: _write_empty_zip(options.output),
++            options,
++            depfile_deps=[p for p in inputs if p],
++            input_paths=[p for p in inputs if p],
++            input_strings=[],
++            output_paths=[options.output],
++            force=False,
++            add_pydeps=False)
++        return
+ 
+     if options.ark_es2abc_dir:
+         depfiles.extend(build_utils.get_all_files(options.ark_es2abc_dir))
+@@ -216,8 +244,8 @@ def main(args):
+     depfiles.append(options.webpack_ets)
+     depfiles.append(options.webpack_config_js)
+     depfiles.append(options.webpack_config_ets)
+-    depfiles.extend(build_utils.get_all_files(options.ace_loader_home))
+-    depfiles.extend(build_utils.get_all_files(options.ets_loader_home))
++    depfiles.extend(get_loader_files(options.ace_loader_home))
++    depfiles.extend(get_loader_files(options.ets_loader_home))
+ 
+     node_js = os.path.relpath(options.nodejs_path, options.ace_loader_home)
+     assets_dict = dict()

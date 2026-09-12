@@ -1,0 +1,12 @@
+ M config/components/ets_frontend/generate_static_abc.py
+ M config/components/idl_tool/idl.gni
+ M hb/services/loader.py
+ M hb/util/io_util.py
+ M lite/config/component/lite_component.gni
+ M ohos/common/binary_install_info.py
+ M ohos/images/build_image.py
+ M ohos/notice/collect_module_notice_file.py
+ M ohos/notice/collect_system_notice_files.py
+ M ohos/packages/modules_install.py
+ M ohos/sdk/parse_interface_sdk.py
+ M scripts/build_js_assets.py

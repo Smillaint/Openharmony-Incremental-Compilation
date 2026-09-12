@@ -1,0 +1,37 @@
+{
+  "repository": "openharmony/developtools_packing_tool",
+  "number": 1556,
+  "title": "Fix reproducible HAP entry timestamps",
+  "url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_packing_tool/pulls/1556",
+  "retrieved_at": "2026-09-12T22:31:22.352924+08:00",
+  "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+  "base": "8c141470704c569cc2140ba78471d34182716cb1",
+  "source_branch": "fix/hap-reproducible-archive",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-08-14T11:19:04+08:00",
+  "patch_file": "gitcode/developtools_packing_tool/pr-1556.patch",
+  "patch_sha256": "67b4681f60628990029b2b54334d626894bac1c1ca4d74a02675e562b802a77a",
+  "files": [
+    {
+      "filename": "adapter/ohos/Compressor.java",
+      "additions": 9,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/developtools_packing_tool/blob/dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc/adapter/ohos/Compressor.java",
+      "patch": {
+        "diff": "@@ -32,6 +32,7 @@ import java.nio.charset.StandardCharsets;\n import java.nio.file.Files;\n import java.nio.file.Path;\n import java.nio.file.Paths;\n+import java.nio.file.attribute.FileTime;\n import java.security.MessageDigest;\n import java.security.NoSuchAlgorithmException;\n import java.util.ArrayList;\n@@ -196,7 +197,7 @@ public class Compressor {\n     private static final int DEDUPLICATE_HAR_CHECK_MIN_API_VERSION = 21;\n     private static final int MIN_API_VERSION_ERROR_VALUE = -1;\n \n-    // set timestamp to get fixed MD5\n+    private static final long FIXED_ZIP_ENTRY_TIME_MILLIS = 1546272000000L;\n     private static final int ATOMIC_SERVICE_ENTRY_SIZE_LIMIT_DEFAULT =  2048; // 2MB;unit is KB\n     private static final int ATOMIC_SERVICE_NON_ENTRY_SIZE_LIMIT_DEFAULT = 2048; // 2MB;unit is KB\n     private static final int ATOMIC_SERVICE_TOTAL_SIZE_LIMIT_DEFAULT = 4194304; // 4GB;unit is KB\n@@ -2756,6 +2757,7 @@ public class Compressor {\n             String entryName = (baseDir + file.getName()).replace(File.separator, LINUX_FILE_SEPARATOR);\n             ZipArchiveEntry zipEntry = new ZipArchiveEntry(entryName);\n             zipEntry.setMethod(ZipArchiveEntry.DEFLATED);\n+            setFixedZipEntryTime(zipEntry);\n             InputStreamSupplier supplier = () -> {\n                 try {\n                     return Files.newInputStream(file.toPath());\n@@ -2893,9 +2895,14 @@ public class Compressor {\n         zipEntry.setSize(sourceFile.length());\n         CRC32 crc = getCrcFromFile(sourceFile);\n         zipEntry.setCrc(crc.getValue());\n+        setFixedZipEntryTime(zipEntry);\n         return zipEntry;\n     }\n \n+    private static void setFixedZipEntryTime(ZipEntry zipEntry) {\n+        zipEntry.setLastModifiedTime(FileTime.fromMillis(FIXED_ZIP_ENTRY_TIME_MILLIS));\n+    }\n+\n     private CRC32 getCrcFromFile(File file) throws BundleException {\n         FileInputStream fileInputStream = null;\n         CRC32 crc = new CRC32();\n@@ -2953,6 +2960,7 @@ public class Compressor {\n         try {\n             String entryName = (baseDir + srcFile.getName()).replace(File.separator, LINUX_FILE_SEPARATOR);\n             ZipArchiveEntry zipEntry = new ZipArchiveEntry(entryName);\n+            setFixedZipEntryTime(zipEntry);\n             isEntryOpen = true;\n             if (!entryName.contains(RAW_FILE_PATH)\n                     && !entryName.contains(RES_FILE_PATH)\n",
+        "old_path": "adapter/ohos/Compressor.java",
+        "new_path": "adapter/ohos/Compressor.java",
+        "a_mode": "100644",
+        "b_mode": "100644",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 9,
+        "removed_lines": 1
+      }
+    }
+  ]
+}

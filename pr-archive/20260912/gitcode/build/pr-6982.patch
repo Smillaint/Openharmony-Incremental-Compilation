@@ -1,0 +1,56 @@
+diff --git a/config/components/idl_tool/idl.gni b/config/components/idl_tool/idl.gni
+--- a/config/components/idl_tool/idl.gni
++++ b/config/components/idl_tool/idl.gni
+@@ -87,6 +87,8 @@ template("idl_gen_interface") {
+   if (defined(invoker.sources_common)) {
+     idl_common_list += invoker.sources_common
+   }
++  local_common_list = filter_exclude(idl_common_list, [ "//*" ])
++  external_common_list = filter_include(idl_common_list, [ "//*" ])
+ 
+   # language, default cpp, support c/cpp/rust
+   language = "cpp"
+@@ -204,7 +206,7 @@ template("idl_gen_interface") {
+   }
+ 
+   # common sources
+-  foreach(idl_full_name, idl_common_list) {
++  foreach(idl_full_name, local_common_list) {
+     idl_name = get_path_info(idl_full_name, "file")
+     i = 0
+     name = string_replace(idl_name, ".idl", "")
+@@ -219,7 +221,7 @@ template("idl_gen_interface") {
+     init_with_i = false
+     if (name_split[0] == "") {
+       init_with_i = true
+-      name = string_replace(name, "_i_", "i", 1)
++      name = string_replace(name, "_i_", "", 1)
+     }
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -234,14 +236,11 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
+-    out_full_name = string_replace(idl_full_name, idl_name, name)
+-
+     if (init_with_i) {
+-      out_full_name_i = string_replace(idl_full_name, idl_name, "i" + name)
+-      sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+-    } else {
+-      sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
++      name = "i" + name
+     }
++    out_full_name = string_replace(idl_full_name, idl_name, name)
++    sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
+     sources_all += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+     sources_proxy += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+     sources_stub += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+@@ -249,6 +248,7 @@ template("idl_gen_interface") {
+ 
+   action("$target_name") {
+     inputs = idl_list
++    inputs += rebase_path(external_common_list)
+     if (defined(invoker.inputs)) {
+       inputs += invoker.inputs
+     }

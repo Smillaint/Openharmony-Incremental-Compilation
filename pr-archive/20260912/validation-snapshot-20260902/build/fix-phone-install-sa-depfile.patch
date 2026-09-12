@@ -1,0 +1,13 @@
+diff --git a/ohos/packages/modules_install.py b/ohos/packages/modules_install.py
+index a8fdff747f26a41687a661ada8bc3dc1017d6709..a3d7b084c456bb7efb128adc4b79fa54ba91537f 100755
+--- a/ohos/packages/modules_install.py
++++ b/ohos/packages/modules_install.py
+@@ -346,7 +346,7 @@ def main():
+     if os.path.exists(args.system_image_zipfile):
+         os.unlink(args.system_image_zipfile)
+     build_utils.zip_dir(args.system_image_zipfile, args.system_dir)
+-    depfiles.extend([item for item in depfiles if item not in sa_files])
++    depfiles = [item for item in depfiles if item not in sa_files]
+     build_utils.write_depfile(args.depfile, args.install_modules_info_file,
+                               depfiles)
+     

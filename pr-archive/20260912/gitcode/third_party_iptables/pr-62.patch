@@ -1,0 +1,42 @@
+diff --git a/extensions/genInit.py b/extensions/genInit.py
+--- a/extensions/genInit.py
++++ b/extensions/genInit.py
+@@ -13,6 +13,7 @@
+ # limitations under the License.
+ 
+ from dataclasses import replace
++import io
+ import os
+ import shutil
+ import sys
+@@ -83,10 +84,7 @@ def main():
+     _make_dir(gen_path)
+     _make_dir(md5_path)
+     new_init_file_name = gen_path + "/" + sys.argv[3]
+-    if os.path.exists(new_init_file_name):
+-        os.remove(new_init_file_name)
+-    os.mknod(new_init_file_name)
+-    new_init_file = open(new_init_file_name, 'a', encoding='utf-8')
++    new_init_file = io.StringIO()
+ 
+     init_file_list = []
+     for filter_file in os.listdir(ori_path):
+@@ -111,7 +109,17 @@ def main():
+ 
+     internal_method_name = sys.argv[4]
+     _write_internal_methods(new_init_file, internal_method_name, init_file_list)
+-    new_init_file.close
++    intended_content = new_init_file.getvalue()
++    new_init_file.close()
++
++    if os.path.exists(new_init_file_name):
++        with open(new_init_file_name, 'r', encoding='utf-8') as existing_file:
++            existing_content = existing_file.read()
++    else:
++        existing_content = None
++    if existing_content != intended_content:
++        with open(new_init_file_name, 'w', encoding='utf-8') as output_file:
++            output_file.write(intended_content)
+ 
+ 
+ if __name__ == '__main__':

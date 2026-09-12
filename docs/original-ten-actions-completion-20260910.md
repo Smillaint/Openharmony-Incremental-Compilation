@@ -161,7 +161,7 @@ PR：[build #6999](https://gitcode.com/openharmony/build/merge_requests/6999) �
 | `build` / `fix-preloader-content-aware-output` | `07a42d2c` | `hb/services/loader.py`、`hb/util/io_util.py` 稳定预加载 JSON/syscap 输出 | 发布清单列为后续批次，尚未确认 |
 | `build` / `fix-static-abc-config-copy` | `00c502f7` | `generate_static_abc.py` 消除源配置写回副作用 | 发布清单列为后续批次，尚未确认 |
 
-发布清单来源：`D:/workspace/phone-install-publish-20260902/publish-manifest.json`，分组规则见同目录 `build-functional-groups-20260903.md`；旧七分支发布方案已被五个功能组取代。ArkGuard/TypeScript/Declgen 安装依赖的等价修复在拆分时已进入上游，不重复作为新 PR。ets2panda 一致性检查适配，以及 `lite_component.gni`、`build_image.py` 的未发布修改继续保留原交接中的待审边界。
+发布清单来源：`D:/workspace/repositories/pr-publishing/publish-manifest.json`，分组规则见同目录 `build-functional-groups-20260903.md`；旧七分支发布方案已被五个功能组取代。ArkGuard/TypeScript/Declgen 安装依赖的等价修复在拆分时已进入上游，不重复作为新 PR。ets2panda 一致性检查适配，以及 `lite_component.gni`、`build_image.py` 的未发布修改继续保留原交接中的待审边界。
 
 ### 4.3 早期三个独立 Action
 

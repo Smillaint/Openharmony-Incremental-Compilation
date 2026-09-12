@@ -1,0 +1,17 @@
+diff --git a/BUILD.gn b/BUILD.gn
+index 034286e4c3714fb72803c26f906627d9354fa03d..152052071b819e04139282e3ba8a0f7096008107 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -58,7 +58,12 @@ action("ohos_base_split") {
+     "${sdk_build_check_level}",
+     "--sdk-api-version",
+     "${api_version}",
++    "--stamp",
++    rebase_path("${target_out_dir}/${target_name}.timestamp", root_build_dir),
++    "--depfile",
++    rebase_path("${target_out_dir}/${target_name}.d", root_build_dir),
+   ]
++  depfile = "${target_out_dir}/${target_name}.d"
+   outputs = [
+     "${interface_sdk_path}",
+     "${interface_sdk_path_ets1}/api/bundle/bundleStatusCallback.d.ts",

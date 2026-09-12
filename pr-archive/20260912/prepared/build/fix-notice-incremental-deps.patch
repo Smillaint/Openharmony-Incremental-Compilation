@@ -1,0 +1,53 @@
+From 9f46f14829fb572bfa44e7b0062c6ce686661c8c Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:30 +0800
+Subject: [PATCH 1/2] Find module licenses at the source tree boundary
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ohos/notice/collect_module_notice_file.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/ohos/notice/collect_module_notice_file.py b/ohos/notice/collect_module_notice_file.py
+index af841a5f..92d29ebb 100755
+--- a/ohos/notice/collect_module_notice_file.py
++++ b/ohos/notice/collect_module_notice_file.py
+@@ -59,12 +59,12 @@ def find_other_files(license_file_path):
+ 
+ 
+ def find_file_recursively(current_dir: str, target_files: list):
+-    if is_top_dir(current_dir):
+-        return None
+     for file in target_files:
+         candidate = os.path.join(current_dir, file)
+         if os.path.isfile(candidate):
+             return candidate
++    if is_top_dir(current_dir):
++        return None
+     return find_file_recursively(os.path.dirname(current_dir), target_files)
+ 
+ 
+
+From 6840a0ba024b40ca67d0ab26aceee2a3458e7dbd Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:31 +0800
+Subject: [PATCH 2/2] Avoid redundant generated inputs in the aggregate notice
+ depfile
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ohos/notice/collect_system_notice_files.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/ohos/notice/collect_system_notice_files.py b/ohos/notice/collect_system_notice_files.py
+index f86585fe..b5c4db7a 100755
+--- a/ohos/notice/collect_system_notice_files.py
++++ b/ohos/notice/collect_system_notice_files.py
+@@ -77,7 +77,6 @@ def collect_notice_files(options, dest_dir: str, depfiles: str):
+                 generate_notice_files(dest_dir, module_info, depfiles)
+ 
+     notice_files = build_utils.get_all_files(options.notice_root_dir)
+-    depfiles.extend(notice_files)
+     for file in notice_files:
+         dest = os.path.join(dest_dir,
+                             os.path.relpath(file, options.notice_root_dir))

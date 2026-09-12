@@ -1,0 +1,71 @@
+diff --git a/scripts/compile_app.py b/scripts/compile_app.py
+index e422fe6d..dc70416c 100755
+--- a/scripts/compile_app.py
++++ b/scripts/compile_app.py
+@@ -199,7 +199,6 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value
+     :param cwd: app project directory
+     :return: None
+     '''
+-    unsigned_hap_path_json = {}
+     unsigned_hap_path_list = []
+     with open(build_profile, 'r') as input_f:
+         build_info = json5.load(input_f)
+@@ -216,8 +215,16 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value
+                 unsigned_hap_path, '*-unsigned.hsp')
+             if hsp_file:
+                 unsigned_hap_path_list.extend(hsp_file)
+-        unsigned_hap_path_json['unsigned_hap_path_list'] = unsigned_hap_path_list
+-    file_utils.write_json_file(options.output_file, unsigned_hap_path_json)
++    unsigned_hap_path_list.sort()
++    unsigned_hap_sha256 = {
++        hap_path: build_utils.get_file_sha256(hap_path)
++        for hap_path in unsigned_hap_path_list
++    }
++    unsigned_hap_path_json = {
++        'unsigned_hap_path_list': unsigned_hap_path_list,
++        'unsigned_hap_sha256': unsigned_hap_sha256,
++    }
++    build_utils.write_json_atomic(unsigned_hap_path_json, options.output_file)
+ 
+ 
+ def copy_libs(cwd: str, system_lib_module_info_list: list, ohos_app_abi: str, module_libs_dir: str):
+diff --git a/scripts/util/build_utils.py b/scripts/util/build_utils.py
+index 9c70daf7..1a1860e3 100755
+--- a/scripts/util/build_utils.py
++++ b/scripts/util/build_utils.py
+@@ -10,6 +10,7 @@ import contextlib
+ from distutils import extension
+ import filecmp
+ import fnmatch
++import hashlib
+ import json
+ import os
+ import pipes
+@@ -179,6 +180,27 @@ def atomic_output(path, only_if_changed=True):
+                 os.unlink(f.name)
+ 
+ 
++def get_file_sha256(path):
++    """Return the SHA-256 digest of a file."""
++    digest = hashlib.sha256()
++    with open(path, 'rb') as input_file:
++        for chunk in iter(lambda: input_file.read(1024 * 1024), b''):
++            digest.update(chunk)
++    return digest.hexdigest()
++
++
++def write_json_atomic(obj, path):
++    """Write deterministic JSON atomically without touching unchanged files."""
++    output_dir = os.path.dirname(os.path.abspath(path))
++    os.makedirs(output_dir, exist_ok=True)
++    json_content = json.dumps(obj,
++                              sort_keys=True,
++                              indent=2,
++                              separators=(',', ': '))
++    with atomic_output(path) as output_file:
++        output_file.write(json_content.encode('utf-8'))
++
++
+ class CalledProcessError(Exception):
+     """This exception is raised when the process run by check_output
+     exits with a non-zero exit code.

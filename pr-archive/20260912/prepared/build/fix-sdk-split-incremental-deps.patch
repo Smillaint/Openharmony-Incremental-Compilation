@@ -1,0 +1,98 @@
+From 72115384f783e09832216c951e7743b944fd5893 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:29 +0800
+Subject: [PATCH] Add stamp and depfile support to SDK interface splitting
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ohos/sdk/parse_interface_sdk.py | 58 +++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+diff --git a/ohos/sdk/parse_interface_sdk.py b/ohos/sdk/parse_interface_sdk.py
+index 35ec1350..225abde6 100755
+--- a/ohos/sdk/parse_interface_sdk.py
++++ b/ohos/sdk/parse_interface_sdk.py
+@@ -19,6 +19,9 @@ import sys
+ import shutil
+ import subprocess
+ from convert_permissions import convert_permissions
++sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),
++                              os.pardir, os.pardir))  # noqa: E402
++from scripts.util import build_utils  # noqa: E402
+ 
+ OUT_ROOT_LIST = ["dynamic/sdk-js",
+                  "static/sdk-js"]
+@@ -44,6 +47,45 @@ TYPE_CHANGE_DIR = "type-change"
+ TYPE_CHANGE_API_GEN_PATH = "build-tools/type-change/api"
+ TYPE_CHANGE_ARKTS_GEN_PATH = "build-tools/type-change/arkts"
+ 
++DEPFILE_EXCLUDE_DIRS = frozenset({'.git', '.gitee'})
++
++
++def collect_tree_deps(path: str) -> list:
++    result = []
++    for root, dirs, files in os.walk(path):
++        dirs[:] = [d for d in dirs if d not in DEPFILE_EXCLUDE_DIRS]
++        result.append(root)
++        for filename in files:
++            filepath = os.path.join(root, filename)
++            result.append(filepath)
++    return result
++
++
++def write_sdk_depfile(depfile_path: str, first_output: str,
++                      source_root: str, ninja_cwd: str,
++                      node_js: str, build_sdk_path: str = None,
++                      sdk_build_public: bool = False):
++    dep_entries = []
++    sdk_js_path = os.path.join(source_root, INTERFACE_PATH)
++    if os.path.isdir(sdk_js_path):
++        dep_entries.extend(collect_tree_deps(sdk_js_path))
++    perm_file = os.path.join(
++        source_root, 'base', 'security', 'access_token',
++        'services', 'accesstokenmanager',
++        'permission_definitions.json')
++    if os.path.isfile(perm_file):
++        dep_entries.append(perm_file)
++    dep_entries.append(os.path.abspath(node_js))
++    if sdk_build_public and build_sdk_path:
++        build_sdk_abs = os.path.join(ninja_cwd, build_sdk_path)
++        if os.path.isdir(build_sdk_abs):
++            dep_entries.extend(collect_tree_deps(build_sdk_abs))
++    rel_deps = sorted(
++        os.path.relpath(e, ninja_cwd) for e in dep_entries
++        if os.path.exists(e))
++    build_utils.write_depfile(depfile_path, first_output, rel_deps,
++                              add_pydeps=True)
++
+ 
+ def copy_sdk_interface(source_root: str, out_path: str):
+     source = os.path.join(source_root, INTERFACE_PATH)
+@@ -208,11 +250,27 @@ def main():
+     parser.add_argument('--build-sdk-path', required=True)
+     parser.add_argument('--sdk-check-level', required=True)
+     parser.add_argument('--sdk-api-version', required=True)
++    parser.add_argument('--stamp', required=False)
++    parser.add_argument('--depfile', required=False)
+ 
+     options = parser.parse_args()
+ 
+     parse_step(options)
+ 
++    source_root = os.path.abspath(options.root_build_dir)
++    ninja_cwd = os.getcwd()
++    first_output = os.path.relpath(
++        os.path.join(ninja_cwd, options.output_interface_sdk), ninja_cwd)
++    if options.depfile:
++        write_sdk_depfile(
++            options.depfile, first_output, source_root, ninja_cwd,
++            options.node_js,
++            build_sdk_path=options.build_sdk_path,
++            sdk_build_public=(options.sdk_build_public == 'true'))
++    if options.stamp:
++        with build_utils.atomic_output(options.stamp) as f:
++            f.write(b'')
++
+ 
+ if __name__ == '__main__':
+     sys.exit(main())

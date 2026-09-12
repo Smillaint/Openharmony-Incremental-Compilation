@@ -1,0 +1,37 @@
+{
+  "repository": "openharmony/build",
+  "number": 6982,
+  "title": "Fix IDL output declarations",
+  "url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6982",
+  "retrieved_at": "2026-09-12T22:31:08.965459+08:00",
+  "head": "4fa37075bfa8a0f3bb36f0394adf54577b0770f2",
+  "base": "71de884ecc242fa7757c5506e3a3606b9d51c5b0",
+  "source_branch": "fix-idl-common-outputs",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-08-17T16:34:04+08:00",
+  "patch_file": "gitcode/build/pr-6982.patch",
+  "patch_sha256": "85b163fa1a2b2408d562b45b46c50c4cc9aa829ea93c2de2623c90f3d55998a4",
+  "files": [
+    {
+      "filename": "config/components/idl_tool/idl.gni",
+      "additions": 8,
+      "deletions": 8,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/4fa37075bfa8a0f3bb36f0394adf54577b0770f2/config/components/idl_tool/idl.gni",
+      "patch": {
+        "diff": "@@ -87,6 +87,8 @@ template(\"idl_gen_interface\") {\n   if (defined(invoker.sources_common)) {\n     idl_common_list += invoker.sources_common\n   }\n+  local_common_list = filter_exclude(idl_common_list, [ \"//*\" ])\n+  external_common_list = filter_include(idl_common_list, [ \"//*\" ])\n \n   # language, default cpp, support c/cpp/rust\n   language = \"cpp\"\n@@ -204,7 +206,7 @@ template(\"idl_gen_interface\") {\n   }\n \n   # common sources\n-  foreach(idl_full_name, idl_common_list) {\n+  foreach(idl_full_name, local_common_list) {\n     idl_name = get_path_info(idl_full_name, \"file\")\n     i = 0\n     name = string_replace(idl_name, \".idl\", \"\")\n@@ -219,7 +221,7 @@ template(\"idl_gen_interface\") {\n     init_with_i = false\n     if (name_split[0] == \"\") {\n       init_with_i = true\n-      name = string_replace(name, \"_i_\", \"i\", 1)\n+      name = string_replace(name, \"_i_\", \"\", 1)\n     }\n     name_split = []\n     name_split = string_split(name, \"_\")\n@@ -234,14 +236,11 @@ template(\"idl_gen_interface\") {\n       name = string_replace(name, \"_\", \"\", 1)\n     }\n \n-    out_full_name = string_replace(idl_full_name, idl_name, name)\n-\n     if (init_with_i) {\n-      out_full_name_i = string_replace(idl_full_name, idl_name, \"i\" + name)\n-      sources_all += [ \"${target_gen_dir}/\" + out_full_name_i + \".h\" ]\n-    } else {\n-      sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".h\" ]\n+      name = \"i\" + name\n     }\n+    out_full_name = string_replace(idl_full_name, idl_name, name)\n+    sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".h\" ]\n     sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n     sources_proxy += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n     sources_stub += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n@@ -249,6 +248,7 @@ template(\"idl_gen_interface\") {\n \n   action(\"$target_name\") {\n     inputs = idl_list\n+    inputs += rebase_path(external_common_list)\n     if (defined(invoker.inputs)) {\n       inputs += invoker.inputs\n     }\n",
+        "old_path": "config/components/idl_tool/idl.gni",
+        "new_path": "config/components/idl_tool/idl.gni",
+        "a_mode": "100644",
+        "b_mode": "100644",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 8,
+        "removed_lines": 8
+      }
+    }
+  ]
+}

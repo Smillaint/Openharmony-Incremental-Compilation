@@ -1,0 +1,218 @@
+{
+  "source_root": "/srv/workspace/openharmony_master_default_20260816174546_huawei_9bd231a19/code",
+  "backup": "/srv/workspace/patch_backups/20260902_publish_split/snapshot-852i_798",
+  "repos": {
+    "build": {
+      "path": "build",
+      "head": "3dc68b61dd6156d5a5bbe60381b0961e557f3396",
+      "hashes": {
+        "config/components/ets_frontend/generate_static_abc.py": "a6b31517fae52fda2f3eee6913c9ca1edd40d79a769e474d8639670ac2786058",
+        "config/components/idl_tool/idl.gni": "f2209eaba0510262c9304795fcf45b165ccee0203b2e6a6de411c77c174c739b",
+        "hb/services/loader.py": "fc0bc1e2e040c61b60676bbae9a7dbb0e1a4d316d42dfd1830a37beb632d8865",
+        "hb/util/io_util.py": "0eefc6bd6fac440103ee3391e32d66bb5f9dc6d1f1a6f416c75d34b670f2d991",
+        "lite/config/component/lite_component.gni": "b190cb49344f87c68ee3ebf1624cb3e93b55f4c0294606f3359d18eefebc2ba2",
+        "ohos/common/binary_install_info.py": "a0797264260aade644347ebcee816ebac816338b6e96a06e8a27c7cc9683cf13",
+        "ohos/images/build_image.py": "209aca210fe20a099935c27586093103a1590d99d498cc83aa5142f0e08f1f68",
+        "ohos/notice/collect_module_notice_file.py": "66f1e5966db3a30b5c7c3e45c59989b6c76967af9fc2bf7285014e050c3ddc29",
+        "ohos/notice/collect_system_notice_files.py": "e0b00d02758a5f055fe48117c09529598d9ef233eb7bc257b5859dce070d415a",
+        "ohos/packages/modules_install.py": "ee5bae5c6476ade3f134121a6a43518c1a71385af5cfb8071d2ad4296057b935",
+        "ohos/sdk/parse_interface_sdk.py": "e3325f93621b22b34f34263b61d10db06869155c08dfeea5c4645ac7aa336736",
+        "scripts/build_js_assets.py": "a2d89eca86a79dbab6ca98697c6fcf218663bd28cb23429e8424ee52100e215a"
+      },
+      "diff_sha256": "f31e0c149ceafdb6dfec64e66f4f133364990297ec3f83aba04b07eb965badd1"
+    },
+    "interface_sdk-js": {
+      "path": "interface/sdk-js",
+      "head": "0d4497963c7800c067ae4d420c7738db147a0e25",
+      "hashes": {
+        "BUILD.gn": "a4270ca3b4be9d90177ed046886f1f8f6614fc46ebdf783bec0adc72887bb00e",
+        "process_internal.py": "0141ca4cd44b473418c40ee4867cb323308dec93ca1404a70a34fdecab248631",
+        "remove_internal.py": "9f5573fc7b4b7f38bffd345e04f5a96709107e41093f9a73621d3afba3dcb108"
+      },
+      "diff_sha256": "116d42cac042f9352f7ecc73741e58efadeb0b50353198247a5734e34216a2ea"
+    },
+    "arkcompiler_ets_frontend": {
+      "path": "arkcompiler/ets_frontend",
+      "head": "e2634d66ce5618e78ffbc69c70804a4cbf8a00eb",
+      "hashes": {
+        "ets2panda/BUILD.gn": "4e3d1ab25fefe6860525538a26f436118145db3716c7b9ab26c3da1f6eabcdbf",
+        "ets2panda/bindings/package-lock.json": null,
+        "ets2panda/driver/build_system/BUILD.gn": "bae2dbf2a4bd48205de1eeb2bb3736f16d444fc712b842e82e66e807edaef7dc",
+        "ets2panda/driver/interop_toolkits/gluegen/package-lock.json": "3b1ac944305232d3a83382f614fdc103f5dd4d46a699e3f7eaf55f2d17c48d5a",
+        "ets2panda/linter/package-lock.json": "97fe5c9f8546dfe998743b0f06dc6f4b5dca4269e4050d87e496d5127d4e6fb3",
+        "ets2panda/scripts/check_build_system_consistency.py": "77b1f11d40a40185d60bcb653877d4dc2d48913c5f2531df563243ccfe9dce7a",
+        "legacy_bin/api8/package-lock.json": "1ecf3d8bbdcf93aea6f78c52e2f68c0f9018635a322b5e60af96fe8395235a5d"
+      },
+      "diff_sha256": "d3b11cc65a0faf667d004376cef321d7b7b5b0912da422f33a260e13ee4726c4"
+    },
+    "developtools_ace_ets2bundle": {
+      "path": "developtools/ace_ets2bundle",
+      "head": "64da29e2cc1618a8d747bafc562d835c420704d7",
+      "hashes": {
+        "BUILD.gn": "ae1574864895829a07fbcb0d177aefe7d87d852e1ed4d41b86ca8bb03191fd99",
+        "ets1.2/BUILD.gn": "24587277a7ec21b8d0a6471ed78bf18d895614a6b40cc54d1fa51332ae27f254",
+        "ets1.2/libarkts/BUILD.gn": "b362f1c9572ce6e6553d833bf0b244c17231d0be882c77afabd81096a70bf3fd",
+        "install_arkguard_tsc_declgen.py": "64da7aeb2fd44d149635c18a0f0cecfc91166d188192dcbe892efe338f964ef1"
+      },
+      "diff_sha256": "6c3e6ec942f7bd8955158ab6a475999365f921418817a4da94731158936f8687"
+    }
+  },
+  "groups": [
+    {
+      "repo": "build",
+      "branch": "fix-phone-install-sa-depfile",
+      "files": [
+        "ohos/packages/modules_install.py"
+      ],
+      "priority": "P0",
+      "subject": "Fix SA file filtering in phone install depfile",
+      "patch": "build/fix-phone-install-sa-depfile.patch"
+    },
+    {
+      "repo": "build",
+      "branch": "fix-sdk-split-incremental-deps",
+      "files": [
+        "ohos/sdk/parse_interface_sdk.py"
+      ],
+      "priority": "P0",
+      "subject": "Add stamp and depfile support to SDK interface splitting",
+      "patch": "build/fix-sdk-split-incremental-deps.patch"
+    },
+    {
+      "repo": "build",
+      "branch": "fix-binary-install-incremental-metadata",
+      "files": [
+        "ohos/common/binary_install_info.py"
+      ],
+      "priority": "P0",
+      "subject": "Stabilize binary install metadata and optional input dependencies",
+      "patch": "build/fix-binary-install-incremental-metadata.patch"
+    },
+    {
+      "repo": "build",
+      "branch": "fix-notice-boundary-license",
+      "files": [
+        "ohos/notice/collect_module_notice_file.py"
+      ],
+      "priority": "P0",
+      "subject": "Find module licenses at the source tree boundary",
+      "patch": "build/fix-notice-boundary-license.patch"
+    },
+    {
+      "repo": "build",
+      "branch": "fix-notice-aggregate-depfile",
+      "files": [
+        "ohos/notice/collect_system_notice_files.py"
+      ],
+      "priority": "P0",
+      "subject": "Avoid redundant generated inputs in the aggregate notice depfile",
+      "patch": "build/fix-notice-aggregate-depfile.patch"
+    },
+    {
+      "repo": "build",
+      "branch": "fix-js-assets-incremental-deps",
+      "files": [
+        "scripts/build_js_assets.py"
+      ],
+      "priority": "P0",
+      "subject": "Preserve JS asset dependency tracking without transient loader caches",
+      "patch": "build/fix-js-assets-incremental-deps.patch"
+    },
+    {
+      "repo": "build",
+      "branch": "fix-idl-acronym-header-outputs",
+      "files": [
+        "config/components/idl_tool/idl.gni"
+      ],
+      "priority": "P0",
+      "subject": "Match IDL interface header outputs for acronym names",
+      "patch": "build/fix-idl-acronym-header-outputs.patch"
+    },
+    {
+      "repo": "build",
+      "branch": "fix-preloader-content-aware-output",
+      "files": [
+        "hb/services/loader.py",
+        "hb/util/io_util.py"
+      ],
+      "priority": "P1",
+      "subject": "Preserve unchanged preloader JSON and syscap outputs",
+      "patch": "build/fix-preloader-content-aware-output.patch"
+    },
+    {
+      "repo": "build",
+      "branch": "fix-static-abc-config-copy",
+      "files": [
+        "config/components/ets_frontend/generate_static_abc.py"
+      ],
+      "priority": "P1",
+      "subject": "Use a cache-local ArkTS configuration without rewriting source inputs",
+      "patch": "build/fix-static-abc-config-copy.patch"
+    },
+    {
+      "repo": "interface_sdk-js",
+      "branch": "fix-sdk-split-incremental-deps",
+      "files": [
+        "BUILD.gn"
+      ],
+      "priority": "P0",
+      "subject": "Declare SDK interface split stamp and dependency file",
+      "patch": "interface_sdk-js/fix-sdk-split-incremental-deps.patch"
+    },
+    {
+      "repo": "interface_sdk-js",
+      "branch": "fix-sdk-declaration-incremental-deps",
+      "files": [
+        "BUILD.gn",
+        "process_internal.py",
+        "remove_internal.py"
+      ],
+      "priority": "P0",
+      "subject": "Track SDK declaration and internal interface generation outputs",
+      "patch": "interface_sdk-js/fix-sdk-declaration-incremental-deps.patch"
+    },
+    {
+      "repo": "arkcompiler_ets_frontend",
+      "branch": "fix-ets2panda-consistency-output",
+      "files": [
+        "ets2panda/BUILD.gn",
+        "ets2panda/scripts/check_build_system_consistency.py"
+      ],
+      "priority": "P0",
+      "subject": "Create the declared build consistency stamp and track source lists",
+      "patch": "arkcompiler_ets_frontend/fix-ets2panda-consistency-output.patch"
+    },
+    {
+      "repo": "arkcompiler_ets_frontend",
+      "branch": "fix-build-system-output-isolation",
+      "files": [
+        "ets2panda/driver/build_system/BUILD.gn"
+      ],
+      "priority": "P0",
+      "subject": "Isolate build system outputs from generated metadata",
+      "patch": "arkcompiler_ets_frontend/fix-build-system-output-isolation.patch"
+    },
+    {
+      "repo": "developtools_ace_ets2bundle",
+      "branch": "fix-arkguard-install-depfile",
+      "files": [
+        "BUILD.gn",
+        "install_arkguard_tsc_declgen.py"
+      ],
+      "priority": "P0",
+      "subject": "Track installed ArkGuard TypeScript and declaration packages",
+      "patch": "developtools_ace_ets2bundle/fix-arkguard-install-depfile.patch"
+    },
+    {
+      "repo": "developtools_ace_ets2bundle",
+      "branch": "fix-libarkts-sdk-incremental-deps",
+      "files": [
+        "ets1.2/BUILD.gn",
+        "ets1.2/libarkts/BUILD.gn"
+      ],
+      "priority": "P0",
+      "subject": "Isolate libarkts SDK output and narrow generator dependencies",
+      "patch": "developtools_ace_ets2bundle/fix-libarkts-sdk-incremental-deps.patch"
+    }
+  ]
+}

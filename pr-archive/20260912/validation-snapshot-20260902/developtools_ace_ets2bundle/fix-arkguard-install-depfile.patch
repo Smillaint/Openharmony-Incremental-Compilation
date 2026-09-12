@@ -1,0 +1,63 @@
+diff --git a/BUILD.gn b/BUILD.gn
+index 77c08cec97c814fa81ec833ad8a1d04a45b310f2..3514eb5de078d25e43e892f59550df1a0a0bafe0 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -411,6 +411,7 @@ action("install_arkguard_tsc_declgen") {
+     "typescript:build_typescript_etc",
+   ]
+   script = "install_arkguard_tsc_declgen.py"
++  depfile = "$target_gen_dir/$target_name.d"
+   args = [
+     rebase_path("${typescript_dir}/ohos-typescript-4.9.5-r4.tgz"),
+     rebase_path(
+@@ -420,6 +421,7 @@ action("install_arkguard_tsc_declgen") {
+     rebase_path(
+         "${root_out_dir}/obj/arkcompiler/runtime_core/static_core/plugins/ets/tools/declgen_ts2sts/panda-declgen-1.0.0.tgz"),
+     rebase_path("${target_out_dir}/${target_name}.stamp", root_build_dir),
++    rebase_path("$target_gen_dir/$target_name.d", root_build_dir),
+   ]
+   outputs = [ "${target_out_dir}/${target_name}.stamp" ]
+ }
+diff --git a/install_arkguard_tsc_declgen.py b/install_arkguard_tsc_declgen.py
+index 4487ea9ce9189c471da497f86eef779f612e921f..2e20870a3937714fabe392ebc28a0693ae4570ee 100755
+--- a/install_arkguard_tsc_declgen.py
++++ b/install_arkguard_tsc_declgen.py
+@@ -63,13 +63,34 @@ def run(args):
+     current_os = args[3]
+     declgen_path = args[4]
+     stamp_path = args[5]
++    depfile_path = args[6]
+     node_modules_path = os.path.join(source_path, "node_modules")
+     extract(tsc_path, node_modules_path, 'typescript', current_os)
+     extract(arkguard_path, node_modules_path, 'arkguard', current_os)
+     extract(declgen_path, node_modules_path, 'declgen', current_os)
+     remove_unexpected_files(node_modules_path)
+-    Path(stamp_path).parent.mkdir(parents=True, exist_ok=True)
+-    Path(stamp_path).touch()
++
++    # Write depfile so ninja can detect if installed files are deleted
++    # (e.g. by npm install in ets_loader_ark clearing node_modules)
++    build_dir = os.getcwd()
++    installed_files = [
++        os.path.join(node_modules_path, 'typescript', 'package.json'),
++        os.path.join(node_modules_path, 'arkguard', 'package.json'),
++        os.path.join(node_modules_path, 'declgen', 'package.json'),
++    ]
++    dep_entries = []
++    for f in installed_files:
++        if os.path.exists(f):
++            dep_entries.append(os.path.relpath(f, build_dir))
++    if depfile_path:
++        depfile = Path(depfile_path)
++        depfile.parent.mkdir(parents=True, exist_ok=True)
++        depfile.write_text(f"{stamp_path}: {' '.join(dep_entries)}\n")
++
++    # Create stamp file
++    if stamp_path:
++        Path(stamp_path).parent.mkdir(parents=True, exist_ok=True)
++        Path(stamp_path).touch()
+ 
+ if __name__ == "__main__":
+-    run(sys.argv[1:])
+\ No newline at end of file
++    run(sys.argv[1:])

@@ -1,0 +1,37 @@
+{
+  "repository": "openharmony/build",
+  "number": 7049,
+  "title": "补齐 SDK 接口拆分的完成标记与增量依赖",
+  "url": "https://gitcode.com/openharmony/build/merge_requests/7049",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7049",
+  "retrieved_at": "2026-09-12T22:31:19.028724+08:00",
+  "head": "72115384f783e09832216c951e7743b944fd5893",
+  "base": "71de884ecc242fa7757c5506e3a3606b9d51c5b0",
+  "source_branch": "fix-sdk-split-incremental-deps",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-09-03T17:22:03+08:00",
+  "patch_file": "gitcode/build/pr-7049.patch",
+  "patch_sha256": "e450a08850579c6b5077030195fce970501bfce28c93602cd64cfc7f9ba1261a",
+  "files": [
+    {
+      "filename": "ohos/sdk/parse_interface_sdk.py",
+      "additions": 58,
+      "deletions": 0,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/72115384f783e09832216c951e7743b944fd5893/ohos/sdk/parse_interface_sdk.py",
+      "patch": {
+        "diff": "@@ -19,6 +19,9 @@ import sys\n import shutil\n import subprocess\n from convert_permissions import convert_permissions\n+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),\n+                              os.pardir, os.pardir))  # noqa: E402\n+from scripts.util import build_utils  # noqa: E402\n \n OUT_ROOT_LIST = [\"dynamic/sdk-js\",\n                  \"static/sdk-js\"]\n@@ -44,6 +47,45 @@ TYPE_CHANGE_DIR = \"type-change\"\n TYPE_CHANGE_API_GEN_PATH = \"build-tools/type-change/api\"\n TYPE_CHANGE_ARKTS_GEN_PATH = \"build-tools/type-change/arkts\"\n \n+DEPFILE_EXCLUDE_DIRS = frozenset({'.git', '.gitee'})\n+\n+\n+def collect_tree_deps(path: str) -> list:\n+    result = []\n+    for root, dirs, files in os.walk(path):\n+        dirs[:] = [d for d in dirs if d not in DEPFILE_EXCLUDE_DIRS]\n+        result.append(root)\n+        for filename in files:\n+            filepath = os.path.join(root, filename)\n+            result.append(filepath)\n+    return result\n+\n+\n+def write_sdk_depfile(depfile_path: str, first_output: str,\n+                      source_root: str, ninja_cwd: str,\n+                      node_js: str, build_sdk_path: str = None,\n+                      sdk_build_public: bool = False):\n+    dep_entries = []\n+    sdk_js_path = os.path.join(source_root, INTERFACE_PATH)\n+    if os.path.isdir(sdk_js_path):\n+        dep_entries.extend(collect_tree_deps(sdk_js_path))\n+    perm_file = os.path.join(\n+        source_root, 'base', 'security', 'access_token',\n+        'services', 'accesstokenmanager',\n+        'permission_definitions.json')\n+    if os.path.isfile(perm_file):\n+        dep_entries.append(perm_file)\n+    dep_entries.append(os.path.abspath(node_js))\n+    if sdk_build_public and build_sdk_path:\n+        build_sdk_abs = os.path.join(ninja_cwd, build_sdk_path)\n+        if os.path.isdir(build_sdk_abs):\n+            dep_entries.extend(collect_tree_deps(build_sdk_abs))\n+    rel_deps = sorted(\n+        os.path.relpath(e, ninja_cwd) for e in dep_entries\n+        if os.path.exists(e))\n+    build_utils.write_depfile(depfile_path, first_output, rel_deps,\n+                              add_pydeps=True)\n+\n \n def copy_sdk_interface(source_root: str, out_path: str):\n     source = os.path.join(source_root, INTERFACE_PATH)\n@@ -208,11 +250,27 @@ def main():\n     parser.add_argument('--build-sdk-path', required=True)\n     parser.add_argument('--sdk-check-level', required=True)\n     parser.add_argument('--sdk-api-version', required=True)\n+    parser.add_argument('--stamp', required=False)\n+    parser.add_argument('--depfile', required=False)\n \n     options = parser.parse_args()\n \n     parse_step(options)\n \n+    source_root = os.path.abspath(options.root_build_dir)\n+    ninja_cwd = os.getcwd()\n+    first_output = os.path.relpath(\n+        os.path.join(ninja_cwd, options.output_interface_sdk), ninja_cwd)\n+    if options.depfile:\n+        write_sdk_depfile(\n+            options.depfile, first_output, source_root, ninja_cwd,\n+            options.node_js,\n+            build_sdk_path=options.build_sdk_path,\n+            sdk_build_public=(options.sdk_build_public == 'true'))\n+    if options.stamp:\n+        with build_utils.atomic_output(options.stamp) as f:\n+            f.write(b'')\n+\n \n if __name__ == '__main__':\n     sys.exit(main())\n",
+        "old_path": "ohos/sdk/parse_interface_sdk.py",
+        "new_path": "ohos/sdk/parse_interface_sdk.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 58,
+        "removed_lines": 0
+      }
+    }
+  ]
+}

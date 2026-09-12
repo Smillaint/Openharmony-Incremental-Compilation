@@ -1,0 +1,496 @@
+diff --git a/config/components/ets_frontend/generate_static_abc.py b/config/components/ets_frontend/generate_static_abc.py
+index dd0c3eec35b054d52323e1ea425b439b2b266180..044c339202b19b3b1a26e2cbc4f94c038459dbb1 100755
+--- a/config/components/ets_frontend/generate_static_abc.py
++++ b/config/components/ets_frontend/generate_static_abc.py
+@@ -291,40 +291,36 @@ def validate_arktsconfig(config: Dict) -> None:
+         raise ConfigValidationError("Missing 'outDir' in compilerOptions")
+ 
+ 
+-def modify_arktsconfig_with_cache(arktsconfig_path: str, cache_path: str) -> None:
+-    """
+-    Modify arktsconfig.json to use cache_path as outDir.
+-    Backup the original file, modify it, and restore it after use.
+-    """
+-    backup_path = arktsconfig_path + ".bak"
+-    shutil.copy(arktsconfig_path, backup_path)
+-
++def create_arktsconfig_with_cache(arktsconfig_path: str, cache_path: str) -> str:
++    """Create an arktsconfig copy that uses cache_path as outDir."""
+     try:
+-        config = {}
+-        if os.path.exists(arktsconfig_path):
+-            with open(arktsconfig_path, "r") as f:
+-                content = f.read()
+-                config = json.loads(content)
+-            if "compilerOptions" in config:
+-                config["compilerOptions"]["outDir"] = cache_path
+-
+-        if os.path.exists(arktsconfig_path):
+-            fd = os.open(arktsconfig_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o777)
+-            with os.fdopen(fd, "w", encoding="utf-8") as f:
+-                json.dump(config, f, indent=2, ensure_ascii=False)
++        with open(arktsconfig_path, "r", encoding="utf-8") as f:
++            config = json.load(f)
+     except json.JSONDecodeError as e:
+-        print(f"{arktsconfig_path} Invalid JSON format (cache): {e}", file=sys.stderr)
+-        sys.exit()
+-    except Exception as e:
+-        restore_arktsconfig(arktsconfig_path)
+-        raise e
++        raise ConfigValidationError(
++            f"{arktsconfig_path} Invalid JSON format (cache): {e}"
++        ) from e
+ 
++    if not isinstance(config.get("compilerOptions"), dict):
++        raise ConfigValidationError("Missing 'compilerOptions' in config")
+ 
+-def restore_arktsconfig(arktsconfig_path: str) -> None:
+-    """Restore the original arktsconfig.json from backup."""
+-    backup_path = arktsconfig_path + ".bak"
+-    if os.path.exists(backup_path):
+-        shutil.move(backup_path, arktsconfig_path)
++    compiler_options = config["compilerOptions"]
++    base_url = compiler_options.get("baseUrl")
++    if isinstance(base_url, str) and not os.path.isabs(base_url):
++        config_dir = os.path.dirname(os.path.abspath(arktsconfig_path))
++        compiler_options["baseUrl"] = os.path.normpath(
++            os.path.join(config_dir, base_url)
++        )
++    compiler_options["outDir"] = cache_path
++    validate_arktsconfig(config)
++    cached_config_path = os.path.join(cache_path, "arktsconfig.json")
++    os.makedirs(cache_path, exist_ok=True)
++    fd = os.open(
++        cached_config_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o777
++    )
++    with os.fdopen(fd, "w", encoding="utf-8") as f:
++        json.dump(config, f, indent=2, ensure_ascii=False)
++    return cached_config_path
+ 
+ 
+ def add_to_bootpath(device_dst_file: str, bootpath_json_file: str, target_name: str) -> None:
+@@ -512,7 +508,7 @@ def build_driver_config(args: argparse.Namespace) -> None:
+         json.dump(config, f, indent=2, ensure_ascii=False)
+ 
+ 
+-def handle_configuration(args: argparse.Namespace) -> None:
++def handle_configuration(args: argparse.Namespace) -> str:
+     """
+     Handle the configuration setup based on command-line arguments.
+     """
+@@ -521,7 +517,8 @@ def handle_configuration(args: argparse.Namespace) -> None:
+     elif args.base_url:
+         build_config(args)
+     else:
+-        modify_arktsconfig_with_cache(args.arktsconfig, args.cache_path)
++        return create_arktsconfig_with_cache(args.arktsconfig, args.cache_path)
++    return args.arktsconfig
+ 
+ 
+ def main() -> None:
+@@ -534,14 +531,31 @@ def main() -> None:
+             shutil.rmtree(args.cache_path)
+         os.makedirs(args.cache_path, exist_ok=True)
+ 
+-        handle_configuration(args)
++        effective_arktsconfig = handle_configuration(args)
+ 
+         if args.ui_enable == "True":
+-            execute_driver(args.entry_path, args.arktsconfig, args.env_path, args.node_path, args.timeout_limit)
++            execute_driver(
++                args.entry_path,
++                effective_arktsconfig,
++                args.env_path,
++                args.node_path,
++                args.timeout_limit,
++            )
+         elif args.is_stdlib:
+-            execute_es2panda_stdlib(args.es2panda, args.arktsconfig, args.env_path, args.timeout_limit, args.dst_file)
++            execute_es2panda_stdlib(
++                args.es2panda,
++                effective_arktsconfig,
++                args.env_path,
++                args.timeout_limit,
++                args.dst_file,
++            )
+         else:
+-            execute_es2panda(args.es2panda, args.arktsconfig, args.env_path, args.timeout_limit)
++            execute_es2panda(
++                args.es2panda,
++                effective_arktsconfig,
++                args.env_path,
++                args.timeout_limit,
++            )
+             execute_ark_link(args.ark_link, args.dst_file, args.cache_path, args.env_path, args.timeout_limit)
+ 
+         if args.is_boot_abc:
+@@ -573,9 +587,6 @@ def main() -> None:
+     except Exception as e:
+         print(f"[UNKNOWN] Unexpected error: {e}", file=sys.stderr)
+         sys.exit(EXIT_CODE["UNKNOWN_ERROR"])
+-    finally:
+-        if not args.base_url:
+-            restore_arktsconfig(args.arktsconfig)
+ 
+ 
+ if __name__ == "__main__":
+diff --git a/config/components/idl_tool/idl.gni b/config/components/idl_tool/idl.gni
+index 4f61ca934f557223eaa48604bf023cb1ec0620ad..543a204c4f326248269af96f2097c8c5d0feddc3 100644
+--- a/config/components/idl_tool/idl.gni
++++ b/config/components/idl_tool/idl.gni
+@@ -131,6 +131,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -138,7 +142,8 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+     if (init_with_i) {
+-      sources_all += [ "${target_gen_dir}/" + "i" + name + ".h" ]
++      sources_all +=
++          [ "${target_gen_dir}/" + "i" + interface_header_name + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + name + ".h" ]
+     }
+@@ -180,6 +185,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -190,7 +199,8 @@ template("idl_gen_interface") {
+     out_full_name = string_replace(idl_full_name, idl_name, name)
+ 
+     if (init_with_i) {
+-      out_full_name_i = string_replace(idl_full_name, idl_name, "i" + name)
++      out_full_name_i =
++          string_replace(idl_full_name, idl_name, "i" + interface_header_name)
+       sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
+diff --git a/hb/services/loader.py b/hb/services/loader.py
+index 8266cce7b9862b205c6d7f448bb2f0e8c2606bdd..d6f505cb15e1791b6ff1a130ff11cad53c7c9154 100644
+--- a/hb/services/loader.py
++++ b/hb/services/loader.py
+@@ -378,7 +378,7 @@ class OHOSLoader(LoadInterface):
+             os.mkdir(system_etc_path)
+         syscap_info_json = os.path.join(
+             system_etc_path, "SystemCapability.json")
+-        write_json_file(syscap_info_json, syscap_info_dict)
++        write_json_file(syscap_info_json, syscap_info_dict, check_changes=True)
+         LogUtil.hb_info(
+             "generate syscap info file to '{}'".format(syscap_info_json), mode=self.config.log_mode)
+         target_syscap_with_part_name_list.sort(
+@@ -386,17 +386,28 @@ class OHOSLoader(LoadInterface):
+         syscap_info_with_part_name_file = os.path.join(
+             system_etc_path, "syscap.json")
+         write_json_file(syscap_info_with_part_name_file, {
+-            'components': target_syscap_with_part_name_list})
++            'components': target_syscap_with_part_name_list}, check_changes=True)
+         LogUtil.hb_info("generate syscap info with part name list to '{}'".format(
+             syscap_info_with_part_name_file), mode=self.config.log_mode)
+         if not os.path.exists(os.path.join(system_etc_path, "param/")):
+             os.mkdir(os.path.join(system_etc_path, "param/"))
+         target_syscap_for_init_file = os.path.join(
+             system_etc_path, "param/syscap.para")
+-        with os.fdopen(os.open(target_syscap_for_init_file,
+-                                os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 
+-                                stat.S_IWUSR | stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH), 'w') as file:
+-            file.writelines(sorted(target_syscap_for_init_list))
++        target_syscap_for_init_content = ''.join(
++            sorted(target_syscap_for_init_list))
++        need_write = True
++        if os.path.isfile(target_syscap_for_init_file):
++            try:
++                with open(target_syscap_for_init_file, 'r') as init_file:
++                    if init_file.read() == target_syscap_for_init_content:
++                        need_write = False
++            except Exception:
++                pass
++        if need_write:
++            with os.fdopen(os.open(target_syscap_for_init_file,
++                                    os.O_WRONLY | os.O_CREAT | os.O_TRUNC,
++                                    stat.S_IWUSR | stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH), 'w') as file:
++                file.writelines(sorted(target_syscap_for_init_list))
+         LogUtil.hb_info("generate target syscap for init list to '{}'".format(
+             target_syscap_for_init_file), mode=self.config.log_mode)
+ 
+diff --git a/hb/util/io_util.py b/hb/util/io_util.py
+index 2b635b20eedb42861a8e9713c62952ce0a363af2..323fe6bc79b50f422e42b573dbab69e34e43f23e 100755
+--- a/hb/util/io_util.py
++++ b/hb/util/io_util.py
+@@ -42,8 +42,19 @@ class IoUtil(metaclass=NoInstance):
+ 
+     @staticmethod
+     def dump_json_file(dump_file: str, json_data: dict or list):
++        file_dir = os.path.dirname(os.path.abspath(dump_file))
++        if not os.path.exists(file_dir):
++            os.makedirs(file_dir, exist_ok=True)
++        new_content = json.dumps(json_data, ensure_ascii=False, indent=2)
++        if os.path.isfile(dump_file):
++            try:
++                with open(dump_file, 'r', encoding='utf-8') as existing:
++                    if existing.read() == new_content:
++                        return
++            except Exception:
++                pass
+         with open(dump_file, 'wt', encoding='utf-8') as json_file:
+-            json.dump(json_data, json_file, ensure_ascii=False, indent=2)
++            json_file.write(new_content)
+ 
+     @staticmethod
+     def read_file(file_path: str):
+diff --git a/lite/config/component/lite_component.gni b/lite/config/component/lite_component.gni
+index f0ad3d6639b4877ea5be3cbb4b79c5e11382e747..97495c0fd3b1ce07f375e8d37384d865ed1426a1 100644
+--- a/lite/config/component/lite_component.gni
++++ b/lite/config/component/lite_component.gni
+@@ -223,7 +223,7 @@ template("build_ext_component") {
+     }
+ 
+     # external component build log
+-    target_dir = rebase_path("${target_out_dir}/build.log")
++    target_dir = rebase_path("${target_out_dir}/${target_name}_build_ext_components.txt")
+     args += [ "--target_dir=${target_dir}" ]
+ 
+     # external component error log if compile failed
+diff --git a/ohos/common/binary_install_info.py b/ohos/common/binary_install_info.py
+index 05da9070886a016c3563c6ba6030bfaeddcd5fbe..963843d34ae5284ce336a02e5c696da5f4953bc3 100755
+--- a/ohos/common/binary_install_info.py
++++ b/ohos/common/binary_install_info.py
+@@ -52,7 +52,7 @@ def binary_install_subsystem(dist_parts_info_file: str,
+ 
+ 
+ def output_installed_info(binary_subsystem_info: str, required_parts: list):
+-    write_json_file(binary_subsystem_info, required_parts)
++    write_json_file(binary_subsystem_info, required_parts, check_changes=True)
+ 
+ 
+ def main():
+@@ -70,7 +70,8 @@ def main():
+ 
+     if args.depfile:
+         _dep_files = []
+-        _dep_files.append(args.dist_parts_info_file)
++        if os.path.exists(args.dist_parts_info_file):
++            _dep_files.append(args.dist_parts_info_file)
+         _dep_files.append(args.parts_src_installed_info_file)
+         build_utils.write_depfile(args.depfile,
+                                  args.binary_installed_info_file,
+diff --git a/ohos/images/build_image.py b/ohos/images/build_image.py
+index d0ebca523b965e0b9dceeab4ace41928801ea974..e72f2d8cac5779b173dfaa698552c2d6c5f7850e 100755
+--- a/ohos/images/build_image.py
++++ b/ohos/images/build_image.py
+@@ -172,6 +172,8 @@ def main(argv):
+         _prepare_userdata(args.input_path)
+     elif args.image_name == 'eng_system':
+         _prepare_eng_ststem(args.input_path, args.build_variant)
++    if not os.path.isdir(args.input_path):
++        os.makedirs(args.input_path, exist_ok=True)
+     if os.path.isdir(args.input_path):
+         _make_image(args)
+         _dep_files = []
+diff --git a/ohos/notice/collect_module_notice_file.py b/ohos/notice/collect_module_notice_file.py
+index af841a5fc262b363fd3141afc46c62a85727693e..92d29ebb6b4245e3dd009d8c42be0270dc8f4cfa 100755
+--- a/ohos/notice/collect_module_notice_file.py
++++ b/ohos/notice/collect_module_notice_file.py
+@@ -59,12 +59,12 @@ def find_other_files(license_file_path):
+ 
+ 
+ def find_file_recursively(current_dir: str, target_files: list):
+-    if is_top_dir(current_dir):
+-        return None
+     for file in target_files:
+         candidate = os.path.join(current_dir, file)
+         if os.path.isfile(candidate):
+             return candidate
++    if is_top_dir(current_dir):
++        return None
+     return find_file_recursively(os.path.dirname(current_dir), target_files)
+ 
+ 
+diff --git a/ohos/notice/collect_system_notice_files.py b/ohos/notice/collect_system_notice_files.py
+index f86585fe7ebeb7f3b1c93fe95a0b61e51efd6977..b5c4db7ad4a968d9cc9313d9a1e8aa41dcf22cb6 100755
+--- a/ohos/notice/collect_system_notice_files.py
++++ b/ohos/notice/collect_system_notice_files.py
+@@ -77,7 +77,6 @@ def collect_notice_files(options, dest_dir: str, depfiles: str):
+                 generate_notice_files(dest_dir, module_info, depfiles)
+ 
+     notice_files = build_utils.get_all_files(options.notice_root_dir)
+-    depfiles.extend(notice_files)
+     for file in notice_files:
+         dest = os.path.join(dest_dir,
+                             os.path.relpath(file, options.notice_root_dir))
+diff --git a/ohos/packages/modules_install.py b/ohos/packages/modules_install.py
+index a8fdff747f26a41687a661ada8bc3dc1017d6709..a3d7b084c456bb7efb128adc4b79fa54ba91537f 100755
+--- a/ohos/packages/modules_install.py
++++ b/ohos/packages/modules_install.py
+@@ -346,7 +346,7 @@ def main():
+     if os.path.exists(args.system_image_zipfile):
+         os.unlink(args.system_image_zipfile)
+     build_utils.zip_dir(args.system_image_zipfile, args.system_dir)
+-    depfiles.extend([item for item in depfiles if item not in sa_files])
++    depfiles = [item for item in depfiles if item not in sa_files]
+     build_utils.write_depfile(args.depfile, args.install_modules_info_file,
+                               depfiles)
+     
+diff --git a/ohos/sdk/parse_interface_sdk.py b/ohos/sdk/parse_interface_sdk.py
+index 35ec1350c0c5cd44e510a5aba9f90705a40653b8..225abde6ed2ac754b487642b2f5b28b2ada317f3 100755
+--- a/ohos/sdk/parse_interface_sdk.py
++++ b/ohos/sdk/parse_interface_sdk.py
+@@ -19,6 +19,9 @@ import sys
+ import shutil
+ import subprocess
+ from convert_permissions import convert_permissions
++sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),
++                              os.pardir, os.pardir))  # noqa: E402
++from scripts.util import build_utils  # noqa: E402
+ 
+ OUT_ROOT_LIST = ["dynamic/sdk-js",
+                  "static/sdk-js"]
+@@ -44,6 +47,45 @@ TYPE_CHANGE_DIR = "type-change"
+ TYPE_CHANGE_API_GEN_PATH = "build-tools/type-change/api"
+ TYPE_CHANGE_ARKTS_GEN_PATH = "build-tools/type-change/arkts"
+ 
++DEPFILE_EXCLUDE_DIRS = frozenset({'.git', '.gitee'})
++
++
++def collect_tree_deps(path: str) -> list:
++    result = []
++    for root, dirs, files in os.walk(path):
++        dirs[:] = [d for d in dirs if d not in DEPFILE_EXCLUDE_DIRS]
++        result.append(root)
++        for filename in files:
++            filepath = os.path.join(root, filename)
++            result.append(filepath)
++    return result
++
++
++def write_sdk_depfile(depfile_path: str, first_output: str,
++                      source_root: str, ninja_cwd: str,
++                      node_js: str, build_sdk_path: str = None,
++                      sdk_build_public: bool = False):
++    dep_entries = []
++    sdk_js_path = os.path.join(source_root, INTERFACE_PATH)
++    if os.path.isdir(sdk_js_path):
++        dep_entries.extend(collect_tree_deps(sdk_js_path))
++    perm_file = os.path.join(
++        source_root, 'base', 'security', 'access_token',
++        'services', 'accesstokenmanager',
++        'permission_definitions.json')
++    if os.path.isfile(perm_file):
++        dep_entries.append(perm_file)
++    dep_entries.append(os.path.abspath(node_js))
++    if sdk_build_public and build_sdk_path:
++        build_sdk_abs = os.path.join(ninja_cwd, build_sdk_path)
++        if os.path.isdir(build_sdk_abs):
++            dep_entries.extend(collect_tree_deps(build_sdk_abs))
++    rel_deps = sorted(
++        os.path.relpath(e, ninja_cwd) for e in dep_entries
++        if os.path.exists(e))
++    build_utils.write_depfile(depfile_path, first_output, rel_deps,
++                              add_pydeps=True)
++
+ 
+ def copy_sdk_interface(source_root: str, out_path: str):
+     source = os.path.join(source_root, INTERFACE_PATH)
+@@ -208,11 +250,27 @@ def main():
+     parser.add_argument('--build-sdk-path', required=True)
+     parser.add_argument('--sdk-check-level', required=True)
+     parser.add_argument('--sdk-api-version', required=True)
++    parser.add_argument('--stamp', required=False)
++    parser.add_argument('--depfile', required=False)
+ 
+     options = parser.parse_args()
+ 
+     parse_step(options)
+ 
++    source_root = os.path.abspath(options.root_build_dir)
++    ninja_cwd = os.getcwd()
++    first_output = os.path.relpath(
++        os.path.join(ninja_cwd, options.output_interface_sdk), ninja_cwd)
++    if options.depfile:
++        write_sdk_depfile(
++            options.depfile, first_output, source_root, ninja_cwd,
++            options.node_js,
++            build_sdk_path=options.build_sdk_path,
++            sdk_build_public=(options.sdk_build_public == 'true'))
++    if options.stamp:
++        with build_utils.atomic_output(options.stamp) as f:
++            f.write(b'')
++
+ 
+ if __name__ == '__main__':
+     sys.exit(main())
+diff --git a/scripts/build_js_assets.py b/scripts/build_js_assets.py
+index 265ef9c4ef3758d4d0280c5cb31418c41dfcecf0..0155d801ee49249e5dbe88cdcb29e6e922f805b8 100755
+--- a/scripts/build_js_assets.py
++++ b/scripts/build_js_assets.py
+@@ -197,6 +197,26 @@ def get_all_js_sources(base) -> list:
+     return sources
+ 
+ 
++def get_loader_files(base):
++    """Collect every file under |base|, pruning transient artifacts that are
++    rewritten by other actions after this one completes: any directory whose
++    final path component is '.cache' (e.g. node_modules/.cache) and TypeScript
++    incremental build-info files (.tsbuildinfo*). Stable loader source files
++    are kept.
++    """
++    result = []
++    for root, dirs, files in os.walk(base):
++        dirs[:] = [d for d in dirs if d != '.cache']
++        result.extend([os.path.join(root, f) for f in files
++                       if not f.startswith('.tsbuildinfo')])
++    return result
++
++
++def _write_empty_zip(output_path):
++    with ZipFile(output_path, 'w'):
++        pass
++
++
+ def main(args):
+     options = parse_args(args)
+ 
+@@ -206,8 +226,16 @@ def main(args):
+     ]
+     depfiles = []
+     if not options.js_assets_dir and not options.ets_assets_dir:
+-        with ZipFile(options.output, 'w') as file:
+-            return
++        build_utils.call_and_write_depfile_if_stale(
++            lambda: _write_empty_zip(options.output),
++            options,
++            depfile_deps=[p for p in inputs if p],
++            input_paths=[p for p in inputs if p],
++            input_strings=[],
++            output_paths=[options.output],
++            force=False,
++            add_pydeps=False)
++        return
+ 
+     if options.ark_es2abc_dir:
+         depfiles.extend(build_utils.get_all_files(options.ark_es2abc_dir))
+@@ -216,8 +244,8 @@ def main(args):
+     depfiles.append(options.webpack_ets)
+     depfiles.append(options.webpack_config_js)
+     depfiles.append(options.webpack_config_ets)
+-    depfiles.extend(build_utils.get_all_files(options.ace_loader_home))
+-    depfiles.extend(build_utils.get_all_files(options.ets_loader_home))
++    depfiles.extend(get_loader_files(options.ace_loader_home))
++    depfiles.extend(get_loader_files(options.ets_loader_home))
+ 
+     node_js = os.path.relpath(options.nodejs_path, options.ace_loader_home)
+     assets_dict = dict()

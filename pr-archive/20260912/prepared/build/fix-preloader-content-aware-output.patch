@@ -1,0 +1,83 @@
+From 07a42d2c7a129b9b404338b90c971eed4662f0b0 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:33 +0800
+Subject: [PATCH] Preserve unchanged preloader JSON and syscap outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ hb/services/loader.py | 23 +++++++++++++++++------
+ hb/util/io_util.py    | 13 ++++++++++++-
+ 2 files changed, 29 insertions(+), 7 deletions(-)
+
+diff --git a/hb/services/loader.py b/hb/services/loader.py
+index 8266cce7..d6f505cb 100644
+--- a/hb/services/loader.py
++++ b/hb/services/loader.py
+@@ -378,7 +378,7 @@ class OHOSLoader(LoadInterface):
+             os.mkdir(system_etc_path)
+         syscap_info_json = os.path.join(
+             system_etc_path, "SystemCapability.json")
+-        write_json_file(syscap_info_json, syscap_info_dict)
++        write_json_file(syscap_info_json, syscap_info_dict, check_changes=True)
+         LogUtil.hb_info(
+             "generate syscap info file to '{}'".format(syscap_info_json), mode=self.config.log_mode)
+         target_syscap_with_part_name_list.sort(
+@@ -386,17 +386,28 @@ class OHOSLoader(LoadInterface):
+         syscap_info_with_part_name_file = os.path.join(
+             system_etc_path, "syscap.json")
+         write_json_file(syscap_info_with_part_name_file, {
+-            'components': target_syscap_with_part_name_list})
++            'components': target_syscap_with_part_name_list}, check_changes=True)
+         LogUtil.hb_info("generate syscap info with part name list to '{}'".format(
+             syscap_info_with_part_name_file), mode=self.config.log_mode)
+         if not os.path.exists(os.path.join(system_etc_path, "param/")):
+             os.mkdir(os.path.join(system_etc_path, "param/"))
+         target_syscap_for_init_file = os.path.join(
+             system_etc_path, "param/syscap.para")
+-        with os.fdopen(os.open(target_syscap_for_init_file,
+-                                os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 
+-                                stat.S_IWUSR | stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH), 'w') as file:
+-            file.writelines(sorted(target_syscap_for_init_list))
++        target_syscap_for_init_content = ''.join(
++            sorted(target_syscap_for_init_list))
++        need_write = True
++        if os.path.isfile(target_syscap_for_init_file):
++            try:
++                with open(target_syscap_for_init_file, 'r') as init_file:
++                    if init_file.read() == target_syscap_for_init_content:
++                        need_write = False
++            except Exception:
++                pass
++        if need_write:
++            with os.fdopen(os.open(target_syscap_for_init_file,
++                                    os.O_WRONLY | os.O_CREAT | os.O_TRUNC,
++                                    stat.S_IWUSR | stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH), 'w') as file:
++                file.writelines(sorted(target_syscap_for_init_list))
+         LogUtil.hb_info("generate target syscap for init list to '{}'".format(
+             target_syscap_for_init_file), mode=self.config.log_mode)
+ 
+diff --git a/hb/util/io_util.py b/hb/util/io_util.py
+index 2b635b20..323fe6bc 100755
+--- a/hb/util/io_util.py
++++ b/hb/util/io_util.py
+@@ -42,8 +42,19 @@ class IoUtil(metaclass=NoInstance):
+ 
+     @staticmethod
+     def dump_json_file(dump_file: str, json_data: dict or list):
++        file_dir = os.path.dirname(os.path.abspath(dump_file))
++        if not os.path.exists(file_dir):
++            os.makedirs(file_dir, exist_ok=True)
++        new_content = json.dumps(json_data, ensure_ascii=False, indent=2)
++        if os.path.isfile(dump_file):
++            try:
++                with open(dump_file, 'r', encoding='utf-8') as existing:
++                    if existing.read() == new_content:
++                        return
++            except Exception:
++                pass
+         with open(dump_file, 'wt', encoding='utf-8') as json_file:
+-            json.dump(json_data, json_file, ensure_ascii=False, indent=2)
++            json_file.write(new_content)
+ 
+     @staticmethod
+     def read_file(file_path: str):

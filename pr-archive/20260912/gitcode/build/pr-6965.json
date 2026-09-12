@@ -1,0 +1,113 @@
+{
+  "repository": "openharmony/build",
+  "number": 6965,
+  "title": "Stabilize SA profile incremental outputs",
+  "url": "https://gitcode.com/openharmony/build/merge_requests/6965",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6965",
+  "retrieved_at": "2026-09-12T22:31:05.561632+08:00",
+  "head": "0d530d7eb691276cd27d7109b1155a21c6c0c1cc",
+  "base": "71de884ecc242fa7757c5506e3a3606b9d51c5b0",
+  "source_branch": "codex/fix-sa-profile-incremental-build",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-08-06T14:24:01+08:00",
+  "patch_file": "gitcode/build/pr-6965.patch",
+  "patch_sha256": "036d05b430f8415f5b92e1e03d2074989bc13383c2e6f4c5485894b5950b5675",
+  "files": [
+    {
+      "filename": "ohos/sa_profile/sa_profile_binary.py",
+      "additions": 11,
+      "deletions": 9,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/0d530d7eb691276cd27d7109b1155a21c6c0c1cc/ohos/sa_profile/sa_profile_binary.py",
+      "patch": {
+        "diff": "@@ -94,15 +94,17 @@ def main():\n             generate_binary_sa_archive(parts_list,\n                                        args.sa_profile_archive_info_file,\n                                        args.sa_output_dir, depfiles))\n-    with zipfile.ZipFile(args.sa_output_zipfile, 'w') as outfile:\n-        for part_name, sa_file_path, sa_file in sa_files_tuples:\n-            part_name_map[sa_file] = part_name\n-            build_utils.add_to_zip_hermetic(outfile,\n-                                         sa_file,\n-                                         src_path=sa_file_path)\n-        if part_name_map:\n-            metadata_content = json.dumps(part_name_map, indent=2, sort_keys=True)\n-            outfile.writestr(\"part_name_info.json\", metadata_content)\n+    with build_utils.atomic_output(args.sa_output_zipfile) as output_file:\n+        with zipfile.ZipFile(output_file, 'w') as outfile:\n+            for part_name, sa_file_path, sa_file in sa_files_tuples:\n+                part_name_map[sa_file] = part_name\n+                build_utils.add_to_zip_hermetic(outfile,\n+                                                sa_file,\n+                                                src_path=sa_file_path)\n+            if part_name_map:\n+                metadata_content = json.dumps(part_name_map, indent=2,\n+                                              sort_keys=True)\n+                outfile.writestr(\"part_name_info.json\", metadata_content)\n     build_utils.write_depfile(args.depfile, args.sa_output_zipfile, depfiles)\n     return 0\n \n",
+        "old_path": "ohos/sa_profile/sa_profile_binary.py",
+        "new_path": "ohos/sa_profile/sa_profile_binary.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 11,
+        "removed_lines": 9
+      }
+    },
+    {
+      "filename": "ohos/sa_profile/sa_profile_merge.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/0d530d7eb691276cd27d7109b1155a21c6c0c1cc/ohos/sa_profile/sa_profile_merge.py",
+      "patch": {
+        "diff": "@@ -114,7 +114,8 @@ def _generate_install_info(sa_result_file_dict: dict, sa_info_install_dest_dir:\n             'dest': [_install_dest]\n         }\n         module_install_info_list.append(module_install_info)\n-    write_json_file(sa_install_info_file, module_install_info_list)\n+    write_json_file(sa_install_info_file, module_install_info_list,\n+                    check_changes=True)\n \n \n def main():\n",
+        "old_path": "ohos/sa_profile/sa_profile_merge.py",
+        "new_path": "ohos/sa_profile/sa_profile_merge.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 2,
+        "removed_lines": 1
+      }
+    },
+    {
+      "filename": "ohos/sa_profile/sa_profile_source.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/0d530d7eb691276cd27d7109b1155a21c6c0c1cc/ohos/sa_profile/sa_profile_source.py",
+      "patch": {
+        "diff": "@@ -60,7 +60,8 @@ def main():\n     src_parts_info = get_src_parts(args.system_install_info_file)\n     sa_install_infos = get_sa_install_info(args.src_sa_info_file,\n                                            src_parts_info)\n-    write_json_file(args.src_sa_install_info_file, sa_install_infos)\n+    write_json_file(args.src_sa_install_info_file, sa_install_infos,\n+                    check_changes=True)\n     return 0\n \n \n",
+        "old_path": "ohos/sa_profile/sa_profile_source.py",
+        "new_path": "ohos/sa_profile/sa_profile_source.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 2,
+        "removed_lines": 1
+      }
+    },
+    {
+      "filename": "ohos/sa_profile/src_sa_profile_process.py",
+      "additions": 4,
+      "deletions": 2,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/0d530d7eb691276cd27d7109b1155a21c6c0c1cc/ohos/sa_profile/src_sa_profile_process.py",
+      "patch": {
+        "diff": "@@ -43,7 +43,8 @@ def sa_info_process(sa_profile_infos_file: str, toolchain_platform: dict):\n         _sa_info['part_name'] = part_name\n         _sa_info['origin_part_name'] = origin_part_name\n         processed_sa_infos.append(_sa_info)\n-    return processed_sa_infos\n+    return sorted(processed_sa_infos,\n+                  key=lambda info: info.get('label', ''))\n \n \n def main():\n@@ -62,7 +63,8 @@ def main():\n     toolchain_platform = variants_toolchain_info.get('toolchain_platform')\n     processed_sa_infos = sa_info_process(args.sa_profile_infos_file,\n                                          toolchain_platform)\n-    write_json_file(args.output_file, processed_sa_infos)\n+    write_json_file(args.output_file, processed_sa_infos,\n+                    check_changes=True)\n     build_utils.write_depfile(args.depfile, args.output_file, depfiles)\n     return 0\n \n",
+        "old_path": "ohos/sa_profile/src_sa_profile_process.py",
+        "new_path": "ohos/sa_profile/src_sa_profile_process.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 4,
+        "removed_lines": 2
+      }
+    },
+    {
+      "filename": "scripts/util/file_utils.py",
+      "additions": 3,
+      "deletions": 13,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/0d530d7eb691276cd27d7109b1155a21c6c0c1cc/scripts/util/file_utils.py",
+      "patch": {
+        "diff": "@@ -16,7 +16,6 @@\n import json\n import os\n import subprocess\n-import hashlib\n import platform\n \n \n@@ -82,18 +81,9 @@ def write_json_file(output_file, content, check_changes=False):\n \n \n def __check_changes(output_file, content):\n-    if os.path.exists(output_file) and os.path.isfile(output_file):\n-        # file content md5 val\n-        sha256_obj = hashlib.sha256()\n-        sha256_obj.update(str(read_json_file(output_file)).encode())\n-        hash_value = sha256_obj.hexdigest()\n-        # new content md5 val\n-        sha256_obj_new = hashlib.sha256()\n-        sha256_obj_new.update(str(content).encode())\n-        hash_value_new = sha256_obj_new.hexdigest()\n-        if hash_value_new == hash_value:\n-            return False\n-    return True\n+    if not os.path.isfile(output_file):\n+        return True\n+    return read_json_file(output_file) != content\n \n \n # Write file data\n",
+        "old_path": "scripts/util/file_utils.py",
+        "new_path": "scripts/util/file_utils.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 3,
+        "removed_lines": 13
+      }
+    }
+  ]
+}

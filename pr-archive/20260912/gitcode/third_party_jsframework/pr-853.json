@@ -1,0 +1,37 @@
+{
+  "repository": "openharmony/third_party_jsframework",
+  "number": 853,
+  "title": "fix: stabilize jsframework incremental actions",
+  "url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/third_party_jsframework/pulls/853",
+  "retrieved_at": "2026-09-12T22:31:24.088999+08:00",
+  "head": "a280a42fe7f73d59528ecbde04f319cc61e5de0b",
+  "base": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+  "source_branch": "fix/jsframework-incremental-actions",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-08-19T15:38:03+08:00",
+  "patch_file": "gitcode/third_party_jsframework/pr-853.patch",
+  "patch_sha256": "4bee71cb6dc71c22de5801dbbdec9b640c01f6f1cf1c0c1d4e6f45ea778a7e65",
+  "files": [
+    {
+      "filename": "js_framework_build.sh",
+      "additions": 18,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/third_party_jsframework/blob/a280a42fe7f73d59528ecbde04f319cc61e5de0b/js_framework_build.sh",
+      "patch": {
+        "diff": "@@ -15,6 +15,15 @@\n set -e\n echo \"copy source code...\"\n prebuilts_path=${11}\n+snapshot_output=\"$8/dist/strip.native.min.js\"\n+snapshot_backup=$(mktemp)\n+snapshot_output_exists=false\n+css_what_stamp=\"$(dirname \"$8\")/css-what/css_what_sources.stamp\"\n+if [ -f \"$snapshot_output\" ]; then\n+  cp -p \"$snapshot_output\" \"$snapshot_backup\"\n+  snapshot_output_exists=true\n+fi\n+trap 'rm -f \"$snapshot_backup\"' EXIT\n # copy dependency file to generate dir of gn\n # the params come from .gn\n \n@@ -78,6 +87,11 @@ else\n   npm run test:unit\n fi\n \n+if [ \"$snapshot_output_exists\" = true ] &&\n+   cmp -s \"$snapshot_backup\" \"$snapshot_output\"; then\n+  touch -r \"$snapshot_backup\" \"$snapshot_output\"\n+fi\n+\n # after running, remove dependency file\n rm -rf ./node_modules\n if [ \"${10}\" == 'true' ];then\n@@ -85,10 +99,13 @@ if [ \"${10}\" == 'true' ];then\n else\n   rm -rf ./current\n fi\n-rm -rf ./runtime\n rm -rf ./tsconfig.json\n rm -rf build_strip_native_min.js\n rm -rf ./test\n rm -rf ./.eslintrc\n rm -rf ./.babelrc\n rm -rf ./package.json\n+\n+if [ -d \"$8/runtime\" ] && [ -f \"$css_what_stamp\" ]; then\n+  touch -r \"$css_what_stamp\" \"$8/runtime\"\n+fi\n",
+        "old_path": "js_framework_build.sh",
+        "new_path": "js_framework_build.sh",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 18,
+        "removed_lines": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,467 @@
+From df667b6d64f36d29e5dad520761b052758e90de1 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:35 +0800
+Subject: [PATCH] Track SDK declaration and internal interface generation
+ outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ BUILD.gn            |  23 ++++++-
+ process_internal.py | 156 +++++++++++++++++++++++++++++++++++++++++---
+ remove_internal.py  | 155 ++++++++++++++++++++++++++++++++++++++++---
+ 3 files changed, 317 insertions(+), 17 deletions(-)
+
+diff --git a/BUILD.gn b/BUILD.gn
+index 271d22e..6088205 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -104,6 +104,7 @@ template("ohos_copy_internal") {
+       "${target_out_dir}/${target_name}.timestamp",
+     ]
+     script = "//interface/sdk-js/process_internal.py"
++    depfile = "${target_out_dir}/${target_name}.d"
+     args = [
+       "--input",
+       rebase_path(iv_input, root_build_dir),
+@@ -119,6 +120,10 @@ template("ohos_copy_internal") {
+       "${target_name}",
+       "--output",
+       rebase_path(target_out_dir + "/${target_name}", root_build_dir),
++      "--stamp",
++      rebase_path("${target_out_dir}/${target_name}.timestamp", root_build_dir),
++      "--depfile",
++      rebase_path(depfile, root_build_dir),
+     ]
+   }
+   _target_name = target_name
+@@ -133,9 +138,13 @@ template("ohos_copy_internal") {
+ 
+ # 主要api处理template
+ template("ohos_declaration_template") {
+-  forward_variables_from(invoker, "*")
++  forward_variables_from(invoker, "*", [ "incremental_depfile" ])
+   input_project_dir = invoker.input_project_dir
+   _module_info_target = "/ohos_declaration/${target_name}_info"
++  _incremental_depfile = ""
++  if (defined(invoker.incremental_depfile)) {
++    _incremental_depfile = invoker.incremental_depfile
++  }
+ 
+   input_api_dir = input_project_dir + "/api"
+ 
+@@ -157,6 +166,16 @@ template("ohos_declaration_template") {
+       rebase_path(root_out_dir + "/ohos_declaration/${target_name}/",
+                   root_build_dir),
+     ]
++    if (_incremental_depfile != "") {
++      depfile = _incremental_depfile
++      args += [
++        "--stamp",
++        rebase_path("${target_out_dir}/${target_name}.timestamp",
++                    root_build_dir),
++        "--depfile",
++        rebase_path(depfile, root_build_dir),
++      ]
++    }
+   }
+   _target_name = target_name
+   generate_module_info(_module_info_target) {
+@@ -250,6 +269,7 @@ ohos_handle_declaration_template("ohos_build_static_sdk_kits") {
+ # ets/api执行脚本
+ ohos_declaration_template("ohos_declaration_ets") {
+   input_project_dir = interface_sdk_path_ets1
++  incremental_depfile = "${target_out_dir}/${target_name}.d"
+ }
+ 
+ ohos_copy("ohos_declaration_ets_api") {
+@@ -262,6 +282,7 @@ ohos_copy("ohos_declaration_ets_api") {
+ # static/api执行脚本
+ ohos_declaration_template("ohos_declaration_ets2") {
+   input_project_dir = interface_sdk_path_ets2
++  incremental_depfile = "${target_out_dir}/${target_name}.d"
+ }
+ 
+ # ets/api/@internal/full执行脚本
+diff --git a/process_internal.py b/process_internal.py
+index 22a1f87..0131ab1 100755
+--- a/process_internal.py
++++ b/process_internal.py
+@@ -13,11 +13,13 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
++import filecmp
+ import os
+ import sys
+ import shutil
+ import optparse
+ import json
++import tempfile
+ from pathlib import Path
+ 
+ 
+@@ -80,6 +82,135 @@ def format_path(filepath, base_dir):
+     return os.path.abspath(filepath)
+ 
+ 
++def directories_equal(first_path, second_path):
++    if not os.path.isdir(second_path):
++        return False
++    first_entries = sorted(os.listdir(first_path))
++    second_entries = sorted(os.listdir(second_path))
++    if first_entries != second_entries:
++        return False
++    for entry in first_entries:
++        first_entry = os.path.join(first_path, entry)
++        second_entry = os.path.join(second_path, entry)
++        first_is_dir = os.path.isdir(first_entry)
++        if first_is_dir != os.path.isdir(second_entry):
++            return False
++        if first_is_dir:
++            if not directories_equal(first_entry, second_entry):
++                return False
++        elif not filecmp.cmp(first_entry, second_entry, shallow=False):
++            return False
++    return True
++
++
++def remove_path(path):
++    if os.path.isdir(path) and not os.path.islink(path):
++        shutil.rmtree(path)
++    elif os.path.lexists(path):
++        os.remove(path)
++
++
++def rebase_path(path, base_path):
++    absolute_path = os.path.abspath(path)
++    try:
++        return os.path.relpath(absolute_path, base_path)
++    except ValueError:
++        return absolute_path
++
++
++def escape_depfile_path(path):
++    escaped_path = path.replace("\\", "/").replace("$", "$$")
++    return escaped_path.replace(" ", "\\ ").replace("#", "\\#")
++
++
++def write_if_changed(path, content):
++    path = os.path.normpath(path)
++    try:
++        with open(path, "rb") as file:
++            if file.read() == content:
++                return
++    except FileNotFoundError:
++        pass
++    output_parent = os.path.dirname(os.path.abspath(path))
++    os.makedirs(output_parent, exist_ok=True)
++    file_descriptor, temporary_path = tempfile.mkstemp(
++        prefix=f".{os.path.basename(path)}.", dir=output_parent)
++    try:
++        with os.fdopen(file_descriptor, "wb") as file:
++            file.write(content)
++        os.replace(temporary_path, path)
++    finally:
++        if os.path.exists(temporary_path):
++            os.remove(temporary_path)
++
++
++def stage_output_files(options, staging_path):
++    plan = copy_files(options)
++    for file_path in plan:
++        copy_with_rel_path(Path(file_path), options.input, staging_path)
++    return plan
++
++
++def update_output(options):
++    output_path = os.path.normpath(options.output)
++    output_parent = os.path.dirname(os.path.abspath(output_path))
++    os.makedirs(output_parent, exist_ok=True)
++    staging_path = tempfile.mkdtemp(
++        prefix=f".{os.path.basename(output_path)}.", dir=output_parent)
++    backup_path = f"{staging_path}.old"
++    plan = []
++    try:
++        os.makedirs(staging_path, exist_ok=True)
++        plan = stage_output_files(options, staging_path)
++        if directories_equal(staging_path, output_path):
++            return plan
++        if os.path.lexists(output_path):
++            os.replace(output_path, backup_path)
++        try:
++            os.replace(staging_path, output_path)
++            staging_path = None
++        except OSError:
++            if os.path.lexists(backup_path):
++                os.replace(backup_path, output_path)
++            raise
++        remove_path(backup_path)
++    finally:
++        if staging_path and os.path.lexists(staging_path):
++            remove_path(staging_path)
++    return plan
++
++
++def collect_input_dependencies(input_path):
++    dependencies = [os.path.normpath(input_path)]
++    if not os.path.isdir(input_path):
++        return dependencies
++    for entry in sorted(os.listdir(input_path)):
++        entry_path = os.path.join(input_path, entry)
++        if os.path.isdir(entry_path):
++            for root, dirs, files in os.walk(entry_path):
++                dirs.sort()
++                files.sort()
++                dependencies.append(root)
++                dependencies.extend(os.path.join(root, file) for file in files)
++        elif os.path.isfile(entry_path):
++            dependencies.append(entry_path)
++    return dependencies
++
++
++def write_depfile(depfile_path, output_path, options, plan):
++    ninja_cwd = os.getcwd()
++    target = rebase_path(output_path, ninja_cwd)
++    dependencies = set(collect_input_dependencies(options.input))
++    dependencies.add(os.path.normpath(options.remove))
++    for path in plan:
++        dependencies.add(os.path.normpath(path))
++    depfile_content = "{}: {}\n".format(
++        escape_depfile_path(target),
++        " ".join(escape_depfile_path(rebase_path(path, ninja_cwd))
++                 for path in sorted(dependencies)))
++    write_if_changed(depfile_path, depfile_content.encode("utf-8"))
++
++
+ def parse_args(args):
+     '''解析命令行参数'''
+     parser = optparse.OptionParser()
+@@ -90,22 +221,31 @@ def parse_args(args):
+     parser.add_option('--ispublic', help='whether or not sdk build public')
+     parser.add_option('--name', help='module label name')
+     parser.add_option('--output', help='output path')
++    parser.add_option('--stamp', help='stable action stamp path')
++    parser.add_option('--depfile', help='Ninja depfile path')
+     options, _ = parser.parse_args(args)
+     options.input = os.path.realpath(options.input)
++    if bool(options.stamp) != bool(options.depfile):
++        parser.error('--stamp and --depfile must be specified together')
+     return options
+ 
+ 
+ def main(argv):
+     '''main函数入口'''
+     options = parse_args(argv)
+-    if not os.path.exists(options.output):
+-        os.makedirs(options.output)
+-    result = copy_files(options)
+-    for file_path in result:
+-        copy_with_rel_path(Path(file_path), options.input, options.output)
+-
+-    # 更新输出文件夹的修改时间，防止后续编译工具误认为文件未修改而跳过编译
+-    os.utime(options.output)
++    if options.stamp and options.depfile:
++        plan = update_output(options)
++        write_depfile(options.depfile, options.output, options, plan)
++        write_if_changed(options.stamp, b'')
++    else:
++        if not os.path.exists(options.output):
++            os.makedirs(options.output)
++        result = copy_files(options)
++        for file_path in result:
++            copy_with_rel_path(Path(file_path), options.input, options.output)
++
++        # 更新输出文件夹的修改时间，防止后续编译工具误认为文件未修改而跳过编译
++        os.utime(options.output)
+     return 0
+ 
+ 
+diff --git a/remove_internal.py b/remove_internal.py
+index f5426e3..ed6eb54 100755
+--- a/remove_internal.py
++++ b/remove_internal.py
+@@ -13,10 +13,12 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
++import filecmp
+ import os
+ import sys
+ import optparse
+ import shutil
++import tempfile
+ import time
+ 
+ # d.ts directories to be deleted 需要排除的目录名称的列表
+@@ -35,26 +37,163 @@ def copy_files(input_path, output_path):
+             shutil.copy(src, dst)
+ 
+ 
++def copy_files_staging(input_path, output_path):
++    for file in sorted(os.listdir(input_path)):
++        src = os.path.join(input_path, file)
++        dst = os.path.join(output_path, file)
++        if os.path.isdir(src) and file not in remove_list:
++            shutil.copytree(src, dst, copy_function=shutil.copy2)
++        elif os.path.isfile(src):
++            shutil.copy2(src, dst)
++
++
++def directories_equal(first_path, second_path):
++    if not os.path.isdir(second_path):
++        return False
++    first_entries = sorted(os.listdir(first_path))
++    second_entries = sorted(os.listdir(second_path))
++    if first_entries != second_entries:
++        return False
++    for entry in first_entries:
++        first_entry = os.path.join(first_path, entry)
++        second_entry = os.path.join(second_path, entry)
++        first_is_dir = os.path.isdir(first_entry)
++        if first_is_dir != os.path.isdir(second_entry):
++            return False
++        if first_is_dir:
++            if not directories_equal(first_entry, second_entry):
++                return False
++        elif not filecmp.cmp(first_entry, second_entry, shallow=False):
++            return False
++    return True
++
++
++def remove_path(path):
++    if os.path.isdir(path) and not os.path.islink(path):
++        shutil.rmtree(path)
++    elif os.path.lexists(path):
++        os.remove(path)
++
++
++def update_output(input_path, output_path):
++    output_path = os.path.normpath(output_path)
++    output_parent = os.path.dirname(os.path.abspath(output_path))
++    os.makedirs(output_parent, exist_ok=True)
++    staging_path = tempfile.mkdtemp(
++        prefix=f".{os.path.basename(output_path)}.", dir=output_parent)
++    backup_path = f"{staging_path}.old"
++    try:
++        copy_files_staging(input_path, staging_path)
++        if directories_equal(staging_path, output_path):
++            return
++        if os.path.lexists(output_path):
++            os.replace(output_path, backup_path)
++        try:
++            os.replace(staging_path, output_path)
++            staging_path = None
++        except OSError:
++            if os.path.lexists(backup_path):
++                os.replace(backup_path, output_path)
++            raise
++        remove_path(backup_path)
++    finally:
++        if staging_path and os.path.lexists(staging_path):
++            remove_path(staging_path)
++
++
++def collect_input_dependencies(input_path):
++    dependencies = [os.path.normpath(input_path)]
++    for entry in sorted(os.listdir(input_path)):
++        entry_path = os.path.join(input_path, entry)
++        if os.path.isdir(entry_path) and entry not in remove_list:
++            for root, dirs, files in os.walk(entry_path):
++                dirs.sort()
++                files.sort()
++                dependencies.append(root)
++                dependencies.extend(os.path.join(root, file) for file in files)
++        elif os.path.isfile(entry_path):
++            dependencies.append(entry_path)
++    return dependencies
++
++
++def rebase_path(path, base_path):
++    absolute_path = os.path.abspath(path)
++    try:
++        return os.path.relpath(absolute_path, base_path)
++    except ValueError:
++        return absolute_path
++
++
++def escape_depfile_path(path):
++    escaped_path = path.replace("\\", "/").replace("$", "$$")
++    return escaped_path.replace(" ", "\\ ").replace("#", "\\#")
++
++
++def write_if_changed(path, content):
++    path = os.path.normpath(path)
++    try:
++        with open(path, "rb") as file:
++            if file.read() == content:
++                return
++    except FileNotFoundError:
++        pass
++    output_parent = os.path.dirname(os.path.abspath(path))
++    os.makedirs(output_parent, exist_ok=True)
++    file_descriptor, temporary_path = tempfile.mkstemp(
++        prefix=f".{os.path.basename(path)}.", dir=output_parent)
++    try:
++        with os.fdopen(file_descriptor, "wb") as file:
++            file.write(content)
++        os.replace(temporary_path, path)
++    finally:
++        if os.path.exists(temporary_path):
++            os.remove(temporary_path)
++
++
++def write_depfile(depfile_path, output_path, input_path):
++    ninja_cwd = os.getcwd()
++    target = rebase_path(output_path, ninja_cwd)
++    dependencies = {
++        rebase_path(path, ninja_cwd)
++        for path in collect_input_dependencies(input_path)
++    }
++    depfile_content = "{}: {}\n".format(
++        escape_depfile_path(target),
++        " ".join(escape_depfile_path(path) for path in sorted(dependencies)))
++    write_if_changed(depfile_path, depfile_content.encode("utf-8"))
++
++
+ # 1、参数解析：通过 optparse 库解析命令行参数，获取输入路径 (--input) 和输出路径 (--output)。
+ def parse_args(args):
+     parser = optparse.OptionParser()
+     parser.add_option('--input', help='d.ts document input path')
+     parser.add_option('--output', help='d.ts document output path')
++    parser.add_option('--stamp', help='stable action stamp path')
++    parser.add_option('--depfile', help='Ninja depfile path')
+     options, _ = parser.parse_args(args)
++    if not options.input or not options.output:
++        parser.error('--input and --output are required')
++    if bool(options.stamp) != bool(options.depfile):
++        parser.error('--stamp and --depfile must be specified together')
+     return options
+ 
+ 
+ def main(argv):
+     options = parse_args(argv)
+-    if not os.path.exists(options.output):
+-        os.makedirs(options.output)
+-
+-    # 更新目录时间戳，适配增量构建
+-    current_time = time.time()
+-    os.utime(options.output, (current_time, current_time))
+-    copy_files(options.input, options.output)
++    if options.stamp and options.depfile:
++        update_output(options.input, options.output)
++        write_depfile(options.depfile, options.output, options.input)
++        write_if_changed(options.stamp, b'')
++    else:
++        if not os.path.exists(options.output):
++            os.makedirs(options.output)
++        # 更新目录时间戳，适配增量构建
++        current_time = time.time()
++        os.utime(options.output, (current_time, current_time))
++        copy_files(options.input, options.output)
++    return 0
+ 
+ 
+ # 从指定的输入路径复制文件到输出路径，并在复制过程中 排除特定的文件夹。
+ if __name__ == "__main__":
+-    exit(main(sys.argv))
++    sys.exit(main(sys.argv))

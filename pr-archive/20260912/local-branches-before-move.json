@@ -1,0 +1,106 @@
+[
+  {
+    "path": "D:\\workspace\\.tmp-publish-iptables-5b884558",
+    "bare": true,
+    "head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+    "branch": "master",
+    "branches": "refs/heads/fix-geninit-incremental-output 5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c\nrefs/heads/master ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\gitcode_pr\\third_party_jsframework",
+    "bare": false,
+    "head": "a280a42fe7f73d59528ecbde04f319cc61e5de0b",
+    "branch": "fix/jsframework-incremental-actions",
+    "branches": "refs/heads/fix/jsframework-incremental-actions a280a42fe7f73d59528ecbde04f319cc61e5de0b\nrefs/heads/master a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\gitcode_pr\\third_party_sane-airscan",
+    "bare": false,
+    "head": "37de4f97f4f4be0f19cda483b7202fcd34efc28a",
+    "branch": "fix/airscan-incremental-action",
+    "branches": "refs/heads/fix/airscan-incremental-action 37de4f97f4f4be0f19cda483b7202fcd34efc28a\nrefs/heads/master 6bd973c4bd430e01f8e7e787cdb53d9e3fcb9014",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\openharmony-build-idl",
+    "bare": false,
+    "head": "4fa37075bfa8a0f3bb36f0394adf54577b0770f2",
+    "branch": "codex/fix-idl-common-outputs-minimal",
+    "branches": "refs/heads/codex/fix-compile-app-stable-output 96be197813189029c77c593fc0075906d829cc9b\nrefs/heads/codex/fix-idl-common-outputs 8e0962e01c2cf1e0918e6c275f57c65d7d05bba5\nrefs/heads/codex/fix-idl-common-outputs-clean 260cee0d53f93d0febc8095f3cb90763891cea01\nrefs/heads/codex/fix-idl-common-outputs-compatible 745ff3c8e032df26cc46ce01769437a9ddcde64d\nrefs/heads/codex/fix-idl-common-outputs-minimal 4fa37075bfa8a0f3bb36f0394adf54577b0770f2\nrefs/heads/codex/fix-sa-profile-incremental-build 0d530d7eb691276cd27d7109b1155a21c6c0c1cc\nrefs/heads/fix-hap-sign-incremental-build 34aa8cba0c5fcb3344e2dd652c18027d69a71396\nrefs/heads/master 69f5e3070cf7dd14868ddd93f031d3a0f69178ff",
+    "status": "?? patches/"
+  },
+  {
+    "path": "D:\\workspace\\openharmony-build-sa",
+    "bare": false,
+    "head": "96be197813189029c77c593fc0075906d829cc9b",
+    "branch": "codex/fix-compile-app-stable-output",
+    "branches": "refs/heads/codex/fix-compile-app-stable-output 96be197813189029c77c593fc0075906d829cc9b\nrefs/heads/codex/fix-idl-common-outputs 8e0962e01c2cf1e0918e6c275f57c65d7d05bba5\nrefs/heads/codex/fix-idl-common-outputs-clean 260cee0d53f93d0febc8095f3cb90763891cea01\nrefs/heads/codex/fix-idl-common-outputs-compatible 745ff3c8e032df26cc46ce01769437a9ddcde64d\nrefs/heads/codex/fix-idl-common-outputs-minimal 4fa37075bfa8a0f3bb36f0394adf54577b0770f2\nrefs/heads/codex/fix-sa-profile-incremental-build 0d530d7eb691276cd27d7109b1155a21c6c0c1cc\nrefs/heads/fix-hap-sign-incremental-build 34aa8cba0c5fcb3344e2dd652c18027d69a71396\nrefs/heads/master 69f5e3070cf7dd14868ddd93f031d3a0f69178ff",
+    "status": "M scripts/compile_app.py\n M scripts/util/build_utils.py"
+  },
+  {
+    "path": "D:\\workspace\\openharmony-developtools-packing-tool",
+    "bare": false,
+    "head": "a32a1ce03f57a41e779b9d61fcd69c861ec5bf0b",
+    "branch": "fix/hap-reproducible-archive",
+    "branches": "refs/heads/fix/hap-reproducible-archive a32a1ce03f57a41e779b9d61fcd69c861ec5bf0b\nrefs/heads/master 9cac80b676fb5fe72fdd2039e7749087caaa85a9\nrefs/heads/validation/hap-reproducible-archive-20260812 bdfd29266669e897cb66f69ab83ca0b15317b692",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\openharmony-developtools-packing-tool-validation",
+    "bare": false,
+    "head": "bdfd29266669e897cb66f69ab83ca0b15317b692",
+    "branch": "validation/hap-reproducible-archive-20260812",
+    "branches": "refs/heads/fix/hap-reproducible-archive a32a1ce03f57a41e779b9d61fcd69c861ec5bf0b\nrefs/heads/master 9cac80b676fb5fe72fdd2039e7749087caaa85a9\nrefs/heads/validation/hap-reproducible-archive-20260812 bdfd29266669e897cb66f69ab83ca0b15317b692",
+    "status": "M adapter/ohos/Compressor.java"
+  },
+  {
+    "path": "D:\\workspace\\phone-install-publish-20260902\\arkcompiler_ets_frontend.git",
+    "bare": true,
+    "head": "3d1832508bc3382bec3912178abd14530af78ab1",
+    "branch": "master",
+    "branches": "refs/heads/fix-build-system-output-isolation 5eb9bc6716570df1ebc9e60de3c7e4eead1f725f\nrefs/heads/master 3d1832508bc3382bec3912178abd14530af78ab1",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\phone-install-publish-20260902\\build-combined",
+    "bare": false,
+    "head": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "branch": "",
+    "branches": "refs/heads/fix-idl-acronym-header-outputs 97c0d5bcab3e5038ea31aac07523a8cc1bd7e23c\nrefs/heads/fix-install-incremental-metadata 5be8fa471e23084eb4a884653746a55af554e7f2\nrefs/heads/fix-js-assets-incremental-deps f03aa33b3f4d63c7fc754262a5e5de6a9adb5b66\nrefs/heads/fix-notice-incremental-deps 6840a0ba024b40ca67d0ab26aceee2a3458e7dbd\nrefs/heads/fix-preloader-content-aware-output 07a42d2c7a129b9b404338b90c971eed4662f0b0\nrefs/heads/fix-sdk-split-incremental-deps 72115384f783e09832216c951e7743b944fd5893\nrefs/heads/fix-static-abc-config-copy 00c502f7727ab376389b94dee766b7e215d0b6ac\nrefs/heads/master 42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\phone-install-publish-20260902\\build.git",
+    "bare": true,
+    "head": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "branch": "master",
+    "branches": "refs/heads/fix-idl-acronym-header-outputs 97c0d5bcab3e5038ea31aac07523a8cc1bd7e23c\nrefs/heads/fix-install-incremental-metadata 5be8fa471e23084eb4a884653746a55af554e7f2\nrefs/heads/fix-js-assets-incremental-deps f03aa33b3f4d63c7fc754262a5e5de6a9adb5b66\nrefs/heads/fix-notice-incremental-deps 6840a0ba024b40ca67d0ab26aceee2a3458e7dbd\nrefs/heads/fix-preloader-content-aware-output 07a42d2c7a129b9b404338b90c971eed4662f0b0\nrefs/heads/fix-sdk-split-incremental-deps 72115384f783e09832216c951e7743b944fd5893\nrefs/heads/fix-static-abc-config-copy 00c502f7727ab376389b94dee766b7e215d0b6ac\nrefs/heads/master 42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\phone-install-publish-20260902\\developtools_ace_ets2bundle.git",
+    "bare": true,
+    "head": "f7a2b2b5ed478ad876f467e7d2213173339e9d4b",
+    "branch": "master",
+    "branches": "refs/heads/fix-libarkts-sdk-incremental-deps 8a4c58bcec13bdef503ac1aed8934ee8b96b31b3\nrefs/heads/master f7a2b2b5ed478ad876f467e7d2213173339e9d4b",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\phone-install-publish-20260902\\interface-sdk-split-renamed",
+    "bare": false,
+    "head": "680b35e09702e1f625e4cb413966a686737a5f9c",
+    "branch": "fix-interface-sdk-split-depfile",
+    "branches": "refs/heads/fix-interface-sdk-split-depfile 680b35e09702e1f625e4cb413966a686737a5f9c\nrefs/heads/fix-sdk-declaration-incremental-deps df667b6d64f36d29e5dad520761b052758e90de1\nrefs/heads/master b94c97d4032fba32808e194bc0723a1da409decf",
+    "status": ""
+  },
+  {
+    "path": "D:\\workspace\\phone-install-publish-20260902\\interface_sdk-js.git",
+    "bare": true,
+    "head": "b94c97d4032fba32808e194bc0723a1da409decf",
+    "branch": "master",
+    "branches": "refs/heads/fix-interface-sdk-split-depfile 680b35e09702e1f625e4cb413966a686737a5f9c\nrefs/heads/fix-sdk-declaration-incremental-deps df667b6d64f36d29e5dad520761b052758e90de1\nrefs/heads/master b94c97d4032fba32808e194bc0723a1da409decf",
+    "status": ""
+  }
+]

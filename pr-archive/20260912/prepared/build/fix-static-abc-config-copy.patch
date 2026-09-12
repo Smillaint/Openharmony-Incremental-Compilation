@@ -1,0 +1,147 @@
+From 00c502f7727ab376389b94dee766b7e215d0b6ac Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:34 +0800
+Subject: [PATCH] Use a cache-local ArkTS configuration without rewriting
+ source inputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ .../ets_frontend/generate_static_abc.py       | 89 +++++++++++--------
+ 1 file changed, 50 insertions(+), 39 deletions(-)
+
+diff --git a/config/components/ets_frontend/generate_static_abc.py b/config/components/ets_frontend/generate_static_abc.py
+index dd0c3eec..044c3392 100755
+--- a/config/components/ets_frontend/generate_static_abc.py
++++ b/config/components/ets_frontend/generate_static_abc.py
+@@ -291,40 +291,36 @@ def validate_arktsconfig(config: Dict) -> None:
+         raise ConfigValidationError("Missing 'outDir' in compilerOptions")
+ 
+ 
+-def modify_arktsconfig_with_cache(arktsconfig_path: str, cache_path: str) -> None:
+-    """
+-    Modify arktsconfig.json to use cache_path as outDir.
+-    Backup the original file, modify it, and restore it after use.
+-    """
+-    backup_path = arktsconfig_path + ".bak"
+-    shutil.copy(arktsconfig_path, backup_path)
+-
++def create_arktsconfig_with_cache(arktsconfig_path: str, cache_path: str) -> str:
++    """Create an arktsconfig copy that uses cache_path as outDir."""
+     try:
+-        config = {}
+-        if os.path.exists(arktsconfig_path):
+-            with open(arktsconfig_path, "r") as f:
+-                content = f.read()
+-                config = json.loads(content)
+-            if "compilerOptions" in config:
+-                config["compilerOptions"]["outDir"] = cache_path
+-
+-        if os.path.exists(arktsconfig_path):
+-            fd = os.open(arktsconfig_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o777)
+-            with os.fdopen(fd, "w", encoding="utf-8") as f:
+-                json.dump(config, f, indent=2, ensure_ascii=False)
++        with open(arktsconfig_path, "r", encoding="utf-8") as f:
++            config = json.load(f)
+     except json.JSONDecodeError as e:
+-        print(f"{arktsconfig_path} Invalid JSON format (cache): {e}", file=sys.stderr)
+-        sys.exit()
+-    except Exception as e:
+-        restore_arktsconfig(arktsconfig_path)
+-        raise e
++        raise ConfigValidationError(
++            f"{arktsconfig_path} Invalid JSON format (cache): {e}"
++        ) from e
+ 
++    if not isinstance(config.get("compilerOptions"), dict):
++        raise ConfigValidationError("Missing 'compilerOptions' in config")
+ 
+-def restore_arktsconfig(arktsconfig_path: str) -> None:
+-    """Restore the original arktsconfig.json from backup."""
+-    backup_path = arktsconfig_path + ".bak"
+-    if os.path.exists(backup_path):
+-        shutil.move(backup_path, arktsconfig_path)
++    compiler_options = config["compilerOptions"]
++    base_url = compiler_options.get("baseUrl")
++    if isinstance(base_url, str) and not os.path.isabs(base_url):
++        config_dir = os.path.dirname(os.path.abspath(arktsconfig_path))
++        compiler_options["baseUrl"] = os.path.normpath(
++            os.path.join(config_dir, base_url)
++        )
++    compiler_options["outDir"] = cache_path
++    validate_arktsconfig(config)
++    cached_config_path = os.path.join(cache_path, "arktsconfig.json")
++    os.makedirs(cache_path, exist_ok=True)
++    fd = os.open(
++        cached_config_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o777
++    )
++    with os.fdopen(fd, "w", encoding="utf-8") as f:
++        json.dump(config, f, indent=2, ensure_ascii=False)
++    return cached_config_path
+ 
+ 
+ def add_to_bootpath(device_dst_file: str, bootpath_json_file: str, target_name: str) -> None:
+@@ -512,7 +508,7 @@ def build_driver_config(args: argparse.Namespace) -> None:
+         json.dump(config, f, indent=2, ensure_ascii=False)
+ 
+ 
+-def handle_configuration(args: argparse.Namespace) -> None:
++def handle_configuration(args: argparse.Namespace) -> str:
+     """
+     Handle the configuration setup based on command-line arguments.
+     """
+@@ -521,7 +517,8 @@ def handle_configuration(args: argparse.Namespace) -> None:
+     elif args.base_url:
+         build_config(args)
+     else:
+-        modify_arktsconfig_with_cache(args.arktsconfig, args.cache_path)
++        return create_arktsconfig_with_cache(args.arktsconfig, args.cache_path)
++    return args.arktsconfig
+ 
+ 
+ def main() -> None:
+@@ -534,14 +531,31 @@ def main() -> None:
+             shutil.rmtree(args.cache_path)
+         os.makedirs(args.cache_path, exist_ok=True)
+ 
+-        handle_configuration(args)
++        effective_arktsconfig = handle_configuration(args)
+ 
+         if args.ui_enable == "True":
+-            execute_driver(args.entry_path, args.arktsconfig, args.env_path, args.node_path, args.timeout_limit)
++            execute_driver(
++                args.entry_path,
++                effective_arktsconfig,
++                args.env_path,
++                args.node_path,
++                args.timeout_limit,
++            )
+         elif args.is_stdlib:
+-            execute_es2panda_stdlib(args.es2panda, args.arktsconfig, args.env_path, args.timeout_limit, args.dst_file)
++            execute_es2panda_stdlib(
++                args.es2panda,
++                effective_arktsconfig,
++                args.env_path,
++                args.timeout_limit,
++                args.dst_file,
++            )
+         else:
+-            execute_es2panda(args.es2panda, args.arktsconfig, args.env_path, args.timeout_limit)
++            execute_es2panda(
++                args.es2panda,
++                effective_arktsconfig,
++                args.env_path,
++                args.timeout_limit,
++            )
+             execute_ark_link(args.ark_link, args.dst_file, args.cache_path, args.env_path, args.timeout_limit)
+ 
+         if args.is_boot_abc:
+@@ -573,9 +587,6 @@ def main() -> None:
+     except Exception as e:
+         print(f"[UNKNOWN] Unexpected error: {e}", file=sys.stderr)
+         sys.exit(EXIT_CODE["UNKNOWN_ERROR"])
+-    finally:
+-        if not args.base_url:
+-            restore_arktsconfig(args.arktsconfig)
+ 
+ 
+ if __name__ == "__main__":

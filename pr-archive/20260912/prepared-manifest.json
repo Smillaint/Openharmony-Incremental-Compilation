@@ -1,0 +1,220 @@
+[
+  {
+    "repo": "build",
+    "branch": "fix-install-incremental-metadata",
+    "files": [
+      "ohos/packages/modules_install.py",
+      "ohos/common/binary_install_info.py"
+    ],
+    "priority": "P0",
+    "subject": "Fix install dependencies and stabilize binary install metadata",
+    "patches": [
+      "build/fix-phone-install-sa-depfile.patch",
+      "build/fix-binary-install-incremental-metadata.patch"
+    ],
+    "source_commits": [
+      "758a3e9404a76e958308e6244e6945b0016065e4",
+      "30db1d9a944134e77050c83085f9b3a2d4af45e6"
+    ],
+    "base": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "source_head": "3dc68b61dd6156d5a5bbe60381b0961e557f3396",
+    "status": "prepared",
+    "commit": "5be8fa471e23084eb4a884653746a55af554e7f2",
+    "stat": "2 files changed, 4 insertions(+), 3 deletions(-)",
+    "verified": true,
+    "archive_patch": "prepared/build/fix-install-incremental-metadata.patch",
+    "sha256": "c96d91e865af73bcbc682b794435aeba7f5551846a1c5be3dcac2143241295fb"
+  },
+  {
+    "repo": "build",
+    "branch": "fix-sdk-split-incremental-deps",
+    "files": [
+      "ohos/sdk/parse_interface_sdk.py"
+    ],
+    "priority": "P0",
+    "subject": "Add stamp and depfile support to SDK interface splitting",
+    "patch": "build/fix-sdk-split-incremental-deps.patch",
+    "base": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "source_head": "3dc68b61dd6156d5a5bbe60381b0961e557f3396",
+    "status": "prepared",
+    "commit": "72115384f783e09832216c951e7743b944fd5893",
+    "stat": " ohos/sdk/parse_interface_sdk.py | 58 +++++++++++++++++++++++++++++++++++++++++\n 1 file changed, 58 insertions(+)\n",
+    "verified": true,
+    "archive_patch": "prepared/build/fix-sdk-split-incremental-deps.patch",
+    "sha256": "6bf681b0793825fd1ff47b9563263fa8b053ee83d4b30301b4f76cf66053f651"
+  },
+  {
+    "repo": "build",
+    "branch": "fix-notice-incremental-deps",
+    "files": [
+      "ohos/notice/collect_module_notice_file.py",
+      "ohos/notice/collect_system_notice_files.py"
+    ],
+    "priority": "P0",
+    "subject": "Fix NOTICE license discovery and aggregate dependencies",
+    "patches": [
+      "build/fix-notice-boundary-license.patch",
+      "build/fix-notice-aggregate-depfile.patch"
+    ],
+    "source_commits": [
+      "40bf195f86cf715659f3743a723458346fa70f11",
+      "7bb01ddca5dd7970412d8c7fa3957a3dd8888b11"
+    ],
+    "base": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "source_head": "3dc68b61dd6156d5a5bbe60381b0961e557f3396",
+    "status": "prepared",
+    "commit": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+    "stat": "2 files changed, 2 insertions(+), 3 deletions(-)",
+    "verified": true,
+    "archive_patch": "prepared/build/fix-notice-incremental-deps.patch",
+    "sha256": "727a91b34af4c08557740ee8fe96533fb273fe7f8e2039f7863821c598870922"
+  },
+  {
+    "repo": "build",
+    "branch": "fix-js-assets-incremental-deps",
+    "files": [
+      "scripts/build_js_assets.py"
+    ],
+    "priority": "P0",
+    "subject": "Preserve JS asset dependency tracking without transient loader caches",
+    "patch": "build/fix-js-assets-incremental-deps.patch",
+    "base": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "source_head": "3dc68b61dd6156d5a5bbe60381b0961e557f3396",
+    "status": "prepared",
+    "commit": "f03aa33b3f4d63c7fc754262a5e5de6a9adb5b66",
+    "stat": " scripts/build_js_assets.py | 36 ++++++++++++++++++++++++++++++++----\n 1 file changed, 32 insertions(+), 4 deletions(-)\n",
+    "verified": true,
+    "archive_patch": "prepared/build/fix-js-assets-incremental-deps.patch",
+    "sha256": "d643ef29dd529f7b16ba08983a48a9b87204cc1a8132e47fad4f32ec123b3abf"
+  },
+  {
+    "repo": "build",
+    "branch": "fix-idl-acronym-header-outputs",
+    "files": [
+      "config/components/idl_tool/idl.gni"
+    ],
+    "priority": "P0",
+    "subject": "Match IDL interface header outputs for acronym names",
+    "patch": "build/fix-idl-acronym-header-outputs.patch",
+    "base": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "source_head": "3dc68b61dd6156d5a5bbe60381b0961e557f3396",
+    "status": "prepared",
+    "commit": "97c0d5bcab3e5038ea31aac07523a8cc1bd7e23c",
+    "stat": " config/components/idl_tool/idl.gni | 14 ++++++++++++--\n 1 file changed, 12 insertions(+), 2 deletions(-)\n",
+    "verified": true,
+    "archive_patch": "prepared/build/fix-idl-acronym-header-outputs.patch",
+    "sha256": "c970db4394dd4f0a3dbbbf0b5c91719675d5fa954244c03c572a34049a5a1861"
+  },
+  {
+    "repo": "build",
+    "branch": "fix-preloader-content-aware-output",
+    "files": [
+      "hb/services/loader.py",
+      "hb/util/io_util.py"
+    ],
+    "priority": "P1",
+    "subject": "Preserve unchanged preloader JSON and syscap outputs",
+    "patch": "build/fix-preloader-content-aware-output.patch",
+    "base": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "source_head": "3dc68b61dd6156d5a5bbe60381b0961e557f3396",
+    "status": "prepared",
+    "commit": "07a42d2c7a129b9b404338b90c971eed4662f0b0",
+    "stat": " hb/services/loader.py | 23 +++++++++++++++++------\n hb/util/io_util.py    | 13 ++++++++++++-\n 2 files changed, 29 insertions(+), 7 deletions(-)\n",
+    "verified": true,
+    "archive_patch": "prepared/build/fix-preloader-content-aware-output.patch",
+    "sha256": "c7e09f59df99009cc0e791cdd37f6b00ba144970e748352ee5559c9d09c359e9"
+  },
+  {
+    "repo": "build",
+    "branch": "fix-static-abc-config-copy",
+    "files": [
+      "config/components/ets_frontend/generate_static_abc.py"
+    ],
+    "priority": "P1",
+    "subject": "Use a cache-local ArkTS configuration without rewriting source inputs",
+    "patch": "build/fix-static-abc-config-copy.patch",
+    "base": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+    "source_head": "3dc68b61dd6156d5a5bbe60381b0961e557f3396",
+    "status": "prepared",
+    "commit": "00c502f7727ab376389b94dee766b7e215d0b6ac",
+    "stat": " .../components/ets_frontend/generate_static_abc.py | 89 ++++++++++++----------\n 1 file changed, 50 insertions(+), 39 deletions(-)\n",
+    "verified": true,
+    "archive_patch": "prepared/build/fix-static-abc-config-copy.patch",
+    "sha256": "a27c3285d11f6009556ca563e8e77831631acfd2181681a3a0370949d3c77a32"
+  },
+  {
+    "repo": "interface_sdk-js",
+    "branch": "fix-interface-sdk-split-depfile",
+    "files": [
+      "BUILD.gn"
+    ],
+    "priority": "P0",
+    "subject": "Declare SDK interface split stamp and dependency file",
+    "patch": "interface_sdk-js/fix-sdk-split-incremental-deps.patch",
+    "base": "b94c97d4032fba32808e194bc0723a1da409decf",
+    "source_head": "0d4497963c7800c067ae4d420c7738db147a0e25",
+    "status": "prepared",
+    "commit": "680b35e09702e1f625e4cb413966a686737a5f9c",
+    "stat": " BUILD.gn | 5 +++++\n 1 file changed, 5 insertions(+)\n",
+    "verified": true,
+    "archive_patch": "prepared/interface_sdk-js/fix-interface-sdk-split-depfile.patch",
+    "sha256": "93132fde78579e6ce76aea17ae97e6f090c0eb0eb81a07152c1ec54939364521"
+  },
+  {
+    "repo": "interface_sdk-js",
+    "branch": "fix-sdk-declaration-incremental-deps",
+    "files": [
+      "BUILD.gn",
+      "process_internal.py",
+      "remove_internal.py"
+    ],
+    "priority": "P0",
+    "subject": "Track SDK declaration and internal interface generation outputs",
+    "patch": "interface_sdk-js/fix-sdk-declaration-incremental-deps.patch",
+    "base": "b94c97d4032fba32808e194bc0723a1da409decf",
+    "source_head": "0d4497963c7800c067ae4d420c7738db147a0e25",
+    "status": "prepared",
+    "commit": "df667b6d64f36d29e5dad520761b052758e90de1",
+    "stat": " BUILD.gn            |  23 +++++++-\n process_internal.py | 156 +++++++++++++++++++++++++++++++++++++++++++++++++---\n remove_internal.py  | 155 ++++++++++++++++++++++++++++++++++++++++++++++++---\n 3 files changed, 317 insertions(+), 17 deletions(-)\n",
+    "verified": true,
+    "archive_patch": "prepared/interface_sdk-js/fix-sdk-declaration-incremental-deps.patch",
+    "sha256": "66c79053e86ca324feff67b4e3d6da77bd1e32dedced959c9b5a9bf19280f6a6"
+  },
+  {
+    "repo": "arkcompiler_ets_frontend",
+    "branch": "fix-build-system-output-isolation",
+    "files": [
+      "ets2panda/driver/build_system/BUILD.gn"
+    ],
+    "priority": "P0",
+    "subject": "Isolate build system outputs from generated metadata",
+    "patch": "arkcompiler_ets_frontend/fix-build-system-output-isolation.patch",
+    "base": "3d1832508bc3382bec3912178abd14530af78ab1",
+    "source_head": "e2634d66ce5618e78ffbc69c70804a4cbf8a00eb",
+    "status": "prepared",
+    "commit": "5eb9bc6716570df1ebc9e60de3c7e4eead1f725f",
+    "stat": " ets2panda/driver/build_system/BUILD.gn | 8 ++++----\n 1 file changed, 4 insertions(+), 4 deletions(-)\n",
+    "verified": true,
+    "archive_patch": "prepared/arkcompiler_ets_frontend/fix-build-system-output-isolation.patch",
+    "sha256": "e016fad85bf5b57a45311ba56aeb8a12c75d472d7dafb52b26f3e70333e76483"
+  },
+  {
+    "repo": "developtools_ace_ets2bundle",
+    "branch": "fix-libarkts-sdk-incremental-deps",
+    "files": [
+      "ets1.2/BUILD.gn",
+      "ets1.2/libarkts/BUILD.gn"
+    ],
+    "priority": "P0",
+    "subject": "Isolate libarkts SDK output and narrow generator dependencies",
+    "patch": "developtools_ace_ets2bundle/fix-libarkts-sdk-incremental-deps.patch",
+    "base": "f7a2b2b5ed478ad876f467e7d2213173339e9d4b",
+    "source_head": "64da29e2cc1618a8d747bafc562d835c420704d7",
+    "status": "prepared",
+    "commit": "8a4c58bcec13bdef503ac1aed8934ee8b96b31b3",
+    "stat": " ets1.2/BUILD.gn          |  4 ++--\n ets1.2/libarkts/BUILD.gn | 16 +++++++---------\n 2 files changed, 9 insertions(+), 11 deletions(-)\n",
+    "verified": true,
+    "archive_patch": "prepared/developtools_ace_ets2bundle/fix-libarkts-sdk-incremental-deps.patch",
+    "sha256": "dd621d4c6eb18aceac911b41a93a3502c828a76bc52f1bd8d3717cb7b49dc2e2"
+  }
+]

@@ -1,0 +1,112 @@
+diff --git a/ohos/sa_profile/sa_profile_binary.py b/ohos/sa_profile/sa_profile_binary.py
+--- a/ohos/sa_profile/sa_profile_binary.py
++++ b/ohos/sa_profile/sa_profile_binary.py
+@@ -94,15 +94,17 @@ def main():
+             generate_binary_sa_archive(parts_list,
+                                        args.sa_profile_archive_info_file,
+                                        args.sa_output_dir, depfiles))
+-    with zipfile.ZipFile(args.sa_output_zipfile, 'w') as outfile:
+-        for part_name, sa_file_path, sa_file in sa_files_tuples:
+-            part_name_map[sa_file] = part_name
+-            build_utils.add_to_zip_hermetic(outfile,
+-                                         sa_file,
+-                                         src_path=sa_file_path)
+-        if part_name_map:
+-            metadata_content = json.dumps(part_name_map, indent=2, sort_keys=True)
+-            outfile.writestr("part_name_info.json", metadata_content)
++    with build_utils.atomic_output(args.sa_output_zipfile) as output_file:
++        with zipfile.ZipFile(output_file, 'w') as outfile:
++            for part_name, sa_file_path, sa_file in sa_files_tuples:
++                part_name_map[sa_file] = part_name
++                build_utils.add_to_zip_hermetic(outfile,
++                                                sa_file,
++                                                src_path=sa_file_path)
++            if part_name_map:
++                metadata_content = json.dumps(part_name_map, indent=2,
++                                              sort_keys=True)
++                outfile.writestr("part_name_info.json", metadata_content)
+     build_utils.write_depfile(args.depfile, args.sa_output_zipfile, depfiles)
+     return 0
+ 
+diff --git a/ohos/sa_profile/sa_profile_merge.py b/ohos/sa_profile/sa_profile_merge.py
+--- a/ohos/sa_profile/sa_profile_merge.py
++++ b/ohos/sa_profile/sa_profile_merge.py
+@@ -114,7 +114,8 @@ def _generate_install_info(sa_result_file_dict: dict, sa_info_install_dest_dir:
+             'dest': [_install_dest]
+         }
+         module_install_info_list.append(module_install_info)
+-    write_json_file(sa_install_info_file, module_install_info_list)
++    write_json_file(sa_install_info_file, module_install_info_list,
++                    check_changes=True)
+ 
+ 
+ def main():
+diff --git a/ohos/sa_profile/sa_profile_source.py b/ohos/sa_profile/sa_profile_source.py
+--- a/ohos/sa_profile/sa_profile_source.py
++++ b/ohos/sa_profile/sa_profile_source.py
+@@ -60,7 +60,8 @@ def main():
+     src_parts_info = get_src_parts(args.system_install_info_file)
+     sa_install_infos = get_sa_install_info(args.src_sa_info_file,
+                                            src_parts_info)
+-    write_json_file(args.src_sa_install_info_file, sa_install_infos)
++    write_json_file(args.src_sa_install_info_file, sa_install_infos,
++                    check_changes=True)
+     return 0
+ 
+ 
+diff --git a/ohos/sa_profile/src_sa_profile_process.py b/ohos/sa_profile/src_sa_profile_process.py
+--- a/ohos/sa_profile/src_sa_profile_process.py
++++ b/ohos/sa_profile/src_sa_profile_process.py
+@@ -43,7 +43,8 @@ def sa_info_process(sa_profile_infos_file: str, toolchain_platform: dict):
+         _sa_info['part_name'] = part_name
+         _sa_info['origin_part_name'] = origin_part_name
+         processed_sa_infos.append(_sa_info)
+-    return processed_sa_infos
++    return sorted(processed_sa_infos,
++                  key=lambda info: info.get('label', ''))
+ 
+ 
+ def main():
+@@ -62,7 +63,8 @@ def main():
+     toolchain_platform = variants_toolchain_info.get('toolchain_platform')
+     processed_sa_infos = sa_info_process(args.sa_profile_infos_file,
+                                          toolchain_platform)
+-    write_json_file(args.output_file, processed_sa_infos)
++    write_json_file(args.output_file, processed_sa_infos,
++                    check_changes=True)
+     build_utils.write_depfile(args.depfile, args.output_file, depfiles)
+     return 0
+ 
+diff --git a/scripts/util/file_utils.py b/scripts/util/file_utils.py
+--- a/scripts/util/file_utils.py
++++ b/scripts/util/file_utils.py
+@@ -16,7 +16,6 @@
+ import json
+ import os
+ import subprocess
+-import hashlib
+ import platform
+ 
+ 
+@@ -82,18 +81,9 @@ def write_json_file(output_file, content, check_changes=False):
+ 
+ 
+ def __check_changes(output_file, content):
+-    if os.path.exists(output_file) and os.path.isfile(output_file):
+-        # file content md5 val
+-        sha256_obj = hashlib.sha256()
+-        sha256_obj.update(str(read_json_file(output_file)).encode())
+-        hash_value = sha256_obj.hexdigest()
+-        # new content md5 val
+-        sha256_obj_new = hashlib.sha256()
+-        sha256_obj_new.update(str(content).encode())
+-        hash_value_new = sha256_obj_new.hexdigest()
+-        if hash_value_new == hash_value:
+-            return False
+-    return True
++    if not os.path.isfile(output_file):
++        return True
++    return read_json_file(output_file) != content
+ 
+ 
+ # Write file data

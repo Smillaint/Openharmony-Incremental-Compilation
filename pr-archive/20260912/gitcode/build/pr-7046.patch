@@ -1,0 +1,34 @@
+diff --git a/ohos/common/binary_install_info.py b/ohos/common/binary_install_info.py
+--- a/ohos/common/binary_install_info.py
++++ b/ohos/common/binary_install_info.py
+@@ -52,7 +52,7 @@ def binary_install_subsystem(dist_parts_info_file: str,
+ 
+ 
+ def output_installed_info(binary_subsystem_info: str, required_parts: list):
+-    write_json_file(binary_subsystem_info, required_parts)
++    write_json_file(binary_subsystem_info, required_parts, check_changes=True)
+ 
+ 
+ def main():
+@@ -70,7 +70,8 @@ def main():
+ 
+     if args.depfile:
+         _dep_files = []
+-        _dep_files.append(args.dist_parts_info_file)
++        if os.path.exists(args.dist_parts_info_file):
++            _dep_files.append(args.dist_parts_info_file)
+         _dep_files.append(args.parts_src_installed_info_file)
+         build_utils.write_depfile(args.depfile,
+                                  args.binary_installed_info_file,
+diff --git a/ohos/packages/modules_install.py b/ohos/packages/modules_install.py
+--- a/ohos/packages/modules_install.py
++++ b/ohos/packages/modules_install.py
+@@ -343,7 +343,7 @@ def main():
+     if os.path.exists(args.system_image_zipfile):
+         os.unlink(args.system_image_zipfile)
+     build_utils.zip_dir(args.system_image_zipfile, args.system_dir)
+-    depfiles.extend([item for item in depfiles if item not in sa_files])
++    depfiles = [item for item in depfiles if item not in sa_files]
+     build_utils.write_depfile(args.depfile, args.install_modules_info_file,
+                               depfiles)
+     

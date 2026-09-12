@@ -1,0 +1,34 @@
+diff --git a/ets2panda/driver/build_system/BUILD.gn b/ets2panda/driver/build_system/BUILD.gn
+index f19fbfb45761706e7ea1b2b9e5ae2abe3dab940a..c074c82d30e72f8d047a2e514cd3a299a183863e 100644
+--- a/ets2panda/driver/build_system/BUILD.gn
++++ b/ets2panda/driver/build_system/BUILD.gn
+@@ -71,17 +71,17 @@ action("build_build_system") {
+     "--work_dir",
+     rebase_path("$target_out_dir"),
+     "--output_path",
+-    rebase_path("$target_gen_dir"),
++    rebase_path("$target_gen_dir/build_system_output"),
+     "--npm",
+     rebase_path(npm_path),
+   ]
+ 
+-  outputs = [ "$target_gen_dir" ]
++  outputs = [ "$target_gen_dir/build_system_output" ]
+ }
+ 
+ ohos_copy("ets2panda_build_system") {
+   deps = [ ":build_build_system" ]
+-  sources = [ rebase_path("$target_gen_dir") ]
++  sources = [ rebase_path("$target_gen_dir/build_system_output") ]
+   outputs = [ target_out_dir + "/$target_name" ]
+   module_source_dir = target_out_dir + "/$target_name"
+   module_install_name = ""
+@@ -92,7 +92,7 @@ ohos_copy("ets2panda_build_system") {
+ ohos_copy("ohos_ets_build_system") {
+   deps = [ ":build_build_system" ]
+   external_deps = [ "runtime_core:ohos_ets_etsstdlib_abc" ]
+-  sources = [ rebase_path("$target_gen_dir") ]
++  sources = [ rebase_path("$target_gen_dir/build_system_output") ]
+   outputs = [ ohos_ets_build_system_path ]
+   part_name = "ets_frontend"
+   subsystem_name = "arkcompiler"

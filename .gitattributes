@@ -1,0 +1,4 @@
+pr-archive/**/*.patch -text -whitespace
+pr-archive/**/*.json text eol=lf
+pr-archive/**/*.gz binary
+docs/evidence/**/*.json text eol=lf

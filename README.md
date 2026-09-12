@@ -2,6 +2,10 @@
 
 本仓库记录 OpenHarmony `rk3568/phone` 增量构建中重复 Action 的根因、代码修改、PR 与验证证据。
 
+## PR 归档与本地目录
+
+[PR 集中归档（2026-09-12）](pr-archive/20260912/README.md) 保存 13 个 GitCode PR 补丁、11 个已准备分支、验证快照和必要日志。源码仓与历史文件的新位置见 [工作区整理说明](docs/workspace-organization-20260912.md)。
+
 ## 当前阶段：原始 10 项初步修复完成
 
 最初跟踪的 `//build/ohos/packages` 下 **10 个 Action 增量问题已经初步完成修复**。前 9 项先后收敛，最后的 `phone_install_modules` 在 2026-09-01 组合工作树连续两轮构建中均未执行。

@@ -1,0 +1,87 @@
+diff --git a/ets1.2/BUILD.gn b/ets1.2/BUILD.gn
+index f1792e05aef22c3576ef1af5a5c4e53af522c6ce..97ae347b03e422fbebf0061d062d17e481908ffd 100644
+--- a/ets1.2/BUILD.gn
++++ b/ets1.2/BUILD.gn
+@@ -29,7 +29,7 @@ ohos_static_library("libarkts_package") {
+ ohos_copy("ets2panda_libarkts") {
+   deps = [ "${koala_mr.libarkts_path}:libarkts_sdk_copy" ]
+ 
+-  _libarkts_dir = rebase_path("$target_gen_dir") + "/libarkts"
++  _libarkts_dir = rebase_path("$target_gen_dir") + "/libarkts/libarkts_sdk"
+   _libarkts_output_dir = target_out_dir + "/$target_name"
+ 
+   sources = [ _libarkts_dir ]
+@@ -63,7 +63,7 @@ ohos_copy("ohos_ets_libarkts") {
+     ":ohos_ets_libarkts_pack_prebuilt",
+   ]
+ 
+-  _libarkts_dir = rebase_path("$target_gen_dir") + "/libarkts"
++  _libarkts_dir = rebase_path("$target_gen_dir") + "/libarkts/libarkts_sdk"
+ 
+   sources = [ _libarkts_dir ]
+   outputs = [ ohos_ets_libarkts_path ]
+diff --git a/ets1.2/libarkts/BUILD.gn b/ets1.2/libarkts/BUILD.gn
+index a4dbd312adf0efca305af83b7e65a3a1ed68b89f..32d233625c0a6e0eb2e4da461669f53668f2c089 100644
+--- a/ets1.2/libarkts/BUILD.gn
++++ b/ets1.2/libarkts/BUILD.gn
+@@ -83,7 +83,7 @@ if (!koala_mr.is_rri) {
+   ohos_copy("libarkts-sdk") {
+     deps = [ ":libarkts_sdk_copy" ]
+ 
+-    _libarkts_source_dir = rebase_path("$target_gen_dir")
++    _libarkts_source_dir = rebase_path("$target_gen_dir/libarkts_sdk")
+     _libarkts_output_dir = target_out_dir + "/$target_name"
+ 
+     sources = [ _libarkts_source_dir ]
+@@ -98,8 +98,8 @@ if (!koala_mr.is_rri) {
+ # special target to produce bridges.cpp to output directory, so es2panda_lib can depend on this file
+ action("regenerate") {
+   script = "gn/command/copy_file.py"
+-  generated_source = "//developtools/ace_ets2bundle/ets1.2/libarkts"
+-  inputs = [ generated_source ]
++  _bridges_source = "generated/native/bridges.cpp"
++  inputs = [ _bridges_source ]
+   outputs = [ "$target_out_dir/bridges.cpp" ]
+   args = [
+     rebase_path("generated/native/bridges.cpp", root_build_dir),
+@@ -305,10 +305,8 @@ action("es2panda_lib_copy") {
+     }
+   }
+ 
+-  libarkts_source = "//developtools/ace_ets2bundle/ets1.2/libarkts"
+   _libarkts_es2panda_node = "$target_out_dir/es2panda.node"
+ 
+-  inputs = [ libarkts_source ]
+   outputs = [ _libarkts_es2panda_node ]
+   args = [
+     "--from-path",
+@@ -333,17 +331,17 @@ group("libarkts") {
+ 
+ action("libarkts_sdk_copy") {
+   script = "./gn/command/copy_libs.py"
+-  libarkts_source = "//developtools/ace_ets2bundle/ets1.2/libarkts"
++  _sdk_lib_dir = "//developtools/ace_ets2bundle/ets1.2/libarkts/lib"
+   _libarkts_es2panda_node = "$target_out_dir/es2panda.node"
+   inputs = [
+-    libarkts_source,
++    _sdk_lib_dir,
+     _libarkts_es2panda_node
+   ]
+   args = [
+     "--source_path",
+     rebase_path(get_path_info(".", "abspath")),
+     "--output_path",
+-    rebase_path("$target_gen_dir"),
++    rebase_path("$target_gen_dir/libarkts_sdk"),
+     "--root_out_dir",
+     rebase_path(root_out_dir),
+     "--current-os",
+@@ -356,7 +354,7 @@ action("libarkts_sdk_copy") {
+   if (!koala_mr.is_rri && is_host_product) {
+     args += [ "--host-product" ]
+   }
+-  outputs = [ "$target_gen_dir" ]
++  outputs = [ "$target_gen_dir/libarkts_sdk" ]
+   deps = [
+     ":libarkts",
+     ":es2panda_lib_copy",

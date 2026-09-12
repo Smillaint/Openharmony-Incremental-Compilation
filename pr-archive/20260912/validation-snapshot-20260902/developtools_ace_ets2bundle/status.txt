@@ -1,0 +1,4 @@
+ M BUILD.gn
+ M ets1.2/BUILD.gn
+ M ets1.2/libarkts/BUILD.gn
+ M install_arkguard_tsc_declgen.py

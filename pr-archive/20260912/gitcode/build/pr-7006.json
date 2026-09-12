@@ -1,0 +1,56 @@
+{
+  "repository": "openharmony/build",
+  "number": 7006,
+  "title": "Stabilize HiSysEvent incremental inputs",
+  "url": "https://gitcode.com/openharmony/build/merge_requests/7006",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7006",
+  "retrieved_at": "2026-09-12T22:31:12.474856+08:00",
+  "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+  "base": "71de884ecc242fa7757c5506e3a3606b9d51c5b0",
+  "source_branch": "fix-hisysevent-incremental-build",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-08-25T11:21:13+08:00",
+  "patch_file": "gitcode/build/pr-7006.patch",
+  "patch_sha256": "52289361049898fb2ca260b143f8b06760244900ab9863a413bbd9679ea62523",
+  "files": [
+    {
+      "filename": "hb/util/loader/load_ohos_build.py",
+      "additions": 5,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29/hb/util/loader/load_ohos_build.py",
+      "patch": {
+        "diff": "@@ -787,12 +787,16 @@ def process_other_parts(part_name, parts_config_dict, parts_info_output_path):\n         parts_info_file = os.path.join(parts_info_output_path,\n                                        part_name + \".json\")\n         if part_name == 'hisysevent_config':\n+            check_changes = True\n             parts_info_file = os.path.join(parts_info_output_path,\n                                            'hisysevent_configs' + \".json\")\n+        else:\n+            check_changes = False\n         if part_name == 'parts_inner_kits_info':\n             parts_info_file = os.path.join(parts_info_output_path,\n                                            'inner_kits_info' + \".json\")\n-        write_json_file(parts_info_file, parts_info)\n+        write_json_file(parts_info_file, parts_info,\n+                        check_changes=check_changes)\n         LogUtil.hb_info(\"generate '{}' info to '{}'\".format(part_name,\n                                                             parts_info_file), mode=Config.log_mode)\n \n",
+        "old_path": "hb/util/loader/load_ohos_build.py",
+        "new_path": "hb/util/loader/load_ohos_build.py",
+        "a_mode": "100644",
+        "b_mode": "100644",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 5,
+        "removed_lines": 1
+      }
+    },
+    {
+      "filename": "ohos/hisysevent/hisysevent_process.py",
+      "additions": 3,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29/ohos/hisysevent/hisysevent_process.py",
+      "patch": {
+        "diff": "@@ -101,12 +101,14 @@ def main(argv):\n                                                     src_part_list,\n                                                     args.source_root_dir,\n                                                     args.gn_root_build_dir)\n+    depfiles.extend(hisysevent_config_files)\n \n     _output_path = os.path.dirname(args.hisysevent_install_info_file)\n     install_info_list = _get_install_info(hisysevent_config_files,\n                                           _output_path,\n                                           args.config_install_dest_dir)\n-    write_json_file(args.hisysevent_install_info_file, install_info_list)\n+    write_json_file(args.hisysevent_install_info_file, install_info_list,\n+                    check_changes=True)\n     build_utils.write_depfile(args.depfile, args.hisysevent_install_info_file,\n                               depfiles)\n \n",
+        "old_path": "ohos/hisysevent/hisysevent_process.py",
+        "new_path": "ohos/hisysevent/hisysevent_process.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 3,
+        "removed_lines": 1
+      }
+    }
+  ]
+}

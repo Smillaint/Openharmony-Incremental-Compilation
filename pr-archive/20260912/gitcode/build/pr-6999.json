@@ -1,0 +1,398 @@
+{
+  "repository": "openharmony/build",
+  "number": 6999,
+  "title": "Stabilize package validation inputs",
+  "url": "https://gitcode.com/openharmony/build/merge_requests/6999",
+  "api_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6999",
+  "retrieved_at": "2026-09-12T22:31:10.789648+08:00",
+  "head": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+  "base": "71de884ecc242fa7757c5506e3a3606b9d51c5b0",
+  "source_branch": "incremental-build-all-validation-20260820",
+  "state": "open",
+  "mergeable": true,
+  "updated_at": "2026-08-21T13:00:08+08:00",
+  "patch_file": "gitcode/build/pr-6999.patch",
+  "patch_sha256": "9091bc51f6acda3ed74f7f3c1ac64cdd68917139e8774cbfa089789ab1f98e65",
+  "files": [
+    {
+      "filename": "config/components/idl_tool/idl.gni",
+      "additions": 8,
+      "deletions": 8,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/config/components/idl_tool/idl.gni",
+      "patch": {
+        "diff": "@@ -87,6 +87,8 @@ template(\"idl_gen_interface\") {\n   if (defined(invoker.sources_common)) {\n     idl_common_list += invoker.sources_common\n   }\n+  local_common_list = filter_exclude(idl_common_list, [ \"//*\" ])\n+  external_common_list = filter_include(idl_common_list, [ \"//*\" ])\n \n   # language, default cpp, support c/cpp/rust\n   language = \"cpp\"\n@@ -204,7 +206,7 @@ template(\"idl_gen_interface\") {\n   }\n \n   # common sources\n-  foreach(idl_full_name, idl_common_list) {\n+  foreach(idl_full_name, local_common_list) {\n     idl_name = get_path_info(idl_full_name, \"file\")\n     i = 0\n     name = string_replace(idl_name, \".idl\", \"\")\n@@ -219,7 +221,7 @@ template(\"idl_gen_interface\") {\n     init_with_i = false\n     if (name_split[0] == \"\") {\n       init_with_i = true\n-      name = string_replace(name, \"_i_\", \"i\", 1)\n+      name = string_replace(name, \"_i_\", \"\", 1)\n     }\n     name_split = []\n     name_split = string_split(name, \"_\")\n@@ -234,14 +236,11 @@ template(\"idl_gen_interface\") {\n       name = string_replace(name, \"_\", \"\", 1)\n     }\n \n-    out_full_name = string_replace(idl_full_name, idl_name, name)\n-\n     if (init_with_i) {\n-      out_full_name_i = string_replace(idl_full_name, idl_name, \"i\" + name)\n-      sources_all += [ \"${target_gen_dir}/\" + out_full_name_i + \".h\" ]\n-    } else {\n-      sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".h\" ]\n+      name = \"i\" + name\n     }\n+    out_full_name = string_replace(idl_full_name, idl_name, name)\n+    sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".h\" ]\n     sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n     sources_proxy += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n     sources_stub += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n@@ -249,6 +248,7 @@ template(\"idl_gen_interface\") {\n \n   action(\"$target_name\") {\n     inputs = idl_list\n+    inputs += rebase_path(external_common_list)\n     if (defined(invoker.inputs)) {\n       inputs += invoker.inputs\n     }\n",
+        "old_path": "config/components/idl_tool/idl.gni",
+        "new_path": "config/components/idl_tool/idl.gni",
+        "a_mode": "100644",
+        "b_mode": "100644",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 8,
+        "removed_lines": 8
+      }
+    },
+    {
+      "filename": "ohos/app/app_internal.gni",
+      "additions": 4,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/app/app_internal.gni",
+      "patch": {
+        "diff": "@@ -561,7 +561,8 @@ template(\"app_sign\") {\n       _certificate_file,\n     ]\n \n-    outputs = [ \"${target_out_dir}/${target_name}.stamp\" ]\n+    _sign_result = \"${target_out_dir}/${target_name}.sign_result.json\"\n+    outputs = [ _sign_result ]\n \n     args = [\n       \"--keyPwd\",\n@@ -586,6 +587,8 @@ template(\"app_sign\") {\n       rebase_path(hap_out_dir, root_build_dir),\n       \"--hap-name\",\n       hap_name,\n+      \"--output-file\",\n+      rebase_path(_sign_result, root_build_dir),\n     ]\n     if (defined(invoker.hap_list)) {\n       args += [\n",
+        "old_path": "ohos/app/app_internal.gni",
+        "new_path": "ohos/app/app_internal.gni",
+        "a_mode": "100644",
+        "b_mode": "100644",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 4,
+        "removed_lines": 1
+      }
+    },
+    {
+      "filename": "ohos/common/BUILD.gn",
+      "additions": 19,
+      "deletions": 2,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/common/BUILD.gn",
+      "patch": {
+        "diff": "@@ -43,18 +43,35 @@ generated_file(\"generate_src_installed_info\") {\n   output_conversion = \"json\"\n }\n \n+raw_host_info_file = \"$target_gen_dir/all_parts_host.json\"\n host_info_file = \"${root_build_dir}/all_parts_host.json\"\n \n-generated_file(\"generate_host_info\") {\n+generated_file(\"generate_host_info_raw\") {\n   deps = []\n   foreach(part_label, parts_list) {\n     deps += [ get_label_info(part_label, \"label_with_toolchain\") ]\n   }\n-  outputs = [ host_info_file ]\n+  outputs = [ raw_host_info_file ]\n   data_keys = [ \"part_host_info\" ]\n   output_conversion = \"json\"\n }\n \n+action(\"generate_host_info\") {\n+  script = \"//build/ohos/common/generate_host_info.py\"\n+  deps = [ \":generate_host_info_raw\" ]\n+  inputs = [\n+    raw_host_info_file,\n+    \"//build/scripts/util/file_utils.py\",\n+  ]\n+  outputs = [ host_info_file ]\n+  args = [\n+    \"--input-file\",\n+    rebase_path(raw_host_info_file, root_build_dir),\n+    \"--output-file\",\n+    rebase_path(host_info_file, root_build_dir),\n+  ]\n+}\n+\n arm64e_file = \"${root_build_dir}/all_arm64e_parts_host.json\"\n \n generated_file(\"generate_arm64e_info\") {\n",
+        "old_path": "ohos/common/BUILD.gn",
+        "new_path": "ohos/common/BUILD.gn",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 19,
+        "removed_lines": 2
+      }
+    },
+    {
+      "filename": "ohos/common/generate_host_info.py",
+      "additions": 54,
+      "deletions": 0,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/common/generate_host_info.py",
+      "patch": {
+        "diff": "@@ -0,0 +1,54 @@\n+#!/usr/bin/env python3\n+# -*- coding: utf-8 -*-\n+# Copyright (c) 2026 Huawei Device Co., Ltd.\n+# Licensed under the Apache License, Version 2.0 (the \"License\");\n+# you may not use this file except in compliance with the License.\n+# You may obtain a copy of the License at\n+#\n+#     http://www.apache.org/licenses/LICENSE-2.0\n+#\n+# Unless required by applicable law or agreed to in writing, software\n+# distributed under the License is distributed on an \"AS IS\" BASIS,\n+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+# See the License for the specific language governing permissions and\n+# limitations under the License.\n+\n+import argparse\n+import json\n+import os\n+import sys\n+\n+sys.path.append(\n+    os.path.dirname(os.path.dirname(os.path.dirname(\n+        os.path.abspath(__file__)))))\n+from scripts.util.file_utils import read_json_file, write_json_file  # noqa: E402\n+\n+\n+def _canonical_entry(entry: dict):\n+    return json.dumps(entry, ensure_ascii=False, sort_keys=True,\n+                      separators=(',', ':'))\n+\n+\n+def normalize_host_info(host_info: list):\n+    if not isinstance(host_info, list):\n+        raise TypeError('host info must be a list')\n+    if not all(isinstance(entry, dict) for entry in host_info):\n+        raise TypeError('each host info entry must be a dictionary')\n+    return sorted(host_info, key=_canonical_entry)\n+\n+\n+def main():\n+    parser = argparse.ArgumentParser()\n+    parser.add_argument('--input-file', required=True)\n+    parser.add_argument('--output-file', required=True)\n+    args = parser.parse_args()\n+\n+    host_info = read_json_file(args.input_file)\n+    normalized_host_info = normalize_host_info(host_info)\n+    write_json_file(args.output_file, normalized_host_info,\n+                    check_changes=True)\n+    return 0\n+\n+\n+if __name__ == '__main__':\n+    sys.exit(main())\n",
+        "old_path": "ohos/common/generate_host_info.py",
+        "new_path": "ohos/common/generate_host_info.py",
+        "a_mode": "0",
+        "b_mode": "100755",
+        "new_file": true,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 54,
+        "removed_lines": 0
+      }
+    },
+    {
+      "filename": "ohos/common/merge_all_subsystem.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/common/merge_all_subsystem.py",
+      "patch": {
+        "diff": "@@ -63,7 +63,8 @@ def main():\n \n     all_subsystem_info = merge_subsystem(args.src_install_info_file,\n                                          args.binary_install_info_file)\n-    write_json_file(args.all_subsystem_info_file, all_subsystem_info)\n+    write_json_file(args.all_subsystem_info_file, all_subsystem_info,\n+                    check_changes=True)\n \n     if args.depfile:\n         _dep_files = []\n",
+        "old_path": "ohos/common/merge_all_subsystem.py",
+        "new_path": "ohos/common/merge_all_subsystem.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 2,
+        "removed_lines": 1
+      }
+    },
+    {
+      "filename": "ohos/packages/BUILD.gn",
+      "additions": 67,
+      "deletions": 6,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/packages/BUILD.gn",
+      "patch": {
+        "diff": "@@ -79,19 +79,44 @@ action(\"packer\") {\n \n all_parts_host_info_file = \"${root_build_dir}/all_parts_host.json\"\n all_host_symlink_file = \"${root_build_dir}/all_host_symlink.json\"\n+host_symlink_info_file = \"$target_gen_dir/host_symlink_info.json\"\n \n-action(\"generate_host_symlink\") {\n+action(\"collect_host_symlink_info\") {\n   script = \"//build/ohos/packages/generate_host_symlink.py\"\n-  inputs = [ all_parts_host_info_file ]\n-  outputs = [ all_host_symlink_file ]\n+  inputs = [\n+    all_parts_host_info_file,\n+    \"//build/scripts/util/build_utils.py\",\n+    \"//build/scripts/util/file_utils.py\",\n+  ]\n   deps = [ \"//build/ohos/common:generate_host_info\" ]\n+  outputs = [ host_symlink_info_file ]\n+  depfile = \"$target_gen_dir/$target_name.d\"\n   args = [\n     \"--all-parts-host-info-file\",\n     rebase_path(all_parts_host_info_file),\n     \"--output-file\",\n-    rebase_path(all_host_symlink_file),\n+    rebase_path(host_symlink_info_file, root_build_dir),\n     \"--root-build-dir\",\n     rebase_path(root_build_dir),\n+    \"--depfile\",\n+    rebase_path(depfile, root_build_dir),\n+  ]\n+}\n+\n+action(\"generate_host_symlink\") {\n+  script = \"//build/ohos/packages/generate_host_symlink.py\"\n+  inputs = [\n+    host_symlink_info_file,\n+    \"//build/scripts/util/build_utils.py\",\n+    \"//build/scripts/util/file_utils.py\",\n+  ]\n+  deps = [ \":collect_host_symlink_info\" ]\n+  outputs = [ all_host_symlink_file ]\n+  args = [\n+    \"--symlink-info-file\",\n+    rebase_path(host_symlink_info_file, root_build_dir),\n+    \"--output-file\",\n+    rebase_path(all_host_symlink_file),\n   ]\n }\n \n@@ -358,9 +383,32 @@ foreach(_platform, target_platform_list) {\n                       root_build_dir) ]\n   }\n \n+  validation_install_modules =\n+      \"$target_gen_dir/${_platform}_validation_install_modules.json\"\n+  action(\"${_platform}_validation_install_modules\") {\n+    script = \"//build/ohos/packages/stabilize_json_file.py\"\n+    deps = [ \":${_platform}_install_modules\" ]\n+    inputs = [\n+      system_install_modules,\n+      \"//build/scripts/util/file_utils.py\",\n+    ]\n+    outputs = [ validation_install_modules ]\n+    args = [\n+      \"--input-file\",\n+      rebase_path(system_install_modules, root_build_dir),\n+      \"--output-file\",\n+      rebase_path(validation_install_modules, root_build_dir),\n+    ]\n+  }\n+\n   action(\"check_seccomp_filter_name\") {\n     script = \"//build/ohos/packages/check_seccomp_library_name.py\"\n-    deps = [ \":${_platform}_install_modules\" ]\n+    deps = [ \":${_platform}_validation_install_modules\" ]\n+    inputs = [\n+      validation_install_modules,\n+      \"//build/scripts/util/build_utils.py\",\n+    ]\n+    depfile = \"$target_gen_dir/$target_name.d\"\n \n     # result is not used in script\n     process_validate_result =\n@@ -389,13 +437,22 @@ foreach(_platform, target_platform_list) {\n       rebase_path(_system_cfg_folder, root_build_dir),\n       \"--system-seccomp-lib-path\",\n       rebase_path(_system_seccomp_folder, root_build_dir),\n+      \"--result-path\",\n+      rebase_path(process_validate_result, root_build_dir),\n+      \"--depfile\",\n+      rebase_path(depfile, root_build_dir),\n     ]\n   }\n \n   action(\"process_field_validate\") {\n     script = \"//build/ohos/packages/process_field_validate.py\"\n \n-    deps = [ \":${_platform}_install_modules\" ]\n+    deps = [ \":${_platform}_validation_install_modules\" ]\n+    inputs = [\n+      validation_install_modules,\n+      \"//build/scripts/util/build_utils.py\",\n+    ]\n+    depfile = \"$target_gen_dir/$target_name.d\"\n \n     # result is not used in script\n     process_validate_result = \"${current_platform_dir}/cfg_validate_result.txt\"\n@@ -428,6 +485,10 @@ foreach(_platform, target_platform_list) {\n       rebase_path(_privilege_whitelist, root_build_dir),\n       \"--critical-reboot-process-list-path\",\n       rebase_path(_critical_whitelist, root_build_dir),\n+      \"--result-path\",\n+      rebase_path(process_validate_result, root_build_dir),\n+      \"--depfile\",\n+      rebase_path(depfile, root_build_dir),\n     ]\n   }\n }\n",
+        "old_path": "ohos/packages/BUILD.gn",
+        "new_path": "ohos/packages/BUILD.gn",
+        "a_mode": "100644",
+        "b_mode": "100644",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 67,
+        "removed_lines": 6
+      }
+    },
+    {
+      "filename": "ohos/packages/check_seccomp_library_name.py",
+      "additions": 52,
+      "deletions": 14,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/packages/check_seccomp_library_name.py",
+      "patch": {
+        "diff": "@@ -21,6 +21,11 @@ import argparse\n import json\n import os\n \n+sys.path.append(\n+    os.path.dirname(os.path.dirname(os.path.dirname(\n+        os.path.abspath(__file__)))))\n+from scripts.util import build_utils  # noqa: E402\n+\n \n class ValidateError(Exception):\n     def __init__(self, msg):\n@@ -44,17 +49,19 @@ def parse_cfg_file(file_name: str):\n     return services_name\n \n \n-def collect_cfg_services_name(cfg_dir: str):\n+def collect_cfg_services_name(cfg_dir: str, depfiles: set):\n     services_name = set()\n     if not os.path.exists(cfg_dir):\n         return services_name\n-    for file in os.listdir(cfg_dir):\n+    for file in sorted(os.listdir(cfg_dir)):\n         if file.endswith(\".cfg\"):\n-            services_name |= parse_cfg_file(\"{}/{}\".format(cfg_dir, file))\n+            cfg_file = os.path.join(cfg_dir, file)\n+            depfiles.add(cfg_file)\n+            services_name |= parse_cfg_file(cfg_file)\n     return services_name\n \n \n-def collect_seccomp_services_name(lib_dir: str):\n+def collect_seccomp_services_name(lib_dir: str, depfiles: set):\n     services_name = set()\n     name_allow_list = [\n         'system',\n@@ -69,7 +76,9 @@ def collect_seccomp_services_name(lib_dir: str):\n     ]\n     if not os.path.exists(lib_dir):\n         return services_name\n-    for file in os.listdir(lib_dir):\n+    for file in sorted(os.listdir(lib_dir)):\n+        seccomp_file = os.path.join(lib_dir, file)\n+        depfiles.add(seccomp_file)\n         if not file.startswith('lib') or not file.endswith('_filter.z.so'):\n             raise ValidateError('seccomp directory has other shared library except seccomp policy library')\n \n@@ -89,29 +98,58 @@ def check_seccomp_services_name(servces_name: str, seccomp_services_name: str):\n     return\n \n \n+def write_validation_result(result_path: str):\n+    result_dir = os.path.dirname(os.path.abspath(result_path))\n+    os.makedirs(result_dir, exist_ok=True)\n+    with build_utils.atomic_output(result_path) as output_file:\n+        output_file.write(b'validation succeeded\\n')\n+\n+\n+def remove_validation_result(result_path: str):\n+    if os.path.isfile(result_path):\n+        os.unlink(result_path)\n+\n+\n def main():\n     parser = argparse.ArgumentParser(\n       description='check whehter name is legal used for the seccomp policy shared library')\n     parser.add_argument('--vendor-cfg-path', type=str,\n                         help=('input vendor cfg path\\n'))\n-\n     parser.add_argument('--vendor-seccomp-lib-path', type=str,\n                         help=('input vendor seccomp cfg path\\n'))\n-\n     parser.add_argument('--system-cfg-path', type=str,\n                         help=('input system cfg path\\n'))\n-\n     parser.add_argument('--system-seccomp-lib-path', type=str,\n                         help='input system seccomp cfg path\\n')\n+    parser.add_argument('--result-path', type=str, required=True,\n+                        help='output success marker file path\\n')\n+    parser.add_argument('--depfile', type=str, required=True,\n+                        help='output dependency file path\\n')\n \n     args = parser.parse_args()\n-    vendor_services_name = collect_cfg_services_name(args.vendor_cfg_path)\n-    vendor_seccomp_services_name = collect_seccomp_services_name(args.vendor_seccomp_lib_path)\n-    check_seccomp_services_name(vendor_services_name, vendor_seccomp_services_name)\n+    depfiles = set()\n+    try:\n+        vendor_services_name = collect_cfg_services_name(\n+            args.vendor_cfg_path, depfiles)\n+        vendor_seccomp_services_name = collect_seccomp_services_name(\n+            args.vendor_seccomp_lib_path, depfiles)\n+        check_seccomp_services_name(vendor_services_name,\n+                                    vendor_seccomp_services_name)\n \n-    system_services_name = collect_cfg_services_name(args.system_cfg_path)\n-    system_seccomp_services_name = collect_seccomp_services_name(args.system_seccomp_lib_path)\n-    check_seccomp_services_name(system_services_name, system_seccomp_services_name)\n+        system_services_name = collect_cfg_services_name(\n+            args.system_cfg_path, depfiles)\n+        system_seccomp_services_name = collect_seccomp_services_name(\n+            args.system_seccomp_lib_path, depfiles)\n+        check_seccomp_services_name(system_services_name,\n+                                    system_seccomp_services_name)\n+    except Exception:\n+        remove_validation_result(args.result_path)\n+        raise\n+\n+    build_utils.write_depfile(args.depfile, args.result_path, depfiles,\n+                              add_pydeps=False)\n+    write_validation_result(args.result_path)\n+    return 0\n \n \n if __name__ == '__main__':\n",
+        "old_path": "ohos/packages/check_seccomp_library_name.py",
+        "new_path": "ohos/packages/check_seccomp_library_name.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 52,
+        "removed_lines": 14
+      }
+    },
+    {
+      "filename": "ohos/packages/generate_host_symlink.py",
+      "additions": 53,
+      "deletions": 22,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/packages/generate_host_symlink.py",
+      "patch": {
+        "diff": "@@ -22,40 +22,71 @@ sys.path.append(\n     os.path.dirname(os.path.dirname(os.path.dirname(\n         os.path.abspath(__file__)))))\n from scripts.util.file_utils import read_json_file, write_json_file  # noqa: E402\n+from scripts.util import build_utils  # noqa: E402\n \n \n-def _do_symlink(all_host_parts_info: str, output_file: str, root_build_dir: str):\n-    output_result = {}\n+def _collect_symlink_info(all_host_parts_info: list, root_build_dir: str):\n+    symlink_info = {}\n+    depfiles = set()\n     for part_info in all_host_parts_info:\n         part_info_file = part_info.get('part_info_file')\n+        depfiles.add(part_info_file)\n         part_modules_host_info = read_json_file(part_info_file)\n         for info in part_modules_host_info:\n-            if info:\n-                module_def = info.get('module_def')\n-                module_info_file = info.get('module_info_file')\n-                module_info = read_json_file(module_info_file)\n-                if 'symlink' in module_info:\n-                    source_file = module_info.get('source')\n-                    source_file = os.path.join(root_build_dir, source_file)\n-                    symlink_dest = module_info.get('symlink')\n-                    \n-                    for name in symlink_dest:\n-                        symlink_dest_dir = os.path.dirname(source_file)\n-                        symlink_dest_file = os.path.join(root_build_dir, symlink_dest_dir, name)\n-                        if not os.path.exists(symlink_dest_file):\n-                            subprocess.run(['ln', '-sf', str(source_file), str(symlink_dest_file)])\n-                            output_result[symlink_dest_file] = str(source_file)\n-    write_json_file(output_file, output_result)\n+            if not info:\n+                continue\n+            module_info_file = info.get('module_info_file')\n+            depfiles.add(module_info_file)\n+            module_info = read_json_file(module_info_file)\n+            if 'symlink' not in module_info:\n+                continue\n+            source_file = os.path.join(root_build_dir,\n+                                       module_info.get('source'))\n+            symlink_dest_dir = os.path.dirname(source_file)\n+            for name in module_info.get('symlink'):\n+                symlink_dest_file = os.path.join(symlink_dest_dir, name)\n+                symlink_info[symlink_dest_file] = str(source_file)\n+    return symlink_info, depfiles\n+\n+\n+def _create_symlinks(symlink_info: dict, output_file: str):\n+    output_result = {}\n+    for symlink_dest_file, source_file in sorted(symlink_info.items()):\n+        if os.path.exists(symlink_dest_file):\n+            continue\n+        subprocess.run(\n+            ['ln', '-sf', str(source_file), str(symlink_dest_file)],\n+            check=True)\n+        output_result[symlink_dest_file] = str(source_file)\n+    write_json_file(output_file, output_result, check_changes=True)\n \n \n def main():\n     parser = argparse.ArgumentParser()\n-    parser.add_argument('--all-parts-host-info-file', required=True)\n+    input_group = parser.add_mutually_exclusive_group(required=True)\n+    input_group.add_argument('--all-parts-host-info-file')\n+    input_group.add_argument('--symlink-info-file')\n     parser.add_argument('--output-file', required=True)\n-    parser.add_argument('--root-build-dir', required=True)\n+    parser.add_argument('--root-build-dir')\n+    parser.add_argument('--depfile')\n     args = parser.parse_args()\n-    all_host_parts_info = read_json_file(args.all_parts_host_info_file)\n-    _do_symlink(all_host_parts_info, args.output_file, args.root_build_dir)\n+\n+    if args.all_parts_host_info_file:\n+        if not args.root_build_dir:\n+            parser.error('--root-build-dir is required when collecting info')\n+        all_host_parts_info = read_json_file(args.all_parts_host_info_file)\n+        symlink_info, depfiles = _collect_symlink_info(\n+            all_host_parts_info, args.root_build_dir)\n+        write_json_file(args.output_file, symlink_info, check_changes=True)\n+        if not args.depfile:\n+            parser.error('--depfile is required when collecting info')\n+        depfiles.add(args.all_parts_host_info_file)\n+        depfile_output = os.path.relpath(args.output_file, os.getcwd())\n+        build_utils.write_depfile(args.depfile, depfile_output, depfiles,\n+                                  add_pydeps=False)\n+    else:\n+        symlink_info = read_json_file(args.symlink_info_file)\n+        _create_symlinks(symlink_info, args.output_file)\n     return 0\n \n \n",
+        "old_path": "ohos/packages/generate_host_symlink.py",
+        "new_path": "ohos/packages/generate_host_symlink.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 53,
+        "removed_lines": 22
+      }
+    },
+    {
+      "filename": "ohos/packages/modules_install.py",
+      "additions": 9,
+      "deletions": 6,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/packages/modules_install.py",
+      "patch": {
+        "diff": "@@ -21,7 +21,7 @@ import shutil\n sys.path.append(\n     os.path.dirname(os.path.dirname(os.path.dirname(\n         os.path.abspath(__file__)))))\n-from scripts.util.file_utils import read_json_file, write_json_file, write_file  # noqa: E402\n+from scripts.util.file_utils import read_json_file, write_json_file  # noqa: E402\n from scripts.util import build_utils  # noqa: E402\n \n sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), \"rules\"))\n@@ -206,17 +206,20 @@ def copy_modules(system_install_info: dict, install_modules_info_file: str,\n                         raise FileExistsError(f\"{link_path} create failed, src_file:{dest_file} and {dest_file} is same\")\n \n     # write install module info to file\n-    write_json_file(install_modules_info_file, modules_info_dict)\n+    write_json_file(install_modules_info_file, modules_info_dict,\n+                    check_changes=True)\n \n     # write all module info\n-    write_json_file(modules_info_file, output_result)\n+    write_json_file(modules_info_file, output_result, check_changes=True)\n \n     # output module list to file\n-    write_file(module_list_file, '\\n'.join(dest_list))\n+    module_list_content = '\\n'.join(dest_list)\n+    with build_utils.atomic_output(module_list_file) as output_file:\n+        output_file.write(module_list_content.encode('utf-8'))\n \n     # write pac only module info file\n-    if arm64e_output_result:\n-        write_json_file(arm64e_modules_info_file, arm64e_output_result)\n+    write_json_file(arm64e_modules_info_file, arm64e_output_result,\n+                    check_changes=True)\n \n \n def main():\n",
+        "old_path": "ohos/packages/modules_install.py",
+        "new_path": "ohos/packages/modules_install.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 9,
+        "removed_lines": 6
+      }
+    },
+    {
+      "filename": "ohos/packages/parts_install_info.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/packages/parts_install_info.py",
+      "patch": {
+        "diff": "@@ -69,7 +69,8 @@ def main():\n     platform_out_dir = os.path.dirname(args.system_install_info_file)\n     if not os.path.exists(platform_out_dir):\n         os.makedirs(platform_out_dir, exist_ok=True)\n-    write_json_file(args.system_install_info_file, _parts_list)\n+    write_json_file(args.system_install_info_file, _parts_list,\n+                    check_changes=True)\n \n     if args.depfile:\n         _dep_files = []\n",
+        "old_path": "ohos/packages/parts_install_info.py",
+        "new_path": "ohos/packages/parts_install_info.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 2,
+        "removed_lines": 1
+      }
+    },
+    {
+      "filename": "ohos/packages/process_field_validate.py",
+      "additions": 92,
+      "deletions": 25,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/packages/process_field_validate.py",
+      "patch": {
+        "diff": "@@ -18,6 +18,12 @@ import getopt\n import sys\n import contextlib\n \n+sys.path.append(\n+    os.path.dirname(os.path.dirname(os.path.dirname(\n+        os.path.abspath(__file__)))))\n+from scripts.util import build_utils  # noqa: E402\n+\n+\n # Store the hash table of the services that need to validate\n PRIVILEGE_HASH = {}\n CRITICAL_HASH = {}\n@@ -310,38 +316,99 @@ def parse_cfg_file(filename: str):\n     return\n \n \n-def iterate_cfg_folder(cfg_dir: str):\n-    for file in os.listdir(cfg_dir):\n+def iterate_cfg_folder(cfg_dir: str, depfiles: set):\n+    for file in sorted(os.listdir(cfg_dir)):\n         if file.endswith(\".cfg\"):\n-            parse_cfg_file(\"{}/{}\".format(cfg_dir, file))\n+            cfg_file = os.path.join(cfg_dir, file)\n+            depfiles.add(cfg_file)\n+            parse_cfg_file(cfg_file)\n     return\n \n \n+def write_validation_result(result_path: str):\n+    result_dir = os.path.dirname(os.path.abspath(result_path))\n+    os.makedirs(result_dir, exist_ok=True)\n+    with build_utils.atomic_output(result_path) as output_file:\n+        output_file.write(b'validation succeeded\\n')\n+\n+\n+def remove_validation_result(result_path: str):\n+    if os.path.isfile(result_path):\n+        os.unlink(result_path)\n+\n+\n+def parse_options():\n+    opts, _ = getopt.getopt(\n+        sys.argv[1:], '', [\n+            'sys-cfg-folder=',\n+            'vendor-cfg-folder=',\n+            'high-privilege-process-list-path=',\n+            'critical-reboot-process-list-path=',\n+            'result-path=',\n+            'depfile=',\n+        ])\n+    option_values = dict(opts)\n+    required_options = [\n+        '--sys-cfg-folder',\n+        '--vendor-cfg-folder',\n+        '--high-privilege-process-list-path',\n+        '--critical-reboot-process-list-path',\n+        '--result-path',\n+        '--depfile',\n+    ]\n+    missing_options = [\n+        option_name for option_name in required_options\n+        if option_name not in option_values\n+    ]\n+    if missing_options:\n+        raise getopt.GetoptError('missing required options: {}'.format(\n+            ', '.join(missing_options)))\n+    return option_values\n+\n+\n+def validate_cfg_folder(cfg_folder: str, depfiles: set):\n+    if not os.path.exists(cfg_folder):\n+        print(\"Process field check skipped: file [{}] not exist\".format(\n+            cfg_folder))\n+        return\n+    iterate_cfg_folder(cfg_folder, depfiles)\n+\n+\n+def run_validation(option_values: dict, depfiles: set):\n+    sys_cfg_folder = option_values['--sys-cfg-folder']\n+    vendor_cfg_folder = option_values['--vendor-cfg-folder']\n+    privilege_process_path = option_values[\n+        '--high-privilege-process-list-path']\n+    critical_process_path = option_values[\n+        '--critical-reboot-process-list-path']\n+    validate_cfg_folder(sys_cfg_folder, depfiles)\n+    validate_cfg_folder(vendor_cfg_folder, depfiles)\n+\n+    for process_path in [privilege_process_path, critical_process_path]:\n+        if os.path.isfile(process_path):\n+            depfiles.add(process_path)\n+\n+    validate_cfg_file(privilege_process_path, critical_process_path,\n+                      option_values['--result-path'])\n+\n+\n def main():\n-    opts, args = getopt.getopt(sys.argv[1:], '', ['sys-cfg-folder=', 'vendor-cfg-folder=', \\\n-        'high-privilege-process-list-path=', 'critical-reboot-process-list-path=', 'result-path='])\n+    option_values = parse_options()\n+    result_path = option_values['--result-path']\n+    depfile_path = option_values['--depfile']\n+    depfiles = set()\n \n-    sys_cfg_folder = opts[0][1]\n-    if not os.path.exists(sys_cfg_folder):\n-        print(\"Process field check skipped: file [{}] not exist\".format(sys_cfg_folder))\n-    else:\n-        iterate_cfg_folder(sys_cfg_folder)\n+    try:\n+        run_validation(option_values, depfiles)\n+    except Exception:\n+        remove_validation_result(result_path)\n+        raise\n \n-    vendor_cfg_folder = opts[1][1]\n-    if not os.path.exists(vendor_cfg_folder):\n-        print(\"Process field check skipped: file [{}] not exist\".format(vendor_cfg_folder))\n-    else:\n-        iterate_cfg_folder(vendor_cfg_folder)\n+    build_utils.write_depfile(depfile_path, result_path, depfiles,\n+                              add_pydeps=False)\n+    write_validation_result(result_path)\n+    return 0\n \n-    privilege_process_path = opts[2][1]\n-\n-    critical_process_path = opts[3][1]\n-\n-    validate_cfg_file(privilege_process_path, critical_process_path, None)\n-\n-    return\n \n if __name__ == \"__main__\":\n-\n-    main()\n-\n+    sys.exit(main())\n",
+        "old_path": "ohos/packages/process_field_validate.py",
+        "new_path": "ohos/packages/process_field_validate.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 92,
+        "removed_lines": 25
+      }
+    },
+    {
+      "filename": "ohos/packages/stabilize_json_file.py",
+      "additions": 41,
+      "deletions": 0,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/packages/stabilize_json_file.py",
+      "patch": {
+        "diff": "@@ -0,0 +1,41 @@\n+#!/usr/bin/env python3\n+# -*- coding: utf-8 -*-\n+# Copyright (c) 2026 Huawei Device Co., Ltd.\n+# Licensed under the Apache License, Version 2.0 (the \"License\");\n+# you may not use this file except in compliance with the License.\n+# You may obtain a copy of the License at\n+#\n+#     http://www.apache.org/licenses/LICENSE-2.0\n+#\n+# Unless required by applicable law or agreed to in writing, software\n+# distributed under the License is distributed on an \"AS IS\" BASIS,\n+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+# See the License for the specific language governing permissions and\n+# limitations under the License.\n+\n+import argparse\n+import os\n+import sys\n+\n+sys.path.append(\n+    os.path.dirname(os.path.dirname(os.path.dirname(\n+        os.path.abspath(__file__)))))\n+from scripts.util.file_utils import read_json_file, write_json_file  # noqa: E402\n+\n+\n+def main():\n+    parser = argparse.ArgumentParser()\n+    parser.add_argument('--input-file', required=True)\n+    parser.add_argument('--output-file', required=True)\n+    args = parser.parse_args()\n+\n+    content = read_json_file(args.input_file)\n+    if content is None:\n+        raise ValueError(\"failed to read JSON file '{}'\".format(\n+            args.input_file))\n+    write_json_file(args.output_file, content, check_changes=True)\n+    return 0\n+\n+\n+if __name__ == '__main__':\n+    sys.exit(main())\n",
+        "old_path": "ohos/packages/stabilize_json_file.py",
+        "new_path": "ohos/packages/stabilize_json_file.py",
+        "a_mode": "0",
+        "b_mode": "100755",
+        "new_file": true,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 41,
+        "removed_lines": 0
+      }
+    },
+    {
+      "filename": "ohos/sa_profile/sa_profile_binary.py",
+      "additions": 11,
+      "deletions": 9,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/sa_profile/sa_profile_binary.py",
+      "patch": {
+        "diff": "@@ -94,15 +94,17 @@ def main():\n             generate_binary_sa_archive(parts_list,\n                                        args.sa_profile_archive_info_file,\n                                        args.sa_output_dir, depfiles))\n-    with zipfile.ZipFile(args.sa_output_zipfile, 'w') as outfile:\n-        for part_name, sa_file_path, sa_file in sa_files_tuples:\n-            part_name_map[sa_file] = part_name\n-            build_utils.add_to_zip_hermetic(outfile,\n-                                         sa_file,\n-                                         src_path=sa_file_path)\n-        if part_name_map:\n-            metadata_content = json.dumps(part_name_map, indent=2, sort_keys=True)\n-            outfile.writestr(\"part_name_info.json\", metadata_content)\n+    with build_utils.atomic_output(args.sa_output_zipfile) as output_file:\n+        with zipfile.ZipFile(output_file, 'w') as outfile:\n+            for part_name, sa_file_path, sa_file in sa_files_tuples:\n+                part_name_map[sa_file] = part_name\n+                build_utils.add_to_zip_hermetic(outfile,\n+                                                sa_file,\n+                                                src_path=sa_file_path)\n+            if part_name_map:\n+                metadata_content = json.dumps(part_name_map, indent=2,\n+                                              sort_keys=True)\n+                outfile.writestr(\"part_name_info.json\", metadata_content)\n     build_utils.write_depfile(args.depfile, args.sa_output_zipfile, depfiles)\n     return 0\n \n",
+        "old_path": "ohos/sa_profile/sa_profile_binary.py",
+        "new_path": "ohos/sa_profile/sa_profile_binary.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 11,
+        "removed_lines": 9
+      }
+    },
+    {
+      "filename": "ohos/sa_profile/sa_profile_merge.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/sa_profile/sa_profile_merge.py",
+      "patch": {
+        "diff": "@@ -114,7 +114,8 @@ def _generate_install_info(sa_result_file_dict: dict, sa_info_install_dest_dir:\n             'dest': [_install_dest]\n         }\n         module_install_info_list.append(module_install_info)\n-    write_json_file(sa_install_info_file, module_install_info_list)\n+    write_json_file(sa_install_info_file, module_install_info_list,\n+                    check_changes=True)\n \n \n def main():\n",
+        "old_path": "ohos/sa_profile/sa_profile_merge.py",
+        "new_path": "ohos/sa_profile/sa_profile_merge.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 2,
+        "removed_lines": 1
+      }
+    },
+    {
+      "filename": "ohos/sa_profile/sa_profile_source.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/sa_profile/sa_profile_source.py",
+      "patch": {
+        "diff": "@@ -60,7 +60,8 @@ def main():\n     src_parts_info = get_src_parts(args.system_install_info_file)\n     sa_install_infos = get_sa_install_info(args.src_sa_info_file,\n                                            src_parts_info)\n-    write_json_file(args.src_sa_install_info_file, sa_install_infos)\n+    write_json_file(args.src_sa_install_info_file, sa_install_infos,\n+                    check_changes=True)\n     return 0\n \n \n",
+        "old_path": "ohos/sa_profile/sa_profile_source.py",
+        "new_path": "ohos/sa_profile/sa_profile_source.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 2,
+        "removed_lines": 1
+      }
+    },
+    {
+      "filename": "ohos/sa_profile/src_sa_profile_process.py",
+      "additions": 4,
+      "deletions": 2,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/ohos/sa_profile/src_sa_profile_process.py",
+      "patch": {
+        "diff": "@@ -43,7 +43,8 @@ def sa_info_process(sa_profile_infos_file: str, toolchain_platform: dict):\n         _sa_info['part_name'] = part_name\n         _sa_info['origin_part_name'] = origin_part_name\n         processed_sa_infos.append(_sa_info)\n-    return processed_sa_infos\n+    return sorted(processed_sa_infos,\n+                  key=lambda info: info.get('label', ''))\n \n \n def main():\n@@ -62,7 +63,8 @@ def main():\n     toolchain_platform = variants_toolchain_info.get('toolchain_platform')\n     processed_sa_infos = sa_info_process(args.sa_profile_infos_file,\n                                          toolchain_platform)\n-    write_json_file(args.output_file, processed_sa_infos)\n+    write_json_file(args.output_file, processed_sa_infos,\n+                    check_changes=True)\n     build_utils.write_depfile(args.depfile, args.output_file, depfiles)\n     return 0\n \n",
+        "old_path": "ohos/sa_profile/src_sa_profile_process.py",
+        "new_path": "ohos/sa_profile/src_sa_profile_process.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 4,
+        "removed_lines": 2
+      }
+    },
+    {
+      "filename": "scripts/app_sign.py",
+      "additions": 11,
+      "deletions": 0,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/scripts/app_sign.py",
+      "patch": {
+        "diff": "@@ -44,6 +44,7 @@ def parse_args(args):\n     parser.add_argument('--certificate-file', help='')\n     parser.add_argument('--hap-name', help='')\n     parser.add_argument('--hap-list', help='')\n+    parser.add_argument('--output-file', help='signing result output file')\n     options = parser.parse_args(args)\n     return options\n \n@@ -76,6 +77,8 @@ def main(args):\n     if not options.hap_out_dir:\n         sign_app(options, options.inFile, options.outFile)\n     else:\n+        if not options.output_file:\n+            raise ValueError('--output-file is required when --hap-out-dir is set')\n         if not os.path.exists(options.hap_out_dir):\n             os.makedirs(options.hap_out_dir, exist_ok=True)\n         unsigned_hap_path_list = file_utils.read_json_file(options.unsigned_hap_path_list)\n@@ -90,6 +93,7 @@ def main(args):\n                     signed_hap_names[f'{names[0]}.hap'] = f'{names[1]}.hap'\n                 else:\n                     raise ValueError(f'Value hap_list {hap_list} not compliant with format')\n+        signed_hap_result = []\n         for unsigned_hap_path in unsigned_hap_path_list.get('unsigned_hap_path_list'):\n             signed_hap_path = unsigned_hap_path.replace('unsigned', 'signed')\n             output_hap_name = f'{options.hap_name}-{os.path.basename(signed_hap_path)}'\n@@ -106,6 +110,13 @@ def main(args):\n                     output_hap_name = signed_hap_names.get(unsigned_hap_name)\n             output_hap = os.path.join(options.hap_out_dir, output_hap_name)\n             sign_app(options, unsigned_hap_path, output_hap)\n+            signed_hap_result.append({\n+                'path': output_hap,\n+                'sha256': build_utils.get_file_sha256(output_hap),\n+            })\n+        build_utils.write_json_atomic({\n+            'signed_hap_list': signed_hap_result,\n+        }, options.output_file)\n \n \n if __name__ == '__main__':\n",
+        "old_path": "scripts/app_sign.py",
+        "new_path": "scripts/app_sign.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 11,
+        "removed_lines": 0
+      }
+    },
+    {
+      "filename": "scripts/compile_app.py",
+      "additions": 10,
+      "deletions": 3,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/scripts/compile_app.py",
+      "patch": {
+        "diff": "@@ -203,7 +203,6 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value\n     :param cwd: app project directory\n     :return: None\n     '''\n-    unsigned_hap_path_json = {}\n     unsigned_hap_path_list = []\n     with open(build_profile, 'r') as input_f:\n         build_info = json5.load(input_f)\n@@ -220,8 +219,16 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value\n                 unsigned_hap_path, '*-unsigned.hsp')\n             if hsp_file:\n                 unsigned_hap_path_list.extend(hsp_file)\n-        unsigned_hap_path_json['unsigned_hap_path_list'] = unsigned_hap_path_list\n-    file_utils.write_json_file(options.output_file, unsigned_hap_path_json)\n+    unsigned_hap_path_list.sort()\n+    unsigned_hap_sha256 = {\n+        hap_path: build_utils.get_file_sha256(hap_path)\n+        for hap_path in unsigned_hap_path_list\n+    }\n+    unsigned_hap_path_json = {\n+        'unsigned_hap_path_list': unsigned_hap_path_list,\n+        'unsigned_hap_sha256': unsigned_hap_sha256,\n+    }\n+    build_utils.write_json_atomic(unsigned_hap_path_json, options.output_file)\n \n \n def copy_libs(cwd: str, system_lib_module_info_list: list, ohos_app_abi: str, module_libs_dir: str):\n",
+        "old_path": "scripts/compile_app.py",
+        "new_path": "scripts/compile_app.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 10,
+        "removed_lines": 3
+      }
+    },
+    {
+      "filename": "scripts/util/build_utils.py",
+      "additions": 22,
+      "deletions": 0,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/scripts/util/build_utils.py",
+      "patch": {
+        "diff": "@@ -10,6 +10,7 @@ import contextlib\n from distutils import extension\n import filecmp\n import fnmatch\n+import hashlib\n import json\n import os\n import pipes\n@@ -179,6 +180,27 @@ def atomic_output(path, only_if_changed=True):\n                 os.unlink(f.name)\n \n \n+def get_file_sha256(path):\n+    \"\"\"Return the SHA-256 digest of a file.\"\"\"\n+    digest = hashlib.sha256()\n+    with open(path, 'rb') as input_file:\n+        for chunk in iter(lambda: input_file.read(1024 * 1024), b''):\n+            digest.update(chunk)\n+    return digest.hexdigest()\n+\n+\n+def write_json_atomic(obj, path):\n+    \"\"\"Write deterministic JSON atomically without touching unchanged files.\"\"\"\n+    output_dir = os.path.dirname(os.path.abspath(path))\n+    os.makedirs(output_dir, exist_ok=True)\n+    json_content = json.dumps(obj,\n+                              sort_keys=True,\n+                              indent=2,\n+                              separators=(',', ': '))\n+    with atomic_output(path) as output_file:\n+        output_file.write(json_content.encode('utf-8'))\n+\n+\n class CalledProcessError(Exception):\n     \"\"\"This exception is raised when the process run by check_output\n     exits with a non-zero exit code.\n",
+        "old_path": "scripts/util/build_utils.py",
+        "new_path": "scripts/util/build_utils.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 22,
+        "removed_lines": 0
+      }
+    },
+    {
+      "filename": "scripts/util/file_utils.py",
+      "additions": 3,
+      "deletions": 13,
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f1a463340efbcaa8089df8f47e50409c14ee9322/scripts/util/file_utils.py",
+      "patch": {
+        "diff": "@@ -16,7 +16,6 @@\n import json\n import os\n import subprocess\n-import hashlib\n import platform\n \n \n@@ -82,18 +81,9 @@ def write_json_file(output_file, content, check_changes=False):\n \n \n def __check_changes(output_file, content):\n-    if os.path.exists(output_file) and os.path.isfile(output_file):\n-        # file content md5 val\n-        sha256_obj = hashlib.sha256()\n-        sha256_obj.update(str(read_json_file(output_file)).encode())\n-        hash_value = sha256_obj.hexdigest()\n-        # new content md5 val\n-        sha256_obj_new = hashlib.sha256()\n-        sha256_obj_new.update(str(content).encode())\n-        hash_value_new = sha256_obj_new.hexdigest()\n-        if hash_value_new == hash_value:\n-            return False\n-    return True\n+    if not os.path.isfile(output_file):\n+        return True\n+    return read_json_file(output_file) != content\n \n \n # Write file data\n",
+        "old_path": "scripts/util/file_utils.py",
+        "new_path": "scripts/util/file_utils.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 3,
+        "removed_lines": 13
+      }
+    }
+  ]
+}

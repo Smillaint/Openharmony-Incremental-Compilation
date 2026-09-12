@@ -1,0 +1,56 @@
+From 97c0d5bcab3e5038ea31aac07523a8cc1bd7e23c Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 2 Sep 2026 16:52:32 +0800
+Subject: [PATCH] Match IDL interface header outputs for acronym names
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ config/components/idl_tool/idl.gni | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/config/components/idl_tool/idl.gni b/config/components/idl_tool/idl.gni
+index 72427f95..39ccddfe 100644
+--- a/config/components/idl_tool/idl.gni
++++ b/config/components/idl_tool/idl.gni
+@@ -129,6 +129,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -136,7 +140,8 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+     if (init_with_i) {
+-      sources_all += [ "${target_gen_dir}/" + "i" + name + ".h" ]
++      sources_all +=
++          [ "${target_gen_dir}/" + "i" + interface_header_name + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + name + ".h" ]
+     }
+@@ -178,6 +183,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -188,7 +197,8 @@ template("idl_gen_interface") {
+     out_full_name = string_replace(idl_full_name, idl_name, name)
+ 
+     if (init_with_i) {
+-      out_full_name_i = string_replace(idl_full_name, idl_name, "i" + name)
++      out_full_name_i =
++          string_replace(idl_full_name, idl_name, "i" + interface_header_name)
+       sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]

@@ -1,0 +1,133 @@
+diff --git a/ohos/app/app_internal.gni b/ohos/app/app_internal.gni
+--- a/ohos/app/app_internal.gni
++++ b/ohos/app/app_internal.gni
+@@ -561,7 +561,8 @@ template("app_sign") {
+       _certificate_file,
+     ]
+ 
+-    outputs = [ "${target_out_dir}/${target_name}.stamp" ]
++    _sign_result = "${target_out_dir}/${target_name}.sign_result.json"
++    outputs = [ _sign_result ]
+ 
+     args = [
+       "--keyPwd",
+@@ -586,6 +587,8 @@ template("app_sign") {
+       rebase_path(hap_out_dir, root_build_dir),
+       "--hap-name",
+       hap_name,
++      "--output-file",
++      rebase_path(_sign_result, root_build_dir),
+     ]
+     if (defined(invoker.hap_list)) {
+       args += [
+diff --git a/scripts/app_sign.py b/scripts/app_sign.py
+--- a/scripts/app_sign.py
++++ b/scripts/app_sign.py
+@@ -44,6 +44,7 @@ def parse_args(args):
+     parser.add_argument('--certificate-file', help='')
+     parser.add_argument('--hap-name', help='')
+     parser.add_argument('--hap-list', help='')
++    parser.add_argument('--output-file', help='signing result output file')
+     options = parser.parse_args(args)
+     return options
+ 
+@@ -76,6 +77,8 @@ def main(args):
+     if not options.hap_out_dir:
+         sign_app(options, options.inFile, options.outFile)
+     else:
++        if not options.output_file:
++            raise ValueError('--output-file is required when --hap-out-dir is set')
+         if not os.path.exists(options.hap_out_dir):
+             os.makedirs(options.hap_out_dir, exist_ok=True)
+         unsigned_hap_path_list = file_utils.read_json_file(options.unsigned_hap_path_list)
+@@ -90,6 +93,7 @@ def main(args):
+                     signed_hap_names[f'{names[0]}.hap'] = f'{names[1]}.hap'
+                 else:
+                     raise ValueError(f'Value hap_list {hap_list} not compliant with format')
++        signed_hap_result = []
+         for unsigned_hap_path in unsigned_hap_path_list.get('unsigned_hap_path_list'):
+             signed_hap_path = unsigned_hap_path.replace('unsigned', 'signed')
+             output_hap_name = f'{options.hap_name}-{os.path.basename(signed_hap_path)}'
+@@ -106,6 +110,13 @@ def main(args):
+                     output_hap_name = signed_hap_names.get(unsigned_hap_name)
+             output_hap = os.path.join(options.hap_out_dir, output_hap_name)
+             sign_app(options, unsigned_hap_path, output_hap)
++            signed_hap_result.append({
++                'path': output_hap,
++                'sha256': build_utils.get_file_sha256(output_hap),
++            })
++        build_utils.write_json_atomic({
++            'signed_hap_list': signed_hap_result,
++        }, options.output_file)
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/scripts/compile_app.py b/scripts/compile_app.py
+--- a/scripts/compile_app.py
++++ b/scripts/compile_app.py
+@@ -199,7 +199,6 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value
+     :param cwd: app project directory
+     :return: None
+     '''
+-    unsigned_hap_path_json = {}
+     unsigned_hap_path_list = []
+     with open(build_profile, 'r') as input_f:
+         build_info = json5.load(input_f)
+@@ -216,8 +215,16 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value
+                 unsigned_hap_path, '*-unsigned.hsp')
+             if hsp_file:
+                 unsigned_hap_path_list.extend(hsp_file)
+-        unsigned_hap_path_json['unsigned_hap_path_list'] = unsigned_hap_path_list
+-    file_utils.write_json_file(options.output_file, unsigned_hap_path_json)
++    unsigned_hap_path_list.sort()
++    unsigned_hap_sha256 = {
++        hap_path: build_utils.get_file_sha256(hap_path)
++        for hap_path in unsigned_hap_path_list
++    }
++    unsigned_hap_path_json = {
++        'unsigned_hap_path_list': unsigned_hap_path_list,
++        'unsigned_hap_sha256': unsigned_hap_sha256,
++    }
++    build_utils.write_json_atomic(unsigned_hap_path_json, options.output_file)
+ 
+ 
+ def copy_libs(cwd: str, system_lib_module_info_list: list, ohos_app_abi: str, module_libs_dir: str):
+diff --git a/scripts/util/build_utils.py b/scripts/util/build_utils.py
+--- a/scripts/util/build_utils.py
++++ b/scripts/util/build_utils.py
+@@ -10,6 +10,7 @@ import contextlib
+ from distutils import extension
+ import filecmp
+ import fnmatch
++import hashlib
+ import json
+ import os
+ import pipes
+@@ -179,6 +180,27 @@ def atomic_output(path, only_if_changed=True):
+                 os.unlink(f.name)
+ 
+ 
++def get_file_sha256(path):
++    """Return the SHA-256 digest of a file."""
++    digest = hashlib.sha256()
++    with open(path, 'rb') as input_file:
++        for chunk in iter(lambda: input_file.read(1024 * 1024), b''):
++            digest.update(chunk)
++    return digest.hexdigest()
++
++
++def write_json_atomic(obj, path):
++    """Write deterministic JSON atomically without touching unchanged files."""
++    output_dir = os.path.dirname(os.path.abspath(path))
++    os.makedirs(output_dir, exist_ok=True)
++    json_content = json.dumps(obj,
++                              sort_keys=True,
++                              indent=2,
++                              separators=(',', ': '))
++    with atomic_output(path) as output_file:
++        output_file.write(json_content.encode('utf-8'))
++
++
+ class CalledProcessError(Exception):
+     """This exception is raised when the process run by check_output
+     exits with a non-zero exit code.

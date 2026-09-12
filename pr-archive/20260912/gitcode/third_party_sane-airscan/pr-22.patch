@@ -1,0 +1,307 @@
+diff --git a/BUILD.gn b/BUILD.gn
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -14,31 +14,66 @@
+ import("//build/ohos.gni")
+ 
+ source_dir = "//third_party/sane-airscan"
+-target_dir = "${target_gen_dir}/patches"
++target_dir = "${target_gen_dir}/patched"
++
++airscan_library_files = [
++  "airscan-array.c",
++  "airscan-bmp.c",
++  "airscan-conf.c",
++  "airscan-devcaps.c",
++  "airscan-device.c",
++  "airscan-devid.c",
++  "airscan-devops.c",
++  "airscan-eloop.c",
++  "airscan-escl.c",
++  "airscan-filter.c",
++  "airscan-http.c",
++  "airscan-id.c",
++  "airscan-image.c",
++  "airscan-init.c",
++  "airscan-ip.c",
++  "airscan-jpeg.c",
++  "airscan-log.c",
++  "airscan-math.c",
++  "airscan-mdns.c",
++  "airscan-memstr.c",
++  "airscan-netif.c",
++  "airscan-os.c",
++  "airscan-png.c",
++  "airscan-pollable.c",
++  "airscan-rand.c",
++  "airscan-tiff.c",
++  "airscan-trace.c",
++  "airscan-wsd.c",
++  "airscan-xml.c",
++  "airscan-zeroconf.c",
++  "airscan.c",
++  "airscan.h",
++  "http_parser.c",
++  "sane_strstatus.c",
++]
++
++airscan_action_inputs = [
++  "${source_dir}/patch_install.py",
++  "${source_dir}/patches/oh-transplant.patch",
++]
++airscan_action_outputs = []
++foreach(file, airscan_library_files) {
++  airscan_action_inputs += [ "${source_dir}/${file}" ]
++  airscan_action_outputs += [ "${target_dir}/${file}" ]
++}
+ 
+ action("airscan_action") {
+   script = "//third_party/sane-airscan/patch_install.py"
+-  inputs = [ "${source_dir}/patches/oh-transplant.patch" ]
+-  outputs = [
+-    "${target_dir}/patches/airscan-conf.c",
+-    "${target_dir}/patches/airscan-devops.c",
+-    "${target_dir}/patches/airscan-eloop.c",
+-    "${target_dir}/patches/airscan-http.c",
+-    "${target_dir}/patches/airscan-init.c",
+-    "${target_dir}/patches/airscan-log.c",
+-    "${target_dir}/patches/airscan-mdns.c",
+-    "${target_dir}/patches/airscan-netif.c",
+-    "${target_dir}/patches/airscan-pollable.c",
+-    "${target_dir}/patches/airscan-tiff.c",
+-    "${target_dir}/patches/airscan-wsd.c",
+-    "${target_dir}/patches/airscan-zeroconf.c",
+-    "${target_dir}/patches/airscan.c",
+-    "${target_dir}/patches/airscan.h",
+-  ]
++  inputs = airscan_action_inputs
++  outputs = airscan_action_outputs
+   airscan_source_dir = rebase_path("${source_dir}", root_build_dir)
++  airscan_output_dir = rebase_path("${target_dir}", root_build_dir)
+   args = [
+     "--source-dir",
+     "$airscan_source_dir",
++    "--output-dir",
++    "$airscan_output_dir",
+   ]
+ }
+ 
+@@ -56,39 +91,17 @@ config("airscan_config") {
+ }
+ 
+ ohos_shared_library("sane-airscan") {
+-  include_dirs = [ "./airscan.h" ]
+-  sources = [
+-    "airscan-array.c",
+-    "airscan-bmp.c",
+-    "airscan-conf.c",
+-    "airscan-devcaps.c",
+-    "airscan-device.c",
+-    "airscan-devid.c",
+-    "airscan-devops.c",
+-    "airscan-eloop.c",
+-    "airscan-escl.c",
+-    "airscan-filter.c",
+-    "airscan-http.c",
+-    "airscan-id.c",
+-    "airscan-image.c",
+-    "airscan-init.c",
+-    "airscan-ip.c",
+-    "airscan-jpeg.c",
+-    "airscan-log.c",
+-    "airscan-math.c",
+-    "airscan-memstr.c",
+-    "airscan-netif.c",
+-    "airscan-os.c",
+-    "airscan-png.c",
+-    "airscan-pollable.c",
+-    "airscan-rand.c",
+-    "airscan-trace.c",
+-    "airscan-xml.c",
+-    "airscan-zeroconf.c",
+-    "airscan.c",
+-    "http_parser.c",
+-    "sane_strstatus.c",
++  include_dirs = [
++    target_dir,
++    source_dir,
+   ]
++  sources = []
++  foreach(file, airscan_library_files) {
++    if (get_path_info(file, "extension") == "c" && file != "airscan-mdns.c" &&
++        file != "airscan-tiff.c" && file != "airscan-wsd.c") {
++      sources += [ "${target_dir}/${file}" ]
++    }
++  }
+ 
+   configs = [ ":airscan_config" ]
+   deps = [ ":airscan_action" ]
+diff --git a/patch_install.py b/patch_install.py
+--- a/patch_install.py
++++ b/patch_install.py
+@@ -13,39 +13,143 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-import tarfile
+ import argparse
+ import os
+ import subprocess
+ import sys
+ import shutil
++import tempfile
+ 
+ 
+-def apply_patch(source_dir):
+-    patch_list = [
+-        'oh-transplant.patch',
++AIRSCAN_LIBRARY_FILES = [
++    'airscan-array.c',
++    'airscan-bmp.c',
++    'airscan-conf.c',
++    'airscan-devcaps.c',
++    'airscan-device.c',
++    'airscan-devid.c',
++    'airscan-devops.c',
++    'airscan-eloop.c',
++    'airscan-escl.c',
++    'airscan-filter.c',
++    'airscan-http.c',
++    'airscan-id.c',
++    'airscan-image.c',
++    'airscan-init.c',
++    'airscan-ip.c',
++    'airscan-jpeg.c',
++    'airscan-log.c',
++    'airscan-math.c',
++    'airscan-mdns.c',
++    'airscan-memstr.c',
++    'airscan-netif.c',
++    'airscan-os.c',
++    'airscan-png.c',
++    'airscan-pollable.c',
++    'airscan-rand.c',
++    'airscan-tiff.c',
++    'airscan-trace.c',
++    'airscan-wsd.c',
++    'airscan-xml.c',
++    'airscan-zeroconf.c',
++    'airscan.c',
++    'airscan.h',
++    'http_parser.c',
++    'sane_strstatus.c',
++]
++
++
++def run_patch(patch_path, work_dir, reverse=False, dry_run=False):
++    command = [
++        'patch',
++        '-p1',
++        '--fuzz=0',
++        '--no-backup-if-mismatch',
++        '-i',
++        patch_path,
++        '-d',
++        work_dir,
+     ]
++    if reverse:
++        command.append('--reverse')
++    if dry_run:
++        command.append('--dry-run')
++    return subprocess.run(command, text=True, capture_output=True)
+ 
+-    for patch in patch_list:
+-        patch_dir = os.path.join(source_dir, 'patches', patch)
+-        patch_dir = os.path.abspath(patch_dir)
+-        source_dir = os.path.abspath(source_dir)
+-        patch_cmd = ['patch', '-p1', "--fuzz=0", "--no-backup-if-mismatch", '-i', patch_dir, '-d', source_dir]
+-        try:
+-            result = subprocess.run(patch_cmd, check=True, text=True, capture_output=True)
+-            if result.returncode != 0:
+-                raise subprocess.CalledProcessError(result.returncode, result.args)
+-        except subprocess.CalledProcessError:
+-            print("sane-backends: {} apply error!".format(patch))
++
++def apply_patch(patch_path, work_dir):
++    forward_check = run_patch(patch_path, work_dir, dry_run=True)
++    if forward_check.returncode == 0:
++        subprocess.run(
++            [
++                'patch', '-p1', '--fuzz=0', '--no-backup-if-mismatch',
++                '-i', patch_path, '-d', work_dir,
++            ],
++            check=True,
++            text=True,
++            capture_output=True,
++        )
++        return
++
++    reverse_check = run_patch(patch_path, work_dir, reverse=True, dry_run=True)
++    if reverse_check.returncode == 0:
++        return
++
++    raise RuntimeError(
++        'oh-transplant.patch does not apply cleanly:\n{}'.format(
++            forward_check.stderr
++        )
++    )
++
++
++def replace_if_changed(source_path, output_path):
++    with open(source_path, 'rb') as source_file:
++        source_content = source_file.read()
++    if os.path.exists(output_path):
++        with open(output_path, 'rb') as output_file:
++            if output_file.read() == source_content:
++                return
++
++    os.makedirs(os.path.dirname(output_path), exist_ok=True)
++    temporary_path = '{}.tmp'.format(output_path)
++    with open(temporary_path, 'wb') as output_file:
++        output_file.write(source_content)
++    os.replace(temporary_path, output_path)
++
++
++def generate_patched_sources(source_dir, output_dir):
++    patch_path = os.path.abspath(
++        os.path.join(source_dir, 'patches', 'oh-transplant.patch')
++    )
++    output_parent = os.path.dirname(output_dir)
++    os.makedirs(output_parent, exist_ok=True)
++    staging_dir = tempfile.mkdtemp(prefix='airscan_patch_', dir=output_parent)
++    try:
++        for file_name in AIRSCAN_LIBRARY_FILES:
++            shutil.copy2(
++                os.path.join(source_dir, file_name),
++                os.path.join(staging_dir, file_name),
++            )
++        apply_patch(patch_path, staging_dir)
++        for file_name in AIRSCAN_LIBRARY_FILES:
++            replace_if_changed(
++                os.path.join(staging_dir, file_name),
++                os.path.join(output_dir, file_name),
++            )
++    finally:
++        shutil.rmtree(staging_dir, ignore_errors=True)
+ 
+ def main():
+-    backends_path = argparse.ArgumentParser()
+-    backends_path.add_argument('--source-dir', help='generate path of log', required=True)
+-    args = backends_path.parse_args()
+-    source_dir = args.source_dir
+-    apply_patch(source_dir)
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--source-dir', required=True)
++    parser.add_argument('--output-dir', required=True)
++    args = parser.parse_args()
++    generate_patched_sources(
++        os.path.abspath(args.source_dir),
++        os.path.abspath(args.output_dir),
++    )
+     return 0
+ 
+ 
+ if __name__ == '__main__':
+-    sys.exit(main())
+\ No newline at end of file
++    sys.exit(main())
