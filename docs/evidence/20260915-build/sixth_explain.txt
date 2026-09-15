@@ -1,0 +1,38 @@
+ninja explain: output ../kernel/checkpoint/compile_check doesn't exist
+ninja explain: ../kernel/src_tmp/linux-6.6/boot_linux is dirty
+ninja explain: ../kernel/checkpoint/compile_check is dirty
+ninja explain: obj/device/board/hihope/rk3568/kernel/kernel.stamp is dirty
+ninja explain: obj/device/board/hihope/rk3568/rk3568_group.stamp is dirty
+ninja explain: obj/device/board/hihope/rk3568/rk3568_group.stamp is dirty
+ninja explain: obj/out/rk3568/build_configs/device_rk3568/rockchip_products/rockchip_products_info.stamp is dirty
+ninja explain: obj/out/rk3568/build_configs/device_rk3568/rockchip_products/rockchip_products.stamp is dirty
+ninja explain: output obj/build/ohos/common/generate_host_info_raw.stamp older than most recent input gen/build/ohos/common/all_parts_host.json (1789446236188179979 vs 1789446631404630119)
+ninja explain: obj/out/rk3568/build_configs/device_rk3568/rockchip_products/rockchip_products.stamp is dirty
+ninja explain: output obj/build/ohos/common/generate_src_installed_info.stamp older than most recent input src_installed_parts.json (1789446236188179979 vs 1789446631405630022)
+ninja explain: obj/build/ohos/common/generate_src_installed_info.stamp is dirty
+ninja explain: obj/build/ohos/common/generate_host_info_raw.stamp is dirty
+ninja explain: obj/build/ohos/common/generate_src_installed_info.stamp is dirty
+ninja explain: obj/build/ohos/sa_profile/generated_src_sa_profile.stamp is dirty
+ninja explain: binary_installed_parts.json is dirty
+ninja explain: obj/build/ohos/common/gen_binary_installed_info.stamp is dirty
+ninja explain: obj/build/ohos/common/generate_host_info.stamp is dirty
+ninja explain: obj/build/ohos/common/generate_src_installed_info.stamp is dirty
+ninja explain: binary_installed_parts.json is dirty
+ninja explain: obj/device/board/hihope/rk3568/kernel/kernel.stamp is dirty
+ninja explain: packages/phone/chip_ckm/kosample.ko is dirty
+ninja explain: obj/kernel/linux/common_modules/module_sample/ko_sample.stamp is dirty
+ninja explain: obj/kernel/linux/common_modules/ko_build.stamp is dirty
+ninja explain: packages/phone/images/chip_ckm.img is dirty
+ninja explain: obj/build/ohos/images/phone_eng_chipset_image.stamp is dirty
+ninja explain: obj/build/ohos/images/phone_eng_system_image.stamp is dirty
+ninja explain: obj/build/ohos/images/phone_sys_prod_image.stamp is dirty
+ninja explain: obj/build/ohos/images/phone_system_image.stamp is dirty
+ninja explain: obj/build/ohos/images/phone_updater_ramdisk_image.stamp is dirty
+ninja explain: obj/build/ohos/images/phone_userdata_image.stamp is dirty
+ninja explain: obj/build/ohos/images/phone_vendor_image.stamp is dirty
+ninja explain: obj/build/ohos/images/phone_ramdisk_image.stamp is dirty
+ninja explain: obj/build/ohos/images/chip_prod_image.stamp is dirty
+ninja explain: obj/build/ohos/images/mk_chip_ckm_img.stamp is dirty
+ninja explain: obj/build/ohos/images/make_images.stamp is dirty
+ninja explain: obj/build/core/gn/packages.stamp is dirty
+ninja explain: obj/build/core/gn/images.stamp is dirty

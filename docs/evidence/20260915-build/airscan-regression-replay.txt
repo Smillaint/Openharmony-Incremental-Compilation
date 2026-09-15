@@ -1,0 +1,7 @@
+PASS clean input generates all 34 files equal to independent git apply
+PASS repeated execution preserves hashes and mtimes
+PASS missing output is regenerated with patched content
+PASS real input changes propagate
+PASS already patched input is neither reversed nor patched twice
+PASS conflict fails without publishing or leaking staging
+PASS actual source hashes and mtimes are unchanged

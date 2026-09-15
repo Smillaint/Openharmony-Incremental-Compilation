@@ -1,0 +1,31 @@
+From 6761f9a3b5ae8109aeb8c5d9d68ac35da35b5398 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Tue, 15 Sep 2026 12:36:42 +0800
+Subject: [PATCH] Preserve unchanged signed kernel module outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ templates/kernel/linux-6.6/make_ko.sh | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/templates/kernel/linux-6.6/make_ko.sh b/templates/kernel/linux-6.6/make_ko.sh
+index bd60757d..1029ae13 100755
+--- a/templates/kernel/linux-6.6/make_ko.sh
++++ b/templates/kernel/linux-6.6/make_ko.sh
+@@ -43,7 +43,12 @@ else
+     mkdir ${OUT_DIR}
+ fi
+ 
+-cp -f *.ko ${OUT_DIR}
++for module in *.ko
++do
++    if ! cmp -s "$module" "${OUT_DIR}/${module}"; then
++        cp -f "$module" "${OUT_DIR}/"
++    fi
++done
+ make clean
+ rm -f Makefile
+ rm -rf signing_key.pem
+-- 
+2.34.1
+

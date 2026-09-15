@@ -1,0 +1,3 @@
+PASS ramdisk: correct depfile target, original image command and input dependency preserved
+PASS updater_ramdisk: correct depfile target, original image command and input dependency preserved
+PASS vendor: correct depfile target, original image command and input dependency preserved

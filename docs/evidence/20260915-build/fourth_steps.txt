@@ -1,0 +1,85 @@
+ACTION //device/board/hihope/rk3568/camera/vdi_impl/v4l2:params.c_info(//build/toolchain/ohos:ohos_clang_arm)
+ACTION //device/board/hihope/rk3568/camera/vdi_impl/v4l2:config.c_info(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/config.c_info.stamp
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/params.c_info.stamp
+ACTION //device/board/hihope/rk3568/camera/vdi_impl/v4l2:camera_pipeline_config__check(//build/toolchain/ohos:ohos_clang_arm)
+COPY gen/device/board/hihope/rk3568/camera/vdi_impl/v4l2/config.c obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/out/rk3568/gen/device/board/hihope/rk3568/camera/vdi_impl/v4l2/config.c
+COPY gen/device/board/hihope/rk3568/camera/vdi_impl/v4l2/params.c obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/out/rk3568/gen/device/board/hihope/rk3568/camera/vdi_impl/v4l2/params.c
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/camera_pipeline_config__check.stamp
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/config.c.stamp
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/camera_pipeline_config.inputdeps.stamp
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/params.c.stamp
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/chipset_build.stamp
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/camera_host_vdi_impl_1.0.inputdeps.stamp
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/pipeline_core/camera_pipeline_core.inputdeps.stamp
+CC obj/out/rk3568/gen/device/board/hihope/rk3568/camera/vdi_impl/v4l2/camera_pipeline_config/params.o
+CC obj/out/rk3568/gen/device/board/hihope/rk3568/camera/vdi_impl/v4l2/camera_pipeline_config/config.o
+SOLINK rockchip_products/rockchip_products/libcamera_pipeline_config.z.so
+STAMP obj/device/board/hihope/rk3568/camera/vdi_impl/v4l2/camera_board_vdi_impl.stamp
+ACTION //device/board/hihope/rk3568/kernel:kernel(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/device/board/hihope/rk3568/kernel/kernel.stamp
+STAMP obj/device/board/hihope/rk3568/rk3568_group.stamp
+STAMP obj/out/rk3568/build_configs/device_rk3568/rockchip_products/rockchip_products_info.stamp
+ACTION //out/rk3568/build_configs/device_rk3568/rockchip_products:rockchip_products(//build/toolchain/ohos:ohos_clang_arm)
+ACTION //base/security/selinux_adapter:build_policy(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/base/security/selinux_adapter/build_policy.stamp
+COPY obj/base/security/selinux_adapter/developer/policy.31 obj/base/security/selinux_adapter/out/rk3568/obj/base/security/selinux_adapter/developer/policy.31
+STAMP obj/base/security/selinux_adapter/build_sepolicy.stamp
+ACTION //base/security/selinux_adapter:build_contexts(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/base/security/selinux_adapter/build_contexts.stamp
+COPY obj/base/security/selinux_adapter/file_contexts obj/base/security/selinux_adapter/out/rk3568/obj/base/security/selinux_adapter/file_contexts
+COPY obj/base/security/selinux_adapter/file_contexts.bin obj/base/security/security/selinux/file_contexts.bin
+COPY obj/base/security/selinux_adapter/hdf_service_contexts obj/base/security/selinux_adapter/out/rk3568/obj/base/security/selinux_adapter/hdf_service_contexts
+COPY obj/base/security/selinux_adapter/sehap_contexts obj/base/security/selinux_adapter/out/rk3568/obj/base/security/selinux_adapter/sehap_contexts
+COPY obj/base/security/selinux_adapter/parameter_contexts obj/base/security/selinux_adapter/out/rk3568/obj/base/security/selinux_adapter/parameter_contexts
+COPY obj/base/security/selinux_adapter/service_contexts obj/base/security/selinux_adapter/out/rk3568/obj/base/security/selinux_adapter/service_contexts
+STAMP obj/base/security/selinux_adapter/file_contexts.stamp
+STAMP obj/base/security/selinux_adapter/filecontexts_toolchain.stamp
+STAMP obj/base/security/selinux_adapter/hdf_service_contexts.stamp
+STAMP obj/base/security/selinux_adapter/sehap_contexts.stamp
+STAMP obj/base/security/selinux_adapter/parameter_contexts.stamp
+STAMP obj/base/security/selinux_adapter/service_contexts.stamp
+ACTION //kernel/linux/common_modules/module_sample:ko_sample(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/kernel/linux/common_modules/module_sample/ko_sample.stamp
+STAMP obj/kernel/linux/common_modules/ko_build.stamp
+ACTION //build/ohos/images:mk_chip_ckm_img(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/mk_chip_ckm_img.stamp
+ACTION //base/security/selinux_adapter:selinux_check(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/base/security/selinux_adapter/selinux_check.stamp
+STAMP obj/base/security/selinux_adapter/selinux_group.stamp
+STAMP obj/out/rk3568/build_configs/security/selinux_adapter/selinux_adapter_info.stamp
+ACTION //out/rk3568/build_configs/security/selinux_adapter:selinux_adapter(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/common/generate_host_info_raw.stamp
+STAMP obj/build/ohos/common/generate_src_installed_info.stamp
+STAMP obj/build/ohos/sa_profile/generated_src_sa_profile.stamp
+ACTION //build/ohos/common:generate_host_info(//build/toolchain/ohos:ohos_clang_arm)
+ACTION //build/ohos/common:gen_binary_installed_info(//build/toolchain/ohos:ohos_clang_arm)
+ACTION //build/ohos/sa_profile:src_sa_infos_process(//build/toolchain/ohos:ohos_clang_arm)
+ACTION //build/ohos/common:merge_all_parts(//build/toolchain/ohos:ohos_clang_arm)
+ACTION //build/ohos/packages:phone_install_modules(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/packages/phone_install_modules.stamp
+STAMP obj/build/ohos/packages/make_packages.stamp
+STAMP obj/build/core/gn/packages.stamp
+ACTION //build/ohos/packages:phone_validation_install_modules(//build/toolchain/ohos:ohos_clang_arm)
+ACTION //build/ohos/images:phone_eng_chipset_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_eng_chipset_image.stamp
+ACTION //build/ohos/images:phone_chip_prod_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_chip_prod_image.stamp
+STAMP obj/build/ohos/images/chip_prod_image.stamp
+ACTION //build/ohos/images:phone_sys_prod_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_sys_prod_image.stamp
+ACTION //build/ohos/images:phone_eng_system_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_eng_system_image.stamp
+ACTION //build/ohos/images:phone_userdata_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_userdata_image.stamp
+ACTION //build/ohos/images:phone_vendor_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_vendor_image.stamp
+ACTION //build/ohos/images:phone_ramdisk_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_ramdisk_image.stamp
+ACTION //build/ohos/images:phone_updater_ramdisk_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_updater_ramdisk_image.stamp
+ACTION //build/ohos/images:phone_system_image(//build/toolchain/ohos:ohos_clang_arm)
+STAMP obj/build/ohos/images/phone_system_image.stamp
+STAMP obj/build/ohos/images/make_images.stamp
+STAMP obj/build/core/gn/images.stamp
+STAMP obj/build/core/gn/make_all.stamp

@@ -1,0 +1,21 @@
+ninja explain: output ../kernel/checkpoint/compile_check doesn't exist
+ninja explain: ../kernel/src_tmp/linux-6.6/boot_linux is dirty
+ninja explain: ../kernel/checkpoint/compile_check is dirty
+ninja explain: obj/device/board/hihope/rk3568/kernel/kernel.stamp is dirty
+ninja explain: obj/device/board/hihope/rk3568/rk3568_group.stamp is dirty
+ninja explain: obj/device/board/hihope/rk3568/rk3568_group.stamp is dirty
+ninja explain: obj/out/rk3568/build_configs/device_rk3568/rockchip_products/rockchip_products_info.stamp is dirty
+ninja explain: obj/out/rk3568/build_configs/device_rk3568/rockchip_products/rockchip_products.stamp is dirty
+ninja explain: output obj/build/ohos/common/generate_host_info_raw.stamp older than most recent input gen/build/ohos/common/all_parts_host.json (1789446843484927568 vs 1789446907021721351)
+ninja explain: obj/out/rk3568/build_configs/device_rk3568/rockchip_products/rockchip_products.stamp is dirty
+ninja explain: output obj/build/ohos/common/generate_src_installed_info.stamp older than most recent input src_installed_parts.json (1789446843484927568 vs 1789446907021721351)
+ninja explain: obj/build/ohos/common/generate_src_installed_info.stamp is dirty
+ninja explain: obj/build/ohos/common/generate_host_info_raw.stamp is dirty
+ninja explain: obj/build/ohos/common/generate_src_installed_info.stamp is dirty
+ninja explain: obj/build/ohos/sa_profile/generated_src_sa_profile.stamp is dirty
+ninja explain: binary_installed_parts.json is dirty
+ninja explain: obj/build/ohos/common/gen_binary_installed_info.stamp is dirty
+ninja explain: obj/build/ohos/common/generate_host_info.stamp is dirty
+ninja explain: obj/build/ohos/common/generate_src_installed_info.stamp is dirty
+ninja explain: binary_installed_parts.json is dirty
+ninja explain: obj/device/board/hihope/rk3568/kernel/kernel.stamp is dirty

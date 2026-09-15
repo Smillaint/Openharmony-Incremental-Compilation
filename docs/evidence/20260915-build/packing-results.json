@@ -1,0 +1,176 @@
+{
+  "jar": "/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code/out/rk3568/obj/developtools/packing_tool/jar/app_packing_tool.jar",
+  "jar_sha256": "bf73cb12ff5689b3455fb5129d922dec985b48e42a186754ac9e3b89449d8886",
+  "cases": [
+    {
+      "name": "telephony",
+      "commands": [
+        [
+          "java",
+          "-jar",
+          "/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code/out/rk3568/obj/developtools/packing_tool/jar/app_packing_tool.jar",
+          "--mode",
+          "hap",
+          "--json-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/module.json",
+          "--force",
+          "true",
+          "--ets-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/ets",
+          "--lib-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/libs",
+          "--resources-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/resources",
+          "--index-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/resources.index",
+          "--pack-info-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/pack.info",
+          "--rpcid-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/rpcid.sc",
+          "--out-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony-1.hap"
+        ],
+        [
+          "java",
+          "-jar",
+          "/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code/out/rk3568/obj/developtools/packing_tool/jar/app_packing_tool.jar",
+          "--mode",
+          "hap",
+          "--json-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/module.json",
+          "--force",
+          "true",
+          "--ets-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/ets",
+          "--lib-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/libs",
+          "--resources-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/resources",
+          "--index-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/resources.index",
+          "--pack-info-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/pack.info",
+          "--rpcid-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony/rpcid.sc",
+          "--out-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/telephony-2.hap"
+        ]
+      ],
+      "results": [
+        {
+          "sha256": "b5c7df19fa47301abb04696ab24a10d240c48d7fcfbb9c02104a3086d672ef27",
+          "entry_count": 10,
+          "entry_timestamps": [
+            [
+              2019,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "sha256": "b5c7df19fa47301abb04696ab24a10d240c48d7fcfbb9c02104a3086d672ef27",
+          "entry_count": 10,
+          "entry_timestamps": [
+            [
+              2019,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "contacts",
+      "commands": [
+        [
+          "java",
+          "-jar",
+          "/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code/out/rk3568/obj/developtools/packing_tool/jar/app_packing_tool.jar",
+          "--mode",
+          "hap",
+          "--json-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/module.json",
+          "--force",
+          "true",
+          "--ets-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/ets",
+          "--lib-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/libs",
+          "--resources-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/resources",
+          "--index-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/resources.index",
+          "--pack-info-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/pack.info",
+          "--rpcid-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/rpcid.sc",
+          "--out-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts-1.hap"
+        ],
+        [
+          "java",
+          "-jar",
+          "/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code/out/rk3568/obj/developtools/packing_tool/jar/app_packing_tool.jar",
+          "--mode",
+          "hap",
+          "--json-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/module.json",
+          "--force",
+          "true",
+          "--ets-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/ets",
+          "--lib-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/libs",
+          "--resources-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/resources",
+          "--index-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/resources.index",
+          "--pack-info-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/pack.info",
+          "--rpcid-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts/rpcid.sc",
+          "--out-path",
+          "/srv/workspace/patch_backups/20260915_migration_build/packing-probe/contacts-2.hap"
+        ]
+      ],
+      "results": [
+        {
+          "sha256": "8cd51237894d7aad0f756540a3414f78be5580f0c88e9041d07ad66218dbef0e",
+          "entry_count": 20,
+          "entry_timestamps": [
+            [
+              2019,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "sha256": "8cd51237894d7aad0f756540a3414f78be5580f0c88e9041d07ad66218dbef0e",
+          "entry_count": 20,
+          "entry_timestamps": [
+            [
+              2019,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

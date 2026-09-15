@@ -1,0 +1,87 @@
+[
+  {
+    "bundle": "build/ramdisk-fix.bundle",
+    "sha256": "8467404594fb90ae179b04d2d06fbe88b6ec80881be945bd80049f7a7fdbbd63",
+    "verified": true
+  },
+  {
+    "bundle": "build/before.bundle",
+    "sha256": "467792446c44a603814d8cc54554993cae7a457288d3546c75707208e4d19fac",
+    "verified": true
+  },
+  {
+    "bundle": "build/ko-fix.bundle",
+    "sha256": "8faadcee25c83722f53d246eb264f3a2d731167c9d34353a78a3dc4f7f5e6f93",
+    "verified": true
+  },
+  {
+    "bundle": "developtools_packing_tool/before.bundle",
+    "sha256": "180801d07ec7f9c15de0633d865250644135a2c24b40ebd7832b20cd827e5791",
+    "verified": true
+  },
+  {
+    "bundle": "developtools_packing_tool/fix.bundle",
+    "sha256": "c8d6fc6599fe9007c953a46d08d54152a4ac55395c36f34b8b51b13f33c686d4",
+    "verified": true
+  },
+  {
+    "bundle": "third_party_jsframework/before.bundle",
+    "sha256": "dedfa3578d38ccb32204133e882141d7a440b8066672fd369dc75e6afab23e91",
+    "verified": true
+  },
+  {
+    "bundle": "third_party_jsframework/fix.bundle",
+    "sha256": "c109f4f558649d2974b3a937328df121b738b734b85e7422a5c2d60f603e893b",
+    "verified": true
+  },
+  {
+    "bundle": "third_party_sane-airscan/before.bundle",
+    "sha256": "0c7a296d850ec3f1a8ce9f25a14e9a80dbf4ffef55e8b96af5e9d777ec3f39cf",
+    "verified": true
+  },
+  {
+    "bundle": "third_party_sane-airscan/fix.bundle",
+    "sha256": "b83e5b2f1766e021f295e137dce8d0f47ca8d9daab427e7e12fce0e09c02978d",
+    "verified": true
+  },
+  {
+    "bundle": "interface_sdk-js/before.bundle",
+    "sha256": "c941a46afc43692cb28b8afa7ba67f5fa095d042447b563ea5402f1efcf07f50",
+    "verified": true
+  },
+  {
+    "bundle": "arkcompiler_ets_frontend/before.bundle",
+    "sha256": "60e6221475bfc69967e874282d7f0e687ae3af7eab8ae42a23c857d88243f4f5",
+    "verified": true
+  },
+  {
+    "bundle": "developtools_ace_ets2bundle/before.bundle",
+    "sha256": "71740b931a3ced6dbfa0dfe5cd1f97225cccfb2da5aa2b139b4920a3c95fabfd",
+    "verified": true
+  },
+  {
+    "bundle": "third_party_iptables/before.bundle",
+    "sha256": "6d52ffb84226b039e77c6c87631a72a71603b23a4642ef6605b4f3bc461271df",
+    "verified": true
+  },
+  {
+    "bundle": "device_board_hihope/camera-fix.bundle",
+    "sha256": "aedc446a369a073729491b2cf71460676b2d2f00637e0a2fe3659bd7566635f3",
+    "verified": true
+  },
+  {
+    "bundle": "device_board_hihope/before.bundle",
+    "sha256": "fae7ae4eb54eff04d3c034518495e6f8399245c62c39449b7b396a3318703d28",
+    "verified": true
+  },
+  {
+    "bundle": "base_security_selinux_adapter/before.bundle",
+    "sha256": "72438f07907694af323d3e5b1ae32aff573d3c9135e3c0a06d4a5e9d7f936b56",
+    "verified": true
+  },
+  {
+    "bundle": "base_security_selinux_adapter/fix.bundle",
+    "sha256": "dff958f78de707e090a251ef6576807b4b909fbce8a877a2a860135e8e4017ec",
+    "verified": true
+  }
+]

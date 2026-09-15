@@ -1,0 +1,64 @@
+From bde50153f19fd18254309d245ce01439264a5c69 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Tue, 15 Sep 2026 12:24:12 +0800
+Subject: [PATCH] Use actual ramdisk images as Ninja outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ohos/images/BUILD.gn       | 10 +++++++++-
+ ohos/images/build_image.py |  3 ++-
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/ohos/images/BUILD.gn b/ohos/images/BUILD.gn
+index 8a501f86..929683a0 100644
+--- a/ohos/images/BUILD.gn
++++ b/ohos/images/BUILD.gn
+@@ -306,15 +306,23 @@ foreach(_platform, target_platform_list) {
+         image_input_path = "$current_platform_dir/data"
+       }
+ 
++      actual_output_image_file = output_image_file
++      if (_image_name == "ramdisk") {
++        actual_output_image_file = "$current_platform_dir/images/ramdisk.img"
++      } else if (_image_name == "updater_ramdisk") {
++        actual_output_image_file = "$current_platform_dir/images/updater.img"
++      }
+       sources = [
+         image_config_file,
+         system_module_info_list,
+         system_modules_list,
+       ]
+-      outputs = [ output_image_file ]
++      outputs = [ actual_output_image_file ]
+       args = [
+         "--depfile",
+         rebase_path(depfile, root_build_dir),
++        "--depfile-target",
++        rebase_path(actual_output_image_file, root_build_dir),
+         "--image-name",
+         _image_name,
+         "--input-path",
+diff --git a/ohos/images/build_image.py b/ohos/images/build_image.py
+index e72f2d8c..3f6bde77 100755
+--- a/ohos/images/build_image.py
++++ b/ohos/images/build_image.py
+@@ -152,6 +152,7 @@ def _make_image(args):
+ def main(argv):
+     parser = argparse.ArgumentParser()
+     parser.add_argument('--depfile', required=True)
++    parser.add_argument('--depfile-target', required=False)
+     parser.add_argument('--image-name', required=True)
+     parser.add_argument('--build-variant', required=True)
+     parser.add_argument('--image-config-file', required=True)
+@@ -183,7 +184,7 @@ def main(argv):
+         if (os.path.exists(args.device_image_config_file)):
+             _dep_files.append(args.device_image_config_file)
+         build_utils.write_depfile(args.depfile,
+-                                  args.output_image_path,
++                                  args.depfile_target or args.output_image_path,
+                                   _dep_files,
+                                   add_pydeps=False)
+     return 0
+-- 
+2.34.1
+

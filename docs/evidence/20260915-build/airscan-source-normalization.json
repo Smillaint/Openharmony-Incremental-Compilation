@@ -1,0 +1,27 @@
+{
+  "restored_patch_generated_sources": [
+    "airscan-bmp.c",
+    "airscan-conf.c",
+    "airscan-device.c",
+    "airscan-devops.c",
+    "airscan-eloop.c",
+    "airscan-escl.c",
+    "airscan-http.c",
+    "airscan-init.c",
+    "airscan-log.c",
+    "airscan-mdns.c",
+    "airscan-png.c",
+    "airscan-tiff.c",
+    "airscan-wsd.c",
+    "airscan-xml.c",
+    "airscan-zeroconf.c",
+    "airscan.c",
+    "airscan.h",
+    "http_parser.c"
+  ],
+  "duplicate_only_sources": [
+    "airscan-bmp.c",
+    "http_parser.c"
+  ],
+  "rejects_preserved": 16
+}

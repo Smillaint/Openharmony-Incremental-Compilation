@@ -1,0 +1,86 @@
+{
+  "build": {
+    "head": "6ca3b1250746f72f097c53d319bb2c24aa97f537",
+    "snapshot": "51c697348cf69f1913378624ad95851c9e5db320",
+    "ref": "refs/heads/backup/migration-build-20260915",
+    "index_sha256": "7e3449ccd94626723b015255e8ddc0c4bf338948a90d791376f6f434fb2b33df",
+    "included_untracked": [
+      "ohos/common/generate_host_info.py",
+      "ohos/packages/stabilize_json_file.py"
+    ],
+    "excluded_untracked_count": 0
+  },
+  "developtools/packing_tool": {
+    "head": "eb0876ad0d6823ef4d0544fa518f66fd2f205183",
+    "snapshot": "f3dad2893ab28466a06ce63983bf64d13566b5c3",
+    "ref": "refs/heads/backup/migration-build-20260915",
+    "index_sha256": "3650296e2f7e804db23d280cb11434c703418017642c294a292b52e4893d1413",
+    "included_untracked": [],
+    "excluded_untracked_count": 0
+  },
+  "third_party/jsframework": {
+    "head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "snapshot": "2807916545fe92325550233371db80495cc81a54",
+    "ref": "refs/heads/backup/migration-build-20260915",
+    "index_sha256": "b070eb7a99eb285a1411f45a33916e5128494726828699fb44bae9a3aea8e10c",
+    "included_untracked": [],
+    "excluded_untracked_count": 0
+  },
+  "third_party/sane-airscan": {
+    "head": "3362f3e7402df701a158259c17010fe59666a870",
+    "snapshot": "7385123ed35215445b5c1ba5e441693c57e3356b",
+    "ref": "refs/heads/backup/migration-build-20260915",
+    "index_sha256": "41b5bba8ca634235f962c416bfe83e06e100bb16c31fdd45a14270e6909d8db4",
+    "included_untracked": [
+      "airscan-conf.c.rej",
+      "airscan-device.c.rej",
+      "airscan-devops.c.rej",
+      "airscan-eloop.c.rej",
+      "airscan-escl.c.rej",
+      "airscan-http.c.rej",
+      "airscan-init.c.rej",
+      "airscan-log.c.rej",
+      "airscan-mdns.c.rej",
+      "airscan-png.c.rej",
+      "airscan-tiff.c.rej",
+      "airscan-wsd.c.rej",
+      "airscan-xml.c.rej",
+      "airscan-zeroconf.c.rej",
+      "airscan.c.rej",
+      "airscan.h.rej"
+    ],
+    "excluded_untracked_count": 0
+  },
+  "interface/sdk-js": {
+    "head": "795f28c50f144d6f82f0ddba6e855b6d988a7e09",
+    "snapshot": "850eec4b58c4408af2c069bda3009336121cc51d",
+    "ref": "refs/heads/backup/migration-build-20260915",
+    "index_sha256": "4fc7f64bec70a1d5e33565f914af9d282d25dcef8f3257c34201bc9947cff2f8",
+    "included_untracked": [],
+    "excluded_untracked_count": 0
+  },
+  "arkcompiler/ets_frontend": {
+    "head": "8bf332f42afdf9f28cfae3df69b23d159696d3ae",
+    "snapshot": "dc14db2ec849eb97753b3473599775783ed2d40a",
+    "ref": "refs/heads/backup/migration-build-20260915",
+    "index_sha256": "576e26389a1d5e9210587faa78dd8bbdff8b4b8944ea303e2eb61a4cc8a2ecaf",
+    "included_untracked": [],
+    "excluded_untracked_count": 185
+  },
+  "developtools/ace_ets2bundle": {
+    "head": "64a7b34a60422076f96fca36789c74b0ef7c6040",
+    "snapshot": "c98453c61ae14a9e52395d3a16368943b4e89c72",
+    "ref": "refs/heads/backup/migration-build-20260915",
+    "index_sha256": "7e8312c8e7ac398ad81063ed2f95c9875e84104c0b429bab0f4057d0660556d1",
+    "included_untracked": [],
+    "excluded_untracked_count": 0
+  },
+  "third_party/iptables": {
+    "head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+    "snapshot": "2e576b4ad1afa5524ded94d31330e3279075fa85",
+    "ref": "refs/heads/backup/migration-build-20260915",
+    "index_sha256": "8d6d56e9178513123fa3a0ff58ae06ada6d2c0b9afd7ff40dc4d8cc00270a1f0",
+    "included_untracked": [],
+    "excluded_untracked_count": 0
+  }
+}

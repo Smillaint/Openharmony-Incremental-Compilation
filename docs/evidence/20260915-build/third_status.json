@@ -1,0 +1,15 @@
+{
+  "source_root": "/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code",
+  "phase": "third",
+  "start": "2026-09-15T04:10:10.917649+00:00",
+  "command": [
+    "bash",
+    "./build.sh",
+    "-p",
+    "rk3568",
+    "--build-target",
+    "make_all"
+  ],
+  "exit_code": 0,
+  "end": "2026-09-15T04:20:51.518111+00:00"
+}

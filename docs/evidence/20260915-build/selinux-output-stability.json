@@ -1,0 +1,112 @@
+{
+  "policy.31": {
+    "before": {
+      "sha256": "b0926fb5c1b30342aa338ad87d2c88c5e47e2a7511324c02e802dc24e0a811b3",
+      "mtime_ns": 1789446226848090022
+    },
+    "after": {
+      "sha256": "b0926fb5c1b30342aa338ad87d2c88c5e47e2a7511324c02e802dc24e0a811b3",
+      "mtime_ns": 1789446226848090022
+    },
+    "identical": true
+  },
+  "user_policy": {
+    "before": {
+      "sha256": "22d12ab45ddcf0ab5a38fae373cd02578b973cc29cfc286ea686c5cfdf6663e1",
+      "mtime_ns": 1789446227288047155
+    },
+    "after": {
+      "sha256": "22d12ab45ddcf0ab5a38fae373cd02578b973cc29cfc286ea686c5cfdf6663e1",
+      "mtime_ns": 1789446227288047155
+    },
+    "identical": true
+  },
+  "developer/policy.31": {
+    "before": {
+      "sha256": "c26a13636458039df3de0eaf0d3e5d54c7b7ccb785a0148eb1f785fd98243d0a",
+      "mtime_ns": 1789446227257050175
+    },
+    "after": {
+      "sha256": "c26a13636458039df3de0eaf0d3e5d54c7b7ccb785a0148eb1f785fd98243d0a",
+      "mtime_ns": 1789446227257050175
+    },
+    "identical": true
+  },
+  "developer/developer_policy": {
+    "before": {
+      "sha256": "aa7b15a0fa159a57d4927d0865c8751fa37bfa8f349212ab37c5e729265768a6",
+      "mtime_ns": 1789446227287047253
+    },
+    "after": {
+      "sha256": "aa7b15a0fa159a57d4927d0865c8751fa37bfa8f349212ab37c5e729265768a6",
+      "mtime_ns": 1789446227287047253
+    },
+    "identical": true
+  },
+  "system.cil": {
+    "before": {
+      "sha256": "cf6139d846ef5fe4ad5e2bf0dc5a9929f860b6ae781c25b30d139a1478990544",
+      "mtime_ns": 1789446220545704089
+    },
+    "after": {
+      "sha256": "cf6139d846ef5fe4ad5e2bf0dc5a9929f860b6ae781c25b30d139a1478990544",
+      "mtime_ns": 1789446220545704089
+    },
+    "identical": true
+  },
+  "vendor.cil": {
+    "before": {
+      "sha256": "fba563c55186adb544434691a66c8f1dcdd015a4e4e9ecb4822f48a98b62637b",
+      "mtime_ns": 1789446220676691326
+    },
+    "after": {
+      "sha256": "fba563c55186adb544434691a66c8f1dcdd015a4e4e9ecb4822f48a98b62637b",
+      "mtime_ns": 1789446220676691326
+    },
+    "identical": true
+  },
+  "developer/system.cil": {
+    "before": {
+      "sha256": "d9218f46bb710ed510ee634194901e8bb0e1373aa83accd4e3c29229dc40e173",
+      "mtime_ns": 1789446220568701848
+    },
+    "after": {
+      "sha256": "d9218f46bb710ed510ee634194901e8bb0e1373aa83accd4e3c29229dc40e173",
+      "mtime_ns": 1789446220568701848
+    },
+    "identical": true
+  },
+  "developer/vendor.cil": {
+    "before": {
+      "sha256": "77146a9caef98e6a6c8619638cfbf9f8436354b7a3fd560d9a98dae7d68d5e3e",
+      "mtime_ns": 1789446220703688696
+    },
+    "after": {
+      "sha256": "77146a9caef98e6a6c8619638cfbf9f8436354b7a3fd560d9a98dae7d68d5e3e",
+      "mtime_ns": 1789446220703688696
+    },
+    "identical": true
+  },
+  "file_contexts": {
+    "before": {
+      "sha256": "ab29248a09b7cd248334b8555bab1ba379e054c9e83a98d447cd46f71b735c98",
+      "mtime_ns": 1789446227499026598
+    },
+    "after": {
+      "sha256": "ab29248a09b7cd248334b8555bab1ba379e054c9e83a98d447cd46f71b735c98",
+      "mtime_ns": 1789446227499026598
+    },
+    "identical": true
+  },
+  "file_contexts.bin": {
+    "before": {
+      "sha256": "9b6d0bfcbb444993549d14c2bf0f3d2c72cade3be3e3a526bbe32b06384bd4ab",
+      "mtime_ns": 1789446227511025429
+    },
+    "after": {
+      "sha256": "9b6d0bfcbb444993549d14c2bf0f3d2c72cade3be3e3a526bbe32b06384bd4ab",
+      "mtime_ns": 1789446227511025429
+    },
+    "identical": true
+  }
+}

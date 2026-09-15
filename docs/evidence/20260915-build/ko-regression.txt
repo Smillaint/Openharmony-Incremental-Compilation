@@ -1,0 +1,5 @@
+PASS initial publish
+PASS same content preserves mtime
+PASS changed input publishes
+PASS missing output restored
+PASS signing failure preserves output

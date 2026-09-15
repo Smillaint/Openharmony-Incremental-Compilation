@@ -1,0 +1,7 @@
+PASS clean input: all 34 output files equal independent git apply result
+PASS unchanged second run preserves hashes and mtimes
+PASS deleted output restored with patched content
+PASS changed input propagates
+PASS already patched inputs stay patched without duplicate application
+PASS conflict fails without output changes or staging leaks
+PASS real source tree unchanged

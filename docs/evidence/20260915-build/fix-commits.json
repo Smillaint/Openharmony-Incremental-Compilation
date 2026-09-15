@@ -1,0 +1,62 @@
+{
+  "developtools/packing_tool": {
+    "base": "eb0876ad0d6823ef4d0544fa518f66fd2f205183",
+    "commit": "39276f0cce56c505ce7ab2bd771479a687911f01",
+    "branch": "fix/hap-reproducible-sep06",
+    "files": [
+      "adapter/ohos/Compressor.java"
+    ]
+  },
+  "third_party/jsframework": {
+    "base": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "commit": "273f047694b6252af7d8a328bd63db6343c6c7e8",
+    "branch": "fix/jsframework-incremental-sep06",
+    "files": [
+      "js_framework_build.sh"
+    ]
+  },
+  "third_party/sane-airscan": {
+    "base": "3362f3e7402df701a158259c17010fe59666a870",
+    "commit": "b2aa7a36484082f2c2e86240cac513a2301ccd51",
+    "branch": "fix/airscan-staging-sep06",
+    "files": [
+      "BUILD.gn",
+      "patch_install.py"
+    ]
+  },
+  "build/ramdisk": {
+    "base": "51c697348cf69f1913378624ad95851c9e5db320",
+    "commit": "bde50153f19fd18254309d245ce01439264a5c69",
+    "branch": "fix/ramdisk-output-sep06",
+    "files": [
+      "ohos/images/BUILD.gn",
+      "ohos/images/build_image.py"
+    ],
+    "base_contains_prior_migrations": true
+  },
+  "device/board/hihope/camera": {
+    "base": "5d368fb765920c2b1cad41eb86164563461a7074",
+    "commit": "1ef36b854cfce38802df528ae00dc1129042ac68",
+    "branch": "fix/camera-generated-sources-sep06",
+    "files": [
+      "rk3568/camera/vdi_impl/v4l2/BUILD.gn"
+    ]
+  },
+  "base/security/selinux_adapter": {
+    "base": "12b829ad656833ecda824e7b4783d92751d2aa86",
+    "commit": "39e6dc71a96f3f5af94cd03299d9a8a512af325e",
+    "branch": "fix/selinux-default-outputs-sep06",
+    "files": [
+      "BUILD.gn"
+    ]
+  },
+  "build/ko": {
+    "base": "bde50153f19fd18254309d245ce01439264a5c69",
+    "commit": "6761f9a3b5ae8109aeb8c5d9d68ac35da35b5398",
+    "branch": "fix/ko-content-publish-sep06",
+    "files": [
+      "templates/kernel/linux-6.6/make_ko.sh"
+    ],
+    "base_contains_prior_migrations": true
+  }
+}
