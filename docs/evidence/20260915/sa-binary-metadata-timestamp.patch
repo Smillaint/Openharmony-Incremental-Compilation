@@ -1,0 +1,28 @@
+From a764e585eaff2ec0089c1d17129ba0ee79a65a9a Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Tue, 15 Sep 2026 11:33:06 +0800
+Subject: [PATCH] Keep binary SA metadata ZIP timestamps deterministic
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ohos/sa_profile/sa_profile_binary.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/ohos/sa_profile/sa_profile_binary.py b/ohos/sa_profile/sa_profile_binary.py
+index 747a4fa2..d0bbbb15 100755
+--- a/ohos/sa_profile/sa_profile_binary.py
++++ b/ohos/sa_profile/sa_profile_binary.py
+@@ -104,7 +104,9 @@ def main():
+             if part_name_map:
+                 metadata_content = json.dumps(part_name_map, indent=2,
+                                               sort_keys=True)
+-                outfile.writestr("part_name_info.json", metadata_content)
++                metadata_info = zipfile.ZipInfo("part_name_info.json",
++                                                build_utils.HERMETIC_TIMESTAMP)
++                outfile.writestr(metadata_info, metadata_content)
+     build_utils.write_depfile(args.depfile, args.sa_output_zipfile, depfiles)
+     return 0
+ 
+-- 
+2.34.1
+

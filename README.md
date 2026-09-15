@@ -2,6 +2,10 @@
 
 本仓库记录 OpenHarmony `rk3568/phone` 增量构建中重复 Action 的根因、代码修改、PR 与验证证据。
 
+## 9 月 6 日源码复核更新
+
+[2026-09-15 迁移复核与 SA 补充修复](docs/sep06-migration-review-20260915.md)：远程连接已恢复，确认 build、SDK、iptables 等修改已部分迁入 9 月 6 日源码；packing_tool、jsframework、airscan 的历史修复仍有迁移缺口。在新仓补齐了非空 SA ZIP 元数据时间戳的稳定化，七项隔离回归全部通过，完整构建仍待人工验证。9 月 9 日归档目录中的双轮日志实际属于 8 月 16 日源码，不能作为新仓的双轮验收结果。
+
 ## PR 归档与本地目录
 
 [PR 集中归档（2026-09-12）](pr-archive/20260912/README.md) 保存 13 个 GitCode PR 补丁、11 个已准备分支、验证快照和必要日志。源码仓与历史文件的新位置见 [工作区整理说明](docs/workspace-organization-20260912.md)。

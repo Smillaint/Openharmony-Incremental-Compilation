@@ -1,0 +1,13 @@
+{
+  "root": "/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code/build",
+  "head": "6ca3b1250746f72f097c53d319bb2c24aa97f537",
+  "snapshot_ref": "refs/heads/backup/sa-binary-before-20260915",
+  "snapshot_commit": "39d308ae496827dade7891eb0e0c1f062d396e3c",
+  "index_sha256": "7e3449ccd94626723b015255e8ddc0c4bf338948a90d791376f6f434fb2b33df",
+  "source_sha256": "88030b7704aab28b5927018057f6faade6b9605d12371d89f274f62e5ba3f156",
+  "fix_commit": "a764e585eaff2ec0089c1d17129ba0ee79a65a9a",
+  "fix_ref": "refs/heads/fix/sa-binary-metadata-timestamp-20260915",
+  "after_sha256": "407f10e88047d3d8f84232063f0e7979dda4d6f874c584743abb5c3d54bb3d21",
+  "other_working_files_unchanged": true,
+  "index_unchanged": true
+}

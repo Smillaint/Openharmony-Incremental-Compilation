@@ -1,0 +1,12 @@
+test_contents_order_permissions_and_dependencies_are_preserved (__main__.BinaryArchiveTest) ... ok
+test_deleted_archive_is_recreated (__main__.BinaryArchiveTest) ... ok
+test_empty_archive_is_stable (__main__.BinaryArchiveTest) ... ok
+test_metadata_mapping_change_is_published (__main__.BinaryArchiveTest) ... ok
+test_missing_payload_does_not_replace_previous_archive (__main__.BinaryArchiveTest) ... ok
+test_nonempty_archive_is_stable_across_clock_changes (__main__.BinaryArchiveTest) ... ok
+test_payload_change_is_published (__main__.BinaryArchiveTest) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.031s
+
+OK
