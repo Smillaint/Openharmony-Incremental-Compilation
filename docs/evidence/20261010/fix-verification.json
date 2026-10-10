@@ -1,0 +1,61 @@
+[
+  {
+    "repo": "developtools/packing_tool",
+    "file": "adapter/ohos/Compressor.java",
+    "matches_validated_commit": true,
+    "sha256": "46853e87a73c67cf63457e7d7932f90ca6b580229efd1c46127cb413598d023a"
+  },
+  {
+    "repo": "third_party/jsframework",
+    "file": "js_framework_build.sh",
+    "matches_validated_commit": true,
+    "sha256": "61e2dd5ff02df1c10c8cd487b7c2645a57dc79b8dd683c38a2aabc76d39e81d7"
+  },
+  {
+    "repo": "third_party/sane-airscan",
+    "file": "BUILD.gn",
+    "matches_validated_commit": true,
+    "sha256": "9d7fcf638f7ac5d798c285d543abb88ea709e1c5fc3ab6b2bb0c1d99ff760a11"
+  },
+  {
+    "repo": "third_party/sane-airscan",
+    "file": "patch_install.py",
+    "matches_validated_commit": true,
+    "sha256": "2f98f164329c6f69f40c45f12a41e947e3c7b8aa8e4f757023b766466ca2ee48"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/images/BUILD.gn",
+    "matches_validated_commit": true,
+    "sha256": "ab144c7918d140aa017e4ef4bc71e1c4e9d6af5a4a35628793243fea636d1248"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/images/build_image.py",
+    "matches_validated_commit": true,
+    "sha256": "ddfc1402bfefd6bc0c7c2ff08fdc50e9c8154711142ba8952b6080c846d1a17d"
+  },
+  {
+    "repo": "device/board/hihope",
+    "file": "rk3568/camera/vdi_impl/v4l2/BUILD.gn",
+    "matches_validated_commit": true,
+    "sha256": "eaeaab6a35dcb8de14a846b0078443fa1dd15f7654d0917533438cdb1cf6f24d"
+  },
+  {
+    "repo": "base/security/selinux_adapter",
+    "file": "BUILD.gn",
+    "matches_validated_commit": true,
+    "sha256": "5861f197a705051ad2e17548293befc4367e38e420fd32185d37866296d9b209"
+  },
+  {
+    "repo": "build",
+    "file": "templates/kernel/linux-6.6/make_ko.sh",
+    "matches_validated_commit": true,
+    "sha256": "5d238ed1f8ccbffa1835f57f0595c91709aa6706deacceaa6cfc04005b15d0c7"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/sa_profile/sa_profile_binary.py",
+    "matches_validated_commit": true
+  }
+]

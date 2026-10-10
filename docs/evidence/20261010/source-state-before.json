@@ -1,0 +1,42 @@
+{
+  "arkcompiler/ets_frontend": {
+    "head": "8bf332f42afdf9f28cfae3df69b23d159696d3ae",
+    "status": " M ets2panda/BUILD.gn\n D ets2panda/bindings/package-lock.json\n M ets2panda/driver/build_system/BUILD.gn\n M ets2panda/driver/interop_toolkits/gluegen/package-lock.json\n M ets2panda/linter/package-lock.json\n M ets2panda/scripts/check_build_system_consistency.py\n M legacy_bin/api8/package-lock.json\n"
+  },
+  "base/security/selinux_adapter": {
+    "head": "12b829ad656833ecda824e7b4783d92751d2aa86",
+    "status": " M BUILD.gn\n"
+  },
+  "build": {
+    "head": "6ca3b1250746f72f097c53d319bb2c24aa97f537",
+    "status": " M config/components/ets_frontend/generate_static_abc.py\n M config/components/idl_tool/idl.gni\n M hb/services/loader.py\n M hb/util/io_util.py\n M hb/util/loader/load_ohos_build.py\n M lite/config/component/lite_component.gni\n M ohos/app/app_internal.gni\n M ohos/common/BUILD.gn\n M ohos/common/binary_install_info.py\n M ohos/common/merge_all_subsystem.py\n M ohos/generate_part_info.py\n M ohos/hisysevent/hisysevent_process.py\n M ohos/images/BUILD.gn\n M ohos/images/build_image.py\n M ohos/notice/collect_module_notice_file.py\n M ohos/notice/collect_system_notice_files.py\n M ohos/packages/BUILD.gn\n M ohos/packages/check_seccomp_library_name.py\n M ohos/packages/generate_host_symlink.py\n M ohos/packages/modules_install.py\n M ohos/packages/parts_install_info.py\n M ohos/packages/process_field_validate.py\n M ohos/sa_profile/sa_profile_binary.py\n M ohos/sa_profile/sa_profile_merge.py\n M ohos/sa_profile/sa_profile_source.py\n M ohos/sa_profile/src_sa_profile_process.py\n M ohos/sdk/parse_interface_sdk.py\n M scripts/app_sign.py\n M scripts/build_js_assets.py\n M scripts/compile_app.py\n M scripts/util/build_utils.py\n M scripts/util/file_utils.py\n M templates/kernel/linux-6.6/make_ko.sh\n"
+  },
+  "developtools/ace_ets2bundle": {
+    "head": "64a7b34a60422076f96fca36789c74b0ef7c6040",
+    "status": " M ets1.2/BUILD.gn\n M ets1.2/libarkts/BUILD.gn\n"
+  },
+  "developtools/packing_tool": {
+    "head": "eb0876ad0d6823ef4d0544fa518f66fd2f205183",
+    "status": " M adapter/ohos/Compressor.java\n"
+  },
+  "device/board/hihope": {
+    "head": "5d368fb765920c2b1cad41eb86164563461a7074",
+    "status": " M rk3568/camera/vdi_impl/v4l2/BUILD.gn\n"
+  },
+  "interface/sdk-js": {
+    "head": "795f28c50f144d6f82f0ddba6e855b6d988a7e09",
+    "status": " M BUILD.gn\n M process_internal.py\n M remove_internal.py\n"
+  },
+  "third_party/iptables": {
+    "head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+    "status": " M extensions/genInit.py\n M extensions/libipt_CLUSTERIP.c\n M extensions/libipt_realm.c\n M extensions/libxt_mac.c\n"
+  },
+  "third_party/jsframework": {
+    "head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "status": " M js_framework_build.sh\n M package-lock.json\n"
+  },
+  "third_party/sane-airscan": {
+    "head": "3362f3e7402df701a158259c17010fe59666a870",
+    "status": " M BUILD.gn\n M patch_install.py\n"
+  }
+}

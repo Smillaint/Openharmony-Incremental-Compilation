@@ -1,0 +1,66 @@
+{
+  "source_root": "/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code",
+  "phase": "first",
+  "start": "2026-10-10T07:19:09.319573+00:00",
+  "command": [
+    "bash",
+    "./build.sh",
+    "-p",
+    "rk3568",
+    "--build-target",
+    "make_all",
+    "--ninja-args=-dexplain"
+  ],
+  "exit_code": 0,
+  "end": "2026-10-10T07:22:31.531167+00:00",
+  "wall_seconds": 202.211594,
+  "reported_cost_time": [
+    "[OHOS INFO]  Cost Time:  0:03:12"
+  ],
+  "timing": {
+    "_prebuild_and_preload": 0.03,
+    "_gn": 30.48,
+    "_ninja": 57.94
+  },
+  "main_ninja_steps": 13,
+  "step_types": {
+    "ACTION": 7,
+    "STAMP": 6
+  },
+  "original_ten": {
+    "sa_profile_src_phone": 0,
+    "sa_profile_binary_phone": 0,
+    "phone_sa_profile_install_info": 0,
+    "check_seccomp_filter_name": 0,
+    "process_field_validate": 0,
+    "collect_notice_files__phone": 0,
+    "generate_host_symlink": 0,
+    "phone_hisysevent_install_info": 0,
+    "phone_install_modules": 0,
+    "phone_parts_list": 0
+  },
+  "early_three": {
+    "ark_jsf": 0,
+    "gen_snapshot": 0,
+    "airscan_action": 0
+  },
+  "ramdisk": {
+    "phone_ramdisk_image": 0,
+    "phone_updater_ramdisk_image": 0
+  },
+  "steps": [
+    "ACTION //device/board/hihope/rk3568/kernel:kernel(//build/toolchain/ohos:ohos_clang_arm)",
+    "STAMP obj/device/board/hihope/rk3568/kernel/kernel.stamp",
+    "STAMP obj/device/board/hihope/rk3568/rk3568_group.stamp",
+    "STAMP obj/out/rk3568/build_configs/device_rk3568/rockchip_products/rockchip_products_info.stamp",
+    "ACTION //out/rk3568/build_configs/device_rk3568/rockchip_products:rockchip_products(//build/toolchain/ohos:ohos_clang_arm)",
+    "STAMP obj/build/ohos/common/generate_host_info_raw.stamp",
+    "STAMP obj/build/ohos/common/generate_src_installed_info.stamp",
+    "STAMP obj/build/ohos/sa_profile/generated_src_sa_profile.stamp",
+    "ACTION //build/ohos/common:generate_host_info(//build/toolchain/ohos:ohos_clang_arm)",
+    "ACTION //build/ohos/common:gen_binary_installed_info(//build/toolchain/ohos:ohos_clang_arm)",
+    "ACTION //build/ohos/sa_profile:src_sa_infos_process(//build/toolchain/ohos:ohos_clang_arm)",
+    "ACTION //build/ohos/common:merge_all_parts(//build/toolchain/ohos:ohos_clang_arm)",
+    "ACTION //kernel/linux/common_modules/module_sample:ko_sample(//build/toolchain/ohos:ohos_clang_arm)"
+  ]
+}
