@@ -1,0 +1,7 @@
+{
+  "utf8_syntax_diff": "passed",
+  "executable_action": "passed",
+  "primary_files": "all exist",
+  "depfile_escape": "passed",
+  "actual_build": "not run"
+}

@@ -1,0 +1,331 @@
+Set cache size limit to 100.0 GB
+[OHOS INFO] [LOAD] loader args:['platforms_config_file="/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/preloader/rk3568/platforms.build"', 'subsystem_config_file="/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/preloader/rk3568/subsystem_config.json"', 'example_subsystem_file=""', 'exclusion_modules_config_file="/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/preloader/rk3568/exclusion_modules.json"', 'source_root_dir="/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/"', 'gn_root_out_dir="out/rk3568"', 'build_platform_name=phone', 'build_xts=False', 'load_test_config=True', 'target_os=ohos', 'target_cpu=arm', 'os_level=standard', "ignore_api_check=['xts', 'common', 'testfwk']", 'scalable_build=False', 'skip_partlist_check=False', 'enable_scan_optimization=False']
+[OHOS INFO] [GN] Excuting gn command: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/prebuilts/build-tools/linux-x86/bin/gn gen --args="product_name=\"rk3568\" target_cpu=\"arm\" precise_branch=\"\" is_standard_system=true product_path=\"/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/vendor/hihope/rk3568\" product_config_path=\"/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/vendor/hihope/rk3568\" device_name=\"rk3568\" device_path=\"/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/device/board/rockchip/rk3568\" device_company=\"rockchip\" device_config_path=\"/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/device/board/rockchip/rk3568\" ohos_build_compiler_specified=\"\" ohos_build_time=1791847735955 ohos_build_datetime=\"2026-10-13 15:28:55\" ace_engine_feature_enable_accessibility=true ace_engine_feature_enable_web=true ace_engine_feature_enable_upgrade_skia=true os_account_multiple_active_accounts=false datamgr_service_udmf=true access_token_enhance_capability=false code_signature_support_oh_code_sign=false code_signature_support_oh_release_app=true code_signature_support_app_allow_list=false init_feature_ab_partition=true hiview_feature_bbox_userspace=true hiview_enable_leak_detector=true hiview_enable_performance_monitor=true t2stack_feature_vtp=true t2stack_feature_coap=true t2stack_feature_dfile=true dsoftbus_feature_coap=true dsoftbus_feature_vtp=true dsoftbus_feature_dfile=true dsoftbus_feature_disc_ble=true dsoftbus_feature_disc_coap=true dsoftbus_feature_disc_coap_custdata=true dsoftbus_feature_disc_lnn_coap=true dsoftbus_feature_conn_pv1=true dsoftbus_feature_conn_br=true dsoftbus_feature_conn_ble=true dsoftbus_feature_conn_tcp_proxy=true dsoftbus_feature_conn_tcp_comm=true dsoftbus_feature_trans_udp_stream=true dsoftbus_feature_trans_udp_file=true dsoftbus_feature_trans_udp=true dsoftbus_feature_trans_proxy_file=true dsoftbus_feature_trans_qos=true dsoftbus_feature_trans_br_proxy=true dsoftbus_feature_lnn_ble=true dsoftbus_feature_lnn_wifi=true dsoftbus_feature_lnn_cloud_sync=true dsoftbus_feature_lnn_channel_rating=true dsoftbus_feature_lnn_lane_mgr=true dsoftbus_feature_lnn_lane_qos=true dsoftbus_feature_lnn_frame=true wifi_feature_non_seperate_p2p=true wifi_feature_non_hdf_driver=true wifi_feature_p2p_random_mac_addr=true fusion_connectivity_partner_agent_feature=true updater_feature_use_ptable=false updater_feature_updater_gen_executable=true updater_feature_sign_on_server=false sys_installer_feature_ohos_cfg=true graphic_2d_feature_rs_enable_eglimage=true graphic_2d_feature_use_texgine=true graphic_2d_feature_upgrade_skia=true av_codec_fcodec_enable_dmabuffer_at_buffermode=false audio_framework_feature_dtmf_tone=true audio_framework_feature_opensl_es=true audio_framework_feature_support_os_account=false audio_framework_feature_audiosuite_support=true audio_framework_feature_hdmi_detect_audio=true image_framework_feature_upgrade_skia=true input_feature_combination_key=true input_feature_pointer_drawing=true input_feature_interceptor=true input_feature_monitor=true input_feature_keyboard=true input_feature_mouse=true input_feature_touchscreen=true input_feature_input_device=true battery_manager_feature_enable_charger=true memmgr_purgeable_memory=true memmgr_hyperhold_memory=true usb_manager_feature_pop_up_func_switch_model=false usb_manager_feature_host=true usb_manager_feature_device=true usb_manager_feature_port=true device_status_interaction_coordination=false wpa_supplicant_driver_nl80211=true skia_feature_upgrade=true libuv_use_ffrt=true hdf_core_platform_test_support=false hdf_core_default_peripheral_config=false drivers_interface_display_community=true drivers_interface_display_vdi_default=true drivers_peripheral_input_feature_model=true drivers_peripheral_input_feature_support_ddk=true drivers_peripheral_display_community=true drivers_peripheral_display_vdi_default=true drivers_peripheral_wlan_feature_enable_HDF_NL80211=true drivers_peripheral_wlan_feature_enable_HDF_UT=false drivers_peripheral_wlan_feature_vendor=\"default\" drivers_peripheral_wlan_p2p_name=\"p2p-dev-wlan0\" drivers_peripheral_sensor_feature_model=true drivers_peripheral_audio_feature_full_test_suite=true drivers_peripheral_audio_feature_alsa_lib=false drivers_peripheral_audio_feature_effect=true drivers_peripheral_light_feature_model=true drivers_peripheral_vibrator_feature_model=true drivers_peripheral_codec_feature_support_omx_extend_test=true drivers_peripheral_codec_feature_support_hdi_v1=true smartperf_host_device=true drivers_interface_audio_community=true alsa_lib_feature_config_enable=true ohos_build_enable_ccache=true ohos_build_type=\"debug\" device_type=\"default\" build_variant=\"root\" ohos_components_checktype=4 ohos_interception_rule_switch=1023 root_perf_main=\"main\" runtime_mode=\"release\"" --args=product_name="rk3568" target_cpu="arm" precise_branch="" is_standard_system=true product_path="/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/vendor/hihope/rk3568" product_config_path="/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/vendor/hihope/rk3568" device_name="rk3568" device_path="/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/device/board/rockchip/rk3568" device_company="rockchip" device_config_path="/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/device/board/rockchip/rk3568" ohos_build_compiler_specified="" ohos_build_time=1791847735955 ohos_build_datetime="2026-10-13 15:28:55" ace_engine_feature_enable_accessibility=true ace_engine_feature_enable_web=true ace_engine_feature_enable_upgrade_skia=true os_account_multiple_active_accounts=false datamgr_service_udmf=true access_token_enhance_capability=false code_signature_support_oh_code_sign=false code_signature_support_oh_release_app=true code_signature_support_app_allow_list=false init_feature_ab_partition=true hiview_feature_bbox_userspace=true hiview_enable_leak_detector=true hiview_enable_performance_monitor=true t2stack_feature_vtp=true t2stack_feature_coap=true t2stack_feature_dfile=true dsoftbus_feature_coap=true dsoftbus_feature_vtp=true dsoftbus_feature_dfile=true dsoftbus_feature_disc_ble=true dsoftbus_feature_disc_coap=true dsoftbus_feature_disc_coap_custdata=true dsoftbus_feature_disc_lnn_coap=true dsoftbus_feature_conn_pv1=true dsoftbus_feature_conn_br=true dsoftbus_feature_conn_ble=true dsoftbus_feature_conn_tcp_proxy=true dsoftbus_feature_conn_tcp_comm=true dsoftbus_feature_trans_udp_stream=true dsoftbus_feature_trans_udp_file=true dsoftbus_feature_trans_udp=true dsoftbus_feature_trans_proxy_file=true dsoftbus_feature_trans_qos=true dsoftbus_feature_trans_br_proxy=true dsoftbus_feature_lnn_ble=true dsoftbus_feature_lnn_wifi=true dsoftbus_feature_lnn_cloud_sync=true dsoftbus_feature_lnn_channel_rating=true dsoftbus_feature_lnn_lane_mgr=true dsoftbus_feature_lnn_lane_qos=true dsoftbus_feature_lnn_frame=true wifi_feature_non_seperate_p2p=true wifi_feature_non_hdf_driver=true wifi_feature_p2p_random_mac_addr=true fusion_connectivity_partner_agent_feature=true updater_feature_use_ptable=false updater_feature_updater_gen_executable=true updater_feature_sign_on_server=false sys_installer_feature_ohos_cfg=true graphic_2d_feature_rs_enable_eglimage=true graphic_2d_feature_use_texgine=true graphic_2d_feature_upgrade_skia=true av_codec_fcodec_enable_dmabuffer_at_buffermode=false audio_framework_feature_dtmf_tone=true audio_framework_feature_opensl_es=true audio_framework_feature_support_os_account=false audio_framework_feature_audiosuite_support=true audio_framework_feature_hdmi_detect_audio=true image_framework_feature_upgrade_skia=true input_feature_combination_key=true input_feature_pointer_drawing=true input_feature_interceptor=true input_feature_monitor=true input_feature_keyboard=true input_feature_mouse=true input_feature_touchscreen=true input_feature_input_device=true battery_manager_feature_enable_charger=true memmgr_purgeable_memory=true memmgr_hyperhold_memory=true usb_manager_feature_pop_up_func_switch_model=false usb_manager_feature_host=true usb_manager_feature_device=true usb_manager_feature_port=true device_status_interaction_coordination=false wpa_supplicant_driver_nl80211=true skia_feature_upgrade=true libuv_use_ffrt=true hdf_core_platform_test_support=false hdf_core_default_peripheral_config=false drivers_interface_display_community=true drivers_interface_display_vdi_default=true drivers_peripheral_input_feature_model=true drivers_peripheral_input_feature_support_ddk=true drivers_peripheral_display_community=true drivers_peripheral_display_vdi_default=true drivers_peripheral_wlan_feature_enable_HDF_NL80211=true drivers_peripheral_wlan_feature_enable_HDF_UT=false drivers_peripheral_wlan_feature_vendor="default" drivers_peripheral_wlan_p2p_name="p2p-dev-wlan0" drivers_peripheral_sensor_feature_model=true drivers_peripheral_audio_feature_full_test_suite=true drivers_peripheral_audio_feature_alsa_lib=false drivers_peripheral_audio_feature_effect=true drivers_peripheral_light_feature_model=true drivers_peripheral_vibrator_feature_model=true drivers_peripheral_codec_feature_support_omx_extend_test=true drivers_peripheral_codec_feature_support_hdi_v1=true smartperf_host_device=true drivers_interface_audio_community=true alsa_lib_feature_config_enable=true ohos_build_enable_ccache=true ohos_build_type="debug" device_type="default" build_variant="root" ohos_components_checktype=4 ohos_interception_rule_switch=1023 root_perf_main="main" runtime_mode="release" /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568
+root_out_dir=//out/rk3568
+root_build_dir=//out/rk3568
+root_gen_dir=//out/rk3568/gen
+current_toolchain=//build/toolchain/ohos:ohos_clang_arm
+host_toolchain=//build/toolchain/linux:clang_x64
+drivers_peripheral_user_auth
+drivers_peripheral_user_auth
+default_toolchain =  //build/toolchain/ohos:ohos_clang_arm
+current_toolchain =  //build/toolchain/ohos:ohos_clang_arm
+host_toolchain =  //build/toolchain/linux:clang_x64
+root_out_dir =  //out/rk3568
+root_output_dir_proto =  out/rk3568/clang_x64
+thermal_interface_service
+power_interface_service
+power_interface_service
+power_interface_service
+power_interface_service
+drm_interface_service
+drm_interface_service
+account_enable_bm = true
+overlay_install_bm = true
+quick_fix_bm = true
+distributed_bundle_framework_bm = true
+av_codec_support_fcodec = true
+av_codec_support_avc_encoder = true
+av_codec_support_hevc_decoder = true
+av_codec_support_hcodec = true
+av_codec_support_vp8_decoder = true
+av_codec_support_vp9_decoder = true
+av_codec_support_av1_decoder = true
+av_codec_enable_start_stop_on_demand = false
+input_service
+hid_ddk
+hid_ddk
+wlan_service
+wlan_service
+wlan_service
+wpa_service
+hostapd_service
+chip
+chip
+native_media_venc: FAST_KIT_ENABLED=false
+audio_service
+audio_service
+effect_host
+Cares install
+location_agnss
+location_agnss
+midi
+************libhilog_base use_musl ***************
+######### ets_runtime public enable compressed pointer = false #########
+########## ets_runtime disable cmc-gc ##############
+############ ets_runtime enable compressed pointer = false #############
+drivers_peripheral_pin_auth
+usbd
+usbd
+serial
+usb_ddk
+usbfn_mtp
+usbd
+usbd
+usb_ddk
+usb_serial_ddk
+usbd
+usb_ddk
+scsi_ddk
+memory_tracker_interface_service
+accessibility_feature_display_manager = true
+accessibility_feature_power_manager = true
+accessibility_use_rosen_drawing = true
+accessibility_feature_data_share = true
+accessibility_feature_hiviewdfx_hitrace = true
+accessibility_feature_hiviewdfx_hisysevent = true
+["OS_ACCOUNT_EDM_ENABLE"]
+miscdevice_feature_vibrator_custom = true
+distributed_bundle_framework_graphics = true
+ability_runtime_enable_dbms = true
+account_enable_dbms = true
+distributed_bundle_framework_enable = true
+hisysevent_enable_dbms = true
+distributed_bundle_image_framework_enable = true
+libunwind_action is exec
+window_manager_use_sceneboard = false
+window_manager_feature_subscribe_motion = false
+imf_enable:  true
+window_scene_common imf_enable:  true
+imf_enable:  true
+imf_enable:  true
+window manager fold ability is enabled.
+window manager active mode ability is enabled.
+window manager screen color gamut ability is enabled.
+window manager screen hdr format ability is enabled.
+window manager screen color space ability is enabled.
+window manager screen multi screen ability is enabled.
+window manager screen multi screen frame ctl ability is enabled.
+window manager screen camera mode ability is enabled.
+window manager screen multi usr ability is enabled.
+window manager screen lock manager ability is enabled.
+imf_enable:  true
+imf_enable:  true
+imf_enable:  true
+imf_enable:  true
+bluetooth_hci
+bluetooth_a2dp
+bluetooth_lp_ble
+motion_service
+motion_service
+//out/rk3568/obj/foundation/arkui/advanced_ui_component/customappbar/atomicservicemenubar/atomicservicemenubar.abc
+wpa_supplicant_vendor_ext = false
+wpa_supplicant_wapi = false
+partitionslot_interface_service
+hisysevent_usage = false
+ans_hitrace_usage = true
+location_geofence
+location_geofence
+############ toolchain enable compressed pointer = false #############
+camera_service
+camera_service
+camera_service
+camera_service
+camera_service
+camera_service
+camera_service
+camera_service
+camera_service
+sensor_service
+sensor_service
+sensor_convert_service
+rk3568_group in
+["--haptobin", "../../developtools/packing_tool/adapter/ohos", "--haptobinOutput", "obj/developtools/packing_tool/jar/haptobin_tool.jar", "--unpackOutput", "obj/developtools/packing_tool/jar/app_unpacking_tool.jar", "--packOutput", "obj/developtools/packing_tool/jar/app_packing_tool.jar", "--outpath", "obj/developtools/packing_tool/jar", "--checkOutput", "obj/developtools/packing_tool/jar/app_check_tool.jar", "--toolchain", "//build/toolchain/ohos:ohos_clang_arm", "--compileTarget", "image"]
+output_values: ["//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/igame_controller_server_interface.h", "//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/game_controller_server_interface_proxy.cpp", "//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/game_controller_server_interface_stub.cpp", "//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/game_controller_server_interface_proxy.h", "//out/rk3568/gen/domains/game/game_controller_framework/frameworks/native/game_controller_server_interface_stub.h"]
+drivers_peripheral_fingerprint_auth
+Support dsoftbus.
+support hearing aid
+callmanager call transfer
+low_power_player_service
+Build curl is_cares_on: true
+Build curl support_gmssl: true
+distributed_camera_provider_service
+Msdp motion ability is disabled.
+E2FSPROGS_DIR is /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/third_party/e2fsprogs/e2fsprogs
+drivers_peripheral_face_auth
+light_service
+battery_interface_service
+cups_action is exec
+openssl detecting os now...
+current_cpu = arm
+current_os = ohos
+host_os = linux
+is_mingw = false
+openssl selected linux-armv4
+openssl detecting os done. openssl_selected_platform = linux-armv4
+backends_action is exec
+nearlink_hci
+nearlink_hci
+off_find
+daudio
+daudio
+daudioext
+daudioext
+vibrator_service
+drivers_peripheral_huks
+drivers_peripheral_huks
+ethernet_service
+location_gnss
+codec_service
+codec_service
+codec_service
+nnrt
+nnrt
+nnrt
+input_feature_combination_key = true
+input_feature_pointer_drawing = true
+input_feature_monitor = true
+input_feature_interceptor = true
+input_feature_keyboard = true
+input_feature_switch = true
+input_feature_mouse = true
+input_feature_joystick = true
+input_feature_touchscreen = true
+input_feature_input_device = true
+input_feature_short_key = true
+input_ext_feature_keyboard_ext_flag = false
+input_feature_one_hand_mode_enable = false
+input_feature_move_event_filters = false
+input_feature_external_screen = true
+input_feature_touchpad = true
+input_feature_pen = true
+input_feature_touch_gesture = true
+input_controller_inject_enable = false
+current_cpu = arm
+current_os = ohos
+host_os = linux
+openhitls detecting os done, openhitls_selected_platform = 
+current_cpu = arm
+current_os = ohos
+host_os = linux
+is_mingw = false
+ffmpeg selected cplatform
+Debug info gen_utils_abc file path:  //out/rk3568/obj/commonlibrary/ets_utils/js_concurrent_module/utils/utils.abc
+time_system_ability_static output_values: ["//out/rk3568/gen/base/time/time_service/services/itime_service.h", "//out/rk3568/gen/base/time/time_service/services/time_service_proxy.cpp", "//out/rk3568/gen/base/time/time_service/services/time_service_stub.cpp", "//out/rk3568/gen/base/time/time_service/services/time_service_proxy.h", "//out/rk3568/gen/base/time/time_service/services/time_service_stub.h", "//out/rk3568/gen/base/time/time_service/services/itimer_callback.h", "//out/rk3568/gen/base/time/time_service/services/timer_callback_proxy.cpp", "//out/rk3568/gen/base/time/time_service/services/timer_callback_stub.cpp", "//out/rk3568/gen/base/time/time_service/services/timer_callback_proxy.h", "//out/rk3568/gen/base/time/time_service/services/timer_callback_stub.h"]
+has_hisysevent_part = true
+event ces_hitrace_usage = true
+Reading plugin sources: ets (//build/toolchain/ohos:ohos_clang_arm)
+bundle_framework_power_mgr_enable = true
+bundle_framework_graphics = true
+bundle_framework_free_install = true
+bundle_framework_default_app = true
+bundle_framework_launcher = true
+bundle_framework_sandbox_app = true
+bundle_framework_quick_fix = true
+bundle_framework_app_control = true
+distributed_bundle_framework = true
+ability_runtime_enable = true
+account_enable = true
+configpolicy_enable = true
+global_resmgr_enable = true
+hicollie_enable = true
+support_jsapi = true
+hisysevent_enable = true
+bundle_framework_overlay_install = true
+bundle_framework_bundle_resource = true
+verify_abc_enabled = true
+user_auth_framework_impl_enabled = true
+bundle_framework_bss_enable = false
+bundle_framework_npapi_enable = false
+bms_accesscontrol_sandbox_manager = true
+bundle_framework_enable_clone_for_account = false
+ril_service
+ril_service
+ril_service
+ril_service
+ril_service
+intell_voice_engine_service
+intell_voice_engine_service
+intell_voice_engine_service
+intell_voice_trigger_service
+display_buffer
+intell_voice_trigger_service
+intell_voice_engine_service
+intell_voice_trigger_service
+display_composer
+display_commontype
+display_buffer
+display_composer
+display_composer
+display_buffer
+display_buffer
+display_buffer
+display_commontype
+display_composer
+display_composer
+display_commontype
+display_commontype
+display_composer
+display_commontype
+display_commontype
+display_commontype
+ERROR at //developtools/ace_ets2bundle/arkui-plugins/BUILD.gn:20:14: Disallowed exec_script call.
+_sdk_files = exec_script(_sdk_script,
+             ^-----------------------
+The use of exec_script use is restricted in this build. exec_script
+is discouraged because it can slow down the GN run and is easily
+abused.
+
+Generally nontrivial work should be done as build steps rather than
+when GN is run. For example, if you need to compute a nontrivial
+preprocessor define, it will be better to have an action target
+generate a header containing the define rather than blocking the GN
+run to compute the value.
+
+The allowed callers of exec_script is maintained in the "//.gn" file
+if you need to modify the allowlist.
+See //build/config/components/ets_frontend/ets2abc_config.gni:266:9: which caused the file to be included.
+        ohos_ets_ui_plugins_deps,
+        ^-----------------------
+include_dirs= ["//out/rk3568/gen/foundation/multimedia/audio_framework/services/audio_service/idl", "//foundation/multimedia/audio_framework/services/audio_service/idl/"]
+target_gen_dir= //out/rk3568/gen/foundation/multimedia/audio_framework/services/audio_service/idl
+########## ets_runtime disable cmc-gc ##############
+imf_enable:  true
+Set module_install_dir or relative_install_dir field in the //foundation/systemabilitymgr/selectionfwk/test/unittest/PerformanceTest:performanceTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+histreamer plugin: ffmpeg_adapter = true
+histreamer plugin: wav_demuxer = false
+histreamer plugin: hdi_adapter = false
+histreamer plugin: file_source = false
+histreamer plugin: file_fd_source = false
+histreamer plugin: std_stream_source = false
+histreamer plugin: http_source = false
+histreamer plugin: stream_source = false
+histreamer plugin: audio_server_sink = false
+histreamer plugin: lite_aac_decoder = false
+histreamer plugin: std_video_surface_sink = false
+histreamer plugin: std_video_capture = false
+histreamer plugin: file_fd_sink = false
+histreamer plugin: codec_adapter = true
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/datashare_ext_bundle:datashare_ext(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/errorcode_ext_bundle:errorcode_ext(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/datashare_proxy_bundle:proxydatas_with_permission(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/errorcode_ext_bundle:errorcode_ext_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/datashareproxy_bundle:proxydatas_with_permission_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/datashare_ext_bundle:datashare_ext_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+target_out_dir //out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+target_dir /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+test_abc_dir /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+[91m[OHOS ERROR][0m [GN] Traceback (most recent call last):
+[91m[OHOS ERROR][0m [GN]   File "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/build/hb/containers/status.py", line 47, in wrapper
+[91m[OHOS ERROR][0m [GN]     return func(*args, **kwargs)
+[91m[OHOS ERROR][0m [GN]            ^^^^^^^^^^^^^^^^^^^^^
+[91m[OHOS ERROR][0m [GN]   File "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/build/hb/services/gn.py", line 133, in _execute_gn_gen_cmd
+[91m[OHOS ERROR][0m [GN]     SystemUtil.exec_command(gn_gen_cmd, self.config.log_path)
+[91m[OHOS ERROR][0m [GN]   File "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/build/hb/util/system_util.py", line 142, in exec_command
+[91m[OHOS ERROR][0m [GN]     LogUtil.get_failed_log(log_path, cmd)
+[91m[OHOS ERROR][0m [GN]   File "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/build/hb/util/log_util.py", line 219, in get_failed_log
+[91m[OHOS ERROR][0m [GN]     LogUtil.get_gn_failed_log(log_path)
+[91m[OHOS ERROR][0m [GN]   File "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/build/hb/util/log_util.py", line 153, in get_gn_failed_log
+[91m[OHOS ERROR][0m [GN]     raise OHOSException(
+[91m[OHOS ERROR][0m [GN] exceptions.ohos_exception.OHOSException: GN Failed! Please check error in /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/error.log, and for more build information in /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/build.log
+[91m[OHOS ERROR][0m [GN] 
+[91m[OHOS ERROR][0m [GN] Code:        3000
+[91m[OHOS ERROR][0m [GN] 
+[91m[OHOS ERROR][0m [GN] Reason:      GN Failed! Please check error in /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/error.log, and for more build information in /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/build.log
+[91m[OHOS ERROR][0m [GN] 
+[91m[OHOS ERROR][0m [GN] Error Type:  UNKNOWN
+[91m[OHOS ERROR][0m [GN] 
+[91m[OHOS ERROR][0m [GN] Description: An unknown error occurred while executing 'gn gen'.
+[91m[OHOS ERROR][0m [GN] 
+[91m[OHOS ERROR][0m [GN] Solution:    There is no solution available. You can check the 'gn_error.log' in the output directory for more information
+[91m[OHOS ERROR][0m [GN] 

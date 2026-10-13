@@ -4,6 +4,8 @@
 
 ## 最新状态与继续工作入口
 
+[2026-10-13 GN 兼容修复](docs/oct13-gn-sdk-manifest-repair.md) 是当前重试入口：实际构建发现新增 exec_script 被 OpenHarmony 白名单禁止，已改为受控文件清单，并补齐 package.json 生产者依赖及 Python action 执行权限。隔离 GN 图和模拟回归通过，产品编译待人工重试。**本次重试不需要清理，直接执行文档中的一行原构建指令。**
+
 [2026-10-13 历史复核与 clean 恢复修复](docs/oct13-phone-audit-clean-recovery.md) 是当前入口：核对 15 组准备补丁和 11 个正式 PR diff，未发现已知修复漏迁；远程新增 9 仓、18 文件的 IDL、JSON、JS/CSS、插件与 wrapper 规范性修改。静态和模拟回归通过，**本轮没有编译，当前工作树等待人工验证**。交接包含版本、补丁和原指令的两轮验证步骤。
 
 [2026-10-13 纯迁移验收](docs/oct13-migration-only-validation.md) 记录修改前基线：清理后完整编译及首轮增量均成功，增量完整耗时 **169.92 秒**（GN 29.78 秒、Ninja 69.34 秒），执行 **153 步**；原始十项中九项未执行，`phone_install_modules` 执行一次。这些数据不代表新增规范性修改的效果。

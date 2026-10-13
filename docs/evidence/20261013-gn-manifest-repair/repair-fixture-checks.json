@@ -1,0 +1,6 @@
+[
+  "plugins: out-only commands, stable output, missing output recovery, failure safety",
+  "wrapper: out-only commands, stable output, missing output recovery, failure safety",
+  "IDL: concrete outputs, transitive imports, partial/full clean recovery, stable mtime, failure safety",
+  "JSON: semantic comparison and deleted output recovery"
+]

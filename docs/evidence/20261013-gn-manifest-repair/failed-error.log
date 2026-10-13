@@ -1,0 +1,92 @@
+ERROR at //developtools/ace_ets2bundle/arkui-plugins/BUILD.gn:20:14: Disallowed exec_script call.
+
+_sdk_files = exec_script(_sdk_script,
+
+             ^-----------------------
+
+The use of exec_script use is restricted in this build. exec_script
+
+is discouraged because it can slow down the GN run and is easily
+
+abused.
+
+
+
+Generally nontrivial work should be done as build steps rather than
+
+when GN is run. For example, if you need to compute a nontrivial
+
+preprocessor define, it will be better to have an action target
+
+generate a header containing the define rather than blocking the GN
+
+run to compute the value.
+
+
+
+The allowed callers of exec_script is maintained in the "//.gn" file
+
+if you need to modify the allowlist.
+
+See //build/config/components/ets_frontend/ets2abc_config.gni:266:9: which caused the file to be included.
+
+        ohos_ets_ui_plugins_deps,
+
+        ^-----------------------
+
+include_dirs= ["//out/rk3568/gen/foundation/multimedia/audio_framework/services/audio_service/idl", "//foundation/multimedia/audio_framework/services/audio_service/idl/"]
+
+target_gen_dir= //out/rk3568/gen/foundation/multimedia/audio_framework/services/audio_service/idl
+
+########## ets_runtime disable cmc-gc ##############
+
+imf_enable:  true
+
+Set module_install_dir or relative_install_dir field in the //foundation/systemabilitymgr/selectionfwk/test/unittest/PerformanceTest:performanceTest(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+
+histreamer plugin: ffmpeg_adapter = true
+
+histreamer plugin: wav_demuxer = false
+
+histreamer plugin: hdi_adapter = false
+
+histreamer plugin: file_source = false
+
+histreamer plugin: file_fd_source = false
+
+histreamer plugin: std_stream_source = false
+
+histreamer plugin: http_source = false
+
+histreamer plugin: stream_source = false
+
+histreamer plugin: audio_server_sink = false
+
+histreamer plugin: lite_aac_decoder = false
+
+histreamer plugin: std_video_surface_sink = false
+
+histreamer plugin: std_video_capture = false
+
+histreamer plugin: file_fd_sink = false
+
+histreamer plugin: codec_adapter = true
+
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/datashare_ext_bundle:datashare_ext(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/errorcode_ext_bundle:errorcode_ext(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/unittest/native/resource/datashare_proxy_bundle:proxydatas_with_permission(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/errorcode_ext_bundle:errorcode_ext_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/datashareproxy_bundle:proxydatas_with_permission_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+
+Set module_install_dir or relative_install_dir field in the //foundation/distributeddatamgr/data_share/test/native/resource/datashare_ext_bundle:datashare_ext_native(//build/toolchain/ohos:ohos_clang_arm). Do not install the module to app.
+
+target_out_dir //out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+
+target_dir /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+
+test_abc_dir /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/obj/arkcompiler/runtime_core/libark_defect_scan_aux/tests/unittest
+

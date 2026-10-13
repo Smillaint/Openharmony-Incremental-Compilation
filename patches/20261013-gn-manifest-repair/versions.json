@@ -1,0 +1,18 @@
+{
+  "head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+  "before": "2a85c0803770938fbe7f77946f0d079679c47c58",
+  "before_ref": "refs/heads/backup/before-gn-manifest-repair-20261013",
+  "after": "2a3500957d85ebdcde222066185531460a51ba17",
+  "after_ref": "refs/heads/fix/sdk-gn-file-manifest-20261013",
+  "files": [
+    "arkui-plugins/BUILD.gn",
+    "arkui-plugins/build_ui_plugins.py",
+    "arkui-plugins/sdk_files.json",
+    "koala-wrapper/BUILD.gn",
+    "koala-wrapper/build_ts_wrapper.py",
+    "koala-wrapper/sdk_files.json",
+    "sdk_copy.gni",
+    "sdk_files.py"
+  ],
+  "patch_sha256": "47db43a44b55f475075a6ae7ed6995daa4a4792ac7d4de33b78706c09a8e157b"
+}
