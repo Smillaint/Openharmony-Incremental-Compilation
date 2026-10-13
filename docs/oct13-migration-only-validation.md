@@ -1,4 +1,19 @@
-# 10 月 13 日纯迁移验收
+# 10 月 13 日纯迁移验收与首轮增量结果
+
+## 验收结论
+
+远程 10 月 12 日新源码的纯迁移版本完成清理后整仓编译，随后一轮无改动增量也成功，退出码均为 0。两轮均使用交接文档原指令，没有加入新增规范性修复。未出现需要额外修改源码才能通过的编译兼容错误。
+
+| 轮次 | 退出码 | 完整耗时 | GN | Ninja | 主 Ninja 实际任务 |
+| --- | --- | --- | --- | --- | --- |
+| 清理后完整编译 | 0 | 7,968.07 秒（约 2 小时 12 分 48 秒） | 24.43 秒 | 7,833.22 秒 | 125,605 |
+| 首轮无改动增量 | 0 | 169.92 秒（约 2 分 50 秒） | 29.78 秒 | 69.34 秒 | 153 |
+
+增量的 153 步为 51 个 Action、96 个 stamp、5 个共享库链接和 1 个 COPY，没有主 Ninja CC/CXX 任务。原始十项中九项未执行，`phone_install_modules` 执行一次；`gen_snapshot`、`ark_jsf` 各一次，`airscan_action` 为零；两个 ramdisk Action 各一次，此外还有其他镜像任务。不能据此宣称十项全部收敛。
+
+这是清理后的第一次增量，没有第二轮实际增量的稳定性证据。后续只执行了一次 `ninja -n -dexplain` 分析，不计作编译或性能测试。它仍报告 `arkui-plugins` 和 `koala-wrapper` 相关目录时间戳触发；不能把首轮 153 步认定为以后每轮固定任务数，也不能直接与旧仓已经稳定的 13 步比较收益。
+
+完整统计、原始控制台和依赖解释见 [验证证据](evidence/20261013-migration-validation/README.md)。主 Ninja 计数已验证连续序号，并排除内嵌工具的进度输出。构建器自身报告的 `Cost Time` 为 2:12:40 和 0:02:41，与外层完整命令耗时采用不同口径。
 
 ## 顺序与基线
 
@@ -37,14 +52,26 @@ cd /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/cod
 bash ./build.sh -p rk3568 --build-target make_all --ninja-args=-dexplain
 ```
 
-远程 2026-10-13 12:00:51 +0800 启动，清理已完成，纯迁移编译正在执行。尚无成功退出码，不宣称迁移验收通过或提供增量耗时。
+远程完整构建在 2026-10-13 12:00:51 +0800 启动清理与验证，14:13:52 +0800 结束。增量在 14:14:03 +0800 启动，14:16:53 +0800 结束。两轮均已结束。
 
 - 当前状态：`migration-only/validation/status.json`。
 - 原始控制台：`migration-only/validation/console.log`。
 - 启动脚本输出：`migration-only/runner.log`。
-- 后续增量状态：`migration-only/incremental/status.json`。
-- 后续增量控制台与统计：`migration-only/incremental/console.log`、`migration-only/incremental/summary.json`，执行后生成。
+- 增量状态：`migration-only/incremental/status.json`。
+- 增量控制台与统计：`migration-only/incremental/console.log`、`migration-only/incremental/summary.json`。
 
-增量脚本已启动等待：只有迁移完整编译退出码为 0、相关源码 SHA-256 与保存版本一致且不存在正在运行的 Ninja，才执行一次原指令。增量前不清理产物、不修改源码；保存前后元数据哈希、mtime、实际任务列表和原始十项 Action 计数。完整编译失败时增量不启动。
+增量启动前已确认完整编译退出码为 0，58 个相关文件的 SHA-256 与保存版本一致，且不存在正在运行的 Ninja。增量前没有清理产物或修改源码；前后元数据哈希、mtime、实际任务列表及原始十项 Action 计数均已保存。
 
-上述路径相对远程备份目录 `/srv/workspace/patch_backups/20261012_migration_clean/`。本轮为清理后的重建，不计作无改动增量。原始十项的耗时与执行次数需在完整构建成功后单独复测。
+上述路径相对远程备份目录 `/srv/workspace/patch_backups/20261012_migration_clean/`。完整编译为清理后的重建，不能当作增量耗时；169.92 秒来自其后单独执行的无改动增量。
+
+## 增量触发与下一阶段
+
+首轮实际日志中的触发根因以目录 mtime 为主：SDK API 声明、JS runtime、HDC 哈希生成、五个 3D shader 生成目录、SELinux 检查、ETS/JS loader 目录。元数据聚合还有两个文件时间戳触发。完整列表见 [root-explanations.txt](evidence/20261013-migration-validation/incremental/root-explanations.txt)。
+
+首轮结束后立即执行的 dry-run 只剩四条本类根因，均围绕 `arkui-plugins` 和 `koala-wrapper` 的生成目录以及 SDK 复制目录。这说明不能将首轮所有目录触发都称为持续问题。dry-run 不运行 Action，也无法替代下一次实际构建的 `restat` 结果。
+
+本阶段没有编译失败需要修补，先保留已通过的纯迁移版本。后续规范性处理应优先核对上述插件生成链的文件级 outputs 和消费者，再单独恢复并复核已归档的 IDL clean 依赖、JSON 生命周期及 JS 生成目录修复。每项保持独立版本，修改后清理对应产物并验证恢复，随后验证无改动增量。
+
+本轮没有执行设备端服务或完整单元测试套件；成功结论限于两个 `make_all` 命令。迁移版 JS 脚本仍保留旧有后台 `wait` 行为，因此整仓退出码不能作为所有内嵌 JS 单测均通过的证据；先前的退出码传播及测试环境补丁仍保存在待修复组。
+
+完整原始日志归档位于本地 `D:/workspace/archives/20261012-migration/migration-validation-results.tar.gz`，SHA-256 为 `f6227fbc12aff7183fdfc6a5aeba252ffd1554d354a4918d0af48219b39c0ca9`，与远程一致。

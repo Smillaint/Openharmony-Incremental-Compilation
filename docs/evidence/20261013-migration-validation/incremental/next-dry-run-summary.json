@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/prebuilts/build-tools/linux-x86/bin/ninja",
+    "-w",
+    "dupbuild=warn",
+    "-C",
+    "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568",
+    "-n",
+    "-dexplain",
+    "make_all"
+  ],
+  "dry_run_only": true,
+  "exit_code": 0,
+  "wall_seconds": 17.902168784290552,
+  "root_explanations": [
+    "ninja explain: output obj/developtools/ace_ets2bundle/arkui-plugins/gen_ui_plugins.stamp older than most recent input gen/developtools/ace_ets2bundle/arkui-plugins (1791864232062494154 vs 1791872142701371967)",
+    "ninja explain: output clang_x64/obj/developtools/ace_ets2bundle/koala-wrapper/gen_sdk_ts_wrapper.stamp older than most recent input clang_x64/gen/developtools/ace_ets2bundle/koala-wrapper (1791864293260511468 vs 1791872142712370893)",
+    "ninja explain: output ohos_ets/build-tools/koala-wrapper older than most recent input clang_x64/gen/developtools/ace_ets2bundle/koala-wrapper (1791864293243513131 vs 1791872142712370893)",
+    "ninja explain: output ohos_ets/build-tools/ui-plugins older than most recent input gen/developtools/ace_ets2bundle/arkui-plugins (1791864232040857791 vs 1791872142701371967)"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "stage": "migration_only",
+  "root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code",
+  "command": [
+    "bash",
+    "./build.sh",
+    "-p",
+    "rk3568",
+    "--build-target",
+    "make_all",
+    "--ninja-args=-dexplain"
+  ],
+  "started": "2026-10-13T12:00:51+0800",
+  "phase": "finished",
+  "clean_path": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out",
+  "clean_complete": true,
+  "exit_code": 0,
+  "wall_seconds": 7968.065962750465,
+  "finished": "2026-10-13T14:13:52+0800",
+  "main_ninja_steps": 125605,
+  "step_types": {
+    "STAMP": 37866,
+    "COPY": 2729,
+    "ACTION": 22848,
+    "AR": 554,
+    "CXX": 43870,
+    "CC": 13955,
+    "LINK": 213,
+    "ASM": 172,
+    "SOLINK": 3232,
+    "RUST": 166
+  },
+  "timing": {
+    "_prebuild_and_preload": 0.01,
+    "_gn": 24.43,
+    "_ninja": 7833.22
+  },
+  "reported_cost_time": [
+    "[OHOS INFO]  Cost Time:  2:12:40"
+  ],
+  "counting_method": "Canonical main Ninja steps; verified unique sequential counters 1..125605 and denominator 125605; nested tool progress excluded"
+}

@@ -1,0 +1,82 @@
+{
+  "out/rk3568/all_parts_info.json": {
+    "size": 196090,
+    "mtime_ns": 1791871903747702137,
+    "sha256": "43d30a8d6b1286ed2394aae15bafa788c38d147f9083a59656d3784bf6a0ac6d"
+  },
+  "out/rk3568/src_sa_infos_tmp.json": {
+    "size": 45329,
+    "mtime_ns": 1791864098986489402,
+    "sha256": "831e9742c8388b9a8a1bed7c5eba45fc16f076b78c5a3654032598f50177b5ab"
+  },
+  "out/rk3568/binary_installed_parts.json": {
+    "size": 2,
+    "mtime_ns": 1791871903582718245,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "out/rk3568/unknown.json": {
+    "size": 478,
+    "mtime_ns": 1791872029811393882,
+    "sha256": "b0e15e273b14a52e09f9637c0f524f04bb46c2e51583d9c9ae12360b014127ce"
+  },
+  "out/rk3568/all_arm64e_parts_host.json": {
+    "size": 4,
+    "mtime_ns": 1791864098988489206,
+    "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05"
+  },
+  "out/rk3568/all_host_symlink.json": {
+    "size": 1087,
+    "mtime_ns": 1791871903924684857,
+    "sha256": "9da4a3683e733d3824a6e4f705646ca43f900b63d838fda7a1dd98e61e0e9315"
+  },
+  "out/rk3568/all_parts_host.json": {
+    "size": 179553,
+    "mtime_ns": 1791871903488727422,
+    "sha256": "4bd2e3f0c9dde2fb9f13a243311bf6d60cb9a99787be37209ac6b41a0a607cc4"
+  },
+  "out/rk3568/src_installed_parts.json": {
+    "size": 180681,
+    "mtime_ns": 1791864098987489304,
+    "sha256": "8f7d964b561677f82fd0d1ed3df5f42c46f51e25df794a7bcf5393cf72a742bf"
+  },
+  "out/rk3568/packages/phone/chipsetsdk_info.json": {
+    "size": 545104,
+    "mtime_ns": 1791872032047175591,
+    "sha256": "be6526dff614d0f4ed7a1f01209c64e724692819347c9b1126ac0a6c0503dd29"
+  },
+  "out/rk3568/packages/phone/system_install_parts.json": {
+    "size": 189329,
+    "mtime_ns": 1791871903911686126,
+    "sha256": "3a8793e5bdb4c590004d9ec7e67599bfb68387e6419dd4794558416ef0bd8536"
+  },
+  "out/rk3568/packages/phone/required_install_module_list.json": {
+    "size": 12228203,
+    "mtime_ns": 1791871906665417265,
+    "sha256": "9edca0618f0a3ce94fde292f8e4542ef12c52a7228561655893d6da25209723a"
+  },
+  "out/rk3568/packages/phone/system_arm64e_module_info.json": {
+    "size": 2,
+    "mtime_ns": 1791871924032721605,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "out/rk3568/packages/phone/NOTICE_module_info.json": {
+    "size": 154,
+    "mtime_ns": 1791871919150198311,
+    "sha256": "b4a3c7436f60317071e08ec00c4bfc0fe6de71c4c3edb065a4f37ed454b16e79"
+  },
+  "out/rk3568/packages/phone/system_install_modules.json": {
+    "size": 1183178,
+    "mtime_ns": 1791871923958728829,
+    "sha256": "c258507a257133d76317acb8e9c20bbb23b50c6674ce23d424aa4bd8dd6dc478"
+  },
+  "out/rk3568/packages/phone/system_module_info.json": {
+    "size": 3372119,
+    "mtime_ns": 1791871924031721702,
+    "sha256": "2d3a52cde0f82c6430697a4931e8916f3be8258ac9e5179d8ad3b3aed563d08c"
+  },
+  "out/rk3568/obj/third_party/jsframework/dist/strip.native.min.js": {
+    "size": 114445,
+    "mtime_ns": 1791864269931793589,
+    "sha256": "0343c11cc643f54b43748d1c579cbc0d2462c732420850e780058e09a8a65116"
+  }
+}

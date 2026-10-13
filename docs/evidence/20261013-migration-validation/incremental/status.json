@@ -1,0 +1,39 @@
+{
+  "source_root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code",
+  "phase": "finished",
+  "scheduled": "2026-10-13T04:16:05.084149+00:00",
+  "command": [
+    "bash",
+    "./build.sh",
+    "-p",
+    "rk3568",
+    "--build-target",
+    "make_all",
+    "--ninja-args=-dexplain"
+  ],
+  "clean_outputs": false,
+  "migration_result": {
+    "stage": "migration_only",
+    "root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code",
+    "command": [
+      "bash",
+      "./build.sh",
+      "-p",
+      "rk3568",
+      "--build-target",
+      "make_all",
+      "--ninja-args=-dexplain"
+    ],
+    "started": "2026-10-13T12:00:51+0800",
+    "phase": "finished",
+    "clean_path": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out",
+    "clean_complete": true,
+    "exit_code": 0,
+    "wall_seconds": 7968.065962750465,
+    "finished": "2026-10-13T14:13:52+0800"
+  },
+  "started": "2026-10-13T06:14:03.154519+00:00",
+  "exit_code": 0,
+  "wall_seconds": 169.9226130656898,
+  "finished": "2026-10-13T06:16:53.078229+00:00"
+}

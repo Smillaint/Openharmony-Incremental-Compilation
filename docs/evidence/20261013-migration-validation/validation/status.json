@@ -1,0 +1,20 @@
+{
+  "stage": "migration_only",
+  "root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code",
+  "command": [
+    "bash",
+    "./build.sh",
+    "-p",
+    "rk3568",
+    "--build-target",
+    "make_all",
+    "--ninja-args=-dexplain"
+  ],
+  "started": "2026-10-13T12:00:51+0800",
+  "phase": "finished",
+  "clean_path": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out",
+  "clean_complete": true,
+  "exit_code": 0,
+  "wall_seconds": 7968.065962750465,
+  "finished": "2026-10-13T14:13:52+0800"
+}

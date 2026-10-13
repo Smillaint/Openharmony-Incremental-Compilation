@@ -1,0 +1,292 @@
+[
+  {
+    "repo": "build",
+    "file": "config/components/ets_frontend/generate_static_abc.py",
+    "sha256": "a6b31517fae52fda2f3eee6913c9ca1edd40d79a769e474d8639670ac2786058"
+  },
+  {
+    "repo": "build",
+    "file": "config/components/idl_tool/idl.gni",
+    "sha256": "d6a9526b4a23f602ab5b584bccafebfa886c553a50ed87e30117bb419e876fd8"
+  },
+  {
+    "repo": "build",
+    "file": "hb/services/loader.py",
+    "sha256": "fc0bc1e2e040c61b60676bbae9a7dbb0e1a4d316d42dfd1830a37beb632d8865"
+  },
+  {
+    "repo": "build",
+    "file": "hb/util/io_util.py",
+    "sha256": "0eefc6bd6fac440103ee3391e32d66bb5f9dc6d1f1a6f416c75d34b670f2d991"
+  },
+  {
+    "repo": "build",
+    "file": "hb/util/loader/load_ohos_build.py",
+    "sha256": "04266503adba46f8eb8a7528ff5e41e7ded99409cdc6a6639f75901dfb170d82"
+  },
+  {
+    "repo": "build",
+    "file": "lite/config/component/lite_component.gni",
+    "sha256": "b190cb49344f87c68ee3ebf1624cb3e93b55f4c0294606f3359d18eefebc2ba2"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/app/app_internal.gni",
+    "sha256": "28a163126b112e09875395a7d39ea7498aafe6d4f2fef3fa0d1c9afdf6cb9a9f"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/common/BUILD.gn",
+    "sha256": "7da0272d4f88a9031af3dc39f03cd0eac8a507862d34ea90472d54e5f4728a8b"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/common/binary_install_info.py",
+    "sha256": "a0797264260aade644347ebcee816ebac816338b6e96a06e8a27c7cc9683cf13"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/common/merge_all_subsystem.py",
+    "sha256": "f1ae500d1daf8e0bd7bf49644de20c14a4f2de036a4d6083dc2c2bdfae58ebd3"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/generate_part_info.py",
+    "sha256": "7587371e91ab75c7351892c387454b63ba795e90cb14c31ade0590cdf8136e78"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/hisysevent/hisysevent_process.py",
+    "sha256": "7c4b18c36fc2188297034acd7f9ad3434b79d9bc5af362691e0d8e02981abd17"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/images/BUILD.gn",
+    "sha256": "ab144c7918d140aa017e4ef4bc71e1c4e9d6af5a4a35628793243fea636d1248"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/images/build_image.py",
+    "sha256": "ddfc1402bfefd6bc0c7c2ff08fdc50e9c8154711142ba8952b6080c846d1a17d"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/notice/collect_module_notice_file.py",
+    "sha256": "66f1e5966db3a30b5c7c3e45c59989b6c76967af9fc2bf7285014e050c3ddc29"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/notice/collect_system_notice_files.py",
+    "sha256": "e0b00d02758a5f055fe48117c09529598d9ef233eb7bc257b5859dce070d415a"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/packages/BUILD.gn",
+    "sha256": "79cbad402a16011a88a3762e65243e5770114fb8e8f75edc45640b700b81f188"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/packages/check_seccomp_library_name.py",
+    "sha256": "b0e4e8f39dc98f719b6c00e3becef38b9b06dfc8b5d43fc8d38d1401c2955510"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/packages/generate_host_symlink.py",
+    "sha256": "2b0f755421a287ef8e90f88abb04ed97c146d7840989f659b0fdca8907d2e7ae"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/packages/modules_install.py",
+    "sha256": "ee5bae5c6476ade3f134121a6a43518c1a71385af5cfb8071d2ad4296057b935"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/packages/parts_install_info.py",
+    "sha256": "9a039b16c6fe0f674b65a0a6c54d4a3b4d5876f210816d3e724f32956a9acfbb"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/packages/process_field_validate.py",
+    "sha256": "3a46c75abfe580301ac923b291d058606c1ab39ba388d29ccf1cd2cf60f8ec3a"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/sa_profile/sa_profile_binary.py",
+    "sha256": "407f10e88047d3d8f84232063f0e7979dda4d6f874c584743abb5c3d54bb3d21"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/sa_profile/sa_profile_merge.py",
+    "sha256": "95bfc9a3131b0db590a170460c6e7272c2aadab5e7834456e9dc7f3d1648aab2"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/sa_profile/sa_profile_source.py",
+    "sha256": "4c14ceabdc1dfb36560d92225c0fa8ea9f2658499ef9153e9a5dfb7a6bd6b62a"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/sa_profile/src_sa_profile_process.py",
+    "sha256": "917e812e8e2575345cd7519ed096c4f1cfc3968a69b2f5669e7fb9c90aa0bf1d"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/sdk/parse_interface_sdk.py",
+    "sha256": "c99cac1271d932cf8ddb4415906493485427468e64a259da4b47a03f370061cf"
+  },
+  {
+    "repo": "build",
+    "file": "scripts/app_sign.py",
+    "sha256": "bb0fecdc61a1588979b1752449a0634abf7f40783af44872342d73958338e99a"
+  },
+  {
+    "repo": "build",
+    "file": "scripts/build_js_assets.py",
+    "sha256": "a2d89eca86a79dbab6ca98697c6fcf218663bd28cb23429e8424ee52100e215a"
+  },
+  {
+    "repo": "build",
+    "file": "scripts/compile_app.py",
+    "sha256": "972a4b101e98ab4f9ba7ac3b72c7e9ef4d0235fde61764bdae24c0bbc4f0ed9c"
+  },
+  {
+    "repo": "build",
+    "file": "scripts/util/build_utils.py",
+    "sha256": "202cf5a5d30a1f7de149732dc5dd4602da43ccdde8c95c6ea9ca0e39306cd039"
+  },
+  {
+    "repo": "build",
+    "file": "scripts/util/file_utils.py",
+    "sha256": "2312917c05b359fd2294de38ab4431fd9079c36328f2d547259795c396e04602"
+  },
+  {
+    "repo": "build",
+    "file": "templates/kernel/linux-6.6/make_ko.sh",
+    "sha256": "5d238ed1f8ccbffa1835f57f0595c91709aa6706deacceaa6cfc04005b15d0c7"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/common/generate_host_info.py",
+    "sha256": "f6a95ea615fe611a7e88221f8837298f021bb6060df9650dc7e001f989678e5a"
+  },
+  {
+    "repo": "build",
+    "file": "ohos/packages/stabilize_json_file.py",
+    "sha256": "6f47761ef90ad4cf958cff02bac20103b20963ec36657ce2d2c0436cf626c4e1"
+  },
+  {
+    "repo": "build",
+    "file": "config/components/idl_tool/idl.py",
+    "sha256": "993c65b037e2ae0864748138254fe239d7d0427ecbd093b6ac7d20ff7a42d2eb"
+  },
+  {
+    "repo": "developtools/packing_tool",
+    "file": "adapter/ohos/Compressor.java",
+    "sha256": "043c0ebda0f57db7cd5c2e46b5bcbed8b07fc0feea9895c1ac9d9e58bab0a759"
+  },
+  {
+    "repo": "third_party/jsframework",
+    "file": "js_framework_build.sh",
+    "sha256": "61e2dd5ff02df1c10c8cd487b7c2645a57dc79b8dd683c38a2aabc76d39e81d7"
+  },
+  {
+    "repo": "third_party/jsframework",
+    "file": "BUILD.gn",
+    "sha256": "32420fc3db8ece21215a298ae7b2e505de0fc28571c0186a033a42ba19059e32"
+  },
+  {
+    "repo": "third_party/jsframework",
+    "file": "test/ut/runtime.ts",
+    "sha256": "47fade18bc96e8f35239a0a7a4b7b4e8182b2d2a47f5c81aa1e0b183915ed96a"
+  },
+  {
+    "repo": "third_party/sane-airscan",
+    "file": "BUILD.gn",
+    "sha256": "568cced6614ba55851c0ea09729c06fec5ea8f82e414052487b443610d7926ef"
+  },
+  {
+    "repo": "third_party/sane-airscan",
+    "file": "patch_install.py",
+    "sha256": "75190b42b923fe8f2abb64c632ef827616edf7b4e96007533fa87092b878b177"
+  },
+  {
+    "repo": "base/security/selinux_adapter",
+    "file": "BUILD.gn",
+    "sha256": "64b21f142cfacb78bd781e76dc75365f3000552cfee6906fdc6a53513619dafb"
+  },
+  {
+    "repo": "device/board/hihope",
+    "file": "rk3568/camera/vdi_impl/v4l2/BUILD.gn",
+    "sha256": "eaeaab6a35dcb8de14a846b0078443fa1dd15f7654d0917533438cdb1cf6f24d"
+  },
+  {
+    "repo": "arkcompiler/ets_frontend",
+    "file": "ets2panda/BUILD.gn",
+    "sha256": "0da45f117d40e23a04280cf9f8241f4227f4fc0bba91e901c63f192ba067d1b5"
+  },
+  {
+    "repo": "arkcompiler/ets_frontend",
+    "file": "ets2panda/driver/build_system/BUILD.gn",
+    "sha256": "2c8896f7d131f06a870504ac6fdcd7022efe164f9ace1df8939959f154bdab5c"
+  },
+  {
+    "repo": "arkcompiler/ets_frontend",
+    "file": "ets2panda/scripts/check_build_system_consistency.py",
+    "sha256": "752254a405170f81b6f9bd241ce2fe924894d8127d26dde0c85fe744a5af559d"
+  },
+  {
+    "repo": "interface/sdk-js",
+    "file": "BUILD.gn",
+    "sha256": "2487cd223c5deb2bc422add32df1085d5fb3e2fe0f5e88809d3b2da29aaa71db"
+  },
+  {
+    "repo": "interface/sdk-js",
+    "file": "process_internal.py",
+    "sha256": "0141ca4cd44b473418c40ee4867cb323308dec93ca1404a70a34fdecab248631"
+  },
+  {
+    "repo": "interface/sdk-js",
+    "file": "remove_internal.py",
+    "sha256": "9f5573fc7b4b7f38bffd345e04f5a96709107e41093f9a73621d3afba3dcb108"
+  },
+  {
+    "repo": "developtools/ace_ets2bundle",
+    "file": "ets1.2/BUILD.gn",
+    "sha256": "24587277a7ec21b8d0a6471ed78bf18d895614a6b40cc54d1fa51332ae27f254"
+  },
+  {
+    "repo": "developtools/ace_ets2bundle",
+    "file": "ets1.2/libarkts/BUILD.gn",
+    "sha256": "04a4f0a00adf2b713a97e289c45c041856b194ae4fc44b769523d9623908d438"
+  },
+  {
+    "repo": "third_party/iptables",
+    "file": "extensions/genInit.py",
+    "sha256": "c825893c6a0f0038568ffd2ba541e2bd59de2b338ec1e10d1f2fc2faaf9be701"
+  },
+  {
+    "repo": "base/account/os_account",
+    "file": "frameworks/osaccount/native/BUILD.gn",
+    "sha256": "b3825ae2439548a665f5ebecea024e3f4b24dbb79531a46f938d2e1742b938e5"
+  },
+  {
+    "repo": "base/inputmethod/imf",
+    "file": "interfaces/inner_api/inputmethod_controller/BUILD.gn",
+    "sha256": "b397a05a6f2e17ca45606140dc6293fffa4eecb91366e4a9ca63cb74516a101b"
+  },
+  {
+    "repo": "base/security/dlp_permission_service",
+    "file": "interfaces/inner_api/dlp_permission/BUILD.gn",
+    "sha256": "62d47c072b7e40de956b21cd42adf20d495f990187b80a1f780281ebddc678a0"
+  },
+  {
+    "repo": "foundation/ability/dmsfwk",
+    "file": "interfaces/innerkits/common/BUILD.gn",
+    "sha256": "4bb21ff56919a432286d123d36aa2254590480aeb3e5eba9c6b18927823955ce"
+  },
+  {
+    "repo": "foundation/multimedia/audio_framework",
+    "file": "services/audio_service/idl/BUILD.gn",
+    "sha256": "da27594750abe096943ddde27a719361e204237be25797466ecbbbe9cfb2890f"
+  }
+]
