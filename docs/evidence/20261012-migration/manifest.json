@@ -1,0 +1,112 @@
+{
+  "build": {
+    "head": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "snapshot": "4da6faea45d74d15b54e6a685af80f7e1237dbae",
+    "files": {
+      "config/components/ets_frontend/generate_static_abc.py": "ready",
+      "config/components/idl_tool/idl.gni": "ready",
+      "hb/services/loader.py": "ready",
+      "hb/util/io_util.py": "ready",
+      "hb/util/loader/load_ohos_build.py": "ready",
+      "lite/config/component/lite_component.gni": "ready",
+      "ohos/app/app_internal.gni": "ready",
+      "ohos/common/BUILD.gn": "ready",
+      "ohos/common/binary_install_info.py": "ready",
+      "ohos/common/merge_all_subsystem.py": "ready",
+      "ohos/generate_part_info.py": "ready",
+      "ohos/hisysevent/hisysevent_process.py": "ready",
+      "ohos/images/BUILD.gn": "ready",
+      "ohos/images/build_image.py": "ready",
+      "ohos/notice/collect_module_notice_file.py": "ready",
+      "ohos/notice/collect_system_notice_files.py": "ready",
+      "ohos/packages/BUILD.gn": "ready",
+      "ohos/packages/check_seccomp_library_name.py": "ready",
+      "ohos/packages/generate_host_symlink.py": "ready",
+      "ohos/packages/modules_install.py": "ready",
+      "ohos/packages/parts_install_info.py": "ready",
+      "ohos/packages/process_field_validate.py": "ready",
+      "ohos/sa_profile/sa_profile_binary.py": "ready",
+      "ohos/sa_profile/sa_profile_merge.py": "ready",
+      "ohos/sa_profile/sa_profile_source.py": "ready",
+      "ohos/sa_profile/src_sa_profile_process.py": "ready",
+      "ohos/sdk/parse_interface_sdk.py": "ready",
+      "scripts/app_sign.py": "ready",
+      "scripts/build_js_assets.py": "ready",
+      "scripts/compile_app.py": "ready",
+      "scripts/util/build_utils.py": "ready",
+      "scripts/util/file_utils.py": "ready",
+      "templates/kernel/linux-6.6/make_ko.sh": "ready",
+      "ohos/common/generate_host_info.py": "ready",
+      "ohos/packages/stabilize_json_file.py": "ready"
+    }
+  },
+  "developtools/packing_tool": {
+    "head": "498ffd5552a076a491a33b5dae6d6b3a014c6096",
+    "snapshot": "9475b9a3309a95792527ff4bcbeab04a60fde15b",
+    "files": {
+      "adapter/ohos/Compressor.java": "ready"
+    }
+  },
+  "third_party/jsframework": {
+    "head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "snapshot": "228572415802e58d3747385b8f6d876b2b51150d",
+    "files": {
+      "js_framework_build.sh": "ready"
+    }
+  },
+  "third_party/sane-airscan": {
+    "head": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+    "snapshot": "be8b03846bc5885f2a71ad7c508dd77957bda27f",
+    "files": {
+      "BUILD.gn": "conflict",
+      "patch_install.py": "conflict"
+    }
+  },
+  "base/security/selinux_adapter": {
+    "head": "f037bb425e08c275b1da27a1de73002e9432cf5c",
+    "snapshot": "fc02313ef2c7e5df7e112fea40925b6e09278f5c",
+    "files": {
+      "BUILD.gn": "conflict"
+    }
+  },
+  "device/board/hihope": {
+    "head": "5d368fb765920c2b1cad41eb86164563461a7074",
+    "snapshot": "b9c3cc8f919c789ff91c05a54bf76820d1f07335",
+    "files": {
+      "rk3568/camera/vdi_impl/v4l2/BUILD.gn": "ready"
+    }
+  },
+  "arkcompiler/ets_frontend": {
+    "head": "c030cb21b2822120dd153b22b3a5a07dd0b7f7dd",
+    "snapshot": "55c5c8e1bf622ebadc4f5a752bd96f6621943489",
+    "files": {
+      "ets2panda/BUILD.gn": "ready",
+      "ets2panda/driver/build_system/BUILD.gn": "ready",
+      "ets2panda/scripts/check_build_system_consistency.py": "ready"
+    }
+  },
+  "interface/sdk-js": {
+    "head": "126ae62423b02302326331bc8390c5aff2f136a3",
+    "snapshot": "206dac676f77bfe8bc216da943fee6fd7c91d847",
+    "files": {
+      "BUILD.gn": "ready",
+      "process_internal.py": "ready",
+      "remove_internal.py": "ready"
+    }
+  },
+  "developtools/ace_ets2bundle": {
+    "head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+    "snapshot": "fd94adbe5aef76c7da2dcc1f0b95e3fad470fb1f",
+    "files": {
+      "ets1.2/BUILD.gn": "ready",
+      "ets1.2/libarkts/BUILD.gn": "conflict"
+    }
+  },
+  "third_party/iptables": {
+    "head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+    "snapshot": "9d61092abf4843f45bdc7b3bf11f23904079ef8e",
+    "files": {
+      "extensions/genInit.py": "ready"
+    }
+  }
+}

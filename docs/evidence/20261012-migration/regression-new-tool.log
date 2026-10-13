@@ -1,0 +1,44 @@
+cmd: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/out/gen/.idl-4df__x4u/usb -c /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/source/IUsbServer.idl -client-enable
+execution_path: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool
+PASS IDL real USB generator equivalence, client header and source-tree immutability
+cmd: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/out/gen/.idl-gu5yrof0/usb -c /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/source/IUsbServer.idl -client-enable
+execution_path: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool
+PASS IDL identical generation preserves every output mtime
+cmd: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/out/gen/.idl-v_kh7qzv/usb -c /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/source/IUsbServer.idl -client-enable
+execution_path: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool
+PASS IDL deleted output recreated without touching unchanged siblings
+PASS IDL recursive imports and generator recorded as file dependencies
+[IDL-GEN]: [ParseTypeDecls:511] [IUsbServer.idl:1:1] error:'invalid' is not expected
+[IDL-GEN]: failed to parse file
+cmd: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/out/gen/.idl-isz_ic48/usb -c /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/source/IUsbServer.idl -client-enable
+execution_path: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool
+PASS IDL generator failure preserves previous complete output set
+cmd: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/out/gen/.idl-2u591zov/usb -c /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/source/IUsbServer.idl -client-enable
+execution_path: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool
+Traceback (most recent call last):
+  File "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/build/config/components/idl_tool/idl.py", line 134, in <module>
+    sys.exit(idl_gen_interface(parse_args()))
+  File "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/build/config/components/idl_tool/idl.py", line 90, in idl_gen_interface
+    raise RuntimeError('IDL did not generate declared output: {}'.format(output))
+RuntimeError: IDL did not generate declared output: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/out/gen/usb/missing.h
+PASS IDL undeclared generation mismatch fails before publishing
+cmd: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/out/gen/.idl-cjh_g2a5/usb -c /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/source/IUsbServer.idl -client-enable
+execution_path: /srv/workspace/patch_backups/20261012_migration_clean/regressions/idl-g27i66l7/tool
+PASS IDL full generated directory clean recovers from source inputs
+/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/third_party/sane-airscan/patches/oh-transplant.patch:94: trailing whitespace.
+    
+/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/third_party/sane-airscan/patches/oh-transplant.patch:241: trailing whitespace.
+ 
+/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/third_party/sane-airscan/patches/oh-transplant.patch:401: trailing whitespace.
+    
+/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/third_party/sane-airscan/patches/oh-transplant.patch:403: trailing whitespace.
+    
+/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/third_party/sane-airscan/patches/oh-transplant.patch:509: trailing whitespace.
+    
+warning: squelched 12 whitespace errors
+warning: 17 lines add whitespace errors.
+PASS airscan all 8 upstream patches match independent git apply
+PASS airscan all 34 output contents and mtimes stable
+PASS airscan missing header restored without changing siblings
+PASS airscan clean rebuild leaves all source files unchanged
+PASS JSON unchanged preservation, deleted-file recovery and changed-content update

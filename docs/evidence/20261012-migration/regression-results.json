@@ -1,0 +1,16 @@
+{
+  "passed": [
+    "IDL real USB generator equivalence, client header and source-tree immutability",
+    "IDL identical generation preserves every output mtime",
+    "IDL deleted output recreated without touching unchanged siblings",
+    "IDL recursive imports and generator recorded as file dependencies",
+    "IDL generator failure preserves previous complete output set",
+    "IDL undeclared generation mismatch fails before publishing",
+    "IDL full generated directory clean recovers from source inputs",
+    "airscan all 8 upstream patches match independent git apply",
+    "airscan all 34 output contents and mtimes stable",
+    "airscan missing header restored without changing siblings",
+    "airscan clean rebuild leaves all source files unchanged",
+    "JSON unchanged preservation, deleted-file recovery and changed-content update"
+  ]
+}

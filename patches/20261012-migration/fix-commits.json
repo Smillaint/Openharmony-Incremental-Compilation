@@ -1,0 +1,353 @@
+[
+  {
+    "repo": "build",
+    "head": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "commit": "c7447b5764801439a6cc8cb5d5a80457c5f3fdc2",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "config/components/ets_frontend/generate_static_abc.py": {
+        "sha256": "a6b31517fae52fda2f3eee6913c9ca1edd40d79a769e474d8639670ac2786058",
+        "mode": "0o755"
+      },
+      "config/components/idl_tool/idl.gni": {
+        "sha256": "f1ff12e5e040581e30183a5e9d08da5cb2ffa4b53c2819a47be06aadc2f5710f",
+        "mode": "0o644"
+      },
+      "config/components/idl_tool/idl.py": {
+        "sha256": "ee7202a7e4c593f51a62a1ded6077f266b51b8c59748db2508db75e0e05fca58",
+        "mode": "0o755"
+      },
+      "hb/services/loader.py": {
+        "sha256": "bc7f912774d599383d422654d4bc1ed8fdeeac64202b06587194370e38ab8dcd",
+        "mode": "0o644"
+      },
+      "hb/util/io_util.py": {
+        "sha256": "0eefc6bd6fac440103ee3391e32d66bb5f9dc6d1f1a6f416c75d34b670f2d991",
+        "mode": "0o755"
+      },
+      "hb/util/loader/load_ohos_build.py": {
+        "sha256": "04266503adba46f8eb8a7528ff5e41e7ded99409cdc6a6639f75901dfb170d82",
+        "mode": "0o644"
+      },
+      "lite/config/component/lite_component.gni": {
+        "sha256": "b190cb49344f87c68ee3ebf1624cb3e93b55f4c0294606f3359d18eefebc2ba2",
+        "mode": "0o644"
+      },
+      "ohos/app/app_internal.gni": {
+        "sha256": "28a163126b112e09875395a7d39ea7498aafe6d4f2fef3fa0d1c9afdf6cb9a9f",
+        "mode": "0o644"
+      },
+      "ohos/common/BUILD.gn": {
+        "sha256": "7da0272d4f88a9031af3dc39f03cd0eac8a507862d34ea90472d54e5f4728a8b",
+        "mode": "0o755"
+      },
+      "ohos/common/binary_install_info.py": {
+        "sha256": "a0797264260aade644347ebcee816ebac816338b6e96a06e8a27c7cc9683cf13",
+        "mode": "0o755"
+      },
+      "ohos/common/generate_host_info.py": {
+        "sha256": "f6a95ea615fe611a7e88221f8837298f021bb6060df9650dc7e001f989678e5a",
+        "mode": "0o755"
+      },
+      "ohos/common/merge_all_subsystem.py": {
+        "sha256": "f1ae500d1daf8e0bd7bf49644de20c14a4f2de036a4d6083dc2c2bdfae58ebd3",
+        "mode": "0o755"
+      },
+      "ohos/generate_part_info.py": {
+        "sha256": "7587371e91ab75c7351892c387454b63ba795e90cb14c31ade0590cdf8136e78",
+        "mode": "0o755"
+      },
+      "ohos/hisysevent/hisysevent_process.py": {
+        "sha256": "7c4b18c36fc2188297034acd7f9ad3434b79d9bc5af362691e0d8e02981abd17",
+        "mode": "0o755"
+      },
+      "ohos/images/BUILD.gn": {
+        "sha256": "ab144c7918d140aa017e4ef4bc71e1c4e9d6af5a4a35628793243fea636d1248",
+        "mode": "0o644"
+      },
+      "ohos/images/build_image.py": {
+        "sha256": "ddfc1402bfefd6bc0c7c2ff08fdc50e9c8154711142ba8952b6080c846d1a17d",
+        "mode": "0o755"
+      },
+      "ohos/notice/collect_module_notice_file.py": {
+        "sha256": "66f1e5966db3a30b5c7c3e45c59989b6c76967af9fc2bf7285014e050c3ddc29",
+        "mode": "0o755"
+      },
+      "ohos/notice/collect_system_notice_files.py": {
+        "sha256": "e0b00d02758a5f055fe48117c09529598d9ef233eb7bc257b5859dce070d415a",
+        "mode": "0o755"
+      },
+      "ohos/packages/BUILD.gn": {
+        "sha256": "79cbad402a16011a88a3762e65243e5770114fb8e8f75edc45640b700b81f188",
+        "mode": "0o644"
+      },
+      "ohos/packages/check_seccomp_library_name.py": {
+        "sha256": "b0e4e8f39dc98f719b6c00e3becef38b9b06dfc8b5d43fc8d38d1401c2955510",
+        "mode": "0o755"
+      },
+      "ohos/packages/generate_host_symlink.py": {
+        "sha256": "2b0f755421a287ef8e90f88abb04ed97c146d7840989f659b0fdca8907d2e7ae",
+        "mode": "0o755"
+      },
+      "ohos/packages/modules_install.py": {
+        "sha256": "ee5bae5c6476ade3f134121a6a43518c1a71385af5cfb8071d2ad4296057b935",
+        "mode": "0o755"
+      },
+      "ohos/packages/parts_install_info.py": {
+        "sha256": "9a039b16c6fe0f674b65a0a6c54d4a3b4d5876f210816d3e724f32956a9acfbb",
+        "mode": "0o755"
+      },
+      "ohos/packages/process_field_validate.py": {
+        "sha256": "3a46c75abfe580301ac923b291d058606c1ab39ba388d29ccf1cd2cf60f8ec3a",
+        "mode": "0o755"
+      },
+      "ohos/packages/stabilize_json_file.py": {
+        "sha256": "6f47761ef90ad4cf958cff02bac20103b20963ec36657ce2d2c0436cf626c4e1",
+        "mode": "0o755"
+      },
+      "ohos/sa_profile/sa_profile_binary.py": {
+        "sha256": "407f10e88047d3d8f84232063f0e7979dda4d6f874c584743abb5c3d54bb3d21",
+        "mode": "0o755"
+      },
+      "ohos/sa_profile/sa_profile_merge.py": {
+        "sha256": "95bfc9a3131b0db590a170460c6e7272c2aadab5e7834456e9dc7f3d1648aab2",
+        "mode": "0o755"
+      },
+      "ohos/sa_profile/sa_profile_source.py": {
+        "sha256": "4c14ceabdc1dfb36560d92225c0fa8ea9f2658499ef9153e9a5dfb7a6bd6b62a",
+        "mode": "0o755"
+      },
+      "ohos/sa_profile/src_sa_profile_process.py": {
+        "sha256": "917e812e8e2575345cd7519ed096c4f1cfc3968a69b2f5669e7fb9c90aa0bf1d",
+        "mode": "0o755"
+      },
+      "ohos/sdk/parse_interface_sdk.py": {
+        "sha256": "c99cac1271d932cf8ddb4415906493485427468e64a259da4b47a03f370061cf",
+        "mode": "0o755"
+      },
+      "scripts/app_sign.py": {
+        "sha256": "bb0fecdc61a1588979b1752449a0634abf7f40783af44872342d73958338e99a",
+        "mode": "0o755"
+      },
+      "scripts/build_js_assets.py": {
+        "sha256": "a2d89eca86a79dbab6ca98697c6fcf218663bd28cb23429e8424ee52100e215a",
+        "mode": "0o755"
+      },
+      "scripts/compile_app.py": {
+        "sha256": "972a4b101e98ab4f9ba7ac3b72c7e9ef4d0235fde61764bdae24c0bbc4f0ed9c",
+        "mode": "0o755"
+      },
+      "scripts/util/build_utils.py": {
+        "sha256": "202cf5a5d30a1f7de149732dc5dd4602da43ccdde8c95c6ea9ca0e39306cd039",
+        "mode": "0o755"
+      },
+      "scripts/util/file_utils.py": {
+        "sha256": "2312917c05b359fd2294de38ab4431fd9079c36328f2d547259795c396e04602",
+        "mode": "0o755"
+      },
+      "templates/kernel/linux-6.6/make_ko.sh": {
+        "sha256": "5d238ed1f8ccbffa1835f57f0595c91709aa6706deacceaa6cfc04005b15d0c7",
+        "mode": "0o755"
+      }
+    },
+    "patch_sha256": "cbd841f13f82fa7e3b65f63c4460906942344e77bc52fea77c6b88f5d8f20e04"
+  },
+  {
+    "repo": "developtools/packing_tool",
+    "head": "498ffd5552a076a491a33b5dae6d6b3a014c6096",
+    "commit": "74c38afb244e92038985486743c7eebd0e7c198a",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "adapter/ohos/Compressor.java": {
+        "sha256": "043c0ebda0f57db7cd5c2e46b5bcbed8b07fc0feea9895c1ac9d9e58bab0a759",
+        "mode": "0o644"
+      }
+    },
+    "patch_sha256": "55455a758e13c54c3c6bfc9319ad56bee4cf8b59aed6878dc2159495b14195f3"
+  },
+  {
+    "repo": "third_party/jsframework",
+    "head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "commit": "9c7299fb8a2855b4c0e6264642a38025b6bdfc34",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "js_framework_build.sh": {
+        "sha256": "13d93744e1076f36f2b55bf03acc78dc51e3d86903f09fd9adaff5a299a25b04",
+        "mode": "0o755"
+      }
+    },
+    "patch_sha256": "a7a835fba33b7eb461d902b8ac54189447fa4d882a57b57b9f316ecc080f4681"
+  },
+  {
+    "repo": "third_party/sane-airscan",
+    "head": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+    "commit": "07827cc4dd77b5fc0dfc4829f8b0fc619a3fbe7a",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "BUILD.gn": {
+        "sha256": "568cced6614ba55851c0ea09729c06fec5ea8f82e414052487b443610d7926ef",
+        "mode": "0o644"
+      },
+      "patch_install.py": {
+        "sha256": "75190b42b923fe8f2abb64c632ef827616edf7b4e96007533fa87092b878b177",
+        "mode": "0o755"
+      }
+    },
+    "patch_sha256": "9de04a34c5ccf30875b7c60a430076f2a899ffc77976e4fd1977d640a9f026e1"
+  },
+  {
+    "repo": "base/security/selinux_adapter",
+    "head": "f037bb425e08c275b1da27a1de73002e9432cf5c",
+    "unchanged": true
+  },
+  {
+    "repo": "device/board/hihope",
+    "head": "5d368fb765920c2b1cad41eb86164563461a7074",
+    "commit": "38318a4151325197c166d39ca5e1c42163e252fa",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "rk3568/camera/vdi_impl/v4l2/BUILD.gn": {
+        "sha256": "eaeaab6a35dcb8de14a846b0078443fa1dd15f7654d0917533438cdb1cf6f24d",
+        "mode": "0o755"
+      }
+    },
+    "patch_sha256": "f664b6b28739fb94a7e8646037dbdd69b93da7f54897f2968f183d4d1bda262d"
+  },
+  {
+    "repo": "arkcompiler/ets_frontend",
+    "head": "c030cb21b2822120dd153b22b3a5a07dd0b7f7dd",
+    "commit": "5906bb586a905c583096852cecde47a455841044",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "ets2panda/BUILD.gn": {
+        "sha256": "0da45f117d40e23a04280cf9f8241f4227f4fc0bba91e901c63f192ba067d1b5",
+        "mode": "0o644"
+      },
+      "ets2panda/driver/build_system/BUILD.gn": {
+        "sha256": "2c8896f7d131f06a870504ac6fdcd7022efe164f9ace1df8939959f154bdab5c",
+        "mode": "0o644"
+      },
+      "ets2panda/scripts/check_build_system_consistency.py": {
+        "sha256": "752254a405170f81b6f9bd241ce2fe924894d8127d26dde0c85fe744a5af559d",
+        "mode": "0o755"
+      }
+    },
+    "patch_sha256": "6397d97cd83102a18ace226cb9b617d4266534d0e923db4ebb345a384b65d4f7"
+  },
+  {
+    "repo": "interface/sdk-js",
+    "head": "126ae62423b02302326331bc8390c5aff2f136a3",
+    "commit": "64e82716e41c5363bbda8e85bdbaab211bf626b4",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "BUILD.gn": {
+        "sha256": "2487cd223c5deb2bc422add32df1085d5fb3e2fe0f5e88809d3b2da29aaa71db",
+        "mode": "0o644"
+      },
+      "process_internal.py": {
+        "sha256": "0141ca4cd44b473418c40ee4867cb323308dec93ca1404a70a34fdecab248631",
+        "mode": "0o755"
+      },
+      "remove_internal.py": {
+        "sha256": "9f5573fc7b4b7f38bffd345e04f5a96709107e41093f9a73621d3afba3dcb108",
+        "mode": "0o755"
+      }
+    },
+    "patch_sha256": "0fd3adc9b39f536d648bee6e4c9c1aa8cb9162ef2af78c184dfebe07f6228eea"
+  },
+  {
+    "repo": "developtools/ace_ets2bundle",
+    "head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+    "commit": "53aae5d4dbd1bdeaac3a103fae815c8ff7a3fdd0",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "ets1.2/BUILD.gn": {
+        "sha256": "24587277a7ec21b8d0a6471ed78bf18d895614a6b40cc54d1fa51332ae27f254",
+        "mode": "0o644"
+      },
+      "ets1.2/libarkts/BUILD.gn": {
+        "sha256": "04a4f0a00adf2b713a97e289c45c041856b194ae4fc44b769523d9623908d438",
+        "mode": "0o644"
+      }
+    },
+    "patch_sha256": "8da1026fd82ae21056920f8d64f21a8ef1238bd0abbb3bee3897e3fbf4bafd6b"
+  },
+  {
+    "repo": "third_party/iptables",
+    "head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+    "commit": "a3409b7cb97ae74a8659b61c57fb9e2cac4735fc",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "extensions/genInit.py": {
+        "sha256": "c825893c6a0f0038568ffd2ba541e2bd59de2b338ec1e10d1f2fc2faaf9be701",
+        "mode": "0o755"
+      }
+    },
+    "patch_sha256": "58cc0382aba63fb3373c6d3233018fb3ce866ef119c9049acfa27249a09aff42"
+  },
+  {
+    "repo": "base/account/os_account",
+    "head": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+    "commit": "0935b8a545ca0ec5ce2352d80e9b259ae95b99bb",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "frameworks/osaccount/native/BUILD.gn": {
+        "sha256": "7aa25b83dcd1d5a2568928f7d6ea12d46e3dd194cdcf4b5b803625a70bd67b60",
+        "mode": "0o644"
+      }
+    },
+    "patch_sha256": "21d4479a1f46c78bae8ba68428384091a45ebdad3af9a36766fa0226559a09a4"
+  },
+  {
+    "repo": "base/inputmethod/imf",
+    "head": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+    "commit": "a88fc8bc308ee2a20bd5ad65f02896e08df77976",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "interfaces/inner_api/inputmethod_controller/BUILD.gn": {
+        "sha256": "37c0df00e4495d94cc1c5cebee8c763afe84bfb57118a2210dd95ff80769bc60",
+        "mode": "0o644"
+      }
+    },
+    "patch_sha256": "cae27c237eba2761016cac712c7d5bab8757b16327114b1d4a4753f9e9262ffa"
+  },
+  {
+    "repo": "base/security/dlp_permission_service",
+    "head": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+    "commit": "44ca525b0ee74e43bd4bd162ed93214a6c6f5d20",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "interfaces/inner_api/dlp_permission/BUILD.gn": {
+        "sha256": "23c46bba8314d9d32a6f770d10b2e34ee798b2b6d8e73bfbb1eacac43447af2b",
+        "mode": "0o644"
+      }
+    },
+    "patch_sha256": "84bdee05a5a8132b0b9dc6f9cb84173b91de86d1d22acf7d81717cc1e0b054f0"
+  },
+  {
+    "repo": "foundation/ability/dmsfwk",
+    "head": "aa1b0347b10700d761def383c08749420dd3f71a",
+    "commit": "0efba33df1690fd920ae51dda820ecfbe68ffc4d",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "interfaces/innerkits/common/BUILD.gn": {
+        "sha256": "e9cf7ba87d4d2c4bef992987335b347968801c469a11d2550862c4fb9c7c076a",
+        "mode": "0o644"
+      }
+    },
+    "patch_sha256": "2c5be643915059ca7980a9abc6969d036091a6fd379afa08c52f5e61aee851ee"
+  },
+  {
+    "repo": "foundation/multimedia/audio_framework",
+    "head": "d128a212e695de931d425fba7c64ebd591de96bf",
+    "commit": "083a055431bac722d1ad10f5cc07a24c38de6001",
+    "branch": "refs/heads/fix/incremental-clean-20261012",
+    "files": {
+      "services/audio_service/idl/BUILD.gn": {
+        "sha256": "535f48cc27cc3bf92edb24ff0270f8d1d4f1f32b653f8e6814a343d306b4315e",
+        "mode": "0o644"
+      }
+    },
+    "patch_sha256": "134f7606507897ba2e48ac9b6ba993f4faf5e034243ec83b3d8f4f72cc06bc06"
+  }
+]

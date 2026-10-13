@@ -1,0 +1,13 @@
+diff --git a/frameworks/osaccount/native/BUILD.gn b/frameworks/osaccount/native/BUILD.gn
+index 7147afdf9..20408448f 100644
+--- a/frameworks/osaccount/native/BUILD.gn
++++ b/frameworks/osaccount/native/BUILD.gn
+@@ -16,6 +16,8 @@ import("//build/ohos.gni")
+ import("../../../os_account.gni")
+ 
+ idl_gen_interface("frameworks_osaccount_interface") {
++  sources_callback = [ "IDomainAccountCallback.idl" ]
++  sources_common = [ "DomainAccountIpcData.idl" ]
+   sources = [
+     "IOsAccount.idl",
+     "IOsAccountEvent.idl",

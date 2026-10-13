@@ -1,0 +1,43 @@
+{
+  "phase": "passed",
+  "results": [
+    {
+      "name": "initial",
+      "exit_code": 0,
+      "seconds": 80.08335957117379,
+      "no_work": false
+    },
+    {
+      "name": "unchanged",
+      "exit_code": 0,
+      "seconds": 18.1094639506191,
+      "no_work": true
+    },
+    {
+      "name": "one_output_per_rule_removed",
+      "exit_code": 0,
+      "seconds": 19.791960545815527,
+      "no_work": false
+    },
+    {
+      "name": "unchanged_after_partial_clean",
+      "exit_code": 0,
+      "seconds": 17.67516891285777,
+      "no_work": true
+    },
+    {
+      "name": "all_outputs_and_idl_tool_removed",
+      "exit_code": 0,
+      "seconds": 21.612702263519168,
+      "no_work": false
+    },
+    {
+      "name": "unchanged_after_full_clean",
+      "exit_code": 0,
+      "seconds": 28.857307884842157,
+      "no_work": true
+    }
+  ],
+  "rule_count": 141,
+  "output_count": 1560
+}

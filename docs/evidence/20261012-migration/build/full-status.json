@@ -1,0 +1,1 @@
+{"command": ["bash", "./build.sh", "--product-name", "rk3568", "--ccache", "--build-target", "make_all"], "phase": "running", "started": "2026-10-13T11:11:17+0800"}

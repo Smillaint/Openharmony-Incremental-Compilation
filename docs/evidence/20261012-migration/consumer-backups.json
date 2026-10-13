@@ -1,0 +1,32 @@
+[
+  {
+    "repo": "base/account/os_account",
+    "head": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+    "snapshot": "57c57f8960c125668ad0a5646ac8fe4d1e54b93b",
+    "status": ""
+  },
+  {
+    "repo": "base/inputmethod/imf",
+    "head": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+    "snapshot": "0afbe035eedebaf748e0099e8af8f28f2764dbd0",
+    "status": ""
+  },
+  {
+    "repo": "base/security/dlp_permission_service",
+    "head": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+    "snapshot": "3ade0bf99815371e218d49a15ebe3acf3834072d",
+    "status": ""
+  },
+  {
+    "repo": "foundation/ability/dmsfwk",
+    "head": "aa1b0347b10700d761def383c08749420dd3f71a",
+    "snapshot": "33a5cb282cc3a2cfda82132a2bbb3d1de0e05606",
+    "status": ""
+  },
+  {
+    "repo": "foundation/multimedia/audio_framework",
+    "head": "d128a212e695de931d425fba7c64ebd591de96bf",
+    "snapshot": "5e50a440cb67e728ec722c45d994110ef5dea47e",
+    "status": ""
+  }
+]

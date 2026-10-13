@@ -1,0 +1,989 @@
+[
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/accesscontrol/sandbox_manager/frameworks/sandbox_manager/ISandboxManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/account_iam/IAccountIAM.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/account_iam/IGetCredInfoCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/account_iam/IGetEnrolledIdCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/account_iam/IGetSetPropCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/account_iam/IIDMCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/account_iam/IPreRemoteAuthCallback.idl",
+    "exit_code": 0,
+    "declared_count": 30,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/appaccount/native/IAppAccount.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/appaccount/native/IAppAccountAuthenticator.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/appaccount/native/IAppAccountAuthenticatorCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/appaccount/native/IAppAccountEvent.idl",
+    "exit_code": 0,
+    "declared_count": 20,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/authorization/IAdminAuthorizationCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/authorization/IAuthRemoteObject.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/authorization/IAuthorization.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/authorization/IAuthorizationCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/authorization/IConnectAbilityCallback.idl",
+    "exit_code": 0,
+    "declared_count": 25,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/domain_account/IDomainAccount.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/domain_account/IDomainAccountCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/domain_account/IDomainAccountPlugin.idl",
+    "exit_code": 0,
+    "declared_count": 17,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/ohosaccount/native/IAccount.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/ohosaccount/native/IDistributedAccountEvent.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/os_account_subspace/IOsAccountSubProfile.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/os_account_subspace/IOsAccountSubProfileEvent.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/osaccount/native/IOsAccount.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/osaccount/native/IOsAccountEvent.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/osaccount/native/IOsAccountStateReplyCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/account/os_account/frameworks/osaccount/core/IOsAccountConstraintEvent.idl",
+    "exit_code": 0,
+    "declared_count": 20,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/customization/enterprise_device_management/services/idl/IEnterpriseDeviceMgrIdl.idl",
+    "exit_code": 0,
+    "declared_count": 9,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/global/font_manager/service/IFontService.idl",
+    "exit_code": 0,
+    "declared_count": 17,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/global/i18n/services/II18nServiceAbility.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hidumper/services/IHidumperCpuService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hisysevent/adapter/native/idl/ISysEventCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hisysevent/adapter/native/idl/ISysEventService.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hiview/adapter/plugins/eventservice/service/idl/ISysEventCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hiview/adapter/plugins/eventservice/service/idl/ISysEventService.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hiview/adapter/service/client/IHiviewServiceAbility.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hiview/adapter/service/client/IRequestTraceCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hiview/adapter/service/client/IRequestUiTreeCallback.idl",
+    "exit_code": 0,
+    "declared_count": 15,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hiview/plugins/faultlogger/framework/native/extension/zidl/IFaultLogExt.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hiview/plugins/performance/xperf_service/interfaces/inner_api/xperfservice_client/IEventCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/hiviewdfx/hiview/plugins/performance/xperf_service/interfaces/inner_api/xperfservice_client/IXperfService.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_ability/IInputControlChannel.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_controller/IInputDataChannel.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_ability/IInputMethodCore.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_ability/IInputMethodExtensionAbility.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_controller/IInputMethodSystemAbility.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_controller/IKeyEventConsumer.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_controller/ISystemCmdChannel.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_controller/IInputClient.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_ability/IInputMethodAgent.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/inputmethod/imf/frameworks/native/inputmethod_controller/IOnInputStopNotify.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/location/location/frameworks/native/locator_sdk/ILocatorService.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/msdp/device_status/intention/ipc/tunnel/IIntention.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/common_event_service/frameworks/core/ICommonEvent.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/common_event_service/frameworks/core/IEventReceive.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/common_event_service/frameworks/extension/IStaticSubscriber.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/ans/IAnsDialogCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/ans/IAnsManager.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/ans/IAnsOperationCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/ans/IAnsResultDataSynchronizer.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/ans/IAnsSubscriber.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/ans/IAnsSubscriberLocalLiveView.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/ans/IBadgeQueryCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/ans/ISwingCallBack.idl",
+    "exit_code": 0,
+    "declared_count": 40,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/extension/INotificationSubscriber.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/reminder/IReminderAgentService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/notification/distributed_notification_service/frameworks/reminder/IReminderStateCallback.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/powermgr/battery_manager/services/zidl/IBatterySrv.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/powermgr/battery_statistics/services/IBatteryStats.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/powermgr/display_manager/state_manager/service/IDisplayPowerMgr.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/powermgr/power_manager/interfaces/inner_api/IPowerMgr.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/powermgr/thermal_manager/services/zidl/IThermalSrv.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/print/print_fwk/frameworks/ISaneBackends/ISaneBackends.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/access_token/interfaces/inner_api/el5filekeymanager/El5FilekeyManagerInterface.idl",
+    "exit_code": 0,
+    "declared_count": 12,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/access_token/services/accesstokenmanager/idl/IAccessTokenManager.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/access_token/services/privacymanager/idl/IPrivacyManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/asset/frameworks/secure_access_fence/inner_api/ipc/ISecureAccessFence.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/dlp_permission_service/interfaces/inner_api/dlp_permission/IDlpPermissionService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/huks/services/huks_standard/huks_service/extension/ukey/common/IHuksAccessExtBase.idl",
+    "exit_code": 0,
+    "declared_count": 9,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/security_component_manager/services/security_component_service/sa/ISecCompService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/security_guard/services/data_collect/idl/AuthEventSession.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/security_guard/services/data_collect/idl/DataCollectManagerIdl.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/security/security_guard/services/risk_classify/idl/RiskAnalysisManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/sensors/miscdevice/frameworks/native/vibrator/all/IMiscdeviceService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/sensors/sensor/frameworks/native/ISensorService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/startup/init/interfaces/innerkits/IDeviceInfo.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/startup/init/services/param/watcher/IWatcherManager.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/telephony/cellular_data/frameworks/native/ICellularDataManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/theme/wallpaper_mgr/frameworks/native/IWallpaperService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/time/time_service/services/ITimeService.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/update/sys_installer/interfaces/innerkits/ipc_client/ISysInstaller.idl",
+    "exit_code": 0,
+    "declared_count": 12,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/update/updateservice/interfaces/inner_api/engine/IUpdateService.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/update/updateservice/interfaces/inner_api/engine/IUpdateService.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/usb/usb_manager/interfaces/innerkits/IUsbServer.idl",
+    "exit_code": 0,
+    "declared_count": 17,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/useriam/companion_device_auth/frameworks/native/ipc/idl/ICompanionDeviceAuth.idl",
+    "exit_code": 0,
+    "declared_count": 42,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/useriam/user_auth_framework/frameworks/native/ipc/idl/ICoAuth.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/useriam/user_auth_framework/frameworks/native/ipc/idl/IUserAuth.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/useriam/user_auth_framework/frameworks/native/ipc/idl/IUserIdm.idl",
+    "exit_code": 0,
+    "declared_count": 87,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/web/webview/sa/app_fwk_update/IAppFwkUpdateService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/web/webview/sa/web_native_messaging/IWebNativeMessagingService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/base/web/webview/sa/web_native_messaging/IWebNativeMessagingService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/domains/game/game_controller_framework/frameworks/native/IGameControllerServerInterface.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/drivers/external_device_manager/interfaces/innerkits/IDriverExtMgr.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/ability_runtime/agent_runtime_framework/interfaces/inner_api/IAgentManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/ability_runtime/cli_tool_framework/interfaces/cli_tool/ICliToolManager.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/ability_runtime/cli_tool_framework/interfaces/cli_tool/ICliToolManagerScheduler.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/ability_runtime/cli_tool_framework/interfaces/cli_tool/ICliHookInterface.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/ability_runtime/cli_tool_framework/interfaces/cli_tool/IFunctionHookInterface.idl",
+    "exit_code": 0,
+    "declared_count": 22,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/ability_runtime/interfaces/inner_api/quick_fix/IQuickFixManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/ability_runtime/interfaces/inner_api/uri_permission/IUriPermissionManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/ability_runtime/service_router_framework/interfaces/inner_api/IServiceRouterMgr.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/dmsfwk/interfaces/innerkits/common/IDistributedAbilityManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/form_fwk/ipc_idl_gen/IFormHostDelegate.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/ability/form_fwk/ipc_idl_gen/IFormProviderDelegate.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/arkui/ace_engine/interfaces/inner_api/ui_service_manager/IUIServiceMgrNew.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/arkui/ace_engine/interfaces/inner_api/ui_service_manager/IUIServiceNew.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/arkui/ui_appearance/services/IUiAppearanceAbility.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/barrierfree/accessibility/common/interface/IAccessibleAbilityManagerService.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/bundlemanager/bundle_framework/interfaces/inner_api/appexecfwk_core/IBundleMgrExt.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/bundlemanager/bundle_framework/interfaces/inner_api/appexecfwk_core/IVerifyManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/fusion_connectivity/fusion_ranging/idl/IFusionRanging.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/fusion_connectivity/partner_agent/idl/IPartnerAgentExtension.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/fusion_connectivity/partner_agent/idl/IPartnerDeviceAgent.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/netmanager_base/interfaces/innerkits/netstatsclient/INetStatsService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/netmanager_ext/interfaces/innerkits/ethernetclient/IEthernetService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/netmanager_ext/interfaces/innerkits/mdnsclient/IMdnsService.idl",
+    "exit_code": 0,
+    "declared_count": 20,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/netmanager_ext/interfaces/innerkits/netshareclient/INetworkShareService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/netmanager_ext/interfaces/innerkits/netvpnclient/INetworkVpnService.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/netmanager_ext/interfaces/innerkits/wearabledistributednetclient/IWearableDistributedNet.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/wifi/wifi/frameworks/native/IWifiHotspot.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/wifi/wifi/frameworks/native/IWifiHotspotMgr.idl",
+    "exit_code": 0,
+    "declared_count": 12,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/wifi/wifi/frameworks/native/IWifiScan.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/communication/wifi/wifi/frameworks/native/IWifiScanMgr.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/deviceprofile/device_info_manager/common/IBusinessCallback.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/distributeddatamgr/pasteboard/services/IPasteboardClientDeathObserver.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/distributeddatamgr/pasteboard/services/IPasteboardService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/distributeddatamgr/pasteboard/services/IPasteboardSignal.idl",
+    "exit_code": 0,
+    "declared_count": 17,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/distributedhardware/distributed_hardware_fwk/interfaces/inner_kits/IAvTransControlCenterCallback.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/app_file_service/services/backup_sa/IExtension.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/app_file_service/services/backup_sa/IService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/app_file_service/services/backup_sa/IServiceReverse.idl",
+    "exit_code": 0,
+    "declared_count": 29,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/dfs_service/services/clouddiskservice/ICloudDiskService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/dfs_service/services/cloudsyncservice/ICloudSyncService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/disk_manager/interfaces/innerkits/IDiskManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/storage_service/services/storage_manager/IStorageManager.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/storage_service/services/storage_daemon/IStorageDaemon.idl",
+    "exit_code": 0,
+    "declared_count": 10,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/user_file_service/interfaces/inner_api/file_access/IFileAccessExtBase.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/filemanagement/user_file_service/services/IFileAccessServiceBase.idl",
+    "exit_code": 0,
+    "declared_count": 12,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IAudioPolicyClient.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IStandardAudioAnahsManagerListener.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IStandardAudioPolicyManagerListener.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IStandardAudioRoutingManagerListener.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IStandardAudioZoneClient.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IStandardClientTracker.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IStandardSleAudioOperationCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IVADeviceController.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IVAInputStream.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/ILoopbackCallback.idl",
+    "exit_code": 0,
+    "declared_count": 50,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IAudioPolicy.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/ILoopback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IVADeviceBroker.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_policy/idl/IVAStream.idl",
+    "exit_code": 0,
+    "declared_count": 20,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IAudioEngineCallbackHandle.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IAudioWorkgroupCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IIpcStreamListener.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IProcessCb.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IStandardAudioServerManagerListener.idl",
+    "exit_code": 0,
+    "declared_count": 25,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IAudioProcess.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/ICoreServiceProviderIpc.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IIpcStream.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IPolicyProviderIpc.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IStandardAudioService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_service/idl/IIpcOfflineStream.idl",
+    "exit_code": 0,
+    "declared_count": 32,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_suite/idl/IAudioSuiteService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_suite/idl/IAudioSuiteDownloadCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/audio_framework/services/audio_suite/idl/IAudioSuiteStatusCallback.idl",
+    "exit_code": 0,
+    "declared_count": 17,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/av_session/services/session/ipc/idl/IAncoMediaSessionListener.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/av_session/services/session/ipc/idl/IAVCastControllerCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/av_session/services/session/ipc/idl/IAVControllerCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/av_session/services/session/ipc/idl/IAVSessionCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/av_session/services/session/ipc/idl/ISessionListener.idl",
+    "exit_code": 0,
+    "declared_count": 25,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/ICameraDeviceService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/ICaptureSession.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/IStreamCommon.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/ICameraService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/IStreamCapture.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/IStreamDepthData.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/IStreamMetadata.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/IStreamRepeat.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/ICameraRecorder.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/IMechSession.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/IMovieFileOutput.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/ICameraMultiStreamOutput.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/camera_service/idls/ICameraSwitchSession.idl",
+    "exit_code": 0,
+    "declared_count": 167,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/deferred_processing_service/idls/IDeferredPhotoProcessingSession.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/camera_framework/services/deferred_processing_service/idls/IDeferredVideoProcessingSession.idl",
+    "exit_code": 0,
+    "declared_count": 22,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/drm_framework/services/drm_service/idls/IDrmListener.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/drm_framework/services/drm_service/idls/IMediaDecryptModuleService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/drm_framework/services/drm_service/idls/IMediaKeySessionService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/drm_framework/services/drm_service/idls/IMediaKeySystemFactoryService.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/drm_framework/services/drm_service/idls/IMediaKeySystemService.idl",
+    "exit_code": 0,
+    "declared_count": 37,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/media_foundation/services/media_monitor/IMediaMonitor.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/midi_framework/services/idl/IIpcMidiInServer.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/midi_framework/services/idl/IMidiCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/midi_framework/services/idl/IMidiDeviceOpenCallback.idl,/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/midi_framework/services/idl/IMidiService.idl",
+    "exit_code": 0,
+    "declared_count": 20,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimedia/video_processing_engine/services/IVideoProcessingServiceManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimodalinput/input/common/anco/comm/IAncoChannel.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimodalinput/input/service/connect_manager/IInputBinderClient.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimodalinput/input/service/connect_manager/IMultimodalInputConnect.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/multimodalinput/input/service/filter/IEventFilter.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/background_task_mgr/interfaces/innerkits/IBackgroundTaskMgr.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/background_task_mgr/interfaces/innerkits/IBackgroundTaskSubscriber.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/background_task_mgr/interfaces/innerkits/IExpiredCallback.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/device_standby/interfaces/innerkits/IStandbyService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/device_usage_statistics/IAppGroupCallback.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/device_usage_statistics/IBundleActiveService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/qos_manager/frameworks/concurrent_task_client/idl/IConcurrentTaskService.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/resource_schedule_service/ressched/interfaces/innerkits/ressched_client/IResSchedEventListener.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/resource_schedule_service/ressched/interfaces/innerkits/ressched_client/IResSchedService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/resource_schedule_service/ressched/interfaces/innerkits/ressched_client/IResSchedSystemloadNotifier.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/resource_schedule_service/ressched/interfaces/innerkits/suspend_manager_base_client/src/ISuspendStateObserverBase.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/resource_schedule_service/ressched_executor/interfaces/innerkits/ressched_executor_client/IResSchedExeService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/soc_perf/interfaces/inner_api/socperf_client/ISocPerf.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/work_scheduler/frameworks/IWorkSchedService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/resourceschedule/work_scheduler/services/zidl/IWorkScheduler.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/systemabilitymgr/selectionfwk/interfaces/idl/ISelectionListener.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/systemabilitymgr/selectionfwk/interfaces/idl/ISelectionService.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/window/window_manager/dmserver/IDisplayManager.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/foundation/window/window_manager/wmserver/IMockSessionManagerInterface.idl",
+    "exit_code": 0,
+    "declared_count": 5,
+    "extra_outputs": [],
+    "missing_outputs": []
+  },
+  {
+    "sources": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/test/testfwk/arkxtest/testserver/src/ITestServerInterface.idl",
+    "exit_code": 0,
+    "declared_count": 7,
+    "extra_outputs": [],
+    "missing_outputs": []
+  }
+]

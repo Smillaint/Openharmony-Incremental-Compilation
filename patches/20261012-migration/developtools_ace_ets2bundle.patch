@@ -1,0 +1,53 @@
+diff --git a/ets1.2/BUILD.gn b/ets1.2/BUILD.gn
+index f1792e05a..97ae347b0 100644
+--- a/ets1.2/BUILD.gn
++++ b/ets1.2/BUILD.gn
+@@ -29,7 +29,7 @@ ohos_static_library("libarkts_package") {
+ ohos_copy("ets2panda_libarkts") {
+   deps = [ "${koala_mr.libarkts_path}:libarkts_sdk_copy" ]
+ 
+-  _libarkts_dir = rebase_path("$target_gen_dir") + "/libarkts"
++  _libarkts_dir = rebase_path("$target_gen_dir") + "/libarkts/libarkts_sdk"
+   _libarkts_output_dir = target_out_dir + "/$target_name"
+ 
+   sources = [ _libarkts_dir ]
+@@ -63,7 +63,7 @@ ohos_copy("ohos_ets_libarkts") {
+     ":ohos_ets_libarkts_pack_prebuilt",
+   ]
+ 
+-  _libarkts_dir = rebase_path("$target_gen_dir") + "/libarkts"
++  _libarkts_dir = rebase_path("$target_gen_dir") + "/libarkts/libarkts_sdk"
+ 
+   sources = [ _libarkts_dir ]
+   outputs = [ ohos_ets_libarkts_path ]
+diff --git a/ets1.2/libarkts/BUILD.gn b/ets1.2/libarkts/BUILD.gn
+index 8fd5f8c25..204e94e75 100644
+--- a/ets1.2/libarkts/BUILD.gn
++++ b/ets1.2/libarkts/BUILD.gn
+@@ -98,7 +98,7 @@ if (!koala_mr.is_rri) {
+   ohos_copy("libarkts-sdk") {
+     deps = [ ":libarkts_sdk_copy" ]
+ 
+-    _libarkts_source_dir = rebase_path("$target_gen_dir")
++    _libarkts_source_dir = rebase_path("$target_gen_dir/libarkts_sdk")
+     _libarkts_output_dir = target_out_dir + "/$target_name"
+ 
+     sources = [ _libarkts_source_dir ]
+@@ -392,7 +392,7 @@ action("libarkts_sdk_copy") {
+     "--source_path",
+     rebase_path(get_path_info(".", "abspath")),
+     "--output_path",
+-    rebase_path("$target_gen_dir"),
++    rebase_path("$target_gen_dir/libarkts_sdk"),
+     "--root_out_dir",
+     rebase_path(root_out_dir),
+     "--current-os",
+@@ -405,7 +405,7 @@ action("libarkts_sdk_copy") {
+   if (!koala_mr.is_rri && is_host_product) {
+     args += [ "--host-product" ]
+   }
+-  outputs = [ "$target_gen_dir" ]
++  outputs = [ "$target_gen_dir/libarkts_sdk" ]
+   deps = [
+     ":libarkts",
+     ":es2panda_lib_copy",
