@@ -4,6 +4,8 @@
 
 先将已验证修复迁移到最新源码，完成整仓编译；迁移验收通过后，再处理源码目录中间产物、删除文件后的 `check_changes`、IDL 输出声明与 clean 后依赖断链问题。两个阶段使用独立版本和日志，不能用新增修复的局部测试替代迁移验收。
 
+本阶段验收顺序为完整编译、同命令的一轮无改动增量。若失败，优先检查旧修复与新主干之间的兼容性，只做必要适配并重新验证。新增规范性修复继续保存在独立补丁中，不能混入这轮基线验收。
+
 - 来源交接：[10 月 10 日接续说明](current-handoff-20261010.md)、[9 月迁移结果](sep06-migration-build-results-20260915.md)。
 - 远程旧仓：`/srv/workspace/openharmony_master_default_20260906175718_huawei_10dfe505f/code`。
 - 远程新仓：`/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code`。
@@ -40,5 +42,9 @@ bash ./build.sh -p rk3568 --build-target make_all --ninja-args=-dexplain
 - 当前状态：`migration-only/validation/status.json`。
 - 原始控制台：`migration-only/validation/console.log`。
 - 启动脚本输出：`migration-only/runner.log`。
+- 后续增量状态：`migration-only/incremental/status.json`。
+- 后续增量控制台与统计：`migration-only/incremental/console.log`、`migration-only/incremental/summary.json`，执行后生成。
+
+增量脚本已启动等待：只有迁移完整编译退出码为 0、相关源码 SHA-256 与保存版本一致且不存在正在运行的 Ninja，才执行一次原指令。增量前不清理产物、不修改源码；保存前后元数据哈希、mtime、实际任务列表和原始十项 Action 计数。完整编译失败时增量不启动。
 
 上述路径相对远程备份目录 `/srv/workspace/patch_backups/20261012_migration_clean/`。本轮为清理后的重建，不计作无改动增量。原始十项的耗时与执行次数需在完整构建成功后单独复测。
