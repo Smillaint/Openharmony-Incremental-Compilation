@@ -1,0 +1,356 @@
+{
+  "arkcompiler/ets_frontend/ets2panda/BUILD.gn": {
+    "sha256": "6d0c1a85dc759ed0c5489e8e5d0edc0041f943470e9740e159ed3a82a6321815",
+    "mode": 420
+  },
+  "arkcompiler/ets_frontend/ets2panda/bindings/package-lock.json": {
+    "sha256": "8a1dabc881098fcaabdce8dc6a551bffd4c45c0f930dff70476f2f64b3212b84",
+    "mode": 420
+  },
+  "arkcompiler/ets_frontend/ets2panda/driver/build_system/BUILD.gn": {
+    "sha256": "b06d134894c3d3888537037612f4881643b5f67636f5f5507eb56cc7c0748297",
+    "mode": 420
+  },
+  "arkcompiler/ets_frontend/ets2panda/driver/interop_toolkits/gluegen/package-lock.json": {
+    "sha256": "3da3f0f7f9c1a7eecfc604cacd43c3da985dc44001d08e3248e0d07d472a65aa",
+    "mode": 420
+  },
+  "arkcompiler/ets_frontend/ets2panda/linter/package-lock.json": {
+    "sha256": "97fe5c9f8546dfe998743b0f06dc6f4b5dca4269e4050d87e496d5127d4e6fb3",
+    "mode": 420
+  },
+  "arkcompiler/ets_frontend/ets2panda/scripts/check_build_system_consistency.py": {
+    "sha256": "29f3519071a43f87f214bbcf7378ed39621b5cdc88dc89e4a4c5749a6516029f",
+    "mode": 493
+  },
+  "arkcompiler/ets_frontend/legacy_bin/api8/package-lock.json": {
+    "sha256": "1ecf3d8bbdcf93aea6f78c52e2f68c0f9018635a322b5e60af96fe8395235a5d",
+    "mode": 420
+  },
+  "base/account/os_account/frameworks/osaccount/native/BUILD.gn": {
+    "sha256": "b3825ae2439548a665f5ebecea024e3f4b24dbb79531a46f938d2e1742b938e5",
+    "mode": 420
+  },
+  "base/inputmethod/imf/interfaces/inner_api/inputmethod_controller/BUILD.gn": {
+    "sha256": "b397a05a6f2e17ca45606140dc6293fffa4eecb91366e4a9ca63cb74516a101b",
+    "mode": 420
+  },
+  "base/security/dlp_permission_service/interfaces/inner_api/dlp_permission/BUILD.gn": {
+    "sha256": "62d47c072b7e40de956b21cd42adf20d495f990187b80a1f780281ebddc678a0",
+    "mode": 420
+  },
+  "base/security/selinux_adapter/BUILD.gn": {
+    "sha256": "64b21f142cfacb78bd781e76dc75365f3000552cfee6906fdc6a53513619dafb",
+    "mode": 420
+  },
+  "build/config/components/ets_frontend/generate_static_abc.py": {
+    "sha256": "48cc48cf299ea34d2cd4c5fe95e4af8e9837575a3a2e096cffa56816fe83711b",
+    "mode": 493
+  },
+  "build/config/components/idl_tool/idl.gni": {
+    "sha256": "74dd2a6118a4e09d15286d29d5b42d99820d7a760de629a5f90c6e65597303e9",
+    "mode": 420
+  },
+  "build/config/components/idl_tool/idl.py": {
+    "sha256": "993c65b037e2ae0864748138254fe239d7d0427ecbd093b6ac7d20ff7a42d2eb",
+    "mode": 493
+  },
+  "build/hb/services/loader.py": {
+    "sha256": "c0022e24ea80160c72a32a6a0acf77cb0f92b19a6ed852df632bb5e714712a80",
+    "mode": 420
+  },
+  "build/hb/util/io_util.py": {
+    "sha256": "028e6cfa2750cfc21912a806429fc29cc598dadcf54694a61485137d9ec81fef",
+    "mode": 493
+  },
+  "build/hb/util/loader/load_ohos_build.py": {
+    "sha256": "2920740e8c3f54c899a6ad002874b16014fc908c7c68b7ff6e888904fb8777ba",
+    "mode": 420
+  },
+  "build/lite/config/component/lite_component.gni": {
+    "sha256": "79e30d0fdcdba872314df95f631f6c4b767bb2ea4dd6a2b34f454d3f041827fd",
+    "mode": 420
+  },
+  "build/ohos/app/app_internal.gni": {
+    "sha256": "4e3fbb72af794d59842223eefd69504673a1f5b17a31c5e55886623ff0be2e25",
+    "mode": 420
+  },
+  "build/ohos/common/BUILD.gn": {
+    "sha256": "0fc63947b8ba54fb16c8c75267488b7704ddcf8fbdd24832d806ac871ecaa41f",
+    "mode": 493
+  },
+  "build/ohos/common/binary_install_info.py": {
+    "sha256": "42f273f685fa87c3e3d5d33e7d67cc183bfa9b54305911f6a6dd884b8caf198b",
+    "mode": 493
+  },
+  "build/ohos/common/generate_host_info.py": null,
+  "build/ohos/common/merge_all_subsystem.py": {
+    "sha256": "47df96a9530c9d281fbe6b355279e2fd47cd890abf2351ed624eb64cc7e5dd8b",
+    "mode": 493
+  },
+  "build/ohos/generate_part_info.py": {
+    "sha256": "ce9e80c097963244c16a907fdb0bb6b3306bece38395328fcf50717464b6d669",
+    "mode": 493
+  },
+  "build/ohos/hisysevent/hisysevent_process.py": {
+    "sha256": "85aa14b3713ed6c98665c10443b6585e67ef0894a707f22dcae82ad21f4a312e",
+    "mode": 493
+  },
+  "build/ohos/images/BUILD.gn": {
+    "sha256": "e3f3c1052e15e59743f6b244eb975f99fbb30ca8dd8017c14e2ac1830d2989ad",
+    "mode": 420
+  },
+  "build/ohos/images/build_image.py": {
+    "sha256": "ada262246b04c244444324c668a43280ac194eb989261693cd5f95508f66fd3b",
+    "mode": 493
+  },
+  "build/ohos/notice/collect_module_notice_file.py": {
+    "sha256": "0437acc0920412239143f6e2967e463a34b72d03e0700c3c1511c8bc6a8e807d",
+    "mode": 493
+  },
+  "build/ohos/notice/collect_system_notice_files.py": {
+    "sha256": "a423a94b2b4f028d48b98bb7f1d4619d29ef7c9ac88e04bfd0d6c9d648c028ee",
+    "mode": 493
+  },
+  "build/ohos/packages/BUILD.gn": {
+    "sha256": "b89ee556f9944d2e255d6621ce472736575656eb2e4241e4db6219080b0f8b7b",
+    "mode": 420
+  },
+  "build/ohos/packages/check_seccomp_library_name.py": {
+    "sha256": "5f09b65fe603241ad0d7850f9b60b3b534c1dd9e35261c060f5183b8c5f1ad98",
+    "mode": 493
+  },
+  "build/ohos/packages/generate_host_symlink.py": {
+    "sha256": "0379573db398a432632874455bef188b8f42f56bb0275e0fc411a26dae7dbec7",
+    "mode": 493
+  },
+  "build/ohos/packages/modules_install.py": {
+    "sha256": "c0464f53b640c543e7ee4871e3067ac53bca247eb86639d5fc63a25e3b1098f1",
+    "mode": 493
+  },
+  "build/ohos/packages/parts_install_info.py": {
+    "sha256": "e158688c44ffc46b3e75052b83a15542c2031df8fd740eb7978f5fcef051af6d",
+    "mode": 493
+  },
+  "build/ohos/packages/process_field_validate.py": {
+    "sha256": "b78b7f8eb471569877f39d2c88b96c30a625deeb8a66318a281eda879bec80a9",
+    "mode": 493
+  },
+  "build/ohos/packages/stabilize_json_file.py": null,
+  "build/ohos/sa_profile/sa_profile_binary.py": {
+    "sha256": "75c3ff772428692bc9be152bd149975e50f4cda893f9d93b7809a7b3aaab4782",
+    "mode": 493
+  },
+  "build/ohos/sa_profile/sa_profile_merge.py": {
+    "sha256": "8a6a07aba0c4757da5146cce7108e3afa73d10ca90d2b33a4ee523e05b116bef",
+    "mode": 493
+  },
+  "build/ohos/sa_profile/sa_profile_source.py": {
+    "sha256": "18c9e0813c58c4a15f797160af7388c3dcc8b2d1262b65314c7c19af86d060fd",
+    "mode": 493
+  },
+  "build/ohos/sa_profile/src_sa_profile_process.py": {
+    "sha256": "6757cf447a435e90333f576188694773d967309a5e608e2217eed70e482a7c32",
+    "mode": 493
+  },
+  "build/ohos/sdk/parse_interface_sdk.py": {
+    "sha256": "572c53d04ef3b5d561ac0619dc0ff883f8560c96ef8178e1ff52358111107b13",
+    "mode": 493
+  },
+  "build/scripts/app_sign.py": {
+    "sha256": "27b5d201b187e0bceac512944df8f1bbd3b8e67a4af8aa19d3e811e7c2d30b45",
+    "mode": 493
+  },
+  "build/scripts/build_js_assets.py": {
+    "sha256": "755c32e267c3e3160edbb8ba7c29894442ad35cd91ac88dba8d41a73d20f2347",
+    "mode": 493
+  },
+  "build/scripts/compile_app.py": {
+    "sha256": "40d387568f578b47b8066e28010a10cb2a78bdd98dcaa513c896af4dbe4b7940",
+    "mode": 493
+  },
+  "build/scripts/util/build_utils.py": {
+    "sha256": "019381ac4001ec6f70f77007c0dd2354e6c0cdfc0a5d12c98676da1f52b63fde",
+    "mode": 493
+  },
+  "build/scripts/util/file_utils.py": {
+    "sha256": "898eba0639bbc91c47a5ef966ba12e154a110e4986a5cf5d128567b3fadd022d",
+    "mode": 493
+  },
+  "build/templates/kernel/linux-6.6/make_ko.sh": {
+    "sha256": "331bfb8ec85370df72db168f03ea3437c5e3244ba0880447fd45e4869f7f365a",
+    "mode": 493
+  },
+  "developtools/ace_ets2bundle/arkui-plugins/BUILD.gn": {
+    "sha256": "ae04cb40534e3486948460b37795fb72a37448a9d329b7ec36c5772460212a03",
+    "mode": 493
+  },
+  "developtools/ace_ets2bundle/arkui-plugins/build_ui_plugins.py": {
+    "sha256": "a10d50dcd77862e37cc578974a0af10260a4834d527f102795dae518afb6a1f0",
+    "mode": 493
+  },
+  "developtools/ace_ets2bundle/arkui-plugins/sdk_files.json": null,
+  "developtools/ace_ets2bundle/ets1.2/BUILD.gn": {
+    "sha256": "3fe0333abe6909afd32b004284db8f369a2f9a030ea6fa54cb153de15bf44d55",
+    "mode": 420
+  },
+  "developtools/ace_ets2bundle/ets1.2/libarkts/BUILD.gn": {
+    "sha256": "30a3f079981d49a72c97b3ab73528248652f8bfe4c177982dff47b32043cfa9f",
+    "mode": 420
+  },
+  "developtools/ace_ets2bundle/koala-wrapper/BUILD.gn": {
+    "sha256": "c7d35bb8c8a69d962c2e74a3745ea793c7f29ed1ed84a4a2a9122a3915bca083",
+    "mode": 420
+  },
+  "developtools/ace_ets2bundle/koala-wrapper/build_ts_wrapper.py": {
+    "sha256": "7e0f04b42d9c9e1c27702c880d4408d0283c8777a6b4f397c986ed02bbe255b3",
+    "mode": 493
+  },
+  "developtools/ace_ets2bundle/koala-wrapper/sdk_files.json": null,
+  "developtools/ace_ets2bundle/sdk_copy.gni": null,
+  "developtools/ace_ets2bundle/sdk_files.py": null,
+  "developtools/packing_tool/adapter/ohos/Compressor.java": {
+    "sha256": "fbf9cd2fec27d7d17310bde10f6fe1c7653f533bba8c22bfca043f5b3f0f1853",
+    "mode": 420
+  },
+  "device/board/hihope/rk3568/camera/vdi_impl/v4l2/BUILD.gn": {
+    "sha256": "d09040b1910118c4f4b24ab3ccefb63b4e82c06b1275851b729f8b4a55413a65",
+    "mode": 493
+  },
+  "foundation/ability/dmsfwk/interfaces/innerkits/common/BUILD.gn": {
+    "sha256": "4bb21ff56919a432286d123d36aa2254590480aeb3e5eba9c6b18927823955ce",
+    "mode": 420
+  },
+  "foundation/multimedia/audio_framework/services/audio_service/idl/BUILD.gn": {
+    "sha256": "da27594750abe096943ddde27a719361e204237be25797466ecbbbe9cfb2890f",
+    "mode": 420
+  },
+  "interface/sdk-js/BUILD.gn": {
+    "sha256": "0e054c7550e6e3dc0099fc1e63529d151ebaecf2ee809db44c6a039432fa9d87",
+    "mode": 420
+  },
+  "interface/sdk-js/process_internal.py": {
+    "sha256": "cdeb56dcc8e8a0bcb693682cf4615408095dd3418eb7592b32573f7a3a260463",
+    "mode": 493
+  },
+  "interface/sdk-js/remove_internal.py": {
+    "sha256": "3eb3f86d40ff4d50ef8fdff9625144bae2ff7ddd1af038dbdeeece1595179910",
+    "mode": 493
+  },
+  "third_party/css-what/BUILD.gn": {
+    "sha256": "691b48ccad0d0b9211bf2ca259c8650b5d334360a2c957b3d3c4b3546adc4369",
+    "mode": 420
+  },
+  "third_party/iptables/extensions/genInit.py": {
+    "sha256": "e12e4d1b832d1b80fd13f80c9b0f1e701d16b32674e3d1f73649cfcae16de0a5",
+    "mode": 493
+  },
+  "third_party/iptables/extensions/libipt_CLUSTERIP.c": {
+    "sha256": "14d8f459b49037858079bc3ea27bcf21b12fd3ad749db63075d209ee7dad972f",
+    "mode": 420
+  },
+  "third_party/iptables/extensions/libipt_realm.c": {
+    "sha256": "0669dd3fd0655dfabfece595169a894e3675d4d8d415c074fc763b3433358f6f",
+    "mode": 420
+  },
+  "third_party/iptables/extensions/libxt_mac.c": {
+    "sha256": "b8d0d6d1ff35645913da632a5145570cfbdcfb959902a2b68631e1f03efa1d87",
+    "mode": 420
+  },
+  "third_party/jsframework/BUILD.gn": {
+    "sha256": "32420fc3db8ece21215a298ae7b2e505de0fc28571c0186a033a42ba19059e32",
+    "mode": 420
+  },
+  "third_party/jsframework/js_framework_build.sh": {
+    "sha256": "eb195e2f35f0cefa90afdde8571a82a059d88d55e2f756c3518cbf5418635d34",
+    "mode": 493
+  },
+  "third_party/jsframework/package-lock.json": {
+    "sha256": "610fe917a6f9b99a3f4820631804fb8f32f89b568d744d6c73b20d38d76bd944",
+    "mode": 420
+  },
+  "third_party/jsframework/test/ut/runtime.ts": {
+    "sha256": "47fade18bc96e8f35239a0a7a4b7b4e8182b2d2a47f5c81aa1e0b183915ed96a",
+    "mode": 420
+  },
+  "third_party/sane-airscan/BUILD.gn": {
+    "sha256": "05e4570bba4ede7ced632bf290e857b876ec4702a43509c7e85c43e16af16bd1",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-bmp.c": {
+    "sha256": "dde5704f3821be83fb68a79fe1f03f8060554c0087eeebd99aea4a220ec8ed18",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-conf.c": {
+    "sha256": "fc980470f71d5dc04349a628f3c1db1a872ad97fddea5c322c1cd20f77a79646",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-device.c": {
+    "sha256": "4b3d8eba5c03ec338d49b8e60c5498e56f01f7262afff17d92c0d7538ebcec07",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-devops.c": {
+    "sha256": "e1235e9680943ac6e18cd0d8ec070c58008377bcd8921721f4e815073fd1e2eb",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-eloop.c": {
+    "sha256": "eb0f8c78bb08e7c6dd04407500003155ab6a7bea7f7c505c8c8fc3c261ca3702",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-escl.c": {
+    "sha256": "00642cfcddb88e451531bfd34180685c91fc9ca705cf3f138e481b9e70838063",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-http.c": {
+    "sha256": "69fde980a7d9bb1b523897d0a1c4355a687e2112bd1b0f60d3c01890c0e8709e",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-init.c": {
+    "sha256": "c46e33c1802d3c4e792a591e45cefe09ec3ff9953486572855da901ad8114812",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-log.c": {
+    "sha256": "78cc1e8ec53a79c6d972390fca3624db27506fe4655b6fef3c68ec20016c43d7",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-mdns.c": {
+    "sha256": "2e11d1646c6f3042bcf6636c8a709905577fc9293dde2a8726299480277861b6",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-png.c": {
+    "sha256": "f05e68e957b75bdf2e80cf943d7a8719271838761e9d92f72af1008a3b1de2b0",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-tiff.c": {
+    "sha256": "efe7f1f48d85ecef48bd87e7e322e37eaab7bab05162a1fcd2fbeb893bd616b9",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-wsd.c": {
+    "sha256": "e0c1621070ad8133821bc646a0a52a9006b3d12ed91c569d21157260313a22ec",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-xml.c": {
+    "sha256": "c7a22c498c7587e1206a9fe5e26e93eadf7f28550b2cab7e0a8b2fe17be09f97",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan-zeroconf.c": {
+    "sha256": "a6fe2be3cf51392a9d83a9d9c61e2704c9b56a148f7aeaa17d5fd62df5b995fa",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan.c": {
+    "sha256": "77e41b6726597582857eebbea495d48258743996ca5dc7f6549480bd981863a9",
+    "mode": 420
+  },
+  "third_party/sane-airscan/airscan.h": {
+    "sha256": "6822611ef0f83ec1a697726b389dde198c06daf323aa02af2ee9a79967ffb81f",
+    "mode": 420
+  },
+  "third_party/sane-airscan/http_parser.c": {
+    "sha256": "57afd5696ff8e8488a93f892e358c6ee5daff3d30fcd5ed7d0d9406d4e28c64c",
+    "mode": 420
+  },
+  "third_party/sane-airscan/patch_install.py": {
+    "sha256": "98466eb03cad3ecc77fa78c01b86001ee2b48ed48f5ad5205103aa8dd8d2728e",
+    "mode": 493
+  }
+}

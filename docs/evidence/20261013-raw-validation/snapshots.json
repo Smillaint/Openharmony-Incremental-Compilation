@@ -1,0 +1,82 @@
+{
+  "build": {
+    "head": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "snapshot": "69fe8a2e8a5d77cb99131693f860351e280f4a19",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "developtools/packing_tool": {
+    "head": "498ffd5552a076a491a33b5dae6d6b3a014c6096",
+    "snapshot": "aa531f4ed9a666c579e62b67a25c39150e564e82",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "third_party/jsframework": {
+    "head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "snapshot": "f607c59fed9c230d08adac87827c398e582ae9a9",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "third_party/sane-airscan": {
+    "head": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+    "snapshot": "9cfbd2820f7e407a7b3b7a3e860630353a99d5d9",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "base/security/selinux_adapter": {
+    "head": "f037bb425e08c275b1da27a1de73002e9432cf5c",
+    "snapshot": "c23547be02b727cd2cef9f48d79d5f80cb83326c",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "device/board/hihope": {
+    "head": "5d368fb765920c2b1cad41eb86164563461a7074",
+    "snapshot": "43a321978c528bcf4d18f16363be67bb16e9650e",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "arkcompiler/ets_frontend": {
+    "head": "c030cb21b2822120dd153b22b3a5a07dd0b7f7dd",
+    "snapshot": "72798bc5e1dabf0b29f3caf7612d83ed93d9bacd",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "interface/sdk-js": {
+    "head": "126ae62423b02302326331bc8390c5aff2f136a3",
+    "snapshot": "19c9bb4dc115049c6e96c51e7bd9525a8b005a17",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "developtools/ace_ets2bundle": {
+    "head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+    "snapshot": "4fcce2362401215fc68e4659e47138972e08c154",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "third_party/iptables": {
+    "head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+    "snapshot": "cf0701c156d5aaace8ca416fc1f301d050e67094",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "base/account/os_account": {
+    "head": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+    "snapshot": "2950854537d4241ab10c01077900cfd2daef7eca",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "base/inputmethod/imf": {
+    "head": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+    "snapshot": "63869d33434578cab018e1428519b3cc524e5734",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "base/security/dlp_permission_service": {
+    "head": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+    "snapshot": "b7cd0480c59eab19888e7434325daf886581fed1",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "foundation/ability/dmsfwk": {
+    "head": "aa1b0347b10700d761def383c08749420dd3f71a",
+    "snapshot": "1e2c100d6d715fb76737c1481c0c898a46ec5702",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "foundation/multimedia/audio_framework": {
+    "head": "d128a212e695de931d425fba7c64ebd591de96bf",
+    "snapshot": "1066b238a1e4d1f0d59dc6b2b7cbb9b68243940f",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  },
+  "third_party/css-what": {
+    "head": "66c986b3597910d384f32d7b098112d2b48d4145",
+    "snapshot": "de15bb8552883a7e5a7190932e95b969500ca5a9",
+    "ref": "refs/heads/backup/before-raw-comparison-20261013"
+  }
+}

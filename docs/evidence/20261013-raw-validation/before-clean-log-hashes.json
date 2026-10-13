@@ -1,0 +1,16 @@
+{
+  "ohos_config.json": "7ff9d9e4f38e0e1b4b45f580e4b04888dadd2b5160f245430ff3db3f2fadb936",
+  "rk3568/all_parts_info.json": "43d30a8d6b1286ed2394aae15bafa788c38d147f9083a59656d3784bf6a0ac6d",
+  "rk3568/.ninja_log": "bd739d1d67e022c3c45bc6eccf40ff01eca5fdb4222e530022e398fc7d4522d7",
+  "rk3568/.ninja_deps": "9a7225e4fa0edcc3d34b763b3e01978835b586bb26e9d7e8c83742370d45ed18",
+  "rk3568/src_sa_infos_tmp.json": "24ec98273e5b470869c349b3bb5ef8389aba01574dccba7cae8a7722df2f7bd8",
+  "rk3568/args.gn": "71466a853aa9d69853c5bf6ad1500a99e2e79f4ec312dd96e97afb9cdf9ca5d3",
+  "rk3568/binary_installed_parts.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "rk3568/unknown.json": "b0e15e273b14a52e09f9637c0f524f04bb46c2e51583d9c9ae12360b014127ce",
+  "rk3568/all_arm64e_parts_host.json": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+  "rk3568/all_host_symlink.json": "a5da2b0ca3c726184c0dcf1fdcd4eeacf74c7a4916d450df464c361a6764fea8",
+  "rk3568/all_parts_host.json": "230adfd5ccda72def66d72b24a02800123812d4a468b85b58e44b5e04c8e64cd",
+  "rk3568/src_installed_parts.json": "00458c396d13f9d46bea3b8aa11004992fee4039a6fc60c0c56a435ecbb4c58b",
+  "rk3568/prepare.log": "5774238fb34ec3e18d4a6a1367060ec06d2ff504d1439bbfcda24969bf0f59c2",
+  "rk3568/build.log": "bc7df24931dfe8c867021e33d859de78cfc9f16b389f95d9aa77b0227cfd2ad3"
+}
