@@ -1,0 +1,265 @@
+{
+  "snapshots": {
+    "build": {
+      "head": "a2b72e827add764f6312e00173dff0dd3db45e75",
+      "commit": "ca93bce5c713ada49d6dca4b32a8325144862b2a",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "config/components/ets_frontend/generate_static_abc.py",
+        "config/components/idl_tool/idl.gni",
+        "hb/services/loader.py",
+        "hb/util/io_util.py",
+        "hb/util/loader/load_ohos_build.py",
+        "lite/config/component/lite_component.gni",
+        "ohos/app/app_internal.gni",
+        "ohos/common/BUILD.gn",
+        "ohos/common/binary_install_info.py",
+        "ohos/common/merge_all_subsystem.py",
+        "ohos/generate_part_info.py",
+        "ohos/hisysevent/hisysevent_process.py",
+        "ohos/images/BUILD.gn",
+        "ohos/images/build_image.py",
+        "ohos/notice/collect_module_notice_file.py",
+        "ohos/notice/collect_system_notice_files.py",
+        "ohos/packages/BUILD.gn",
+        "ohos/packages/check_seccomp_library_name.py",
+        "ohos/packages/generate_host_symlink.py",
+        "ohos/packages/modules_install.py",
+        "ohos/packages/parts_install_info.py",
+        "ohos/packages/process_field_validate.py",
+        "ohos/sa_profile/sa_profile_binary.py",
+        "ohos/sa_profile/sa_profile_merge.py",
+        "ohos/sa_profile/sa_profile_source.py",
+        "ohos/sa_profile/src_sa_profile_process.py",
+        "ohos/sdk/parse_interface_sdk.py",
+        "scripts/app_sign.py",
+        "scripts/build_js_assets.py",
+        "scripts/compile_app.py",
+        "scripts/util/build_utils.py",
+        "scripts/util/file_utils.py",
+        "templates/kernel/linux-6.6/make_ko.sh",
+        "ohos/common/generate_host_info.py",
+        "ohos/packages/stabilize_json_file.py",
+        "config/components/idl_tool/idl.py"
+      ],
+      "migration_commit": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "developtools/packing_tool": {
+      "head": "498ffd5552a076a491a33b5dae6d6b3a014c6096",
+      "commit": "a346ea4659fd2ad4715d6d8acb356e734c17e595",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "adapter/ohos/Compressor.java"
+      ],
+      "migration_commit": "930d6da378078549abdafdc3db409849831b3a81",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "third_party/jsframework": {
+      "head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+      "commit": "75e7854d4111cea6102a71bd9fa0835e99515747",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "js_framework_build.sh",
+        "BUILD.gn",
+        "test/ut/runtime.ts"
+      ],
+      "migration_commit": "22ddd05c7caf5fc3303a5ee207fe159ce154c238",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "third_party/sane-airscan": {
+      "head": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+      "commit": "0ca00fc41797c4918096d88369c124f393c71e07",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "BUILD.gn",
+        "patch_install.py"
+      ],
+      "migration_commit": "d75d60c59f7738d85260c8e9f41fa907c355ef3f",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "base/security/selinux_adapter": {
+      "head": "f037bb425e08c275b1da27a1de73002e9432cf5c",
+      "commit": "8ee0c19ac2fec8408c541cc1fd60573a5e4c1082",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "BUILD.gn"
+      ],
+      "migration_commit": "55d1897e132208ccde7c3c34ab70aff48e479cb5",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "device/board/hihope": {
+      "head": "5d368fb765920c2b1cad41eb86164563461a7074",
+      "commit": "59273c29c4b21135e4777733e4bba18af556c77a",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "rk3568/camera/vdi_impl/v4l2/BUILD.gn"
+      ],
+      "migration_commit": "025d4baaeb3eac1eb7f0c5e7b824d7be67186c68",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "arkcompiler/ets_frontend": {
+      "head": "c030cb21b2822120dd153b22b3a5a07dd0b7f7dd",
+      "commit": "835d35772a3a0a3d9faa8b329a7ddd11984fd8df",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "ets2panda/BUILD.gn",
+        "ets2panda/driver/build_system/BUILD.gn",
+        "ets2panda/scripts/check_build_system_consistency.py"
+      ],
+      "migration_commit": "e8544064f5e9e956286eed2d71e0ba4e801d8743",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "interface/sdk-js": {
+      "head": "126ae62423b02302326331bc8390c5aff2f136a3",
+      "commit": "720a061cf00b004a48d213bfcd65120c5d0ccf6d",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "BUILD.gn",
+        "process_internal.py",
+        "remove_internal.py"
+      ],
+      "migration_commit": "07e67fc5fc1767132a1e18910fc00e63cb49f1e0",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "developtools/ace_ets2bundle": {
+      "head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+      "commit": "333f7e0cfd109a29522ca256263ebc8f647f2560",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "ets1.2/BUILD.gn",
+        "ets1.2/libarkts/BUILD.gn"
+      ],
+      "migration_commit": "b545845711e41987f9ca54c09b89061ce5ec6b4c",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "third_party/iptables": {
+      "head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+      "commit": "4c918f71060bb820d2be9268830710e47d397bc0",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "extensions/genInit.py"
+      ],
+      "migration_commit": "56b1ad87b16775e9d6b6a2ae55253554409dd25e",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "base/account/os_account": {
+      "head": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+      "commit": "dd6947addf600b1ff01dbd3f2d07dfd1d7e49dd6",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "frameworks/osaccount/native/BUILD.gn"
+      ],
+      "migration_commit": "7f172ea3830153f8be073fe5edf4fc964b1eed87",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "base/inputmethod/imf": {
+      "head": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+      "commit": "b5ee049d372e40a1a1f97eac57d921d3891b8456",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+      ],
+      "migration_commit": "5f5e6178a1d5b56331dae7af12ec3fca083857f5",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "base/security/dlp_permission_service": {
+      "head": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+      "commit": "f047408d04268fd5589bc803cd62ff4ca1fa415e",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "interfaces/inner_api/dlp_permission/BUILD.gn"
+      ],
+      "migration_commit": "b59001a8383d76f2708a3b0d525ae2fba538b24b",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "foundation/ability/dmsfwk": {
+      "head": "aa1b0347b10700d761def383c08749420dd3f71a",
+      "commit": "fb822191c63af2ca1fbbb688febaeccd88e2482d",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "interfaces/innerkits/common/BUILD.gn"
+      ],
+      "migration_commit": "af957f68639797dc1087d726f00f7f52b9a3cac0",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    },
+    "foundation/multimedia/audio_framework": {
+      "head": "d128a212e695de931d425fba7c64ebd591de96bf",
+      "commit": "b4acf3db4f060dc2ee4be12b59c517515119628e",
+      "ref": "refs/heads/backup/before-migration-separation-20261013",
+      "paths": [
+        "services/audio_service/idl/BUILD.gn"
+      ],
+      "migration_commit": "e811e639cbfe67ba7293d0c74d09aa8941aa4447",
+      "migration_ref": "refs/heads/migration/validated-september-to-october-20261013"
+    }
+  },
+  "changes": [
+    {
+      "repo": "build",
+      "file": "config/components/idl_tool/idl.gni",
+      "combined_sha256": "f1ff12e5e040581e30183a5e9d08da5cb2ffa4b53c2819a47be06aadc2f5710f",
+      "migration_sha256": "d6a9526b4a23f602ab5b584bccafebfa886c553a50ed87e30117bb419e876fd8"
+    },
+    {
+      "repo": "build",
+      "file": "hb/services/loader.py",
+      "combined_sha256": "bc7f912774d599383d422654d4bc1ed8fdeeac64202b06587194370e38ab8dcd",
+      "migration_sha256": "fc0bc1e2e040c61b60676bbae9a7dbb0e1a4d316d42dfd1830a37beb632d8865"
+    },
+    {
+      "repo": "third_party/jsframework",
+      "file": "js_framework_build.sh",
+      "combined_sha256": "13d93744e1076f36f2b55bf03acc78dc51e3d86903f09fd9adaff5a299a25b04",
+      "migration_sha256": "61e2dd5ff02df1c10c8cd487b7c2645a57dc79b8dd683c38a2aabc76d39e81d7"
+    },
+    {
+      "repo": "build",
+      "file": "config/components/idl_tool/idl.py",
+      "combined_sha256": "ee7202a7e4c593f51a62a1ded6077f266b51b8c59748db2508db75e0e05fca58",
+      "migration_sha256": "993c65b037e2ae0864748138254fe239d7d0427ecbd093b6ac7d20ff7a42d2eb"
+    },
+    {
+      "repo": "third_party/jsframework",
+      "file": "BUILD.gn",
+      "combined_sha256": "8218f2f2ef271de512b37970d6aeb9caf12021c3f1e567d6b307ebd705bba1fd",
+      "migration_sha256": "32420fc3db8ece21215a298ae7b2e505de0fc28571c0186a033a42ba19059e32"
+    },
+    {
+      "repo": "third_party/jsframework",
+      "file": "test/ut/runtime.ts",
+      "combined_sha256": "3e44295fe4e604f2f7f70fb6c86a7dbaddeffc7d05a1e06d7c2c88eec8056461",
+      "migration_sha256": "47fade18bc96e8f35239a0a7a4b7b4e8182b2d2a47f5c81aa1e0b183915ed96a"
+    },
+    {
+      "repo": "base/account/os_account",
+      "file": "frameworks/osaccount/native/BUILD.gn",
+      "combined_sha256": "7aa25b83dcd1d5a2568928f7d6ea12d46e3dd194cdcf4b5b803625a70bd67b60",
+      "migration_sha256": "b3825ae2439548a665f5ebecea024e3f4b24dbb79531a46f938d2e1742b938e5"
+    },
+    {
+      "repo": "base/inputmethod/imf",
+      "file": "interfaces/inner_api/inputmethod_controller/BUILD.gn",
+      "combined_sha256": "37c0df00e4495d94cc1c5cebee8c763afe84bfb57118a2210dd95ff80769bc60",
+      "migration_sha256": "b397a05a6f2e17ca45606140dc6293fffa4eecb91366e4a9ca63cb74516a101b"
+    },
+    {
+      "repo": "base/security/dlp_permission_service",
+      "file": "interfaces/inner_api/dlp_permission/BUILD.gn",
+      "combined_sha256": "23c46bba8314d9d32a6f770d10b2e34ee798b2b6d8e73bfbb1eacac43447af2b",
+      "migration_sha256": "62d47c072b7e40de956b21cd42adf20d495f990187b80a1f780281ebddc678a0"
+    },
+    {
+      "repo": "foundation/ability/dmsfwk",
+      "file": "interfaces/innerkits/common/BUILD.gn",
+      "combined_sha256": "e9cf7ba87d4d2c4bef992987335b347968801c469a11d2550862c4fb9c7c076a",
+      "migration_sha256": "4bb21ff56919a432286d123d36aa2254590480aeb3e5eba9c6b18927823955ce"
+    },
+    {
+      "repo": "foundation/multimedia/audio_framework",
+      "file": "services/audio_service/idl/BUILD.gn",
+      "combined_sha256": "535f48cc27cc3bf92edb24ff0270f8d1d4f1f32b653f8e6814a343d306b4315e",
+      "migration_sha256": "da27594750abe096943ddde27a719361e204237be25797466ecbbbe9cfb2890f"
+    }
+  ]
+}

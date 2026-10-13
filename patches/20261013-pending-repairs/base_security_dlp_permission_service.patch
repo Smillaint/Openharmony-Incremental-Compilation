@@ -1,0 +1,12 @@
+diff --git a/interfaces/inner_api/dlp_permission/BUILD.gn b/interfaces/inner_api/dlp_permission/BUILD.gn
+index 38abd7f3..8ff5bfa9 100644
+--- a/interfaces/inner_api/dlp_permission/BUILD.gn
++++ b/interfaces/inner_api/dlp_permission/BUILD.gn
+@@ -16,6 +16,7 @@ import("//build/ohos.gni")
+ import("../../../dlp_permission_service.gni")
+ 
+ idl_gen_interface("dlp_permission_interface") {
++  sources_common = [ "DlpPermissionTypes.idl" ]
+   src_idl = rebase_path("IDlpPermissionService.idl")
+   log_domainid = "0xD005A04"
+   log_tag = "DlpPermissionService"

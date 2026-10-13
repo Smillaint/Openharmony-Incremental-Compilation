@@ -1,5 +1,11 @@
 # 10 月 12 日源码迁移与 clean 恢复验证
 
+## 阶段变更（10 月 13 日）
+
+当前工作入口为 [纯迁移验收](oct13-migration-only-validation.md)。本页记录的是迁移与新增修复混合期间的实验，新增修复已保存并从远程当前工作树分离。以下局部回归结果仅适用于分离前版本，不能作为纯迁移或完整系统编译成功的证据。
+
+混合版本第一次完整编译在 JS snapshot 的两项单测失败后退出；第二次在核对历史命令时主动中断。这两次使用了额外的 `--ccache` 且未保留 `--ninja-args=-dexplain`，不纳入历史命令下的耗时对比。当前纯迁移编译恢复使用 `bash ./build.sh -p rk3568 --build-target make_all --ninja-args=-dexplain`。
+
 ## 源码与版本边界
 
 - 旧基线：`openharmony_master_default_20260906175718_huawei_10dfe505f/code`。
@@ -49,9 +55,9 @@ HB 的一次性命令参数缓存仍按原生命周期清理。不能为了保�
 4. IDL、airscan、JSON 共 12 项隔离回归通过，包括内容/mtime 保持、缺失文件恢复、完整生成目录 clean、错误输入保留旧结果。已使用新仓本轮编译出的 IDL 工具复跑通过。
 5. JS 路径回归使用模拟 node/npm，覆盖普通/独立编译 × 预置依赖/npm 回退四种组合，每组检查重复运行和输出删除恢复；另检查构建、单测两类失败能传递至父进程。不能把该路径测试表述成真实 JS 单测已通过。
 6. 专用 `out/idl_clean_validation` 的真实 GN/Ninja 恢复验证通过：141 个目标、1,560 个明确输出；首次生成成功，无改动重跑无任务；每个目标删除一个输出后自动补回且其余文件 mtime 不变；全部输出连同 IDL 工具删除后自动重建成功。两类恢复后的无改动重跑均为 `no work to do`。该目录独立于主编译。
-7. 清理后的 rk3568 全量编译正在执行，最终退出码、无改动增量耗时尚待确认。当前不能沿用 9 月或 10 月 10 日数据作为新仓结果。
+7. 混合版本整仓编译未通过验收：第一轮失败，第二轮主动中断。对应状态为 `build/full-status.json` 和 `build/full2-status.json`。当前不能沿用 9 月或 10 月 10 日数据作为新仓结果。
 
-完整构建命令：
+混合阶段实际执行过的命令（已停止使用）：
 
 ```sh
 bash ./build.sh --product-name rk3568 --ccache --build-target make_all
@@ -79,4 +85,4 @@ bash ./build.sh --product-name rk3568 --ccache --build-target make_all
 - 源码生成对照：`idl-graph-final.json`。
 - 隔离回归：`regression-results.json`、`regression-tool.json`、`js-path-regression.json`。
 
-先核对实际进程与状态文件，再读取对应本轮日志。`out/rk3568/error.log` 可能残留早先失败记录，不能仅凭其存在判定最新构建失败。主构建结束后应完成两轮无改动增量，并统计原始十项与新增 IDL Action 的执行次数。
+以上路径保留混合阶段证据。当前编译状态改读 `migration-only/validation/status.json`；先确认纯迁移整仓编译成功，再恢复新增修复。`out/rk3568/error.log` 可能残留早先失败记录，不能仅凭其存在判定最新构建失败。
