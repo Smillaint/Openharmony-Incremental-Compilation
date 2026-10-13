@@ -1,0 +1,8 @@
+[
+  "normal/repeated/deleted output; independent=False, npm fallback=False",
+  "normal/repeated/deleted output; independent=True, npm fallback=False",
+  "normal/repeated/deleted output; independent=False, npm fallback=True",
+  "normal/repeated/deleted output; independent=True, npm fallback=True",
+  "propagates FAIL_BUILD",
+  "propagates FAIL_TEST"
+]

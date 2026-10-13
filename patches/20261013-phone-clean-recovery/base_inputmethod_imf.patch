@@ -1,0 +1,12 @@
+diff --git a/interfaces/inner_api/inputmethod_controller/BUILD.gn b/interfaces/inner_api/inputmethod_controller/BUILD.gn
+index 4d49c51b..1f95543d 100644
+--- a/interfaces/inner_api/inputmethod_controller/BUILD.gn
++++ b/interfaces/inner_api/inputmethod_controller/BUILD.gn
+@@ -16,6 +16,7 @@ import("//build/config/components/idl_tool/idl.gni")
+ import("//build/ohos.gni")
+ 
+ idl_gen_interface("input_client_interface") {
++  sources_common = [ "InputMethodClientTypes.idl" ]
+   src_idl = rebase_path(
+           "${inputmethod_path}/frameworks/native/inputmethod_controller/IInputClient.idl")
+ }

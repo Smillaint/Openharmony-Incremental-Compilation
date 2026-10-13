@@ -1,0 +1,89 @@
+[
+  {
+    "repo": "build",
+    "pr": 6965,
+    "reverse_check": false,
+    "nonliteral_additions": [
+      [
+        "ohos/sa_profile/sa_profile_binary.py",
+        "outfile.writestr(\"part_name_info.json\", metadata_content)"
+      ]
+    ],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "build",
+    "pr": 6974,
+    "reverse_check": true,
+    "nonliteral_additions": [],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "build",
+    "pr": 6982,
+    "reverse_check": true,
+    "nonliteral_additions": [],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "build",
+    "pr": 6999,
+    "reverse_check": false,
+    "nonliteral_additions": [
+      [
+        "ohos/sa_profile/sa_profile_binary.py",
+        "outfile.writestr(\"part_name_info.json\", metadata_content)"
+      ]
+    ],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "build",
+    "pr": 7006,
+    "reverse_check": true,
+    "nonliteral_additions": [],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "build",
+    "pr": 7009,
+    "reverse_check": true,
+    "nonliteral_additions": [],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "build",
+    "pr": 7046,
+    "reverse_check": true,
+    "nonliteral_additions": [],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "build",
+    "pr": 7048,
+    "reverse_check": true,
+    "nonliteral_additions": [],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "build",
+    "pr": 7049,
+    "reverse_check": false,
+    "nonliteral_additions": [],
+    "baseline": "backup/before-phone-clean-recovery-20261013"
+  },
+  {
+    "repo": "developtools_packing_tool",
+    "pr": 1556,
+    "reverse_check": true,
+    "nonliteral_additions": [],
+    "baseline": "migration/validated-september-to-october-20261013"
+  },
+  {
+    "repo": "third_party_iptables",
+    "pr": 62,
+    "reverse_check": true,
+    "nonliteral_additions": [],
+    "baseline": "migration/validated-september-to-october-20261013"
+  }
+]

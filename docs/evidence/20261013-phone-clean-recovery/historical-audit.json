@@ -1,0 +1,195 @@
+[
+  {
+    "repo": "build",
+    "branch": "fix-phone-install-sa-depfile",
+    "files": [
+      "ohos/packages/modules_install.py"
+    ],
+    "priority": "P0",
+    "subject": "Fix SA file filtering in phone install depfile",
+    "patch": "build/fix-phone-install-sa-depfile.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "build",
+    "branch": "fix-sdk-split-incremental-deps",
+    "files": [
+      "ohos/sdk/parse_interface_sdk.py"
+    ],
+    "priority": "P0",
+    "subject": "Add stamp and depfile support to SDK interface splitting",
+    "patch": "build/fix-sdk-split-incremental-deps.patch",
+    "reverse_check": false,
+    "nonliteral_additions": []
+  },
+  {
+    "repo": "build",
+    "branch": "fix-binary-install-incremental-metadata",
+    "files": [
+      "ohos/common/binary_install_info.py"
+    ],
+    "priority": "P0",
+    "subject": "Stabilize binary install metadata and optional input dependencies",
+    "patch": "build/fix-binary-install-incremental-metadata.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "build",
+    "branch": "fix-notice-boundary-license",
+    "files": [
+      "ohos/notice/collect_module_notice_file.py"
+    ],
+    "priority": "P0",
+    "subject": "Find module licenses at the source tree boundary",
+    "patch": "build/fix-notice-boundary-license.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "build",
+    "branch": "fix-notice-aggregate-depfile",
+    "files": [
+      "ohos/notice/collect_system_notice_files.py"
+    ],
+    "priority": "P0",
+    "subject": "Avoid redundant generated inputs in the aggregate notice depfile",
+    "patch": "build/fix-notice-aggregate-depfile.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "build",
+    "branch": "fix-js-assets-incremental-deps",
+    "files": [
+      "scripts/build_js_assets.py"
+    ],
+    "priority": "P0",
+    "subject": "Preserve JS asset dependency tracking without transient loader caches",
+    "patch": "build/fix-js-assets-incremental-deps.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "build",
+    "branch": "fix-idl-acronym-header-outputs",
+    "files": [
+      "config/components/idl_tool/idl.gni"
+    ],
+    "priority": "P0",
+    "subject": "Match IDL interface header outputs for acronym names",
+    "patch": "build/fix-idl-acronym-header-outputs.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "build",
+    "branch": "fix-preloader-content-aware-output",
+    "files": [
+      "hb/services/loader.py",
+      "hb/util/io_util.py"
+    ],
+    "priority": "P1",
+    "subject": "Preserve unchanged preloader JSON and syscap outputs",
+    "patch": "build/fix-preloader-content-aware-output.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "build",
+    "branch": "fix-static-abc-config-copy",
+    "files": [
+      "config/components/ets_frontend/generate_static_abc.py"
+    ],
+    "priority": "P1",
+    "subject": "Use a cache-local ArkTS configuration without rewriting source inputs",
+    "patch": "build/fix-static-abc-config-copy.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "interface_sdk-js",
+    "branch": "fix-sdk-split-incremental-deps",
+    "files": [
+      "BUILD.gn"
+    ],
+    "priority": "P0",
+    "subject": "Declare SDK interface split stamp and dependency file",
+    "patch": "interface_sdk-js/fix-sdk-split-incremental-deps.patch",
+    "reverse_check": false,
+    "nonliteral_additions": []
+  },
+  {
+    "repo": "interface_sdk-js",
+    "branch": "fix-sdk-declaration-incremental-deps",
+    "files": [
+      "BUILD.gn",
+      "process_internal.py",
+      "remove_internal.py"
+    ],
+    "priority": "P0",
+    "subject": "Track SDK declaration and internal interface generation outputs",
+    "patch": "interface_sdk-js/fix-sdk-declaration-incremental-deps.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "arkcompiler_ets_frontend",
+    "branch": "fix-ets2panda-consistency-output",
+    "files": [
+      "ets2panda/BUILD.gn",
+      "ets2panda/scripts/check_build_system_consistency.py"
+    ],
+    "priority": "P0",
+    "subject": "Create the declared build consistency stamp and track source lists",
+    "patch": "arkcompiler_ets_frontend/fix-ets2panda-consistency-output.patch",
+    "reverse_check": false,
+    "nonliteral_additions": []
+  },
+  {
+    "repo": "arkcompiler_ets_frontend",
+    "branch": "fix-build-system-output-isolation",
+    "files": [
+      "ets2panda/driver/build_system/BUILD.gn"
+    ],
+    "priority": "P0",
+    "subject": "Isolate build system outputs from generated metadata",
+    "patch": "arkcompiler_ets_frontend/fix-build-system-output-isolation.patch",
+    "reverse_check": true
+  },
+  {
+    "repo": "developtools_ace_ets2bundle",
+    "branch": "fix-arkguard-install-depfile",
+    "files": [
+      "BUILD.gn",
+      "install_arkguard_tsc_declgen.py"
+    ],
+    "priority": "P0",
+    "subject": "Track installed ArkGuard TypeScript and declaration packages",
+    "patch": "developtools_ace_ets2bundle/fix-arkguard-install-depfile.patch",
+    "reverse_check": false,
+    "nonliteral_additions": []
+  },
+  {
+    "repo": "developtools_ace_ets2bundle",
+    "branch": "fix-libarkts-sdk-incremental-deps",
+    "files": [
+      "ets1.2/BUILD.gn",
+      "ets1.2/libarkts/BUILD.gn"
+    ],
+    "priority": "P0",
+    "subject": "Isolate libarkts SDK output and narrow generator dependencies",
+    "patch": "developtools_ace_ets2bundle/fix-libarkts-sdk-incremental-deps.patch",
+    "reverse_check": false,
+    "nonliteral_additions": [
+      [
+        "ets1.2/libarkts/BUILD.gn",
+        "_bridges_source = \"generated/native/bridges.cpp\""
+      ],
+      [
+        "ets1.2/libarkts/BUILD.gn",
+        "inputs = [ _bridges_source ]"
+      ],
+      [
+        "ets1.2/libarkts/BUILD.gn",
+        "_sdk_lib_dir = \"//developtools/ace_ets2bundle/ets1.2/libarkts/lib\""
+      ],
+      [
+        "ets1.2/libarkts/BUILD.gn",
+        "_sdk_lib_dir,"
+      ]
+    ]
+  }
+]

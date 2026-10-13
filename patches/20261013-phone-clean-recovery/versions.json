@@ -1,0 +1,110 @@
+{
+  "build": {
+    "head": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "before": "090c9db8f9694638baeecc8db7fe4a9145beaef1",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "7470a17f6f30ee0f1a2f7c8f10ce805433b4f120",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "config/components/idl_tool/idl.gni",
+      "config/components/idl_tool/idl.py",
+      "hb/services/loader.py"
+    ],
+    "patch_sha256": "91f8d135900bfead957d2f9ea16091a4a67395de0a1a09eb28cf4f7b3a4cbae2"
+  },
+  "third_party/jsframework": {
+    "head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "before": "5a28c15f4723df6daa5696cc0c3cdbe47fbadaa8",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "efa793462ad4afe34855b3844f09f623c1a157b4",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "BUILD.gn",
+      "js_framework_build.sh",
+      "test/ut/runtime.ts"
+    ],
+    "patch_sha256": "3f92321d3faff71c2081e4de058f4fc9332d76cfbf43494145f54e63ea52d80d"
+  },
+  "third_party/css-what": {
+    "head": "66c986b3597910d384f32d7b098112d2b48d4145",
+    "before": "95648987c034c15781137e727eb7b1dcff051140",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "c467d02f015fc048fae2359c20293a82f2736e56",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "BUILD.gn"
+    ],
+    "patch_sha256": "3271a81a09cb0b402deae70b6c78c69c50b6d83a1a351f0c9aee2edcfb5c7933"
+  },
+  "developtools/ace_ets2bundle": {
+    "head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+    "before": "a1f2b57eff04329c71a115e6d274a40aeecbf6d0",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "f5d323e3b2ed8ac8b92baed46f9b03e22f845d38",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "arkui-plugins/BUILD.gn",
+      "arkui-plugins/build_ui_plugins.py",
+      "koala-wrapper/BUILD.gn",
+      "koala-wrapper/build_ts_wrapper.py",
+      "sdk_copy.gni",
+      "sdk_files.py"
+    ],
+    "patch_sha256": "ffd24580bdd8645768aee0b844c9384c34b5c1315598ab27bcf66f25e0fb623d"
+  },
+  "base/account/os_account": {
+    "head": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+    "before": "9c26912b724145194a56cad61f05a7165e87aac7",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "a2913fa0fb2b843511e4cf1a88e9b2729f62df3f",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "frameworks/osaccount/native/BUILD.gn"
+    ],
+    "patch_sha256": "21d4479a1f46c78bae8ba68428384091a45ebdad3af9a36766fa0226559a09a4"
+  },
+  "base/inputmethod/imf": {
+    "head": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+    "before": "3a2060b237035cef9abd66f95a34fccca7da1baf",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "250a00088484200c8ad4101cef823c935fe35f6b",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+    ],
+    "patch_sha256": "cae27c237eba2761016cac712c7d5bab8757b16327114b1d4a4753f9e9262ffa"
+  },
+  "base/security/dlp_permission_service": {
+    "head": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+    "before": "50bcda68af6aa5c80196d505fff072b825ef02ed",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "38200a148c763de594374777dfb5d553dc43f92e",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "interfaces/inner_api/dlp_permission/BUILD.gn"
+    ],
+    "patch_sha256": "84bdee05a5a8132b0b9dc6f9cb84173b91de86d1d22acf7d81717cc1e0b054f0"
+  },
+  "foundation/ability/dmsfwk": {
+    "head": "aa1b0347b10700d761def383c08749420dd3f71a",
+    "before": "2fba5b7e7facca4a9e09d7afd15c31bb9c058d21",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "eb6de1543645e8896fa57d9b263ddf59c0b2d22e",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "interfaces/innerkits/common/BUILD.gn"
+    ],
+    "patch_sha256": "2c5be643915059ca7980a9abc6969d036091a6fd379afa08c52f5e61aee851ee"
+  },
+  "foundation/multimedia/audio_framework": {
+    "head": "d128a212e695de931d425fba7c64ebd591de96bf",
+    "before": "c21f8b90c0573d61f5696776b0ea6fdf00864b93",
+    "before_ref": "refs/heads/backup/before-phone-clean-recovery-20261013",
+    "after": "e6ec665cd03aa977a9546334f5b5f4bf86054d48",
+    "after_ref": "refs/heads/fix/phone-clean-recovery-20261013",
+    "files": [
+      "services/audio_service/idl/BUILD.gn"
+    ],
+    "patch_sha256": "134f7606507897ba2e48ac9b6ba993f4faf5e034243ec83b3d8f4f72cc06bc06"
+  }
+}

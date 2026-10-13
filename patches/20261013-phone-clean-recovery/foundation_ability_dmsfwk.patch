@@ -1,0 +1,12 @@
+diff --git a/interfaces/innerkits/common/BUILD.gn b/interfaces/innerkits/common/BUILD.gn
+index 47c590a1..f284ecd0 100644
+--- a/interfaces/innerkits/common/BUILD.gn
++++ b/interfaces/innerkits/common/BUILD.gn
+@@ -25,6 +25,7 @@ config("common_public_config") {
+ }
+ 
+ idl_gen_interface("dmsfwk_idl") {
++  sources_common = [ "DeviceConnectStatus.idl" ]
+   sources = [
+     "IDistributedAbilityManager.idl",
+   ]

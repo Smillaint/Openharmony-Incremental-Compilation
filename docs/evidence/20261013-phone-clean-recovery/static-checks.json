@@ -1,0 +1,17 @@
+{
+  "plugins": {
+    "input_count": 7958,
+    "output_count": 1071,
+    "missing_inputs": [],
+    "new_outputs": [],
+    "old_outputs_not_declared": []
+  },
+  "wrapper": {
+    "input_count": 4386,
+    "output_count": 534,
+    "missing_inputs": [],
+    "new_outputs": [],
+    "old_outputs_not_declared": []
+  },
+  "publisher_fixture": "passed"
+}

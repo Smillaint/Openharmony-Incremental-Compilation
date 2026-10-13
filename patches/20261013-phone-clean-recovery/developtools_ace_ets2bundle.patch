@@ -1,0 +1,621 @@
+diff --git a/arkui-plugins/BUILD.gn b/arkui-plugins/BUILD.gn
+index e5ee81c35..9f5c45e0e 100755
+--- a/arkui-plugins/BUILD.gn
++++ b/arkui-plugins/BUILD.gn
+@@ -13,26 +13,47 @@
+ 
+ import("//build/config/components/ets_frontend/ets2abc_config.gni")
+ import("//build/ohos.gni")
++import("../sdk_copy.gni")
+ 
+ npm_path = "//prebuilts/build-tools/common/nodejs/current/bin/npm"
++_sdk_script = "//developtools/ace_ets2bundle/sdk_files.py"
++_sdk_files = exec_script(_sdk_script,
++                         [
++                           "manifest",
++                           "plugins",
++                           rebase_path(".", root_build_dir),
++                           rebase_path("//", root_build_dir),
++                         ],
++                         "json")
++_sdk_manifest = "$target_gen_dir/gen_ui_plugins.inputs.json"
++write_file(_sdk_manifest, _sdk_files, "json")
+ 
+ action("gen_ui_plugins") {
+   script = "build_ui_plugins.py"
+-  ui_plugin_source = "//developtools/ace_ets2bundle/arkui-plugins"
+-  inputs = [ ui_plugin_source ]
++  inputs = _sdk_files.inputs + [
++             _sdk_script,
++             _sdk_manifest,
++           ]
++  _state = "$target_out_dir/$target_name.files.json"
++  outputs = [ _state ]
++  foreach(file, _sdk_files.outputs) {
++    outputs += [ "$target_gen_dir/$file" ]
++  }
++
+   args = [
+     "--source_path",
+-    rebase_path(get_path_info(".", "abspath")),
++    rebase_path(".", root_build_dir),
+     "--output_path",
+-    rebase_path("$target_gen_dir"),
++    rebase_path(target_gen_dir, root_build_dir),
+     "--npm",
+-    rebase_path(npm_path),
++    rebase_path(npm_path, root_build_dir),
+     "--current_os",
+-    "$current_os",
++    current_os,
+     "--root_out_dir",
+-    rebase_path(root_out_dir),
++    rebase_path(root_out_dir, root_build_dir),
++    "--state-file",
++    rebase_path(_state, root_build_dir),
+   ]
+-  outputs = [ "$target_gen_dir" ]
+ }
+ 
+ action("build_ets_sysResource") {
+@@ -52,26 +73,30 @@ action("build_ets_sysResource") {
+   ]
+ }
+ 
+-ohos_copy("ui_plugin") {
++_sdk_files.outputs += [ "lib/ui-plugins/sysResource.js" ]
++_sdk_copy_manifest = "$target_gen_dir/ui_plugins.copy.json"
++write_file(_sdk_copy_manifest, _sdk_files, "json")
++
++copy_arkts_sdk_files("ui_plugin") {
+   deps = [
+     ":build_ets_sysResource",
+     ":gen_ui_plugins",
+   ]
+-  sources = [ rebase_path("$target_gen_dir") ]
+-  outputs = [ target_out_dir + "/$target_name" ]
+-  module_source_dir = target_out_dir + "/$target_name"
++  source_dir = target_gen_dir
++  files = _sdk_files.outputs
++  manifest = _sdk_copy_manifest
++  output_dir = "$target_out_dir/$target_name"
++  module_source_dir = output_dir
+   module_install_name = ""
+-  subsystem_name = "developtools"
+-  part_name = "ace_ets2bundle"
+ }
+ 
+-ohos_copy("ohos_ets_ui_plugins") {
++copy_arkts_sdk_files("ohos_ets_ui_plugins") {
+   deps = [
+     ":build_ets_sysResource",
+     ":gen_ui_plugins",
+   ]
+-  sources = [ rebase_path("$target_gen_dir") ]
+-  outputs = [ ohos_ets_ui_plugins_path ]
+-  subsystem_name = "developtools"
+-  part_name = "ace_ets2bundle"
++  source_dir = target_gen_dir
++  files = _sdk_files.outputs
++  manifest = _sdk_copy_manifest
++  output_dir = ohos_ets_ui_plugins_path
+ }
+diff --git a/arkui-plugins/build_ui_plugins.py b/arkui-plugins/build_ui_plugins.py
+index 2ca4ffda2..be49d1f05 100755
+--- a/arkui-plugins/build_ui_plugins.py
++++ b/arkui-plugins/build_ui_plugins.py
+@@ -18,8 +18,11 @@ import os
+ import shutil
+ import subprocess
+ import sys
+-import tarfile
+-import time
++import tempfile
++from pathlib import Path
++
++sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
++from sdk_files import describe, publish
+ 
+ 
+ def copy_files(source_path, dest_path, is_file=False):
+@@ -44,61 +47,17 @@ def run_cmd(cmd, execution_path=None):
+         raise Exception(stderr.decode())
+ 
+ 
+-def build(options):
+-    build_cmd = [options.npm, 'run', 'compile:plugins']
++def build(options, staging):
++    build_cmd = [options.npm, 'run', 'compile:plugins', '--',
++                 '--out-dir', str(staging / 'lib')]
+     run_cmd(build_cmd, options.source_path)
+ 
+ 
+-def copy_runtime_deps(source_path, output_path, deps):
+-    """Copy specific npm packages and their dependencies."""
+-    for dep in deps:
+-        # Try to copy from arkui-plugins' node_modules first
+-        dep_path = os.path.join(source_path, 'node_modules', dep)
+-        # If not found, try to copy from compiler's node_modules
+-        if not os.path.exists(dep_path):
+-            dep_path = os.path.join(source_path, '../compiler/node_modules', dep)
+-        
+-        if os.path.exists(dep_path):
+-            dest_path = os.path.join(output_path, 'node_modules', dep)
+-            try:
+-                copy_files(dep_path, dest_path)
+-            except Exception as e:
+-                print(f"Warning: Failed to copy {dep}: {e}")
+-
+-
+-def copy_output(options):
+-    run_cmd(['rm', '-rf', options.output_path])
+-    copy_files(os.path.join(options.source_path, 'lib'),
+-               os.path.join(options.output_path, 'lib'))
+-
+-    copy_files(os.path.join(options.source_path, '../compiler/components'),
+-               os.path.join(options.output_path, 'lib/components'))
+-
+-    # Copy InsightIntent schemas and configurations
+-    insight_intents_src = os.path.join(options.source_path, '../compiler/insight_intents/schema')
+-    if os.path.exists(insight_intents_src):
+-        copy_files(insight_intents_src,
+-                   os.path.join(options.output_path, 'lib/insight_intents/schema'))
+-
+-    copy_files(os.path.join(options.source_path, 'package.json'),
+-               os.path.join(options.output_path, 'package.json'), True)
+-
+-    # Copy specific runtime dependencies to avoid SDK packaging issues
+-    # Only copy necessary packages instead of entire node_modules
+-    # These will be copied from either arkui-plugins or compiler's node_modules
+-    runtime_deps = [
+-        'ajv',
+-        'fast-deep-equal',  # ajv dependency
+-        'fast-uri',  # ajv dependency
+-        'json-schema-traverse',  # ajv dependency
+-        'require-from-string',  # ajv dependency
+-        'json5',  # JSON5 parser used by plugin source
+-    ]
+-    copy_runtime_deps(options.source_path, options.output_path, runtime_deps)
+-
+-    # Update output path timestamp for incremental build
+-    current_time = time.time()
+-    os.utime(options.output_path, (current_time, current_time))
++
++
++def copy_output(options, staging, copies):
++    for name, source in copies.items():
++        copy_files(str(source), str(staging / name), True)
+ 
+ 
+ def parse_args():
+@@ -109,15 +68,26 @@ def parse_args():
+     parser.add_argument('--root_out_dir', help='path to root out')
+     parser.add_argument('--current_os', help='current_os')
+ 
++    parser.add_argument('--state-file', required=True)
++
+     options = parser.parse_args()
+     return options
+ 
+ 
+ def main():
+     options = parse_args()
+-
+-    build(options)
+-    copy_output(options)
++    options.source_path = str(Path(options.source_path).resolve())
++    options.npm = os.path.abspath(options.npm)
++    output = Path(options.output_path).resolve()
++    if output == Path(options.source_path) or Path(options.source_path) in output.parents:
++        raise ValueError('SDK outputs must be outside the source project')
++    output.parent.mkdir(parents=True, exist_ok=True)
++    _, generated, copies = describe('plugins', options.source_path)
++    with tempfile.TemporaryDirectory(prefix='.gen_ui_plugins-', dir=output.parent) as temporary:
++        staging = Path(temporary)
++        build(options, staging)
++        copy_output(options, staging, copies)
++        publish(staging, output, generated | set(copies), options.state_file)
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/koala-wrapper/BUILD.gn b/koala-wrapper/BUILD.gn
+index 3d2b34ac6..5baf89f05 100644
+--- a/koala-wrapper/BUILD.gn
++++ b/koala-wrapper/BUILD.gn
+@@ -13,42 +13,74 @@
+ 
+ import("//build/config/components/ets_frontend/ets2abc_config.gni")
+ import("//build/ohos.gni")
++import("../sdk_copy.gni")
+ 
+ npm_path = "//prebuilts/build-tools/common/nodejs/current/bin/npm"
++_sdk_script = "//developtools/ace_ets2bundle/sdk_files.py"
++_sdk_files = exec_script(_sdk_script,
++                         [
++                           "manifest",
++                           "wrapper",
++                           rebase_path(".", root_build_dir),
++                           rebase_path("//", root_build_dir),
++                         ],
++                         "json")
++_sdk_manifest = "$target_gen_dir/gen_sdk_ts_wrapper.inputs.json"
++write_file(_sdk_manifest, _sdk_files, "json")
+ 
+ action("gen_sdk_ts_wrapper") {
+   script = "build_ts_wrapper.py"
++  inputs = _sdk_files.inputs + [
++             _sdk_script,
++             _sdk_manifest,
++           ]
++  _state = "$target_out_dir/$target_name.files.json"
++  outputs = [ _state ]
++  foreach(file, _sdk_files.outputs) {
++    outputs += [ "$target_gen_dir/$file" ]
++  }
+   deps = [ "./native:es2panda" ]
++  _native_file = "$root_out_dir/libes2panda.node"
++  if (current_os == "mingw") {
++    _native_file = "$root_out_dir/libes2panda.dll"
++  }
++  inputs += [ _native_file ]
+   args = [
+     "--source_path",
+-    rebase_path(get_path_info(".", "abspath")),
++    rebase_path(".", root_build_dir),
+     "--output_path",
+-    rebase_path("$target_gen_dir"),
++    rebase_path(target_gen_dir, root_build_dir),
+     "--npm",
+-    rebase_path(npm_path),
++    rebase_path(npm_path, root_build_dir),
+     "--current_os",
+-    "$current_os",
++    current_os,
+     "--root_out_dir",
+-    rebase_path(root_out_dir),
++    rebase_path(root_out_dir, root_build_dir),
++    "--state-file",
++    rebase_path(_state, root_build_dir),
++  ]
++  args += [
++    "--native-file",
++    rebase_path(_native_file, root_build_dir),
+   ]
+-
+-  outputs = [ "$target_gen_dir" ]
+ }
+ 
+-ohos_copy("ets2panda_koala_wrapper") {
++_sdk_copy_manifest = _sdk_manifest
++
++copy_arkts_sdk_files("ets2panda_koala_wrapper") {
+   deps = [ ":gen_sdk_ts_wrapper" ]
+-  sources = [ rebase_path("$target_gen_dir") ]
+-  outputs = [ target_out_dir + "/$target_name" ]
+-  module_source_dir = target_out_dir + "/$target_name"
++  source_dir = target_gen_dir
++  files = _sdk_files.outputs
++  manifest = _sdk_copy_manifest
++  output_dir = "$target_out_dir/$target_name"
++  module_source_dir = output_dir
+   module_install_name = ""
+-  subsystem_name = "developtools"
+-  part_name = "ace_ets2bundle"
+ }
+ 
+-ohos_copy("ohos_ets_koala_wrapper") {
++copy_arkts_sdk_files("ohos_ets_koala_wrapper") {
+   deps = [ ":gen_sdk_ts_wrapper" ]
+-  sources = [ rebase_path("$target_gen_dir") ]
+-  outputs = [ ohos_ets_koala_wrapper_path ]
+-  subsystem_name = "developtools"
+-  part_name = "ace_ets2bundle"
++  source_dir = target_gen_dir
++  files = _sdk_files.outputs
++  manifest = _sdk_copy_manifest
++  output_dir = ohos_ets_koala_wrapper_path
+ }
+diff --git a/koala-wrapper/build_ts_wrapper.py b/koala-wrapper/build_ts_wrapper.py
+index 178f8772f..0195ea9de 100755
+--- a/koala-wrapper/build_ts_wrapper.py
++++ b/koala-wrapper/build_ts_wrapper.py
+@@ -18,7 +18,11 @@ import os
+ import shutil
+ import subprocess
+ import sys
+-import tarfile
++import tempfile
++from pathlib import Path
++
++sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
++from sdk_files import describe, publish
+ 
+ 
+ def copy_files(source_path, dest_path, is_file=False):
+@@ -43,33 +47,18 @@ def run_cmd(cmd, execution_path=None):
+         raise Exception(stdout.decode() + stderr.decode())
+ 
+ 
+-def build(options):
+-    build_cmd = [options.npm, 'run', 'compile:tsc']
+-    run_cmd(build_cmd, options.source_path)
+-
+-
+-def copy_output(options):
+-    run_cmd(['rm', '-rf', options.output_path])
+-    copy_files(os.path.join(options.source_path, 'build/lib'),
+-               os.path.join(options.output_path, 'build/lib'))
+-    
+-    copy_files(os.path.join(options.source_path, 'koalaui'),
+-            os.path.join(options.output_path, 'koalaui'))
++def build(options, staging):
++    run_cmd([options.npm, 'run', 'compile:src', '--', '--out-dir',
++             str(staging / 'build/lib')], options.source_path)
++    run_cmd([options.npm, 'run', 'compile:types', '--', '--outDir',
++             str(staging / 'types'), '--tsBuildInfoFile',
++             str(staging / 'types/tsconfig.tsbuildinfo')], options.source_path)
+ 
+-    copy_files(os.path.join(options.source_path, 'package.json'),
+-               os.path.join(options.output_path, 'package.json'), True)
+-    
+-    if options.current_os == "mingw" :
+-        copy_files(os.path.join(options.root_out_dir, 'libes2panda.dll'),
+-                os.path.join(options.output_path, 'build/native/es2panda.node'), True)
+-        copy_files(os.path.join(options.root_out_dir, 'libes2panda.dll'),
+-            os.path.join(options.source_path, 'build/native/es2panda.node'), True)
+ 
+-    if options.current_os == "linux" or options.current_os == "mac" :
+-        copy_files(os.path.join(options.root_out_dir, 'libes2panda.node'),
+-                os.path.join(options.output_path, 'build/native/es2panda.node'), True)
+-        copy_files(os.path.join(options.root_out_dir, 'libes2panda.node'),
+-                os.path.join(options.source_path, 'build/native/es2panda.node'), True)
++def copy_output(options, staging, copies):
++    for name, source in copies.items():
++        copy_files(str(source), str(staging / name), True)
++    copy_files(options.native_file, str(staging / 'build/native/es2panda.node'), True)
+ 
+ 
+ def parse_args():
+@@ -80,15 +69,27 @@ def parse_args():
+     parser.add_argument('--root_out_dir', help='path to root out')
+     parser.add_argument('--current_os', help='current_os')
+ 
++    parser.add_argument('--state-file', required=True)
++    parser.add_argument('--native-file', required=True)
++
+     options = parser.parse_args()
+     return options
+ 
+ 
+ def main():
+     options = parse_args()
+-
+-    build(options)
+-    copy_output(options)
++    options.source_path = str(Path(options.source_path).resolve())
++    options.npm = os.path.abspath(options.npm)
++    output = Path(options.output_path).resolve()
++    if output == Path(options.source_path) or Path(options.source_path) in output.parents:
++        raise ValueError('SDK outputs must be outside the source project')
++    output.parent.mkdir(parents=True, exist_ok=True)
++    _, generated, copies = describe('wrapper', options.source_path)
++    with tempfile.TemporaryDirectory(prefix='.gen_sdk_ts_wrapper-', dir=output.parent) as temporary:
++        staging = Path(temporary)
++        build(options, staging)
++        copy_output(options, staging, copies)
++        publish(staging, output, generated | set(copies), options.state_file)
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/sdk_copy.gni b/sdk_copy.gni
+new file mode 100644
+index 000000000..697587d46
+--- /dev/null
++++ b/sdk_copy.gni
+@@ -0,0 +1,52 @@
++# Copyright (c) 2026 Huawei Device Co., Ltd.
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++import("//build/ohos.gni")
++
++# Preserve module metadata while copying each payload file explicitly.
++template("copy_arkts_sdk_files") {
++  _name = target_name
++  _copy_target = "${_name}_files"
++  action(_copy_target) {
++    deps = invoker.deps
++    script = "//developtools/ace_ets2bundle/sdk_files.py"
++    inputs = [ invoker.manifest ]
++    _state = "$target_out_dir/${target_name}.json"
++    outputs = [ _state ]
++    foreach(file, invoker.files) {
++      if (file != "package.json") {
++        inputs += [ "${invoker.source_dir}/$file" ]
++        outputs += [ "${invoker.output_dir}/$file" ]
++      }
++    }
++    args = [
++      "copy",
++      rebase_path(invoker.manifest, root_build_dir),
++      rebase_path(invoker.source_dir, root_build_dir),
++      rebase_path(invoker.output_dir, root_build_dir),
++      rebase_path(_state, root_build_dir),
++    ]
++  }
++  ohos_copy(_name) {
++    deps = [ ":$_copy_target" ]
++    sources = [ "${invoker.source_dir}/package.json" ]
++    outputs = [ "${invoker.output_dir}/package.json" ]
++    forward_variables_from(invoker,
++                           [
++                             "module_source_dir",
++                             "module_install_name",
++                           ])
++    subsystem_name = "developtools"
++    part_name = "ace_ets2bundle"
++  }
++}
+diff --git a/sdk_files.py b/sdk_files.py
+new file mode 100644
+index 000000000..e07e1df93
+--- /dev/null
++++ b/sdk_files.py
+@@ -0,0 +1,148 @@
++# Copyright (c) 2026 Huawei Device Co., Ltd.
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++"""Describe and publish the concrete files in the ArkTS SDK helpers."""
++
++import argparse
++import json
++import os
++from pathlib import Path
++import shutil
++import tempfile
++
++
++RUNTIME_DEPS = ('ajv', 'fast-deep-equal', 'fast-uri', 'json-schema-traverse',
++                'require-from-string', 'json5')
++
++
++def files_under(directory, excluded=()):
++    for root, directories, files in os.walk(directory):
++        directories[:] = sorted(d for d in directories if d not in excluded)
++        for name in sorted(files):
++            path = Path(root) / name
++            if path.is_file():
++                yield path
++
++
++def describe(kind, source):
++    source = Path(source).resolve()
++    copies = {'package.json': source / 'package.json'}
++    inputs = {source / 'package.json', source / 'babel.config.js'}
++    generated = set()
++    if kind == 'plugins':
++        inputs.add(source / 'custom-import-plugin.js')
++        for path in files_under(source, ('node_modules', 'lib', 'test', '.git')):
++            relative = path.relative_to(source)
++            if path.suffix == '.ts' and relative.as_posix() != 'jest-test.config.ts':
++                inputs.add(path)
++                generated.add('lib/' + relative.with_suffix('.js').as_posix())
++        for folder, destination in [('components', 'lib/components'),
++                                    ('insight_intents/schema', 'lib/insight_intents/schema')]:
++            base = source.parent / 'compiler' / folder
++            for path in files_under(base):
++                copies[destination + '/' + path.relative_to(base).as_posix()] = path
++        for dependency in RUNTIME_DEPS:
++            base = source / 'node_modules' / dependency
++            if not base.is_dir():
++                base = source.parent / 'compiler/node_modules' / dependency
++            if not base.is_dir():
++                raise FileNotFoundError('Missing SDK runtime dependency: ' + dependency)
++            for path in files_under(base):
++                copies['node_modules/' + dependency + '/' + path.relative_to(base).as_posix()] = path
++    elif kind == 'wrapper':
++        inputs.update([source / 'tsconfig.json', source / 'koalaui-transform.js'])
++        for path in files_under(source / 'src'):
++            inputs.add(path)
++            if path.suffix == '.ts':
++                generated.add('build/lib/' + path.relative_to(source / 'src').with_suffix('.js').as_posix())
++        for path in files_under(source / 'koalaui'):
++            copies['koalaui/' + path.relative_to(source / 'koalaui').as_posix()] = path
++        generated.add('build/native/es2panda.node')
++    else:
++        raise ValueError('Unknown SDK helper: ' + kind)
++    inputs.update(copies.values())
++    # Track tool files, including symlinked executables, without directory mtimes.
++    inputs.update(files_under(source / 'node_modules'))
++    lockfile = source / 'package-lock.json'
++    if lockfile.is_file():
++        inputs.add(lockfile)
++    return inputs, generated, copies
++
++
++def publish(source, destination, names, state_file):
++    source, destination = Path(source).resolve(), Path(destination).resolve()
++    names = sorted(set(names))
++    for name in names:
++        relative = Path(name)
++        if relative.is_absolute() or '..' in relative.parts:
++            raise ValueError('Invalid SDK output: ' + name)
++        if not (source / relative).is_file():
++            raise FileNotFoundError('Missing declared SDK output: ' + str(source / relative))
++        (destination / relative).resolve().relative_to(destination)
++    state_file = Path(state_file)
++    previous = json.loads(state_file.read_text(encoding='utf-8')) if state_file.is_file() else []
++    for name in names:
++        src, dst = source / name, destination / name
++        if dst.is_file() and src.read_bytes() == dst.read_bytes():
++            continue
++        dst.parent.mkdir(parents=True, exist_ok=True)
++        with tempfile.NamedTemporaryFile(dir=dst.parent, delete=False) as temporary:
++            pending = Path(temporary.name)
++        try:
++            shutil.copy2(src, pending)
++            # A changed output must be newer even when the input carries an old mtime.
++            os.utime(pending, None)
++            os.replace(pending, dst)
++        finally:
++            pending.unlink(missing_ok=True)
++    for name in set(previous) - set(names):
++        path = destination / name
++        path.resolve().relative_to(destination)
++        if path.is_file():
++            path.unlink()
++    content = json.dumps(names, indent=2) + '\n'
++    state_file.parent.mkdir(parents=True, exist_ok=True)
++    if not state_file.is_file() or state_file.read_text(encoding='utf-8') != content:
++        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=state_file.parent,
++                                         delete=False) as temporary:
++            temporary.write(content)
++            pending = Path(temporary.name)
++        os.replace(pending, state_file)
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    sub = parser.add_subparsers(dest='command', required=True)
++    manifest = sub.add_parser('manifest')
++    manifest.add_argument('kind', choices=('plugins', 'wrapper'))
++    manifest.add_argument('source')
++    manifest.add_argument('root')
++    copy = sub.add_parser('copy')
++    copy.add_argument('manifest')
++    copy.add_argument('source')
++    copy.add_argument('destination')
++    copy.add_argument('state')
++    args = parser.parse_args()
++    if args.command == 'manifest':
++        inputs, generated, copies = describe(args.kind, args.source)
++        root = Path(args.root).resolve()
++        print(json.dumps({'inputs': ['//' + p.relative_to(root).as_posix() for p in sorted(inputs)],
++                          'outputs': sorted(generated | set(copies))}))
++    else:
++        manifest = json.loads(Path(args.manifest).read_text(encoding='utf-8'))
++        publish(args.source, args.destination,
++                [p for p in manifest['outputs'] if p != 'package.json'], args.state)
++
++
++if __name__ == '__main__':
++    main()
