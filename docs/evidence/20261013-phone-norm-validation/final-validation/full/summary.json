@@ -1,0 +1,40 @@
+{
+  "main_tasks": 125626,
+  "sequence_valid": true,
+  "task_types": {
+    "STAMP": 37874,
+    "COPY": 2737,
+    "ACTION": 22852,
+    "AR": 554,
+    "CXX": 43871,
+    "CC": 13955,
+    "ASM": 172,
+    "LINK": 213,
+    "SOLINK": 3232,
+    "RUST": 166
+  },
+  "action_counts": {
+    "sa_profile_src_phone": 1,
+    "sa_profile_binary_phone": 1,
+    "phone_sa_profile_install_info": 1,
+    "check_seccomp_filter_name": 1,
+    "process_field_validate": 1,
+    "collect_notice_files__phone": 1,
+    "generate_host_symlink": 1,
+    "phone_hisysevent_install_info": 1,
+    "phone_install_modules": 1,
+    "phone_parts_list": 1,
+    "gen_snapshot": 1,
+    "ark_jsf": 1,
+    "airscan_action": 1,
+    "gen_ui_plugins": 1,
+    "gen_sdk_ts_wrapper": 1
+  },
+  "gn_seconds": [
+    "25.24"
+  ],
+  "ninja_seconds": [
+    "1967.93"
+  ],
+  "console_sha256": "fee3e905742c8872f090f767ca153fb138bf75ccb4a16b352be80f323eb5b3f4"
+}

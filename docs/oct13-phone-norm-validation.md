@@ -4,7 +4,7 @@
 
 2026-10-13（America/Los_Angeles）在主工作仓恢复此前保存的规范性修复，再修正实际编译暴露的 JS/CSS 依赖问题。远程日志使用 UTC，日期为 2026-10-14。raw 原始对照仓保持原样。
 
-**attempt5 全量成功，随后三轮增量均成功；首轮 phone_install_modules 仍执行一次，后两轮原始十项均未执行。继续修复首轮 ROFS 重链后，attempt6 已从空 out 启动全量，且源码内两个旧 SDK 生成目录也已移走；该最终版本的全量和增量结果仍待取得。** 每次 GN 失败后的主仓 out 均移动到独立归档，再从空 out 执行原产品命令。没有关闭 GN 依赖检查或修改产品参数。
+**最终 attempt6 从空 out 且无源码内旧 SDK 生成目录完成全量，耗时 2,105.50 秒；随后连续两轮增量为 154.81 / 87.77 秒。两轮原始十项全部不执行，首轮也没有库重链或 phone_install_modules 重跑。三轮退出码均为 0。** 每次 GN 失败后的主仓 out 均移动到独立归档，再从空 out 执行原产品命令。没有关闭 GN 依赖检查或修改产品参数。
 
 ## 本轮补充修改
 
@@ -25,6 +25,24 @@
 - 真实 IDL 隔离 Ninja 回归：从本轮 GN 提取 141 条命令，生成 1,560 个输出；不变构建、部分输出删除后恢复、全部输出删除后恢复均通过，恢复后的不变构建均为 no work。源码未变化。使用 raw 仓已构建的同版 IDL 工具，不替代产品 GN 图和消费者编译验收；见 [逐轮记录](evidence/20261013-phone-norm-validation/idl-real-recovery-status.json) 与 [结果](evidence/20261013-phone-norm-validation/idl-real-recovery-passed.json)。
 - attempt1 至 attempt4 的 GN 失败分别暴露生成文件可见性和 innerkit 声明约束；attempt5 改为直接 external_deps 后通过 GN；主 Ninja 的 gen_snapshot、ark_jsf、gen_ui_plugins 和 gen_sdk_ts_wrapper 已执行通过。
 - 已保存修改前及每轮构建前的 Git 快照，新增 ROFS 仓后覆盖 17 仓，主仓 HEAD 和真实索引没有切换。恢复包内 Git bundle 校验通过。
+
+## 最终产品验收
+
+最终版本 attempt6 的原始记录见 [逐轮汇总](evidence/20261013-phone-norm-validation/build-summary.json) 与 [最终状态](evidence/20261013-phone-norm-validation/final-validation/status.json)。完整耗时包含 build.sh 的全部阶段，不等同于 Ninja 耗时。
+
+| 阶段 | 完整耗时 | GN / Ninja | 主 Ninja 任务 | phone_install_modules | 原始十项其余九项 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 空 out 全量 | 2,105.50 秒 | 25.24 / 1967.93 秒 | 125,626 | 1 | 各 1 |
+| 增量 1 | 154.81 秒 | 28.95 / 57.53 秒 | 62 | 0 | 均 0 |
+| 增量 2 | 87.77 秒 | 22.19 / 25.92 秒 | 13 | 0 | 均 0 |
+
+三轮任务序列有效，95 个受控路径内容保持一致，两轮之间受控路径时间戳未变化。17 仓验证前后的 Git 树一致。全量后源码内 arkui-plugins/lib 和 koala-wrapper/build 均未重建；SDK 相关生成动作在全量成功执行，验证不再依赖旧源码产物。
+
+两轮增量的 gen_snapshot、ark_jsf、airscan_action、gen_ui_plugins、gen_sdk_ts_wrapper 同样均为 0，无 C/C++ 编译或共享库重链。其余少量上游检查或 metadata 动作以日志为准，不作为原始十项失败计数。
+
+6 个实际冷构建 ROFS 对象与修改前产品对象逐字节一致，见 [对象校验](evidence/20261013-phone-norm-validation/final-validation/rofs-object-parity.json)。补充的输入与输出同目录、目录中增删无关条目回归也保持对象内容和 mtime，见 [ROFS 回归](evidence/20261013-phone-norm-validation/rofs-after.json)。
+
+完整控制台压缩日志保存在本地 D:\workspace\archives\20261012-migration\validation-results.tar.gz，SHA-256：85420129ba948f046b17166ff0ea8e9079627d77adb2857d4a9173d0a7042320。远程保留同名归档及各阶段原日志。
 
 ## 首轮安装重跑的实际根因
 
@@ -49,7 +67,7 @@ attempt6 先保存 17 仓 Git 快照，移走未跟踪的 arkui-plugins/lib（26
 
 ## 安装动作验收边界
 
-必须在全量成功后保持源码及参数不变，取得连续两轮 phone_install_modules 不执行的实际增量日志，不能沿用纯迁移版 169.92 秒或旧仓结果。
+本次在全量成功后保持源码及参数不变，首轮起连续两轮 phone_install_modules 均不执行；结果来自 attempt6，未沿用纯迁移版 169.92 秒或旧仓结果。
 
 安装 depfile 仍有历史 HAP/资源目录依赖。不能仅删除目录项或改为一次性枚举后丢失新增/删除文件的触发条件。后续应从真实 Ninja explain 追踪根因，并在必要时联动生产者清单与安装消费关系。
 
@@ -60,7 +78,7 @@ cd /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/cod
 bash ./build.sh -p rk3568 --build-target make_all --ninja-args=-dexplain
 ```
 
-本轮运行器已启动时不要重复启动上述命令。运行目录由下列文件记录：
+本轮全量及两轮增量已结束，可直接运行上述命令继续增量编译。运行目录由下列文件记录：
 
 ```text
 /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/latest-run.txt
@@ -77,4 +95,4 @@ bash ./build.sh -p rk3568 --build-target make_all --ninja-args=-dexplain
 - SHA-256：1d7fc7271482b0a2874a75225b4044b33246c76b791789110e3f45e40c03aa8a。
 - [完整 17 仓版本](evidence/20261013-phone-norm-validation/all-repository-versions.json)。
 
-A/B 控制器已补齐 17 仓、95 路径，包含新增 CSS bundle.json 与 ROFS 脚本；current 仍是此前缓存的规范版，不包含本轮追加差异；需要恢复本轮版本时使用上述 after 快照与补丁。切换前须停止构建并另存当前状态。
+A/B 控制器覆盖 17 仓、95 路径，包含 CSS bundle.json 与 ROFS 脚本。最终验证后 current 已更新为本轮通过验证的源码快照，逐路径内容与执行权限均匹配工作树；baseline 和 original 保持原样。更新记录见 [缓存核对](evidence/20261013-phone-norm-validation/variant-cache-update.json)。切换前须停止构建并另存当前状态。

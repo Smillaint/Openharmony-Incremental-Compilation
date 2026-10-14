@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-14T02:44:59.324353+00:00",
+  "archived_sources": [
+    {
+      "source": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/developtools/ace_ets2bundle/arkui-plugins/lib",
+      "archive": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/attempt6/archive-source/developtools/ace_ets2bundle/arkui-plugins/lib",
+      "files": 266,
+      "bytes": 2102783
+    },
+    {
+      "source": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/developtools/ace_ets2bundle/koala-wrapper/build",
+      "archive": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/attempt6/archive-source/developtools/ace_ets2bundle/koala-wrapper/build",
+      "files": 869,
+      "bytes": 3506717
+    }
+  ],
+  "archived_out": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/ab_incremental_20261013/outputs/norm-after-attempt5/out",
+  "main_out_absent": true
+}

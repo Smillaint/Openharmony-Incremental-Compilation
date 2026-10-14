@@ -54,6 +54,12 @@
       "unchanged_input_keeps_mtime": true,
       "compiler_failure_preserves_output": true,
       "missing_declared_output_preserves_output": true
+    },
+    {
+      "shared_assets_and_output_directory": true,
+      "first_output_creation_keeps_repeated_bytes_and_mtime": true,
+      "unrelated_directory_entries_keep_output_stable": true,
+      "sha256": "4fee91cef466108d6304d6559892d27e6326c23ba4a5f6c77ede7246e0b66324"
     }
   ]
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "campreviewrofs",
+    "exists": true,
+    "sha256": "4ca78a4567928837d8ed91b98bba3a60107281658b624f5c2918d6e9d06ada1a",
+    "same_as_prior_product": true
+  },
+  {
+    "name": "rofsDotfield",
+    "exists": true,
+    "sha256": "f7f4f94d66fad21c905bb31cf3dd535b6d017ffe68872b7a5618619dae928f9d",
+    "same_as_prior_product": true
+  },
+  {
+    "name": "rofs",
+    "exists": true,
+    "sha256": "3bc6a98f6be44501591387c43c4d8f26b990bc4128f93f32bcb6c610a75dd6aa",
+    "same_as_prior_product": true
+  },
+  {
+    "name": "mrt_rofs",
+    "exists": true,
+    "sha256": "79fee07321c6a0a57964020782506191234f27d32cd7f22b18875eb60c7eb287",
+    "same_as_prior_product": true
+  },
+  {
+    "name": "rofsRndr",
+    "exists": true,
+    "sha256": "2d69edfa00f9944e00ad2730e6ef216fd5c06369f5e40b3524970b9884fe79f0",
+    "same_as_prior_product": true
+  },
+  {
+    "name": "rofs3D",
+    "exists": true,
+    "sha256": "ce80d57114e2fb11ab388b779e666c59eb8ff6579b193a1fdac30ccb3f35def1",
+    "same_as_prior_product": true
+  }
+]

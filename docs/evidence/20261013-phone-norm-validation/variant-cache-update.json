@@ -1,0 +1,14 @@
+{
+  "controlled_paths": 95,
+  "snapshot": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/ab_incremental_20261013/checkpoints/validated-norm-source_20261014T032505261479Z",
+  "all_repository_trees_unchanged": true,
+  "repository_count": 17,
+  "baseline_original_preserved": true,
+  "newly_managed_paths": [
+    "third_party/css-what/bundle.json",
+    "foundation/graphic/graphic_3d/lume/LumeEngine/tools/CompilerAsset.sh"
+  ],
+  "legacy_sdk_source_outputs_absent": true,
+  "current_cache_matches_worktree": true,
+  "prior_config": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/ab_incremental_20261013/variants.before-norm-validation-update.json"
+}
