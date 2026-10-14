@@ -4,6 +4,8 @@
 
 ## 最新状态与继续工作入口
 
+[2026-10-14 全部修复的离线源码](docs/oct14-all-repairs-offline.md)：**本轮 17 个相关仓已独立恢复到 `D:/workspace/repositories/openharmony-repairs-20261014`，68 个修复文件及 8 个保留差异全部可在本地查看、修改。** 组合验证快照、10 仓发布分支和更新后的 SA #6965 分支均已保留，229 个 LFS 资源已下载并校验。目录内 README 列明逐仓作用、文件和版本；完整产品编译仍需原 OpenHarmony 环境。
+
 [2026-10-14 SA 组旧 PR 更新](docs/oct14-sa-profile-group-update.md)：**三个 SA Action 继续使用 [build #6965](https://gitcode.com/openharmony/build/pull/6965)，已追加带 DCO 的 ZIP 时间戳修复，门禁已启动。** 重复 PR #7130 和临时 Issue #4759 已关闭，保留 Issue #4657。后续沿用历史 PR 分组，优先更新旧 PR。
 
 [2026-10-14 GitCode 发布交接](docs/oct14-gitcode-publish.md)：**10 个个人仓已推送 `fix/incremental-build-20261013`，补齐 7 个 fork，15 条新提交全部带 Smillick DCO，远端 SHA 已逐仓核对。** 分支保留实际通过编译的修复文件；现有 master、旧 PR 分支未改动。该批分支发布阶段未新建 PR，随后首条 Action PR 见上方。仓地址、逐仓提交、上游重叠检查、补丁和 bundle 均已归档。

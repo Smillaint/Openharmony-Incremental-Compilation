@@ -1,0 +1,2872 @@
+{
+  "saved_utc": "2026-10-14T11:18:35.565948+00:00",
+  "source_root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code",
+  "local_root": "D:\\workspace\\repositories\\openharmony-repairs-20261014",
+  "expected_repositories": 17,
+  "repositories": [
+    {
+      "repo": "arkcompiler/ets_frontend",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\arkcompiler\\ets_frontend",
+      "upstream": "https://gitcode.com/openharmony/arkcompiler_ets_frontend.git",
+      "base": "c030cb21b2822120dd153b22b3a5a07dd0b7f7dd",
+      "head": "68e6e8881be52747b3b887a65f8f0035ecd66ce8",
+      "tree": "f5312217b327b7c51812ca2766ab39f4cc8fc675",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "e8544064f5e9e956286eed2d71e0ba4e801d8743",
+      "migration_snapshot_available": false,
+      "published_head": null,
+      "tracked_files": 26640,
+      "repair_files": 3,
+      "new_repair_files": 0,
+      "excluded_files": [
+        "ets2panda/bindings/package-lock.json",
+        "ets2panda/driver/interop_toolkits/gluegen/package-lock.json",
+        "ets2panda/linter/package-lock.json",
+        "legacy_bin/api8/package-lock.json"
+      ],
+      "checked_files": [
+        {
+          "path": "ets2panda/BUILD.gn",
+          "blob": "e40fc5639430d0d63bfe540e1d7eda4ebde79e30"
+        },
+        {
+          "path": "ets2panda/driver/build_system/BUILD.gn",
+          "blob": "11f054814e8457b6df60035dc5e0ff9952109507"
+        },
+        {
+          "path": "ets2panda/scripts/check_build_system_consistency.py",
+          "blob": "25b732278824a7d7fb8df925a6d88da88567b63d"
+        },
+        {
+          "path": "ets2panda/bindings/package-lock.json",
+          "blob": "4e5ce6cf43723e1e9ac86636ed0202331bd1a2a7"
+        },
+        {
+          "path": "ets2panda/driver/interop_toolkits/gluegen/package-lock.json",
+          "blob": "547335ce794dcde0f325fe9f6b54052476370743"
+        },
+        {
+          "path": "ets2panda/linter/package-lock.json",
+          "blob": "ca6d4fd07f16ad18264907106e09ef7f14dc1ef0"
+        },
+        {
+          "path": "legacy_bin/api8/package-lock.json",
+          "blob": "692033ca26136fa246b449c7b08f9f759a4c99bb"
+        }
+      ],
+      "windows_worktree_exclusions": [
+        "arkguard/test/grammar/wildcard_filename/keep_filename1/@keep+filename.ts",
+        "arkguard/test/grammar/wildcard_filename/keep_filename1/^$.ts",
+        "arkguard/test/grammar/wildcard_filename/keep_filename1/a+{}+[]+^.ts",
+        "arkguard/test/grammar/wildcard_filename/keep_filename1/keep_the_filename1.ts",
+        "arkguard/test/grammar/wildcard_filename/keep_filename1/myfilename*.ts",
+        "arkguard/test/grammar/wildcard_filename/keep_filename1/no^_keep{}.ts",
+        "arkguard/test/grammar/wildcard_filename/keep_filename1/obfConfig.json",
+        "ets2panda/test/tsconfig/test-unsupported-file-name/CMakeLists.txt",
+        "ets2panda/test/tsconfig/test-unsupported-file-name/arktsconfig.json",
+        "ets2panda/test/tsconfig/test-unsupported-file-name/expected.json",
+        "ets2panda/test/tsconfig/test-unsupported-file-name/test.ets",
+        "ets2panda/test/tsconfig/test-unsupported-file-name/test:2.ets"
+      ],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.9,
+      "lfs_files": []
+    },
+    {
+      "repo": "base/account/os_account",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\base\\account\\os_account",
+      "upstream": "https://gitcode.com/openharmony/account_os_account.git",
+      "base": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+      "head": "aa79a094d4818e815b934700d98d60d9a96b6a01",
+      "tree": "6f798e555bef8a2ef0bb84fad9dc96f40525a3a2",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "7f172ea3830153f8be073fe5edf4fc964b1eed87",
+      "migration_snapshot_available": true,
+      "published_head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+      "tracked_files": 2496,
+      "repair_files": 1,
+      "new_repair_files": 1,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "frameworks/osaccount/native/BUILD.gn",
+          "blob": "20408448f0a27c92c7f310d1337b52c2ac63b0a9"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.5,
+      "lfs_files": []
+    },
+    {
+      "repo": "base/inputmethod/imf",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\base\\inputmethod\\imf",
+      "upstream": "https://gitcode.com/openharmony/inputmethod_imf.git",
+      "base": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+      "head": "81ce4832726fb77e5b5eb674e43008963e318172",
+      "tree": "c7a881d1e1a890d7ef4990e0995a697748630934",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "5f5e6178a1d5b56331dae7af12ec3fca083857f5",
+      "migration_snapshot_available": true,
+      "published_head": "331a15a1cda376687080a3977999de42182ec3ec",
+      "tracked_files": 1032,
+      "repair_files": 1,
+      "new_repair_files": 1,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "interfaces/inner_api/inputmethod_controller/BUILD.gn",
+          "blob": "1f95543df75fabc7256085b8280b08d6c45691a6"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.5,
+      "lfs_files": []
+    },
+    {
+      "repo": "base/security/dlp_permission_service",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\base\\security\\dlp_permission_service",
+      "upstream": "https://gitcode.com/openharmony/security_dlp_permission_service.git",
+      "base": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+      "head": "8dae586bb6e2715d1e739d71a93ba38e1b0acf51",
+      "tree": "4ba2ee3f184d331f98ac741202e84d8c07337462",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "b59001a8383d76f2708a3b0d525ae2fba538b24b",
+      "migration_snapshot_available": true,
+      "published_head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+      "tracked_files": 817,
+      "repair_files": 1,
+      "new_repair_files": 1,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "interfaces/inner_api/dlp_permission/BUILD.gn",
+          "blob": "8ff5bfa97405280c5bdd275b407e2b24e1640f70"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.5,
+      "lfs_files": []
+    },
+    {
+      "repo": "base/security/selinux_adapter",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\base\\security\\selinux_adapter",
+      "upstream": "https://gitcode.com/openharmony/security_selinux_adapter.git",
+      "base": "f037bb425e08c275b1da27a1de73002e9432cf5c",
+      "head": "40e6349f02bb6b4f5abbf4eb430b724e3b91033b",
+      "tree": "3d7db08d194c014b7129dcb5fbbc39bcb6d778f1",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "55d1897e132208ccde7c3c34ab70aff48e479cb5",
+      "migration_snapshot_available": false,
+      "published_head": null,
+      "tracked_files": 1894,
+      "repair_files": 0,
+      "new_repair_files": 0,
+      "excluded_files": [],
+      "checked_files": [],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.2,
+      "lfs_files": []
+    },
+    {
+      "repo": "build",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\build",
+      "upstream": "https://gitcode.com/openharmony/build.git",
+      "base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+      "head": "575035a841c75ff44a7e59838b3d14da7a6d5d8c",
+      "tree": "49de3af89a2735dbb1156018f367770a2da6ba55",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+      "migration_snapshot_available": true,
+      "published_head": "276b465e0bf190f179e1810af8827949f5cff4fe",
+      "tracked_files": 940,
+      "repair_files": 36,
+      "new_repair_files": 4,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "config/components/ets_frontend/generate_static_abc.py",
+          "blob": "044c339202b19b3b1a26e2cbc4f94c038459dbb1"
+        },
+        {
+          "path": "config/components/idl_tool/idl.gni",
+          "blob": "85f6dbb28ad77675f8f9b1944435ebfea9e96c92"
+        },
+        {
+          "path": "config/components/idl_tool/idl.py",
+          "blob": "ad535759e83030c44d91eb8d5b974da2681dbdf4"
+        },
+        {
+          "path": "hb/services/loader.py",
+          "blob": "349dd70800e7e9bf24edc1a1a9b5146605ffc3de"
+        },
+        {
+          "path": "hb/util/io_util.py",
+          "blob": "323fe6bc79b50f422e42b573dbab69e34e43f23e"
+        },
+        {
+          "path": "hb/util/loader/load_ohos_build.py",
+          "blob": "5cac80994b764ebdd47aa37319a24b45c6c3b7c0"
+        },
+        {
+          "path": "lite/config/component/lite_component.gni",
+          "blob": "97495c0fd3b1ce07f375e8d37384d865ed1426a1"
+        },
+        {
+          "path": "ohos/app/app_internal.gni",
+          "blob": "266a9124d5628964a0374b5065f260f741e62eec"
+        },
+        {
+          "path": "ohos/common/BUILD.gn",
+          "blob": "2b2de9cc97b4b0ffec9640eec85f8d3f0faf11de"
+        },
+        {
+          "path": "ohos/common/binary_install_info.py",
+          "blob": "963843d34ae5284ce336a02e5c696da5f4953bc3"
+        },
+        {
+          "path": "ohos/common/generate_host_info.py",
+          "blob": "34c0e73edbb8469fa8fb5b5d82bdd1915c6b673b"
+        },
+        {
+          "path": "ohos/common/merge_all_subsystem.py",
+          "blob": "63064c93e8423af1cabd8440ebbc6b57815f3f6c"
+        },
+        {
+          "path": "ohos/generate_part_info.py",
+          "blob": "1eea205f209769c25a2548745463c601048d9375"
+        },
+        {
+          "path": "ohos/hisysevent/hisysevent_process.py",
+          "blob": "bd21745ab3f9f41673f9a36b941268a4e6c46a0c"
+        },
+        {
+          "path": "ohos/images/BUILD.gn",
+          "blob": "929683a0c88eb3b9659a159dc0870dbef873a02b"
+        },
+        {
+          "path": "ohos/images/build_image.py",
+          "blob": "3f6bde770b2fbd575c6e2897fc8a58f5d680a16b"
+        },
+        {
+          "path": "ohos/notice/collect_module_notice_file.py",
+          "blob": "92d29ebb6b4245e3dd009d8c42be0270dc8f4cfa"
+        },
+        {
+          "path": "ohos/notice/collect_system_notice_files.py",
+          "blob": "b5c4db7ad4a968d9cc9313d9a1e8aa41dcf22cb6"
+        },
+        {
+          "path": "ohos/packages/BUILD.gn",
+          "blob": "aa20ad3fc0aa030b720bab64c60fba9c76883d67"
+        },
+        {
+          "path": "ohos/packages/check_seccomp_library_name.py",
+          "blob": "7cab14b1407e2f67225b7134ecc35634796aef02"
+        },
+        {
+          "path": "ohos/packages/generate_host_symlink.py",
+          "blob": "8109749fcc6a23c5329c05b0895d4309e6d2236b"
+        },
+        {
+          "path": "ohos/packages/modules_install.py",
+          "blob": "a3d7b084c456bb7efb128adc4b79fa54ba91537f"
+        },
+        {
+          "path": "ohos/packages/parts_install_info.py",
+          "blob": "acb8ecfdf00ee0948994f630bc34749422336bee"
+        },
+        {
+          "path": "ohos/packages/process_field_validate.py",
+          "blob": "85c4d2e78791a4f4c0e66b43902750326ad7b49e"
+        },
+        {
+          "path": "ohos/packages/stabilize_json_file.py",
+          "blob": "d07002a0319ea89885850ce21cf21087ab8ae286"
+        },
+        {
+          "path": "ohos/sa_profile/sa_profile_binary.py",
+          "blob": "d0bbbb15043d2f299000a369ec39dea04449d7d4"
+        },
+        {
+          "path": "ohos/sa_profile/sa_profile_merge.py",
+          "blob": "1c5e7693290208de44f194d91591715660f96ee1"
+        },
+        {
+          "path": "ohos/sa_profile/sa_profile_source.py",
+          "blob": "40b054ee6c5bbc3737b2451a56b880d3885b2e0a"
+        },
+        {
+          "path": "ohos/sa_profile/src_sa_profile_process.py",
+          "blob": "d5ced17efa1edf962dd217ae525e6ef6f1dd3fa8"
+        },
+        {
+          "path": "ohos/sdk/parse_interface_sdk.py",
+          "blob": "182c688d95f5ffa9e3ba402cb3b66ed974f98e39"
+        },
+        {
+          "path": "scripts/app_sign.py",
+          "blob": "8267a87309919b11a261453b74581b2822a837db"
+        },
+        {
+          "path": "scripts/build_js_assets.py",
+          "blob": "0155d801ee49249e5dbe88cdcb29e6e922f805b8"
+        },
+        {
+          "path": "scripts/compile_app.py",
+          "blob": "ca1dd974325e5ab6d00c65c987fe15872c2469b7"
+        },
+        {
+          "path": "scripts/util/build_utils.py",
+          "blob": "1a1860e3e7de39565663e0bd556cc8d17b82c121"
+        },
+        {
+          "path": "scripts/util/file_utils.py",
+          "blob": "4b0ac9e406d7d377be522ddc25e0b342299003be"
+        },
+        {
+          "path": "templates/kernel/linux-6.6/make_ko.sh",
+          "blob": "1029ae135699b14add88889b13d5b8b1e65db5a6"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 5.1,
+      "lfs_files": []
+    },
+    {
+      "repo": "developtools/ace_ets2bundle",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\developtools\\ace_ets2bundle",
+      "upstream": "https://gitcode.com/openharmony/developtools_ace_ets2bundle.git",
+      "base": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+      "head": "f8c82e18a71d36ff3121e1fb77c9686a004919d0",
+      "tree": "f69586859887c8931e8d49a2919d5ece2cb8231c",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "b545845711e41987f9ca54c09b89061ce5ec6b4c",
+      "migration_snapshot_available": true,
+      "published_head": "1eabff15841a7ba11c860262bf2fbde2c3960db6",
+      "tracked_files": 5019,
+      "repair_files": 10,
+      "new_repair_files": 8,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "arkui-plugins/BUILD.gn",
+          "blob": "30866310e8529d38694b704e8739ab5e69751cc6"
+        },
+        {
+          "path": "arkui-plugins/build_ui_plugins.py",
+          "blob": "df8350738be57b83280b2a1c2deb858b206284fb"
+        },
+        {
+          "path": "arkui-plugins/sdk_files.json",
+          "blob": "057830af4f8b94835b2ef0c7d261217723d08fb4"
+        },
+        {
+          "path": "ets1.2/BUILD.gn",
+          "blob": "97ae347b03e422fbebf0061d062d17e481908ffd"
+        },
+        {
+          "path": "ets1.2/libarkts/BUILD.gn",
+          "blob": "204e94e7569397fc6e78dfb596eda107b57e1465"
+        },
+        {
+          "path": "koala-wrapper/BUILD.gn",
+          "blob": "a8ca3fbee9985e76ddc5cded5a62319cb398b932"
+        },
+        {
+          "path": "koala-wrapper/build_ts_wrapper.py",
+          "blob": "ca285b863add2abf64b9dac8b178de7aa1e5618f"
+        },
+        {
+          "path": "koala-wrapper/sdk_files.json",
+          "blob": "751f6a674bcc167b86e81b6d08650f3aa6c5beb7"
+        },
+        {
+          "path": "sdk_copy.gni",
+          "blob": "b094ac440723873f7ced13ae2a4031876ae6bc52"
+        },
+        {
+          "path": "sdk_files.py",
+          "blob": "5aaf18fa7aa9aa164923b68e274888131432da15"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 2.3,
+      "lfs_files": []
+    },
+    {
+      "repo": "developtools/packing_tool",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\developtools\\packing_tool",
+      "upstream": "https://gitcode.com/openharmony/developtools_packing_tool.git",
+      "base": "498ffd5552a076a491a33b5dae6d6b3a014c6096",
+      "head": "2a6b3330fb4245cf1a9a5a4f92f8bab50b4608f8",
+      "tree": "a3e415ac81cec8dfb4b48271aebc595501d72c9e",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "930d6da378078549abdafdc3db409849831b3a81",
+      "migration_snapshot_available": false,
+      "published_head": null,
+      "tracked_files": 478,
+      "repair_files": 1,
+      "new_repair_files": 0,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "adapter/ohos/Compressor.java",
+          "blob": "73d3f5b84bd16ba039617541420512437c8d7b5c"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.3,
+      "lfs_files": []
+    },
+    {
+      "repo": "device/board/hihope",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\device\\board\\hihope",
+      "upstream": "https://gitcode.com/openharmony/device_board_hihope.git",
+      "base": "5d368fb765920c2b1cad41eb86164563461a7074",
+      "head": "f7c4b8b0a4e5fda89e1bf92af0eaaf2650c6f779",
+      "tree": "7fe0394e0829965e37a941033a8cf9fcb8b5aeb0",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "025d4baaeb3eac1eb7f0c5e7b824d7be67186c68",
+      "migration_snapshot_available": false,
+      "published_head": null,
+      "tracked_files": 237,
+      "repair_files": 1,
+      "new_repair_files": 0,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "rk3568/camera/vdi_impl/v4l2/BUILD.gn",
+          "blob": "f8a395c64e0e877835808a27577c0f9b0c724cfd"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.4,
+      "lfs_files": []
+    },
+    {
+      "repo": "foundation/ability/dmsfwk",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\foundation\\ability\\dmsfwk",
+      "upstream": "https://gitcode.com/openharmony/ability_dmsfwk.git",
+      "base": "aa1b0347b10700d761def383c08749420dd3f71a",
+      "head": "d7c05d7ece6ab5d767cc8b75933920e500023693",
+      "tree": "94c7a2d801d0983a81f66d286f0d9503526daf45",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "af957f68639797dc1087d726f00f7f52b9a3cac0",
+      "migration_snapshot_available": true,
+      "published_head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+      "tracked_files": 1254,
+      "repair_files": 1,
+      "new_repair_files": 1,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "interfaces/innerkits/common/BUILD.gn",
+          "blob": "f284ecd0e6590684fea0ab0f1fb07f86124bfaaa"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.5,
+      "lfs_files": []
+    },
+    {
+      "repo": "foundation/graphic/graphic_3d",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\foundation\\graphic\\graphic_3d",
+      "upstream": "https://gitcode.com/openharmony/graphic_graphic_3d.git",
+      "base": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "head": "b5ee76d9cb022ee068d80938dc83fa00657f2b3f",
+      "tree": "31be9c196bf0fc9891bba3fc026a59188b10b88c",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "migration_snapshot_available": true,
+      "published_head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+      "tracked_files": 3857,
+      "repair_files": 1,
+      "new_repair_files": 1,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "lume/LumeEngine/tools/CompilerAsset.sh",
+          "blob": "8f7c3d8564682de6b6087d45797b9c6e046b66f9"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 2.1,
+      "lfs_files": [
+        {
+          "name": "figures/graphic_3d_architecture.jpg",
+          "size": 52321,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ef831f05027b448cf6abaab296e7e0ee70524ddc92abb567a5dbb0c589780a38",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imageastc_fuzzer/corpus/canine_128x128_ASTC_12x12.astc",
+          "size": 1952,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "082954830db93a18961167b8386273a8e71a41d47fca2db73c4ac25a7fadedef",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imageastc_fuzzer/corpus/canine_128x128_ASTC_4x4.astc",
+          "size": 16400,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "8896770648385b646ef62641311241ec07ffadebf3f6827b6b5148ee94893afe",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imageastc_fuzzer/corpus/canine_128x128_ASTC_6x6.astc",
+          "size": 7760,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3875d7e1c8ebe0f9f0007daf2c0e0fcf093f6d0b3dc526545f35e9fd4b22e411",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imageastc_fuzzer/corpus/canine_128x128_ASTC_8x8.astc",
+          "size": 4112,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "e54a4517bb49556538e503a6aabd69d5b7a5e3b75063324ada82c86923876021",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imagektx_fuzzer/corpus/VULN-R3V1_ktx_mipsize_overflow.ktx",
+          "size": 68,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3e50fa46e8e1b3e0226a6184ffa0753169e61bff4814beceaf2199b07183306b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imagektx_fuzzer/corpus/canine_128x128_RGB8_BC1_UB_lRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "fb9243578c209133b8c6e852a05dfd9cf0ce3f941553519570c7d5e8a1b8c235",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imagektx_fuzzer/corpus/canine_128x128_RGB8_ETC2_RGB_UB_sRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "1a42419c0759415b80c9ff440a96ce52a7c8b468e61320da5dee39ae3edbce42",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imagektx_fuzzer/corpus/canine_128x128_RGBA8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3002650da93d6c09b474650d34755f10ce0fecfff438be75e7702399dc24b709",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imagektx_fuzzer/corpus/canine_128x128_arrayx3mips_R8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 31660,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "bf49b5ad1f710fb9cd7eee4484bcbe036059f39bece446fdc6e3e3d12dfd2c6e",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imagektx_fuzzer/corpus/synthetic_cube_4x4_astc.ktx",
+          "size": 164,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "55a4dc337b4f046698259fd52bc55d44dbff983f486549bffed07b90ffb8d4c7",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/imagektx_fuzzer/corpus/test_image_8x1_RGBA.ktx",
+          "size": 132,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0b6f862d730e2175da0cbc80c7ed3bc6e6fd1378299e29c77fe2316ccb94e2f7",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/jsontyped_fuzzer/corpus/accessors_array.bin",
+          "size": 12,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "2a491e5a492dcc1b5dbfa69b6a8660566c43a2f80add884d99140bfa11eca117",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/jsontyped_fuzzer/corpus/accessors_object.bin",
+          "size": 45,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3bb511a6f139e4de7f8263831d7b6e2c3e0fdacf13bd44205889762bbf0bab1d",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/jsontyped_fuzzer/corpus/ctor_string.bin",
+          "size": 13,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "8aab3967ad9fe07a82096e6566e80dc9e2ba771130834d57fbe238a6a026a0e3",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/jsontyped_fuzzer/corpus/gen_unicode.bin",
+          "size": 9,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "cd9baa4ef54f47b7df8aacef7c50b49d8e8acacd95b1be0664271e1a4ff237f2",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/fuzztest/jsontyped_fuzzer/corpus/gen_utf8.bin",
+          "size": 10,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "5b6808464d0c08b454873eb16bd8a66652be1f91fcf4267a97b233fda9d62f29",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/arrays/canine_128x128_arrayx2_R8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 15584,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "4ab8a310819fe60e8a079d5ffb4cf2e4b092ae20c2707594febacd107a0efddc",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/arrays/canine_128x128_arrayx3_R8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 23328,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "b71fec6a38e8125bbffa1dff1cfea2120634bce939cdb0f60a1f338390661b5c",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/arrays/canine_128x128_arrayx3mips_R8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 31660,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "bf49b5ad1f710fb9cd7eee4484bcbe036059f39bece446fdc6e3e3d12dfd2c6e",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_R16_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "60844ee04f481b6eb6928d910540a7a66d7586de0e3562fb525a0c87fa855e7b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_R8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "f1a18812131e42d96ccf778ec26558b215ef8b4bdd50eeac8fa767a147dc38c6",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RG16_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7aa5007fd36ae855f579f10babd41fac9735ba32bc0aee7cd6427a477e76e1d5",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RG8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "bd04003b26a69db89b5057206c8ea8ba37b77cfbee798b8e83ca532286f85cf7",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGB16_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "65135fe16ee40218abe7dc9b8c0c782af0ca90e809781b4c2acab429e2af8d14",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGB8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3002650da93d6c09b474650d34755f10ce0fecfff438be75e7702399dc24b709",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA16_ASTC_6x6_UB_lRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d9751ffd896bc85efb1f0007fc37445a46bb1e4ef0d8edf9e1a2e196ffea97ee",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA16_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "65135fe16ee40218abe7dc9b8c0c782af0ca90e809781b4c2acab429e2af8d14",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_10x10_UB_sRGB.ktx",
+          "size": 3996,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "139dee0e29f6fb114c5073e234c7e0d87ed65d4db4539854cd38d4875281169d",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_10x5_UB_sRGB.ktx",
+          "size": 7644,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c012eb860bdf219d424e5483879741756cabc5b1186b65f40ffcfa4516751aea",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_10x6_UB_sRGB.ktx",
+          "size": 6492,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c69560954a46b462989cf40f1259c5de046f74c58ea3c64feae992a9e8509e7f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_10x8_UB_sRGB.ktx",
+          "size": 4732,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "54b0bbde5d468c8c5ad5cba1d8e9af98c755bdcf304943cb9846dcb99441f6a6",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_12x10_UB_sRGB.ktx",
+          "size": 3404,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "5d58c90127268a9075ed772800ecca6c0c41b349b0e80a6a65ab699493b39543",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_12x12_UB_sRGB.ktx",
+          "size": 2908,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "9da065f472641b6c7a94bee8dabe01cd81d1d694969915e097556080f3090ac1",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_4x4_UB_sRGB.ktx",
+          "size": 21996,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "90670d6f101b8a133dc0f5fe220cf5180aec61367f8aaab14dbfd66e47a1aafd",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_5x4_UB_sRGB.ktx",
+          "size": 18028,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "16d1be6584c271ac55ae40769aba378bb45ca534a2acc6a56a2455ec8b730d07",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_5x5_UB_sRGB.ktx",
+          "size": 14796,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "57fa42617bd2f38e109d57ef641b41ab58efd9ee26fbe60622b0809575755a48",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_6x5_UB_sRGB.ktx",
+          "size": 12540,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "6fb2d6f860bb089622fa53cc859d47ac1ffcc6de653148e2c0f50f951caf9934",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_6x6_UB_lRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "8d5a87b5d0e247bce5731cec64274b76975c9220bb6edca1f2322052885b4c3e",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_6x6_UB_sRGB.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3002650da93d6c09b474650d34755f10ce0fecfff438be75e7702399dc24b709",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_8x5_UB_sRGB.ktx",
+          "size": 9100,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "10ae5022f12cb824b0fa29d09162b000be2c2dd2a0b720a137601f8c2d711a69",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_8x6_UB_sRGB.ktx",
+          "size": 7724,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0302971e74feafac72895b1433a913d955adee3af6b3eb209a569c1c1169eda0",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_ASTC_8x8_UB_sRGB.ktx",
+          "size": 5628,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "13f3c0f7f4b3a919c3a1530fcd6113dc074ed94f1c470082276c9752a5207792",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_nomipmap_ASTC_6x6.ktx",
+          "size": 7840,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "813dfc930847ee03f9bd76afbd02f874da185ef7d15490cae706818e82bfdb36",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/astc/canine_128x128_RGBA8_pad8_ASTC_6x6.ktx",
+          "size": 10636,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3002650da93d6c09b474650d34755f10ce0fecfff438be75e7702399dc24b709",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/bc/canine_128x128_RGB8_BC1_UB_lRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "fb9243578c209133b8c6e852a05dfd9cf0ce3f941553519570c7d5e8a1b8c235",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/bc/canine_128x128_RGBA8_BC2_UB_lRGB.ktx",
+          "size": 21996,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "99a488ca01956389ee250033cd862845d34bd5f3124d615ef7c0f38cd047e38e",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/bc/canine_128x128_RGBA8_BC3_UB_lRGB.ktx",
+          "size": 21996,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a9ff274ceced6d3fff98bbed32d741f39c0b5b1a1abb09b9db994f9ab5f965cb",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/canine_284x323.jpg",
+          "size": 25003,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "472f046619904028c7313898ed5cc2b47c2bf8d998af1f970f4be0948932ab55",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/canine_512x512.jpg",
+          "size": 50067,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "74fb7471f8dc553056dad5d5c430697f22320ace97e0c7f0cb1255fb5f3b0a1d",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/canine_512x512.png",
+          "size": 251651,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a0267aba8e560617dc7f4b91dfcef751565bba2b745683c7a11e1a75058f9778",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/cubemap_yokohama_RGBA8.ktx",
+          "size": 6291556,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c35a23f71717fe2d59a5bd4524241453e8c8ba26c993e236fbb0a2974653a930",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/cubemap_yokohama_RGBA8_mipmap.ktx",
+          "size": 8388736,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "81e3459990a9a5c3ef5e683676ff08624ad046c4d372ca321c5383b3ed048e28",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/envmaps/cubemap_yokohama_irradiance_RGBA16F.ktx",
+          "size": 3145796,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "e683d2e33d1f0bebee4f2d1123ef5ee39af4d481d3e84209dfc0d82e55e96dc8",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/envmaps/cubemap_yokohama_irradiance_RGBA8.ktx",
+          "size": 1572932,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7817a4a573e88f095455c2d1af713a7cb8c63c2d1253a2ef17356e4096b61023",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/envmaps/cubemap_yokohama_radiance_RGBA16F.ktx",
+          "size": 4194388,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0d3352ae76da7e389bf399fcf2d879b882b080940236ba019d1741ce48579abb",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/envmaps/cubemap_yokohama_radiance_RGBA8.ktx",
+          "size": 2097244,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "8560916675af5d38bdb6bf6003a9a6e28fdb2a2c695b5aec142f47109195557e",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_R8_EAC_R11_SB_lRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c7c5f72f102f61dbd49e7ecca7cff91945befebbeb541fcd27b7b3b870c00acf",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_R8_EAC_R11_UB_lRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d61832c6b6c6569f7d8d82859022e934916bf3ef594419ac4938dc58a6d6917c",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RG8_EAC_RG11_SB_lRGB.ktx",
+          "size": 21996,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "eac794a7a3041b499fb4ed54783b999041ad8c06bff736567be508bae0678fc3",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RG8_EAC_RG11_UB_lRGB.ktx",
+          "size": 21996,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "bdc3ccb49aae9e04715200a9ba8993b80557f85da7710551a936e3c5cd0a2fbd",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RGB8_ETC1_UB_lRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "8fff889468f8dd18d7b7c9b3eb4e8c38eae362ffc7670968f9b37df8d840557f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RGB8_ETC2_RGB_UB_lRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ed0c92ed33677d19a1b7fcd12f4dfeb01ceb18ccbfa60c814fbdf6096fb4dbd6",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RGB8_ETC2_RGB_UB_sRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "1a42419c0759415b80c9ff440a96ce52a7c8b468e61320da5dee39ae3edbce42",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RGBA8_ETC2_RGBA_UB_lRGB.ktx",
+          "size": 21996,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "784d659f0a55fe92075b8a0a89a354aae289eed78c6c75e72eaf98f463f216d9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RGBA8_ETC2_RGBA_UB_sRGB.ktx",
+          "size": 21996,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "e2691365a0fa7b779dfa003c1b1fb20aadd9f4356af86ed83fa7d436711d48ee",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RGBA8_ETC2_RGB_A1_UB_lRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d5a4f65e361b5dca40bd2563dbf4a0d3bb1be3b6f8488e4a14d6a36d0e700615",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/etc/canine_128x128_RGBA8_ETC2_RGB_A1_UB_sRGB.ktx",
+          "size": 11060,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "967cff119e4b7c5b99d4c0b1cbaff27da3100ddae4db281ae20f4e17eeb3ec81",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/gradient_256x1_R8.png",
+          "size": 325,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "134493bb721f144a1a9495a767b51f4e2b85c75e0d6724043c3a32550ed30e14",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/gradient_256x256_R16.png",
+          "size": 119319,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ca42fde0eadaa9c08049d3394d55e260280d18f7fb73c5cd4933cb8300376ee2",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/compressed_glformat_not_0.ktx",
+          "size": 196,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "1cab273b21b6ef8bee2c951a4f164e80b2d382b4be1d12f0764a7a7b365e6f73",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/compressed_gltype_not_0.ktx",
+          "size": 196,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "64dd7deeda0e7fd067cc679df61a450488935e25ab8b0183a8fd11c2a70d228f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/compressed_gltypesize_not_1.ktx",
+          "size": 196,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "167c1f757e6a4821a4cfc56eb8180ab985c0b8453e85db01cab17137ad87decb",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/endianness_invalid.ktx",
+          "size": 324,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "1237b338634b554bf254fd3e09b50a7a74159ffe9600470f9f8358d7a3978224",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/endianness_reversed.ktx",
+          "size": 324,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "e2921a4e15016c929861bc7119d3944795a78488cf8a98b66219c9af9f3bcfbc",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/eof_at_31bytes.ktx",
+          "size": 31,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ba4bcf012e360823c1962dd2989f9aaeb4e97d3b64a5cd8fa14ca19e2c8af50c",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/glinternalformat_invalid.ktx",
+          "size": 324,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "47caa00174b06d601dccdd4baac5c865f30b6f9873e68fb8d5575e55257fbf0f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/identifier_invalid.ktx",
+          "size": 324,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "999ef91568397143597665f252dc298feff322309728bd9a437900c2e36c6271",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/identifier_newline_collapsed.ktx",
+          "size": 323,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "8d471ead56924c3f23e0f624e6d16232fc965e24798d4697f8066d7d7f192464",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/identifier_newline_expanded.ktx",
+          "size": 325,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "40611ba5e58349f9d8a205bf877e4dd58cc18005f96731c69b8db03fe5518f85",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/size_2d_width_0.ktx",
+          "size": 84,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3f5efb643a378903ad87b77dec440862e992cc0d1777f079e6cefecc5ba584b0",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/header/size_3d_height_0.ktx",
+          "size": 324,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ba9067d2a89b44e329e99c95aa3d90996fbe5c74100574e90cbffa86d28d2497",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/pixeldata/cubemap_face_underflow.ktx",
+          "size": 836,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d9e5d7bb17050cd9a1f0511c03b2d793998e91a35b32b45b9a12e45080b3b1a5",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/pixeldata/imagesize_missing_row_padding.ktx",
+          "size": 432,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d677ac97a5ca121fb266a8c0fea5c2368518944d77f893d1d526338a19b770c0",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/pixeldata/imagesize_overflows_file.ktx",
+          "size": 580,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "4a11e7d81eeeb5b8adc159450e9d97babb8b2c2707fde06d611929961a7e65d9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/pixeldata/imagesize_underflows_file.ktx",
+          "size": 1092,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "534120a10d07a63ebe2eaa5cc1e61c9b95456a328d5ca8d509dc7b628c3da358",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/pixeldata/mipmap_level_overflow.ktx",
+          "size": 432,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "526268cced0619da587f6780c987b1906d00240da0c0922e920b5a96c48bff2d",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/pixeldata/mipmap_level_underflow.ktx",
+          "size": 324,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "aa3fe16a4bef8ee62adad19fbce902e8c134286e9d99f158c6133b5d13db6120",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/invalid/pixeldata/rows_unaligned.ktx",
+          "size": 458,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d95eafe15fb9e16c3a23d34e5dd8e9142faacaff6e71537765ea7229ddcb7ca1",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/ktx-test/ktx/valid/composition/array_2_elements_cubemap_6_faces.ktx",
+          "size": 196748,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "5dcf74f4f89a2fcae7daf2cef8b88de55825525f0742313f5462e4e642fc8c2d",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/lebombo_1k.hdr",
+          "size": 1476953,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a02c9615adeba91a753c3e4737c3ce7a719273df822eeaa85d24982bd43c9ecb",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/png/canine_128x128_R16.png",
+          "size": 12681,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a60496442bb9214eb1cff64151968c4f05fce807fc2037c92b77fabc0f4d6788",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/png/canine_128x128_R8.png",
+          "size": 7341,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "4859d8941d0c728012c48b806ae93c3cd1939adc5b80ad4bcdffcec355c1b010",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/png/canine_128x128_RG16.png",
+          "size": 22184,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "acd6cf491463e67aa6e285b0177402ee069034145229846aef4b63c83d99cf44",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/png/canine_128x128_RG8.png",
+          "size": 9394,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "88169f08839ab9a4408cf85c3a5f5109cb01fa57dd2a0ea14641e7dad02ff590",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/png/canine_128x128_RGB16.png",
+          "size": 32080,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "b95cdb13d78e5911da265a06bfe8898814172761fedc9facae49d78be58f9785",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/png/canine_128x128_RGB8.png",
+          "size": 19708,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "eeaa9cfea9d90de749d454c211dcfe6417f2d33b17a475382432363cdd2fa4ff",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/png/canine_128x128_RGBA16.png",
+          "size": 34783,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d9b2f230f1ceafdda53fbfaec050db983122a92c46352ab34e643410fe87ce58",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/png/canine_128x128_RGBA8.png",
+          "size": 21893,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "44ec61098e4d635befab549d471088ff703856c667118e8373908b846d6974cf",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/skybox/lebombo_ASTC_10x10.ktx",
+          "size": 1366312,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "db1c4a33f53f1e7111a04272d559221f738c03aa63c2978b64c4c2fee97fe0be",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/skybox/lebombo_RGBA16F.ktx",
+          "size": 50331716,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "25f569a193b6826cbcbbb68c64d14eeec7cf3b8371dc823dca888159e57c7903",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/skybox/lebombo_RGBA8.ktx",
+          "size": 25165892,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d62412f913b375ab095add5d93bf02abb3855d28790dc774b8009ec3bdedd9f3",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/test_image_8x1_RGBA.ktx",
+          "size": 132,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0b6f862d730e2175da0cbc80c7ed3bc6e6fd1378299e29c77fe2316ccb94e2f7",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/test_image_8x1_RGBA.png",
+          "size": 143,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7d82eaeec7066ba63f5d665e95b08e2786216d4e35833a3cb8db88a9c7567415",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeEngine/test/unittest/assets/test_data/image/test_image_8x1_RGBA16.png",
+          "size": 166,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "88db5f743523a41b724a595cb950180886652731ff6fa9769b5435c0d0b9ede0",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeJpg/test/fuzztest/jpgimageloader_fuzzer/corpus/VULN-032_jpg_large_dimensions.jpg",
+          "size": 41,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c9e4b66a5a059508973a3a93f7d0d44415bedd943f00d76e09ad0d155652b884",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeJpg/test/fuzztest/jpgimageloader_fuzzer/corpus/baseline_gray_8x8.jpg",
+          "size": 331,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "b2972294c6c9aaefcf867ce9a6218cf11df9e95de9210ad9a636bae6b94396c6",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeJpg/test/fuzztest/jpgimageloader_fuzzer/corpus/baseline_rgb_64x64.jpg",
+          "size": 3746,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c76d4ccfe19fc6b2723a5b1c97d30a758e497cf044869fba6ae77a96d114cf3b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeJpg/test/fuzztest/jpgimageloader_fuzzer/corpus/baseline_rgb_8x8.jpg",
+          "size": 649,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "e4b3055b976b825479165fb0e65bd11f266ed0b4008df8cfec1686ba0b017986",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeJpg/test/fuzztest/jpgimageloader_fuzzer/corpus/minimal_rgb_1x1.jpg",
+          "size": 633,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "003482083cf2063d36e5230d39587e859956b24fc56ff34b5fd5c7a9bfb16304",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeJpg/test/fuzztest/jpgimageloader_fuzzer/corpus/progressive_rgb_32x32.jpg",
+          "size": 603,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "425a12da002213f4380429d9e8299397dffc62603bb25c1a23f4cd200e19f901",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeJpg/test/unittest/assets/test_data/image/security/VULN-032_jpg_large_dimensions.jpg",
+          "size": 41,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c9e4b66a5a059508973a3a93f7d0d44415bedd943f00d76e09ad0d155652b884",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/fuzztest/pngimageloader_fuzzer/corpus/16bpc_gray_8x8.png",
+          "size": 77,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "22dbf3e9d1f99404f148ccf244d0599d2bb16833dee147ed8580c4fa0a80e464",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/fuzztest/pngimageloader_fuzzer/corpus/baseline_gray_8x8.png",
+          "size": 72,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a756a76ddd3a1442313411e247cb1e999818d70351ba8cc2194da8c1adb5dc68",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/fuzztest/pngimageloader_fuzzer/corpus/baseline_rgb_8x8.png",
+          "size": 84,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "648523c5472ef27479b526ed3c3ae89fdfb0081ebd7d445a2cb6bc5f40056575",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/fuzztest/pngimageloader_fuzzer/corpus/baseline_rgba_8x8.png",
+          "size": 84,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "f764b079b32647b63485c70c8d1c0f792f8fb00a1b27db301d0bda644cb105e1",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/fuzztest/pngimageloader_fuzzer/corpus/interlaced_rgb_16x16.png",
+          "size": 852,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "2d2c69cd2f08027809224352733c280fe987e8c0b55932f50195c5c0e91215b3",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/fuzztest/pngimageloader_fuzzer/corpus/minimal_rgb_1x1.png",
+          "size": 69,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "79f222d540df0d76dd4e2867dc5f12d633f67e3fa1424a927a8b17922d1dba83",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/fuzztest/pngimageloader_fuzzer/corpus/palette_8x8.png",
+          "size": 917,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "b403e324c14b415ae89e8813ff0b2f638ab90bdf02918588190d7f96da460871",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/fuzztest/pngimageloader_fuzzer/corpus/texture3d_12x16_rgba.png",
+          "size": 89,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "9b41c2a56291f2f3a947ff5997644b8166555ca411fbe24ce4b8f10fb75804a7",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumePng/test/unittest/assets/test_data/image/security/VULN-032_large_16bpc_rgba.png",
+          "size": 335,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "1ffb940dbeeb1b1a8d4ec2ea0c16019f556f8798ecee35703c48f02d1ab81fa2",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeRender/test/unittest/assets/test_data/images/ImageCreationTest_16x16.jpg",
+          "size": 715,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "95a6b023f39626ddd8ba1bf0503c35fc4c8d98646e94374643ba379192b9d311",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeRender/test/unittest/assets/test_data/images/MultiPPValidateSample.png",
+          "size": 12790,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "64f25eb63c9ad0bae53b79236c89d268032601be808df3ef5ecf210badfaeeba",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeRender/test/unittest/assets/test_data/images/kloppenheim_evening_skybox_8x8.ktx",
+          "size": 1632,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "5c6927c3b16bb5760899e371847a522eb9e596f5cd0b98444957f55827bb36ed",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/AnimatedCube/AnimatedCube.bin",
+          "size": 1860,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "82de770fc82b48a77a33bb26abd4d7e75620491b36ddf98e8dca69fa73dd798c",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/AnimatedCube/AnimatedCube.gltf",
+          "size": 5139,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "606a46386c5a7f48bac6e99000dc39ae263175b54dd7705eddc462382c172e02",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/AnimatedCube/AnimatedCube_BaseColor.png",
+          "size": 891995,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "27e8575345bd1d368371ad5e8b6ef25dc5e01ac2d6f2c438205c8e45573a2480",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/AnimatedCube/AnimatedCube_MetallicRoughness.png",
+          "size": 319,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "953698e36cdbf6a7823fc3489f3f93c927d7699f4adb772f5f4c3c230a851b6b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/celia/Celia.gltf",
+          "size": 4439370,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "e07d66dedf3082c07461a3b13d0e697200dfbc99308679187917ddf178771a94",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/celia/Celia_materials_Animated.gltf",
+          "size": 3938831,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3951ef43170b43f7a9e5e403769c7e97a0449e891be8fe5895292c7439b1fe6a",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/celia/black_ibl.ktx",
+          "size": 32924,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "fdee8307bd4dae82d357d3713bfeecb10267dac2592dd2760cf110b6132c15a8",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/celia/black_skybox.ktx",
+          "size": 24644,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "1a31fcf7fc476d9bbe5c5695b6d7aa68a08e974b1fabd4a0c44c9d0a8a6dbbb6",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/assets/environment/klippad_dawn_2_2k_radiance(spec).ktx",
+          "size": 2097528,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "93d009cc300bddf4128b7a7f2f3c133cb8467f6fbd28f7a8d5e740c9cd0c582c",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/assets/environment/klippad_dawn_2_2k_skybox.ktx",
+          "size": 25165892,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "465d5b55b252477e03bd497ef6506ab98d3fff7538bc830c86a47ed0f3585915",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/packages/studio-asset-library/3d/3d_assets.png",
+          "size": 101520,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c7f492ab2df4e5010968710189311cb6f76ef0ade78c24e65f78ec596be32778",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/packages/studio-asset-library/3d/cube/cube.gltf",
+          "size": 4040,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0a6989728360c5fb01f8fe827141031dd0e7083da8b92ea72719bceb76d01483",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/packages/studio-asset-library/3d/plane/plane.gltf",
+          "size": 2664,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "46fc53ebc8d471696f2ed8eb02164105a9ea15f949d0f005fd956f5fd2b2e19b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/packages/studio-asset-library/3d/sphere/sphere.gltf",
+          "size": 45933,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "276bd585f06f4e07217136a2c4b8c7aded4a701bf0998dc09c7b20f0b4dc56e2",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/packages/studio-asset-library/environment/dusk/Environment.gltf",
+          "size": 2434,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ff10bdf64b0c585cd12c4b62804acb07fd2d0721376fd7c3040d45383cc236e3",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/packages/studio-asset-library/environment/dusk/images/Dusk_Env_radiance(spec).ktx",
+          "size": 524688,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a67f1fa1ae688a1ac4ffee57bc7dfea1c8247e3747fa9a047a0638f7ff7b1754",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/editor/scene_test_project/packages/studio-asset-library/environment/dusk/images/Dusk_Env_skybox.ktx",
+          "size": 6291524,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d9e757b538c0e0bde9450422b099628a660097d844ba4ec869d41b8f2a6efcc5",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/environment/dusk/Environment.gltf",
+          "size": 2434,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ff10bdf64b0c585cd12c4b62804acb07fd2d0721376fd7c3040d45383cc236e3",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/environment/dusk/images/Dusk_Env_radiance(spec).ktx",
+          "size": 524688,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a67f1fa1ae688a1ac4ffee57bc7dfea1c8247e3747fa9a047a0638f7ff7b1754",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/environment/dusk/images/Dusk_Env_skybox.ktx",
+          "size": 6291524,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d9e757b538c0e0bde9450422b099628a660097d844ba4ec869d41b8f2a6efcc5",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/image_reload/1/image.png",
+          "size": 88753,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ea8a760ef3d4af18f7eeab434dacff4db7c00a87148300c86e440b66badb51a9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/image_reload/2/image.png",
+          "size": 19413,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "28cfd056c0d0f542ee09433446bfe63802755ed91723905d8aa14a4a1f43979c",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/images/logo.png",
+          "size": 88753,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ea8a760ef3d4af18f7eeab434dacff4db7c00a87148300c86e440b66badb51a9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/images/mobile_ui_placeholder.png",
+          "size": 22673,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "f4304079a1d06f2f8d53786f34f51ef370da0b379dd28555e6870fc4d40cd0c0",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/import/mesh/triangle.bin",
+          "size": 58,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d848922c896e458b7478e9841051a8da38f64bce677223692a923f9408387112",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/import/mesh/triangle_bad_magic.bin",
+          "size": 58,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "f2f62d202cd32127c5c339f52334778af238e0ff8766ab87e48b1ed9eeba0b71",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/models/cube.gltf",
+          "size": 4040,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0a6989728360c5fb01f8fe827141031dd0e7083da8b92ea72719bceb76d01483",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/models/morph.gltf",
+          "size": 3121,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7fbbd0e93f801a05cd334ce987b7fcd08c4910f2b8e574a0a58f7d05b7faffaf",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/project/packages/studio-asset-library/3d/cube/cube.gltf",
+          "size": 4040,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0a6989728360c5fb01f8fe827141031dd0e7083da8b92ea72719bceb76d01483",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/LumeScene/test/unittest/assets/test_data/project/packages/studio-asset-library/3d/plane/plane.gltf",
+          "size": 2664,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "46fc53ebc8d471696f2ed8eb02164105a9ea15f949d0f005fd956f5fd2b2e19b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2glbbuilder_fuzzer/corpus/structured_a.bin",
+          "size": 20,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "71cec4d1ff976dc8e7f07a8d1da1432862d0661ad1a6b6f9fe91ea694fa0b4be",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2glbbuilder_fuzzer/corpus/structured_b.bin",
+          "size": 13,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d11a56e8a5383475a2ae5998ee0fbfdd57cc1048fbf829ab33e36b7541919602",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2jsonloader_fuzzer/corpus/VULN-001-002-003_sparse_oob.gltf",
+          "size": 1026,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "be932e87b71d359edd5ab22c3ad1d7dd6c600780b8cc333a91e65abd745b6b81",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2jsonloader_fuzzer/corpus/VULN-007-008-025_path_traversal.gltf",
+          "size": 192,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0127134ad0624dc34830068cabf1b25f5298d9145a559262bf143f2af2e3e58b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2jsonloader_fuzzer/corpus/VULN-009_buffer_bytelength_huge.gltf",
+          "size": 163,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ac7723e8146141d44c68cfcf4570637d7b0dcd973e6c0e6fcecce0d875ebd4f9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2jsonloader_fuzzer/corpus/VULN-010_signed_bytelength.gltf",
+          "size": 358,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "08d3466253ac8131fa85c5cbf0e68cadebda05f147abe4541ef62da13a5b3d77",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2jsonloader_fuzzer/corpus/VULN-020_invalid_component_type.gltf",
+          "size": 555,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d43b9d34cf5c3872d997d048bc9d335684650f3fb3b77933214a0091e0686623",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2jsonloader_fuzzer/corpus/VULN-030_accessor_count_huge.gltf",
+          "size": 548,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0a185149d5f5232bd6e4c5209067013f52bce0eb9bd60de579acc9ef4c7faaa4",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2loader_fuzzer/corpus/VULN-001-002-003_sparse_oob.gltf",
+          "size": 1026,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "be932e87b71d359edd5ab22c3ad1d7dd6c600780b8cc333a91e65abd745b6b81",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2loader_fuzzer/corpus/VULN-007-008-025_path_traversal.gltf",
+          "size": 192,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0127134ad0624dc34830068cabf1b25f5298d9145a559262bf143f2af2e3e58b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2loader_fuzzer/corpus/VULN-009_buffer_bytelength_huge.gltf",
+          "size": 163,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ac7723e8146141d44c68cfcf4570637d7b0dcd973e6c0e6fcecce0d875ebd4f9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2loader_fuzzer/corpus/VULN-010_signed_bytelength.gltf",
+          "size": 358,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "08d3466253ac8131fa85c5cbf0e68cadebda05f147abe4541ef62da13a5b3d77",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2loader_fuzzer/corpus/VULN-020_invalid_component_type.gltf",
+          "size": 555,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d43b9d34cf5c3872d997d048bc9d335684650f3fb3b77933214a0091e0686623",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/fuzztest/gltf2loader_fuzzer/corpus/VULN-030_accessor_count_huge.gltf",
+          "size": 548,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0a185149d5f5232bd6e4c5209067013f52bce0eb9bd60de579acc9ef4c7faaa4",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/AnimatedCube/glTF/AnimatedCube.bin",
+          "size": 1860,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "82de770fc82b48a77a33bb26abd4d7e75620491b36ddf98e8dca69fa73dd798c",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/AnimatedCube/glTF/AnimatedCube.gltf",
+          "size": 5139,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "606a46386c5a7f48bac6e99000dc39ae263175b54dd7705eddc462382c172e02",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/AnimatedCube/glTF/AnimatedCube_BaseColor.png",
+          "size": 891995,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "27e8575345bd1d368371ad5e8b6ef25dc5e01ac2d6f2c438205c8e45573a2480",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/AnimatedCube/glTF/AnimatedCube_MetallicRoughness.png",
+          "size": 319,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "953698e36cdbf6a7823fc3489f3f93c927d7699f4adb772f5f4c3c230a851b6b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/AnimatedMorphCubeQuantized/AnimatedMorphCube.bin",
+          "size": 1700,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "bde22d01f34dd8f5d83cfbb20a1a6d117ec48596157df5d484a58eba13cdff51",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/AnimatedMorphCubeQuantized/AnimatedMorphCube.gltf",
+          "size": 4072,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ff514453beb4b2130fe4c0857a71f8af568a86258f814b4c7b9ac9a55722a850",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/BrainStem/glTF-Meshopt/BrainStem.bin",
+          "size": 347840,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ac004b976aa36cd65e03c485cae40aa85341f6653c9795aef2f223cefe14c8c2",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/BrainStem/glTF-Meshopt/BrainStem.gltf",
+          "size": 81504,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "75901f9abeff5bf01cff350d08843cc2e93eabd9f99dc52e9552462a26bbd6e0",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/BrainStem/glTF/BrainStem.gltf",
+          "size": 232477,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "8fc99ed74161aa79573236f9a457e238b0649993dfb41234fd7f6eafad696b75",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/BrainStem/glTF/BrainStem0.bin",
+          "size": 3105104,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "1418d04d972655b9b1907d3d51438cd150e19016716e107bb949cd4379ac5cdb",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Custom/Custom.gltf",
+          "size": 25966,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "b7d9d2dc1ff6e6410b204bee199d845da90f03a956d2f028448cf684092a2d56",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Custom/DummyBuffer1024.bin",
+          "size": 1024,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c73ea29867a0c450b33fceaf2176c5e9032f3176d57f2759a44769d240b36afc",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Custom/canine_512x512.png",
+          "size": 251651,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a0267aba8e560617dc7f4b91dfcef751565bba2b745683c7a11e1a75058f9778",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Environment/glTF/Environment.gltf",
+          "size": 2437,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0bb994cb3933de22eef3a02d3feff3b12ef344b0d3432236f6157701ac93b2a3",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Environment/glTF/images/quarry_02_2k_radiance(spec).ktx",
+          "size": 2095456,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d83e58642634c218e201c2963b677189ffaee3b2221303841be067c849e32010",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Environment/glTF/images/quarry_02_2k_skybox.ktx",
+          "size": 6291524,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ff7105cf41d4b7876d0c209c728d3bb80bee3caf2249ad2f13002a11a9793554",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Extensions/laohu.glb",
+          "size": 3340152,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "515002c2a315143c2393683d4a84845a474ee0e02444850f076e990bffa8f2b2",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet.bin",
+          "size": 3465900,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "db97921fcb13f5d986b57bae086952c2bd84ffed584b9144f60c8913eaf107b4",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet.gltf",
+          "size": 11404,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0e33d2da57c355e73d977d4f34cf8e0a44b627f25961c551ba902fa45a63cb24",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_baseColor.png",
+          "size": 2778518,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "8e5567daf7a3ac83f6ebc04605f3605ac17c19a153b6b8aadd2596690209c34c",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_baseColor1.png",
+          "size": 5348302,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "fd1207967131afbe2fa523c9f4bae1f6dbce1a8fdd0ebfad5ec0cf7ba6a66dc1",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_baseColor2.png",
+          "size": 825327,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7729882e59bc227554d1b26ffd6494bbd37357ee37ac959fad2932b16d586f79",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_baseColor3.png",
+          "size": 2990685,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3c8bd17cfddecede5a3fa9e1933ac6f309ce4cc6bc85d4122b9ae39b0ba2b0d8",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_baseColor4.png",
+          "size": 3974850,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7987620b2a90887fa1a0521bf72f84933a2eadca88965f47599204dd55dae62a",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_normal.png",
+          "size": 3185146,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7acaed3775bb6246c266c8e3dcd803391a08a528b727781bf11559f016752f61",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_normal1.png",
+          "size": 5708074,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "573a3d39db8a109352d16a421aff316d37faeb52f6abf01d0ca72db279bde7d9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_normal2.png",
+          "size": 17805,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "13e867927da090fe696248e0d884087a7d4e310dca8315cd8d4d686b95db7aef",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_normal3.png",
+          "size": 3713769,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3506c43687bf4bd441eef301b157761574c2edecab6c8af6b8e6a85b772abe15",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_normal4.png",
+          "size": 3702691,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c34919581290d71a541697454ef9200d3f693236e8e9ddac89b49fa83c3befd9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_occlusionRoughnessMetallic.png",
+          "size": 4591738,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7fe00edcc79fb3266f7fe61ddb3fbf08f425b731985af7543bc5b677414cbf19",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_occlusionRoughnessMetallic1.png",
+          "size": 5304637,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c6f75cb920285d4b0eb1f087bc79e70d31b1801c3df4edba294351516fa98953",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_occlusionRoughnessMetallic2.png",
+          "size": 755081,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "32afd5ae0da2f2880fc85753b993a6945da1993f4087e562f2f75e107ecbf2f3",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_occlusionRoughnessMetallic3.png",
+          "size": 3748216,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c15354b40ef4f79b83d16d6aaa37cfd7654a8e281ef5e5dc5a25934d55f16f7a",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/FlightHelmet/FlightHelmet_occlusionRoughnessMetallic4.png",
+          "size": 4489618,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c821ef0709398d8bc3cccfa311572fb45d4d9198514155f940936019ad0f32fd",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Invalid/Duck_GLTFv1.glb",
+          "size": 138708,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "3442f0d1f35665d4b8927dce043b3f7913cca3cf8796f846497a2c93e9a21419",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Invalid/Duck_GLTFv1.gltf",
+          "size": 191136,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "565c4c7079755a9c3c611c0d8cf700234ecd70211e1d512b8e345ff4f8c849ab",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Invalid/Duck_invalid_bufferview.glb",
+          "size": 120486,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "b87069a4064b813d7b16568f1bd27c9fc4e3dee5e6aa20669c988f69fdd9b19f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Invalid/Monster_invalid_bufferview.gltf",
+          "size": 489447,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "297d92ebd3a927b1b8ff0d3c68632951614e712634262af28caa575dcedafa7d",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/KhrExtensions/KhrExtensions.gltf",
+          "size": 1071,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "27b225b575a41dc2a023ee3a434f6982aa1425477e43577061c0d3251c29a7a1",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Monster/Monster.gltf",
+          "size": 489446,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "e7b036ae9bb9e7c464a6ac11be2ee94361b60f763468c725855aa91be688c1e2",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/MorphStressTest/MorphStressTest.glb",
+          "size": 575900,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "005f1d9dd938c553a506d6bf3d21830fc3f2ec3a199d9332e9a625baf7342bef",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/PrimitiveRestart/PrimitiveRestart.gltf",
+          "size": 941,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a66eb5b5a004f976c14c9ce57b83704e3ba1f2ce36ca15b7cb8ebfa722d6ee91",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-001-002-003_sparse_oob.gltf",
+          "size": 1026,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "be932e87b71d359edd5ab22c3ad1d7dd6c600780b8cc333a91e65abd745b6b81",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-007-008-025_path_traversal.gltf",
+          "size": 192,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0127134ad0624dc34830068cabf1b25f5298d9145a559262bf143f2af2e3e58b",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-008-025_encoded_traversal.gltf",
+          "size": 165,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "12d217da9f40621c227f4e5658ab39b2527eb17b685d276e9fb75e98de11e58a",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-009_buffer_bytelength_huge.gltf",
+          "size": 163,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ac7723e8146141d44c68cfcf4570637d7b0dcd973e6c0e6fcecce0d875ebd4f9",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-010_signed_bytelength.gltf",
+          "size": 358,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "08d3466253ac8131fa85c5cbf0e68cadebda05f147abe4541ef62da13a5b3d77",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-020_invalid_component_type.gltf",
+          "size": 555,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d43b9d34cf5c3872d997d048bc9d335684650f3fb3b77933214a0091e0686623",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-021_sparse_wrong_key.gltf",
+          "size": 1030,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "456fcfc46092cb289026067ddcb287a49f81961aa75133d490445b33780ec75f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-027_too_many_nodes.gltf",
+          "size": 428961,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "f03b53b85133f93d81524ce7ac1be4182122366821e208f40354105db04cac6f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Security/VULN-030_accessor_count_huge.gltf",
+          "size": 548,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "0a185149d5f5232bd6e4c5209067013f52bce0eb9bd60de579acc9ef4c7faaa4",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/SimpleSkin/SimpleSkin.gltf",
+          "size": 3566,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "7d0c3f48d0510d101269cb4fdd3ee035eaada0e04809a0899e0b4cfe8c38e68f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/SimpleSparseAccessor/SimpleSparseAccessor.gltf",
+          "size": 1683,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "895d36d90acbecad1f228047d008b854d5940261198bcc747c2833211eaf4987",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/TextureTransformMultiTest/TextureTransformMultiTest.glb",
+          "size": 450036,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "c492b311fc0b7370324bcee3a815d811ac02b74c144d0e70d243d7b01ffdb40f",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/Thumbnail/thumbnail.glb",
+          "size": 1161408,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "2eb50483cafef0c1ae91d506a69113634b9f3f188b9dc7ea17182af42e1c6428",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/TransmissionTest/TransmissionTest.glb",
+          "size": 1697892,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "ec0d940394a988c21dc466a0259af8f78325c2431a10b2d42cc918d832329341",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/gltf/WaterBottle/WaterBottle.glb",
+          "size": 8961340,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "074341e0c9b991244ea88fed77221754dfa33b53ee13523fa5f3c10a28a30160",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/image/canine_512x512.png",
+          "size": 251651,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "a0267aba8e560617dc7f4b91dfcef751565bba2b745683c7a11e1a75058f9778",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/image/weather/HighFrequency.ktx",
+          "size": 131140,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "b478761aa8e33b186c1cc2fb7cc77dbe93b22373405604925bfd6ca2b6747233",
+          "version": "https://git-lfs.github.com/spec/v1"
+        },
+        {
+          "name": "lume/Lume_3D/test/unittest/assets/test_data/image/weather/curlNoise.png",
+          "size": 37932,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "d8c0cefc3e348d554da8884020af7ef58f2b6e6f20f10ecd1c76b33be80c1e8d",
+          "version": "https://git-lfs.github.com/spec/v1"
+        }
+      ]
+    },
+    {
+      "repo": "foundation/multimedia/audio_framework",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\foundation\\multimedia\\audio_framework",
+      "upstream": "https://gitcode.com/openharmony/multimedia_audio_framework.git",
+      "base": "d128a212e695de931d425fba7c64ebd591de96bf",
+      "head": "1bca688a145289c2e6bf3ccb9f70ea5f11de8e7b",
+      "tree": "b479f76200aeac38656deaef6fee0c9e70557fea",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "e811e639cbfe67ba7293d0c74d09aa8941aa4447",
+      "migration_snapshot_available": true,
+      "published_head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+      "tracked_files": 3598,
+      "repair_files": 1,
+      "new_repair_files": 1,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "services/audio_service/idl/BUILD.gn",
+          "blob": "de83dc14b382ed5c95e9eab9e9db4661f581e05d"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.5,
+      "lfs_files": [
+        {
+          "name": "test/resource/audio_renderer/test_audiofile/avs3_bitstream.bin",
+          "size": 27376944,
+          "checkout": true,
+          "downloaded": true,
+          "oid_type": "sha256",
+          "oid": "93dec6eed90d7945edfb7cfbad4a6e34d36e7d878c0b058671ccf960f22dff76",
+          "version": "https://git-lfs.github.com/spec/v1"
+        }
+      ]
+    },
+    {
+      "repo": "interface/sdk-js",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\interface\\sdk-js",
+      "upstream": "https://gitcode.com/openharmony/interface_sdk-js.git",
+      "base": "126ae62423b02302326331bc8390c5aff2f136a3",
+      "head": "7b297f5537e53a5456852711f9a34ad24f63f8ff",
+      "tree": "48cad49540050f0f98139b4940afa91c22a20547",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "07e67fc5fc1767132a1e18910fc00e63cb49f1e0",
+      "migration_snapshot_available": false,
+      "published_head": null,
+      "tracked_files": 3666,
+      "repair_files": 3,
+      "new_repair_files": 0,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "BUILD.gn",
+          "blob": "c58547db09f9fc84757689460ae7e012b0da26e8"
+        },
+        {
+          "path": "process_internal.py",
+          "blob": "0131ab1faf231268066c256be1fba1390987c683"
+        },
+        {
+          "path": "remove_internal.py",
+          "blob": "ed6eb544e303074289003a168c1284e554dd60e4"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.7,
+      "lfs_files": []
+    },
+    {
+      "repo": "third_party/css-what",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\third_party\\css-what",
+      "upstream": "https://gitcode.com/openharmony/third_party_css-what.git",
+      "base": "66c986b3597910d384f32d7b098112d2b48d4145",
+      "head": "340729769456e518e92ba21e5bccd1e665bcce3d",
+      "tree": "4038fbcc3a7d0210b902063d19dacd65ba927e79",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "95648987c034c15781137e727eb7b1dcff051140",
+      "migration_snapshot_available": true,
+      "published_head": "0ad16b63ecbad73335b62474499f205b8848382c",
+      "tracked_files": 23,
+      "repair_files": 2,
+      "new_repair_files": 2,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "BUILD.gn",
+          "blob": "0f93bc93eccfe559222191ab5802650dedb85b16"
+        },
+        {
+          "path": "bundle.json",
+          "blob": "26c252df0ea626ec4f27e64ac064b0ae297728e4"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.6,
+      "lfs_files": []
+    },
+    {
+      "repo": "third_party/iptables",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\third_party\\iptables",
+      "upstream": "https://gitcode.com/openharmony/third_party_iptables.git",
+      "base": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+      "head": "96eaf4296c470f8d406273416459744d38d61601",
+      "tree": "939e01b3db9ddd4d4fee3196da38fc4fbe951309",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "56b1ad87b16775e9d6b6a2ae55253554409dd25e",
+      "migration_snapshot_available": false,
+      "published_head": null,
+      "tracked_files": 792,
+      "repair_files": 1,
+      "new_repair_files": 0,
+      "excluded_files": [
+        "extensions/libipt_CLUSTERIP.c",
+        "extensions/libipt_realm.c",
+        "extensions/libxt_mac.c"
+      ],
+      "checked_files": [
+        {
+          "path": "extensions/genInit.py",
+          "blob": "ceb87a9bcbea4fad99217973ac394ba9c3ab009f"
+        },
+        {
+          "path": "extensions/libipt_CLUSTERIP.c",
+          "blob": "aba38803fc70357d331a8562b332b0d4c75ed345"
+        },
+        {
+          "path": "extensions/libipt_realm.c",
+          "blob": "89f4bd3cee16b371862b80abdff81251f727c9c0"
+        },
+        {
+          "path": "extensions/libxt_mac.c",
+          "blob": "c353d6941c1615af03e0d9f6b282f19d781126fe"
+        }
+      ],
+      "windows_worktree_exclusions": [
+        "extensions/libip6t_hl.c",
+        "extensions/libip6t_hl.man",
+        "extensions/libip6t_hl.t",
+        "extensions/libipt_ttl.c",
+        "extensions/libipt_ttl.man",
+        "extensions/libipt_ttl.t",
+        "extensions/libxt_connmark.c",
+        "extensions/libxt_connmark.man",
+        "extensions/libxt_connmark.t",
+        "extensions/libxt_connmark.txlate",
+        "extensions/libxt_dscp.c",
+        "extensions/libxt_dscp.man",
+        "extensions/libxt_dscp.t",
+        "extensions/libxt_dscp.txlate",
+        "extensions/libxt_mark.c",
+        "extensions/libxt_mark.man",
+        "extensions/libxt_mark.t",
+        "extensions/libxt_mark.txlate",
+        "extensions/libxt_rateest.c",
+        "extensions/libxt_rateest.man",
+        "extensions/libxt_rateest.t",
+        "extensions/libxt_set.c",
+        "extensions/libxt_set.man",
+        "extensions/libxt_set.t",
+        "extensions/libxt_tcpmss.c",
+        "extensions/libxt_tcpmss.man",
+        "extensions/libxt_tcpmss.t",
+        "extensions/libxt_tcpmss.txlate",
+        "extensions/libxt_tos.c",
+        "extensions/libxt_tos.man",
+        "extensions/libxt_tos.t",
+        "include/linux/netfilter/xt_connmark.h",
+        "include/linux/netfilter/xt_dscp.h",
+        "include/linux/netfilter/xt_mark.h",
+        "include/linux/netfilter/xt_rateest.h",
+        "include/linux/netfilter/xt_tcpmss.h",
+        "include/linux/netfilter_ipv4/ipt_ttl.h",
+        "include/linux/netfilter_ipv6/ip6t_hl.h"
+      ],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.4,
+      "lfs_files": []
+    },
+    {
+      "repo": "third_party/jsframework",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\third_party\\jsframework",
+      "upstream": "https://gitcode.com/openharmony/third_party_jsframework.git",
+      "base": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+      "head": "df0243e10f938a1afc0d7fcf1873a4a2e2204aec",
+      "tree": "956fb061c423a3c3020c4fdae74b11beb3147c44",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "22ddd05c7caf5fc3303a5ee207fe159ce154c238",
+      "migration_snapshot_available": true,
+      "published_head": "39720b42330010ea5c306860f63a8637949efe8b",
+      "tracked_files": 94,
+      "repair_files": 3,
+      "new_repair_files": 3,
+      "excluded_files": [
+        "package-lock.json"
+      ],
+      "checked_files": [
+        {
+          "path": "BUILD.gn",
+          "blob": "274bcc1c12e4427e27aff43676e1833ed63953a5"
+        },
+        {
+          "path": "js_framework_build.sh",
+          "blob": "b4db8e58db31ad469ef5821e9fc7285fe8875685"
+        },
+        {
+          "path": "test/ut/runtime.ts",
+          "blob": "8f44a871b69f0bfdd9c2cc5cb272e2477b3b3a74"
+        },
+        {
+          "path": "package-lock.json",
+          "blob": "a5cbdfe88ffbdba6c0985ee9182abe0bde8485a3"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.8,
+      "lfs_files": []
+    },
+    {
+      "repo": "third_party/sane-airscan",
+      "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\third_party\\sane-airscan",
+      "upstream": "https://gitcode.com/openharmony/third_party_sane-airscan.git",
+      "base": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+      "head": "57b06670b9f6842058db427b05f42670849896c8",
+      "tree": "b6a96211a9454107da4e42e9e51c6d4ba64d46d1",
+      "branch": "snapshot/validated-20261013",
+      "migration_snapshot": "d75d60c59f7738d85260c8e9f41fa907c355ef3f",
+      "migration_snapshot_available": false,
+      "published_head": null,
+      "tracked_files": 87,
+      "repair_files": 2,
+      "new_repair_files": 0,
+      "excluded_files": [],
+      "checked_files": [
+        {
+          "path": "BUILD.gn",
+          "blob": "1efb322b7d245b7752d697cf187f48ef55420337"
+        },
+        {
+          "path": "patch_install.py",
+          "blob": "ebb178c0e581d388b8db9c5085cf4f19263b4024"
+        }
+      ],
+      "windows_worktree_exclusions": [],
+      "clean": true,
+      "independent_object_store": true,
+      "connectivity_check": true,
+      "shallow": "true",
+      "elapsed_seconds": 1.3,
+      "lfs_files": []
+    }
+  ],
+  "errors": [],
+  "final_verified_utc": "2026-10-14T11:20:56.681802+00:00",
+  "lfs_file_count": 229,
+  "lfs_total_bytes": 269983241,
+  "latest_sa_pr": {
+    "repository": "build",
+    "branch": "review/sa-profile-pr6965-20261014",
+    "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+    "url": "https://gitcode.com/openharmony/build/pull/6965"
+  }
+}

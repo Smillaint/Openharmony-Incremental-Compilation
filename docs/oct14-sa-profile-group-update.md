@@ -28,6 +28,8 @@ PR 描述已更新为[确认后的简短正文](pr-drafts/20261014/sa-profile-gr
 
 ## 归档
 
+**全量修复入口：** [本轮 17 个相关仓的离线源码](oct14-all-repairs-offline.md) 位于 `D:/workspace/repositories/openharmony-repairs-20261014`，包含所有累计修复及本轮新增规范性修改。该目录的 build 仓同时保留组合验证分支和 `review/sa-profile-pr6965-20261014`；下面的目录仅对应 SA 组独立 PR。
+
 本地完整 build 源码仓：`D:/workspace/repositories/build-sa-pr6965-20261014`。分支为 `fix/sa-profile-incremental-20261014`，HEAD 为 `f15f9bded74ae12a75b8a9ef729c1397a7202ec2`，对应更新后的 #6965。该目录从本地历史仓与 bundle 独立恢复，工作树干净，Git 对象连接检查通过，没有 alternates 依赖。离线可查看、修改这组源码；完整 OpenHarmony 产品源码、工具链和 out 未复制，整仓构建仍需原环境。
 
 旧目录 `repositories/openharmony-build-sa` 中的未提交修改保留。此前 17 仓（含 build）的修复补丁和版本记录仍在 `patches/20261013-source-handoff/`，不能将这些增量归档视为完整产品源码镜像。

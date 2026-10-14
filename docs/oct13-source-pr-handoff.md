@@ -2,6 +2,8 @@
 
 ## 当前结论与源码版本
 
+**2026-10-14 离线源码更新：** [17 仓全部修复已恢复为独立本地 Git 仓](oct14-all-repairs-offline.md)，统一位于 `D:/workspace/repositories/openharmony-repairs-20261014`。累计 68 个修复文件和另外 8 个保留差异均完成内容校验；组合验证快照、发布分支、最新 SA #6965 提交均在本地，可脱离远程编译机继续维护。
+
 **2026-10-14 发布更新：** [10 个 GitCode 个人仓的修复分支已推送并核对 SHA](oct14-gitcode-publish.md)，新提交均带 Smillick DCO。旧 PR 分支未更新，新增 PR 仍为 0；下文“未联网刷新”等描述为本次归档时点状态，最新 PR 查询和发布记录见链接。
 
 **修复代码有更新。** 相对本机保存的“纯迁移版 original”，本轮规范性修复与编译兼容补充共涉及 **10 个仓、23 个修复文件**；按根因准备 **12 组带 DCO 的独立补丁**。主要是 phone_install_modules 上游的 IDL、SDK、JS/CSS 生成链和 ROFS 稳定发布，以及 components.json 生命周期、安装规则输入补齐。
