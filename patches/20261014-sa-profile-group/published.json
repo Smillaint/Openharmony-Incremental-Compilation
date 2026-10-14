@@ -1,0 +1,21 @@
+{
+  "prepared_utc": "2026-10-14T09:06:09.833962+00:00",
+  "pr": "https://gitcode.com/openharmony/build/pull/6965",
+  "source_branch": "codex/fix-sa-profile-incremental-build",
+  "old_head": "0d530d7eb691276cd27d7109b1155a21c6c0c1cc",
+  "candidate_commit": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+  "target_master": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+  "prepared_ref": "refs/heads/prepared/sa-profile-pr6965-update-20261014",
+  "published": true,
+  "changed_file": "ohos/sa_profile/sa_profile_binary.py",
+  "diff_stat": " ohos/sa_profile/sa_profile_binary.py | 4 +++-\n 1 file changed, 3 insertions(+), 1 deletion(-)\n",
+  "all_five_sa_files_match_validated_snapshot": true,
+  "ast_and_diff_checks_passed": true,
+  "merge_base": "69f5e3070cf7dd14868ddd93f031d3a0f69178ff",
+  "text_merge_check_passed": true,
+  "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+  "planned_superseded_pr": 7130,
+  "unused_issue": 4759,
+  "published_utc": "2026-10-14T09:13:04.767361+00:00",
+  "remote_verified": true
+}

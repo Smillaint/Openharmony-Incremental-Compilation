@@ -4,7 +4,7 @@
 
 ## 最新状态与继续工作入口
 
-[2026-10-14 首条按 Action 拆分的 PR](docs/oct14-sa-profile-src-phone-pr.md)：**`sa_profile_src_phone` 已提交 [build #7130](https://gitcode.com/openharmony/build/pull/7130)**，关联原 Issue #4657，DCO 检查通过。仅包含三个源 SA 修复文件，八项隔离回归通过；保留旧 #6965 并标明代码重叠，其他 Action 尚未按此次顺序新建 PR。
+[2026-10-14 SA 组旧 PR 更新](docs/oct14-sa-profile-group-update.md)：**三个 SA Action 继续使用 [build #6965](https://gitcode.com/openharmony/build/pull/6965)，已追加带 DCO 的 ZIP 时间戳修复，门禁已启动。** 重复 PR #7130 和临时 Issue #4759 已关闭，保留 Issue #4657。后续沿用历史 PR 分组，优先更新旧 PR。
 
 [2026-10-14 GitCode 发布交接](docs/oct14-gitcode-publish.md)：**10 个个人仓已推送 `fix/incremental-build-20261013`，补齐 7 个 fork，15 条新提交全部带 Smillick DCO，远端 SHA 已逐仓核对。** 分支保留实际通过编译的修复文件；现有 master、旧 PR 分支未改动。该批分支发布阶段未新建 PR，随后首条 Action PR 见上方。仓地址、逐仓提交、上游重叠检查、补丁和 bundle 均已归档。
 
@@ -42,7 +42,7 @@
 
 | 原始 Action | 主要 PR | 修改与作用 |
 | --- | --- | --- |
-| `sa_profile_src_phone` | [build #7130](https://gitcode.com/openharmony/build/pull/7130)，从旧 [#6965](https://gitcode.com/openharmony/build/merge_requests/6965) 拆出 | SA 输入按 label 排序，源 SA JSON 内容相同不重写；配合 parts 稳定化收敛 |
+| `sa_profile_src_phone` | [build #6965](https://gitcode.com/openharmony/build/pull/6965) | SA 输入按 label 排序，源 SA JSON 内容相同不重写；配合 parts 稳定化收敛 |
 | `sa_profile_binary_phone` | [build #6965](https://gitcode.com/openharmony/build/merge_requests/6965) | ZIP 临时生成后比较发布，已测配置下避免重复归档传播 |
 | `phone_sa_profile_install_info` | [build #6965](https://gitcode.com/openharmony/build/merge_requests/6965) | SA 合并安装 JSON 内容感知写入，截断下游 dirty |
 | `check_seccomp_filter_name` | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999) | 稳定校验输入，生成成功 result，补齐 cfg/seccomp depfile，校验异常清理旧结果 |

@@ -1,5 +1,7 @@
 # sa_profile_src_phone PR 交接（2026-10-14）
 
+**本页为拆分阶段的历史记录。当前三个 SA Action 已恢复由 [build #6965](https://gitcode.com/openharmony/build/pull/6965) 一起提交；#7130 与临时 Issue #4759 已关闭，见 [SA 组更新交接](oct14-sa-profile-group-update.md)。**
+
 原始第一项 Action `//build/ohos/packages:sa_profile_src_phone` 已通过浏览器提交为 [openharmony/build #7130](https://gitcode.com/openharmony/build/pull/7130)，正式关联已有 [Issue #4657](https://gitcode.com/openharmony/build/issues/4657)。本次仅创建这一条 PR。
 
 ## Git 版本与提交范围
@@ -24,7 +26,7 @@
 ## 旧 PR、Issue 与依赖关系
 
 - 从旧 [build #6965](https://gitcode.com/openharmony/build/merge_requests/6965) 中拆出源 SA 部分；旧 PR 的 binary SA ZIP 和合并安装信息不在本 PR 范围。新旧代码存在重叠，不应重复合入。旧 PR 本次未关闭、未改动。
-- Issue #4657 覆盖多个 SA Action，可以继续用于后续关联。PR 的“合并后关闭已关联的 Issue”已取消，避免首条拆分 PR 提前关闭共享 Issue。
+- Issue #4657 覆盖多个 SA Action。拆分时曾将 #7130 与 #6965 同时关联它，随后被门禁以“同仓同分支存在多个 PR 关联相同 Issue”拒绝。当前恢复由 #6965 统一关联，不能沿用同仓同目标分支复用 Issue 的拆分方案。
 - 完整零改动增量中，该 Action 不执行还依赖上游 parts 元数据稳定化（build #6999、#7009）。上游输入真实变化时仍应执行。
 - 合并后删除源分支与 Squash 均未启用。
 
@@ -45,7 +47,7 @@ Python AST、`git diff --check` 通过。使用真实脚本及当前上游 helpe
 
 创建后浏览器页面确认：PR 已开启，Issue #4657 已关联，机器人标记“dco检查成功”；代码审查尚未通过，社区构建尚未手动触发。没有把 DCO 通过视为编译门禁通过。
 
-后续沿原始顺序处理 `sa_profile_binary_phone`，先核对与 #6965 及公共 helper 的重叠；此项尚未新建 PR。
+后续沿用原有 PR 分组，三个 SA Action 不再分别新建 PR。
 
 ## 归档
 
