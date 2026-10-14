@@ -4,6 +4,8 @@
 
 ## 最新状态与继续工作入口
 
+[2026-10-14 GitCode 发布交接](docs/oct14-gitcode-publish.md)：**10 个个人仓已推送 `fix/incremental-build-20261013`，补齐 7 个 fork，15 条新提交全部带 Smillick DCO，远端 SHA 已逐仓核对。** 分支保留实际通过编译的修复文件；现有 master、旧 PR 分支未改动，新增 PR 为 0。仓地址、逐仓提交、上游重叠检查、补丁和 bundle 均已归档。
+
 [2026-10-13 源码、PR 与验证交接](docs/oct13-source-pr-handoff.md) 汇总逐仓修改及提交边界：**本轮新增修复覆盖 10 仓、23 文件，准备 12 组带 Smillick DCO 的补丁；17 仓精确 Git 快照和 bundle 已保存。** 明确区分历史十项 PR、本次新增依赖链修复及 8 个不纳入 PR 的保留差异。最终两轮增量原始十项均为 0，后续人工日志也保持 13 步、十项为 0；尚未新建 GitCode PR。
 
 [2026-10-13 规范性修复实际验证](docs/oct13-phone-norm-validation.md) 是当前入口：JS/CSS 依赖、innerkit、安装规则输入及 ROFS 稳定发布已补齐。**移走源码旧 SDK 生成目录并清空 out 后，全量成功，耗时 2,105.50 秒；随后两轮增量为 154.81 / 87.77 秒，原始十项全部不执行，首轮起没有共享库重链或 phone_install_modules 重跑。** 受控源码与 17 仓 Git 树未变化，旧 SDK 源码生成目录未重建；A/B 的 current 已同步为验证通过的修复版，raw 对照仓保持原样。

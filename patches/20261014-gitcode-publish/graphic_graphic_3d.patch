@@ -1,0 +1,58 @@
+From 57e960e087a2f0aefbcc5f21b0f88b6cefc354f0 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 14 Oct 2026 15:01:18 +0800
+Subject: [PATCH] Preserve unchanged ROFS objects during asset publication
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ lume/LumeEngine/tools/CompilerAsset.sh | 25 +++++++++++++++++++++----
+ 1 file changed, 21 insertions(+), 4 deletions(-)
+
+diff --git a/lume/LumeEngine/tools/CompilerAsset.sh b/lume/LumeEngine/tools/CompilerAsset.sh
+index 2f8e9a3e..8f7c3d85 100755
+--- a/lume/LumeEngine/tools/CompilerAsset.sh
++++ b/lume/LumeEngine/tools/CompilerAsset.sh
+@@ -15,7 +15,7 @@
+ set -e
+ 
+ COMPILER_PATH=$1
+-TEST_COMPILER_PATH=${COMPILER_PATH}
++TEST_COMPILER_PATH=$(cd -- "$COMPILER_PATH" && pwd)
+ CPU_TYPE=$2
+ ASSETS_PATH=$3
+ ROOT_PATH=$4
+@@ -32,14 +32,31 @@ else
+     FILE_EXTENSIONS="${FILE_EXTENSIONS//\"/}"
+ fi
+ 
++ASSETS_PATH=$(cd -- "$ASSETS_PATH" && pwd)
++mkdir -p -- "$COPY_PATH"
++COPY_PATH=$(cd -- "$COPY_PATH" && pwd)
++# Generate under the build working directory, away from the input assets.
++STAGING_PATH=$(mktemp -d "$PWD/.rofs.XXXXXX")
++trap 'rm -rf -- "$STAGING_PATH"' EXIT
++
+ compile_asset()
+ {
+ 	echo "Lume5 Compile asset $1 $2 $3 $4 $5 $6 $7 $8 $9 $FILE_EXTENSIONS"
+     if [ ! -f "$TEST_COMPILER_PATH"/LumeAssetCompiler ]; then
+          echo "lume engine assert compiler not exist"
+     fi
+-    $TEST_COMPILER_PATH/LumeAssetCompiler -linux $CPU_TYPE -extensions $FILE_EXTENSIONS $ASSETS_PATH $ROOT_PATH $BIN_NAME $SIZE_NAME $BASE_NAME
+-    mv $OUTPUT_OBJ $COPY_PATH
++    (
++        cd -- "$STAGING_PATH"
++        "$TEST_COMPILER_PATH/LumeAssetCompiler" -linux "$CPU_TYPE" -extensions "$FILE_EXTENSIONS" "$ASSETS_PATH" "$ROOT_PATH" "$BIN_NAME" "$SIZE_NAME" "$BASE_NAME"
++    )
++    if [ ! -f "$STAGING_PATH/$OUTPUT_OBJ" ]; then
++        echo "Asset compiler did not generate $OUTPUT_OBJ" >&2
++        return 1
++    fi
++    # Keep unchanged objects stable so dependent plugins do not relink.
++    if [ ! -f "$COPY_PATH/$OUTPUT_OBJ" ] || ! cmp -s "$STAGING_PATH/$OUTPUT_OBJ" "$COPY_PATH/$OUTPUT_OBJ"; then
++        mv -- "$STAGING_PATH/$OUTPUT_OBJ" "$COPY_PATH/$OUTPUT_OBJ"
++    fi
+ }
+ 
+-compile_asset $COMPILER_PATH $CPU_TYPE $ASSETS_PATH $ROOT_PATH $BIN_NAME $SIZE_NAME $BASE_NAME $COPY_PATH $OUTPUT_OBJ $FILE_EXTENSIONS
++compile_asset "$COMPILER_PATH" "$CPU_TYPE" "$ASSETS_PATH" "$ROOT_PATH" "$BIN_NAME" "$SIZE_NAME" "$BASE_NAME" "$COPY_PATH" "$OUTPUT_OBJ" "$FILE_EXTENSIONS"

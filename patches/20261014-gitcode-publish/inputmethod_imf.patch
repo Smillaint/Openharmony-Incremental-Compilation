@@ -1,0 +1,22 @@
+From 331a15a1cda376687080a3977999de42182ec3ec Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 14 Oct 2026 15:01:16 +0800
+Subject: [PATCH] Declare input method shared IDL outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ interfaces/inner_api/inputmethod_controller/BUILD.gn | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/interfaces/inner_api/inputmethod_controller/BUILD.gn b/interfaces/inner_api/inputmethod_controller/BUILD.gn
+index 4d49c51b0..1f95543df 100644
+--- a/interfaces/inner_api/inputmethod_controller/BUILD.gn
++++ b/interfaces/inner_api/inputmethod_controller/BUILD.gn
+@@ -16,6 +16,7 @@ import("//build/config/components/idl_tool/idl.gni")
+ import("//build/ohos.gni")
+ 
+ idl_gen_interface("input_client_interface") {
++  sources_common = [ "InputMethodClientTypes.idl" ]
+   src_idl = rebase_path(
+           "${inputmethod_path}/frameworks/native/inputmethod_controller/IInputClient.idl")
+ }

@@ -1,0 +1,42 @@
+Branch: fix/incremental-build-20261013
+Signed-off-by: Smillick <3185479846@qq.com>
+
+https://gitcode.com/SmillySmillick/build
+Commit: 276b465e0bf190f179e1810af8827949f5cff4fe
+SSH: git@gitcode.com:SmillySmillick/build.git
+
+https://gitcode.com/SmillySmillick/third_party_jsframework
+Commit: 39720b42330010ea5c306860f63a8637949efe8b
+SSH: git@gitcode.com:SmillySmillick/third_party_jsframework.git
+
+https://gitcode.com/SmillySmillick/developtools_ace_ets2bundle
+Commit: 1eabff15841a7ba11c860262bf2fbde2c3960db6
+SSH: git@gitcode.com:SmillySmillick/developtools_ace_ets2bundle.git
+
+https://gitcode.com/SmillySmillick/account_os_account
+Commit: b55c624c20ca24d4c64e98304fb5d3f975606a90
+SSH: git@gitcode.com:SmillySmillick/account_os_account.git
+
+https://gitcode.com/SmillySmillick/inputmethod_imf
+Commit: 331a15a1cda376687080a3977999de42182ec3ec
+SSH: git@gitcode.com:SmillySmillick/inputmethod_imf.git
+
+https://gitcode.com/SmillySmillick/security_dlp_permission_service
+Commit: c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28
+SSH: git@gitcode.com:SmillySmillick/security_dlp_permission_service.git
+
+https://gitcode.com/SmillySmillick/ability_dmsfwk
+Commit: 6d99e0fef7fe7b69f63f2445c8852303f055506d
+SSH: git@gitcode.com:SmillySmillick/ability_dmsfwk.git
+
+https://gitcode.com/SmillySmillick/multimedia_audio_framework
+Commit: c1aafc5d32b0b1ad6a429149090fda7b187ddf69
+SSH: git@gitcode.com:SmillySmillick/multimedia_audio_framework.git
+
+https://gitcode.com/SmillySmillick/third_party_css-what
+Commit: 0ad16b63ecbad73335b62474499f205b8848382c
+SSH: git@gitcode.com:SmillySmillick/third_party_css-what.git
+
+https://gitcode.com/SmillySmillick/graphic_graphic_3d
+Commit: 57e960e087a2f0aefbcc5f21b0f88b6cefc354f0
+SSH: git@gitcode.com:SmillySmillick/graphic_graphic_3d.git

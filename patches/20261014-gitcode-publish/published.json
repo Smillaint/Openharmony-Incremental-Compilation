@@ -1,0 +1,864 @@
+{
+  "created_utc": "2026-10-14T07:01:43.170105+00:00",
+  "repositories": [
+    {
+      "source_repo": "third_party/jsframework",
+      "gitcode_repo": "third_party_jsframework",
+      "url": "https://gitcode.com/SmillySmillick/third_party_jsframework",
+      "branch": "fix/incremental-build-20261013",
+      "head": "39720b42330010ea5c306860f63a8637949efe8b",
+      "base": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+      "upstream_master": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "migrated-fixes",
+          "commit": "218bdec69f99c8effb1d67256bdefe265a9cea2b",
+          "parent": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+          "title": "Preserve migrated incremental build fixes",
+          "files": [
+            "js_framework_build.sh"
+          ]
+        },
+        {
+          "stage": "js-out-only-build",
+          "commit": "39720b42330010ea5c306860f63a8637949efe8b",
+          "parent": "218bdec69f99c8effb1d67256bdefe265a9cea2b",
+          "title": "Build JS framework outside sources with explicit CSS dependencies",
+          "files": [
+            "BUILD.gn",
+            "js_framework_build.sh",
+            "test/ut/runtime.ts"
+          ]
+        }
+      ],
+      "files": [
+        "BUILD.gn",
+        "js_framework_build.sh",
+        "test/ut/runtime.ts"
+      ],
+      "new_repair_files": [
+        "BUILD.gn",
+        "js_framework_build.sh",
+        "test/ut/runtime.ts"
+      ],
+      "excluded_files": [
+        "package-lock.json"
+      ],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [
+        {
+          "file": "js_framework_build.sh",
+          "check": "bash-syntax"
+        }
+      ],
+      "patch_sha256": "e06fa476d8bc5e27248fbd23168cb27f127916c5819cfaa8bb7e812d48157d9e",
+      "bundle_sha256": "3c68a56854ccc0a6de2a16ed45581efe06b8ba355f2ccaf524d5c03c7f6f8b87",
+      "remote_heads_before": {
+        "refs/heads/fix/jsframework-incremental-actions": "a280a42fe7f73d59528ecbde04f319cc61e5de0b",
+        "refs/heads/master": "a21a6f36694c08ac0b83d077577526a7ca086d57"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix/incremental-build-20261013": "39720b42330010ea5c306860f63a8637949efe8b",
+        "refs/heads/fix/jsframework-incremental-actions": "a280a42fe7f73d59528ecbde04f319cc61e5de0b",
+        "refs/heads/master": "a21a6f36694c08ac0b83d077577526a7ca086d57"
+      },
+      "verified_remote_sha": "39720b42330010ea5c306860f63a8637949efe8b",
+      "verified_utc": "2026-10-14T07:07:25.116096+00:00"
+    },
+    {
+      "source_repo": "base/account/os_account",
+      "gitcode_repo": "account_os_account",
+      "url": "https://gitcode.com/SmillySmillick/account_os_account",
+      "branch": "fix/incremental-build-20261013",
+      "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+      "base": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+      "upstream_master": "bc9def700df5213db000c5f2fc88c40f9e566bca",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "os-account-idl-outputs",
+          "commit": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+          "parent": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+          "title": "Declare account callback and common IDL outputs",
+          "files": [
+            "frameworks/osaccount/native/BUILD.gn"
+          ]
+        }
+      ],
+      "files": [
+        "frameworks/osaccount/native/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "frameworks/osaccount/native/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [],
+      "patch_sha256": "eaac962068b8976621c2867f8b3058d81872e0f6392b0a37eff9529a7912e51a",
+      "bundle_sha256": "479224d692a2e4fca533db5b8be55b0ad49e2ee696c17cee9f10b90bdcae932d",
+      "remote_heads_before": {
+        "refs/heads/master": "bc9def700df5213db000c5f2fc88c40f9e566bca"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix/incremental-build-20261013": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+        "refs/heads/master": "bc9def700df5213db000c5f2fc88c40f9e566bca"
+      },
+      "verified_remote_sha": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+      "verified_utc": "2026-10-14T07:07:28.045929+00:00"
+    },
+    {
+      "source_repo": "developtools/ace_ets2bundle",
+      "gitcode_repo": "developtools_ace_ets2bundle",
+      "url": "https://gitcode.com/SmillySmillick/developtools_ace_ets2bundle",
+      "branch": "fix/incremental-build-20261013",
+      "head": "1eabff15841a7ba11c860262bf2fbde2c3960db6",
+      "base": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+      "upstream_master": "bf85f8c65d218de1f7b714a4ca1c6267e60ca857",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "migrated-fixes",
+          "commit": "63bace1ad71b7279c40eac7fb4a5012b067c9c87",
+          "parent": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+          "title": "Preserve migrated incremental build fixes",
+          "files": [
+            "ets1.2/BUILD.gn",
+            "ets1.2/libarkts/BUILD.gn"
+          ]
+        },
+        {
+          "stage": "sdk-explicit-file-outputs",
+          "commit": "1eabff15841a7ba11c860262bf2fbde2c3960db6",
+          "parent": "63bace1ad71b7279c40eac7fb4a5012b067c9c87",
+          "title": "Generate SDK plugins and wrappers under out with explicit files",
+          "files": [
+            "arkui-plugins/BUILD.gn",
+            "arkui-plugins/build_ui_plugins.py",
+            "arkui-plugins/sdk_files.json",
+            "koala-wrapper/BUILD.gn",
+            "koala-wrapper/build_ts_wrapper.py",
+            "koala-wrapper/sdk_files.json",
+            "sdk_copy.gni",
+            "sdk_files.py"
+          ]
+        }
+      ],
+      "files": [
+        "arkui-plugins/BUILD.gn",
+        "arkui-plugins/build_ui_plugins.py",
+        "arkui-plugins/sdk_files.json",
+        "ets1.2/BUILD.gn",
+        "ets1.2/libarkts/BUILD.gn",
+        "koala-wrapper/BUILD.gn",
+        "koala-wrapper/build_ts_wrapper.py",
+        "koala-wrapper/sdk_files.json",
+        "sdk_copy.gni",
+        "sdk_files.py"
+      ],
+      "new_repair_files": [
+        "arkui-plugins/BUILD.gn",
+        "arkui-plugins/build_ui_plugins.py",
+        "arkui-plugins/sdk_files.json",
+        "koala-wrapper/BUILD.gn",
+        "koala-wrapper/build_ts_wrapper.py",
+        "koala-wrapper/sdk_files.json",
+        "sdk_copy.gni",
+        "sdk_files.py"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [
+        {
+          "file": "arkui-plugins/build_ui_plugins.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "arkui-plugins/sdk_files.json",
+          "check": "json-parse"
+        },
+        {
+          "file": "koala-wrapper/build_ts_wrapper.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "koala-wrapper/sdk_files.json",
+          "check": "json-parse"
+        },
+        {
+          "file": "sdk_files.py",
+          "check": "python-ast"
+        }
+      ],
+      "patch_sha256": "16a73605fad42cf764ecb7a6834912235f1109d117933b8af492e5feb067f0e8",
+      "bundle_sha256": "9c44a46b9236b4bcc6aa1e3cf1651b6c938d83161dc89bf4531093b1dd866368",
+      "remote_heads_before": {
+        "refs/heads/fix-libarkts-sdk-incremental-deps": "8a4c58bcec13bdef503ac1aed8934ee8b96b31b3",
+        "refs/heads/master": "70818d757b521238fcd1f680940c0c76356b7fc8"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix-libarkts-sdk-incremental-deps": "8a4c58bcec13bdef503ac1aed8934ee8b96b31b3",
+        "refs/heads/fix/incremental-build-20261013": "1eabff15841a7ba11c860262bf2fbde2c3960db6",
+        "refs/heads/master": "70818d757b521238fcd1f680940c0c76356b7fc8"
+      },
+      "verified_remote_sha": "1eabff15841a7ba11c860262bf2fbde2c3960db6",
+      "verified_utc": "2026-10-14T07:07:31.533546+00:00"
+    },
+    {
+      "source_repo": "base/inputmethod/imf",
+      "gitcode_repo": "inputmethod_imf",
+      "url": "https://gitcode.com/SmillySmillick/inputmethod_imf",
+      "branch": "fix/incremental-build-20261013",
+      "head": "331a15a1cda376687080a3977999de42182ec3ec",
+      "base": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+      "upstream_master": "341493e680beba68d7251876113368052b9ab9b2",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "imf-idl-outputs",
+          "commit": "331a15a1cda376687080a3977999de42182ec3ec",
+          "parent": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+          "title": "Declare input method shared IDL outputs",
+          "files": [
+            "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+          ]
+        }
+      ],
+      "files": [
+        "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [],
+      "patch_sha256": "57a56535339f65584e1aa4eee933be426db089a1a10370e5a9df87ec37bbf2ad",
+      "bundle_sha256": "edf0e2f7ee61c95c85d663bd808578f25fc679f481e24f150e830049749453e4",
+      "remote_heads_before": {
+        "refs/heads/master": "341493e680beba68d7251876113368052b9ab9b2"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix/incremental-build-20261013": "331a15a1cda376687080a3977999de42182ec3ec",
+        "refs/heads/master": "341493e680beba68d7251876113368052b9ab9b2"
+      },
+      "verified_remote_sha": "331a15a1cda376687080a3977999de42182ec3ec",
+      "verified_utc": "2026-10-14T07:07:34.855615+00:00"
+    },
+    {
+      "source_repo": "base/security/dlp_permission_service",
+      "gitcode_repo": "security_dlp_permission_service",
+      "url": "https://gitcode.com/SmillySmillick/security_dlp_permission_service",
+      "branch": "fix/incremental-build-20261013",
+      "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+      "base": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+      "upstream_master": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "dlp-idl-outputs",
+          "commit": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+          "parent": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+          "title": "Declare DLP permission shared IDL outputs",
+          "files": [
+            "interfaces/inner_api/dlp_permission/BUILD.gn"
+          ]
+        }
+      ],
+      "files": [
+        "interfaces/inner_api/dlp_permission/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "interfaces/inner_api/dlp_permission/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [],
+      "patch_sha256": "9d9dc728e19e242586d438effb4aee1a006fbab7e96e0aa2f943882ba1feef47",
+      "bundle_sha256": "55c8c8d21c0b9590ec5c43e8c2d3c8f7903ff96343f36583eeca31bbe5538b94",
+      "remote_heads_before": {
+        "refs/heads/master": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix/incremental-build-20261013": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+        "refs/heads/master": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9"
+      },
+      "verified_remote_sha": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+      "verified_utc": "2026-10-14T07:07:37.486373+00:00"
+    },
+    {
+      "source_repo": "build",
+      "gitcode_repo": "build",
+      "url": "https://gitcode.com/SmillySmillick/build",
+      "branch": "fix/incremental-build-20261013",
+      "head": "276b465e0bf190f179e1810af8827949f5cff4fe",
+      "base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+      "upstream_master": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [
+        "config/components/idl_tool/idl.gni"
+      ],
+      "commits": [
+        {
+          "stage": "migrated-fixes",
+          "commit": "3c7fd72ed918b3263dd1dac9689ef1a76dbc966d",
+          "parent": "a2b72e827add764f6312e00173dff0dd3db45e75",
+          "title": "Preserve migrated incremental build fixes",
+          "files": [
+            "config/components/ets_frontend/generate_static_abc.py",
+            "config/components/idl_tool/idl.gni",
+            "hb/services/loader.py",
+            "hb/util/io_util.py",
+            "hb/util/loader/load_ohos_build.py",
+            "lite/config/component/lite_component.gni",
+            "ohos/app/app_internal.gni",
+            "ohos/common/BUILD.gn",
+            "ohos/common/binary_install_info.py",
+            "ohos/common/generate_host_info.py",
+            "ohos/common/merge_all_subsystem.py",
+            "ohos/generate_part_info.py",
+            "ohos/hisysevent/hisysevent_process.py",
+            "ohos/images/BUILD.gn",
+            "ohos/images/build_image.py",
+            "ohos/notice/collect_module_notice_file.py",
+            "ohos/notice/collect_system_notice_files.py",
+            "ohos/packages/BUILD.gn",
+            "ohos/packages/check_seccomp_library_name.py",
+            "ohos/packages/generate_host_symlink.py",
+            "ohos/packages/modules_install.py",
+            "ohos/packages/parts_install_info.py",
+            "ohos/packages/process_field_validate.py",
+            "ohos/packages/stabilize_json_file.py",
+            "ohos/sa_profile/sa_profile_binary.py",
+            "ohos/sa_profile/sa_profile_merge.py",
+            "ohos/sa_profile/sa_profile_source.py",
+            "ohos/sa_profile/src_sa_profile_process.py",
+            "ohos/sdk/parse_interface_sdk.py",
+            "scripts/app_sign.py",
+            "scripts/build_js_assets.py",
+            "scripts/compile_app.py",
+            "scripts/util/build_utils.py",
+            "scripts/util/file_utils.py",
+            "templates/kernel/linux-6.6/make_ko.sh"
+          ]
+        },
+        {
+          "stage": "idl-clean-outputs",
+          "commit": "f2df8f62cc3fe010ef1cf7b2fee243c7f2cb6066",
+          "parent": "3c7fd72ed918b3263dd1dac9689ef1a76dbc966d",
+          "title": "Declare and restore IDL generated files with complete dependencies",
+          "files": [
+            "config/components/idl_tool/idl.gni",
+            "config/components/idl_tool/idl.py"
+          ]
+        },
+        {
+          "stage": "loader-stable-components",
+          "commit": "2af53c5e9815fd62c2c0d82f0c1a23cd2b6231f3",
+          "parent": "f2df8f62cc3fe010ef1cf7b2fee243c7f2cb6066",
+          "title": "Preserve unchanged component metadata during loading",
+          "files": [
+            "hb/services/loader.py"
+          ]
+        },
+        {
+          "stage": "install-rule-inputs",
+          "commit": "276b465e0bf190f179e1810af8827949f5cff4fe",
+          "parent": "2af53c5e9815fd62c2c0d82f0c1a23cd2b6231f3",
+          "title": "Track installation rule files as explicit action inputs",
+          "files": [
+            "ohos/packages/BUILD.gn"
+          ]
+        }
+      ],
+      "files": [
+        "config/components/ets_frontend/generate_static_abc.py",
+        "config/components/idl_tool/idl.gni",
+        "config/components/idl_tool/idl.py",
+        "hb/services/loader.py",
+        "hb/util/io_util.py",
+        "hb/util/loader/load_ohos_build.py",
+        "lite/config/component/lite_component.gni",
+        "ohos/app/app_internal.gni",
+        "ohos/common/BUILD.gn",
+        "ohos/common/binary_install_info.py",
+        "ohos/common/generate_host_info.py",
+        "ohos/common/merge_all_subsystem.py",
+        "ohos/generate_part_info.py",
+        "ohos/hisysevent/hisysevent_process.py",
+        "ohos/images/BUILD.gn",
+        "ohos/images/build_image.py",
+        "ohos/notice/collect_module_notice_file.py",
+        "ohos/notice/collect_system_notice_files.py",
+        "ohos/packages/BUILD.gn",
+        "ohos/packages/check_seccomp_library_name.py",
+        "ohos/packages/generate_host_symlink.py",
+        "ohos/packages/modules_install.py",
+        "ohos/packages/parts_install_info.py",
+        "ohos/packages/process_field_validate.py",
+        "ohos/packages/stabilize_json_file.py",
+        "ohos/sa_profile/sa_profile_binary.py",
+        "ohos/sa_profile/sa_profile_merge.py",
+        "ohos/sa_profile/sa_profile_source.py",
+        "ohos/sa_profile/src_sa_profile_process.py",
+        "ohos/sdk/parse_interface_sdk.py",
+        "scripts/app_sign.py",
+        "scripts/build_js_assets.py",
+        "scripts/compile_app.py",
+        "scripts/util/build_utils.py",
+        "scripts/util/file_utils.py",
+        "templates/kernel/linux-6.6/make_ko.sh"
+      ],
+      "new_repair_files": [
+        "config/components/idl_tool/idl.gni",
+        "config/components/idl_tool/idl.py",
+        "hb/services/loader.py",
+        "ohos/packages/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [
+          {
+            "file": "config/components/idl_tool/idl.gni",
+            "text_three_way_merge_exit": 0,
+            "merged_blob_sha256": "c0d038266e9f1640825a743c1eeb966762040c9452e1ca7fc47a8ccba4340fd3"
+          }
+        ],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [
+        {
+          "file": "config/components/ets_frontend/generate_static_abc.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "config/components/idl_tool/idl.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "hb/services/loader.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "hb/util/io_util.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "hb/util/loader/load_ohos_build.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/common/binary_install_info.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/common/generate_host_info.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/common/merge_all_subsystem.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/generate_part_info.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/hisysevent/hisysevent_process.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/images/build_image.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/notice/collect_module_notice_file.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/notice/collect_system_notice_files.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/packages/check_seccomp_library_name.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/packages/generate_host_symlink.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/packages/modules_install.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/packages/parts_install_info.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/packages/process_field_validate.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/packages/stabilize_json_file.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/sa_profile/sa_profile_binary.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/sa_profile/sa_profile_merge.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/sa_profile/sa_profile_source.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/sa_profile/src_sa_profile_process.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "ohos/sdk/parse_interface_sdk.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "scripts/app_sign.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "scripts/build_js_assets.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "scripts/compile_app.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "scripts/util/build_utils.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "scripts/util/file_utils.py",
+          "check": "python-ast"
+        },
+        {
+          "file": "templates/kernel/linux-6.6/make_ko.sh",
+          "check": "bash-syntax"
+        }
+      ],
+      "patch_sha256": "678723c124f08ab235378564df5ecee476b59e21dfda77b013d5788fc2fa6a32",
+      "bundle_sha256": "fe912620693e7385b9b8e2302916046edc68dc719d0f09775808dd57a7380582",
+      "remote_heads_before": {
+        "refs/heads/codex/fix-idl-common-outputs-snapshot": "d1cf608ebc90340b2746807a6947624c013281d8",
+        "refs/heads/codex/fix-sa-profile-incremental-build": "0d530d7eb691276cd27d7109b1155a21c6c0c1cc",
+        "refs/heads/fix-hap-sign-incremental-build": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+        "refs/heads/fix-hisysevent-incremental-build": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+        "refs/heads/fix-idl-acronym-header-outputs": "97c0d5bcab3e5038ea31aac07523a8cc1bd7e23c",
+        "refs/heads/fix-idl-common-outputs": "4fa37075bfa8a0f3bb36f0394adf54577b0770f2",
+        "refs/heads/fix-install-incremental-metadata": "5be8fa471e23084eb4a884653746a55af554e7f2",
+        "refs/heads/fix-js-assets-incremental-deps": "f03aa33b3f4d63c7fc754262a5e5de6a9adb5b66",
+        "refs/heads/fix-notice-incremental-deps": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+        "refs/heads/fix-part-install-metadata-incremental-build": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+        "refs/heads/fix-sdk-split-incremental-deps": "72115384f783e09832216c951e7743b944fd5893",
+        "refs/heads/fix/compile-app-stable-output": "918e4c5bc99f0441b5b5d2fe5afc62492ecdad01",
+        "refs/heads/incremental-build-all-validation-20260816": "21dd2af20636c63b43f6ea5abe4587b1cd9d01d1",
+        "refs/heads/incremental-build-all-validation-20260820": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+        "refs/heads/master": "69f5e3070cf7dd14868ddd93f031d3a0f69178ff"
+      },
+      "remote_heads_after": {
+        "refs/heads/codex/fix-idl-common-outputs-snapshot": "d1cf608ebc90340b2746807a6947624c013281d8",
+        "refs/heads/codex/fix-sa-profile-incremental-build": "0d530d7eb691276cd27d7109b1155a21c6c0c1cc",
+        "refs/heads/fix-hap-sign-incremental-build": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+        "refs/heads/fix-hisysevent-incremental-build": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+        "refs/heads/fix-idl-acronym-header-outputs": "97c0d5bcab3e5038ea31aac07523a8cc1bd7e23c",
+        "refs/heads/fix-idl-common-outputs": "4fa37075bfa8a0f3bb36f0394adf54577b0770f2",
+        "refs/heads/fix-install-incremental-metadata": "5be8fa471e23084eb4a884653746a55af554e7f2",
+        "refs/heads/fix-js-assets-incremental-deps": "f03aa33b3f4d63c7fc754262a5e5de6a9adb5b66",
+        "refs/heads/fix-notice-incremental-deps": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+        "refs/heads/fix-part-install-metadata-incremental-build": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+        "refs/heads/fix-sdk-split-incremental-deps": "72115384f783e09832216c951e7743b944fd5893",
+        "refs/heads/fix/compile-app-stable-output": "918e4c5bc99f0441b5b5d2fe5afc62492ecdad01",
+        "refs/heads/fix/incremental-build-20261013": "276b465e0bf190f179e1810af8827949f5cff4fe",
+        "refs/heads/incremental-build-all-validation-20260816": "21dd2af20636c63b43f6ea5abe4587b1cd9d01d1",
+        "refs/heads/incremental-build-all-validation-20260820": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+        "refs/heads/master": "69f5e3070cf7dd14868ddd93f031d3a0f69178ff"
+      },
+      "verified_remote_sha": "276b465e0bf190f179e1810af8827949f5cff4fe",
+      "verified_utc": "2026-10-14T07:07:40.757676+00:00"
+    },
+    {
+      "source_repo": "foundation/ability/dmsfwk",
+      "gitcode_repo": "ability_dmsfwk",
+      "url": "https://gitcode.com/SmillySmillick/ability_dmsfwk",
+      "branch": "fix/incremental-build-20261013",
+      "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+      "base": "aa1b0347b10700d761def383c08749420dd3f71a",
+      "upstream_master": "aa1b0347b10700d761def383c08749420dd3f71a",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "dms-idl-outputs",
+          "commit": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+          "parent": "aa1b0347b10700d761def383c08749420dd3f71a",
+          "title": "Declare distributed ability shared IDL outputs",
+          "files": [
+            "interfaces/innerkits/common/BUILD.gn"
+          ]
+        }
+      ],
+      "files": [
+        "interfaces/innerkits/common/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "interfaces/innerkits/common/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [],
+      "patch_sha256": "41eaf6a97290449752035d3cb5a1ecbb4843c061ae583d5963e18aede4dc86bf",
+      "bundle_sha256": "63b5759b0674516356e3ddd3fe390bee39e48a116937684d16403760d3363e06",
+      "remote_heads_before": {
+        "refs/heads/master": "aa1b0347b10700d761def383c08749420dd3f71a"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix/incremental-build-20261013": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+        "refs/heads/master": "aa1b0347b10700d761def383c08749420dd3f71a"
+      },
+      "verified_remote_sha": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+      "verified_utc": "2026-10-14T07:07:43.555687+00:00"
+    },
+    {
+      "source_repo": "third_party/css-what",
+      "gitcode_repo": "third_party_css-what",
+      "url": "https://gitcode.com/SmillySmillick/third_party_css-what",
+      "branch": "fix/incremental-build-20261013",
+      "head": "0ad16b63ecbad73335b62474499f205b8848382c",
+      "base": "66c986b3597910d384f32d7b098112d2b48d4145",
+      "upstream_master": "66c986b3597910d384f32d7b098112d2b48d4145",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "css-explicit-copy-outputs",
+          "commit": "0ad16b63ecbad73335b62474499f205b8848382c",
+          "parent": "66c986b3597910d384f32d7b098112d2b48d4145",
+          "title": "Publish CSS runtime sources and fixtures through explicit copy targets",
+          "files": [
+            "BUILD.gn",
+            "bundle.json"
+          ]
+        }
+      ],
+      "files": [
+        "BUILD.gn",
+        "bundle.json"
+      ],
+      "new_repair_files": [
+        "BUILD.gn",
+        "bundle.json"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [
+        {
+          "file": "bundle.json",
+          "check": "json-parse"
+        }
+      ],
+      "patch_sha256": "4e3f5dcbc77d24d4a8dad5e250b3e571c2e65802d458a0ef61862b3ea452577a",
+      "bundle_sha256": "922258e07ce8ed1f7415c5693f8a80022baac2a9235619c46e4573327204fd60",
+      "remote_heads_before": {
+        "refs/heads/master": "66c986b3597910d384f32d7b098112d2b48d4145"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix/incremental-build-20261013": "0ad16b63ecbad73335b62474499f205b8848382c",
+        "refs/heads/master": "66c986b3597910d384f32d7b098112d2b48d4145"
+      },
+      "verified_remote_sha": "0ad16b63ecbad73335b62474499f205b8848382c",
+      "verified_utc": "2026-10-14T07:07:46.207629+00:00"
+    },
+    {
+      "source_repo": "foundation/graphic/graphic_3d",
+      "gitcode_repo": "graphic_graphic_3d",
+      "url": "https://gitcode.com/SmillySmillick/graphic_graphic_3d",
+      "branch": "fix/incremental-build-20261013",
+      "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+      "base": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "upstream_master": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "rofs-stable-publication",
+          "commit": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+          "parent": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+          "title": "Preserve unchanged ROFS objects during asset publication",
+          "files": [
+            "lume/LumeEngine/tools/CompilerAsset.sh"
+          ]
+        }
+      ],
+      "files": [
+        "lume/LumeEngine/tools/CompilerAsset.sh"
+      ],
+      "new_repair_files": [
+        "lume/LumeEngine/tools/CompilerAsset.sh"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [
+        {
+          "file": "lume/LumeEngine/tools/CompilerAsset.sh",
+          "check": "bash-syntax"
+        }
+      ],
+      "patch_sha256": "fe9fdc9f4487bff5c2175c6727342f2b4b4a2ce19fc7162f84f8e25dac7e2193",
+      "bundle_sha256": "bde8f20ce5cf6b46f4249d70a65fe1b944612727f0335fab86334562d9951962",
+      "remote_heads_before": {
+        "refs/heads/master": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix/incremental-build-20261013": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+        "refs/heads/master": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de"
+      },
+      "verified_remote_sha": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+      "verified_utc": "2026-10-14T07:07:48.970773+00:00"
+    },
+    {
+      "source_repo": "foundation/multimedia/audio_framework",
+      "gitcode_repo": "multimedia_audio_framework",
+      "url": "https://gitcode.com/SmillySmillick/multimedia_audio_framework",
+      "branch": "fix/incremental-build-20261013",
+      "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+      "base": "d128a212e695de931d425fba7c64ebd591de96bf",
+      "upstream_master": "1f84774944addab19af5f650d9c54c0d1cfe5bf1",
+      "base_is_upstream_ancestor": true,
+      "upstream_changed_repair_files": [],
+      "commits": [
+        {
+          "stage": "audio-idl-dependency",
+          "commit": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+          "parent": "d128a212e695de931d425fba7c64ebd591de96bf",
+          "title": "Depend on the producer of audio callback shared IDL types",
+          "files": [
+            "services/audio_service/idl/BUILD.gn"
+          ]
+        }
+      ],
+      "files": [
+        "services/audio_service/idl/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "services/audio_service/idl/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "source_unchanged": true,
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "published": true,
+      "upstream_overlap_check": {
+        "method": "base ancestry, changed-path comparison, git merge-file for overlapping paths",
+        "passed": true,
+        "details": [],
+        "full_product_build_on_current_upstream": false
+      },
+      "syntax_checks": [],
+      "patch_sha256": "4701703952a1f1939a02ad6cd9da29c4bfb3f55e83a9cee031374e9ce8de753b",
+      "bundle_sha256": "80bc34fdeb4c9775f00acf9f52e5a4777b30c7479fdb751c150a11c32138c2f8",
+      "remote_heads_before": {
+        "refs/heads/master": "1f84774944addab19af5f650d9c54c0d1cfe5bf1"
+      },
+      "remote_heads_after": {
+        "refs/heads/fix/incremental-build-20261013": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+        "refs/heads/master": "1f84774944addab19af5f650d9c54c0d1cfe5bf1"
+      },
+      "verified_remote_sha": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+      "verified_utc": "2026-10-14T07:07:52.179178+00:00"
+    }
+  ],
+  "errors": [],
+  "validation": {
+    "all_source_blobs_match_validated_repairs": true,
+    "dco_and_identity_passed": true,
+    "whitespace_check_passed": true,
+    "utf8_passed": true,
+    "new_product_build_started": false
+  },
+  "push_errors": []
+}

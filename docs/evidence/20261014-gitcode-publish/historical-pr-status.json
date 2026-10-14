@@ -1,0 +1,278 @@
+{
+  "queried_utc": "2026-10-14T06:36:40.358339+00:00",
+  "pull_requests": [
+    {
+      "number": 6965,
+      "title": "Stabilize SA profile incremental outputs",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-08-06T14:24:01+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/6965",
+      "head": {
+        "ref": "codex/fix-sa-profile-incremental-build",
+        "sha": "0d530d7eb691276cd27d7109b1155a21c6c0c1cc",
+        "label": "codex/fix-sa-profile-incremental-build"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 6974,
+      "title": "Fix incremental HAP signing outputs",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-08-10T13:32:13+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/6974",
+      "head": {
+        "ref": "fix-hap-sign-incremental-build",
+        "sha": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+        "label": "fix-hap-sign-incremental-build"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 6982,
+      "title": "Fix IDL output declarations",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-08-17T16:34:04+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+      "head": {
+        "ref": "fix-idl-common-outputs",
+        "sha": "4fa37075bfa8a0f3bb36f0394adf54577b0770f2",
+        "label": "fix-idl-common-outputs"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 6999,
+      "title": "Stabilize package validation inputs",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-08-21T13:00:08+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/6999",
+      "head": {
+        "ref": "incremental-build-all-validation-20260820",
+        "sha": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+        "label": "incremental-build-all-validation-20260820"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 7006,
+      "title": "Stabilize HiSysEvent incremental inputs",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-08-25T11:21:13+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/7006",
+      "head": {
+        "ref": "fix-hisysevent-incremental-build",
+        "sha": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+        "label": "fix-hisysevent-incremental-build"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 7009,
+      "title": "Fix incremental notice file collection",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-08-27T12:32:40+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/7009",
+      "head": {
+        "ref": "fix-part-install-metadata-incremental-build",
+        "sha": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+        "label": "fix-part-install-metadata-incremental-build"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 7046,
+      "title": "Stabilize binary install metadata and optional input dependencies",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-09-09T17:08:10+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/7046",
+      "head": {
+        "ref": "fix-install-incremental-metadata",
+        "sha": "5be8fa471e23084eb4a884653746a55af554e7f2",
+        "label": "fix-install-incremental-metadata"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 7048,
+      "title": "修复 NOTICE 许可证查找与聚合依赖",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-09-29T03:55:20+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/7048",
+      "head": {
+        "ref": "fix-notice-incremental-deps",
+        "sha": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+        "label": "fix-notice-incremental-deps"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 7049,
+      "title": "补齐 SDK 接口拆分的完成标记与增量依赖",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-09-29T03:55:20+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/7049",
+      "head": {
+        "ref": "fix-sdk-split-incremental-deps",
+        "sha": "72115384f783e09832216c951e7743b944fd5893",
+        "label": "fix-sdk-split-incremental-deps"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+        "label": "master"
+      }
+    },
+    {
+      "number": 62,
+      "title": "修复 genInit 聚合文件无变化重写导致的 iptables 重复编译",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-09-02T11:12:51+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/third_party_iptables/merge_requests/62",
+      "head": {
+        "ref": "fix-geninit-incremental-output",
+        "sha": "5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+        "label": "fix-geninit-incremental-output"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+        "label": "master"
+      }
+    },
+    {
+      "number": 1556,
+      "title": "Fix reproducible HAP entry timestamps",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-08-14T11:19:04+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+      "head": {
+        "ref": "fix/hap-reproducible-archive",
+        "sha": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+        "label": "fix/hap-reproducible-archive"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "fb62826a299c705b95ea1e4e882dc522c5aae247",
+        "label": "master"
+      }
+    },
+    {
+      "number": 853,
+      "title": "fix: stabilize jsframework incremental actions",
+      "state": "open",
+      "merged": null,
+      "mergeable": true,
+      "updated_at": "2026-09-16T11:32:49+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853",
+      "head": {
+        "ref": "fix/jsframework-incremental-actions",
+        "sha": "a280a42fe7f73d59528ecbde04f319cc61e5de0b",
+        "label": "fix/jsframework-incremental-actions"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+        "label": "master"
+      }
+    },
+    {
+      "number": 22,
+      "title": "fix: stabilize airscan incremental build outputs",
+      "state": "open",
+      "merged": null,
+      "mergeable": false,
+      "updated_at": "2026-08-05T15:54:56+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "html_url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+      "head": {
+        "ref": "fix/airscan-incremental-action",
+        "sha": "37de4f97f4f4be0f19cda483b7202fcd34efc28a",
+        "label": "fix/airscan-incremental-action"
+      },
+      "base": {
+        "ref": "master",
+        "sha": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+        "label": "master"
+      }
+    }
+  ]
+}

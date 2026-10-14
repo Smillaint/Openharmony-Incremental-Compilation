@@ -1,0 +1,23 @@
+From b55c624c20ca24d4c64e98304fb5d3f975606a90 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 14 Oct 2026 15:01:14 +0800
+Subject: [PATCH] Declare account callback and common IDL outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ frameworks/osaccount/native/BUILD.gn | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/frameworks/osaccount/native/BUILD.gn b/frameworks/osaccount/native/BUILD.gn
+index 7147afdf9..20408448f 100644
+--- a/frameworks/osaccount/native/BUILD.gn
++++ b/frameworks/osaccount/native/BUILD.gn
+@@ -16,6 +16,8 @@ import("//build/ohos.gni")
+ import("../../../os_account.gni")
+ 
+ idl_gen_interface("frameworks_osaccount_interface") {
++  sources_callback = [ "IDomainAccountCallback.idl" ]
++  sources_common = [ "DomainAccountIpcData.idl" ]
+   sources = [
+     "IOsAccount.idl",
+     "IOsAccountEvent.idl",

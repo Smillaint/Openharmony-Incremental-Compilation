@@ -1,0 +1,22 @@
+From c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 14 Oct 2026 15:01:16 +0800
+Subject: [PATCH] Declare DLP permission shared IDL outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ interfaces/inner_api/dlp_permission/BUILD.gn | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/interfaces/inner_api/dlp_permission/BUILD.gn b/interfaces/inner_api/dlp_permission/BUILD.gn
+index 38abd7f3..8ff5bfa9 100644
+--- a/interfaces/inner_api/dlp_permission/BUILD.gn
++++ b/interfaces/inner_api/dlp_permission/BUILD.gn
+@@ -16,6 +16,7 @@ import("//build/ohos.gni")
+ import("../../../dlp_permission_service.gni")
+ 
+ idl_gen_interface("dlp_permission_interface") {
++  sources_common = [ "DlpPermissionTypes.idl" ]
+   src_idl = rebase_path("IDlpPermissionService.idl")
+   log_domainid = "0xD005A04"
+   log_tag = "DlpPermissionService"
