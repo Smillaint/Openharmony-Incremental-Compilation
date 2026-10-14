@@ -1,0 +1,133 @@
+[
+  {
+    "name": "campreviewrofs",
+    "actual": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/camera_preview_plugin/assets/campreviewrofs_32.o",
+    "same_bytes_as_product": true,
+    "old_repeat_rewrites": true,
+    "command": [
+      "/usr/bin/env",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/CompilerAsset.before.sh",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeBinaryCompile/lumeassetcompiler",
+      "-armeabi-v7a",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/camera_preview_plugin/assets",
+      "/",
+      "CAM_PREVIEW_BIN",
+      "CAM_PREVIEW_BIN_SIZE",
+      "campreviewrofs",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/0/output",
+      "campreviewrofs_32.o",
+      "\".spv;.json;.lsb;.shader;.shadergs;.shadervid;.shaderpl;.rng;.gl;.gles\""
+    ],
+    "cwd": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/0/cwd",
+    "output": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/0/output/campreviewrofs_32.o"
+  },
+  {
+    "name": "rofsDotfield",
+    "actual": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeDotfield/assets/rofsDotfield_32.o",
+    "same_bytes_as_product": true,
+    "old_repeat_rewrites": true,
+    "command": [
+      "/usr/bin/env",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/CompilerAsset.before.sh",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeBinaryCompile/lumeassetcompiler",
+      "-armeabi-v7a",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeDotfield/assets",
+      "/",
+      "DOTFIELD_BIN",
+      "DOTFIELD_BIN_SIZE",
+      "rofsDotfield",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/1/output",
+      "rofsDotfield_32.o",
+      "\".spv;.json;.lsb;.shader;.shadergs;.shadervid;.shaderpl;.rng;.gl;.gles\""
+    ],
+    "cwd": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/1/cwd",
+    "output": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/1/output/rofsDotfield_32.o"
+  },
+  {
+    "name": "rofs",
+    "actual": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeEngine/assets/rofs_32.o",
+    "same_bytes_as_product": true,
+    "old_repeat_rewrites": true,
+    "command": [
+      "/usr/bin/env",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/CompilerAsset.before.sh",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeBinaryCompile/lumeassetcompiler",
+      "-armeabi-v7a",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeEngine/assets",
+      "/",
+      "BINARYDATAFORCORE",
+      "SIZEOFDATAFORCORE",
+      "rofs",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/2/output",
+      "rofs_32.o"
+    ],
+    "cwd": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/2/cwd",
+    "output": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/2/output/rofs_32.o"
+  },
+  {
+    "name": "mrt_rofs",
+    "actual": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeMRT/assets/mrt_rofs_32.o",
+    "same_bytes_as_product": true,
+    "old_repeat_rewrites": true,
+    "command": [
+      "/usr/bin/env",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/CompilerAsset.before.sh",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeBinaryCompile/lumeassetcompiler",
+      "-armeabi-v7a",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeMRT/assets",
+      "/",
+      "MRT_BIN",
+      "MRT_BIN_SIZE",
+      "mrt_rofs",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/3/output",
+      "mrt_rofs_32.o",
+      "\".spv;.json;.lsb;.shader;.shadergs;.shadervid;.shaderpl;.rng;.gl;.gles\""
+    ],
+    "cwd": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/3/cwd",
+    "output": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/3/output/mrt_rofs_32.o"
+  },
+  {
+    "name": "rofsRndr",
+    "actual": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeRender/assets/rofsRndr_32.o",
+    "same_bytes_as_product": true,
+    "old_repeat_rewrites": true,
+    "command": [
+      "/usr/bin/env",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/CompilerAsset.before.sh",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeBinaryCompile/lumeassetcompiler",
+      "-armeabi-v7a",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeRender/assets",
+      "/",
+      "BINARYDATAFORRENDER",
+      "SIZEOFDATAFORRENDER",
+      "rofsRndr",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/4/output",
+      "rofsRndr_32.o",
+      "\".spv;.json;.lsb;.shader;.shadergs;.shadervid;.shaderpl;.rng;.gles\""
+    ],
+    "cwd": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/4/cwd",
+    "output": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/4/output/rofsRndr_32.o"
+  },
+  {
+    "name": "rofs3D",
+    "actual": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/Lume_3D/assets/rofs3D_32.o",
+    "same_bytes_as_product": true,
+    "old_repeat_rewrites": true,
+    "command": [
+      "/usr/bin/env",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/CompilerAsset.before.sh",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/LumeBinaryCompile/lumeassetcompiler",
+      "-armeabi-v7a",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/gen/foundation/graphic/graphic_3d/lume/Lume_3D/assets",
+      "/",
+      "BINARY_DATA_FOR_3D",
+      "SIZE_OF_DATA_FOR_3D",
+      "rofs3D",
+      "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/5/output",
+      "rofs3D_32.o",
+      "\".spv;.json;.lsb;.shader;.shadergs;.shadervid;.shaderpl;.rng;.gl;.gles\""
+    ],
+    "cwd": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/5/cwd",
+    "output": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/rofs-regression/5/output/rofs3D_32.o"
+  }
+]

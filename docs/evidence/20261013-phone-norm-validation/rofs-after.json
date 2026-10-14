@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "campreviewrofs",
+      "same_bytes_as_product": true,
+      "repeat_keeps_mtime": true,
+      "missing_file_recovers": true,
+      "missing_directory_recovers": true,
+      "staging_cleaned": true
+    },
+    {
+      "name": "rofsDotfield",
+      "same_bytes_as_product": true,
+      "repeat_keeps_mtime": true,
+      "missing_file_recovers": true,
+      "missing_directory_recovers": true,
+      "staging_cleaned": true
+    },
+    {
+      "name": "rofs",
+      "same_bytes_as_product": true,
+      "repeat_keeps_mtime": true,
+      "missing_file_recovers": true,
+      "missing_directory_recovers": true,
+      "staging_cleaned": true
+    },
+    {
+      "name": "mrt_rofs",
+      "same_bytes_as_product": true,
+      "repeat_keeps_mtime": true,
+      "missing_file_recovers": true,
+      "missing_directory_recovers": true,
+      "staging_cleaned": true
+    },
+    {
+      "name": "rofsRndr",
+      "same_bytes_as_product": true,
+      "repeat_keeps_mtime": true,
+      "missing_file_recovers": true,
+      "missing_directory_recovers": true,
+      "staging_cleaned": true
+    },
+    {
+      "name": "rofs3D",
+      "same_bytes_as_product": true,
+      "repeat_keeps_mtime": true,
+      "missing_file_recovers": true,
+      "missing_directory_recovers": true,
+      "staging_cleaned": true
+    },
+    {
+      "changed_input_changes_output": true,
+      "unchanged_input_keeps_mtime": true,
+      "compiler_failure_preserves_output": true,
+      "missing_declared_output_preserves_output": true
+    }
+  ]
+}

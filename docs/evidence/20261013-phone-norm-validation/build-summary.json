@@ -1,0 +1,167 @@
+[
+  {
+    "run": "attempt5",
+    "phase": "full",
+    "exit_code": 0,
+    "wall_seconds": 2107.4077535998076,
+    "managed_source_unchanged": true,
+    "started_utc": "2026-10-14T01:53:31.908647+00:00",
+    "finished_utc": "2026-10-14T02:28:39.316433+00:00",
+    "main_tasks": 125626,
+    "sequence_valid": true,
+    "task_types": {
+      "STAMP": 37874,
+      "COPY": 2737,
+      "ACTION": 22852,
+      "AR": 554,
+      "CXX": 43871,
+      "CC": 13955,
+      "LINK": 213,
+      "SOLINK": 3232,
+      "ASM": 172,
+      "RUST": 166
+    },
+    "action_counts": {
+      "sa_profile_src_phone": 1,
+      "sa_profile_binary_phone": 1,
+      "phone_sa_profile_install_info": 1,
+      "check_seccomp_filter_name": 1,
+      "process_field_validate": 1,
+      "collect_notice_files__phone": 1,
+      "generate_host_symlink": 1,
+      "phone_hisysevent_install_info": 1,
+      "phone_install_modules": 1,
+      "phone_parts_list": 1,
+      "gen_snapshot": 1,
+      "ark_jsf": 1,
+      "airscan_action": 1,
+      "gen_ui_plugins": 1,
+      "gen_sdk_ts_wrapper": 1
+    },
+    "gn_seconds": [
+      "23.17"
+    ],
+    "ninja_seconds": [
+      "1970.81"
+    ],
+    "console_sha256": "761e4726052d847daaed97615ec4fe864ea9fd80910d5145da2a6cab0b16e292"
+  },
+  {
+    "run": "attempt5",
+    "phase": "increment1",
+    "exit_code": 0,
+    "wall_seconds": 175.60050951968879,
+    "managed_source_unchanged": true,
+    "started_utc": "2026-10-14T02:28:40.320260+00:00",
+    "finished_utc": "2026-10-14T02:31:35.920807+00:00",
+    "main_tasks": 108,
+    "sequence_valid": true,
+    "task_types": {
+      "STAMP": 59,
+      "ACTION": 44,
+      "SOLINK": 5
+    },
+    "action_counts": {
+      "sa_profile_src_phone": 0,
+      "sa_profile_binary_phone": 0,
+      "phone_sa_profile_install_info": 0,
+      "check_seccomp_filter_name": 0,
+      "process_field_validate": 0,
+      "collect_notice_files__phone": 0,
+      "generate_host_symlink": 0,
+      "phone_hisysevent_install_info": 0,
+      "phone_install_modules": 1,
+      "phone_parts_list": 0,
+      "gen_snapshot": 0,
+      "ark_jsf": 0,
+      "airscan_action": 0,
+      "gen_ui_plugins": 0,
+      "gen_sdk_ts_wrapper": 0
+    },
+    "gn_seconds": [
+      "30.76"
+    ],
+    "ninja_seconds": [
+      "72.3"
+    ],
+    "console_sha256": "779d36d88f2774a9a5dbb87dcc5220804d66b9ae05da1aef6741bc393091caa9"
+  },
+  {
+    "run": "attempt5",
+    "phase": "increment2",
+    "exit_code": 0,
+    "wall_seconds": 84.37234269268811,
+    "managed_source_unchanged": true,
+    "started_utc": "2026-10-14T02:31:36.181097+00:00",
+    "finished_utc": "2026-10-14T02:33:00.553496+00:00",
+    "main_tasks": 13,
+    "sequence_valid": true,
+    "task_types": {
+      "ACTION": 7,
+      "STAMP": 6
+    },
+    "action_counts": {
+      "sa_profile_src_phone": 0,
+      "sa_profile_binary_phone": 0,
+      "phone_sa_profile_install_info": 0,
+      "check_seccomp_filter_name": 0,
+      "process_field_validate": 0,
+      "collect_notice_files__phone": 0,
+      "generate_host_symlink": 0,
+      "phone_hisysevent_install_info": 0,
+      "phone_install_modules": 0,
+      "phone_parts_list": 0,
+      "gen_snapshot": 0,
+      "ark_jsf": 0,
+      "airscan_action": 0,
+      "gen_ui_plugins": 0,
+      "gen_sdk_ts_wrapper": 0
+    },
+    "gn_seconds": [
+      "18.34"
+    ],
+    "ninja_seconds": [
+      "25.88"
+    ],
+    "console_sha256": "5c4b8fec30db3faf9c84a5f6f049d8e2aabb1c3ed84f5034c71dfa8be99f01da"
+  },
+  {
+    "run": "attempt5",
+    "phase": "increment3",
+    "exit_code": 0,
+    "wall_seconds": 89.0408950522542,
+    "managed_source_unchanged": true,
+    "started_utc": "2026-10-14T02:33:00.809029+00:00",
+    "finished_utc": "2026-10-14T02:34:29.849963+00:00",
+    "main_tasks": 13,
+    "sequence_valid": true,
+    "task_types": {
+      "ACTION": 7,
+      "STAMP": 6
+    },
+    "action_counts": {
+      "sa_profile_src_phone": 0,
+      "sa_profile_binary_phone": 0,
+      "phone_sa_profile_install_info": 0,
+      "check_seccomp_filter_name": 0,
+      "process_field_validate": 0,
+      "collect_notice_files__phone": 0,
+      "generate_host_symlink": 0,
+      "phone_hisysevent_install_info": 0,
+      "phone_install_modules": 0,
+      "phone_parts_list": 0,
+      "gen_snapshot": 0,
+      "ark_jsf": 0,
+      "airscan_action": 0,
+      "gen_ui_plugins": 0,
+      "gen_sdk_ts_wrapper": 0
+    },
+    "gn_seconds": [
+      "22.66"
+    ],
+    "ninja_seconds": [
+      "26.16"
+    ],
+    "console_sha256": "72c3fa224ac07ceb8353351437ad411821191daddb1c9631a63716e681873e01"
+  }
+]

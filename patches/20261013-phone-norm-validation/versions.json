@@ -5,8 +5,8 @@
       "ref": "refs/heads/backup/ab-norm-resume-20261014T013550700762Z"
     },
     "after": {
-      "commit": "87266090028f84fbfb12f8af9162f610f7c627fa",
-      "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+      "commit": "796ab6c95f54f12a895fbd08e0224f70687ba118",
+      "ref": "refs/heads/backup/ab-norm-validation-start-20261014T024459392102Z"
     },
     "files": [
       "ohos/packages/BUILD.gn"
@@ -18,8 +18,8 @@
       "ref": "refs/heads/backup/ab-norm-resume-20261014T013550700762Z"
     },
     "after": {
-      "commit": "5afb37869ee7d628d7d22c31cf2e9b121be51cd1",
-      "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+      "commit": "177fba7df1753deb9984811c005c37ee7e9ae688",
+      "ref": "refs/heads/backup/ab-norm-validation-start-20261014T024459392102Z"
     },
     "files": [
       "BUILD.gn",
@@ -32,12 +32,25 @@
       "ref": "refs/heads/backup/ab-norm-resume-20261014T013550700762Z"
     },
     "after": {
-      "commit": "7d27e6f1ce34986928484fe4d4e063ceda00f4bd",
-      "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+      "commit": "70385786a6ee0258679bd50ab7a9661f76bc8791",
+      "ref": "refs/heads/backup/ab-norm-validation-start-20261014T024459392102Z"
     },
     "files": [
       "BUILD.gn",
       "bundle.json"
+    ]
+  },
+  "foundation/graphic/graphic_3d": {
+    "before": {
+      "commit": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "ref": "refs/heads/backup/before-rofs-stable-publish-20261013"
+    },
+    "after": {
+      "commit": "053d2dc9ec248225878a0c702e43751333ac571a",
+      "ref": "refs/heads/backup/ab-norm-validation-start-20261014T024459392102Z"
+    },
+    "files": [
+      "lume/LumeEngine/tools/CompilerAsset.sh"
     ]
   }
 }
