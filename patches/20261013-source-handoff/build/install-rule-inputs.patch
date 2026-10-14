@@ -1,0 +1,28 @@
+From c672e7f7dbc80cb9c7dd55fdff887ecd09720160 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 14 Oct 2026 12:24:19 +0800
+Subject: [PATCH] Track installation rule files as explicit action inputs
+
+Prepared against the preserved migration baseline; port after prerequisite repairs.
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ohos/packages/BUILD.gn | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/ohos/packages/BUILD.gn b/ohos/packages/BUILD.gn
+index 7202df08..aa20ad3f 100644
+--- a/ohos/packages/BUILD.gn
++++ b/ohos/packages/BUILD.gn
+@@ -328,6 +328,8 @@ foreach(_platform, target_platform_list) {
+     sources = [
+       _merged_sa_profile_zipfile,
+       _system_install_info_file,
++      "//build/system_arm64e_whitelist.json",
++      "//build/ohos/packages/rules/categorized-libraries.json",
+     ]
+ 
+     outputs = [
+-- 
+2.34.1
+

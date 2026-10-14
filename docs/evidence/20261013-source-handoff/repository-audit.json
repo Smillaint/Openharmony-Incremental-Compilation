@@ -1,0 +1,449 @@
+{
+  "checked_utc": "2026-10-14T04:21:49.882877+00:00",
+  "root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code",
+  "controlled_paths_match_validated": true,
+  "managed_path_count": 95,
+  "repositories": {
+    "build": {
+      "head": "a2b72e827add764f6312e00173dff0dd3db45e75",
+      "original": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+      "validated": "d2605ddffe6d50e621550575b02c6493323797bb",
+      "references": {
+        "baseline": "4da6faea45d74d15b54e6a685af80f7e1237dbae",
+        "original": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+        "current": "d2605ddffe6d50e621550575b02c6493323797bb"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/build"
+      },
+      "cumulative_files": [
+        "config/components/ets_frontend/generate_static_abc.py",
+        "config/components/idl_tool/idl.gni",
+        "config/components/idl_tool/idl.py",
+        "hb/services/loader.py",
+        "hb/util/io_util.py",
+        "hb/util/loader/load_ohos_build.py",
+        "lite/config/component/lite_component.gni",
+        "ohos/app/app_internal.gni",
+        "ohos/common/BUILD.gn",
+        "ohos/common/binary_install_info.py",
+        "ohos/common/generate_host_info.py",
+        "ohos/common/merge_all_subsystem.py",
+        "ohos/generate_part_info.py",
+        "ohos/hisysevent/hisysevent_process.py",
+        "ohos/images/BUILD.gn",
+        "ohos/images/build_image.py",
+        "ohos/notice/collect_module_notice_file.py",
+        "ohos/notice/collect_system_notice_files.py",
+        "ohos/packages/BUILD.gn",
+        "ohos/packages/check_seccomp_library_name.py",
+        "ohos/packages/generate_host_symlink.py",
+        "ohos/packages/modules_install.py",
+        "ohos/packages/parts_install_info.py",
+        "ohos/packages/process_field_validate.py",
+        "ohos/packages/stabilize_json_file.py",
+        "ohos/sa_profile/sa_profile_binary.py",
+        "ohos/sa_profile/sa_profile_merge.py",
+        "ohos/sa_profile/sa_profile_source.py",
+        "ohos/sa_profile/src_sa_profile_process.py",
+        "ohos/sdk/parse_interface_sdk.py",
+        "scripts/app_sign.py",
+        "scripts/build_js_assets.py",
+        "scripts/compile_app.py",
+        "scripts/util/build_utils.py",
+        "scripts/util/file_utils.py",
+        "templates/kernel/linux-6.6/make_ko.sh"
+      ],
+      "normative_files": [
+        "config/components/idl_tool/idl.gni",
+        "config/components/idl_tool/idl.py",
+        "hb/services/loader.py",
+        "ohos/packages/BUILD.gn"
+      ],
+      "cumulative_stat": " .../components/ets_frontend/generate_static_abc.py |  89 +++++++++-------\n config/components/idl_tool/idl.gni                 |  66 +++++++-----\n config/components/idl_tool/idl.py                  | 110 ++++++++++++++------\n hb/services/loader.py                              |  26 +++--\n hb/util/io_util.py                                 |  13 ++-\n hb/util/loader/load_ohos_build.py                  |   6 +-\n lite/config/component/lite_component.gni           |   2 +-\n ohos/app/app_internal.gni                          |   5 +-\n ohos/common/BUILD.gn                               |  21 +++-\n ohos/common/binary_install_info.py                 |   5 +-\n ohos/common/generate_host_info.py                  |  54 ++++++++++\n ohos/common/merge_all_subsystem.py                 |   3 +-\n ohos/generate_part_info.py                         |   9 +-\n ohos/hisysevent/hisysevent_process.py              |   4 +-\n ohos/images/BUILD.gn                               |  10 +-\n ohos/images/build_image.py                         |   5 +-\n ohos/notice/collect_module_notice_file.py          |   4 +-\n ohos/notice/collect_system_notice_files.py         |   1 -\n ohos/packages/BUILD.gn                             |  92 +++++++++++++++--\n ohos/packages/check_seccomp_library_name.py        |  68 +++++++++---\n ohos/packages/generate_host_symlink.py             |  75 ++++++++++----\n ohos/packages/modules_install.py                   |  17 +--\n ohos/packages/parts_install_info.py                |   3 +-\n ohos/packages/process_field_validate.py            | 115 ++++++++++++++++-----\n ohos/packages/stabilize_json_file.py               |  41 ++++++++\n ohos/sa_profile/sa_profile_binary.py               |  22 ++--\n ohos/sa_profile/sa_profile_merge.py                |   3 +-\n ohos/sa_profile/sa_profile_source.py               |   3 +-\n ohos/sa_profile/src_sa_profile_process.py          |   6 +-\n ohos/sdk/parse_interface_sdk.py                    |  58 +++++++++++\n scripts/app_sign.py                                |  11 ++\n scripts/build_js_assets.py                         |  36 ++++++-\n scripts/compile_app.py                             |  13 ++-\n scripts/util/build_utils.py                        |  22 ++++\n scripts/util/file_utils.py                         |  16 +--\n templates/kernel/linux-6.6/make_ko.sh              |   7 +-\n 36 files changed, 807 insertions(+), 234 deletions(-)\n",
+      "tracked_worktree_status": " M config/components/ets_frontend/generate_static_abc.py\n M config/components/idl_tool/idl.gni\n M config/components/idl_tool/idl.py\n M hb/services/loader.py\n M hb/util/io_util.py\n M hb/util/loader/load_ohos_build.py\n M lite/config/component/lite_component.gni\n M ohos/app/app_internal.gni\n M ohos/common/BUILD.gn\n M ohos/common/binary_install_info.py\n M ohos/common/merge_all_subsystem.py\n M ohos/generate_part_info.py\n M ohos/hisysevent/hisysevent_process.py\n M ohos/images/BUILD.gn\n M ohos/images/build_image.py\n M ohos/notice/collect_module_notice_file.py\n M ohos/notice/collect_system_notice_files.py\n M ohos/packages/BUILD.gn\n M ohos/packages/check_seccomp_library_name.py\n M ohos/packages/generate_host_symlink.py\n M ohos/packages/modules_install.py\n M ohos/packages/parts_install_info.py\n M ohos/packages/process_field_validate.py\n M ohos/sa_profile/sa_profile_binary.py\n M ohos/sa_profile/sa_profile_merge.py\n M ohos/sa_profile/sa_profile_source.py\n M ohos/sa_profile/src_sa_profile_process.py\n M ohos/sdk/parse_interface_sdk.py\n M scripts/app_sign.py\n M scripts/build_js_assets.py\n M scripts/compile_app.py\n M scripts/util/build_utils.py\n M scripts/util/file_utils.py\n M templates/kernel/linux-6.6/make_ko.sh\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "developtools/packing_tool": {
+      "head": "498ffd5552a076a491a33b5dae6d6b3a014c6096",
+      "original": "930d6da378078549abdafdc3db409849831b3a81",
+      "validated": "8eaa7153ee6b3cb1233cee00c6cec64ec84ff85f",
+      "references": {
+        "baseline": "9475b9a3309a95792527ff4bcbeab04a60fde15b",
+        "original": "930d6da378078549abdafdc3db409849831b3a81",
+        "current": "8eaa7153ee6b3cb1233cee00c6cec64ec84ff85f"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/developtools_packing_tool"
+      },
+      "cumulative_files": [
+        "adapter/ohos/Compressor.java"
+      ],
+      "normative_files": [],
+      "cumulative_stat": " adapter/ohos/Compressor.java | 10 +++++++++-\n 1 file changed, 9 insertions(+), 1 deletion(-)\n",
+      "tracked_worktree_status": " M adapter/ohos/Compressor.java\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "third_party/jsframework": {
+      "head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+      "original": "22ddd05c7caf5fc3303a5ee207fe159ce154c238",
+      "validated": "e4f0aa1d42a85618e28b932353688f55272ded9b",
+      "references": {
+        "baseline": "228572415802e58d3747385b8f6d876b2b51150d",
+        "original": "22ddd05c7caf5fc3303a5ee207fe159ce154c238",
+        "current": "e4f0aa1d42a85618e28b932353688f55272ded9b"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/third_party_jsframework"
+      },
+      "cumulative_files": [
+        "BUILD.gn",
+        "js_framework_build.sh",
+        "package-lock.json",
+        "test/ut/runtime.ts"
+      ],
+      "normative_files": [
+        "BUILD.gn",
+        "js_framework_build.sh",
+        "package-lock.json",
+        "test/ut/runtime.ts"
+      ],
+      "cumulative_stat": " BUILD.gn              |  43 ++++++-\n js_framework_build.sh |  63 +++++----\n package-lock.json     | 345 ++++++++++++++++++++++++++------------------------\n test/ut/runtime.ts    |   9 ++\n 4 files changed, 265 insertions(+), 195 deletions(-)\n",
+      "tracked_worktree_status": " M BUILD.gn\n M js_framework_build.sh\n M package-lock.json\n M test/ut/runtime.ts\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "third_party/sane-airscan": {
+      "head": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+      "original": "d75d60c59f7738d85260c8e9f41fa907c355ef3f",
+      "validated": "8585f15e727eedfca785ac51a1734f199a9029a4",
+      "references": {
+        "baseline": "be8b03846bc5885f2a71ad7c508dd77957bda27f",
+        "original": "d75d60c59f7738d85260c8e9f41fa907c355ef3f",
+        "current": "8585f15e727eedfca785ac51a1734f199a9029a4"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/third_party_sane-airscan"
+      },
+      "cumulative_files": [
+        "BUILD.gn",
+        "patch_install.py"
+      ],
+      "normative_files": [],
+      "cumulative_stat": " BUILD.gn         | 130 ++++++++++++++++++++++++++-----------------------\n patch_install.py | 146 ++++++++++++++++++++++++++++++++++++++++++++-----------\n 2 files changed, 188 insertions(+), 88 deletions(-)\n",
+      "tracked_worktree_status": " M BUILD.gn\n M patch_install.py\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "base/security/selinux_adapter": {
+      "head": "f037bb425e08c275b1da27a1de73002e9432cf5c",
+      "original": "55d1897e132208ccde7c3c34ab70aff48e479cb5",
+      "validated": "ed6a821045f7ca2c697e632b79417143d8076981",
+      "references": {
+        "baseline": "fc02313ef2c7e5df7e112fea40925b6e09278f5c",
+        "original": "55d1897e132208ccde7c3c34ab70aff48e479cb5",
+        "current": "ed6a821045f7ca2c697e632b79417143d8076981"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/security_selinux_adapter"
+      },
+      "cumulative_files": [],
+      "normative_files": [],
+      "cumulative_stat": "",
+      "tracked_worktree_status": "",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "device/board/hihope": {
+      "head": "5d368fb765920c2b1cad41eb86164563461a7074",
+      "original": "025d4baaeb3eac1eb7f0c5e7b824d7be67186c68",
+      "validated": "f3cfddf2dc38588a1aaf4620f8b09e675cecb231",
+      "references": {
+        "baseline": "b9c3cc8f919c789ff91c05a54bf76820d1f07335",
+        "original": "025d4baaeb3eac1eb7f0c5e7b824d7be67186c68",
+        "current": "f3cfddf2dc38588a1aaf4620f8b09e675cecb231"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/device_board_hihope"
+      },
+      "cumulative_files": [
+        "rk3568/camera/vdi_impl/v4l2/BUILD.gn"
+      ],
+      "normative_files": [],
+      "cumulative_stat": " rk3568/camera/vdi_impl/v4l2/BUILD.gn | 48 +++++++++++-------------------------\n 1 file changed, 14 insertions(+), 34 deletions(-)\n",
+      "tracked_worktree_status": " M rk3568/camera/vdi_impl/v4l2/BUILD.gn\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "arkcompiler/ets_frontend": {
+      "head": "c030cb21b2822120dd153b22b3a5a07dd0b7f7dd",
+      "original": "e8544064f5e9e956286eed2d71e0ba4e801d8743",
+      "validated": "cf3e85bef4137f39c60998fca5bbc069d0940046",
+      "references": {
+        "baseline": "55c5c8e1bf622ebadc4f5a752bd96f6621943489",
+        "original": "e8544064f5e9e956286eed2d71e0ba4e801d8743",
+        "current": "cf3e85bef4137f39c60998fca5bbc069d0940046"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/arkcompiler_ets_frontend"
+      },
+      "cumulative_files": [
+        "ets2panda/BUILD.gn",
+        "ets2panda/bindings/package-lock.json",
+        "ets2panda/driver/build_system/BUILD.gn",
+        "ets2panda/driver/interop_toolkits/gluegen/package-lock.json",
+        "ets2panda/linter/package-lock.json",
+        "ets2panda/scripts/check_build_system_consistency.py",
+        "legacy_bin/api8/package-lock.json"
+      ],
+      "normative_files": [
+        "ets2panda/bindings/package-lock.json",
+        "ets2panda/driver/interop_toolkits/gluegen/package-lock.json",
+        "ets2panda/linter/package-lock.json",
+        "legacy_bin/api8/package-lock.json"
+      ],
+      "cumulative_stat": " ets2panda/BUILD.gn                                 |  13 +-\n ets2panda/bindings/package-lock.json               |  67 +-\n ets2panda/driver/build_system/BUILD.gn             |   8 +-\n .../interop_toolkits/gluegen/package-lock.json     | 770 ++++++++++++++++++++-\n ets2panda/linter/package-lock.json                 | 136 +++-\n .../scripts/check_build_system_consistency.py      |  12 +-\n legacy_bin/api8/package-lock.json                  |   5 +\n 7 files changed, 936 insertions(+), 75 deletions(-)\n",
+      "tracked_worktree_status": " M ets2panda/BUILD.gn\n M ets2panda/bindings/package-lock.json\n M ets2panda/driver/build_system/BUILD.gn\n M ets2panda/driver/interop_toolkits/gluegen/package-lock.json\n M ets2panda/linter/package-lock.json\n M ets2panda/scripts/check_build_system_consistency.py\n M legacy_bin/api8/package-lock.json\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "interface/sdk-js": {
+      "head": "126ae62423b02302326331bc8390c5aff2f136a3",
+      "original": "07e67fc5fc1767132a1e18910fc00e63cb49f1e0",
+      "validated": "a5562e15178f280cf34fd2b17f3365779f684dc8",
+      "references": {
+        "baseline": "206dac676f77bfe8bc216da943fee6fd7c91d847",
+        "original": "07e67fc5fc1767132a1e18910fc00e63cb49f1e0",
+        "current": "a5562e15178f280cf34fd2b17f3365779f684dc8"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/interface_sdk-js"
+      },
+      "cumulative_files": [
+        "BUILD.gn",
+        "process_internal.py",
+        "remove_internal.py"
+      ],
+      "normative_files": [],
+      "cumulative_stat": " BUILD.gn            |  28 +++++++++-\n process_internal.py | 156 +++++++++++++++++++++++++++++++++++++++++++++++++---\n remove_internal.py  | 155 ++++++++++++++++++++++++++++++++++++++++++++++++---\n 3 files changed, 322 insertions(+), 17 deletions(-)\n",
+      "tracked_worktree_status": " M BUILD.gn\n M process_internal.py\n M remove_internal.py\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "developtools/ace_ets2bundle": {
+      "head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+      "original": "b545845711e41987f9ca54c09b89061ce5ec6b4c",
+      "validated": "917c293e97e05e371f52f428a25392c609156eac",
+      "references": {
+        "baseline": "fd94adbe5aef76c7da2dcc1f0b95e3fad470fb1f",
+        "original": "b545845711e41987f9ca54c09b89061ce5ec6b4c",
+        "current": "917c293e97e05e371f52f428a25392c609156eac"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/developtools_ace_ets2bundle"
+      },
+      "cumulative_files": [
+        "arkui-plugins/BUILD.gn",
+        "arkui-plugins/build_ui_plugins.py",
+        "arkui-plugins/sdk_files.json",
+        "ets1.2/BUILD.gn",
+        "ets1.2/libarkts/BUILD.gn",
+        "koala-wrapper/BUILD.gn",
+        "koala-wrapper/build_ts_wrapper.py",
+        "koala-wrapper/sdk_files.json",
+        "sdk_copy.gni",
+        "sdk_files.py"
+      ],
+      "normative_files": [
+        "arkui-plugins/BUILD.gn",
+        "arkui-plugins/build_ui_plugins.py",
+        "arkui-plugins/sdk_files.json",
+        "koala-wrapper/BUILD.gn",
+        "koala-wrapper/build_ts_wrapper.py",
+        "koala-wrapper/sdk_files.json",
+        "sdk_copy.gni",
+        "sdk_files.py"
+      ],
+      "cumulative_stat": " arkui-plugins/BUILD.gn            |   64 +-\n arkui-plugins/build_ui_plugins.py |   90 +-\n arkui-plugins/sdk_files.json      | 2151 +++++++++++++++++++++++++++++++++++++\n ets1.2/BUILD.gn                   |    4 +-\n ets1.2/libarkts/BUILD.gn          |    6 +-\n koala-wrapper/BUILD.gn            |   69 +-\n koala-wrapper/build_ts_wrapper.py |   66 +-\n koala-wrapper/sdk_files.json      | 1077 +++++++++++++++++++\n sdk_copy.gni                      |   52 +\n sdk_files.py                      |  183 ++++\n 10 files changed, 3634 insertions(+), 128 deletions(-)\n",
+      "tracked_worktree_status": " M arkui-plugins/BUILD.gn\n M arkui-plugins/build_ui_plugins.py\n M ets1.2/BUILD.gn\n M ets1.2/libarkts/BUILD.gn\n M koala-wrapper/BUILD.gn\n M koala-wrapper/build_ts_wrapper.py\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "third_party/iptables": {
+      "head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+      "original": "56b1ad87b16775e9d6b6a2ae55253554409dd25e",
+      "validated": "23540dab02a1aec1ac8412b08bd003148cb475d8",
+      "references": {
+        "baseline": "9d61092abf4843f45bdc7b3bf11f23904079ef8e",
+        "original": "56b1ad87b16775e9d6b6a2ae55253554409dd25e",
+        "current": "23540dab02a1aec1ac8412b08bd003148cb475d8"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/third_party_iptables"
+      },
+      "cumulative_files": [
+        "extensions/genInit.py",
+        "extensions/libipt_CLUSTERIP.c",
+        "extensions/libipt_realm.c",
+        "extensions/libxt_mac.c"
+      ],
+      "normative_files": [
+        "extensions/libipt_CLUSTERIP.c",
+        "extensions/libipt_realm.c",
+        "extensions/libxt_mac.c"
+      ],
+      "cumulative_stat": " extensions/genInit.py         | 18 +++++++++++++-----\n extensions/libipt_CLUSTERIP.c |  2 +-\n extensions/libipt_realm.c     |  2 +-\n extensions/libxt_mac.c        |  2 +-\n 4 files changed, 16 insertions(+), 8 deletions(-)\n",
+      "tracked_worktree_status": " M extensions/genInit.py\n M extensions/libipt_CLUSTERIP.c\n M extensions/libipt_realm.c\n M extensions/libxt_mac.c\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "base/account/os_account": {
+      "head": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+      "original": "7f172ea3830153f8be073fe5edf4fc964b1eed87",
+      "validated": "e4f3a0b41e398cd98e4ae88e842523a6c068bde8",
+      "references": {
+        "baseline": "9c26912b724145194a56cad61f05a7165e87aac7",
+        "original": "7f172ea3830153f8be073fe5edf4fc964b1eed87",
+        "current": "e4f3a0b41e398cd98e4ae88e842523a6c068bde8"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/account_os_account"
+      },
+      "cumulative_files": [
+        "frameworks/osaccount/native/BUILD.gn"
+      ],
+      "normative_files": [
+        "frameworks/osaccount/native/BUILD.gn"
+      ],
+      "cumulative_stat": " frameworks/osaccount/native/BUILD.gn | 2 ++\n 1 file changed, 2 insertions(+)\n",
+      "tracked_worktree_status": " M frameworks/osaccount/native/BUILD.gn\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "base/inputmethod/imf": {
+      "head": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+      "original": "5f5e6178a1d5b56331dae7af12ec3fca083857f5",
+      "validated": "db433d6e30d6d52fa8c619e2308de717a6359424",
+      "references": {
+        "baseline": "3a2060b237035cef9abd66f95a34fccca7da1baf",
+        "original": "5f5e6178a1d5b56331dae7af12ec3fca083857f5",
+        "current": "db433d6e30d6d52fa8c619e2308de717a6359424"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/inputmethod_imf"
+      },
+      "cumulative_files": [
+        "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+      ],
+      "normative_files": [
+        "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+      ],
+      "cumulative_stat": " interfaces/inner_api/inputmethod_controller/BUILD.gn | 1 +\n 1 file changed, 1 insertion(+)\n",
+      "tracked_worktree_status": " M interfaces/inner_api/inputmethod_controller/BUILD.gn\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "base/security/dlp_permission_service": {
+      "head": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+      "original": "b59001a8383d76f2708a3b0d525ae2fba538b24b",
+      "validated": "c30ac089a378a0a39f5b5e7e0e2c8bef6deb1683",
+      "references": {
+        "baseline": "50bcda68af6aa5c80196d505fff072b825ef02ed",
+        "original": "b59001a8383d76f2708a3b0d525ae2fba538b24b",
+        "current": "c30ac089a378a0a39f5b5e7e0e2c8bef6deb1683"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/security_dlp_permission_service"
+      },
+      "cumulative_files": [
+        "interfaces/inner_api/dlp_permission/BUILD.gn"
+      ],
+      "normative_files": [
+        "interfaces/inner_api/dlp_permission/BUILD.gn"
+      ],
+      "cumulative_stat": " interfaces/inner_api/dlp_permission/BUILD.gn | 1 +\n 1 file changed, 1 insertion(+)\n",
+      "tracked_worktree_status": " M interfaces/inner_api/dlp_permission/BUILD.gn\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "foundation/ability/dmsfwk": {
+      "head": "aa1b0347b10700d761def383c08749420dd3f71a",
+      "original": "af957f68639797dc1087d726f00f7f52b9a3cac0",
+      "validated": "1b7ee3c796c2eeef8c7caa4970e00a1e8efb23c9",
+      "references": {
+        "baseline": "2fba5b7e7facca4a9e09d7afd15c31bb9c058d21",
+        "original": "af957f68639797dc1087d726f00f7f52b9a3cac0",
+        "current": "1b7ee3c796c2eeef8c7caa4970e00a1e8efb23c9"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/ability_dmsfwk"
+      },
+      "cumulative_files": [
+        "interfaces/innerkits/common/BUILD.gn"
+      ],
+      "normative_files": [
+        "interfaces/innerkits/common/BUILD.gn"
+      ],
+      "cumulative_stat": " interfaces/innerkits/common/BUILD.gn | 1 +\n 1 file changed, 1 insertion(+)\n",
+      "tracked_worktree_status": " M interfaces/innerkits/common/BUILD.gn\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "foundation/multimedia/audio_framework": {
+      "head": "d128a212e695de931d425fba7c64ebd591de96bf",
+      "original": "e811e639cbfe67ba7293d0c74d09aa8941aa4447",
+      "validated": "fd7e52dc2356b058741eec44579f88fb42e9de1d",
+      "references": {
+        "baseline": "c21f8b90c0573d61f5696776b0ea6fdf00864b93",
+        "original": "e811e639cbfe67ba7293d0c74d09aa8941aa4447",
+        "current": "fd7e52dc2356b058741eec44579f88fb42e9de1d"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/multimedia_audio_framework"
+      },
+      "cumulative_files": [
+        "services/audio_service/idl/BUILD.gn"
+      ],
+      "normative_files": [
+        "services/audio_service/idl/BUILD.gn"
+      ],
+      "cumulative_stat": " services/audio_service/idl/BUILD.gn | 1 +\n 1 file changed, 1 insertion(+)\n",
+      "tracked_worktree_status": " M services/audio_service/idl/BUILD.gn\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "third_party/css-what": {
+      "head": "66c986b3597910d384f32d7b098112d2b48d4145",
+      "original": "95648987c034c15781137e727eb7b1dcff051140",
+      "validated": "612c329800f0929d8c01c4264788789eb7b5d36b",
+      "references": {
+        "baseline": "95648987c034c15781137e727eb7b1dcff051140",
+        "original": "95648987c034c15781137e727eb7b1dcff051140",
+        "current": "612c329800f0929d8c01c4264788789eb7b5d36b"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/third_party_css-what"
+      },
+      "cumulative_files": [
+        "BUILD.gn",
+        "bundle.json"
+      ],
+      "normative_files": [
+        "BUILD.gn",
+        "bundle.json"
+      ],
+      "cumulative_stat": " BUILD.gn    | 36 ++++++++++++++++++++++++++++++++----\n bundle.json |  3 +++\n 2 files changed, 35 insertions(+), 4 deletions(-)\n",
+      "tracked_worktree_status": " M BUILD.gn\n M bundle.json\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    },
+    "foundation/graphic/graphic_3d": {
+      "head": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "original": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "validated": "7f9ba498e8a39d862f77993db27789adb83578fc",
+      "references": {
+        "baseline": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+        "original": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+        "current": "7f9ba498e8a39d862f77993db27789adb83578fc"
+      },
+      "remotes": {
+        "gitcode": "https://gitcode.com/openharmony/graphic_graphic_3d"
+      },
+      "cumulative_files": [
+        "lume/LumeEngine/tools/CompilerAsset.sh"
+      ],
+      "normative_files": [
+        "lume/LumeEngine/tools/CompilerAsset.sh"
+      ],
+      "cumulative_stat": " lume/LumeEngine/tools/CompilerAsset.sh | 25 +++++++++++++++++++++----\n 1 file changed, 21 insertions(+), 4 deletions(-)\n",
+      "tracked_worktree_status": " M lume/LumeEngine/tools/CompilerAsset.sh\n",
+      "validated_commit_identity": "SmillySmillick <SmillySmillick@users.noreply.github.com>\nPreserve comparison source state\n\nSigned-off-by: SmillySmillick <SmillySmillick@users.noreply.github.com>\n\n"
+    }
+  }
+}

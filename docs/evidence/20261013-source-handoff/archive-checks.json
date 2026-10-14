@@ -1,0 +1,8 @@
+{
+  "repository_bundles_sha256_and_refs": 17,
+  "signed_format_patches": 12,
+  "repair_files": 23,
+  "excluded_files": 8,
+  "new_document_relative_links_valid": true,
+  "manual_log_hash_matches": true
+}

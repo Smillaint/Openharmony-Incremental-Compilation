@@ -1,0 +1,616 @@
+{
+  "saved_utc": "2026-10-14T04:24:24.237553+00:00",
+  "source_root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code",
+  "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+  "upstream_refreshed_this_delivery": false,
+  "source_bytes_or_mtimes_changed_this_delivery": false,
+  "source_repositories": {
+    "build": {
+      "base_head": "a2b72e827add764f6312e00173dff0dd3db45e75",
+      "migration_base": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+      "validated_snapshot": "d2605ddffe6d50e621550575b02c6493323797bb",
+      "signed_snapshot": "575035a841c75ff44a7e59838b3d14da7a6d5d8c",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "49de3af89a2735dbb1156018f367770a2da6ba55",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "config/components/ets_frontend/generate_static_abc.py",
+        "config/components/idl_tool/idl.gni",
+        "config/components/idl_tool/idl.py",
+        "hb/services/loader.py",
+        "hb/util/io_util.py",
+        "hb/util/loader/load_ohos_build.py",
+        "lite/config/component/lite_component.gni",
+        "ohos/app/app_internal.gni",
+        "ohos/common/BUILD.gn",
+        "ohos/common/binary_install_info.py",
+        "ohos/common/generate_host_info.py",
+        "ohos/common/merge_all_subsystem.py",
+        "ohos/generate_part_info.py",
+        "ohos/hisysevent/hisysevent_process.py",
+        "ohos/images/BUILD.gn",
+        "ohos/images/build_image.py",
+        "ohos/notice/collect_module_notice_file.py",
+        "ohos/notice/collect_system_notice_files.py",
+        "ohos/packages/BUILD.gn",
+        "ohos/packages/check_seccomp_library_name.py",
+        "ohos/packages/generate_host_symlink.py",
+        "ohos/packages/modules_install.py",
+        "ohos/packages/parts_install_info.py",
+        "ohos/packages/process_field_validate.py",
+        "ohos/packages/stabilize_json_file.py",
+        "ohos/sa_profile/sa_profile_binary.py",
+        "ohos/sa_profile/sa_profile_merge.py",
+        "ohos/sa_profile/sa_profile_source.py",
+        "ohos/sa_profile/src_sa_profile_process.py",
+        "ohos/sdk/parse_interface_sdk.py",
+        "scripts/app_sign.py",
+        "scripts/build_js_assets.py",
+        "scripts/compile_app.py",
+        "scripts/util/build_utils.py",
+        "scripts/util/file_utils.py",
+        "templates/kernel/linux-6.6/make_ko.sh"
+      ],
+      "new_repair_files": [
+        "config/components/idl_tool/idl.gni",
+        "config/components/idl_tool/idl.py",
+        "hb/services/loader.py",
+        "ohos/packages/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "520a2a4ed09cede3fbea6f0477164fb33da9f9172169cd7b709ff01f63e09783",
+      "bundle_bytes": 18191,
+      "pr_groups": [
+        "idl-clean-outputs",
+        "loader-stable-components",
+        "install-rule-inputs"
+      ]
+    },
+    "developtools/packing_tool": {
+      "base_head": "498ffd5552a076a491a33b5dae6d6b3a014c6096",
+      "migration_base": "930d6da378078549abdafdc3db409849831b3a81",
+      "validated_snapshot": "8eaa7153ee6b3cb1233cee00c6cec64ec84ff85f",
+      "signed_snapshot": "2a6b3330fb4245cf1a9a5a4f92f8bab50b4608f8",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "a3e415ac81cec8dfb4b48271aebc595501d72c9e",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "adapter/ohos/Compressor.java"
+      ],
+      "new_repair_files": [],
+      "excluded_files": [],
+      "bundle_sha256": "543e772828e0695b3cda7f3546de0ae796b61b3c217282c32c9c0b1553183e22",
+      "bundle_bytes": 957,
+      "pr_groups": []
+    },
+    "third_party/jsframework": {
+      "base_head": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+      "migration_base": "22ddd05c7caf5fc3303a5ee207fe159ce154c238",
+      "validated_snapshot": "e4f0aa1d42a85618e28b932353688f55272ded9b",
+      "signed_snapshot": "df0243e10f938a1afc0d7fcf1873a4a2e2204aec",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "956fb061c423a3c3020c4fdae74b11beb3147c44",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "BUILD.gn",
+        "js_framework_build.sh",
+        "test/ut/runtime.ts"
+      ],
+      "new_repair_files": [
+        "BUILD.gn",
+        "js_framework_build.sh",
+        "test/ut/runtime.ts"
+      ],
+      "excluded_files": [
+        "package-lock.json"
+      ],
+      "bundle_sha256": "c6cd8ee6d1d24a69bfbff338bfdb332cedc7703f5c941b9afcb6a0679185c452",
+      "bundle_bytes": 6479,
+      "pr_groups": [
+        "js-out-only-build"
+      ]
+    },
+    "third_party/sane-airscan": {
+      "base_head": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+      "migration_base": "d75d60c59f7738d85260c8e9f41fa907c355ef3f",
+      "validated_snapshot": "8585f15e727eedfca785ac51a1734f199a9029a4",
+      "signed_snapshot": "57b06670b9f6842058db427b05f42670849896c8",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "b6a96211a9454107da4e42e9e51c6d4ba64d46d1",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "BUILD.gn",
+        "patch_install.py"
+      ],
+      "new_repair_files": [],
+      "excluded_files": [],
+      "bundle_sha256": "1cddaa82c84cb5ecddea0606f86cd1332cb966e3f333351e7b4b4348e01f9c44",
+      "bundle_bytes": 2715,
+      "pr_groups": []
+    },
+    "base/security/selinux_adapter": {
+      "base_head": "f037bb425e08c275b1da27a1de73002e9432cf5c",
+      "migration_base": "55d1897e132208ccde7c3c34ab70aff48e479cb5",
+      "validated_snapshot": "ed6a821045f7ca2c697e632b79417143d8076981",
+      "signed_snapshot": "40e6349f02bb6b4f5abbf4eb430b724e3b91033b",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "3d7db08d194c014b7129dcb5fbbc39bcb6d778f1",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [],
+      "new_repair_files": [],
+      "excluded_files": [],
+      "bundle_sha256": "dfff2e05a7f8afc3ea9255c945a384c3b435822dfedf97ce5bc79e0e30edc9ca",
+      "bundle_bytes": 448,
+      "pr_groups": []
+    },
+    "device/board/hihope": {
+      "base_head": "5d368fb765920c2b1cad41eb86164563461a7074",
+      "migration_base": "025d4baaeb3eac1eb7f0c5e7b824d7be67186c68",
+      "validated_snapshot": "f3cfddf2dc38588a1aaf4620f8b09e675cecb231",
+      "signed_snapshot": "f7c4b8b0a4e5fda89e1bf92af0eaaf2650c6f779",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "7fe0394e0829965e37a941033a8cf9fcb8b5aeb0",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "rk3568/camera/vdi_impl/v4l2/BUILD.gn"
+      ],
+      "new_repair_files": [],
+      "excluded_files": [],
+      "bundle_sha256": "5ad71e59aff11daa323c6bb81cefe1c41ddeb67f22ab09e71cc38217c4d9bc4c",
+      "bundle_bytes": 969,
+      "pr_groups": []
+    },
+    "arkcompiler/ets_frontend": {
+      "base_head": "c030cb21b2822120dd153b22b3a5a07dd0b7f7dd",
+      "migration_base": "e8544064f5e9e956286eed2d71e0ba4e801d8743",
+      "validated_snapshot": "cf3e85bef4137f39c60998fca5bbc069d0940046",
+      "signed_snapshot": "68e6e8881be52747b3b887a65f8f0035ecd66ce8",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "f5312217b327b7c51812ca2766ab39f4cc8fc675",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "ets2panda/BUILD.gn",
+        "ets2panda/driver/build_system/BUILD.gn",
+        "ets2panda/scripts/check_build_system_consistency.py"
+      ],
+      "new_repair_files": [],
+      "excluded_files": [
+        "ets2panda/bindings/package-lock.json",
+        "ets2panda/driver/interop_toolkits/gluegen/package-lock.json",
+        "ets2panda/linter/package-lock.json",
+        "legacy_bin/api8/package-lock.json"
+      ],
+      "bundle_sha256": "57cf497989cd6c8260eccf7dac1d6d6c21c60174cc464dc87c922292d027b696",
+      "bundle_bytes": 65266,
+      "pr_groups": []
+    },
+    "interface/sdk-js": {
+      "base_head": "126ae62423b02302326331bc8390c5aff2f136a3",
+      "migration_base": "07e67fc5fc1767132a1e18910fc00e63cb49f1e0",
+      "validated_snapshot": "a5562e15178f280cf34fd2b17f3365779f684dc8",
+      "signed_snapshot": "7b297f5537e53a5456852711f9a34ad24f63f8ff",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "48cad49540050f0f98139b4940afa91c22a20547",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "BUILD.gn",
+        "process_internal.py",
+        "remove_internal.py"
+      ],
+      "new_repair_files": [],
+      "excluded_files": [],
+      "bundle_sha256": "6c2d2d18bc0f50994ed99302bd91b01cd2383e4c43dc135d94e4e2406836f185",
+      "bundle_bytes": 4824,
+      "pr_groups": []
+    },
+    "developtools/ace_ets2bundle": {
+      "base_head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+      "migration_base": "b545845711e41987f9ca54c09b89061ce5ec6b4c",
+      "validated_snapshot": "917c293e97e05e371f52f428a25392c609156eac",
+      "signed_snapshot": "f8c82e18a71d36ff3121e1fb77c9686a004919d0",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "f69586859887c8931e8d49a2919d5ece2cb8231c",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "arkui-plugins/BUILD.gn",
+        "arkui-plugins/build_ui_plugins.py",
+        "arkui-plugins/sdk_files.json",
+        "ets1.2/BUILD.gn",
+        "ets1.2/libarkts/BUILD.gn",
+        "koala-wrapper/BUILD.gn",
+        "koala-wrapper/build_ts_wrapper.py",
+        "koala-wrapper/sdk_files.json",
+        "sdk_copy.gni",
+        "sdk_files.py"
+      ],
+      "new_repair_files": [
+        "arkui-plugins/BUILD.gn",
+        "arkui-plugins/build_ui_plugins.py",
+        "arkui-plugins/sdk_files.json",
+        "koala-wrapper/BUILD.gn",
+        "koala-wrapper/build_ts_wrapper.py",
+        "koala-wrapper/sdk_files.json",
+        "sdk_copy.gni",
+        "sdk_files.py"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "08bf6cedce75463a70b5fc66e4950efe22ff6d11c9b90aac2e9d120a9660eec3",
+      "bundle_bytes": 26662,
+      "pr_groups": [
+        "sdk-explicit-file-outputs"
+      ]
+    },
+    "third_party/iptables": {
+      "base_head": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+      "migration_base": "56b1ad87b16775e9d6b6a2ae55253554409dd25e",
+      "validated_snapshot": "23540dab02a1aec1ac8412b08bd003148cb475d8",
+      "signed_snapshot": "96eaf4296c470f8d406273416459744d38d61601",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "939e01b3db9ddd4d4fee3196da38fc4fbe951309",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "extensions/genInit.py"
+      ],
+      "new_repair_files": [],
+      "excluded_files": [
+        "extensions/libipt_CLUSTERIP.c",
+        "extensions/libipt_realm.c",
+        "extensions/libxt_mac.c"
+      ],
+      "bundle_sha256": "d7011f3dce98461413469bc95288e534bba6ace842d43dde9480ebf9e6383e24",
+      "bundle_bytes": 1056,
+      "pr_groups": []
+    },
+    "base/account/os_account": {
+      "base_head": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+      "migration_base": "7f172ea3830153f8be073fe5edf4fc964b1eed87",
+      "validated_snapshot": "e4f3a0b41e398cd98e4ae88e842523a6c068bde8",
+      "signed_snapshot": "aa79a094d4818e815b934700d98d60d9a96b6a01",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "6f798e555bef8a2ef0bb84fad9dc96f40525a3a2",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "frameworks/osaccount/native/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "frameworks/osaccount/native/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "2de26f28fa84e1a35369e7f72be67d5208822e2ba335ff972e8b409e1d0c9f4e",
+      "bundle_bytes": 1395,
+      "pr_groups": [
+        "os-account-idl-outputs"
+      ]
+    },
+    "base/inputmethod/imf": {
+      "base_head": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+      "migration_base": "5f5e6178a1d5b56331dae7af12ec3fca083857f5",
+      "validated_snapshot": "db433d6e30d6d52fa8c619e2308de717a6359424",
+      "signed_snapshot": "81ce4832726fb77e5b5eb674e43008963e318172",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "c7a881d1e1a890d7ef4990e0995a697748630934",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "399e7748486f356d77be839e3abac0873ba11a67e07d7a948dcdf1fc698d36f1",
+      "bundle_bytes": 1437,
+      "pr_groups": [
+        "imf-idl-outputs"
+      ]
+    },
+    "base/security/dlp_permission_service": {
+      "base_head": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+      "migration_base": "b59001a8383d76f2708a3b0d525ae2fba538b24b",
+      "validated_snapshot": "c30ac089a378a0a39f5b5e7e0e2c8bef6deb1683",
+      "signed_snapshot": "8dae586bb6e2715d1e739d71a93ba38e1b0acf51",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "4ba2ee3f184d331f98ac741202e84d8c07337462",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "interfaces/inner_api/dlp_permission/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "interfaces/inner_api/dlp_permission/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "e618fd6557f0fc495b1056fd35e764fdce041bfac01f3602a7e76420072d6953",
+      "bundle_bytes": 1341,
+      "pr_groups": [
+        "dlp-idl-outputs"
+      ]
+    },
+    "foundation/ability/dmsfwk": {
+      "base_head": "aa1b0347b10700d761def383c08749420dd3f71a",
+      "migration_base": "af957f68639797dc1087d726f00f7f52b9a3cac0",
+      "validated_snapshot": "1b7ee3c796c2eeef8c7caa4970e00a1e8efb23c9",
+      "signed_snapshot": "d7c05d7ece6ab5d767cc8b75933920e500023693",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "94c7a2d801d0983a81f66d286f0d9503526daf45",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "interfaces/innerkits/common/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "interfaces/innerkits/common/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "e69bf66ff54a32807f52ae80be24e707a0b7c60120ae3ac603b93a9b91a9083e",
+      "bundle_bytes": 1364,
+      "pr_groups": [
+        "dms-idl-outputs"
+      ]
+    },
+    "foundation/multimedia/audio_framework": {
+      "base_head": "d128a212e695de931d425fba7c64ebd591de96bf",
+      "migration_base": "e811e639cbfe67ba7293d0c74d09aa8941aa4447",
+      "validated_snapshot": "fd7e52dc2356b058741eec44579f88fb42e9de1d",
+      "signed_snapshot": "1bca688a145289c2e6bf3ccb9f70ea5f11de8e7b",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "b479f76200aeac38656deaef6fee0c9e70557fea",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "services/audio_service/idl/BUILD.gn"
+      ],
+      "new_repair_files": [
+        "services/audio_service/idl/BUILD.gn"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "a7f14fba95e80b601415ef160077fdeb6f50def40c9c028d3d558a6bf6659acd",
+      "bundle_bytes": 1316,
+      "pr_groups": [
+        "audio-idl-dependency"
+      ]
+    },
+    "third_party/css-what": {
+      "base_head": "66c986b3597910d384f32d7b098112d2b48d4145",
+      "migration_base": "95648987c034c15781137e727eb7b1dcff051140",
+      "validated_snapshot": "612c329800f0929d8c01c4264788789eb7b5d36b",
+      "signed_snapshot": "340729769456e518e92ba21e5bccd1e665bcce3d",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "4038fbcc3a7d0210b902063d19dacd65ba927e79",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "BUILD.gn",
+        "bundle.json"
+      ],
+      "new_repair_files": [
+        "BUILD.gn",
+        "bundle.json"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "b2ff253e7888491d8f9c5ee582c36fa37a738b43126cdba3e36da50323c6e3dc",
+      "bundle_bytes": 1844,
+      "pr_groups": [
+        "css-explicit-copy-outputs"
+      ]
+    },
+    "foundation/graphic/graphic_3d": {
+      "base_head": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "migration_base": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "validated_snapshot": "7f9ba498e8a39d862f77993db27789adb83578fc",
+      "signed_snapshot": "b5ee76d9cb022ee068d80938dc83fa00657f2b3f",
+      "signed_snapshot_ref": "refs/heads/backup/phone-handoff-20261013-signed",
+      "tree": "31be9c196bf0fc9891bba3fc026a59188b10b88c",
+      "snapshot_matches_validated_tree": true,
+      "head_and_real_index_unchanged": true,
+      "repair_files": [
+        "lume/LumeEngine/tools/CompilerAsset.sh"
+      ],
+      "new_repair_files": [
+        "lume/LumeEngine/tools/CompilerAsset.sh"
+      ],
+      "excluded_files": [],
+      "bundle_sha256": "1eebbb41188bbf67ca96107a987b28e0b97dc41c3910418300e04e0e998c7dd0",
+      "bundle_bytes": 1508,
+      "pr_groups": [
+        "rofs-stable-publication"
+      ]
+    }
+  },
+  "pr_groups": [
+    {
+      "repo": "build",
+      "slug": "idl-clean-outputs",
+      "title": "Declare and restore IDL generated files with complete dependencies",
+      "base": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+      "commit": "9cd1ddecf28acdd1d17ea59bdf094d5ce9458bcb",
+      "ref": "refs/heads/review/idl-clean-outputs-20261013",
+      "files": [
+        "config/components/idl_tool/idl.gni",
+        "config/components/idl_tool/idl.py"
+      ],
+      "patch": "build/idl-clean-outputs.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "build",
+      "slug": "loader-stable-components",
+      "title": "Preserve unchanged component metadata during loading",
+      "base": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+      "commit": "05906cd0b9dbdffa00d62a7fdf8fed387427ccca",
+      "ref": "refs/heads/review/loader-stable-components-20261013",
+      "files": [
+        "hb/services/loader.py"
+      ],
+      "patch": "build/loader-stable-components.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "build",
+      "slug": "install-rule-inputs",
+      "title": "Track installation rule files as explicit action inputs",
+      "base": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+      "commit": "c672e7f7dbc80cb9c7dd55fdff887ecd09720160",
+      "ref": "refs/heads/review/install-rule-inputs-20261013",
+      "files": [
+        "ohos/packages/BUILD.gn"
+      ],
+      "patch": "build/install-rule-inputs.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "third_party/jsframework",
+      "slug": "js-out-only-build",
+      "title": "Build JS framework outside sources with explicit CSS dependencies",
+      "base": "22ddd05c7caf5fc3303a5ee207fe159ce154c238",
+      "commit": "2380cf22dd9c92b3babfcfcd31cc781c83cb61d4",
+      "ref": "refs/heads/review/js-out-only-build-20261013",
+      "files": [
+        "BUILD.gn",
+        "js_framework_build.sh",
+        "test/ut/runtime.ts"
+      ],
+      "patch": "third_party_jsframework/js-out-only-build.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "developtools/ace_ets2bundle",
+      "slug": "sdk-explicit-file-outputs",
+      "title": "Generate SDK plugins and wrappers under out with explicit files",
+      "base": "b545845711e41987f9ca54c09b89061ce5ec6b4c",
+      "commit": "5df2dea2c4e5b96b6766e1429f94e75e5e3501d2",
+      "ref": "refs/heads/review/sdk-explicit-file-outputs-20261013",
+      "files": [
+        "arkui-plugins/BUILD.gn",
+        "arkui-plugins/build_ui_plugins.py",
+        "arkui-plugins/sdk_files.json",
+        "koala-wrapper/BUILD.gn",
+        "koala-wrapper/build_ts_wrapper.py",
+        "koala-wrapper/sdk_files.json",
+        "sdk_copy.gni",
+        "sdk_files.py"
+      ],
+      "patch": "developtools_ace_ets2bundle/sdk-explicit-file-outputs.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "base/account/os_account",
+      "slug": "os-account-idl-outputs",
+      "title": "Declare account callback and common IDL outputs",
+      "base": "7f172ea3830153f8be073fe5edf4fc964b1eed87",
+      "commit": "040df4eb6e1985526844e10c4dbdaa75a5dc670d",
+      "ref": "refs/heads/review/os-account-idl-outputs-20261013",
+      "files": [
+        "frameworks/osaccount/native/BUILD.gn"
+      ],
+      "patch": "base_account_os_account/os-account-idl-outputs.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "base/inputmethod/imf",
+      "slug": "imf-idl-outputs",
+      "title": "Declare input method shared IDL outputs",
+      "base": "5f5e6178a1d5b56331dae7af12ec3fca083857f5",
+      "commit": "eb9b91efa291227540a3a918c0a17914f91fe4d6",
+      "ref": "refs/heads/review/imf-idl-outputs-20261013",
+      "files": [
+        "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+      ],
+      "patch": "base_inputmethod_imf/imf-idl-outputs.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "base/security/dlp_permission_service",
+      "slug": "dlp-idl-outputs",
+      "title": "Declare DLP permission shared IDL outputs",
+      "base": "b59001a8383d76f2708a3b0d525ae2fba538b24b",
+      "commit": "6ac6b9f36f975b6903d67c541bd9e1be8196da5f",
+      "ref": "refs/heads/review/dlp-idl-outputs-20261013",
+      "files": [
+        "interfaces/inner_api/dlp_permission/BUILD.gn"
+      ],
+      "patch": "base_security_dlp_permission_service/dlp-idl-outputs.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "foundation/ability/dmsfwk",
+      "slug": "dms-idl-outputs",
+      "title": "Declare distributed ability shared IDL outputs",
+      "base": "af957f68639797dc1087d726f00f7f52b9a3cac0",
+      "commit": "383286735076b3e6e485cebaa24f6f8c868abc4a",
+      "ref": "refs/heads/review/dms-idl-outputs-20261013",
+      "files": [
+        "interfaces/innerkits/common/BUILD.gn"
+      ],
+      "patch": "foundation_ability_dmsfwk/dms-idl-outputs.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "foundation/multimedia/audio_framework",
+      "slug": "audio-idl-dependency",
+      "title": "Depend on the producer of audio callback shared IDL types",
+      "base": "e811e639cbfe67ba7293d0c74d09aa8941aa4447",
+      "commit": "975f1696a0696619b3b17ab726048aa46c64e6c3",
+      "ref": "refs/heads/review/audio-idl-dependency-20261013",
+      "files": [
+        "services/audio_service/idl/BUILD.gn"
+      ],
+      "patch": "foundation_multimedia_audio_framework/audio-idl-dependency.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "third_party/css-what",
+      "slug": "css-explicit-copy-outputs",
+      "title": "Publish CSS runtime sources and fixtures through explicit copy targets",
+      "base": "95648987c034c15781137e727eb7b1dcff051140",
+      "commit": "c8b2823a3bdadbfdf6cc7d0bacbf8ecf10208bb9",
+      "ref": "refs/heads/review/css-explicit-copy-outputs-20261013",
+      "files": [
+        "BUILD.gn",
+        "bundle.json"
+      ],
+      "patch": "third_party_css-what/css-explicit-copy-outputs.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    },
+    {
+      "repo": "foundation/graphic/graphic_3d",
+      "slug": "rofs-stable-publication",
+      "title": "Preserve unchanged ROFS objects during asset publication",
+      "base": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+      "commit": "faeddc68c9dc29eea314b29279348b16b12a2e27",
+      "ref": "refs/heads/review/rofs-stable-publication-20261013",
+      "files": [
+        "lume/LumeEngine/tools/CompilerAsset.sh"
+      ],
+      "patch": "foundation_graphic_graphic_3d/rofs-stable-publication.patch",
+      "signed_off_by": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "independently_product_built": false
+    }
+  ],
+  "new_repair_repository_count": 10,
+  "new_repair_file_count": 23,
+  "excluded_file_count": 8,
+  "created_remote_prs": []
+}

@@ -1,0 +1,223 @@
+diff --git a/BUILD.gn b/BUILD.gn
+index 852d27a..274bcc1 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -48,14 +48,17 @@ action("gen_snapshot") {
+   eslint = "//third_party/jsframework/.eslintrc"
+   babel = "//third_party/jsframework/.babelrc"
+   test_file = "//third_party/jsframework/test"
+-  css_what = ""
+-  
++  css_what = "$target_out_dir/runtime/src"
++
+   if (ohos_indep_compiler_enable) {
+     external_deps = [ "css-what:css_what_sources" ]
+-    css_what = "obj/binarys/third_party/css-what/innerapis/css_what_sources/src"
++    css_what = "$root_out_dir/obj/binarys/third_party/css-what/innerapis/css_what_sources/src"
+     is_indep_compiler = "true"
+   } else {
+-    deps = [ "//third_party/css-what:css_what_sources" ]
++    external_deps = [
++      "css-what:css_what_sources",
++      "css-what:css_what_fixtures",
++    ]
+     is_indep_compiler = "false"
+   }
+ 
+@@ -72,11 +75,25 @@ action("gen_snapshot") {
+     is_mac,
+     rebase_path("//prebuilts", root_build_dir),
+     rebase_path(buildfile_native_min, root_build_dir),
+-    css_what,
+-    is_indep_compiler
++    rebase_path(css_what, root_build_dir),
++    is_indep_compiler,
+   ]
+ 
+   inputs = [
++    # Build configuration and unit tests.
++    package_file,
++    "package-lock.json",
++    "test/fakeLog.ts",
++    "test/lib.ts",
++    "test/ut/app/bundle.ts",
++    "test/ut/app/index.ts",
++    "test/ut/extend/dpi.ts",
++    "test/ut/manage/bridge.ts",
++    "test/ut/model/directive.ts",
++    "test/ut/model/index.ts",
++    "test/ut/runtime.ts",
++    "test/ut/utils.ts",
++
+     # app
+     "runtime/main/app/App.ts",
+     "runtime/main/app/bundle.ts",
+@@ -171,6 +188,20 @@ action("gen_snapshot") {
+     "tsconfig.json",
+     "tslint.json",
+   ]
++  foreach(css_file,
++          [
++            "__fixtures__/out.json",
++            "__fixtures__/tests.ts",
++            "index.ts",
++            "parse.spec.ts",
++            "parse.ts",
++            "stringify.spec.ts",
++            "stringify.ts",
++            "types.ts",
++            "wpt.spec.ts",
++          ]) {
++    inputs += [ "$css_what/$css_file" ]
++  }
+   outputs = [ prebuilt_js_path ]
+ }
+ 
+diff --git a/js_framework_build.sh b/js_framework_build.sh
+index 850127c..b4db8e5 100755
+--- a/js_framework_build.sh
++++ b/js_framework_build.sh
+@@ -15,22 +15,31 @@
+ set -e
+ echo "copy source code..."
+ prebuilts_path=${11}
++mkdir -p "$8"
++target_out_dir=$(cd "$8" && pwd)
++snapshot_output="$target_out_dir/dist/strip.native.min.js"
++snapshot_backup=$(mktemp)
++snapshot_output_exists=false
++if [ -f "$snapshot_output" ]; then
++  cp -p "$snapshot_output" "$snapshot_backup"
++  snapshot_output_exists=true
++fi
++trap 'rm -f "$snapshot_backup"' EXIT
+ # copy dependency file to generate dir of gn
+ # the params come from .gn
+ 
+-if [ "${14}" == 'true' ];then
+-  rm -rf $2/src
+-fi
+-
+-# copy runtime to target out, and runtime/css-what is solt link, copy it always follow symbolic links in SOURCE
+-if [ "${10}" == 'true' ];then
+-  cp -R -L $2 $8
+-else
+-  cp -r -L $2 $8
+-fi
++# CSS files in runtime/src are produced by css_what_sources. Do not copy
++# over those outputs: GN may hard-link them to the original CSS sources.
++mkdir -p "$target_out_dir/runtime"
++for runtime_source in "$2"/*; do
++  if [ "${runtime_source##*/}" != 'src' ]; then
++    cp -R -L "$runtime_source" "$target_out_dir/runtime"
++  fi
++done
+ 
+ if [ "${14}" == 'true' ];then
+-  cp -r -L ${13} obj/third_party/jsframework/runtime
++  rm -rf "$target_out_dir/runtime/src"
++  cp -r -L "${13}" "$target_out_dir/runtime"
+ fi
+ 
+ # $2 => node $4 => node_modules
+@@ -45,8 +54,7 @@ if [ -d "$prebuilts_path" ]; then
+   fi
+ else
+   echo "download node_modules..."
+-  npm install
+-  cp -r ./node_modules ../../third_party/jsframework
++  (cd "$target_out_dir" && npm install)
+ fi
+ 
+ cp -f $5 $8
+@@ -60,24 +68,30 @@ if [ -d "$prebuilts_path" ]; then
+   rm -rf "$8/current"
+   link_path=$(realpath $1)
+   ln -s $link_path "$8/current"
+-  cd $8
+-  if [ "${10}" == 'true' ];then
+-    ./current/bin/node build_strip_native_min.js || exit 1 &
+-    # run unit test
+-    ./current/bin/node node_modules/.bin/mocha -r ts-node/register test/lib.ts test/ut/**/*.ts test/ut/*.ts || exit 1 &
+-    wait
+-  else
+-    ./current/bin/node build_strip_native_min.js || exit 1 &
+-    # run unit test
+-    ./current/bin/node node_modules/.bin/mocha -r ts-node/register test/lib.ts test/ut/**/*.ts test/ut/*.ts || exit 1&
+-    wait
++  cd "$target_out_dir"
++  ./current/bin/node build_strip_native_min.js &
++  build_pid=$!
++  # run unit test
++  ./current/bin/node node_modules/.bin/mocha -r ts-node/register test/lib.ts test/ut/**/*.ts test/ut/*.ts &
++  test_pid=$!
++  result=0
++  wait "$build_pid" || result=1
++  wait "$test_pid" || result=1
++  if [ "$result" -ne 0 ]; then
++    exit "$result"
+   fi
+ else
++  cd "$target_out_dir"
+   npm run build
+   # run unit test
+   npm run test:unit
+ fi
+ 
++if [ "$snapshot_output_exists" = true ] &&
++   cmp -s "$snapshot_backup" "$snapshot_output"; then
++  touch -r "$snapshot_backup" "$snapshot_output"
++fi
++
+ # after running, remove dependency file
+ rm -rf ./node_modules
+ if [ "${10}" == 'true' ];then
+@@ -85,7 +99,6 @@ if [ "${10}" == 'true' ];then
+ else
+   rm -rf ./current
+ fi
+-rm -rf ./runtime
+ rm -rf ./tsconfig.json
+ rm -rf build_strip_native_min.js
+ rm -rf ./test
+diff --git a/test/ut/runtime.ts b/test/ut/runtime.ts
+index a62a8fb..8f44a87 100644
+--- a/test/ut/runtime.ts
++++ b/test/ut/runtime.ts
+@@ -18,6 +18,7 @@
+  */
+ 
+ import chai from 'chai';
++import { runInThisContext } from 'vm';
+ import {
+   before,
+   after,
+@@ -52,6 +53,7 @@ describe('framework entry', () => {
+   fakeLog();
+ 
+   const pageMap: PageLinkedMap = App.pageMap;
++  let nativeCompileAndRunBundle;
+   let instanceId;
+   const options = {
+     orientation: 'portrait',
+@@ -84,6 +86,8 @@ describe('framework entry', () => {
+   };
+ 
+   before(() => {
++    nativeCompileAndRunBundle = global.compileAndRunBundle;
++    global.compileAndRunBundle = (bundle, file) => runInThisContext(bundle, { filename: file });
+     initFramework();
+     global.callNative = (id, tasks, callbackId) => {
+       if (callbackId !== '-1') {
+@@ -96,6 +100,11 @@ describe('framework entry', () => {
+   });
+ 
+   after(() => {
++    if (typeof nativeCompileAndRunBundle === 'undefined') {
++      delete global.compileAndRunBundle;
++    } else {
++      global.compileAndRunBundle = nativeCompileAndRunBundle;
++    }
+     fakeLogRestore();
+     framework.destroyInstance(instanceId);
+   });

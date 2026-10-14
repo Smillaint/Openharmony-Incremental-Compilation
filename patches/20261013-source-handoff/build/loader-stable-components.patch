@@ -1,0 +1,29 @@
+From 05906cd0b9dbdffa00d62a7fdf8fed387427ccca Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Wed, 14 Oct 2026 12:24:19 +0800
+Subject: [PATCH] Preserve unchanged component metadata during loading
+
+Prepared against the preserved migration baseline; port after prerequisite repairs.
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ hb/services/loader.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/hb/services/loader.py b/hb/services/loader.py
+index d6f505cb..349dd708 100644
+--- a/hb/services/loader.py
++++ b/hb/services/loader.py
+@@ -191,8 +191,7 @@ class OHOSLoader(LoadInterface):
+                     and component not in add_parts:
+                 del new_components_data[component]
+         self._merge_components_info(new_components_data)
+-        os.remove(self.components_file)
+-        write_json_file(self.components_file, new_components_data)
++        write_json_file(self.components_file, new_components_data, check_changes=True)
+         
+ 
+ # check method
+-- 
+2.34.1
+
