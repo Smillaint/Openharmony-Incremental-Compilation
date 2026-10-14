@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-10-14T08:14:06.497506+00:00",
+  "action": "//build/ohos/packages:sa_profile_src_phone",
+  "branch": "fix/sa-profile-src-phone-20261014",
+  "commit": "8334993c47ae5d557f4f47b74b942103d94a37cc",
+  "base": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+  "files": [
+    "ohos/sa_profile/src_sa_profile_process.py",
+    "ohos/sa_profile/sa_profile_source.py",
+    "scripts/util/file_utils.py"
+  ],
+  "tests": [
+    "Real script chain preserves source-part selection and platform naming, sorts labels and emits the toolchain depfile",
+    "Unchanged inputs preserve both JSON bytes and nanosecond mtimes",
+    "Reordering SA metadata does not rewrite either output",
+    "JSON object key order alone preserves content and mtime",
+    "JSON array order changes still update the output",
+    "Actual SA metadata changes reach both outputs",
+    "Source-part selection changes update the install list",
+    "Removing either generated JSON restores the expected output"
+  ],
+  "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+  "related_issue": "https://gitcode.com/openharmony/build/issues/4657",
+  "overlapping_old_pr": "https://gitcode.com/openharmony/build/merge_requests/6965",
+  "independent_full_product_build": false,
+  "source_blobs_match_validated_snapshot": true,
+  "remote_verified": true
+}
