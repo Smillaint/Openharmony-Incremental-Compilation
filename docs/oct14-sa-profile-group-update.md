@@ -24,7 +24,19 @@ PR 描述已更新为[确认后的简短正文](pr-drafts/20261014/sa-profile-gr
 
 关闭重复项后，在 #6965 发送一次 `start build`。机器人已回复“门禁构建开始”，并说明本地或库上代码有更新，将全量重新构建。
 
-[本轮门禁任务](http://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist) 已启动，尚无本轮完成结果。历史 8 月门禁成功不作为此次提交通过的依据。
+[首次门禁任务](https://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist) 已结束：静态检查通过，PR 标记“编译成功”，冒烟因 `dayu600_7885` 的 `failed(ecotest timeout)` 未通过。历史 8 月门禁成功不作为此次提交通过的依据。
+
+### 冒烟超时排查与重试
+
+- `dayu600_7885` 编译结果为 success；`dayu200` 和 `hispark_taurus_LiteOS` 的编译、冒烟均通过。
+- 失败项的测试报告链接为空，门禁详情点击测试失败后提示“未生成日志文件”。测试总时间、调度、升级、检查设备、测试执行栏均为 `--`，没有具体失败用例或断言日志。
+- `master_inner_build`、`x86_64_virt_tdd`、`ohos-sdk-codearts-new` 的失败均标为 IGNORE，不是这次冒烟失败的阻断项。
+- 现有报告更符合 EcoTest 平台超时，未发现指向 SA 修复的错误。缺少底层测试日志，不能进一步区分设备资源、调度服务或其他超时原因；不据此宣称源码在所有平台均无问题。
+- 保持源码 HEAD `f15f9bded74ae12a75b8a9ef729c1397a7202ec2` 和 PR 描述不变，在 #6965 评论一次 `start build` 重试。
+
+机器人已确认“门禁构建开始”，选择全量重新构建并重置旧验证标签。新任务为 [6acfa28164650f998b3e5d24](https://dcp.openharmony.cn/workbench/cicd/detail/6acfa28164650f998b3e5d24/runlist)，当前只确认启动，尚无完成结果。重试评论 ID 为 `193834698`，机器人回执 ID 为 `193834740`。
+
+证据：[失败目标原文](evidence/20261014-sa-smoke-retry/failed-pr.txt)、[门禁详情截图](evidence/20261014-sa-smoke-retry/failed-gate.png)、[重试回执](evidence/20261014-sa-smoke-retry/retry-started.txt)、[重试启动截图](evidence/20261014-sa-smoke-retry/retry-started.png)。
 
 ## 归档
 

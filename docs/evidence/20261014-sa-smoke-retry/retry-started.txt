@@ -1,0 +1,1081 @@
+- heading "build:基于Gn和ninja的编译构建框架项目" [level=1]
+- img "favicon"
+- heading "OpenHarmony / build" [level=2]:
+  - link:
+    - /url: /openharmony
+  - link "OpenHarmony":
+    - /url: /openharmony
+  - generic: /
+  - link "build":
+    - /url: /openharmony/build
+- text: 按下
+- generic: /
+- text: 快速开启搜索
+- textbox
+- button "打开 AtomCode":
+  - generic: AtomCode
+- generic: 探索更多
+- link "工作台":
+  - /url: /dashboard
+  - generic: 工作台
+- button "新建":
+- link "9":
+  - /url: https://gitcode.com/notice?message_sate=countNotRead
+  - generic: "9"
+- link "代码":
+  - /url: /openharmony/build
+  - generic: 代码
+- link "Issues 79":
+  - /url: /openharmony/build/issues
+  - generic: Issues
+  - generic: "79"
+- link "Pull Requests 73":
+  - /url: /openharmony/build/pulls
+  - generic: Pull Requests
+  - generic: "73"
+- link "项目讨论":
+  - /url: /openharmony/build/discussions
+  - generic: 项目讨论
+- link "Wiki":
+  - /url: /openharmony/build/wiki
+  - generic: Wiki
+- link "分析":
+  - /url: /openharmony/build/analysis
+  - generic: 分析
+- generic: Watch
+- generic: "0"
+- generic: Star
+- generic: "23"
+- generic: Fork
+- generic: "475"
+- text: 已开启
+- generic "Stabilize SA profile incremental outputs":
+  - generic: "Stabilize SA profile incremental outputs #6965"
+- generic: SmillySmillick
+- generic: 创建于 8月5日
+- generic: 从
+- link "SmillySmillick/build：":
+  - /url: /SmillySmillick/build
+- link "codex/fix-sa-profile-incremental-build":
+  - /url: /SmillySmillick/build/tree/codex%2Ffix-sa-profile-incremental-build
+- text: 合入到
+- link "openharmony/build：":
+  - /url: /openharmony/build
+- link "master":
+  - /url: /openharmony/build/tree/master
+- generic: 落后目标分支 169 个提交
+- tablist:
+  - tab "讨论 15" [expanded]:
+    - generic: 讨论
+    - generic: "15"
+  - tab "提交 2":
+    - generic: 提交
+    - generic: "2"
+  - tab "检查 2":
+    - generic: 检查
+    - generic: "2"
+  - tab "文件改动 5":
+    - generic: 文件改动
+    - generic: "5"
+- generic: 克隆/下载
+- generic: 评审意见已解决
+- generic: 0/0
+- generic: "0"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 8月5日
+- button "历史修改":
+  - text: 
+  - text: 历史修改
+- button:
+  - text: 
+- button:
+  - text: 
+- heading "相关的Issue" [level=3]
+- paragraph:
+  - link "SA Profile 相关 Action 在无源码变更的增量编译中重复执行":
+    - /url: https://gitcode.com/openharmony/build/issues/4657
+- heading "原因（目的、解决的问题等）" [level=3]
+- paragraph: SA 元数据顺序不固定，JSON 内容未变化时仍会覆盖文件；ZIP 内的元数据使用当前时间，重复打包也会产生差异，导致源 SA、二进制 SA 和合并安装信息继续触发下游构建。
+- heading "描述（做了什么，变更了什么）" [level=3]
+- paragraph: 对 SA 元数据按 label 排序，JSON 仅在内容变化时写入；ZIP 先生成临时文件再比较替换，并固定元数据时间戳。
+- heading "测试用例（新增、改动、可能影响的功能）" [level=3]
+- paragraph: 预期内容不变时保留 JSON、ZIP 及其时间戳，内容变化时正常更新，输出文件被删除后能够重新生成。
+- text:  
+- img "like"
+- img "dislike"
+- heading "合并受阻" [level=6]
+- text: 代码审查未通过（最低审查通过人数：1 人）
+- paragraph: 前置 PR（只有当前置的 PR 合入后，当前 PR 才能被合并）
+- textbox "请选择前置的 PR"
+- checkbox "合并后关闭已关联的 Issue" [checked]
+- generic: 合并后关闭已关联的 Issue
+- checkbox "合并后删除源分支"
+- generic: 合并后删除源分支
+- checkbox "Squash 合并"
+- generic: Squash 合并
+- button "设为草稿":
+  - text: 
+  - generic: 设为草稿
+- button "关闭":
+  - text: 
+  - generic: 关闭
+- button "合入" [disabled]:
+  - text: 
+  - generic: 合入
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 8月5日关联了issue：SA Profile 相关 Action 在无源码变更的增量编译中重复执行
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 添加了label：
+- generic: waiting_on_author
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 8月5日评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 感谢提交 Pull Requests ！此PR未通过DCO校验。
+  - text: 校验失败可能原因：
+  - text: 1. 未签署“DCO协议”（开发者原创声明协议），
+  - link "在线签署、查看签署状态":
+    - /url: https://link.gitcode.com/?target=https%3A%2F%2Fdco.openharmony.cn%2Fsign%2FZ2l0ZWUlMkZvcGVuX2hhcm1vbnk%3D&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: 。
+  - text: 2. Commits 中未包含 Signed-off-by信息，
+  - link "参考FAQ处理":
+    - /url: https://gitcode.com/openharmony/docs/blob/master/zh-cn/contribute/FAQ.md
+  - text: 。
+  - text: 修复上述问题后，在PR的评论框输入“check dco” ，单击”评论”，系统将再次进行DCO校验。
+  - text: 当前检测到如下Commits 未包含Signed-off-by信息：
+- list:
+  - link "bda5e33":
+    - /url: https://gitcode.com/openharmony/build/commits/detail/bda5e33e5f3ee00581461e1271714f4057740f03?ref=master&prId=6965
+- separator
+- paragraph:
+  - text: Thanks for submitting a pull request. This pull request has not passed the DCO check.
+  - text: "Possible causes:"
+  - text: 1. You have not signed the Developer Certificate of Origin (DCO).
+  - link "Sign the DCO and check DCO status":
+    - /url: https://link.gitcode.com/?target=https%3A%2F%2Fdco.openharmony.cn%2Fsign%2FZ2l0ZWUlMkZvcGVuX2hhcm1vbnk%3D&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: .
+  - text: 2. The commits do not contain the Signed-off-by information. To resolve this issue,
+  - link "see FAQs":
+    - /url: https://gitcode.com/openharmony/docs/blob/master/en/contribute/faqs.md
+  - text: .
+  - text: After resolving the preceding issues, enter check dco in the comment box of this pull request and click Comment. The system will check DCO status again.
+  - text: "The following commits do not contain the Signed-off-by information:"
+- list:
+  - link "bda5e33":
+    - /url: https://gitcode.com/openharmony/build/commits/detail/bda5e33e5f3ee00581461e1271714f4057740f03?ref=master&prId=6965
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 添加了label：
+- generic: dco检查失败
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- text: 8月5日
+- text: "强制推送 1 个提交:"
+- link "0d530d7e":
+  - /url: https://gitcode.com/openharmony/build/merge_requests/6965/diffs?diff_id=7102109&start_sha=bda5e33e5f3ee00581461e1271714f4057740f03
+- text: "-Stabilize SA profile incremental outputs"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 8月5日评论：
+- button:
+  - text: 
+- button:
+  - text: 
+- paragraph: check dco
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 8月5日评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 "start build" 触发门禁，更多交互操作，请访问
+  - link "OpenHarmony社区支持命令清单":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: 。如果需要调整订阅PR、Issue的变更状态，请访问
+  - link "订阅链接":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: 。
+  - text: Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a "start build" comment to trigger the gated system. For more commands, please visit
+  - link "OpenHarmony Command List":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: . If you need to change the subscription of a Pull Request or Issue, please visit the
+  - link "link":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: .
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 删除了label：
+- generic: dco检查失败
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 添加了label：
+- generic: dco检查成功
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 8月5日评论：
+- button:
+  - text: 
+- button:
+  - text: 
+- paragraph: start build
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 8月5日评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 "start build" 触发门禁，更多交互操作，请访问
+  - link "OpenHarmony社区支持命令清单":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: 。如果需要调整订阅PR、Issue的变更状态，请访问
+  - link "订阅链接":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: 。
+  - text: Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a "start build" comment to trigger the gated system. For more commands, please visit
+  - link "OpenHarmony Command List":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: . If you need to change the subscription of a Pull Request or Issue, please visit the
+  - link "link":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: .
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 8月5日评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 首次触发
+  - text: "门禁构建开始,包含静态检查、代码编译和测试【ohos-host_mini_tdd编译, master_inner_build编译, dayu200_xts编译, hap_build编译, x86_64_virt编译, dayu200_tdd编译, dayu200_xts_acts编译, hispark_taurus_LiteOS编译, dayu200测试, hispark_taurus_LiteOS测试, ohos-sdk编译, dayu600_7885编译, dayu200编译, mac-sdk编译, dayu600_7885测试, dayu600_7885_codearts编译, hispark_taurus_Linux编译, dayu200_xts_static编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6a73ff9b64650f998b0f6b7d/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6a73ff9b64650f998b0f6b7d%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 添加了label：
+- generic: 编译成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 添加了label：
+- generic: 静态检查成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 添加了label：
+- generic: 冒烟测试成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 8月5日通过测试
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 8月5日评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 代码门禁通过
+  - text: "您可以通过如下链接查看门禁报告:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6a73ff9b64650f998b0f6b7d/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6a73ff9b64650f998b0f6b7d%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: "静态检查:"
+- table:
+  - rowgroup:
+    - row "# check type result report":
+      - columnheader "#"
+      - columnheader "check type"
+      - columnheader "result"
+      - columnheader "report"
+  - rowgroup:
+    - row "1 codeCheck pass >>>":
+      - cell "1"
+      - cell "codeCheck"
+      - cell "pass"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://dcp.openharmony.cn/workbench/cicd/detail/6a73ff9b64650f998b0f6b7d/runlist?pop=codecheck&taskId=MR_6ea4c3b949c941689b7d82aea1b2dd6a
+- text: "编译测试:"
+- table:
+  - rowgroup:
+    - row "# Device build result test result package":
+      - columnheader "#"
+      - columnheader "Device"
+      - columnheader "build result"
+      - columnheader "test result"
+      - columnheader "package"
+  - rowgroup:
+    - row "1 hispark_taurus_LiteOS success success >>>":
+      - cell "1"
+      - cell "hispark_taurus_LiteOS"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20260806-1-00412/log/build.log
+      - cell "success":
+        - link "success":
+          - /url: http://download.ci.openharmony.cn/log/ecoTest/task_2177714/block_1bv869gk45r9whhgefu897hx5pd8b5wiex8838vb7l41c0uv_1/report.zip
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20260806-1-00412/version/Artifacts-hispark_taurus_LiteOS-20260806-1-00412-version-hispark_taurus_LiteOS.tar.gz
+    - row "2 hispark_taurus_Linux success NA >>>":
+      - cell "2"
+      - cell "hispark_taurus_Linux"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20260806-1-00410/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20260806-1-00410/version/Artifacts-hispark_taurus_Linux-20260806-1-00410-version-hispark_taurus_Linux.tar.gz
+    - row "3 ohos-sdk success NA >>>":
+      - cell "3"
+      - cell "ohos-sdk"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20260806-1-00358/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20260806-1-00358/version/Artifacts-ohos-sdk-20260806-1-00358-version-ohos-sdk.zip
+    - row "4 dayu200 success success >>>":
+      - cell "4"
+      - cell "dayu200"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200/20260806-1-00307/log/build.log
+      - cell "success":
+        - link "success":
+          - /url: http://download.ci.openharmony.cn/log/ecoTest/task_2177773/block_iiodhfb23iyhbfrfgmyqced4g78f4jr4bid0z2qw62k538ke_1/report.zip
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200/20260806-1-00307/version/Artifacts-dayu200-20260806-1-00307-version-dayu200.tar.gz
+    - row "5 dayu200_xts success NA >>>":
+      - cell "5"
+      - cell "dayu200_xts"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20260806-1-00194/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20260806-1-00194/version/Artifacts-dayu200_xts-20260806-1-00194-version-dayu200_xts.tar.gz
+    - row "6 dayu200_tdd success NA >>>":
+      - cell "6"
+      - cell "dayu200_tdd"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20260806-1-00371/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20260806-1-00371/version/Artifacts-dayu200_tdd-20260806-1-00371-version-dayu200_tdd.tar.gz
+    - row "7 hap_build success NA >>>":
+      - cell "7"
+      - cell "hap_build"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hap_build/20260806-1-00408/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hap_build/20260806-1-00408/version/Artifacts-hap_build-20260806-1-00408-version-hap_build.tar.gz
+    - row "8 dayu200_xts_acts success NA >>>":
+      - cell "8"
+      - cell "dayu200_xts_acts"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20260806-1-00196/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20260806-1-00196/version/Artifacts-dayu200_xts_acts-20260806-1-00196-version-dayu200_xts_acts.tar.gz
+    - row "9 dayu200_xts_static success NA >>>":
+      - cell "9"
+      - cell "dayu200_xts_static"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20260806-1-00375/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20260806-1-00375/version/Artifacts-dayu200_xts_static-20260806-1-00375-version-dayu200_xts_static.tar.gz
+    - row "10 master_inner_build success(IGNORE) NA >>>":
+      - cell "10"
+      - cell "master_inner_build"
+      - cell "success(IGNORE)":
+        - link "success(IGNORE)":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6a73ff9b64650f998b0f6b7d/runlist
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6a73ff9b64650f998b0f6b7d/runlist
+    - row "11 mac-sdk success NA >>>":
+      - cell "11"
+      - cell "mac-sdk"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/mac/d37818d0dd1441b1992eba33d9f56df2/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://devcloud.cn-north-4.huaweicloud.com/cicd/project/3da31c5b0306465ca256eb1821ae26f4/pipeline/detail/7c940f5dcdb540b5922388d0bf51762c/d37818d0dd1441b1992eba33d9f56df2
+    - row "12 ohos-host_mini_tdd success NA >>>":
+      - cell "12"
+      - cell "ohos-host_mini_tdd"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20260806-1-00272/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20260806-1-00272/version/Artifacts-ohos-host_mini_tdd-20260806-1-00272-version-ohos-host_mini_tdd.tar.gz
+    - row "13 dayu600_7885 success success >>>":
+      - cell "13"
+      - cell "dayu600_7885"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20260806-1-00321/log/build.log
+      - cell "success":
+        - link "success":
+          - /url: http://download.ci.openharmony.cn/log/ecoTest/task_2177965/block_35gl7u5igqxekxp0je9tr14julzbfw0tz5ot1uytwjte1kb0_1/report.zip
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20260806-1-00321/version/Artifacts-dayu600_7885-20260806-1-00321-version-dayu600_7885.tar.gz
+    - row "14 x86_64_virt success NA >>>":
+      - cell "14"
+      - cell "x86_64_virt"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20260806-1-00294/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20260806-1-00294/version/Artifacts-x86_64_virt-20260806-1-00294-version-x86_64_virt.tar.gz
+    - row "15 dayu600_7885_codearts failed(IGNORE)(skip build) NA >>>":
+      - cell "15"
+      - cell "dayu600_7885_codearts"
+      - cell "failed(IGNORE)(skip build)":
+        - link "failed(IGNORE)(skip build)":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6a73ff9b64650f998b0f6b7d/runlist
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6a73ff9b64650f998b0f6b7d/runlist
+- paragraph
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 删除了label：
+- generic: waiting_on_author
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 8月5日
+- text: 添加了label：
+- generic: waiting_for_review
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 8月5日评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 您好，Committer
+  - link "@handyohos":
+    - /url: https://gitcode.com/handyohos
+  - link "@csliutt-private":
+    - /url: https://gitcode.com/csliutt-private
+  - link "@ringking0":
+    - /url: https://gitcode.com/ringking0
+  - text: ，请分配检视人员检视该PR，可以通过命令"assign [@someone_id]"分配检视人员，也可以直接评论"assign"分配给自己进行检视。
+  - text: Hello, Committer
+  - link "@handyohos":
+    - /url: https://gitcode.com/handyohos
+  - link "@csliutt-private":
+    - /url: https://gitcode.com/csliutt-private
+  - link "@ringking0":
+    - /url: https://gitcode.com/ringking0
+  - text: . Please assign someone to review the PR. You can assign a reviewer by using the command "assign [@someone_id]", or you can comment "assign" to review the PR by yourself.
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: "6 小时前 测试状态已重置，测试人: openharmony_ci"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- text: 6 小时前
+- text: "推送 1 个提交:"
+- link "f15f9bde":
+  - /url: https://gitcode.com/openharmony/build/merge_requests/6965/diffs?diff_id=7961520&start_sha=0d530d7eb691276cd27d7109b1155a21c6c0c1cc
+- text: "-Use a fixed timestamp for SA profile ZIP metadata"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 6 小时前
+- text: 删除了label：
+- generic: 编译成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 6 小时前
+- text: 删除了label：
+- generic: 静态检查成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 6 小时前
+- text: 删除了label：
+- generic: 冒烟测试成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 6 小时前 评论：
+- button:
+  - text: 
+- paragraph: 代码有更新,重置PR验证状态
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 6 小时前
+- text: 删除了label：
+- generic: waiting_for_review
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 6 小时前
+- text: 添加了label：
+- generic: waiting_on_author
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 6 小时前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 "start build" 触发门禁，更多交互操作，请访问
+  - link "OpenHarmony社区支持命令清单":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: 。如果需要调整订阅PR、Issue的变更状态，请访问
+  - link "订阅链接":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: 。
+  - text: Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a "start build" comment to trigger the gated system. For more commands, please visit
+  - link "OpenHarmony Command List":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: . If you need to change the subscription of a Pull Request or Issue, please visit the
+  - link "link":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: .
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 6 小时前 修改了pull request 的描述
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 6 小时前 评论：
+- button:
+  - text: 
+- button:
+  - text: 
+- paragraph: start build
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 6 小时前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态
+  - text: "门禁构建开始,包含静态检查、代码编译和测试【ohos-sdk-codearts-new编译, master_inner_build编译, ohos-sdk编译, x86_64_virt_tdd编译, dayu200编译, hispark_taurus_LiteOS编译, mac-sdk编译, dayu200测试, dayu200_tdd编译, dayu200_xts_static编译, hispark_taurus_LiteOS测试, dayu600_7885测试, x86_64_virt编译, hap_build编译, dayu600_7885编译, hispark_taurus_Linux编译, dayu200_xts_acts编译, dayu200_xts编译, ohos-host_mini_tdd编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6acf48f164650f998b1fc6be%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 2 小时前
+- text: 添加了label：
+- generic: 编译成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 2 小时前
+- text: 添加了label：
+- generic: 静态检查成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 2 小时前
+- text: 添加了label：
+- generic: 冒烟测试失败
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 2 小时前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 代码门禁未通过
+  - text: "您可以通过如下链接查看门禁报告:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6acf48f164650f998b1fc6be%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+  - text: "静态检查:"
+- table:
+  - rowgroup:
+    - row "# check type result report":
+      - columnheader "#"
+      - columnheader "check type"
+      - columnheader "result"
+      - columnheader "report"
+  - rowgroup:
+    - row "1 codeCheck pass >>>":
+      - cell "1"
+      - cell "codeCheck"
+      - cell "pass"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist?pop=codecheck&taskId=MR_1229d7d644bc40edbec2755258b70aec
+- text: "编译测试:"
+- table:
+  - rowgroup:
+    - row "# Device build result test result package":
+      - columnheader "#"
+      - columnheader "Device"
+      - columnheader "build result"
+      - columnheader "test result"
+      - columnheader "package"
+  - rowgroup:
+    - row "1 hispark_taurus_LiteOS success success >>>":
+      - cell "1"
+      - cell "hispark_taurus_LiteOS"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20261014-1-00762/log/build.log
+      - cell "success":
+        - link "success":
+          - /url: http://download.ci.openharmony.cn/log/ecoTest/task_2295498/block_89yvzqhvpeq1wv54qia1t5fke19pphaug09a40nmrv5k7qc8_1/report.zip
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20261014-1-00762/version/Artifacts-hispark_taurus_LiteOS-20261014-1-00762-version-hispark_taurus_LiteOS.tar.gz
+    - row "2 hispark_taurus_Linux success NA >>>":
+      - cell "2"
+      - cell "hispark_taurus_Linux"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20261014-1-00761/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20261014-1-00761/version/Artifacts-hispark_taurus_Linux-20261014-1-00761-version-hispark_taurus_Linux.tar.gz
+    - row "3 ohos-sdk success NA >>>":
+      - cell "3"
+      - cell "ohos-sdk"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261014-1-01285/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261014-1-01285/version/Artifacts-ohos-sdk-20261014-1-01285-version-ohos-sdk.zip
+    - row "4 dayu200 success success >>>":
+      - cell "4"
+      - cell "dayu200"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200/20261014-1-00700/log/build.log
+      - cell "success":
+        - link "success":
+          - /url: http://download.ci.openharmony.cn/log/ecoTest/task_2295553/block_6dahrpy1cc4f0y8i99kba6z6o3mct5d19xcbgh8ce40mn363_1/report.zip
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200/20261014-1-00700/version/Artifacts-dayu200-20261014-1-00700-version-dayu200.tar.gz
+    - row "5 dayu200_xts success NA >>>":
+      - cell "5"
+      - cell "dayu200_xts"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20261014-1-00500/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20261014-1-00500/version/Artifacts-dayu200_xts-20261014-1-00500-version-dayu200_xts.tar.gz
+    - row "6 dayu200_tdd success NA >>>":
+      - cell "6"
+      - cell "dayu200_tdd"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261014-1-00768/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261014-1-00768/version/Artifacts-dayu200_tdd-20261014-1-00768-version-dayu200_tdd.tar.gz
+    - row "7 hap_build success NA >>>":
+      - cell "7"
+      - cell "hap_build"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hap_build/20261014-1-00760/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/hap_build/20261014-1-00760/version/Artifacts-hap_build-20261014-1-00760-version-hap_build.tar.gz
+    - row "8 dayu200_xts_acts success NA >>>":
+      - cell "8"
+      - cell "dayu200_xts_acts"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20261014-1-00502/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20261014-1-00502/version/Artifacts-dayu200_xts_acts-20261014-1-00502-version-dayu200_xts_acts.tar.gz
+    - row "9 dayu200_xts_static success NA >>>":
+      - cell "9"
+      - cell "dayu200_xts_static"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20261014-1-00769/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20261014-1-00769/version/Artifacts-dayu200_xts_static-20261014-1-00769-version-dayu200_xts_static.tar.gz
+    - row "10 master_inner_build failed(IGNORE)(联合门禁失败) NA >>>":
+      - cell "10"
+      - cell "master_inner_build"
+      - cell "failed(IGNORE)(联合门禁失败)":
+        - link "failed(IGNORE)(联合门禁失败)":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist
+    - row "11 ohos-host_mini_tdd success NA >>>":
+      - cell "11"
+      - cell "ohos-host_mini_tdd"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20261014-1-00680/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20261014-1-00680/version/Artifacts-ohos-host_mini_tdd-20261014-1-00680-version-ohos-host_mini_tdd.tar.gz
+    - row "12 dayu600_7885 success failed(ecotest timeout) >>>":
+      - cell "12"
+      - cell "dayu600_7885"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261014-1-00873/log/build.log
+      - cell "failed(ecotest timeout)":
+        - link "failed(ecotest timeout)":
+          - /url: ""
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261014-1-00873/version/Artifacts-dayu600_7885-20261014-1-00873-version-dayu600_7885.tar.gz
+    - row "13 x86_64_virt success NA >>>":
+      - cell "13"
+      - cell "x86_64_virt"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20261014-1-01158/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20261014-1-01158/version/Artifacts-x86_64_virt-20261014-1-01158-version-x86_64_virt.tar.gz
+    - row "14 x86_64_virt_tdd failed(IGNORE)(compile failed) NA >>>":
+      - cell "14"
+      - cell "x86_64_virt_tdd"
+      - cell "failed(IGNORE)(compile failed)":
+        - link "failed(IGNORE)(compile failed)":
+          - /url: https://cidownload.openharmony.cn/Artifacts/x86_64_virt_tdd/20261014-1-01159/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist
+    - row "15 mac-sdk success NA >>>":
+      - cell "15"
+      - cell "mac-sdk"
+      - cell "success":
+        - link "success":
+          - /url: https://cidownload.openharmony.cn/Artifacts/mac/366252572f13405a8035e50b8258bce7/log/build.log
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://devcloud.cn-north-4.huaweicloud.com/cicd/project/3da31c5b0306465ca256eb1821ae26f4/pipeline/detail/7c940f5dcdb540b5922388d0bf51762c/366252572f13405a8035e50b8258bce7
+    - row "16 ohos-sdk-codearts-new failed(IGNORE)(skip build) NA >>>":
+      - cell "16"
+      - cell "ohos-sdk-codearts-new"
+      - cell "failed(IGNORE)(skip build)":
+        - link "failed(IGNORE)(skip build)":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist
+      - cell "NA"
+      - cell ">>>":
+        - link ">>>":
+          - /url: http://dcp.openharmony.cn/workbench/cicd/detail/6acf48f164650f998b1fc6be/runlist
+- paragraph
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 1 分钟前 评论：
+- button:
+  - text: 
+- button:
+  - text: 
+- paragraph: start build
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 刚刚
+- text: 删除了label：
+- generic: 编译成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 刚刚
+- text: 删除了label：
+- generic: 静态检查成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 刚刚
+- text: 删除了label：
+- generic: 冒烟测试失败
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 刚刚 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态
+  - text: "门禁构建开始,包含静态检查、代码编译和测试【x86_64_virt_tdd编译, dayu200编译, dayu200测试, mac-sdk编译, hispark_taurus_Linux编译, dayu200_xts_static编译, hispark_taurus_LiteOS测试, x86_64_virt编译, ohos-sdk-codearts-new编译, ohos-sdk编译, hispark_taurus_LiteOS编译, dayu600_7885测试, dayu200_xts编译, hap_build编译, master_inner_build编译, dayu200_tdd编译, ohos-host_mini_tdd编译, dayu200_xts_acts编译, dayu600_7885编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6acfa28164650f998b3e5d24/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6acfa28164650f998b3e5d24%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fbuild%2Fmerge_requests%2F6965&lang=zh&theme=white
+- text:   
+- img "like"
+- img "dislike"
+- button "预览"
+- textbox [active]
+- generic: 0/65535
+- button "添加附件":
+  - text: 
+  - generic: 添加附件
+- button "发送评论" [disabled]:
+  - text: 
+  - generic: 发送评论
+- button "取消" [disabled]:
+  - text: 
+  - generic: 取消
+- textbox "回复"
+- heading "合并人" [level=5]:
+  - generic: 合并人
+- generic: 暂未分配
+- separator
+- heading "审查人 (3/1) 进行中" [level=5]:
+  - text: 审查人
+  - generic: (3/1)
+  - generic "进行中"
+- list:
+  - generic "handyohos":
+    - link "handyohos":
+      - /url: /handyohos
+  - generic "csliutt-private":
+    - link "csliutt-private":
+      - /url: /csliutt-private
+  - generic: R
+  - generic "ringking0":
+    - link "ringking0":
+      - /url: /ringking0
+- separator
+- heading "测试人 (1/1) 进行中" [level=5]:
+  - text: 测试人
+  - generic: (1/1)
+  - generic "进行中"
+- list:
+  - generic "openharmony_ci":
+    - link "openharmony_ci":
+      - /url: /openharmony_ci
+- separator
+- heading "评审人" [level=5]:
+  - generic: 评审人
+- generic: 暂未分配
+- separator
+- heading "Label" [level=5]:
+  - generic: Label
+- generic "dco检查成功"
+- generic "waiting_on_author"
+- separator
+- heading "里程碑" [level=5]:
+  - generic: 里程碑
+- generic: 暂无关联里程碑
+- separator
+- heading "看板" [level=5]:
+  - generic: 看板
+- generic: 暂无关联看板
+- separator
+- heading "关联Issue" [level=5]:
+  - generic: 关联Issue
+- 'link "SA Profile 相关 Action 在无源码变更的增量编译中重复执行 #4657 OpenHarmony / build"':
+  - /url: /openharmony/build/issues/4657
+  - generic "SA Profile 相关 Action 在无源码变更的增量编译中重复执行":
+    - text: SA Profile 相关 Action 在无源码变更的增量编译中重复执行
+  - generic "OpenHarmony / build": "#4657 OpenHarmony / build"
+- separator
+- generic: 参与者
+- generic: "5"
+- link:
+  - /url: /openharmony_ci
+  - generic "openharmony_ci"
+- link:
+  - /url: /SmillySmillick
+  - generic "SmillySmillick"
+- link:
+  - /url: /handyohos
+  - generic "handyohos"
+- link:
+  - /url: /csliutt-private
+  - generic "csliutt-private"
+- link "R":
+  - /url: /ringking0
+  - generic "ringking0":
+    - generic: R
