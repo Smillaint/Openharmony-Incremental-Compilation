@@ -1,0 +1,93 @@
+diff --git a/airscan-bmp.c b/airscan-bmp.c
+index 75cfae3..299b5da 100644
+--- a/airscan-bmp.c
++++ b/airscan-bmp.c
+@@ -156,6 +156,34 @@ image_decoder_bmp_begin (image_decoder *decoder, const void *data,
+         return ERROR(bmp->error);
+     }
+ 
++    /* Sanity check: limit dimensions to prevent integer overflow
++     * in bytes_per_line calculation (pixels_per_line * 3)
++     * Max safe pixels_per_line = INT_MAX / 3 ≈ 715 million
++     * Practical limit: 50000 pixels is more than enough for scanners
++     */
++#define MAX_SAFE_BMP_DIMENSION 50000
++    if (bmp->info_header.biWidth > MAX_SAFE_BMP_DIMENSION ||
++        bmp->info_header.biWidth < 0 ||
++        labs(bmp->info_header.biHeight) > MAX_SAFE_BMP_DIMENSION) {
++        sprintf(bmp->error, "BMP: dimensions too large (width=%d, height=%d)",
++            bmp->info_header.biWidth, bmp->info_header.biHeight);
++        return ERROR(bmp->error);
++    }
++
++    /* Sanity check: limit dimensions to prevent integer overflow
++     * in bytes_per_line calculation (pixels_per_line * 3)
++     * Max safe pixels_per_line = INT_MAX / 3 ≈ 715 million
++     * Practical limit: 50000 pixels is more than enough for scanners
++     */
++#define MAX_SAFE_BMP_DIMENSION 50000
++    if (bmp->info_header.biWidth > MAX_SAFE_BMP_DIMENSION ||
++        bmp->info_header.biWidth < 0 ||
++        labs(bmp->info_header.biHeight) > MAX_SAFE_BMP_DIMENSION) {
++        sprintf(bmp->error, "BMP: dimensions too large (width=%d, height=%d)",
++            bmp->info_header.biWidth, bmp->info_header.biHeight);
++        return ERROR(bmp->error);
++    }
++
+     /* Compute BMP row size */
+     bmp->bmp_row_size = bmp->info_header.biWidth;
+     bmp->bmp_row_size *= bmp->info_header.biBitCount / 8;
+diff --git a/airscan-escl.c b/airscan-escl.c
+index c27dd9c..aee677d 100644
+--- a/airscan-escl.c
++++ b/airscan-escl.c
+@@ -452,6 +452,22 @@ escl_devcaps_source_parse (xml_rd *xml, devcaps_source **out)
+         goto DONE;
+     }
+ 
++    /* Validate color modes regardless of whether SettingProfiles
++     * was present in the XML */
++    src->colormodes &= DEVCAPS_COLORMODES_SUPPORTED;
++    if (src->colormodes == 0) {
++        err = ERROR("no color modes detected");
++        goto DONE;
++    }
++
++    /* Validate color modes regardless of whether SettingProfiles
++     * was present in the XML */
++    src->colormodes &= DEVCAPS_COLORMODES_SUPPORTED;
++    if (src->colormodes == 0) {
++        err = ERROR("no color modes detected");
++        goto DONE;
++    }
++
+     if (src->max_wid_px != 0 && src->max_hei_px != 0)
+     {
+         /* Validate window size */
+diff --git a/http_parser.c b/http_parser.c
+index e0914d2..8314e45 100644
+--- a/http_parser.c
++++ b/http_parser.c
+@@ -2433,6 +2433,22 @@ http_parser_parse_url(const char *buf, size_t buflen, int is_connect,
+     return 1;
+   }
+ 
++  /* Reject URLs exceeding uint16_t range, as field_data[].off
++   * uses uint16_t and cannot correctly represent offsets >= 65536.
++   * This prevents potential buffer overflow when strip_fragment is used.
++   */
++  if (buflen > 65535) {
++    return 1;
++  }
++
++  /* Reject URLs exceeding uint16_t range, as field_data[].off
++   * uses uint16_t and cannot correctly represent offsets >= 65536.
++   * This prevents potential buffer overflow when strip_fragment is used.
++   */
++  if (buflen > 65535) {
++    return 1;
++  }
++
+   u->port = u->field_set = 0;
+   s = is_connect ? s_req_server_start : s_req_spaces_before_url;
+   old_uf = UF_MAX;

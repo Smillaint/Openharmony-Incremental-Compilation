@@ -1,0 +1,22 @@
+{
+  "phase": "increment1",
+  "state": "complete",
+  "root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_1a6915832/code",
+  "command": [
+    "bash",
+    "./build.sh",
+    "-p",
+    "rk3568",
+    "--build-target",
+    "make_all",
+    "--ninja-args=-dexplain"
+  ],
+  "started_utc": "2026-10-13T11:49:43.034515+00:00",
+  "runner_pid": 3112967,
+  "build_pid": 3692965,
+  "exit_code": 0,
+  "wall_seconds": 666.7737420033664,
+  "finished_utc": "2026-10-13T12:00:49.808280+00:00",
+  "managed_source_unchanged": false,
+  "rounds_completed": 2
+}

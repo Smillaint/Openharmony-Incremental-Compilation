@@ -1,0 +1,92 @@
+{
+  "full": {
+    "wall_seconds": 9275.938668741845,
+    "exit_code": 0,
+    "main_tasks": 125589,
+    "sequence_valid": true,
+    "task_types": {
+      "STAMP": 37853,
+      "COPY": 2729,
+      "ACTION": 22845,
+      "AR": 554,
+      "CXX": 43870,
+      "CC": 13955,
+      "ASM": 172,
+      "LINK": 213,
+      "SOLINK": 3232,
+      "RUST": 166
+    },
+    "action_counts": {
+      "sa_profile_src_phone": 1,
+      "sa_profile_binary_phone": 1,
+      "phone_sa_profile_install_info": 1,
+      "check_seccomp_filter_name": 1,
+      "process_field_validate": 1,
+      "collect_notice_files__phone": 1,
+      "generate_host_symlink": 1,
+      "phone_hisysevent_install_info": 1,
+      "phone_install_modules": 1,
+      "phone_parts_list": 1,
+      "ark_jsf": 1,
+      "gen_snapshot": 1,
+      "airscan_action": 1
+    },
+    "gn_seconds": [
+      "19.34"
+    ],
+    "ninja_seconds": [
+      "9112.73"
+    ],
+    "source_changes": [
+      "third_party/sane-airscan/airscan-bmp.c",
+      "third_party/sane-airscan/airscan-escl.c",
+      "third_party/sane-airscan/http_parser.c"
+    ],
+    "console_sha256": "59089105f50477fd35fc9ad7766cfc3c2ece9127edab2de77e22e3d3585f235a"
+  },
+  "increment1": {
+    "wall_seconds": 666.7737420033664,
+    "exit_code": 0,
+    "main_tasks": 5718,
+    "sequence_valid": true,
+    "task_types": {
+      "ACTION": 904,
+      "STAMP": 3306,
+      "CXX": 412,
+      "COPY": 545,
+      "SOLINK": 524,
+      "CC": 5,
+      "AR": 7,
+      "LINK": 11,
+      "RUST": 4
+    },
+    "action_counts": {
+      "sa_profile_src_phone": 1,
+      "sa_profile_binary_phone": 1,
+      "phone_sa_profile_install_info": 1,
+      "check_seccomp_filter_name": 1,
+      "process_field_validate": 1,
+      "collect_notice_files__phone": 1,
+      "generate_host_symlink": 1,
+      "phone_hisysevent_install_info": 1,
+      "phone_install_modules": 1,
+      "phone_parts_list": 1,
+      "ark_jsf": 1,
+      "gen_snapshot": 1,
+      "airscan_action": 1
+    },
+    "gn_seconds": [
+      "30.77"
+    ],
+    "ninja_seconds": [
+      "566.4"
+    ],
+    "source_changes": [
+      "third_party/sane-airscan/airscan-bmp.c",
+      "third_party/sane-airscan/airscan-escl.c",
+      "third_party/sane-airscan/http_parser.c"
+    ],
+    "console_sha256": "b6629d8c2ebeedaf0d79b630c726049ca60acc39f134c56f51a5bce6d1a23dcf"
+  },
+  "between_rounds_managed_sources_unchanged": true
+}
