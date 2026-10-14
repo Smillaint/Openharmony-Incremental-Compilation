@@ -1,0 +1,83 @@
+diff --git a/BUILD.gn b/BUILD.gn
+index f8bf5a7..274bcc1 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -48,14 +48,17 @@ action("gen_snapshot") {
+   eslint = "//third_party/jsframework/.eslintrc"
+   babel = "//third_party/jsframework/.babelrc"
+   test_file = "//third_party/jsframework/test"
+-  css_what = ""
+-  
++  css_what = "$target_out_dir/runtime/src"
++
+   if (ohos_indep_compiler_enable) {
+     external_deps = [ "css-what:css_what_sources" ]
+-    css_what = "obj/binarys/third_party/css-what/innerapis/css_what_sources/src"
++    css_what = "$root_out_dir/obj/binarys/third_party/css-what/innerapis/css_what_sources/src"
+     is_indep_compiler = "true"
+   } else {
+-    deps = [ "//third_party/css-what:css_what_sources" ]
++    external_deps = [
++      "css-what:css_what_sources",
++      "css-what:css_what_fixtures",
++    ]
+     is_indep_compiler = "false"
+   }
+ 
+@@ -72,8 +75,8 @@ action("gen_snapshot") {
+     is_mac,
+     rebase_path("//prebuilts", root_build_dir),
+     rebase_path(buildfile_native_min, root_build_dir),
+-    css_what,
+-    is_indep_compiler
++    rebase_path(css_what, root_build_dir),
++    is_indep_compiler,
+   ]
+ 
+   inputs = [
+@@ -185,6 +188,20 @@ action("gen_snapshot") {
+     "tsconfig.json",
+     "tslint.json",
+   ]
++  foreach(css_file,
++          [
++            "__fixtures__/out.json",
++            "__fixtures__/tests.ts",
++            "index.ts",
++            "parse.spec.ts",
++            "parse.ts",
++            "stringify.spec.ts",
++            "stringify.ts",
++            "types.ts",
++            "wpt.spec.ts",
++          ]) {
++    inputs += [ "$css_what/$css_file" ]
++  }
+   outputs = [ prebuilt_js_path ]
+ }
+ 
+diff --git a/js_framework_build.sh b/js_framework_build.sh
+index f17a51d..b4db8e5 100755
+--- a/js_framework_build.sh
++++ b/js_framework_build.sh
+@@ -28,12 +28,14 @@ trap 'rm -f "$snapshot_backup"' EXIT
+ # copy dependency file to generate dir of gn
+ # the params come from .gn
+ 
+-# copy runtime to target out, and runtime/css-what is solt link, copy it always follow symbolic links in SOURCE
+-if [ "${10}" == 'true' ];then
+-  cp -R -L $2 $8
+-else
+-  cp -r -L $2 $8
+-fi
++# CSS files in runtime/src are produced by css_what_sources. Do not copy
++# over those outputs: GN may hard-link them to the original CSS sources.
++mkdir -p "$target_out_dir/runtime"
++for runtime_source in "$2"/*; do
++  if [ "${runtime_source##*/}" != 'src' ]; then
++    cp -R -L "$runtime_source" "$target_out_dir/runtime"
++  fi
++done
+ 
+ if [ "${14}" == 'true' ];then
+   rm -rf "$target_out_dir/runtime/src"

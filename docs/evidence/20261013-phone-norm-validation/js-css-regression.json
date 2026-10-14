@@ -1,0 +1,10 @@
+[
+  "previous script reproduces same-file copy failure with hard-linked CSS output",
+  "repeat, output deletion and source preservation: independent=False, fallback=False",
+  "repeat, output deletion and source preservation: independent=True, fallback=False",
+  "repeat, output deletion and source preservation: independent=False, fallback=True",
+  "repeat, output deletion and source preservation: independent=True, fallback=True",
+  "source-tree CSS symlink absent; declared output dependency still builds",
+  "propagates FAIL_BUILD",
+  "propagates FAIL_TEST"
+]

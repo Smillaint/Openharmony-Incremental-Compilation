@@ -1,0 +1,66 @@
+{
+  "build": {
+    "commit": "87266090028f84fbfb12f8af9162f610f7c627fa",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "developtools/packing_tool": {
+    "commit": "39d9089c8baffb64ae20ab0ba7453ba370293dfc",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "third_party/jsframework": {
+    "commit": "5afb37869ee7d628d7d22c31cf2e9b121be51cd1",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "third_party/sane-airscan": {
+    "commit": "1486c30bf89811c1cfd96b6c9449f383e67beb18",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "base/security/selinux_adapter": {
+    "commit": "e8def4f0496b24de69508dff966f3214c9b3df88",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "device/board/hihope": {
+    "commit": "ff17bfc5be725eb60cb9fa3f9b6cb7c2d9065355",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "arkcompiler/ets_frontend": {
+    "commit": "40b3273c8d586f6ebf06c6b4331bc6d43466d31d",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "interface/sdk-js": {
+    "commit": "816f98939faf7104c8d1afca002fcb692572ee57",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "developtools/ace_ets2bundle": {
+    "commit": "c056e6fdfe5be7e767d3ea636e80bd3a1c2790bb",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "third_party/iptables": {
+    "commit": "cbf29089f9224faf8f26efc6da19547358a1bb7f",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "base/account/os_account": {
+    "commit": "b983e25d871418bfb4899d30ecb3ea8b7849eba8",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "base/inputmethod/imf": {
+    "commit": "8562714c09f8e559e8cd261002fabfb8977c1771",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "base/security/dlp_permission_service": {
+    "commit": "00ceb5f1e8554e3cb7af136672c43573d7828523",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "foundation/ability/dmsfwk": {
+    "commit": "b5969c88bae6882de03fd4a9144ef380ac2531c7",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "foundation/multimedia/audio_framework": {
+    "commit": "0ab3b44df3ff611bfeec8e447b8bb668b205c81c",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  },
+  "third_party/css-what": {
+    "commit": "7d27e6f1ce34986928484fe4d4e063ceda00f4bd",
+    "ref": "refs/heads/backup/ab-norm-validation-start-20261014T015329703537Z"
+  }
+}

@@ -1,0 +1,11 @@
+    ✓ own property is empty or not
+    ✓ is null or undefined
+
+
+  43 passing (49ms)
+
+
+/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/phone_norm_validation_20261013/js-real-build/runtime/main/app/bundle.ts
+  218:34  error  Missing space before =>  arrow-spacing
+  218:37  error  Missing space after =>   arrow-spacing
+

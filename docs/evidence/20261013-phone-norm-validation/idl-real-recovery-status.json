@@ -1,0 +1,42 @@
+{
+  "rules": 141,
+  "outputs": 1560,
+  "results": [
+    {
+      "phase": "initial",
+      "exit_code": 0,
+      "seconds": 5.142785341478884,
+      "no_work": false
+    },
+    {
+      "phase": "unchanged",
+      "exit_code": 0,
+      "seconds": 0.01246258057653904,
+      "no_work": true
+    },
+    {
+      "phase": "partial-clean",
+      "exit_code": 0,
+      "seconds": 12.620472024194896,
+      "no_work": false
+    },
+    {
+      "phase": "after-partial-clean",
+      "exit_code": 0,
+      "seconds": 0.03145838342607021,
+      "no_work": true
+    },
+    {
+      "phase": "full-clean",
+      "exit_code": 0,
+      "seconds": 10.802858421579003,
+      "no_work": false
+    },
+    {
+      "phase": "after-full-clean",
+      "exit_code": 0,
+      "seconds": 0.01336814183741808,
+      "no_work": true
+    }
+  ]
+}

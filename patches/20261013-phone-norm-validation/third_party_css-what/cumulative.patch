@@ -1,0 +1,64 @@
+diff --git a/BUILD.gn b/BUILD.gn
+index 48529cd..0f93bc9 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -13,13 +13,41 @@
+ 
+ import("//build/ohos.gni")
+ 
+-ohos_prebuilt_etc("css_what_sources") {
+-  source = "src"
+-  output = "../jsframework/runtime"
++ohos_copy("css_what_fixtures") {
++  sources = [
++    "src/__fixtures__/out.json",
++    "src/__fixtures__/tests.ts",
++  ]
++  outputs = [ "$target_out_dir/../jsframework/runtime/src/__fixtures__/{{source_file_part}}" ]
++  module_source_dir = "$target_out_dir/../jsframework/runtime/src/__fixtures__"
++  module_install_name = ""
++  module_type = "etc"
++  module_install_dir = "etc"
+   license_file = "LICENSE"
+-
+   install_enable = false
++  part_name = "css-what"
++  subsystem_name = "thirdparty"
++}
+ 
++ohos_copy("css_what_sources") {
++  deps = [ ":css_what_fixtures" ]
++  sources = [
++    "src/index.ts",
++    "src/parse.spec.ts",
++    "src/parse.ts",
++    "src/stringify.spec.ts",
++    "src/stringify.ts",
++    "src/types.ts",
++    "src/wpt.spec.ts",
++  ]
++  outputs =
++      [ "$target_out_dir/../jsframework/runtime/src/{{source_file_part}}" ]
++  module_source_dir = "$target_out_dir/../jsframework/runtime"
++  module_install_name = ""
++  module_type = "etc"
++  module_install_dir = "etc"
++  license_file = "LICENSE"
++  install_enable = false
+   part_name = "css-what"
+   subsystem_name = "thirdparty"
+ }
+diff --git a/bundle.json b/bundle.json
+index 9f209fb..26c252d 100644
+--- a/bundle.json
++++ b/bundle.json
+@@ -31,6 +31,9 @@
+             "inner_kits": [
+                 {
+                     "name": "//third_party/css-what:css_what_sources"
++                },
++                {
++                    "name": "//third_party/css-what:css_what_fixtures"
+                 }
+             ],
+             "test": []

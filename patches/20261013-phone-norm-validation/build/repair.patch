@@ -1,0 +1,13 @@
+diff --git a/ohos/packages/BUILD.gn b/ohos/packages/BUILD.gn
+index 7202df08..aa20ad3f 100644
+--- a/ohos/packages/BUILD.gn
++++ b/ohos/packages/BUILD.gn
+@@ -328,6 +328,8 @@ foreach(_platform, target_platform_list) {
+     sources = [
+       _merged_sa_profile_zipfile,
+       _system_install_info_file,
++      "//build/system_arm64e_whitelist.json",
++      "//build/ohos/packages/rules/categorized-libraries.json",
+     ]
+ 
+     outputs = [

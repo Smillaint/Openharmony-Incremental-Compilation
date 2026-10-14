@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "rules": 141,
+  "outputs": 1560,
+  "source_unchanged": true,
+  "raw_tool_sha256": "decd467d6cdb8874f45b65cdd323336c9763e92298717f27ac1eeea1d609c7c7",
+  "scope": "Actual IDL commands extracted from product GN, isolated Ninja outputs and raw baseline compiler; does not replace product graph validation."
+}

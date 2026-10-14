@@ -1,0 +1,1912 @@
+diff --git a/config/components/ets_frontend/generate_static_abc.py b/config/components/ets_frontend/generate_static_abc.py
+index dd0c3eec..044c3392 100755
+--- a/config/components/ets_frontend/generate_static_abc.py
++++ b/config/components/ets_frontend/generate_static_abc.py
+@@ -291,40 +291,36 @@ def validate_arktsconfig(config: Dict) -> None:
+         raise ConfigValidationError("Missing 'outDir' in compilerOptions")
+ 
+ 
+-def modify_arktsconfig_with_cache(arktsconfig_path: str, cache_path: str) -> None:
+-    """
+-    Modify arktsconfig.json to use cache_path as outDir.
+-    Backup the original file, modify it, and restore it after use.
+-    """
+-    backup_path = arktsconfig_path + ".bak"
+-    shutil.copy(arktsconfig_path, backup_path)
+-
++def create_arktsconfig_with_cache(arktsconfig_path: str, cache_path: str) -> str:
++    """Create an arktsconfig copy that uses cache_path as outDir."""
+     try:
+-        config = {}
+-        if os.path.exists(arktsconfig_path):
+-            with open(arktsconfig_path, "r") as f:
+-                content = f.read()
+-                config = json.loads(content)
+-            if "compilerOptions" in config:
+-                config["compilerOptions"]["outDir"] = cache_path
+-
+-        if os.path.exists(arktsconfig_path):
+-            fd = os.open(arktsconfig_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o777)
+-            with os.fdopen(fd, "w", encoding="utf-8") as f:
+-                json.dump(config, f, indent=2, ensure_ascii=False)
++        with open(arktsconfig_path, "r", encoding="utf-8") as f:
++            config = json.load(f)
+     except json.JSONDecodeError as e:
+-        print(f"{arktsconfig_path} Invalid JSON format (cache): {e}", file=sys.stderr)
+-        sys.exit()
+-    except Exception as e:
+-        restore_arktsconfig(arktsconfig_path)
+-        raise e
++        raise ConfigValidationError(
++            f"{arktsconfig_path} Invalid JSON format (cache): {e}"
++        ) from e
+ 
++    if not isinstance(config.get("compilerOptions"), dict):
++        raise ConfigValidationError("Missing 'compilerOptions' in config")
+ 
+-def restore_arktsconfig(arktsconfig_path: str) -> None:
+-    """Restore the original arktsconfig.json from backup."""
+-    backup_path = arktsconfig_path + ".bak"
+-    if os.path.exists(backup_path):
+-        shutil.move(backup_path, arktsconfig_path)
++    compiler_options = config["compilerOptions"]
++    base_url = compiler_options.get("baseUrl")
++    if isinstance(base_url, str) and not os.path.isabs(base_url):
++        config_dir = os.path.dirname(os.path.abspath(arktsconfig_path))
++        compiler_options["baseUrl"] = os.path.normpath(
++            os.path.join(config_dir, base_url)
++        )
++    compiler_options["outDir"] = cache_path
++    validate_arktsconfig(config)
++    cached_config_path = os.path.join(cache_path, "arktsconfig.json")
++    os.makedirs(cache_path, exist_ok=True)
++    fd = os.open(
++        cached_config_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o777
++    )
++    with os.fdopen(fd, "w", encoding="utf-8") as f:
++        json.dump(config, f, indent=2, ensure_ascii=False)
++    return cached_config_path
+ 
+ 
+ def add_to_bootpath(device_dst_file: str, bootpath_json_file: str, target_name: str) -> None:
+@@ -512,7 +508,7 @@ def build_driver_config(args: argparse.Namespace) -> None:
+         json.dump(config, f, indent=2, ensure_ascii=False)
+ 
+ 
+-def handle_configuration(args: argparse.Namespace) -> None:
++def handle_configuration(args: argparse.Namespace) -> str:
+     """
+     Handle the configuration setup based on command-line arguments.
+     """
+@@ -521,7 +517,8 @@ def handle_configuration(args: argparse.Namespace) -> None:
+     elif args.base_url:
+         build_config(args)
+     else:
+-        modify_arktsconfig_with_cache(args.arktsconfig, args.cache_path)
++        return create_arktsconfig_with_cache(args.arktsconfig, args.cache_path)
++    return args.arktsconfig
+ 
+ 
+ def main() -> None:
+@@ -534,14 +531,31 @@ def main() -> None:
+             shutil.rmtree(args.cache_path)
+         os.makedirs(args.cache_path, exist_ok=True)
+ 
+-        handle_configuration(args)
++        effective_arktsconfig = handle_configuration(args)
+ 
+         if args.ui_enable == "True":
+-            execute_driver(args.entry_path, args.arktsconfig, args.env_path, args.node_path, args.timeout_limit)
++            execute_driver(
++                args.entry_path,
++                effective_arktsconfig,
++                args.env_path,
++                args.node_path,
++                args.timeout_limit,
++            )
+         elif args.is_stdlib:
+-            execute_es2panda_stdlib(args.es2panda, args.arktsconfig, args.env_path, args.timeout_limit, args.dst_file)
++            execute_es2panda_stdlib(
++                args.es2panda,
++                effective_arktsconfig,
++                args.env_path,
++                args.timeout_limit,
++                args.dst_file,
++            )
+         else:
+-            execute_es2panda(args.es2panda, args.arktsconfig, args.env_path, args.timeout_limit)
++            execute_es2panda(
++                args.es2panda,
++                effective_arktsconfig,
++                args.env_path,
++                args.timeout_limit,
++            )
+             execute_ark_link(args.ark_link, args.dst_file, args.cache_path, args.env_path, args.timeout_limit)
+ 
+         if args.is_boot_abc:
+@@ -573,9 +587,6 @@ def main() -> None:
+     except Exception as e:
+         print(f"[UNKNOWN] Unexpected error: {e}", file=sys.stderr)
+         sys.exit(EXIT_CODE["UNKNOWN_ERROR"])
+-    finally:
+-        if not args.base_url:
+-            restore_arktsconfig(args.arktsconfig)
+ 
+ 
+ if __name__ == "__main__":
+diff --git a/config/components/idl_tool/idl.gni b/config/components/idl_tool/idl.gni
+index 4e10d6fe..85f6dbb2 100644
+--- a/config/components/idl_tool/idl.gni
++++ b/config/components/idl_tool/idl.gni
+@@ -64,16 +64,10 @@ template("idl_gen_interface") {
+   idl_list = []
+   idl_callback_list = []
+   idl_common_list = []
+-  if (is_arkui_x){
+-    not_needed([ "idl_inner" ])
+-  }else {
+-    idl_inner = false
++  idl_inner = false
++  if (defined(invoker.idl_inner)) {
++    idl_inner = invoker.idl_inner
+   }
+-  
+-  if (defined(invoker.idl_inner) && invoker.idl_inner == true){
+-    idl_inner = true
+-  }
+-
+   if (defined(invoker.sources)) {
+     not_needed(invoker, [ "src_idl" ])
+ 
+@@ -82,7 +76,7 @@ template("idl_gen_interface") {
+   } else {
+     # src_idl support single idl file
+     assert(defined(invoker.src_idl), "src_idl is required")
+-    idl_list += [ invoker.src_idl ]
++    idl_list += [ rebase_path(invoker.src_idl) ]
+   }
+ 
+   if (defined(invoker.sources_callback)) {
+@@ -91,6 +85,8 @@ template("idl_gen_interface") {
+   if (defined(invoker.sources_common)) {
+     idl_common_list += invoker.sources_common
+   }
++  local_common_list = filter_exclude(idl_common_list, [ "//*" ])
++  external_common_list = filter_include(idl_common_list, [ "//*" ])
+ 
+   # language, default cpp, support c/cpp/rust
+   language = "cpp"
+@@ -133,6 +129,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -140,7 +140,8 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+     if (init_with_i) {
+-      sources_all += [ "${target_gen_dir}/" + "i" + name + ".h" ]
++      sources_all +=
++          [ "${target_gen_dir}/" + "i" + interface_header_name + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + name + ".h" ]
+     }
+@@ -153,7 +154,10 @@ template("idl_gen_interface") {
+     sources_proxy += [ "${target_gen_dir}/" + name + "_proxy.cpp" ]
+     sources_stub += [ "${target_gen_dir}/" + name + "_stub.cpp" ]
+     if (defined(invoker.client_enable) && invoker.client_enable) {
+-      sources_all += [ "${target_gen_dir}/" + name + "_client.cpp" ]
++      sources_all += [
++        "${target_gen_dir}/" + name + "_client.cpp",
++        "${target_gen_dir}/" + name + "_client.h",
++      ]
+       sources_proxy += [ "${target_gen_dir}/" + name + "_client.cpp" ]
+     }
+   }
+@@ -182,6 +186,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -192,7 +200,8 @@ template("idl_gen_interface") {
+     out_full_name = string_replace(idl_full_name, idl_name, name)
+ 
+     if (init_with_i) {
+-      out_full_name_i = string_replace(idl_full_name, idl_name, "i" + name)
++      out_full_name_i =
++          string_replace(idl_full_name, idl_name, "i" + interface_header_name)
+       sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
+@@ -208,7 +217,7 @@ template("idl_gen_interface") {
+   }
+ 
+   # common sources
+-  foreach(idl_full_name, idl_common_list) {
++  foreach(idl_full_name, local_common_list) {
+     idl_name = get_path_info(idl_full_name, "file")
+     i = 0
+     name = string_replace(idl_name, ".idl", "")
+@@ -223,7 +232,7 @@ template("idl_gen_interface") {
+     init_with_i = false
+     if (name_split[0] == "") {
+       init_with_i = true
+-      name = string_replace(name, "_i_", "i", 1)
++      name = string_replace(name, "_i_", "", 1)
+     }
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -238,14 +247,11 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
+-    out_full_name = string_replace(idl_full_name, idl_name, name)
+-
+     if (init_with_i) {
+-      out_full_name_i = string_replace(idl_full_name, idl_name, "i" + name)
+-      sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+-    } else {
+-      sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
++      name = "i" + name
+     }
++    out_full_name = string_replace(idl_full_name, idl_name, name)
++    sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
+     sources_all += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+     sources_proxy += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+     sources_stub += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+@@ -253,17 +259,21 @@ template("idl_gen_interface") {
+ 
+   action("$target_name") {
+     inputs = idl_list
++    inputs += rebase_path(external_common_list)
++    # The depfile records recursive imports relative to each source IDL.
+     if (defined(invoker.inputs)) {
+       inputs += invoker.inputs
+     }
++    deps = []
+     if (is_arkui_x || idl_inner) {
+-      deps = idl_build_deps
++      deps += idl_build_deps
+     } else {
+-      if (!defined(external_deps)) {
+-        external_deps = []
+-      }
+-      external_deps += [ "idl_tool:idl(${host_toolchain})" ]
++      external_deps = [ "idl_tool:idl(${host_toolchain})" ]
++    }
++    if (defined(invoker.deps)) {
++      deps += invoker.deps
+     }
++    depfile = "$target_gen_dir/$target_name.d"
+ 
+     script = "//build/config/components/idl_tool/idl.py"
+     args = [
+@@ -277,6 +287,10 @@ template("idl_gen_interface") {
+       string_join(",", rebase_path(sources_all)),
+       "--language",
+       language,
++      "--depfile",
++      rebase_path(depfile, root_build_dir),
++      "--output-root",
++      rebase_path(root_gen_dir, root_build_dir),
+     ]
+     if (defined(invoker.log_domainid)) {
+       args += [
+diff --git a/config/components/idl_tool/idl.py b/config/components/idl_tool/idl.py
+index 4634e3ea..ad535759 100755
+--- a/config/components/idl_tool/idl.py
++++ b/config/components/idl_tool/idl.py
+@@ -18,6 +18,9 @@ import os
+ import subprocess
+ import argparse
+ import sys
++import re
++import tempfile
++from pathlib import Path
+ 
+ 
+ def parse_args():
+@@ -31,6 +34,8 @@ def parse_args():
+     parser.add_argument('--hitrace', help='hitrace switch, default off')
+     parser.add_argument('--language', help='language switch, default cpp')
+     parser.add_argument('--client-enable', help='gen client code')
++    parser.add_argument('--depfile', help='IDL import dependencies')
++    parser.add_argument('--output-root', help='root of generated outputs')
+     arguments = parser.parse_args()
+     return arguments
+ 
+@@ -38,49 +43,92 @@ def parse_args():
+ def run_command(cmd, execution_path):
+     print("cmd:", " ".join(cmd))
+     print("execution_path:", execution_path)
+-    proc = subprocess.Popen(cmd, cwd=execution_path, stdout=subprocess.PIPE)
+-    proc.wait()
++    proc = subprocess.run(cmd, cwd=execution_path)
+     return proc.returncode
+ 
+ 
+ def idl_gen_interface(input_arguments):
+-    if not os.path.exists(input_arguments.dst_path):
+-        try:
+-            os.makedirs(input_arguments.dst_path, 0o750, exist_ok=True)
+-        except (OSError, TypeError) as excep:
+-            raise excep
+-        finally:
+-            pass
+-
+-    print("idl_gen_interface run os.remove start")
+-    dst_file_list = input_arguments.dst_file.split(',')
+-    for dst_file in dst_file_list:
+-        if os.path.exists(dst_file):
+-            os.remove(dst_file)
+-            print("idl_gen_interface run os.remove", dst_file)
+-
+     gen_language = "-gen-cpp"
+     if input_arguments.language == "rust":
+         gen_language = "-gen-rust"
+     elif input_arguments.language == "ts":
+         gen_language = "-gen-ts"
+ 
+-    src_idl_list = input_arguments.src_idl.split(",")
+-    for src_idl in src_idl_list:
+-        cmd = [os.path.join(".", "idl"), gen_language, "-d", input_arguments.dst_path, "-c", src_idl]
+-        if input_arguments.log_domainid:
+-            cmd += ['-log-domainid', input_arguments.log_domainid]
+-        if input_arguments.log_tag:
+-            cmd += ['-log-tag', input_arguments.log_tag]
+-        if input_arguments.hitrace:
+-            cmd += ['-t', input_arguments.hitrace]
+-        if input_arguments.client_enable == 'true':
+-            cmd += ['-client-enable']
+-        ret = run_command(cmd, input_arguments.idl_tool_path)
+-        if ret != 0:
+-            return ret
++    sources = [Path(p).resolve() for p in input_arguments.src_idl.split(',')]
++    outputs = [Path(p).resolve() for p in input_arguments.dst_file.split(',')]
++    destination = Path(input_arguments.dst_path).resolve()
++    output_root = Path(input_arguments.output_root).resolve() if input_arguments.output_root else Path(
++        os.path.commonpath([str(destination)] + [str(p.parent) for p in outputs]))
++    relative_destination = destination.relative_to(output_root)
++    for output in outputs:
++        output.relative_to(output_root)
++    dependencies = collect_idl_inputs(sources)
++    tool_dir = Path(input_arguments.idl_tool_path).resolve()
++    tool = tool_dir / ('idl.exe' if os.name == 'nt' else 'idl')
++    output_root.mkdir(parents=True, exist_ok=True)
++    with tempfile.TemporaryDirectory(prefix='.idl-', dir=output_root) as temporary:
++        staging_root = Path(temporary)
++        staging = staging_root / relative_destination
++        staging.mkdir(parents=True, exist_ok=True)
++        for src_idl in sources:
++            cmd = [str(tool), gen_language, '-d', str(staging), '-c', str(src_idl)]
++            if input_arguments.log_domainid:
++                cmd += ['-log-domainid', input_arguments.log_domainid]
++            if input_arguments.log_tag:
++                cmd += ['-log-tag', input_arguments.log_tag]
++            if input_arguments.hitrace:
++                cmd += ['-t', input_arguments.hitrace]
++            if input_arguments.client_enable == 'true':
++                cmd += ['-client-enable']
++            ret = run_command(cmd, str(tool_dir))
++            if ret != 0:
++                return ret
++        # Validate the complete declared output set before replacing any file.
++        for output in outputs:
++            generated = staging_root / output.relative_to(output_root)
++            if not generated.is_file():
++                raise RuntimeError('IDL did not generate declared output: {}'.format(output))
++        for output in outputs:
++            generated = staging_root / output.relative_to(output_root)
++            publish_if_changed(generated, output)
++    if input_arguments.depfile:
++        write_depfile(input_arguments.depfile, outputs[0], dependencies | {tool})
+     return 0
+ 
+ 
++def collect_idl_inputs(sources):
++    dependencies = set()
++    pending = list(sources)
++    while pending:
++        source = pending.pop().resolve()
++        if source in dependencies:
++            continue
++        dependencies.add(source)
++        text = source.read_text(encoding='utf-8')
++        text = re.sub(r'/\*.*?\*/|//[^\n]*', '', text, flags=re.S)
++        for name in re.findall(r'\bimport\s+([\w./]+)\s*;', text):
++            pending.append(source.parent / (name + '.idl'))
++    return dependencies
++
++
++def publish_if_changed(source, destination):
++    content = source.read_bytes()
++    if destination.is_file() and destination.read_bytes() == content:
++        return
++    destination.parent.mkdir(parents=True, exist_ok=True)
++    os.replace(source, destination)
++
++
++def write_depfile(path, output, dependencies):
++    def escape(value):
++        value = os.path.relpath(value).replace(os.sep, '/')
++        return value.replace('$', '$$').replace('#', '\\#').replace(' ', '\\ ').replace(':', '\\:')
++
++    depfile = Path(path)
++    depfile.parent.mkdir(parents=True, exist_ok=True)
++    depfile.write_text('{}: {}\n'.format(escape(output), ' '.join(
++        escape(p) for p in sorted(dependencies))), encoding='utf-8')
++
++
+ if __name__ == '__main__':
+     sys.exit(idl_gen_interface(parse_args()))
+diff --git a/hb/services/loader.py b/hb/services/loader.py
+index 8266cce7..349dd708 100644
+--- a/hb/services/loader.py
++++ b/hb/services/loader.py
+@@ -191,8 +191,7 @@ class OHOSLoader(LoadInterface):
+                     and component not in add_parts:
+                 del new_components_data[component]
+         self._merge_components_info(new_components_data)
+-        os.remove(self.components_file)
+-        write_json_file(self.components_file, new_components_data)
++        write_json_file(self.components_file, new_components_data, check_changes=True)
+         
+ 
+ # check method
+@@ -378,7 +377,7 @@ class OHOSLoader(LoadInterface):
+             os.mkdir(system_etc_path)
+         syscap_info_json = os.path.join(
+             system_etc_path, "SystemCapability.json")
+-        write_json_file(syscap_info_json, syscap_info_dict)
++        write_json_file(syscap_info_json, syscap_info_dict, check_changes=True)
+         LogUtil.hb_info(
+             "generate syscap info file to '{}'".format(syscap_info_json), mode=self.config.log_mode)
+         target_syscap_with_part_name_list.sort(
+@@ -386,17 +385,28 @@ class OHOSLoader(LoadInterface):
+         syscap_info_with_part_name_file = os.path.join(
+             system_etc_path, "syscap.json")
+         write_json_file(syscap_info_with_part_name_file, {
+-            'components': target_syscap_with_part_name_list})
++            'components': target_syscap_with_part_name_list}, check_changes=True)
+         LogUtil.hb_info("generate syscap info with part name list to '{}'".format(
+             syscap_info_with_part_name_file), mode=self.config.log_mode)
+         if not os.path.exists(os.path.join(system_etc_path, "param/")):
+             os.mkdir(os.path.join(system_etc_path, "param/"))
+         target_syscap_for_init_file = os.path.join(
+             system_etc_path, "param/syscap.para")
+-        with os.fdopen(os.open(target_syscap_for_init_file,
+-                                os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 
+-                                stat.S_IWUSR | stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH), 'w') as file:
+-            file.writelines(sorted(target_syscap_for_init_list))
++        target_syscap_for_init_content = ''.join(
++            sorted(target_syscap_for_init_list))
++        need_write = True
++        if os.path.isfile(target_syscap_for_init_file):
++            try:
++                with open(target_syscap_for_init_file, 'r') as init_file:
++                    if init_file.read() == target_syscap_for_init_content:
++                        need_write = False
++            except Exception:
++                pass
++        if need_write:
++            with os.fdopen(os.open(target_syscap_for_init_file,
++                                    os.O_WRONLY | os.O_CREAT | os.O_TRUNC,
++                                    stat.S_IWUSR | stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH), 'w') as file:
++                file.writelines(sorted(target_syscap_for_init_list))
+         LogUtil.hb_info("generate target syscap for init list to '{}'".format(
+             target_syscap_for_init_file), mode=self.config.log_mode)
+ 
+diff --git a/hb/util/io_util.py b/hb/util/io_util.py
+index 2b635b20..323fe6bc 100755
+--- a/hb/util/io_util.py
++++ b/hb/util/io_util.py
+@@ -42,8 +42,19 @@ class IoUtil(metaclass=NoInstance):
+ 
+     @staticmethod
+     def dump_json_file(dump_file: str, json_data: dict or list):
++        file_dir = os.path.dirname(os.path.abspath(dump_file))
++        if not os.path.exists(file_dir):
++            os.makedirs(file_dir, exist_ok=True)
++        new_content = json.dumps(json_data, ensure_ascii=False, indent=2)
++        if os.path.isfile(dump_file):
++            try:
++                with open(dump_file, 'r', encoding='utf-8') as existing:
++                    if existing.read() == new_content:
++                        return
++            except Exception:
++                pass
+         with open(dump_file, 'wt', encoding='utf-8') as json_file:
+-            json.dump(json_data, json_file, ensure_ascii=False, indent=2)
++            json_file.write(new_content)
+ 
+     @staticmethod
+     def read_file(file_path: str):
+diff --git a/hb/util/loader/load_ohos_build.py b/hb/util/loader/load_ohos_build.py
+index 1c496831..5cac8099 100644
+--- a/hb/util/loader/load_ohos_build.py
++++ b/hb/util/loader/load_ohos_build.py
+@@ -787,12 +787,16 @@ def process_other_parts(part_name, parts_config_dict, parts_info_output_path):
+         parts_info_file = os.path.join(parts_info_output_path,
+                                        part_name + ".json")
+         if part_name == 'hisysevent_config':
++            check_changes = True
+             parts_info_file = os.path.join(parts_info_output_path,
+                                            'hisysevent_configs' + ".json")
++        else:
++            check_changes = False
+         if part_name == 'parts_inner_kits_info':
+             parts_info_file = os.path.join(parts_info_output_path,
+                                            'inner_kits_info' + ".json")
+-        write_json_file(parts_info_file, parts_info)
++        write_json_file(parts_info_file, parts_info,
++                        check_changes=check_changes)
+         LogUtil.hb_info("generate '{}' info to '{}'".format(part_name,
+                                                             parts_info_file), mode=Config.log_mode)
+ 
+diff --git a/lite/config/component/lite_component.gni b/lite/config/component/lite_component.gni
+index f0ad3d66..97495c0f 100644
+--- a/lite/config/component/lite_component.gni
++++ b/lite/config/component/lite_component.gni
+@@ -223,7 +223,7 @@ template("build_ext_component") {
+     }
+ 
+     # external component build log
+-    target_dir = rebase_path("${target_out_dir}/build.log")
++    target_dir = rebase_path("${target_out_dir}/${target_name}_build_ext_components.txt")
+     args += [ "--target_dir=${target_dir}" ]
+ 
+     # external component error log if compile failed
+diff --git a/ohos/app/app_internal.gni b/ohos/app/app_internal.gni
+index fe5d6dee..266a9124 100644
+--- a/ohos/app/app_internal.gni
++++ b/ohos/app/app_internal.gni
+@@ -561,7 +561,8 @@ template("app_sign") {
+       _certificate_file,
+     ]
+ 
+-    outputs = [ "${target_out_dir}/${target_name}.stamp" ]
++    _sign_result = "${target_out_dir}/${target_name}.sign_result.json"
++    outputs = [ _sign_result ]
+ 
+     args = [
+       "--keyPwd",
+@@ -586,6 +587,8 @@ template("app_sign") {
+       rebase_path(hap_out_dir, root_build_dir),
+       "--hap-name",
+       hap_name,
++      "--output-file",
++      rebase_path(_sign_result, root_build_dir),
+     ]
+     if (defined(invoker.hap_list)) {
+       args += [
+diff --git a/ohos/common/BUILD.gn b/ohos/common/BUILD.gn
+index 114e62a1..2b2de9cc 100755
+--- a/ohos/common/BUILD.gn
++++ b/ohos/common/BUILD.gn
+@@ -43,18 +43,35 @@ generated_file("generate_src_installed_info") {
+   output_conversion = "json"
+ }
+ 
++raw_host_info_file = "$target_gen_dir/all_parts_host.json"
+ host_info_file = "${root_build_dir}/all_parts_host.json"
+ 
+-generated_file("generate_host_info") {
++generated_file("generate_host_info_raw") {
+   deps = []
+   foreach(part_label, parts_list) {
+     deps += [ get_label_info(part_label, "label_with_toolchain") ]
+   }
+-  outputs = [ host_info_file ]
++  outputs = [ raw_host_info_file ]
+   data_keys = [ "part_host_info" ]
+   output_conversion = "json"
+ }
+ 
++action("generate_host_info") {
++  script = "//build/ohos/common/generate_host_info.py"
++  deps = [ ":generate_host_info_raw" ]
++  inputs = [
++    raw_host_info_file,
++    "//build/scripts/util/file_utils.py",
++  ]
++  outputs = [ host_info_file ]
++  args = [
++    "--input-file",
++    rebase_path(raw_host_info_file, root_build_dir),
++    "--output-file",
++    rebase_path(host_info_file, root_build_dir),
++  ]
++}
++
+ arm64e_file = "${root_build_dir}/all_arm64e_parts_host.json"
+ 
+ generated_file("generate_arm64e_info") {
+diff --git a/ohos/common/binary_install_info.py b/ohos/common/binary_install_info.py
+index 05da9070..963843d3 100755
+--- a/ohos/common/binary_install_info.py
++++ b/ohos/common/binary_install_info.py
+@@ -52,7 +52,7 @@ def binary_install_subsystem(dist_parts_info_file: str,
+ 
+ 
+ def output_installed_info(binary_subsystem_info: str, required_parts: list):
+-    write_json_file(binary_subsystem_info, required_parts)
++    write_json_file(binary_subsystem_info, required_parts, check_changes=True)
+ 
+ 
+ def main():
+@@ -70,7 +70,8 @@ def main():
+ 
+     if args.depfile:
+         _dep_files = []
+-        _dep_files.append(args.dist_parts_info_file)
++        if os.path.exists(args.dist_parts_info_file):
++            _dep_files.append(args.dist_parts_info_file)
+         _dep_files.append(args.parts_src_installed_info_file)
+         build_utils.write_depfile(args.depfile,
+                                  args.binary_installed_info_file,
+diff --git a/ohos/common/generate_host_info.py b/ohos/common/generate_host_info.py
+new file mode 100755
+index 00000000..34c0e73e
+--- /dev/null
++++ b/ohos/common/generate_host_info.py
+@@ -0,0 +1,54 @@
++#!/usr/bin/env python3
++# -*- coding: utf-8 -*-
++# Copyright (c) 2026 Huawei Device Co., Ltd.
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++import argparse
++import json
++import os
++import sys
++
++sys.path.append(
++    os.path.dirname(os.path.dirname(os.path.dirname(
++        os.path.abspath(__file__)))))
++from scripts.util.file_utils import read_json_file, write_json_file  # noqa: E402
++
++
++def _canonical_entry(entry: dict):
++    return json.dumps(entry, ensure_ascii=False, sort_keys=True,
++                      separators=(',', ':'))
++
++
++def normalize_host_info(host_info: list):
++    if not isinstance(host_info, list):
++        raise TypeError('host info must be a list')
++    if not all(isinstance(entry, dict) for entry in host_info):
++        raise TypeError('each host info entry must be a dictionary')
++    return sorted(host_info, key=_canonical_entry)
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--input-file', required=True)
++    parser.add_argument('--output-file', required=True)
++    args = parser.parse_args()
++
++    host_info = read_json_file(args.input_file)
++    normalized_host_info = normalize_host_info(host_info)
++    write_json_file(args.output_file, normalized_host_info,
++                    check_changes=True)
++    return 0
++
++
++if __name__ == '__main__':
++    sys.exit(main())
+diff --git a/ohos/common/merge_all_subsystem.py b/ohos/common/merge_all_subsystem.py
+index 3507ff1a..63064c93 100755
+--- a/ohos/common/merge_all_subsystem.py
++++ b/ohos/common/merge_all_subsystem.py
+@@ -63,7 +63,8 @@ def main():
+ 
+     all_subsystem_info = merge_subsystem(args.src_install_info_file,
+                                          args.binary_install_info_file)
+-    write_json_file(args.all_subsystem_info_file, all_subsystem_info)
++    write_json_file(args.all_subsystem_info_file, all_subsystem_info,
++                    check_changes=True)
+ 
+     if args.depfile:
+         _dep_files = []
+diff --git a/ohos/generate_part_info.py b/ohos/generate_part_info.py
+index 0e2d14af..1eea205f 100755
+--- a/ohos/generate_part_info.py
++++ b/ohos/generate_part_info.py
+@@ -104,13 +104,16 @@ def gen_output_file(part_name: str, origin_part_name: str, all_modules_file: str
+     part_install_modules.extend(thirdparty_module_list)
+     part_install_modules.extend(hdi_module_list)
+     # write install modules file
+-    write_json_file(install_modules_file, part_install_modules)
++    write_json_file(install_modules_file, part_install_modules,
++                    check_changes=True)
+ 
+     # add no install modules to dict, example: host target
+     modules_info_dict[part_name] = part_no_install_modules
+     # write dep modules file
+-    write_json_file(dep_modules_file, modules_info_dict)
+-    write_json_file(output_host_file, part_host_modules)
++    write_json_file(dep_modules_file, modules_info_dict,
++                    check_changes=True)
++    write_json_file(output_host_file, part_host_modules,
++                    check_changes=True)
+ 
+ 
+ def main():
+diff --git a/ohos/hisysevent/hisysevent_process.py b/ohos/hisysevent/hisysevent_process.py
+index 5feacbf0..bd21745a 100755
+--- a/ohos/hisysevent/hisysevent_process.py
++++ b/ohos/hisysevent/hisysevent_process.py
+@@ -101,12 +101,14 @@ def main(argv):
+                                                     src_part_list,
+                                                     args.source_root_dir,
+                                                     args.gn_root_build_dir)
++    depfiles.extend(hisysevent_config_files)
+ 
+     _output_path = os.path.dirname(args.hisysevent_install_info_file)
+     install_info_list = _get_install_info(hisysevent_config_files,
+                                           _output_path,
+                                           args.config_install_dest_dir)
+-    write_json_file(args.hisysevent_install_info_file, install_info_list)
++    write_json_file(args.hisysevent_install_info_file, install_info_list,
++                    check_changes=True)
+     build_utils.write_depfile(args.depfile, args.hisysevent_install_info_file,
+                               depfiles)
+ 
+diff --git a/ohos/images/BUILD.gn b/ohos/images/BUILD.gn
+index 8a501f86..929683a0 100644
+--- a/ohos/images/BUILD.gn
++++ b/ohos/images/BUILD.gn
+@@ -306,15 +306,23 @@ foreach(_platform, target_platform_list) {
+         image_input_path = "$current_platform_dir/data"
+       }
+ 
++      actual_output_image_file = output_image_file
++      if (_image_name == "ramdisk") {
++        actual_output_image_file = "$current_platform_dir/images/ramdisk.img"
++      } else if (_image_name == "updater_ramdisk") {
++        actual_output_image_file = "$current_platform_dir/images/updater.img"
++      }
+       sources = [
+         image_config_file,
+         system_module_info_list,
+         system_modules_list,
+       ]
+-      outputs = [ output_image_file ]
++      outputs = [ actual_output_image_file ]
+       args = [
+         "--depfile",
+         rebase_path(depfile, root_build_dir),
++        "--depfile-target",
++        rebase_path(actual_output_image_file, root_build_dir),
+         "--image-name",
+         _image_name,
+         "--input-path",
+diff --git a/ohos/images/build_image.py b/ohos/images/build_image.py
+index d0ebca52..3f6bde77 100755
+--- a/ohos/images/build_image.py
++++ b/ohos/images/build_image.py
+@@ -152,6 +152,7 @@ def _make_image(args):
+ def main(argv):
+     parser = argparse.ArgumentParser()
+     parser.add_argument('--depfile', required=True)
++    parser.add_argument('--depfile-target', required=False)
+     parser.add_argument('--image-name', required=True)
+     parser.add_argument('--build-variant', required=True)
+     parser.add_argument('--image-config-file', required=True)
+@@ -172,6 +173,8 @@ def main(argv):
+         _prepare_userdata(args.input_path)
+     elif args.image_name == 'eng_system':
+         _prepare_eng_ststem(args.input_path, args.build_variant)
++    if not os.path.isdir(args.input_path):
++        os.makedirs(args.input_path, exist_ok=True)
+     if os.path.isdir(args.input_path):
+         _make_image(args)
+         _dep_files = []
+@@ -181,7 +184,7 @@ def main(argv):
+         if (os.path.exists(args.device_image_config_file)):
+             _dep_files.append(args.device_image_config_file)
+         build_utils.write_depfile(args.depfile,
+-                                  args.output_image_path,
++                                  args.depfile_target or args.output_image_path,
+                                   _dep_files,
+                                   add_pydeps=False)
+     return 0
+diff --git a/ohos/notice/collect_module_notice_file.py b/ohos/notice/collect_module_notice_file.py
+index af841a5f..92d29ebb 100755
+--- a/ohos/notice/collect_module_notice_file.py
++++ b/ohos/notice/collect_module_notice_file.py
+@@ -59,12 +59,12 @@ def find_other_files(license_file_path):
+ 
+ 
+ def find_file_recursively(current_dir: str, target_files: list):
+-    if is_top_dir(current_dir):
+-        return None
+     for file in target_files:
+         candidate = os.path.join(current_dir, file)
+         if os.path.isfile(candidate):
+             return candidate
++    if is_top_dir(current_dir):
++        return None
+     return find_file_recursively(os.path.dirname(current_dir), target_files)
+ 
+ 
+diff --git a/ohos/notice/collect_system_notice_files.py b/ohos/notice/collect_system_notice_files.py
+index f86585fe..b5c4db7a 100755
+--- a/ohos/notice/collect_system_notice_files.py
++++ b/ohos/notice/collect_system_notice_files.py
+@@ -77,7 +77,6 @@ def collect_notice_files(options, dest_dir: str, depfiles: str):
+                 generate_notice_files(dest_dir, module_info, depfiles)
+ 
+     notice_files = build_utils.get_all_files(options.notice_root_dir)
+-    depfiles.extend(notice_files)
+     for file in notice_files:
+         dest = os.path.join(dest_dir,
+                             os.path.relpath(file, options.notice_root_dir))
+diff --git a/ohos/packages/BUILD.gn b/ohos/packages/BUILD.gn
+index 6ff23ce5..aa20ad3f 100644
+--- a/ohos/packages/BUILD.gn
++++ b/ohos/packages/BUILD.gn
+@@ -11,6 +11,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
++import("//build/config/ohos/copy_ex.gni")
+ import("//build/config/python.gni")
+ import("//build/ohos/sa_profile/sa_profile.gni")
+ 
+@@ -79,19 +80,44 @@ action("packer") {
+ 
+ all_parts_host_info_file = "${root_build_dir}/all_parts_host.json"
+ all_host_symlink_file = "${root_build_dir}/all_host_symlink.json"
++host_symlink_info_file = "$target_gen_dir/host_symlink_info.json"
+ 
+-action("generate_host_symlink") {
++action("collect_host_symlink_info") {
+   script = "//build/ohos/packages/generate_host_symlink.py"
+-  inputs = [ all_parts_host_info_file ]
+-  outputs = [ all_host_symlink_file ]
++  inputs = [
++    all_parts_host_info_file,
++    "//build/scripts/util/build_utils.py",
++    "//build/scripts/util/file_utils.py",
++  ]
+   deps = [ "//build/ohos/common:generate_host_info" ]
++  outputs = [ host_symlink_info_file ]
++  depfile = "$target_gen_dir/$target_name.d"
+   args = [
+     "--all-parts-host-info-file",
+     rebase_path(all_parts_host_info_file),
+     "--output-file",
+-    rebase_path(all_host_symlink_file),
++    rebase_path(host_symlink_info_file, root_build_dir),
+     "--root-build-dir",
+     rebase_path(root_build_dir),
++    "--depfile",
++    rebase_path(depfile, root_build_dir),
++  ]
++}
++
++action("generate_host_symlink") {
++  script = "//build/ohos/packages/generate_host_symlink.py"
++  inputs = [
++    host_symlink_info_file,
++    "//build/scripts/util/build_utils.py",
++    "//build/scripts/util/file_utils.py",
++  ]
++  deps = [ ":collect_host_symlink_info" ]
++  outputs = [ all_host_symlink_file ]
++  args = [
++    "--symlink-info-file",
++    rebase_path(host_symlink_info_file, root_build_dir),
++    "--output-file",
++    rebase_path(all_host_symlink_file),
+   ]
+ }
+ 
+@@ -161,18 +187,20 @@ foreach(_platform, target_platform_list) {
+ 
+   _notice_root_dir = "${current_platform_dir}/NOTICE_FILES"
+   _collected_notice_zipfile = "${current_platform_dir}/system_notice_files.zip"
++  _staged_notice_zipfile =
++      "$target_gen_dir/system_notice_files_${_platform}.zip"
+ 
+-  action_with_pydeps("collect_notice_files__${_platform}") {
++  action_with_pydeps("stage_notice_files__${_platform}") {
+     deps = [ ":${_platform}_parts_list" ]
+     script = "//build/ohos/notice/collect_system_notice_files.py"
+     depfile = "$target_gen_dir/$target_name.d"
+     sources = [ _system_install_info_file ]
+-    outputs = [ _collected_notice_zipfile ]
++    outputs = [ _staged_notice_zipfile ]
+     args = [
+       "--install-info-file",
+       rebase_path(_system_install_info_file, root_build_dir),
+       "--output-file",
+-      rebase_path(_collected_notice_zipfile, root_build_dir),
++      rebase_path(_staged_notice_zipfile, root_build_dir),
+       "--depfile",
+       rebase_path(depfile, root_build_dir),
+       "--notice-root-dir",
+@@ -180,6 +208,14 @@ foreach(_platform, target_platform_list) {
+     ]
+   }
+ 
++  copy_ex("collect_notice_files__${_platform}") {
++    deps = [ ":stage_notice_files__${_platform}" ]
++    dest = current_platform_dir
++    renaming_sources = [ _staged_notice_zipfile ]
++    renaming_destinations = [ "system_notice_files.zip" ]
++    outputs = [ _collected_notice_zipfile ]
++  }
++
+   _merged_notice_txt = "${current_platform_dir}/NOTICE.txt"
+   _notice_module_info_file = "${current_platform_dir}/NOTICE_module_info.json"
+   action_with_pydeps("merge_system_notice_file_${current_platform}") {
+@@ -292,6 +328,8 @@ foreach(_platform, target_platform_list) {
+     sources = [
+       _merged_sa_profile_zipfile,
+       _system_install_info_file,
++      "//build/system_arm64e_whitelist.json",
++      "//build/ohos/packages/rules/categorized-libraries.json",
+     ]
+ 
+     outputs = [
+@@ -358,9 +396,32 @@ foreach(_platform, target_platform_list) {
+                       root_build_dir) ]
+   }
+ 
++  validation_install_modules =
++      "$target_gen_dir/${_platform}_validation_install_modules.json"
++  action("${_platform}_validation_install_modules") {
++    script = "//build/ohos/packages/stabilize_json_file.py"
++    deps = [ ":${_platform}_install_modules" ]
++    inputs = [
++      system_install_modules,
++      "//build/scripts/util/file_utils.py",
++    ]
++    outputs = [ validation_install_modules ]
++    args = [
++      "--input-file",
++      rebase_path(system_install_modules, root_build_dir),
++      "--output-file",
++      rebase_path(validation_install_modules, root_build_dir),
++    ]
++  }
++
+   action("check_seccomp_filter_name") {
+     script = "//build/ohos/packages/check_seccomp_library_name.py"
+-    deps = [ ":${_platform}_install_modules" ]
++    deps = [ ":${_platform}_validation_install_modules" ]
++    inputs = [
++      validation_install_modules,
++      "//build/scripts/util/build_utils.py",
++    ]
++    depfile = "$target_gen_dir/$target_name.d"
+ 
+     # result is not used in script
+     process_validate_result =
+@@ -389,13 +450,22 @@ foreach(_platform, target_platform_list) {
+       rebase_path(_system_cfg_folder, root_build_dir),
+       "--system-seccomp-lib-path",
+       rebase_path(_system_seccomp_folder, root_build_dir),
++      "--result-path",
++      rebase_path(process_validate_result, root_build_dir),
++      "--depfile",
++      rebase_path(depfile, root_build_dir),
+     ]
+   }
+ 
+   action("process_field_validate") {
+     script = "//build/ohos/packages/process_field_validate.py"
+ 
+-    deps = [ ":${_platform}_install_modules" ]
++    deps = [ ":${_platform}_validation_install_modules" ]
++    inputs = [
++      validation_install_modules,
++      "//build/scripts/util/build_utils.py",
++    ]
++    depfile = "$target_gen_dir/$target_name.d"
+ 
+     # result is not used in script
+     process_validate_result = "${current_platform_dir}/cfg_validate_result.txt"
+@@ -428,6 +498,10 @@ foreach(_platform, target_platform_list) {
+       rebase_path(_privilege_whitelist, root_build_dir),
+       "--critical-reboot-process-list-path",
+       rebase_path(_critical_whitelist, root_build_dir),
++      "--result-path",
++      rebase_path(process_validate_result, root_build_dir),
++      "--depfile",
++      rebase_path(depfile, root_build_dir),
+     ]
+   }
+ }
+diff --git a/ohos/packages/check_seccomp_library_name.py b/ohos/packages/check_seccomp_library_name.py
+index b2f27934..7cab14b1 100755
+--- a/ohos/packages/check_seccomp_library_name.py
++++ b/ohos/packages/check_seccomp_library_name.py
+@@ -21,6 +21,11 @@ import argparse
+ import json
+ import os
+ 
++sys.path.append(
++    os.path.dirname(os.path.dirname(os.path.dirname(
++        os.path.abspath(__file__)))))
++from scripts.util import build_utils  # noqa: E402
++
+ 
+ class ValidateError(Exception):
+     def __init__(self, msg):
+@@ -44,17 +49,19 @@ def parse_cfg_file(file_name: str):
+     return services_name
+ 
+ 
+-def collect_cfg_services_name(cfg_dir: str):
++def collect_cfg_services_name(cfg_dir: str, depfiles: set):
+     services_name = set()
+     if not os.path.exists(cfg_dir):
+         return services_name
+-    for file in os.listdir(cfg_dir):
++    for file in sorted(os.listdir(cfg_dir)):
+         if file.endswith(".cfg"):
+-            services_name |= parse_cfg_file("{}/{}".format(cfg_dir, file))
++            cfg_file = os.path.join(cfg_dir, file)
++            depfiles.add(cfg_file)
++            services_name |= parse_cfg_file(cfg_file)
+     return services_name
+ 
+ 
+-def collect_seccomp_services_name(lib_dir: str):
++def collect_seccomp_services_name(lib_dir: str, depfiles: set):
+     services_name = set()
+     name_allow_list = [
+         'system',
+@@ -70,7 +77,9 @@ def collect_seccomp_services_name(lib_dir: str):
+     ]
+     if not os.path.exists(lib_dir):
+         return services_name
+-    for file in os.listdir(lib_dir):
++    for file in sorted(os.listdir(lib_dir)):
++        seccomp_file = os.path.join(lib_dir, file)
++        depfiles.add(seccomp_file)
+         if not file.startswith('lib') or not file.endswith('_filter.z.so'):
+             raise ValidateError('seccomp directory has other shared library except seccomp policy library')
+ 
+@@ -90,29 +99,58 @@ def check_seccomp_services_name(servces_name: str, seccomp_services_name: str):
+     return
+ 
+ 
++def write_validation_result(result_path: str):
++    result_dir = os.path.dirname(os.path.abspath(result_path))
++    os.makedirs(result_dir, exist_ok=True)
++    with build_utils.atomic_output(result_path) as output_file:
++        output_file.write(b'validation succeeded\n')
++
++
++def remove_validation_result(result_path: str):
++    if os.path.isfile(result_path):
++        os.unlink(result_path)
++
++
+ def main():
+     parser = argparse.ArgumentParser(
+       description='check whehter name is legal used for the seccomp policy shared library')
+     parser.add_argument('--vendor-cfg-path', type=str,
+                         help=('input vendor cfg path\n'))
+-
+     parser.add_argument('--vendor-seccomp-lib-path', type=str,
+                         help=('input vendor seccomp cfg path\n'))
+-
+     parser.add_argument('--system-cfg-path', type=str,
+                         help=('input system cfg path\n'))
+-
+     parser.add_argument('--system-seccomp-lib-path', type=str,
+                         help='input system seccomp cfg path\n')
++    parser.add_argument('--result-path', type=str, required=True,
++                        help='output success marker file path\n')
++    parser.add_argument('--depfile', type=str, required=True,
++                        help='output dependency file path\n')
+ 
+     args = parser.parse_args()
+-    vendor_services_name = collect_cfg_services_name(args.vendor_cfg_path)
+-    vendor_seccomp_services_name = collect_seccomp_services_name(args.vendor_seccomp_lib_path)
+-    check_seccomp_services_name(vendor_services_name, vendor_seccomp_services_name)
+-
+-    system_services_name = collect_cfg_services_name(args.system_cfg_path)
+-    system_seccomp_services_name = collect_seccomp_services_name(args.system_seccomp_lib_path)
+-    check_seccomp_services_name(system_services_name, system_seccomp_services_name)
++    depfiles = set()
++    try:
++        vendor_services_name = collect_cfg_services_name(
++            args.vendor_cfg_path, depfiles)
++        vendor_seccomp_services_name = collect_seccomp_services_name(
++            args.vendor_seccomp_lib_path, depfiles)
++        check_seccomp_services_name(vendor_services_name,
++                                    vendor_seccomp_services_name)
++
++        system_services_name = collect_cfg_services_name(
++            args.system_cfg_path, depfiles)
++        system_seccomp_services_name = collect_seccomp_services_name(
++            args.system_seccomp_lib_path, depfiles)
++        check_seccomp_services_name(system_services_name,
++                                    system_seccomp_services_name)
++    except Exception:
++        remove_validation_result(args.result_path)
++        raise
++
++    build_utils.write_depfile(args.depfile, args.result_path, depfiles,
++                              add_pydeps=False)
++    write_validation_result(args.result_path)
++    return 0
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/ohos/packages/generate_host_symlink.py b/ohos/packages/generate_host_symlink.py
+index a27d8228..8109749f 100755
+--- a/ohos/packages/generate_host_symlink.py
++++ b/ohos/packages/generate_host_symlink.py
+@@ -22,40 +22,71 @@ sys.path.append(
+     os.path.dirname(os.path.dirname(os.path.dirname(
+         os.path.abspath(__file__)))))
+ from scripts.util.file_utils import read_json_file, write_json_file  # noqa: E402
++from scripts.util import build_utils  # noqa: E402
+ 
+ 
+-def _do_symlink(all_host_parts_info: str, output_file: str, root_build_dir: str):
+-    output_result = {}
++def _collect_symlink_info(all_host_parts_info: list, root_build_dir: str):
++    symlink_info = {}
++    depfiles = set()
+     for part_info in all_host_parts_info:
+         part_info_file = part_info.get('part_info_file')
++        depfiles.add(part_info_file)
+         part_modules_host_info = read_json_file(part_info_file)
+         for info in part_modules_host_info:
+-            if info:
+-                module_def = info.get('module_def')
+-                module_info_file = info.get('module_info_file')
+-                module_info = read_json_file(module_info_file)
+-                if 'symlink' in module_info:
+-                    source_file = module_info.get('source')
+-                    source_file = os.path.join(root_build_dir, source_file)
+-                    symlink_dest = module_info.get('symlink')
+-                    
+-                    for name in symlink_dest:
+-                        symlink_dest_dir = os.path.dirname(source_file)
+-                        symlink_dest_file = os.path.join(root_build_dir, symlink_dest_dir, name)
+-                        if not os.path.exists(symlink_dest_file):
+-                            subprocess.run(['ln', '-sf', str(source_file), str(symlink_dest_file)])
+-                            output_result[symlink_dest_file] = str(source_file)
+-    write_json_file(output_file, output_result)
++            if not info:
++                continue
++            module_info_file = info.get('module_info_file')
++            depfiles.add(module_info_file)
++            module_info = read_json_file(module_info_file)
++            if 'symlink' not in module_info:
++                continue
++            source_file = os.path.join(root_build_dir,
++                                       module_info.get('source'))
++            symlink_dest_dir = os.path.dirname(source_file)
++            for name in module_info.get('symlink'):
++                symlink_dest_file = os.path.join(symlink_dest_dir, name)
++                symlink_info[symlink_dest_file] = str(source_file)
++    return symlink_info, depfiles
++
++
++def _create_symlinks(symlink_info: dict, output_file: str):
++    output_result = {}
++    for symlink_dest_file, source_file in sorted(symlink_info.items()):
++        if os.path.exists(symlink_dest_file):
++            continue
++        subprocess.run(
++            ['ln', '-sf', str(source_file), str(symlink_dest_file)],
++            check=True)
++        output_result[symlink_dest_file] = str(source_file)
++    write_json_file(output_file, output_result, check_changes=True)
+ 
+ 
+ def main():
+     parser = argparse.ArgumentParser()
+-    parser.add_argument('--all-parts-host-info-file', required=True)
++    input_group = parser.add_mutually_exclusive_group(required=True)
++    input_group.add_argument('--all-parts-host-info-file')
++    input_group.add_argument('--symlink-info-file')
+     parser.add_argument('--output-file', required=True)
+-    parser.add_argument('--root-build-dir', required=True)
++    parser.add_argument('--root-build-dir')
++    parser.add_argument('--depfile')
+     args = parser.parse_args()
+-    all_host_parts_info = read_json_file(args.all_parts_host_info_file)
+-    _do_symlink(all_host_parts_info, args.output_file, args.root_build_dir)
++
++    if args.all_parts_host_info_file:
++        if not args.root_build_dir:
++            parser.error('--root-build-dir is required when collecting info')
++        all_host_parts_info = read_json_file(args.all_parts_host_info_file)
++        symlink_info, depfiles = _collect_symlink_info(
++            all_host_parts_info, args.root_build_dir)
++        write_json_file(args.output_file, symlink_info, check_changes=True)
++        if not args.depfile:
++            parser.error('--depfile is required when collecting info')
++        depfiles.add(args.all_parts_host_info_file)
++        depfile_output = os.path.relpath(args.output_file, os.getcwd())
++        build_utils.write_depfile(args.depfile, depfile_output, depfiles,
++                                  add_pydeps=False)
++    else:
++        symlink_info = read_json_file(args.symlink_info_file)
++        _create_symlinks(symlink_info, args.output_file)
+     return 0
+ 
+ 
+diff --git a/ohos/packages/modules_install.py b/ohos/packages/modules_install.py
+index 9f42515f..a3d7b084 100755
+--- a/ohos/packages/modules_install.py
++++ b/ohos/packages/modules_install.py
+@@ -21,7 +21,7 @@ import shutil
+ sys.path.append(
+     os.path.dirname(os.path.dirname(os.path.dirname(
+         os.path.abspath(__file__)))))
+-from scripts.util.file_utils import read_json_file, write_json_file, write_file  # noqa: E402
++from scripts.util.file_utils import read_json_file, write_json_file  # noqa: E402
+ from scripts.util import build_utils  # noqa: E402
+ 
+ sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "rules"))
+@@ -206,17 +206,20 @@ def copy_modules(system_install_info: dict, install_modules_info_file: str,
+                         raise FileExistsError(f"{link_path} create failed, src_file:{dest_file} and {dest_file} is same")
+ 
+     # write install module info to file
+-    write_json_file(install_modules_info_file, modules_info_dict)
++    write_json_file(install_modules_info_file, modules_info_dict,
++                    check_changes=True)
+ 
+     # write all module info
+-    write_json_file(modules_info_file, output_result)
++    write_json_file(modules_info_file, output_result, check_changes=True)
+ 
+     # output module list to file
+-    write_file(module_list_file, '\n'.join(dest_list))
++    module_list_content = '\n'.join(dest_list)
++    with build_utils.atomic_output(module_list_file) as output_file:
++        output_file.write(module_list_content.encode('utf-8'))
+ 
+     # write pac only module info file
+-    if arm64e_output_result:
+-        write_json_file(arm64e_modules_info_file, arm64e_output_result)
++    write_json_file(arm64e_modules_info_file, arm64e_output_result,
++                    check_changes=True)
+ 
+ 
+ def main():
+@@ -343,7 +346,7 @@ def main():
+     if os.path.exists(args.system_image_zipfile):
+         os.unlink(args.system_image_zipfile)
+     build_utils.zip_dir(args.system_image_zipfile, args.system_dir)
+-    depfiles.extend([item for item in depfiles if item not in sa_files])
++    depfiles = [item for item in depfiles if item not in sa_files]
+     build_utils.write_depfile(args.depfile, args.install_modules_info_file,
+                               depfiles)
+     
+diff --git a/ohos/packages/parts_install_info.py b/ohos/packages/parts_install_info.py
+index d5d871bc..acb8ecfd 100755
+--- a/ohos/packages/parts_install_info.py
++++ b/ohos/packages/parts_install_info.py
+@@ -69,7 +69,8 @@ def main():
+     platform_out_dir = os.path.dirname(args.system_install_info_file)
+     if not os.path.exists(platform_out_dir):
+         os.makedirs(platform_out_dir, exist_ok=True)
+-    write_json_file(args.system_install_info_file, _parts_list)
++    write_json_file(args.system_install_info_file, _parts_list,
++                    check_changes=True)
+ 
+     if args.depfile:
+         _dep_files = []
+diff --git a/ohos/packages/process_field_validate.py b/ohos/packages/process_field_validate.py
+index cde9c80c..85c4d2e7 100755
+--- a/ohos/packages/process_field_validate.py
++++ b/ohos/packages/process_field_validate.py
+@@ -18,6 +18,12 @@ import getopt
+ import sys
+ import contextlib
+ 
++sys.path.append(
++    os.path.dirname(os.path.dirname(os.path.dirname(
++        os.path.abspath(__file__)))))
++from scripts.util import build_utils  # noqa: E402
++
++
+ # Store the hash table of the services that need to validate
+ PRIVILEGE_HASH = {}
+ CRITICAL_HASH = {}
+@@ -310,38 +316,99 @@ def parse_cfg_file(filename: str):
+     return
+ 
+ 
+-def iterate_cfg_folder(cfg_dir: str):
+-    for file in os.listdir(cfg_dir):
++def iterate_cfg_folder(cfg_dir: str, depfiles: set):
++    for file in sorted(os.listdir(cfg_dir)):
+         if file.endswith(".cfg"):
+-            parse_cfg_file("{}/{}".format(cfg_dir, file))
++            cfg_file = os.path.join(cfg_dir, file)
++            depfiles.add(cfg_file)
++            parse_cfg_file(cfg_file)
+     return
+ 
+ 
+-def main():
+-    opts, args = getopt.getopt(sys.argv[1:], '', ['sys-cfg-folder=', 'vendor-cfg-folder=', \
+-        'high-privilege-process-list-path=', 'critical-reboot-process-list-path=', 'result-path='])
+-
+-    sys_cfg_folder = opts[0][1]
+-    if not os.path.exists(sys_cfg_folder):
+-        print("Process field check skipped: file [{}] not exist".format(sys_cfg_folder))
+-    else:
+-        iterate_cfg_folder(sys_cfg_folder)
++def write_validation_result(result_path: str):
++    result_dir = os.path.dirname(os.path.abspath(result_path))
++    os.makedirs(result_dir, exist_ok=True)
++    with build_utils.atomic_output(result_path) as output_file:
++        output_file.write(b'validation succeeded\n')
++
++
++def remove_validation_result(result_path: str):
++    if os.path.isfile(result_path):
++        os.unlink(result_path)
++
++
++def parse_options():
++    opts, _ = getopt.getopt(
++        sys.argv[1:], '', [
++            'sys-cfg-folder=',
++            'vendor-cfg-folder=',
++            'high-privilege-process-list-path=',
++            'critical-reboot-process-list-path=',
++            'result-path=',
++            'depfile=',
++        ])
++    option_values = dict(opts)
++    required_options = [
++        '--sys-cfg-folder',
++        '--vendor-cfg-folder',
++        '--high-privilege-process-list-path',
++        '--critical-reboot-process-list-path',
++        '--result-path',
++        '--depfile',
++    ]
++    missing_options = [
++        option_name for option_name in required_options
++        if option_name not in option_values
++    ]
++    if missing_options:
++        raise getopt.GetoptError('missing required options: {}'.format(
++            ', '.join(missing_options)))
++    return option_values
++
++
++def validate_cfg_folder(cfg_folder: str, depfiles: set):
++    if not os.path.exists(cfg_folder):
++        print("Process field check skipped: file [{}] not exist".format(
++            cfg_folder))
++        return
++    iterate_cfg_folder(cfg_folder, depfiles)
++
++
++def run_validation(option_values: dict, depfiles: set):
++    sys_cfg_folder = option_values['--sys-cfg-folder']
++    vendor_cfg_folder = option_values['--vendor-cfg-folder']
++    privilege_process_path = option_values[
++        '--high-privilege-process-list-path']
++    critical_process_path = option_values[
++        '--critical-reboot-process-list-path']
++    validate_cfg_folder(sys_cfg_folder, depfiles)
++    validate_cfg_folder(vendor_cfg_folder, depfiles)
++
++    for process_path in [privilege_process_path, critical_process_path]:
++        if os.path.isfile(process_path):
++            depfiles.add(process_path)
++
++    validate_cfg_file(privilege_process_path, critical_process_path,
++                      option_values['--result-path'])
+ 
+-    vendor_cfg_folder = opts[1][1]
+-    if not os.path.exists(vendor_cfg_folder):
+-        print("Process field check skipped: file [{}] not exist".format(vendor_cfg_folder))
+-    else:
+-        iterate_cfg_folder(vendor_cfg_folder)
+ 
+-    privilege_process_path = opts[2][1]
++def main():
++    option_values = parse_options()
++    result_path = option_values['--result-path']
++    depfile_path = option_values['--depfile']
++    depfiles = set()
+ 
+-    critical_process_path = opts[3][1]
++    try:
++        run_validation(option_values, depfiles)
++    except Exception:
++        remove_validation_result(result_path)
++        raise
+ 
+-    validate_cfg_file(privilege_process_path, critical_process_path, None)
++    build_utils.write_depfile(depfile_path, result_path, depfiles,
++                              add_pydeps=False)
++    write_validation_result(result_path)
++    return 0
+ 
+-    return
+ 
+ if __name__ == "__main__":
+-
+-    main()
+-
++    sys.exit(main())
+diff --git a/ohos/packages/stabilize_json_file.py b/ohos/packages/stabilize_json_file.py
+new file mode 100755
+index 00000000..d07002a0
+--- /dev/null
++++ b/ohos/packages/stabilize_json_file.py
+@@ -0,0 +1,41 @@
++#!/usr/bin/env python3
++# -*- coding: utf-8 -*-
++# Copyright (c) 2026 Huawei Device Co., Ltd.
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++import argparse
++import os
++import sys
++
++sys.path.append(
++    os.path.dirname(os.path.dirname(os.path.dirname(
++        os.path.abspath(__file__)))))
++from scripts.util.file_utils import read_json_file, write_json_file  # noqa: E402
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--input-file', required=True)
++    parser.add_argument('--output-file', required=True)
++    args = parser.parse_args()
++
++    content = read_json_file(args.input_file)
++    if content is None:
++        raise ValueError("failed to read JSON file '{}'".format(
++            args.input_file))
++    write_json_file(args.output_file, content, check_changes=True)
++    return 0
++
++
++if __name__ == '__main__':
++    sys.exit(main())
+diff --git a/ohos/sa_profile/sa_profile_binary.py b/ohos/sa_profile/sa_profile_binary.py
+index 8f238ede..d0bbbb15 100755
+--- a/ohos/sa_profile/sa_profile_binary.py
++++ b/ohos/sa_profile/sa_profile_binary.py
+@@ -94,15 +94,19 @@ def main():
+             generate_binary_sa_archive(parts_list,
+                                        args.sa_profile_archive_info_file,
+                                        args.sa_output_dir, depfiles))
+-    with zipfile.ZipFile(args.sa_output_zipfile, 'w') as outfile:
+-        for part_name, sa_file_path, sa_file in sa_files_tuples:
+-            part_name_map[sa_file] = part_name
+-            build_utils.add_to_zip_hermetic(outfile,
+-                                         sa_file,
+-                                         src_path=sa_file_path)
+-        if part_name_map:
+-            metadata_content = json.dumps(part_name_map, indent=2, sort_keys=True)
+-            outfile.writestr("part_name_info.json", metadata_content)
++    with build_utils.atomic_output(args.sa_output_zipfile) as output_file:
++        with zipfile.ZipFile(output_file, 'w') as outfile:
++            for part_name, sa_file_path, sa_file in sa_files_tuples:
++                part_name_map[sa_file] = part_name
++                build_utils.add_to_zip_hermetic(outfile,
++                                                sa_file,
++                                                src_path=sa_file_path)
++            if part_name_map:
++                metadata_content = json.dumps(part_name_map, indent=2,
++                                              sort_keys=True)
++                metadata_info = zipfile.ZipInfo("part_name_info.json",
++                                                build_utils.HERMETIC_TIMESTAMP)
++                outfile.writestr(metadata_info, metadata_content)
+     build_utils.write_depfile(args.depfile, args.sa_output_zipfile, depfiles)
+     return 0
+ 
+diff --git a/ohos/sa_profile/sa_profile_merge.py b/ohos/sa_profile/sa_profile_merge.py
+index 235f69a7..1c5e7693 100755
+--- a/ohos/sa_profile/sa_profile_merge.py
++++ b/ohos/sa_profile/sa_profile_merge.py
+@@ -114,7 +114,8 @@ def _generate_install_info(sa_result_file_dict: dict, sa_info_install_dest_dir:
+             'dest': [_install_dest]
+         }
+         module_install_info_list.append(module_install_info)
+-    write_json_file(sa_install_info_file, module_install_info_list)
++    write_json_file(sa_install_info_file, module_install_info_list,
++                    check_changes=True)
+ 
+ 
+ def main():
+diff --git a/ohos/sa_profile/sa_profile_source.py b/ohos/sa_profile/sa_profile_source.py
+index eae14b2d..40b054ee 100755
+--- a/ohos/sa_profile/sa_profile_source.py
++++ b/ohos/sa_profile/sa_profile_source.py
+@@ -60,7 +60,8 @@ def main():
+     src_parts_info = get_src_parts(args.system_install_info_file)
+     sa_install_infos = get_sa_install_info(args.src_sa_info_file,
+                                            src_parts_info)
+-    write_json_file(args.src_sa_install_info_file, sa_install_infos)
++    write_json_file(args.src_sa_install_info_file, sa_install_infos,
++                    check_changes=True)
+     return 0
+ 
+ 
+diff --git a/ohos/sa_profile/src_sa_profile_process.py b/ohos/sa_profile/src_sa_profile_process.py
+index 69389e16..d5ced17e 100755
+--- a/ohos/sa_profile/src_sa_profile_process.py
++++ b/ohos/sa_profile/src_sa_profile_process.py
+@@ -43,7 +43,8 @@ def sa_info_process(sa_profile_infos_file: str, toolchain_platform: dict):
+         _sa_info['part_name'] = part_name
+         _sa_info['origin_part_name'] = origin_part_name
+         processed_sa_infos.append(_sa_info)
+-    return processed_sa_infos
++    return sorted(processed_sa_infos,
++                  key=lambda info: info.get('label', ''))
+ 
+ 
+ def main():
+@@ -62,7 +63,8 @@ def main():
+     toolchain_platform = variants_toolchain_info.get('toolchain_platform')
+     processed_sa_infos = sa_info_process(args.sa_profile_infos_file,
+                                          toolchain_platform)
+-    write_json_file(args.output_file, processed_sa_infos)
++    write_json_file(args.output_file, processed_sa_infos,
++                    check_changes=True)
+     build_utils.write_depfile(args.depfile, args.output_file, depfiles)
+     return 0
+ 
+diff --git a/ohos/sdk/parse_interface_sdk.py b/ohos/sdk/parse_interface_sdk.py
+index 17613405..182c688d 100755
+--- a/ohos/sdk/parse_interface_sdk.py
++++ b/ohos/sdk/parse_interface_sdk.py
+@@ -19,6 +19,9 @@ import sys
+ import shutil
+ import subprocess
+ from convert_permissions import convert_permissions
++sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),
++                              os.pardir, os.pardir))  # noqa: E402
++from scripts.util import build_utils  # noqa: E402
+ 
+ OUT_ROOT_LIST = ["dynamic/sdk-js",
+                  "static/sdk-js"]
+@@ -44,6 +47,45 @@ TYPE_CHANGE_DIR = "type-change"
+ TYPE_CHANGE_API_GEN_PATH = "build-tools/type-change/api"
+ TYPE_CHANGE_ARKTS_GEN_PATH = "build-tools/type-change/arkts"
+ 
++DEPFILE_EXCLUDE_DIRS = frozenset({'.git', '.gitee'})
++
++
++def collect_tree_deps(path: str) -> list:
++    result = []
++    for root, dirs, files in os.walk(path):
++        dirs[:] = [d for d in dirs if d not in DEPFILE_EXCLUDE_DIRS]
++        result.append(root)
++        for filename in files:
++            filepath = os.path.join(root, filename)
++            result.append(filepath)
++    return result
++
++
++def write_sdk_depfile(depfile_path: str, first_output: str,
++                      source_root: str, ninja_cwd: str,
++                      node_js: str, build_sdk_path: str = None,
++                      sdk_build_public: bool = False):
++    dep_entries = []
++    sdk_js_path = os.path.join(source_root, INTERFACE_PATH)
++    if os.path.isdir(sdk_js_path):
++        dep_entries.extend(collect_tree_deps(sdk_js_path))
++    perm_file = os.path.join(
++        source_root, 'base', 'security', 'access_token',
++        'services', 'accesstokenmanager',
++        'permission_definitions.json')
++    if os.path.isfile(perm_file):
++        dep_entries.append(perm_file)
++    dep_entries.append(os.path.abspath(node_js))
++    if sdk_build_public and build_sdk_path:
++        build_sdk_abs = os.path.join(ninja_cwd, build_sdk_path)
++        if os.path.isdir(build_sdk_abs):
++            dep_entries.extend(collect_tree_deps(build_sdk_abs))
++    rel_deps = sorted(
++        os.path.relpath(e, ninja_cwd) for e in dep_entries
++        if os.path.exists(e))
++    build_utils.write_depfile(depfile_path, first_output, rel_deps,
++                              add_pydeps=True)
++
+ 
+ def copy_sdk_interface(source_root: str, out_path: str):
+     source = os.path.join(source_root, INTERFACE_PATH)
+@@ -208,11 +250,27 @@ def main():
+     parser.add_argument('--build-sdk-path', required=True)
+     parser.add_argument('--sdk-build-check-level', required=True)
+     parser.add_argument('--sdk-api-version', required=True)
++    parser.add_argument('--stamp', required=False)
++    parser.add_argument('--depfile', required=False)
+ 
+     options = parser.parse_args()
+ 
+     parse_step(options)
+ 
++    source_root = os.path.abspath(options.root_build_dir)
++    ninja_cwd = os.getcwd()
++    first_output = os.path.relpath(
++        os.path.join(ninja_cwd, options.output_interface_sdk), ninja_cwd)
++    if options.depfile:
++        write_sdk_depfile(
++            options.depfile, first_output, source_root, ninja_cwd,
++            options.node_js,
++            build_sdk_path=options.build_sdk_path,
++            sdk_build_public=(options.sdk_build_public == 'true'))
++    if options.stamp:
++        with build_utils.atomic_output(options.stamp) as f:
++            f.write(b'')
++
+ 
+ if __name__ == '__main__':
+     sys.exit(main())
+diff --git a/scripts/app_sign.py b/scripts/app_sign.py
+index 6dbf57f3..8267a873 100755
+--- a/scripts/app_sign.py
++++ b/scripts/app_sign.py
+@@ -44,6 +44,7 @@ def parse_args(args):
+     parser.add_argument('--certificate-file', help='')
+     parser.add_argument('--hap-name', help='')
+     parser.add_argument('--hap-list', help='')
++    parser.add_argument('--output-file', help='signing result output file')
+     options = parser.parse_args(args)
+     return options
+ 
+@@ -76,6 +77,8 @@ def main(args):
+     if not options.hap_out_dir:
+         sign_app(options, options.inFile, options.outFile)
+     else:
++        if not options.output_file:
++            raise ValueError('--output-file is required when --hap-out-dir is set')
+         if not os.path.exists(options.hap_out_dir):
+             os.makedirs(options.hap_out_dir, exist_ok=True)
+         unsigned_hap_path_list = file_utils.read_json_file(options.unsigned_hap_path_list)
+@@ -90,6 +93,7 @@ def main(args):
+                     signed_hap_names[f'{names[0]}.hap'] = f'{names[1]}.hap'
+                 else:
+                     raise ValueError(f'Value hap_list {hap_list} not compliant with format')
++        signed_hap_result = []
+         for unsigned_hap_path in unsigned_hap_path_list.get('unsigned_hap_path_list'):
+             signed_hap_path = unsigned_hap_path.replace('unsigned', 'signed')
+             output_hap_name = f'{options.hap_name}-{os.path.basename(signed_hap_path)}'
+@@ -106,6 +110,13 @@ def main(args):
+                     output_hap_name = signed_hap_names.get(unsigned_hap_name)
+             output_hap = os.path.join(options.hap_out_dir, output_hap_name)
+             sign_app(options, unsigned_hap_path, output_hap)
++            signed_hap_result.append({
++                'path': output_hap,
++                'sha256': build_utils.get_file_sha256(output_hap),
++            })
++        build_utils.write_json_atomic({
++            'signed_hap_list': signed_hap_result,
++        }, options.output_file)
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/scripts/build_js_assets.py b/scripts/build_js_assets.py
+index 265ef9c4..0155d801 100755
+--- a/scripts/build_js_assets.py
++++ b/scripts/build_js_assets.py
+@@ -197,6 +197,26 @@ def get_all_js_sources(base) -> list:
+     return sources
+ 
+ 
++def get_loader_files(base):
++    """Collect every file under |base|, pruning transient artifacts that are
++    rewritten by other actions after this one completes: any directory whose
++    final path component is '.cache' (e.g. node_modules/.cache) and TypeScript
++    incremental build-info files (.tsbuildinfo*). Stable loader source files
++    are kept.
++    """
++    result = []
++    for root, dirs, files in os.walk(base):
++        dirs[:] = [d for d in dirs if d != '.cache']
++        result.extend([os.path.join(root, f) for f in files
++                       if not f.startswith('.tsbuildinfo')])
++    return result
++
++
++def _write_empty_zip(output_path):
++    with ZipFile(output_path, 'w'):
++        pass
++
++
+ def main(args):
+     options = parse_args(args)
+ 
+@@ -206,8 +226,16 @@ def main(args):
+     ]
+     depfiles = []
+     if not options.js_assets_dir and not options.ets_assets_dir:
+-        with ZipFile(options.output, 'w') as file:
+-            return
++        build_utils.call_and_write_depfile_if_stale(
++            lambda: _write_empty_zip(options.output),
++            options,
++            depfile_deps=[p for p in inputs if p],
++            input_paths=[p for p in inputs if p],
++            input_strings=[],
++            output_paths=[options.output],
++            force=False,
++            add_pydeps=False)
++        return
+ 
+     if options.ark_es2abc_dir:
+         depfiles.extend(build_utils.get_all_files(options.ark_es2abc_dir))
+@@ -216,8 +244,8 @@ def main(args):
+     depfiles.append(options.webpack_ets)
+     depfiles.append(options.webpack_config_js)
+     depfiles.append(options.webpack_config_ets)
+-    depfiles.extend(build_utils.get_all_files(options.ace_loader_home))
+-    depfiles.extend(build_utils.get_all_files(options.ets_loader_home))
++    depfiles.extend(get_loader_files(options.ace_loader_home))
++    depfiles.extend(get_loader_files(options.ets_loader_home))
+ 
+     node_js = os.path.relpath(options.nodejs_path, options.ace_loader_home)
+     assets_dict = dict()
+diff --git a/scripts/compile_app.py b/scripts/compile_app.py
+index 35162f3a..ca1dd974 100755
+--- a/scripts/compile_app.py
++++ b/scripts/compile_app.py
+@@ -203,7 +203,6 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value
+     :param cwd: app project directory
+     :return: None
+     '''
+-    unsigned_hap_path_json = {}
+     unsigned_hap_path_list = []
+     with open(build_profile, 'r') as input_f:
+         build_info = json5.load(input_f)
+@@ -220,8 +219,16 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value
+                 unsigned_hap_path, '*-unsigned.hsp')
+             if hsp_file:
+                 unsigned_hap_path_list.extend(hsp_file)
+-        unsigned_hap_path_json['unsigned_hap_path_list'] = unsigned_hap_path_list
+-    file_utils.write_json_file(options.output_file, unsigned_hap_path_json)
++    unsigned_hap_path_list.sort()
++    unsigned_hap_sha256 = {
++        hap_path: build_utils.get_file_sha256(hap_path)
++        for hap_path in unsigned_hap_path_list
++    }
++    unsigned_hap_path_json = {
++        'unsigned_hap_path_list': unsigned_hap_path_list,
++        'unsigned_hap_sha256': unsigned_hap_sha256,
++    }
++    build_utils.write_json_atomic(unsigned_hap_path_json, options.output_file)
+ 
+ 
+ def copy_libs(cwd: str, system_lib_module_info_list: list, ohos_app_abi: str, module_libs_dir: str):
+diff --git a/scripts/util/build_utils.py b/scripts/util/build_utils.py
+index 9c70daf7..1a1860e3 100755
+--- a/scripts/util/build_utils.py
++++ b/scripts/util/build_utils.py
+@@ -10,6 +10,7 @@ import contextlib
+ from distutils import extension
+ import filecmp
+ import fnmatch
++import hashlib
+ import json
+ import os
+ import pipes
+@@ -179,6 +180,27 @@ def atomic_output(path, only_if_changed=True):
+                 os.unlink(f.name)
+ 
+ 
++def get_file_sha256(path):
++    """Return the SHA-256 digest of a file."""
++    digest = hashlib.sha256()
++    with open(path, 'rb') as input_file:
++        for chunk in iter(lambda: input_file.read(1024 * 1024), b''):
++            digest.update(chunk)
++    return digest.hexdigest()
++
++
++def write_json_atomic(obj, path):
++    """Write deterministic JSON atomically without touching unchanged files."""
++    output_dir = os.path.dirname(os.path.abspath(path))
++    os.makedirs(output_dir, exist_ok=True)
++    json_content = json.dumps(obj,
++                              sort_keys=True,
++                              indent=2,
++                              separators=(',', ': '))
++    with atomic_output(path) as output_file:
++        output_file.write(json_content.encode('utf-8'))
++
++
+ class CalledProcessError(Exception):
+     """This exception is raised when the process run by check_output
+     exits with a non-zero exit code.
+diff --git a/scripts/util/file_utils.py b/scripts/util/file_utils.py
+index 65dcb4af..4b0ac9e4 100755
+--- a/scripts/util/file_utils.py
++++ b/scripts/util/file_utils.py
+@@ -16,7 +16,6 @@
+ import json
+ import os
+ import subprocess
+-import hashlib
+ import platform
+ 
+ 
+@@ -82,18 +81,9 @@ def write_json_file(output_file, content, check_changes=False):
+ 
+ 
+ def __check_changes(output_file, content):
+-    if os.path.exists(output_file) and os.path.isfile(output_file):
+-        # file content md5 val
+-        sha256_obj = hashlib.sha256()
+-        sha256_obj.update(str(read_json_file(output_file)).encode())
+-        hash_value = sha256_obj.hexdigest()
+-        # new content md5 val
+-        sha256_obj_new = hashlib.sha256()
+-        sha256_obj_new.update(str(content).encode())
+-        hash_value_new = sha256_obj_new.hexdigest()
+-        if hash_value_new == hash_value:
+-            return False
+-    return True
++    if not os.path.isfile(output_file):
++        return True
++    return read_json_file(output_file) != content
+ 
+ 
+ # Write file data
+diff --git a/templates/kernel/linux-6.6/make_ko.sh b/templates/kernel/linux-6.6/make_ko.sh
+index bd60757d..1029ae13 100755
+--- a/templates/kernel/linux-6.6/make_ko.sh
++++ b/templates/kernel/linux-6.6/make_ko.sh
+@@ -43,7 +43,12 @@ else
+     mkdir ${OUT_DIR}
+ fi
+ 
+-cp -f *.ko ${OUT_DIR}
++for module in *.ko
++do
++    if ! cmp -s "$module" "${OUT_DIR}/${module}"; then
++        cp -f "$module" "${OUT_DIR}/"
++    fi
++done
+ make clean
+ rm -f Makefile
+ rm -rf signing_key.pem
