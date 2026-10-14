@@ -1,0 +1,168 @@
+{
+  "verified_utc": "2026-10-14T01:30:16.278355+00:00",
+  "root": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code",
+  "variant": "original",
+  "state": {
+    "variant": "original",
+    "selected_utc": "2026-10-14T01:30:16.263925+00:00",
+    "source_checkpoint": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/ab_incremental_20261013/checkpoints/baseline_20261014T013002029238Z",
+    "archived_out": null
+  },
+  "verified_paths": 93,
+  "changed_paths": [
+    "build/config/components/ets_frontend/generate_static_abc.py",
+    "build/config/components/idl_tool/idl.gni",
+    "build/hb/services/loader.py",
+    "build/hb/util/io_util.py",
+    "build/hb/util/loader/load_ohos_build.py",
+    "build/lite/config/component/lite_component.gni",
+    "build/ohos/app/app_internal.gni",
+    "build/ohos/common/BUILD.gn",
+    "build/ohos/common/binary_install_info.py",
+    "build/ohos/common/generate_host_info.py",
+    "build/ohos/common/merge_all_subsystem.py",
+    "build/ohos/generate_part_info.py",
+    "build/ohos/hisysevent/hisysevent_process.py",
+    "build/ohos/images/BUILD.gn",
+    "build/ohos/images/build_image.py",
+    "build/ohos/notice/collect_module_notice_file.py",
+    "build/ohos/notice/collect_system_notice_files.py",
+    "build/ohos/packages/BUILD.gn",
+    "build/ohos/packages/check_seccomp_library_name.py",
+    "build/ohos/packages/generate_host_symlink.py",
+    "build/ohos/packages/modules_install.py",
+    "build/ohos/packages/parts_install_info.py",
+    "build/ohos/packages/process_field_validate.py",
+    "build/ohos/packages/stabilize_json_file.py",
+    "build/ohos/sa_profile/sa_profile_binary.py",
+    "build/ohos/sa_profile/sa_profile_merge.py",
+    "build/ohos/sa_profile/sa_profile_source.py",
+    "build/ohos/sa_profile/src_sa_profile_process.py",
+    "build/ohos/sdk/parse_interface_sdk.py",
+    "build/scripts/app_sign.py",
+    "build/scripts/build_js_assets.py",
+    "build/scripts/compile_app.py",
+    "build/scripts/util/build_utils.py",
+    "build/scripts/util/file_utils.py",
+    "build/templates/kernel/linux-6.6/make_ko.sh",
+    "developtools/packing_tool/adapter/ohos/Compressor.java",
+    "third_party/jsframework/js_framework_build.sh",
+    "third_party/sane-airscan/BUILD.gn",
+    "third_party/sane-airscan/airscan-bmp.c",
+    "third_party/sane-airscan/airscan-conf.c",
+    "third_party/sane-airscan/airscan-device.c",
+    "third_party/sane-airscan/airscan-devops.c",
+    "third_party/sane-airscan/airscan-eloop.c",
+    "third_party/sane-airscan/airscan-escl.c",
+    "third_party/sane-airscan/airscan-http.c",
+    "third_party/sane-airscan/airscan-init.c",
+    "third_party/sane-airscan/airscan-log.c",
+    "third_party/sane-airscan/airscan-mdns.c",
+    "third_party/sane-airscan/airscan-png.c",
+    "third_party/sane-airscan/airscan-tiff.c",
+    "third_party/sane-airscan/airscan-wsd.c",
+    "third_party/sane-airscan/airscan-xml.c",
+    "third_party/sane-airscan/airscan-zeroconf.c",
+    "third_party/sane-airscan/airscan.c",
+    "third_party/sane-airscan/airscan.h",
+    "third_party/sane-airscan/http_parser.c",
+    "third_party/sane-airscan/patch_install.py",
+    "device/board/hihope/rk3568/camera/vdi_impl/v4l2/BUILD.gn",
+    "arkcompiler/ets_frontend/ets2panda/BUILD.gn",
+    "arkcompiler/ets_frontend/ets2panda/driver/build_system/BUILD.gn",
+    "arkcompiler/ets_frontend/ets2panda/scripts/check_build_system_consistency.py",
+    "interface/sdk-js/BUILD.gn",
+    "interface/sdk-js/process_internal.py",
+    "interface/sdk-js/remove_internal.py",
+    "developtools/ace_ets2bundle/ets1.2/BUILD.gn",
+    "developtools/ace_ets2bundle/ets1.2/libarkts/BUILD.gn",
+    "third_party/iptables/extensions/genInit.py"
+  ],
+  "original_git_references": {
+    "build": "8c899c6d333305fcff11bd35d7ec9752cd931a50",
+    "developtools/packing_tool": "930d6da378078549abdafdc3db409849831b3a81",
+    "third_party/jsframework": "22ddd05c7caf5fc3303a5ee207fe159ce154c238",
+    "third_party/sane-airscan": "d75d60c59f7738d85260c8e9f41fa907c355ef3f",
+    "base/security/selinux_adapter": "55d1897e132208ccde7c3c34ab70aff48e479cb5",
+    "device/board/hihope": "025d4baaeb3eac1eb7f0c5e7b824d7be67186c68",
+    "arkcompiler/ets_frontend": "e8544064f5e9e956286eed2d71e0ba4e801d8743",
+    "interface/sdk-js": "07e67fc5fc1767132a1e18910fc00e63cb49f1e0",
+    "developtools/ace_ets2bundle": "b545845711e41987f9ca54c09b89061ce5ec6b4c",
+    "third_party/iptables": "56b1ad87b16775e9d6b6a2ae55253554409dd25e",
+    "base/account/os_account": "7f172ea3830153f8be073fe5edf4fc964b1eed87",
+    "base/inputmethod/imf": "5f5e6178a1d5b56331dae7af12ec3fca083857f5",
+    "base/security/dlp_permission_service": "b59001a8383d76f2708a3b0d525ae2fba538b24b",
+    "foundation/ability/dmsfwk": "af957f68639797dc1087d726f00f7f52b9a3cac0",
+    "foundation/multimedia/audio_framework": "e811e639cbfe67ba7293d0c74d09aa8941aa4447",
+    "third_party/css-what": "95648987c034c15781137e727eb7b1dcff051140"
+  },
+  "before_restore_snapshots": {
+    "build": {
+      "commit": "9fa0db9e3bdbb2268558205bb8e60bd647cf2221",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "developtools/packing_tool": {
+      "commit": "057f557bcc4adccc0bf84702a86fea6161addad4",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "third_party/jsframework": {
+      "commit": "8269739eb9588cdfbf8b667adc14f0bda5fe7aa0",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "third_party/sane-airscan": {
+      "commit": "2adb36172d8c4f3cb74e66339d04d69746cb2e79",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "base/security/selinux_adapter": {
+      "commit": "d9fdd18ef0f54f3a012d945bf3b969a7a154d887",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "device/board/hihope": {
+      "commit": "960c04ff6ab6b8035f09a103cec058c2be1d1643",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "arkcompiler/ets_frontend": {
+      "commit": "44242eddd67ae54c88428376a9abb4f28d98c71a",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "interface/sdk-js": {
+      "commit": "bbf0f3924ad1d9d80e340728a87599ef15039a34",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "developtools/ace_ets2bundle": {
+      "commit": "e2659d0b297f36472c98673e239ee9bde7b111ae",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "third_party/iptables": {
+      "commit": "a725398d535e9b277fc585aafbca5760265f421c",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "base/account/os_account": {
+      "commit": "6ef90dce88b6c9f8b646f91b4517c2d36b7950a3",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "base/inputmethod/imf": {
+      "commit": "7d4ab874fd4b7e2296c7fe600e52d64475d008e0",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "base/security/dlp_permission_service": {
+      "commit": "ef422e126a2149318f35f992be00aac72dcd2ce4",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "foundation/ability/dmsfwk": {
+      "commit": "a9024c82639c691a24a0c5141f26a1a9f870ac82",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "foundation/multimedia/audio_framework": {
+      "commit": "cb229c89ef832884f1e8d0c44f255f8c4a8ed477",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    },
+    "third_party/css-what": {
+      "commit": "95a80c7b5ff91f8e96e98031b297d0aba1205428",
+      "ref": "refs/heads/backup/ab-baseline-20261014T013002029238Z"
+    }
+  },
+  "raw_managed_sources_unchanged": true,
+  "out_absent": true,
+  "build_started": false
+}
