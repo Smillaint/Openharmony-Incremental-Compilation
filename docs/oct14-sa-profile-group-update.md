@@ -28,6 +28,10 @@ PR 描述已更新为[确认后的简短正文](pr-drafts/20261014/sa-profile-gr
 
 ## 归档
 
+本地完整 build 源码仓：`D:/workspace/repositories/build-sa-pr6965-20261014`。分支为 `fix/sa-profile-incremental-20261014`，HEAD 为 `f15f9bded74ae12a75b8a9ef729c1397a7202ec2`，对应更新后的 #6965。该目录从本地历史仓与 bundle 独立恢复，工作树干净，Git 对象连接检查通过，没有 alternates 依赖。离线可查看、修改这组源码；完整 OpenHarmony 产品源码、工具链和 out 未复制，整仓构建仍需原环境。
+
+旧目录 `repositories/openharmony-build-sa` 中的未提交修改保留。此前 17 仓（含 build）的修复补丁和版本记录仍在 `patches/20261013-source-handoff/`，不能将这些增量归档视为完整产品源码镜像。
+
 - [发布记录](../patches/20261014-sa-profile-group/published.json)
 - [追加修复补丁](../patches/20261014-sa-profile-group/update.patch)与 [bundle](../patches/20261014-sa-profile-group/update.bundle)
 - [更新前补丁](../patches/20261014-sa-profile-group/pr6965-before-update.patch)与 [bundle](../patches/20261014-sa-profile-group/pr6965-before-update.bundle)
