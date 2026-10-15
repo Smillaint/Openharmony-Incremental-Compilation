@@ -4,6 +4,8 @@
 
 ## 最新状态与继续工作入口
 
+[2026-10-15 SA #6965 门禁排查](docs/oct15-sa-gate-repeat-failure.md)：第二轮 dayu600 编译、打包、上传成功，但 EcoTest 任务 `2296023` 超时且没有测试报告；mac-sdk 在编译前工作区清理失败。同期独立 PR 也出现 dayu600 超时，具体设备／调度原因仍需平台日志。源码未改，继续重试门禁。
+
 [2026-10-14 全部修复的离线源码](docs/oct14-all-repairs-offline.md)：**本轮 17 个相关仓已独立恢复到 `D:/workspace/repositories/openharmony-repairs-20261014`，68 个修复文件及 8 个保留差异全部可在本地查看、修改。** 组合验证快照、10 仓发布分支和更新后的 SA #6965 分支均已保留，229 个 LFS 资源已下载并校验。目录内 README 列明逐仓作用、文件和版本；完整产品编译仍需原 OpenHarmony 环境。
 
 [2026-10-14 SA 组旧 PR 更新](docs/oct14-sa-profile-group-update.md)：**三个 SA Action 继续使用 [build #6965](https://gitcode.com/openharmony/build/pull/6965)，已追加带 DCO 的 ZIP 时间戳修复，门禁已启动。** 重复 PR #7130 和临时 Issue #4759 已关闭，保留 Issue #4657。后续沿用历史 PR 分组，优先更新旧 PR。

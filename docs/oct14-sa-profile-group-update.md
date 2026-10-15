@@ -34,7 +34,7 @@ PR 描述已更新为[确认后的简短正文](pr-drafts/20261014/sa-profile-gr
 - 现有报告更符合 EcoTest 平台超时，未发现指向 SA 修复的错误。缺少底层测试日志，不能进一步区分设备资源、调度服务或其他超时原因；不据此宣称源码在所有平台均无问题。
 - 保持源码 HEAD `f15f9bded74ae12a75b8a9ef729c1397a7202ec2` 和 PR 描述不变，在 #6965 评论一次 `start build` 重试。
 
-机器人已确认“门禁构建开始”，选择全量重新构建并重置旧验证标签。新任务为 [6acfa28164650f998b3e5d24](https://dcp.openharmony.cn/workbench/cicd/detail/6acfa28164650f998b3e5d24/runlist)，当前只确认启动，尚无完成结果。重试评论 ID 为 `193834698`，机器人回执 ID 为 `193834740`。
+机器人已确认“门禁构建开始”，选择全量重新构建并重置旧验证标签。第二轮任务为 [6acfa28164650f998b3e5d24](https://dcp.openharmony.cn/workbench/cicd/detail/6acfa28164650f998b3e5d24/runlist)，重试评论 ID 为 `193834698`，机器人回执 ID 为 `193834740`。第二轮已结束：dayu600 再次 EcoTest 超时，mac-sdk 在编译前工作区清理失败，详见 [10 月 15 日排查记录](oct15-sa-gate-repeat-failure.md)。
 
 证据：[失败目标原文](evidence/20261014-sa-smoke-retry/failed-pr.txt)、[门禁详情截图](evidence/20261014-sa-smoke-retry/failed-gate.png)、[重试回执](evidence/20261014-sa-smoke-retry/retry-started.txt)、[重试启动截图](evidence/20261014-sa-smoke-retry/retry-started.png)。
 
