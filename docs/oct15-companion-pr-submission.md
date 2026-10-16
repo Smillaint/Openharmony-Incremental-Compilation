@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-[2026-10-16 06:48 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T064828Z/summary.md)：10 条未完成 PR 的提交、状态和回执均未变化，无新增故障。HAP 归档超时、SA EcoTest 提交失败及 SDK split／安装组静态告警沿用原诊断；IDL、JS/CSS、loader 与四条历史 PR 共 13 条停止检查。当前无运行中的门禁，没有重复触发。
+[2026-10-16 07:18 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T071829Z/summary.md)：10 条未完成 PR 的提交、状态和回执均未变化，无新增故障。HAP 归档超时、SA EcoTest 提交失败及 SDK split／安装组静态告警沿用原诊断；IDL、JS/CSS、loader 与四条历史 PR 共 13 条停止检查。当前无运行中的门禁，没有重复触发。
 
 ## PR、文件与作用
 
