@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-[2026-10-16 04:18 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T041825Z/summary.md)：IDL 六条 PR 已收到正式通过回执，与 JS/CSS 一起停止后续检查。HAP、loader 均只剩 dayu200_tdd 运行；SDK split、安装组静态告警及 SA EcoTest 提交失败未变化。累计 12 条 PR 完成，联合组完成 2/6；没有新增可操作故障，没有重复触发门禁。
+[2026-10-16 04:48 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T044823Z/summary.md)：11 条未完成 PR 及 HAP、loader 构建阶段均无变化，仍等待两组的 dayu200_tdd。SDK split、安装组静态告警及 SA EcoTest 提交失败未变化。IDL、JS/CSS 和四条历史 PR 共 12 条已完成并停止检查，联合组完成 2/6；没有重复触发门禁。
 
 ## PR、文件与作用
 

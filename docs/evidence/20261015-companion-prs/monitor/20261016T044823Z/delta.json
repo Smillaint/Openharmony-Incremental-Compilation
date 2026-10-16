@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-10-16T04:48:23.994561+00:00",
+  "changes": [],
+  "new_actionable_findings": [],
+  "completed_groups": [],
+  "skipped_completed_pr_count": 12,
+  "checked_pr_count": 11,
+  "dcp_stage_changes": [],
+  "comparison_ignored": "Only the elapsed-time text on running DCP rows."
+}
