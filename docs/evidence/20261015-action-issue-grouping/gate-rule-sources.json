@@ -1,0 +1,26 @@
+{
+  "recorded_utc": "2026-10-16T00:56:19.261156+00:00",
+  "official_faq": {
+    "url": "https://gitcode.com/openharmony/docs/blob/master/zh-cn/contribute/FAQ.md",
+    "blob_sha": "4e64b20a0f7a709bd507bffe4eecece750e55211",
+    "section": "# FAQ<a name=\"ZH-CN_TOPIC_0000001053622377\"></a>\n\n\n## 多个代码仓存在编译依赖时如何同时发起构建<a name=\"section169732563435\"></a>\n\nOS\\(操作系统\\)开发时，经常会遇到多个代码仓的修改具有编译依赖关系，需要同时构建、同时合入。为此码云平台将Issue作为具有编译依赖的多个代码仓提交PR的关联标识。具体操作如下：\n\n1. 在此次提交的任意一个代码仓上创建Issue。\n\n2. 将多个需要同时构建、同时合入的PR关联上述Issue，具体操作请参考码云帮助中心：[https://gitee.com/help/articles/4142](https://gitee.com/help/articles/4142)。\n\n3. 触发构建\\(详见触发构建的操作帮助\\)后，构建中心会识别关联了同一Issue的PR，同时下载构建，并在代码审核通过后，同时进行合并入代码库。",
+    "note": "当前 master 文件仍保留码云/Gitee 帮助链接；跨仓关联原则与当前 GitCode 门禁记录结合使用。"
+  },
+  "official_commands": {
+    "url": "https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md",
+    "blob_sha": "6e3e5e33bbe0b992e2bf312e6c96e99a7a30e7c4",
+    "start_build": "PR 创建人或 Committer 在 PR 评论 start build 触发构建测试。"
+  },
+  "duplicate_pr_rejection": {
+    "pr_url": "https://gitcode.com/openharmony/build/merge_requests/7130",
+    "id": 193776440,
+    "body": "检测到同仓同分支存在2个或以上PR https://gitcode.com/openharmony/build/merge_requests/7130 & https://gitcode.com/openharmony/build/merge_requests/6965 关联相同ISSUE，禁止触发门禁",
+    "created_at": "2026-10-14T16:54:34+08:00",
+    "both_target": "openharmony/build:master"
+  },
+  "companion_pr_query": {
+    "endpoint_template": "https://api.gitcode.com/api/v5/repos/openharmony/{repo}/pulls?state=all&author=SmillySmillick&per_page=100",
+    "author_parameter_documentation": "https://docs.gitcode.com/docs/apis/get-api-v-5-repos-owner-repo-pulls/",
+    "result": "九个配套仓返回空列表，结果见 companion-pr-search.json。"
+  }
+}

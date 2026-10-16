@@ -1,0 +1,124 @@
+{
+  "queried_utc": "2026-10-16T00:54:18.859855+00:00",
+  "results": [
+    {
+      "issue": "build/4657",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/6965"
+      ]
+    },
+    {
+      "issue": "build/4663",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/6974"
+      ]
+    },
+    {
+      "issue": "build/4668",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/6982"
+      ]
+    },
+    {
+      "issue": "build/4678",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/6999"
+      ]
+    },
+    {
+      "issue": "build/4682",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/7006"
+      ]
+    },
+    {
+      "issue": "build/4684",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/7009"
+      ]
+    },
+    {
+      "issue": "build/4704",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/7046"
+      ]
+    },
+    {
+      "issue": "build/4705",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/7048"
+      ]
+    },
+    {
+      "issue": "build/4706",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/build/merge_requests/7049"
+      ]
+    },
+    {
+      "issue": "third_party_iptables/48",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/third_party_iptables/merge_requests/62"
+      ]
+    },
+    {
+      "issue": "developtools_packing_tool/1201",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556"
+      ]
+    },
+    {
+      "issue": "third_party_jsframework/323",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853"
+      ]
+    },
+    {
+      "issue": "third_party_sane-airscan/19",
+      "body_matches": true,
+      "state": "open",
+      "formal_pr_associations_unchanged": true,
+      "active_prs": [
+        "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22"
+      ]
+    }
+  ],
+  "all_passed": true,
+  "duplicate_issue_4759_state": "closed"
+}

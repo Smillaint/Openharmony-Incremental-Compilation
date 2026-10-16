@@ -1,0 +1,580 @@
+{
+  "queried_utc": "2026-10-16T00:54:18.859855+00:00",
+  "results": [
+    {
+      "issue": {
+        "id": 4223422,
+        "number": "4657",
+        "title": "SA Profile 相关 Action 在无源码变更的增量编译中重复执行",
+        "body": "\n\n感谢对OpenHarmony社区的支持与关注，欢迎反馈缺陷。\n\n### 发生了什么问题？\n            \n在 OpenHarmony rk3568 产品连续执行两次相同的 `make_all` 构建时，即使 SA Profile 相关输入没有发生有效变化，以下 Action 仍可能在第二轮增量构建中重复执行：\n\n- `//build/ohos/packages:sa_profile_src_phone`\n- `//build/ohos/packages:sa_profile_binary_phone`\n- `//build/ohos/packages:phone_sa_profile_install_info`\n\n这会导致 SA Profile 相关 JSON 和 ZIP 产物被重复生成，并继续触发下游构建节点，增加无效的增量编译开销。\n### 期望行为是什么？\n            \n预期结果\n当 SA Profile 的有效输入内容没有变化时：\n已生成的 JSON 文件不应被重复写入；\n已生成的 ZIP 文件不应被替换；\n输出文件时间戳应保持不变；\n上述三个 SA Profile Action 不应在下一轮无变化增量构建中重复执行。\n### 如何复现该缺陷\n            \n连续执行两次相同的构建命令：\n\n```bash\n./build.sh -p rk3568 --build-target make_all 2>&1\n```\n\n检查第二轮构建日志，可以观察上述 SA Profile Action 是否再次执行。\n### 其他补充信息\n            \n\n### 版本或分支信息\n            \n- [x] master\n- [ ] Release 7.0\n- [ ] Beta 7.0\n- [ ] Release 6.1\n- [ ] Release 6.0\n- [ ] Release 5.1.0\n- [ ] Release 5.0.3\n- [ ] Release 4.1\n- [ ] Other\n\n### Action 与修复 PR\n\n| Action | 直接修复 |\n| --- | --- |\n| `sa_profile_src_phone` | [build #6965](https://gitcode.com/openharmony/build/merge_requests/6965)：SA 输入排序、源 JSON 按内容发布 |\n| `sa_profile_binary_phone` | 同一 PR：稳定 ZIP 内容与 entry 时间戳 |\n| `phone_sa_profile_install_info` | 同一 PR：合并安装 JSON 按内容发布 |\n\n三个 Action 使用同一条 PR、同一 Issue。公共 parts 元数据的稳定修复另见 [build #4678](https://gitcode.com/openharmony/build/issues/4678)、[build #4684](https://gitcode.com/openharmony/build/issues/4684)；它们是不同功能组，通过清单追踪依赖。重复 PR #7130 已关闭，不作为另一份修复。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4657",
+        "updated_at": "2026-10-16T08:47:52+08:00"
+      },
+      "prs": [
+        {
+          "id": 8991755,
+          "number": 6965,
+          "title": "Stabilize SA profile incremental outputs",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/6965",
+          "head": {
+            "ref": "codex/fix-sa-profile-incremental-build",
+            "sha": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "69f5e3070cf7dd14868ddd93f031d3a0f69178ff",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        },
+        {
+          "id": 9341541,
+          "number": 7130,
+          "title": "Stabilize sa_profile_src_phone incremental inputs and output",
+          "state": "closed",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7130",
+          "head": {
+            "ref": "fix/sa-profile-src-phone-20261014",
+            "sha": "8334993c47ae5d557f4f47b74b942103d94a37cc",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "86a670af8b35b1eb941b995f5ff1a613460532bc",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4238228,
+        "number": "4663",
+        "title": "HAP 签名 Action 输出异常导致增量构建重复执行",
+        "body": "### 问题描述\n\n`app_sign` Action 将 `${target_name}.stamp` 声明为输出，但签名脚本不会生成该文件，同时 GN 还会生成同名 target stamp，导致 Ninja 出现重复输出规则。\n\n此外，`unsigned_hap_path_list.json` 只记录 HAP 路径并在每轮执行时重写，无法准确表示 unsigned HAP 内容是否变化。\n\n上述问题会导致多个 HAP 签名 Action 在无源码变化的增量构建中重复执行，并继续触发安装包更新。\n\n### 期望结果\n\n修正 Action 输出建模，使代理输出只在 HAP 内容真实变化时更新，避免无意义的重复签名和下游传播。\n\n### Action 与修复 PR\n\nHAP 签名 `app_sign` 与打包产物稳定性共同影响下游安装：\n\n| 修复环节 | PR | 关联 Issue |\n| --- | --- | --- |\n| 签名 Action 的实际输出与输入内容判断 | [build #6974](https://gitcode.com/openharmony/build/merge_requests/6974) | 本 Issue |\n| HAP ZIP entry 固定时间，避免相同输入产生不同字节 | [developtools_packing_tool #1556](https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556) | [developtools_packing_tool #1201](https://gitcode.com/openharmony/developtools_packing_tool/issues/1201) |\n\n两条 PR 分属不同仓，可归入同一 Issue 联合门禁；当前仍沿用表中的原关联。安装 Action 的完整上游清单见 [build #4704](https://gitcode.com/openharmony/build/issues/4704)。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4663",
+        "updated_at": "2026-10-16T08:48:04+08:00"
+      },
+      "prs": [
+        {
+          "id": 9009451,
+          "number": 6974,
+          "title": "Fix incremental HAP signing outputs",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/6974",
+          "head": {
+            "ref": "fix-hap-sign-incremental-build",
+            "sha": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "69f5e3070cf7dd14868ddd93f031d3a0f69178ff",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4251546,
+        "number": "4668",
+        "title": "[Bug]: idl_gen_interface 的 common IDL 输出声明与实际生成文件不一",
+        "body": "\n\n感谢对OpenHarmony社区的支持与关注，欢迎反馈缺陷。\n\n### 发生了什么问题？\n            \n`build/config/components/idl_tool/idl.gni` 中 `idl_gen_interface` 模板生成 common IDL 输出清单时，部分输出名称和路径与 IDL 工具实际产物不一致。\n\n主要表现：\n\n1. 以 `I` 开头的 common IDL 输出出现双 `i` 前缀。\n2. 带相对子目录的 IDL 输出丢失目录层级。\n3. 使用 GN 绝对路径的 common IDL 输出出现路径重复。\n4. 多个目标引用同一个绝对路径 common IDL 时产生重复输出声明。\n\n以及相对子目录丢失\n输入：\ntype/IDataTypes.idl\n错误声明：\nidata_types.cpp\n实际生成：\ntype/idata_types.cpp\n该问题会导致 Ninja 持续认为输出不存在，严重时出现：\nclang++: error: no such file or directory: idata_types.cpp\n\n### 期望行为是什么？\n            \ncommon IDL 输出名称与 IDL 工具实际产物一致。\n相对路径保留原有目录层级。\nGN 绝对路径只使用文件名，不重复拼接源码路径。\n多目标引用相同绝对 common IDL 时不会声明相同输出。\n完整编译及后续增量编译均不出现 IDL 输出缺失。\n### 如何复现该缺陷\n            \n执行全量编译即可从日志查看缺陷\n### 其他补充信息\n            \n\n### 版本或分支信息\n            \n- [x] master\n- [ ] Release 7.0\n- [ ] Beta 7.0\n- [ ] Release 6.1\n- [ ] Release 6.0\n- [ ] Release 5.1.0\n- [ ] Release 5.0.3\n- [ ] Release 4.1\n- [ ] Other\n\n### Action 与修复 PR\n\n本组修复 `idl_gen_interface` 模板及其调用方；模板会生成多个不同名称的 Action。\n\n| 仓库 / 目标 | 修复 | PR 状态 |\n| --- | --- | --- |\n| build / `idl_gen_interface` | 输出名称、具体文件、递归 import、生成目标依赖、clean 后恢复 | [build #6982](https://gitcode.com/openharmony/build/merge_requests/6982) |\n| account_os_account / `frameworks_osaccount_interface` | callback/common 输出声明 | [account_os_account](https://gitcode.com/SmillySmillick/account_os_account/tree/fix%2Fincremental-build-20261013)：分支已发布，PR 未创建 |\n| inputmethod_imf / `input_client_interface` | InputMethodClientTypes 公共输出 | [inputmethod_imf](https://gitcode.com/SmillySmillick/inputmethod_imf/tree/fix%2Fincremental-build-20261013)：分支已发布，PR 未创建 |\n| security_dlp_permission_service / `dlp_permission_interface` | DlpPermissionTypes 公共输出 | [security_dlp_permission_service](https://gitcode.com/SmillySmillick/security_dlp_permission_service/tree/fix%2Fincremental-build-20261013)：分支已发布，PR 未创建 |\n| ability_dmsfwk / `dmsfwk_idl` | DeviceConnectStatus 公共输出 | [ability_dmsfwk](https://gitcode.com/SmillySmillick/ability_dmsfwk/tree/fix%2Fincremental-build-20261013)：分支已发布，PR 未创建 |\n| multimedia_audio_framework / `audio_service_idl_callback` | 依赖共享类型生产者 `audio_service_idl_interface` | [multimedia_audio_framework](https://gitcode.com/SmillySmillick/multimedia_audio_framework/tree/fix%2Fincremental-build-20261013)：分支已发布，PR 未创建 |\n\n五条调用方 PR 创建后统一关联本 Issue，与 build #6982 组成六仓联合门禁。修复链也属于 [build #4704](https://gitcode.com/openharmony/build/issues/4704) 的 IDL 上游部分。清理生成文件后应能恢复，无实际内容变化时应保留已有输出时间戳。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4668",
+        "updated_at": "2026-10-16T08:48:14+08:00"
+      },
+      "prs": [
+        {
+          "id": 9035718,
+          "number": 6982,
+          "title": "Fix IDL output declarations",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+          "head": {
+            "ref": "fix-idl-common-outputs",
+            "sha": "de69337b7f99f2328417e27fe591903862c9bbdc",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4267416,
+        "number": "4678",
+        "title": "无源码变化时 packages 相关 Action 仍被重复调度",
+        "body": "## 问题描述\n\n在 OpenHarmony `rk3568 make_all` 构建完成后，不修改任何源码再次执行相同构建，以下 packages 相关 Action 仍会被重复调度：\n\n- `generate_host_symlink`\n- `process_field_validate`\n- `check_seccomp_filter_name`\n\n这些 Action 的有效输入和输出内容没有发生变化，但由于上游聚合文件被重复改写、动态依赖没有完整声明、校验 Action 缺少稳定的声明输出，Ninja 无法判断其已经处于最新状态，导致无效增量构建。\n\n## 影响\n\n- 增加无源码变化时的增量构建耗时；\n- host symlink 生成被上游元数据时间戳变化重复触发；\n- packages 校验脚本重复扫描 cfg、seccomp 和白名单文件；\n- 校验 Action 的真实依赖关系无法通过 depfile 准确表达。\n\n## 根因分析\n\n### generate_host_symlink\n\n1. `all_parts_host.json` 的条目顺序和文件时间戳不稳定；\n2. 原 Action 同时负责动态依赖收集和符号链接创建；\n3. part/module 元数据即使内容不变，只要时间戳更新，也会直接触发叶子 Action；\n4. host symlink 输出文件会被无条件重写。\n\n### packages 校验 Action\n\n1. install modules 元数据即使内容没有变化也会被重新写入；\n2. `process_field_validate` 和 `check_seccomp_filter_name` 缺少稳定的成功输出；\n3. cfg、seccomp 库及白名单文件没有通过 depfile 声明为真实依赖；\n4. 校验失败时可能残留旧的成功结果，影响构建系统判断。\n\n## 预期结果\n\n- 相同内容的聚合文件不更新时间戳；\n- 无源码变化的第二轮构建不执行 `generate_host_symlink`；\n- 无有效输入变化时不执行两个 packages 校验 Action；\n- cfg、seccomp 或白名单实际变化后，对应校验能够正常重新执行；\n- 校验失败必须返回非零状态，并删除旧的成功标记；\n- 不删除真实依赖，不通过空输出或假 stamp 跳过校验。\n\n## 验证环境\n\n- OpenHarmony 整仓快照：`20260816174546`\n- 产品：`rk3568`\n- 构建目标：`make_all`\n- 组合验证分支：`incremental-build-all-validation-20260820`\n\n### Action 与修复 PR\n\n| Action | 直接修复 |\n| --- | --- |\n| `check_seccomp_filter_name` | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999)：真实输入、成功输出及失败清理 |\n| `process_field_validate` | 同一 PR：cfg/白名单依赖及校验输出 |\n| `generate_host_symlink` | 同一 PR：host 元数据收集与稳定发布 |\n| `phone_parts_list` | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999)、[build #7009](https://gitcode.com/openharmony/build/merge_requests/7009)：parts 聚合与安装信息稳定化 |\n\n`phone_parts_list` 的后续 parts 修复见 [build #4684](https://gitcode.com/openharmony/build/issues/4684)；安装元数据输入见 [build #4704](https://gitcode.com/openharmony/build/issues/4704)。loader 的 `components.json` 稳定发布已保存在修复分支，尚无独立 PR。#6999 与 #7009 都属于 build/master，保留各自 Issue；完整清单引用不等于将两条 PR 绑到同一门禁 Issue。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4678",
+        "updated_at": "2026-10-16T08:48:52+08:00"
+      },
+      "prs": [
+        {
+          "id": 9064618,
+          "number": 6999,
+          "title": "Stabilize package validation inputs",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/6999",
+          "head": {
+            "ref": "incremental-build-all-validation-20260820",
+            "sha": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "6c8feef35cad81feff41eb237cd070787997a2b7",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4275243,
+        "number": "4682",
+        "title": "无源码变化时 phone_hisysevent_install_info Action 重复执行",
+        "body": "# ### 该问题是怎么引起的？\nhb 在每轮构建准备阶段都会重新写入：\nout/rk3568/build_configs/parts_info/hisysevent_configs.json\n即使文件内容没有变化，其 mtime 仍会更新。该文件是 phone_hisysevent_install_info 的输入，因此 Ninja 会在第二轮再次调度该 Action。\n同时，hisysevent_process.py 实际读取了各部件声明的 HiSysEvent YAML 文件，但生成的 depfile 中没有包含这些 YAML 文件。若直接稳定 hisysevent_configs.json 而不补充真实 YAML 依赖，后续 YAML 内容修改可能无法触发重新构建。\n此外，hisysevent_install_info.json 当前采用无条件写入，会继续向下游传播无效时间戳变化\n### 重现步骤\n./build.sh -p rk3568 --build-target make_all\n### 期望结果\n1. hisysevent_configs.json 内容不变时保留原文件及 mtime。\n2. 实际使用的 HiSysEvent YAML 文件被完整写入 depfile。\n3. hisysevent_install_info.json 内容不变时不覆盖。\n4. YAML 或配置内容真实变化时仍能正常触发重建。\n5. 无源码变化的第二轮构建不再执行 phone_hisysevent_install_info\n\n### Action 与修复 PR\n\n`phone_hisysevent_install_info` 对应 [build #7006](https://gitcode.com/openharmony/build/merge_requests/7006)：配置 JSON 与安装信息按内容发布，真实 YAML 文件加入 depfile。该组使用本 Issue；输出也是 [build #4704](https://gitcode.com/openharmony/build/issues/4704) 所追踪的安装上游输入之一。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4682",
+        "updated_at": "2026-10-16T08:49:01+08:00"
+      },
+      "prs": [
+        {
+          "id": 9077826,
+          "number": 7006,
+          "title": "Stabilize HiSysEvent incremental inputs",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7006",
+          "head": {
+            "ref": "fix-hisysevent-incremental-build",
+            "sha": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "c55264de68091db1e234872ba847c8cfef80d35a",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4278123,
+        "number": "4684",
+        "title": "无源码变化时collect_notice_files__phone重复执行",
+        "body": "### 问题描述\n\nrk3568 完成一次 `make_all` 构建后，在不修改源码和构建配置的情况下再次执行相同构建，Ninja 仍会重复调度以下目标：\n\n`ACTION //build/ohos/packages:collect_notice_files__phone`\n\n该 Action 会扫描并收集大量 NOTICE 文件，重复执行还可能继续触发 NOTICE 合并等下游任务，增加增量构建耗时。\n\n### 复现步骤\n\n```bash\n./build.sh -p rk3568 --build-target make_all\n./build.sh -p rk3568 --build-target make_all\n```\n\n检查第二轮构建日志：\ngrep -n 'ACTION //build/ohos/packages:collect_notice_files__phone' second_console.log\n实际结果\n第二轮无源码变更构建仍执行 collect_notice_files__phone。\n预期结果\nNOTICE 输入内容没有变化时：\n- 不重复执行 collect_notice_files__phone；\n- 不更新最终 system_notice_files.zip；\n- 不带动 merge_system_notice_file_phone；\n- NOTICE 输入真实变化时仍能正常重新收集并触发下游构建。\n原因分析\n1. 部件安装信息 JSON 在语义内容未变化时仍被重新写入，导致文件时间戳变化。\n2. NOTICE 收集脚本采用内容感知方式生成 ZIP，内容相同时会保留旧 ZIP 的时间戳。\n3. 最终 ZIP 的时间戳可能持续早于 depfile 中的部分输入，导致 Ninja 每轮都将收集 Action 判断为过期\n\n### Action 与修复 PR\n\n| Action / 环节 | PR | 关联 Issue |\n| --- | --- | --- |\n| `collect_notice_files__phone`：收集与发布分阶段、NOTICE 输出稳定 | [build #7009](https://gitcode.com/openharmony/build/merge_requests/7009) | 本 Issue |\n| 同一 Action 的 LICENSE 边界查找及生成物依赖补充 | [build #7048](https://gitcode.com/openharmony/build/merge_requests/7048) | [build #4705](https://gitcode.com/openharmony/build/issues/4705) |\n| `phone_parts_list`：parts 聚合和安装元数据稳定 | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999)、[build #7009](https://gitcode.com/openharmony/build/merge_requests/7009) | [build #4678](https://gitcode.com/openharmony/build/issues/4678)、本 Issue |\n\nNOTICE 的完整修复包含 #7009 和 #7048。它们同属 build/master，保留各自 Issue；如需一次联合门禁，应先合并为一条覆盖完整范围的 build PR。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4684",
+        "updated_at": "2026-10-16T08:49:16+08:00"
+      },
+      "prs": [
+        {
+          "id": 9083112,
+          "number": 7009,
+          "title": "Fix incremental notice file collection",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7009",
+          "head": {
+            "ref": "fix-part-install-metadata-incremental-build",
+            "sha": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "c55264de68091db1e234872ba847c8cfef80d35a",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4305618,
+        "number": "4704",
+        "title": "修复安装模块依赖与元数据引起的无效增量构建",
+        "body": "### 该问题是怎么引起的？\n安装模块依赖收集与元数据生成存在以下问题：\n- modules_install.py 使用 extend() 追加过滤结果，没有真正移除应排除的 SA 文件，反而重复加入其他依赖。\n- binary_install_info.py 在 JSON 内容不变时仍重写输出，更新时间戳，影响下游增量判断。\n- 将不存在的可选 dist_parts_info_file 写入 depfile，使构建系统持续面对缺失依赖。\n这些问题会造成安装相关 Action 及下游任务的无效调度，增加无代码改动时的构建开销。\n### 重现步骤\n### 报错信息\n\n### Action 与完整修复清单\n\n本 Issue 跟踪 `phone_install_modules`。直接修复为 [build #7046](https://gitcode.com/openharmony/build/merge_requests/7046)：修正 SA 依赖过滤，稳定安装 JSON 与模块列表，补齐空 arm64e 输出和两份安装规则输入。\n\n安装输入来自多个生成链，仅合入 #7046 不代表这些上游问题全部消除。\n\n| 输入链 / 相关 Action | 已有 PR | 配套修复与跟踪 Issue |\n| --- | --- | --- |\n| SA 三项与安装信息 | [build #6965](https://gitcode.com/openharmony/build/merge_requests/6965) | [build #4657](https://gitcode.com/openharmony/build/issues/4657) |\n| parts、host、校验及 NOTICE 元数据 | [build #6999](https://gitcode.com/openharmony/build/merge_requests/6999)、[build #7009](https://gitcode.com/openharmony/build/merge_requests/7009)、[build #7048](https://gitcode.com/openharmony/build/merge_requests/7048) | [build #4678](https://gitcode.com/openharmony/build/issues/4678)、[build #4684](https://gitcode.com/openharmony/build/issues/4684)、[build #4705](https://gitcode.com/openharmony/build/issues/4705) |\n| HiSysEvent 安装信息 | [build #7006](https://gitcode.com/openharmony/build/merge_requests/7006) | [build #4682](https://gitcode.com/openharmony/build/issues/4682) |\n| HAP 签名与打包 | [build #6974](https://gitcode.com/openharmony/build/merge_requests/6974)、[developtools_packing_tool #1556](https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556) | [build #4663](https://gitcode.com/openharmony/build/issues/4663)、[developtools_packing_tool #1201](https://gitcode.com/openharmony/developtools_packing_tool/issues/1201) |\n| IDL 生成 Action | [build #6982](https://gitcode.com/openharmony/build/merge_requests/6982) | [build #4668](https://gitcode.com/openharmony/build/issues/4668)：账户、输入法、DLP、分布式能力、音频五仓配套 PR 未创建 |\n| SDK 接口拆分 | [build #7049](https://gitcode.com/openharmony/build/merge_requests/7049) | [build #4706](https://gitcode.com/openharmony/build/issues/4706)：interface_sdk-js 调用方 PR 未创建 |\n| SDK `gen_ui_plugins`、`gen_sdk_ts_wrapper` 与 libarkts | 尚无 PR | [developtools_ace_ets2bundle](https://gitcode.com/SmillySmillick/developtools_ace_ets2bundle/tree/fix%2Fincremental-build-20261013)：分支已发布 |\n| JS `gen_snapshot`、`ark_jsf` | [third_party_jsframework #853](https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853) | [third_party_jsframework #323](https://gitcode.com/openharmony/third_party_jsframework/issues/323)：css-what 配套 PR 未创建 |\n| `airscan_action` | [third_party_sane-airscan #22](https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22) | [third_party_sane-airscan #19](https://gitcode.com/openharmony/third_party_sane-airscan/issues/19) |\n| iptables initext 生成及下游编译 | [third_party_iptables #62](https://gitcode.com/openharmony/third_party_iptables/merge_requests/62) | [third_party_iptables #48](https://gitcode.com/openharmony/third_party_iptables/issues/48) |\n| ROFS 对象生成及共享库重链 | 尚无 PR | [graphic_graphic_3d](https://gitcode.com/SmillySmillick/graphic_graphic_3d/tree/fix%2Fincremental-build-20261013)：分支已发布 |\n| loader 的 `components.json` 生命周期 | 尚无独立 PR | [build](https://gitcode.com/SmillySmillick/build/tree/fix%2Fincremental-build-20261013)：修复已保存，需按单独范围提交 |\n\n此表用于追踪完整修复链。正式联合门禁按有编译依赖的跨仓组组织：IDL 六仓、JS/CSS 两仓、SDK split 两仓。表中的多条 build/master PR 不能全部正式关联到本 Issue；同仓修复需要共同验证时，应先整合为一条 PR，或按依赖顺序合入。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4704",
+        "updated_at": "2026-10-16T08:46:58+08:00"
+      },
+      "prs": [
+        {
+          "id": 9133487,
+          "number": 7046,
+          "title": "Stabilize binary install metadata and optional input dependencies",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7046",
+          "head": {
+            "ref": "fix-install-incremental-metadata",
+            "sha": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4305698,
+        "number": "4705",
+        "title": "修复 NOTICE 许可证查找与聚合依赖",
+        "body": "许可证递归查找到源码边界目录时提前退出，遗漏该目录中的 LICENSE；\n聚合 NOTICE 的 depfile 额外收集生成目录文件，引入冗余生成物依赖\n\n### Action 与修复 PR\n\n本 Issue 对应 [build #7048](https://gitcode.com/openharmony/build/merge_requests/7048)，补齐 `collect_notice_files__phone` 及 NOTICE 聚合链的许可证查找边界和 depfile。另一部分修复为 [build #7009](https://gitcode.com/openharmony/build/merge_requests/7009)，由 [build #4684](https://gitcode.com/openharmony/build/issues/4684) 跟踪。\n\n两条 PR 共同组成 NOTICE 修复，当前各用原 Issue；两者都合向 build/master，不能直接共用门禁 Issue。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4705",
+        "updated_at": "2026-10-16T08:49:24+08:00"
+      },
+      "prs": [
+        {
+          "id": 9133879,
+          "number": 7048,
+          "title": "修复 NOTICE 许可证查找与聚合依赖",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7048",
+          "head": {
+            "ref": "fix-notice-incremental-deps",
+            "sha": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4305877,
+        "number": "4706",
+        "title": "补齐 SDK 接口拆分的完成标记与增量依",
+        "body": "SDK 接口拆分脚本缺少可供调用方使用的 stamp、depfile 支持，不利于准确描述任务完成状态及真实输入变化。\n\n### Action 与修复 PR\n\n| 仓库 / 目标 | 修复 | PR 状态 |\n| --- | --- | --- |\n| build / SDK 接口拆分脚本 | 完成标记和 depfile 支持 | [build #7049](https://gitcode.com/openharmony/build/merge_requests/7049) |\n| interface_sdk-js / `base_split` 及声明裁剪 | 消费 stamp/depfile，按内容发布并跟踪真实输入 | 本地累计修复已保存，配套 PR 未创建 |\n\ninterface_sdk-js 配套 PR 应关联本 Issue，与 build #7049 联合门禁。安装链总表见 [build #4704](https://gitcode.com/openharmony/build/issues/4704)。ace_ets2bundle 的插件/wrapper 是另一组生成链，不能把该仓尚未提交的修复算作 #7049 已覆盖。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/build/issues/4706",
+        "updated_at": "2026-10-16T08:52:20+08:00"
+      },
+      "prs": [
+        {
+          "id": 9134577,
+          "number": 7049,
+          "title": "补齐 SDK 接口拆分的完成标记与增量依赖",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7049",
+          "head": {
+            "ref": "fix-sdk-split-incremental-deps",
+            "sha": "72115384f783e09832216c951e7743b944fd5893",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4300910,
+        "number": "48",
+        "title": "genInit.py 在输入未变化时重写 initext 聚合源文件，导致 iptables 重复编译",
+        "body": "### 该问题是怎么引起的？\nextensions/BUILD.gn` 在 GN 阶段调用 `genInit.py` 生成 `initext.c`、`initext4.c` 和 `initext6.c`。脚本无条件删除并重建聚合文件，即使内容一致也会更新时间戳，触发下游 CC、AR 和 iptables 链接，并可能继续带动安装与镜像生成\n### 重现步骤\n1. 在 rk3568 已有构建输出上执行 `./build.sh -p rk3568 --build-target make_all`。\n2. 保持源码、参数和输出目录不变，再执行一次相同命令。\n3. 检查三个 `out/gen/initext*.c` 的内容、时间戳和对应编译日志。\n\n实际结果：聚合内容未变化，但时间戳刷新，iptables 下游编译链重复执行。\n\n### Action 与修复 PR\n\n本 Issue 对应 [third_party_iptables #62](https://gitcode.com/openharmony/third_party_iptables/merge_requests/62)，修复 GN 阶段 `genInit.py` 无条件改写 `initext*.c`，避免继续触发 CC、AR、LINK 及下游 `phone_install_modules`。\n\n这里修的是安装 Action 的上游生成环节；安装自身的修复及其他输入链见 [build #4704](https://gitcode.com/openharmony/build/issues/4704)。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/third_party_iptables/issues/48",
+        "updated_at": "2026-10-16T08:52:47+08:00"
+      },
+      "prs": [
+        {
+          "id": 9125211,
+          "number": 62,
+          "title": "修复 genInit 聚合文件无变化重写导致的 iptables 重复编译",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/third_party_iptables/merge_requests/62",
+          "head": {
+            "ref": "fix-geninit-incremental-output",
+            "sha": "5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+            "repo": {
+              "path": "third_party_iptables",
+              "name": "third_party_iptables",
+              "full_name": "SmillySmillick/third_party_iptables"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+            "repo": {
+              "path": "third_party_iptables",
+              "name": "third_party_iptables",
+              "full_name": "openharmony/third_party_iptables"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4246949,
+        "number": "1201",
+        "title": "HAP 打包结果因 ZIP entry 时间戳变化而不可重复",
+        "body": "### 问题描述\n\n使用相同输入连续执行 HAP 打包时，生成的 HAP 文件 SHA-256 可能不同。\n\n分析发现，打包工具创建 ZIP entry 时使用了当前时间。即使文件内容和打包参数完全相同，不同执行时间生成的 ZIP entry 时间戳也不同，最终导致 HAP 字节内容和 SHA-256 发生变化。\n\n该问题会影响构建产物的可重复性，也会使增量构建无法准确判断 HAP 输出是否发生了真实变化。\n\n### 复现方式\n\n1. 准备一组内容不变的真实 HAP 打包输入。\n2. 使用相同参数连续执行两次打包。\n3. 分别计算两次生成 HAP 的 SHA-256。\n4. 检查 HAP 内 ZIP entry 的时间信息。\n\n### 实际结果\n\n两次 HAP 的 ZIP entry 时间不同，SHA-256 不一致。\n\n### 预期结果\n\n相同输入和相同参数应生成字节完全一致的 HAP，ZIP entry 时间不应随打包时间变化。\n\n### 修复建议\n\n为打包过程中创建的所有 ZIP entry 设置统一的固定时间，包括：\n\n- 普通文件和 JSON entry；\n- native library entry；\n- STORED entry；\n- 空目录 entry。\n\n### 影响范围\n\n该问题仅涉及 HAP ZIP 内容的可重复性，不涉及依赖关系调整，也不代表所有 HAP 编译 Action 均可退出后续增量构建\n\n### Action 与修复 PR\n\n本 Issue 对应 [developtools_packing_tool #1556](https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556)，负责 HAP ZIP 字节稳定性；HAP 签名 `app_sign` 的输出和依赖修复为 [build #6974](https://gitcode.com/openharmony/build/merge_requests/6974)，由 [build #4663](https://gitcode.com/openharmony/build/issues/4663) 跟踪。\n\n两仓修复共同覆盖打包到签名的链路，当前仍各用原 Issue。需要联合门禁时可将这两条跨仓 PR 统一到一个 Issue，同时保留另一 Issue 的问题记录。最终安装输入清单见 [build #4704](https://gitcode.com/openharmony/build/issues/4704)。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/developtools_packing_tool/issues/1201",
+        "updated_at": "2026-10-16T08:52:58+08:00"
+      },
+      "prs": [
+        {
+          "id": 9027599,
+          "number": 1556,
+          "title": "Fix reproducible HAP entry timestamps",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+          "head": {
+            "ref": "fix/hap-reproducible-archive",
+            "sha": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+            "repo": {
+              "path": "developtools_packing_tool",
+              "name": "developtools_packing_tool",
+              "full_name": "SmillySmillick/developtools_packing_tool"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "9cac80b676fb5fe72fdd2039e7749087caaa85a9",
+            "repo": {
+              "path": "developtools_packing_tool",
+              "name": "developtools_packing_tool",
+              "full_name": "openharmony/developtools_packing_tool"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4220071,
+        "number": "323",
+        "title": "[Bug]: jsframework相关ACTION在零代码改动时重复执行",
+        "body": "\n\n感谢对OpenHarmony社区的支持与关注，欢迎反馈缺陷。\n\n### 发生了什么问题？\n            \nOpenHarmony rk3568 完成首次构建后，在未修改源码及构建配置的情况下再次执行相同构建，以下 ACTION 仍被重复执行：\n\n```text\nACTION //third_party/jsframework:ark_jsf(//build/toolchain/ohos:ohos_clang_arm)\nACTION //third_party/jsframework:gen_snapshot(//build/toolchain/ohos:ohos_clang_arm)\n```\n1. `js_framework_build.sh` 会重新生成并覆盖 `dist/strip.native.min.js`。即使文件内容没有变化，覆盖操作仍会更新 mtime，导致 Ninja 重新触发 `ark_jsf`。\n2. 构建流程会修改共享的 `runtime` 目录，使其目录时间持续晚于 `css_what_sources.stamp`，导致 Ninja 将 `gen_snapshot` 判断为需要重新执行。\n\n该问题增加了零代码改动增量构建中的无效任务和构建耗时。\n### 期望行为是什么？\n            \n首次构建成功后，如果相关输入文件内容没有变化，再次执行相同构建时不应重复执行：\n\n```text\n//third_party/jsframework:ark_jsf\n//third_party/jsframework:gen_snapshot\n```\n\n当输入内容真实变化时，上述目标仍应正常重新执行，不能产生漏编。\n### 如何复现该缺陷\n            \n1. 进入 OpenHarmony 源码根目录。\n2. 执行 rk3568 完整构建：\n\n```bash\n./build.sh -p rk3568 --build-target make_all\n```\n\n3. 等待首次构建成功。\n4. 不修改任何源码、构建配置及输出文件。\n5. 再次执行相同命令：\n\n```bash\n./build.sh -p rk3568 --build-target make_all\n```\n\n6. 检查第二次构建的 Ninja 日志，可以观察到 `ark_jsf` 和 `gen_snapshot` 再次执行。\n\n### 其他补充信息\n\n当前修复在 out 内处理构建依赖副本，补齐 CSS、配置和测试输入，保留 CSS 目标生成文件；JS 内容相同时保留时间戳，并正确返回构建或测试的失败状态。清理 out 后应能恢复，源码目录不产生构建中间文件。\n\n### 版本或分支信息\n            \n- [x] master\n- [ ] Release 7.0\n- [ ] Beta 7.0\n- [ ] Release 6.1\n- [ ] Release 6.0\n- [ ] Release 5.1.0\n- [ ] Release 5.0.3\n- [ ] Release 4.1\n- [ ] Other\n\n### Action 与修复 PR\n\n| Action / 环节 | 修复 | PR 状态 |\n| --- | --- | --- |\n| `gen_snapshot` | out 内构建、具体 CSS/配置/测试输入、并行失败传播 | [third_party_jsframework #853](https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853) |\n| `ark_jsf` | JS 内容未变时保留时间戳，避免重复下游生成 | 同一 PR |\n| css-what 生产者 | 具体复制输出及 fixture innerkit，补齐跨部件依赖 | [third_party_css-what](https://gitcode.com/SmillySmillick/third_party_css-what/tree/fix%2Fincremental-build-20261013)：分支已发布，配套 PR 未创建 |\n\ncss-what 配套 PR 创建后关联本 Issue，与 #853 组成两仓联合门禁。安装上游总表见 [build #4704](https://gitcode.com/openharmony/build/issues/4704)。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/third_party_jsframework/issues/323",
+        "updated_at": "2026-10-16T08:53:12+08:00"
+      },
+      "prs": [
+        {
+          "id": 8985430,
+          "number": 853,
+          "title": "fix: stabilize jsframework incremental actions",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853",
+          "head": {
+            "ref": "fix/jsframework-incremental-actions",
+            "sha": "4172098b9b45baf9b37fa3be021bf1ff6bea6359",
+            "repo": {
+              "path": "third_party_jsframework",
+              "name": "third_party_jsframework",
+              "full_name": "SmillySmillick/third_party_jsframework"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+            "repo": {
+              "path": "third_party_jsframework",
+              "name": "third_party_jsframework",
+              "full_name": "openharmony/third_party_jsframework"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "issue": {
+        "id": 4220688,
+        "number": "19",
+        "title": "[Bug]:sane-airscan的airscan_action在零代码改动时重复执行",
+        "body": "\n\n感谢对OpenHarmony社区的支持与关注，欢迎反馈缺陷。\n\n### 发生了什么问题？\n            \nrk3568 完成首次构建后，在未修改源码及构建配置的情况下再次执行相同构建，以下 ACTION 仍会重复执行：\n\n```text\nACTION //third_party/sane-airscan:airscan_action(//build/toolchain/ohos:ohos_clang_arm)\n```\n\n问题原因包括：\n\n1. `patch_install.py` 直接在 `third_party/sane-airscan` 源码目录中执行补丁，构建过程会修改 Ninja 的输入源码。\n2. 补丁应用失败时没有正确终止 ACTION，可能留下部分修改的源码或 `.rej` 文件。\n3. `BUILD.gn` 声明的输出路径与脚本实际生成结果不一致，部分声明输出没有被真正生成。\n4. 相同输出会被重复写入并更新时间戳，使 Ninja 无法建立稳定的输入、输出关系。\n\n因此，一次构建可能改变下一次构建的输入状态，导致 `airscan_action` 在零代码改动时仍被重复执行。\n\n### 期望行为是什么？\n            \n首次构建成功后，如果源码、补丁文件和构建配置均未变化，后续增量构建不应再次执行：\n\n```text\n//third_party/sane-airscan:airscan_action\n```\n\n当源码或补丁内容真实变化时，该 ACTION 应正常重新执行并更新对应输出。\n\n构建过程不应修改 `third_party/sane-airscan` 源码树，也不应产生残留的 `.rej` 文件。\n### 如何复现该缺陷\n            \n1. 进入 OpenHarmony 源码根目录。\n2. 执行 rk3568 完整构建：\n\n```bash\n./build.sh -p rk3568 --build-target make_all\n```\n\n3. 等待首次构建成功。\n4. 不修改任何源码、补丁文件、构建配置及输出文件。\n5. 再次执行相同构建：\n\n```bash\n./build.sh -p rk3568 --build-target make_all\n```\n\n6. 检查第二次构建的 Ninja 日志，可以观察到：\n\n```text\nACTION //third_party/sane-airscan:airscan_action(//build/toolchain/ohos:ohos_clang_arm)\n```\n\n仍被执行。\n### 其他补充信息\n            \n\n### 版本或分支信息\n            \n- [x] master\n- [ ] Release 7.0\n- [ ] Beta 7.0\n- [ ] Release 6.1\n- [ ] Release 6.0\n- [ ] Release 5.1.0\n- [ ] Release 5.0.3\n- [ ] Release 4.1\n- [ ] Other\n\n### Action 与修复 PR\n\n`airscan_action` 对应 [third_party_sane-airscan #22](https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22)：保留当前主干八项补丁，在 out/gen/patched 生成副本，明确 inputs/outputs，相同内容不重写，构建过程不修改源码。\n\n这条 PR 同时消除补丁副本引起的无效编译；其对下游安装的影响由 [build #4704](https://gitcode.com/openharmony/build/issues/4704) 的完整清单追踪。本组可独立使用当前 Issue。\n",
+        "state": "open",
+        "html_url": "https://gitcode.com/openharmony/third_party_sane-airscan/issues/19",
+        "updated_at": "2026-10-16T08:53:22+08:00"
+      },
+      "prs": [
+        {
+          "id": 8987050,
+          "number": 22,
+          "title": "fix: stabilize airscan incremental build outputs",
+          "state": "open",
+          "html_url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+          "head": {
+            "ref": "fix/airscan-incremental-action",
+            "sha": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+            "repo": {
+              "path": "third_party_sane-airscan",
+              "name": "third_party_sane-airscan",
+              "full_name": "SmillySmillick/third_party_sane-airscan"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+            "repo": {
+              "path": "third_party_sane-airscan",
+              "name": "third_party_sane-airscan",
+              "full_name": "openharmony/third_party_sane-airscan"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

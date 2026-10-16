@@ -27,6 +27,8 @@ build #6999 历史分支包含 SA、HAP、旧 IDL 等前置提交。它自身的
 
 ## 配套 PR 与门禁
 
+完整 Action → PR → Issue 对应关系及实时规则见 [Action、PR 与 Issue 对照](action-pr-issue-map-20261015.md)。13 个现有 Issue 已补齐正文清单；除下列 IDL/CSS 六条配套外，SDK split 调用方、SDK 插件/wrapper、ROFS 和 loader 也仍有提交缺口。
+
 - IDL #6982 需要账户、输入法、DLP、分布式能力、音频五仓的输出／依赖补充。这五仓的 `fix/incremental-build-20261013` 已在上轮发布，需要分别创建 PR 并关联 build Issue #4668。
 - JS #853 需要 css-what 的具体复制输出及 fixture innerkit；该仓发布分支已存在，需要配套 PR，关联 jsframework Issue #323。
 - 不在同仓同目标分支另建关联同 Issue 的重复 PR。跨仓配套可以沿用同一个 Issue。

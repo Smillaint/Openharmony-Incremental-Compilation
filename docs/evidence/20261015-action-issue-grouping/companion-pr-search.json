@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "account_os_account",
+    "own": []
+  },
+  {
+    "repo": "inputmethod_imf",
+    "own": []
+  },
+  {
+    "repo": "security_dlp_permission_service",
+    "own": []
+  },
+  {
+    "repo": "ability_dmsfwk",
+    "own": []
+  },
+  {
+    "repo": "multimedia_audio_framework",
+    "own": []
+  },
+  {
+    "repo": "third_party_css-what",
+    "own": []
+  },
+  {
+    "repo": "interface_sdk-js",
+    "own": []
+  },
+  {
+    "repo": "developtools_ace_ets2bundle",
+    "own": []
+  },
+  {
+    "repo": "graphic_graphic_3d",
+    "own": []
+  }
+]
