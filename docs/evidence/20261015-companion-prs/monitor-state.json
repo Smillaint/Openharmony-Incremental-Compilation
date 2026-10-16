@@ -1,7 +1,7 @@
 {
   "automation_id": "openharmony-30",
   "interval_minutes": 30,
-  "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+  "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
   "groups": [
     {
       "name": "IDL",
@@ -46,7 +46,7 @@
           "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69"
         }
       ],
-      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
       "head_verified": true,
       "unresolved_subtasks": {
         "targets": [
@@ -128,7 +128,7 @@
           "head": "9e2c44a2cca432c7686c396ab9465ea51c1119da"
         }
       ],
-      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
       "head_verified": true,
       "failure": {
         "fingerprint": "9e2c44a2cca432c7686c396ab9465ea51c1119da:CodeCheck:G.FIO.04:process_internal.py:158,remove_internal.py:82",
@@ -170,7 +170,7 @@
           "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0"
         }
       ],
-      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
       "head_verified": true,
       "failure": {
         "fingerprint": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6:CodeCheck:G.FIO.05:168:WordsTool.110:10",
@@ -207,7 +207,7 @@
           "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc"
         }
       ],
-      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
       "head_verified": true,
       "progress": "dayu200, dayu600 and LiteOS tests passed. dayu200_tdd remains running; no final gate receipt."
     },
@@ -229,7 +229,7 @@
           "head": "f0dd0bd6ea0708337120d8044115e87491794532"
         }
       ],
-      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
       "head_verified": true,
       "progress": "dayu200, dayu600 and LiteOS tests passed. x86_64_virt_tdd and dayu200_tdd remain running; no final gate receipt."
     }
@@ -238,21 +238,27 @@
     {
       "repo": "build",
       "number": 6965,
-      "status": "running_with_test_failure",
+      "status": "failed_test_trigger_awaiting_final_report",
       "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
-      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
       "done": false,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad165ef64650f998bcd430a/runlist",
       "receipt_id": 194060838,
       "failure": {
-        "fingerprint": "6ad165ef64650f998bcd430a:dayu200:test:failed:no_log",
-        "stage": "dayu200 smoke test",
-        "classification": "undetermined_log_unavailable",
-        "details": "dayu200 compile and InnerApi passed, smoke failed; log entry still returns 未生成日志文件. dayu600 and LiteOS tests passed. x86_64_virt_tdd passed(IGNORE), dayu200_tdd remains running.",
-        "recommendation": "Request platform-side dayu200 test execution and result-upload logs for this CI before changing SA code. Do not auto retry.",
+        "fingerprint": "6ad165ef64650f998bcd430a:dayu200:trigger_ecotest_failed:E06:HTTP500",
+        "stage": "dayu200 EcoTest task submission",
+        "classification": "platform_test_service_trigger_failure",
+        "details": "Three HTTP 500 Internal Server Error responses at 08:18:25, 08:18:31 and 08:18:36 GMT+08 on 2026-10-16. Pipeline reports trigger_ecotest_failed / E06, testTaskId=error, testDuration=0. Later upload-version error and exit 1 are downstream failures.",
+        "first_error_time": "2026-10-16T08:18:25.921+08:00",
+        "first_error_line": 260228,
+        "report_url": "https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00010/log/build.log.zip",
+        "evidence": "monitor/20261016T031827Z/sa-build-excerpt.json",
+        "recommendation": "Ask the EcoTest platform maintainer to inspect service-side HTTP 500 exceptions from 2026-10-16 08:18:25 to 08:18:41 GMT+08 for dayu200 artifact 20261016-1-00010 and CI 6ad165ef64650f998bcd430a. There is no valid test task ID. Do not auto retry or infer an SA code fix from this failure.",
         "notified": true
       },
-      "progress": "x86_64_virt_tdd now passed(IGNORE); dayu200_tdd still running. Known dayu200 smoke failure still returns 未生成日志文件."
+      "progress": "All non-ignored compilation passed, including dayu200_tdd. dayu200 smoke failed because EcoTest trigger returned HTTP 500 three times; no valid test task was created. No final gate result comment yet.",
+      "head_verified": true,
+      "final_report_pending": true
     },
     {
       "repo": "build",
@@ -279,10 +285,11 @@
       "number": 7048,
       "status": "not_triggered_current_head",
       "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
-      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
       "done": false,
       "active_gate": false,
-      "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically."
+      "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically.",
+      "head_verified": true
     },
     {
       "repo": "build",
@@ -309,16 +316,17 @@
       "number": 22,
       "status": "not_triggered_current_head",
       "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
-      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "last_checked_utc": "2026-10-16T03:18:27.889376+00:00",
       "done": false,
       "active_gate": false,
-      "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically."
+      "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically.",
+      "head_verified": true
     }
   ],
-  "last_snapshot": "monitor/20261016T024825Z/summary.md",
+  "last_snapshot": "monitor/20261016T031827Z/summary.md",
   "notification_policy": "Notify only new actionable findings or changed failure causes; unchanged failures stay quiet.",
   "last_notification": {
-    "required": false,
-    "reason": "JS-CSS passed and was removed from polling. No new actionable failure, diagnosis, or required user action."
+    "required": true,
+    "reason": "Previously unexplained SA smoke failure is now located in EcoTest trigger HTTP 500; platform maintainer investigation is actionable."
   }
 }

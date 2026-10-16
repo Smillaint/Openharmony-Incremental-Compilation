@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-[2026-10-16 02:48 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T024825Z/summary.md)：JS/CSS 两条 PR 已收到正式通过回执并移出后续检查。IDL、HAP、loader 的冒烟已通过，仍有 TDD 编译运行中。原静态告警及 SA 缺日志状态未变化，没有新增可操作故障。[首轮故障分析](evidence/20261015-companion-prs/monitor/20261016T014905Z/summary.md)保留原因与建议。
+[2026-10-16 03:18 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T031827Z/summary.md)：SA #6965 的全部非忽略项编译已通过；dayu200 冒烟失败已定位到 EcoTest 提交接口连续三次 HTTP 500，任务未创建，需要平台侧检查。IDL、HAP、loader 仍有 TDD 编译运行，SDK split 和安装组原静态告警未变化。JS/CSS 已通过并停止检查。没有重复触发门禁。
 
 ## PR、文件与作用
 

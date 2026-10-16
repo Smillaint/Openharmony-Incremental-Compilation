@@ -1,0 +1,74 @@
+{
+  "source_url": "https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00010/log/build.log.zip",
+  "records": [
+    {
+      "member": "ditribute_job_client",
+      "line": 260228,
+      "text": "[2026/10/16 08:18:25.921 GMT+08:00] trigger_ecotest result 500 {\"timestamp\":\"2026-10-16T00:18:25.733+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"message\":\"\"}"
+    },
+    {
+      "member": "ditribute_job_client",
+      "line": 260229,
+      "text": "[2026/10/16 08:18:31.201 GMT+08:00] trigger_ecotest result 500 {\"timestamp\":\"2026-10-16T00:18:30.935+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"message\":\"\"}"
+    },
+    {
+      "member": "ditribute_job_client",
+      "line": 260230,
+      "text": "[2026/10/16 08:18:36.482 GMT+08:00] trigger_ecotest result 500 {\"timestamp\":\"2026-10-16T00:18:36.181+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"message\":\"\"}"
+    }
+  ],
+  "ending_records": [
+    {
+      "line": 260228,
+      "text": "[2026/10/16 08:18:25.921 GMT+08:00] trigger_ecotest result 500 {\"timestamp\":\"2026-10-16T00:18:25.733+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"message\":\"\"}"
+    },
+    {
+      "line": 260229,
+      "text": "[2026/10/16 08:18:31.201 GMT+08:00] trigger_ecotest result 500 {\"timestamp\":\"2026-10-16T00:18:30.935+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"message\":\"\"}"
+    },
+    {
+      "line": 260230,
+      "text": "[2026/10/16 08:18:36.482 GMT+08:00] trigger_ecotest result 500 {\"timestamp\":\"2026-10-16T00:18:36.181+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"message\":\"\"}"
+    },
+    {
+      "line": 260232,
+      "text": "[2026/10/16 08:18:41.762 GMT+08:00] 2026-10-16 08:18:41: [ERROR]trigger ecoTest failed: {'timestamp': '2026-10-16T00:18:36.181+00:00', 'status': 500, 'error': 'Internal Server Error', 'message': ''}"
+    },
+    {
+      "line": 260236,
+      "fields": {
+        "component": "dayu200",
+        "testTaskId": "error",
+        "testStartTime": "20261016081841",
+        "testDuration": 0,
+        "testEndTime": "20261016081841",
+        "testResult": "failed",
+        "buildFailReason": "trigger_ecotest_failed",
+        "buildFailType": "E06",
+        "trigger_ecotest_param": {
+          "version_url": "https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00010/version/Artifacts-dayu200-20261016-1-00010-version-dayu200.tar.gz",
+          "user_define": {
+            "PR": "https://gitcode.com/openharmony/build/merge_requests/6965"
+          }
+        }
+      },
+      "note": "Extracted message fields; unrelated pipeline routing key omitted."
+    },
+    {
+      "line": 260244,
+      "text": "[2026/10/16 08:19:20.501 GMT+08:00] [ERROR]: upload version  failed"
+    },
+    {
+      "line": 260245,
+      "text": "[2026/10/16 08:19:20.515 GMT+08:00] [ERROR]  : script returned exit code 1, exitMessage is: command run failed"
+    },
+    {
+      "line": 260249,
+      "text": "[2026/10/16 08:19:26.795 GMT+08:00] Finished: FAILURE"
+    }
+  ],
+  "ci_id": "6ad165ef64650f998bcd430a",
+  "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+  "archive_format": "tar",
+  "member": "ditribute_job_client"
+}

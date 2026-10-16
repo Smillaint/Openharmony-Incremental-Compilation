@@ -1,0 +1,26 @@
+{
+  "checked_utc": "2026-10-16T03:18:27.889376+00:00",
+  "recorded_utc": "2026-10-16T03:27:35.834884+00:00",
+  "changes": [
+    {
+      "repo": "build",
+      "number": 6965,
+      "new_comment_ids": [],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "编译成功"
+      ],
+      "removed_labels": []
+    }
+  ],
+  "new_actionable_findings": [
+    {
+      "repo": "build",
+      "number": 6965,
+      "classification": "platform_test_service_trigger_failure",
+      "evidence": "sa-build-excerpt.json"
+    }
+  ],
+  "completed_groups": [],
+  "skipped_completed_pr_count": 6
+}

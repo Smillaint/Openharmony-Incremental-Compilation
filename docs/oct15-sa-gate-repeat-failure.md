@@ -49,3 +49,13 @@ EcoTest 模板为 `L2_P7885_DOOR`，任务号为 **2296023**。初始接收响�
 第三轮 `start build` 已发送，机器人已确认“门禁构建开始”。新任务为 [6ad165ef64650f998bcd430a](https://dcp.openharmony.cn/workbench/cicd/detail/6ad165ef64650f998bcd430a/runlist)。平台因上轮超过 12 小时而重新全量验证并重置旧验证状态；当前只确认启动，尚无最终结果。
 
 [第三轮启动回执](evidence/20261015-sa-smoke-recheck/third-gate-started.txt)、[启动截图](evidence/20261015-sa-smoke-recheck/third-gate-started.png)。本轮不修改源码和 PR 描述；若再次失败，凭上述任务号和日志联系维护人员排查。
+
+## 第三轮更新（2026-10-16 03:18 UTC）
+
+当前 HEAD 未变化，全部非忽略项编译已通过，包括 dayu200_tdd；dayu600 和 LiteOS 冒烟通过。dayu200 冒烟失败，尚无最终门禁汇总回执。
+
+本次失败与第二轮 dayu600 接收后超时不同：[dayu200 构建日志](https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00010/log/build.log.zip)第 260228–260230 行显示，EcoTest 触发接口于北京时间 2026-10-16 08:18:25、08:18:31、08:18:36 连续返回 HTTP 500。第 260236 行记录 `trigger_ecotest_failed`、`E06`、`testTaskId=error`、`testDuration=0`，没有创建有效测试任务。后续上传失败和流水线退出 1 属于后续错误。
+
+失败位于测试平台任务提交阶段，没有测试用例失败或 SA 编译错误证据。应向平台维护人员提供 CI `6ad165ef64650f998bcd430a`、dayu200 产物 `20261016-1-00010`、北京时间 08:18:25–08:18:41，检查服务内部异常。第二轮任务号 `2296023` 不适用于本次失败。
+
+[本轮巡检与日志摘录](evidence/20261015-companion-prs/monitor/20261016T031827Z/summary.md)保存完整证据索引。此次没有修改源码、PR 描述或重新触发门禁。
