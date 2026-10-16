@@ -4,6 +4,8 @@
 
 ## 最新状态与继续工作入口
 
+[2026-10-15 其他历史 PR 更新准备](docs/oct15-other-pr-refresh.md)：IDL #6982、安装 #7046、JS #853、airscan #22 的更新已保存为带 DCO 的提交并通过本地检查；简短正文已确认。**GitCode 推送认证未完成，4 条远端 PR 暂未更新。** 其他旧 PR 已逐项核对，配套仓及继续发布指令见交接。
+
 [2026-10-15 SA #6965 门禁排查](docs/oct15-sa-gate-repeat-failure.md)：第二轮 dayu600 编译、打包、上传成功，但 EcoTest 任务 `2296023` 超时且没有测试报告；mac-sdk 在编译前工作区清理失败。同期独立 PR 也出现 dayu600 超时，具体设备／调度原因仍需平台日志。源码未改，继续重试门禁。
 
 [2026-10-14 全部修复的离线源码](docs/oct14-all-repairs-offline.md)：**本轮 17 个相关仓已独立恢复到 `D:/workspace/repositories/openharmony-repairs-20261014`，68 个修复文件及 8 个保留差异全部可在本地查看、修改。** 组合验证快照、10 仓发布分支和更新后的 SA #6965 分支均已保留，229 个 LFS 资源已下载并校验。目录内 README 列明逐仓作用、文件和版本；完整产品编译仍需原 OpenHarmony 环境。

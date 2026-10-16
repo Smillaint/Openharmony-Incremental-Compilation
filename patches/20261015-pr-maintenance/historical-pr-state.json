@@ -1,0 +1,311 @@
+{
+  "queried_utc": "2026-10-15T16:53:03.935186-07:00",
+  "results": [
+    {
+      "repo": "build",
+      "number": 6965,
+      "state": "open",
+      "title": "Stabilize SA profile incremental outputs",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6965",
+      "source_branch": "codex/fix-sa-profile-incremental-build",
+      "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4657",
+          "title": "SA Profile 相关 Action 在无源码变更的增量编译中重复执行",
+          "url": "https://gitcode.com/openharmony/build/issues/4657"
+        }
+      ],
+      "files": [
+        "ohos/sa_profile/sa_profile_binary.py",
+        "ohos/sa_profile/sa_profile_merge.py",
+        "ohos/sa_profile/sa_profile_source.py",
+        "ohos/sa_profile/src_sa_profile_process.py",
+        "scripts/util/file_utils.py"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4657\n\n### 原因（目的、解决的问题等）\nSA 元数据顺序不固定，JSON 内容未变化时仍会覆盖文件；ZIP 内的元数据使用当前时间，重复打包也会产生差异，导致源 SA、二进制 SA 和合并安装信息继续触发下游构建。\n\n### 描述（做了什么，变更了什么）\n对 SA 元数据按 label 排序，JSON 仅在内容变化时写入；ZIP 先生成临时文件再比较替换，并固定元数据时间戳。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期内容不变时保留 JSON、ZIP 及其时间戳，内容变化时正常更新，输出文件被删除后能够重新生成。"
+    },
+    {
+      "repo": "build",
+      "number": 6974,
+      "state": "open",
+      "title": "Fix incremental HAP signing outputs",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6974",
+      "source_branch": "fix-hap-sign-incremental-build",
+      "head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4663",
+          "title": "HAP 签名 Action 输出异常导致增量构建重复执行",
+          "url": "https://gitcode.com/openharmony/build/issues/4663"
+        }
+      ],
+      "files": [
+        "ohos/app/app_internal.gni",
+        "scripts/app_sign.py",
+        "scripts/compile_app.py",
+        "scripts/util/build_utils.py"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4663\n\n### 原因（目的、解决的问题等）\n\n`app_sign` Action 将 `${target_name}.stamp` 声明为输出，但签名脚本不会生成该文件，同时 GN 会为目标生成同名 stamp，导致 Ninja 出现重复输出规则，并在增量构建中重复执行 HAP 签名\n\n此外，`unsigned_hap_path_list.json` 仅记录 HAP 路径且每次直接重写，无法准确反映 unsigned HAP 内容是否发生变化，容易引起无效的下游构建传播\n\n### 描述（做了什么，变更了什么）\n\n1. 使用独立的 `sign_result.json` 作为 HAP 签名 Action 输出，避免与 GN 自动生成的 target stamp 冲突。\n2. 在 unsigned HAP 路径清单中增加各 HAP 文件的 SHA-256。\n3. 签名完成后记录最终 HAP 路径及 SHA-256。\n4. 增加文件 SHA-256 计算及原子 JSON 写入方法。\n5. 输出内容未变化时保留文件时间戳；HAP 内容真实变化时仍能正常触发签名及下游构建。\n\n### 测试用例（新增、改动、可能影响的功能）\n\n1. 执行 Python 语法检查和补丁格式检查，检查通过。\n2. 验证相同 HAP 内容重复处理时，代理输出内容及时间戳保持不变。\n3. 验证 HAP 内容变化时，代理输出同步变化。\n4. 执行多轮 rk3568 完整构建，构建成功。\n5. HAP target stamp 重复生成警告消失。\n6. 原有 10 个重复签名目标中，8 个无内容变化的目标不再重复签名；另外2个目标因 unsigned HAP 字节内容真实变化而正常向下游传播。\n\n可能影响使用 `compile_app` 和 `app_sign` 模板生成、签名 HAP/HSP 的应用构建目标。\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：本修改针对 master 分支当前 HAP 构建模板的增量输出建模问题，无 release 分支同步需求。\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n本修改仅调整内部构建 Action 的输出建模和文件写入方式，不涉及用户接口及编译命令变化。\n\n### 是否已执行L0用例\n- [ ] 已验证\n- [x] 不涉及。如不涉及，请写明理由\n\n理由：本修改属于编译构建脚本及 GN Action 输出建模调整，不涉及运行时功能代码"
+    },
+    {
+      "repo": "build",
+      "number": 6982,
+      "state": "open",
+      "title": "Fix IDL output declarations",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+      "source_branch": "fix-idl-common-outputs",
+      "head": "4fa37075bfa8a0f3bb36f0394adf54577b0770f2",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4668",
+          "title": "[Bug]: idl_gen_interface 的 common IDL 输出声明与实际生成文件不一",
+          "url": "https://gitcode.com/openharmony/build/issues/4668"
+        }
+      ],
+      "files": [
+        "config/components/idl_tool/idl.gni"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\n\ncommon 分支将 _i_ 替换为 i 后又添加一次 i 前缀，形成双 i。\n同时，输出路径没有区分：\n普通文件名\n相对子目录路径\nGN 源码绝对路径\n导致输出声明无法同时匹配不同调用方式。\n### 描述（做了什么，变更了什么）\n\n修复 `idl_gen_interface` 模板中 IDL 输出声明与实际生成文件不一致的问题。\n\n主要修改：\n\n1. 修复 common IDL 文件名的双 `i` 前缀。\n2. 为相对路径 common IDL 保留目录层级。\n3. 对 GN 绝对路径 common IDL 使用规范化文件名，避免路径重复。\n4. 为使用绝对 common IDL 的目标提供独立生成目录，避免重复输出声明。\n5. 保持 callback IDL 的相对目录映射。\n6. 修正包含连续大写字母的接口头文件声明。\n\n### 测试用例（新增、改动、可能影响的功能）\n\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ ] 已验证\n- [ x] 不涉及。如不涉及，请写明理由\n"
+    },
+    {
+      "repo": "build",
+      "number": 6999,
+      "state": "open",
+      "title": "Stabilize package validation inputs",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6999",
+      "source_branch": "incremental-build-all-validation-20260820",
+      "head": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4678",
+          "title": "无源码变化时 packages 相关 Action 仍被重复调度",
+          "url": "https://gitcode.com/openharmony/build/issues/4678"
+        }
+      ],
+      "files": [
+        "config/components/idl_tool/idl.gni",
+        "ohos/app/app_internal.gni",
+        "ohos/common/BUILD.gn",
+        "ohos/common/generate_host_info.py",
+        "ohos/common/merge_all_subsystem.py",
+        "ohos/packages/BUILD.gn",
+        "ohos/packages/check_seccomp_library_name.py",
+        "ohos/packages/generate_host_symlink.py",
+        "ohos/packages/modules_install.py",
+        "ohos/packages/parts_install_info.py",
+        "ohos/packages/process_field_validate.py",
+        "ohos/packages/stabilize_json_file.py",
+        "ohos/sa_profile/sa_profile_binary.py",
+        "ohos/sa_profile/sa_profile_merge.py",
+        "ohos/sa_profile/sa_profile_source.py",
+        "ohos/sa_profile/src_sa_profile_process.py",
+        "scripts/app_sign.py",
+        "scripts/compile_app.py",
+        "scripts/util/build_utils.py",
+        "scripts/util/file_utils.py"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4678\n\n### 原因（目的、解决的问题等）\n`all_parts_host.json` 可能因为条目顺序或上游文件时间戳变化而被重复更新。原 `generate_host_symlink` Action 同时执行动态依赖收集和符号链接创建，使上游元数据的无效时间戳变化直接传播到叶子 Action\n### 描述（做了什么，变更了什么）\n- 将原始 host 元数据生成到 `target_gen_dir`；\n- 对 host 元数据条目进行确定性排序；\n- 发布 `all_parts_host.json` 时，在内容不变的情况下保留原文件和 mtime；\n- 新增 `collect_host_symlink_info`，负责读取 part/module 元数据并生成稳定的符号链接映射；\n- 为收集阶段生成 depfile，记录真实使用的 part/module 元数据；\n- 让 `generate_host_symlink` 只依赖稳定的映射文件；\n- 按确定性顺序处理符号链接；\n- `all_host_symlink.json` 内容不变时不重写；\n- 符号链接创建失败时保持非零退出状态。\n### 测试用例（新增、改动、可能影响的功能）\n- 未删除任何真实构建依赖；\n- 上游元数据实际变化后仍会重新收集；\n- 符号链接映射实际变化后仍会执行生成 Action；\n- 不改变其他部件的 target 名称和依赖入口；\n- 不使用空输出或假 stamp 跳过构建。\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ ] 已验证\n- [ x] 不涉及。如不涉及，请写明理由\n"
+    },
+    {
+      "repo": "build",
+      "number": 7006,
+      "state": "open",
+      "title": "Stabilize HiSysEvent incremental inputs",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7006",
+      "source_branch": "fix-hisysevent-incremental-build",
+      "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4682",
+          "title": "无源码变化时 phone_hisysevent_install_info Action 重复执行",
+          "url": "https://gitcode.com/openharmony/build/issues/4682"
+        }
+      ],
+      "files": [
+        "hb/util/loader/load_ohos_build.py",
+        "ohos/hisysevent/hisysevent_process.py"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4682\n\n### 原因（目的、解决的问题等）\n无源码变化时，`hb` 仍会覆盖生成的 `hisysevent_configs.json`，导致文件 mtime 更新，进而使 Ninja 在第二轮构建中重复调度 `phone_hisysevent_install_info`。\n\n此外，HiSysEvent 处理脚本实际读取的 YAML 配置文件没有写入 depfile。稳定上游 JSON 后，需要补齐这些真实依赖，保证 YAML 内容变化仍能触发正确重建\n\n### 描述（做了什么，变更了什么）\n1. 生成 `hisysevent_configs.json` 时启用内容变化检查，内容不变时保留原文件。\n2. 将本次构建实际使用的 HiSysEvent YAML 文件加入 `phone_hisysevent_install_info` 的 depfile。\n3. 生成 `hisysevent_install_info.json` 时启用内容变化检查，阻止无效时间戳向下游传播。\n4. 修改仅作用于 HiSysEvent 构建链路，其他 `parts_info` 文件保持原有写入行为。\n\n### 测试用例（新增、改动、可能影响的功能）\n执行 Python 语法检查：\n```bash\npython3 -m py_compile \\\n  hb/util/loader/load_ohos_build.py \\\n  ohos/hisysevent/hisysevent_process.py\n  执行补丁格式检查：\ngit diff --check\n隔离烟测结果：\n- 相同 HiSysEvent 安装信息连续生成两次，输出 inode、mtime 和内容保持不变。\n- 实际使用的 HiSysEvent YAML 文件已写入 depfile。\n连续执行两轮构建：\n./build.sh -p rk3568 --build-target make_all\n验证结果：\n第一轮 BUILD_STATUS=0。\n第二轮 BUILD_STATUS=0。\n第二轮未执行 phone_hisysevent_install_info。\nhisysevent_configs.json、hisysevent_install_info.json、hisysevent.zip 和 depfile 的 inode、mtime、大小及 SHA-256 两轮保持一致。\ndepfile 中包含实际使用的 HiSysEvent YAML 文件\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ ] 已验证\n- [ x] 不涉及。如不涉及，请写明理由\n"
+    },
+    {
+      "repo": "build",
+      "number": 7009,
+      "state": "open",
+      "title": "Fix incremental notice file collection",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7009",
+      "source_branch": "fix-part-install-metadata-incremental-build",
+      "head": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4684",
+          "title": "无源码变化时collect_notice_files__phone重复执行",
+          "url": "https://gitcode.com/openharmony/build/issues/4684"
+        }
+      ],
+      "files": [
+        "ohos/generate_part_info.py",
+        "ohos/packages/BUILD.gn",
+        "ohos/packages/parts_install_info.py",
+        "scripts/util/file_utils.py"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4684\n\n### 原因（目的、解决的问题等）\n部件安装信息 JSON 在语义内容未变化时仍被重新写入，导致文件时间戳变化。\nNOTICE 收集脚本采用内容感知方式生成 ZIP，内容相同时会保留旧 ZIP 的时间戳。\n最终 ZIP 的时间戳可能持续早于 depfile 中的部分输入，导致 Ninja 每轮都将收集 Action 判断为过期\n\n### 描述（做了什么，变更了什么）\n\n1. 对部件安装信息、依赖信息和 host 信息 JSON 启用内容变化检查，语义内容相同时保留原文件及时间戳。\n2. 使用 JSON 对象语义比较替代字符串哈希比较，避免字典字符串表示和顺序影响变化判断。\n3. 将 NOTICE 产物生成拆分为两个阶段：\n   - `stage_notice_files__<platform>` 保留原有 depfile 动态依赖追踪，并生成稳定的中间 ZIP；\n   - `collect_notice_files__<platform>` 使用现有 `copy_ex` 模板发布最终 `system_notice_files.zip`。\n4. 保持最终产物路径和下游依赖关系不变\n### 测试用例（新增、改动、可能影响的功能）\n直接进行编译\n\n无源码变更的第二轮构建中，以下目标均未执行：\n\n- `stage_notice_files__phone`\n- `collect_notice_files__phone`\n- `merge_system_notice_file_phone`\n\n中间 ZIP 和最终 ZIP 在两轮构建间保持一致：\n\n- inode 不变；\n- mtime 不变；\n- 文件大小不变；\n- SHA-256 不变。\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ ] 已验证\n- [x] 不涉及。如不涉及，请写明理由\n"
+    },
+    {
+      "repo": "build",
+      "number": 7046,
+      "state": "open",
+      "title": "Stabilize binary install metadata and optional input dependencies",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7046",
+      "source_branch": "fix-install-incremental-metadata",
+      "head": "5be8fa471e23084eb4a884653746a55af554e7f2",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4704",
+          "title": "修复安装模块依赖与元数据引起的无效增量构建",
+          "url": "https://gitcode.com/openharmony/build/issues/4704"
+        }
+      ],
+      "files": [
+        "ohos/common/binary_install_info.py",
+        "ohos/packages/modules_install.py"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\n- modules_install.py 使用 extend() 追加过滤结果，没有真正移除应排除的 SA 文件，反而重复加入其他依赖。\n- binary_install_info.py 在 JSON 内容不变时仍重写输出，更新时间戳，影响下游增量判断。\n- 将不存在的可选 dist_parts_info_file 写入 depfile，使构建系统持续面对缺失依赖。\n这些问题会造成安装相关 Action 及下游任务的无效调度，增加无代码改动时的构建开销\n\n### 描述（做了什么，变更了什么）\n将 SA 依赖过滤改为列表重新赋值，真正排除对应文件，避免重复追加。\n元数据 JSON 启用内容比较，仅在内容变化时更新输出。\n可选输入文件存在时才加入 depfile，保留必要输入依赖。\n修改范围限定为 modules_install.py 和 binary_install_info.py，不调整安装业务流程。\n\n### 测试用例（新增、改动、可能影响的功能）\n全量编译用例\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ x] 已验证\n- [ ] 不涉及。如不涉及，请写明理由\n"
+    },
+    {
+      "repo": "build",
+      "number": 7048,
+      "state": "open",
+      "title": "修复 NOTICE 许可证查找与聚合依赖",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7048",
+      "source_branch": "fix-notice-incremental-deps",
+      "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4705",
+          "title": "修复 NOTICE 许可证查找与聚合依赖",
+          "url": "https://gitcode.com/openharmony/build/issues/4705"
+        }
+      ],
+      "files": [
+        "ohos/notice/collect_module_notice_file.py",
+        "ohos/notice/collect_system_notice_files.py"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4705\n\n### 原因（目的、解决的问题等）\n\n许可证递归查找到源码边界目录时提前退出，遗漏该目录中的 LICENSE；聚合 NOTICE 的 depfile 额外收集生成目录文件，引入冗余生成物依赖\n### 描述（做了什么，变更了什么）\n\n先检查当前目录中的许可证，再判断是否停止递归；移除生成 NOTICE 文件列表的额外 depfile 追加，保留原有文件收集和拷贝流程\n### 测试用例（新增、改动、可能影响的功能）\n\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ x] 已验证\n- [ ] 不涉及。如不涉及，请写明理由\n"
+    },
+    {
+      "repo": "build",
+      "number": 7049,
+      "state": "open",
+      "title": "补齐 SDK 接口拆分的完成标记与增量依赖",
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7049",
+      "source_branch": "fix-sdk-split-incremental-deps",
+      "head": "72115384f783e09832216c951e7743b944fd5893",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "issues": [
+        {
+          "number": "4706",
+          "title": "补齐 SDK 接口拆分的完成标记与增量依",
+          "url": "https://gitcode.com/openharmony/build/issues/4706"
+        }
+      ],
+      "files": [
+        "ohos/sdk/parse_interface_sdk.py"
+      ],
+      "description_before": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4706\n\n### 原因（目的、解决的问题等）\nSDK 接口拆分脚本缺少可供调用方使用的 stamp、depfile 支持，不利于准确描述任务完成状态及真实输入变化\n\n### 描述（做了什么，变更了什么）\n新增可选 --stamp、--depfile 参数，收集接口源码、权限定义、Node、Python 脚本等依赖，排除版本管理目录，并在处理成功后生成完成标记\n\n### 测试用例（新增、改动、可能影响的功能）\n\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ x] 已验证\n- [ ] 不涉及。如不涉及，请写明理由\n"
+    },
+    {
+      "repo": "third_party_iptables",
+      "number": 62,
+      "state": "open",
+      "title": "修复 genInit 聚合文件无变化重写导致的 iptables 重复编译",
+      "url": "https://gitcode.com/openharmony/third_party_iptables/merge_requests/62",
+      "source_branch": "fix-geninit-incremental-output",
+      "head": "5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+      "upstream": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+      "issues": [
+        {
+          "number": "48",
+          "title": "genInit.py 在输入未变化时重写 initext 聚合源文件，导致 iptables 重复编译",
+          "url": "https://gitcode.com/openharmony/third_party_iptables/issues/48"
+        }
+      ],
+      "files": [
+        "extensions/genInit.py"
+      ],
+      "description_before": "### 一、内容说明（相关的Issue）\n\nhttps://gitcode.com/openharmony/third_party_iptables/issues/48\n\n### 二、建议测试周期和提测地址  \n  建议测试完成时间：xxxx.xx.xx  \n  投产上线时间：xxxx.xx.xx  \n  提测地址：CI环境/压测环境  \n  测试账号：  \n\n### 三、变更内容\n  * 3.1 关联PR列表\n\n  * 3.2 数据库和部署说明  \n    1. 常规更新 \n    2. 重启unicorn\n    3. 重启sidekiq\n    4. 迁移任务：是否有迁移任务，没有写 \"无\"\n    5. rake脚本：`bundle exec xxx RAILS_ENV = production`；没有写 \"无\"\n\n  * 3.4 其他技术优化内容（做了什么，变更了什么）\n- 仅修改 `extensions/genInit.py`：使用内存缓冲生成聚合内容，内容不变时跳过写入。\n- 保留原有参数、注册顺序、排除规则、符号替换和 MD5 判断逻辑。\n- 显式关闭缓冲，并使用上下文管理器关闭新增读写文件句柄。\n\n\n  * 3.5 废弃通知（什么字段、方法弃用？）\n\n\n\n  * 3.6  后向不兼容变更（是否有无法向后兼容的变更？）\n\n\n  \n### 四、研发自测点（自测哪些？冒烟用例全部自测？）\n  自测测试结论：\n- UTF-8、AST 和 `git diff --check` 通过；隔离功能测试 49 项断言通过。\n- 三组实际参数的新旧聚合输出一致；验证无变化时间戳稳定、缺失文件恢复、真实输入变化以及输入增删。\n- 使用实际扩展源码副本验证，98 个生成 C 文件在切换至新脚本后内容和时间戳均保持一致。\n- 在现有增量修复工作树上完成 rk3568 连续两轮构建，均成功；两轮 iptables 的 CC、AR、LINK 和 phone_install_modules 均未执行，三个聚合源文件时间戳保持不变。\n\n### 五、测试关注点（需要提醒QA重点关注的、可能会忽略的地方）\n  检查点：\n\n| 需求名称 | 是否影响xx公共模块 | 是否需要xx功能 | 需求升级是否依赖其他子产品 |\n|------|------------|----------|---------------|\n| xxx  | 否          | 需要       | 不需要           |\n|      |            |          |               |\n\n  接口测试：否\n\n  性能测试：否\n\n  并发测试：否\n\n  其他：\n\n"
+    },
+    {
+      "repo": "developtools_packing_tool",
+      "number": 1556,
+      "state": "open",
+      "title": "Fix reproducible HAP entry timestamps",
+      "url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+      "source_branch": "fix/hap-reproducible-archive",
+      "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+      "upstream": "fb62826a299c705b95ea1e4e882dc522c5aae247",
+      "issues": [
+        {
+          "number": "1201",
+          "title": "HAP 打包结果因 ZIP entry 时间戳变化而不可重复",
+          "url": "https://gitcode.com/openharmony/developtools_packing_tool/issues/1201"
+        }
+      ],
+      "files": [
+        "adapter/ohos/Compressor.java"
+      ],
+      "description_before": "**IssueNo**:\nhttps://gitcode.com/openharmony/developtools_packing_tool/issues/1201\n**Description**:\nHAP 打包工具创建 ZIP entry 时使用当前时间。相同输入在不同时间打包后，ZIP entry 时间戳不同，从而导致生成的 HAP 字节内容和 SHA-256 不一致。\n### 修改内容\n\n- 为 HAP ZIP entry 定义统一的固定时间；\n- 对普通文件和 JSON entry 设置固定时间；\n- 对并行压缩的 native library entry 设置固定时间；\n- 对 STORED entry 和空目录 entry 设置固定时间；\n- 通过统一方法设置 ZIP entry 时间，避免不同打包路径遗漏。\n\n### 修复边界\n\n本修改解决：\n\n`相同输入 → ZIP entry 时间固定 → HAP 字节和 SHA-256 可重复`\n\n不解决：\n\n- 上游 native library 重复 dirty；\n- `compile_app.py` 声明输出问题；\n- 两个 HAP compile_app Action 是否完全退出第二轮构建。\n\n**稳定性自检：**\n| 自检项                                                       | 自检结果 |\n| ------------------------------------------------------------ | -------- |\n| 涉及跨进程调用的相关操作需要抛至主线程或加锁防止并发              | 不涉及   |\n| 成员变量进行赋值或创建需要排查并发                               | 不涉及   |\n| 谨慎在lambda表达式中使用引用捕获                                | 不涉及   |\n| 谨慎在未经拷贝的情况下使用外部传入的string、C字符串               | 不涉及   |\n| map\\vector\\list\\set等stl模板类使用时需要排查并发                | 不涉及   |\n| 谨慎考虑加锁范围                                               | 不涉及   |\n| 在IPC通信中谨慎使用同步通信方式                                 | 不涉及   |\n| 禁止传递this指针至其他模块或线程（特别是eventhandler任务）        | 不涉及   |\n| 禁止将外部传入的裸指针在内部直接构造智能指针                      | 不涉及   |\n| 禁止多个独立创建的智能指针管理同一地址                           | 不涉及   |\n| 禁止在析构函数中抛异步任务                                      | 不涉及   |\n| 禁止js对象在非js线程（例如在非js线程创建、使用或销毁）             | 不涉及   |\n| 禁止在对外接口中未经判空直接使用外部传入的指针                    | 不涉及   |\n| 禁止接口返回局部变量引用                                        | 不涉及   |\n| 禁止在信号函数中加锁                                            | 不涉及   |\n| 禁止在关键流程（SA启动、应用启动等主流程）执行耗时的操作           | 不涉及   |\n| 禁止将同一个cpp编译在不同的so中                                 | 不涉及   |\n\n**安全编码自检：**\n| 自检项                                                          | 自检结果 |\n| -------------------------------------------------------------- | -------- |\n| 裸指针避免通过隐式转换构造为sptr                                 | 不涉及   |\n| json对象在取值之前必须先判断类型，避免类型不匹配                   | 不涉及   |\n| 序列化时必须对传入的数组大小进行校验，避免出现超大数组              | 不涉及   |\n| 避免使用未明确位宽的整型，选择使用int8_t、uint8_t等类型            | 不涉及   |\n| 外部传入的路径要做规范化校验，对路径中的.、..、../等特殊字符严格校验 | 不涉及   |\n| 指针变量、表示资源描述符的变量、bool变量必须赋初值                  | 不涉及   |\n| readParcelable获取的对象使用前需要判空                            | 不涉及   |\n| 分配和释放内存的函数需要成对出现                                   | 不涉及   |\n| 申请内存后异常退出前需要及时进行内存释放                            | 不涉及   |\n| 内存申请前必须对内存大小进行合法性校验                              | 不涉及   |\n| 内存分配后必须判断是否成功                                         | 不涉及   |\n| 禁止使用realloc、alloca函数                                       | 不涉及   |\n| 禁止打印文件路径、口令等敏感信息，如有需要，使用private修饰          | 不涉及   |\n| 禁止打印内存地址                                                  | 不涉及   |\n| 整数之间运算时必须严格检查，确保不会出现溢出、反转、除0               | 不涉及   |\n| 禁止对有符号整数进行位操作符运算                                    | 不涉及   |\n| 禁止对指针进行逻辑或位运算                                         | 不涉及   |\n| 循环次数如果受外部数据控制，需要检验其合法性                         | 不涉及   |\n| 禁止使用内存操作类危险函数，需要使用安全函数                         | 不涉及   |\n| 谨慎使用不可重入函数                                               | 不涉及   |\n| 必须检查安全函数的返回值，并进行正确处理                            | 不涉及   |\n| 禁止仅通过TokenType类型判断绕过权限校验                             | 不涉及   |\n\n**TDD Result**:\n用 Telephony 和 Contacts 的真实输入分别执行两次 HAP 打包，两次输出的 SHA-256 分别保持一致；检查所有 ZIP entry 的时间均固定为 `2019-01-01 00:00`。\n**XTS Result**:\n\n### L0新增用例自检结果\n- [ ] 是，有新增L0用例，且完成自检\n- [ x] 否\n"
+    },
+    {
+      "repo": "third_party_jsframework",
+      "number": 853,
+      "state": "open",
+      "title": "fix: stabilize jsframework incremental actions",
+      "url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853",
+      "source_branch": "fix/jsframework-incremental-actions",
+      "head": "a280a42fe7f73d59528ecbde04f319cc61e5de0b",
+      "upstream": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+      "issues": [
+        {
+          "number": "323",
+          "title": "[Bug]: jsframework相关ACTION在零代码改动时重复执行",
+          "url": "https://gitcode.com/openharmony/third_party_jsframework/issues/323"
+        }
+      ],
+      "files": [
+        "js_framework_build.sh"
+      ],
+      "description_before": "一、内容说明（相关的 Issue）\n\n修复 OpenHarmony 在零代码改动的增量编译中，以下 ACTION 被重复执行的问题：\n\n\nACTION //third_party/jsframework:ark_jsf(//build/toolchain/ohos:ohos_clang_arm)\nACTION //third_party/jsframework:gen_snapshot(//build/toolchain/ohos:ohos_clang_arm)\n问题原因：\nstrip.native.min.js 在生成内容未变化时仍被覆盖，文件修改时间发生变化，导致 Ninja 误判输入已更新并重复执行 ark_jsf。\ngen_snapshot 构建流程重复修改共享的 runtime 目录，使目录时间晚于 css_what_sources.stamp，导致相关目标在零改动构建中持续被判定为 dirty。\n暂无关联 Issue，问题通过零改动增量编译日志定位。\n\n二、变更内容\n3.1 关联 PR 列表\n本 MR，无其他关联 PR。\n\n\n3.2 其他技术优化内容（做了什么，变更了什么）\n构建开始前备份已有的 strip.native.min.js。\n构建结束后比较新旧文件内容；内容一致时恢复原修改时间，避免仅因时间戳变化触发 ark_jsf。\n内容实际变化时保留新修改时间，确保 Ninja 仍能正常触发下游构建，不会漏编真实代码变更。\n避免在构建结束阶段删除共享 runtime 目录。\n在构建结束后将 runtime 目录时间与 css_what_sources.stamp 对齐，消除目录时间持续晚于 stamp 导致的 gen_snapshot 重复执行。\n使用 mktemp 创建独立临时文件，并通过 trap 确保临时文件退出时被清理。\n\n3.3 废弃通知（什么字段、方法弃用？）\n无字段、接口或方法废弃。\n\n3.4 后向不兼容变更（是否有无法向后兼容的变更？）\n无后向不兼容变更。构建输出内容和运行时功能保持不变，仅修正增量构建中的文件及目录时间戳处理。\n\n四、研发自测点（自测哪些？冒烟用例全部自测？）\n自测内容：\n修复后的首次构建能够正常执行 gen_snapshot 和 ark_jsf。\n首次构建成功后，在不修改任何代码的情况下再次执行相同构建。\n第二次零改动构建中：\nark_jsf=0\ngen_snapshot=0\n\n完整零改动增量构建成功，未出现新增编译错误。\nstrip.native.min.js 内容未变化时保持原修改时间。\n临时备份文件能够在脚本退出时正常清理。\n自测测试结论：\n修复验证通过。零代码改动的第二轮构建不再重复执行 ark_jsf 和 gen_snapshot，完整构建成功。\n\n\n接口测试：\n不涉及对外接口变更。\n性能测试：\n重点检查零代码改动时 ark_jsf 和 gen_snapshot 是否仍被执行。预期两个 ACTION 的执行次数均为 0，减少无效构建耗时。\n并发测试：\n关注并行构建过程中临时备份文件是否相互隔离。当前使用 mktemp 创建唯一临时文件，避免并发文件名冲突。\n其他：\n当 strip.native.min.js 内容真实变化时，应正常更新时间戳并触发下游目标。\n当 css-what 输入真实变化时，应正常触发相关构建，不能因时间戳稳定处理造成漏编。\n关注 Linux 环境下脚本执行权限、临时文件清理和异常退出行为。\n"
+    },
+    {
+      "repo": "third_party_sane-airscan",
+      "number": 22,
+      "state": "open",
+      "title": "fix: stabilize airscan incremental build outputs",
+      "url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+      "source_branch": "fix/airscan-incremental-action",
+      "head": "37de4f97f4f4be0f19cda483b7202fcd34efc28a",
+      "upstream": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+      "issues": [
+        {
+          "number": "19",
+          "title": "[Bug]:sane-airscan的airscan_action在零代码改动时重复执行",
+          "url": "https://gitcode.com/openharmony/third_party_sane-airscan/issues/19"
+        }
+      ],
+      "files": [
+        "BUILD.gn",
+        "patch_install.py"
+      ],
+      "description_before": "### 问题说明\n\n修复 OpenHarmony 零代码改动增量构建中以下 ACTION 被重复执行的问题：\n\n```text\nACTION //third_party/sane-airscan:airscan_action(//build/toolchain/ohos:ohos_clang_arm)\n```\n\n原构建脚本直接在 `third_party/sane-airscan` 源码目录中应用补丁，导致构建过程修改输入源码。与此同时，`BUILD.gn` 声明的输出与脚本实际生成结果不一致，使 Ninja 无法建立稳定的输入、输出和时间戳关系。\n\n### 变更内容\n\n1. 将补丁结果生成到 `target_gen_dir/patched`，构建过程不再修改源码树。\n2. 在 `BUILD.gn` 中完整声明补丁脚本、补丁文件和参与生成的源码输入。\n3. 为每个输入源码声明对应的 patched output。\n4. 共享库改为编译构建目录中的 patched sources。\n5. 在独立 staging 临时目录中应用补丁，成功或失败后均清理临时目录。\n6. 补丁应用前执行严格的正向和反向 dry-run，无法干净应用时直接终止 ACTION。\n7. 输出内容未变化时不覆盖已有文件，从而保持 mtime 稳定。\n8. 输出内容变化时通过临时文件和 `os.replace()` 原子更新。\n9. 保持 OHOS 原有编译源文件集合不变，`airscan-mdns.c`、`airscan-tiff.c` 和 `airscan-wsd.c` 仍不参与共享库编译。\n\n### 修改文件\n\n```text\nthird_party/sane-airscan/BUILD.gn\nthird_party/sane-airscan/patch_install.py\n```\n\n### 验证结果\n\n首次构建正常生成 patched sources，后续零代码改动完整构建结果：\n\n```text\nrk3568 build success\nairscan_action=0\nall_ACTION=0\nCXX=0\nCC=0\nSOLINK=0\n```\n\n构建过程中不再修改 `third_party/sane-airscan` 源码目录，也不会因重复应用补丁产生 `.rej` 文件。\n\n### 兼容性说明\n\n不涉及对外接口、数据库或部署方式变更。共享库原有的有效编译源文件集合保持不变，仅调整补丁生成目录、依赖声明和输出更新策略。\n\n"
+    }
+  ]
+}

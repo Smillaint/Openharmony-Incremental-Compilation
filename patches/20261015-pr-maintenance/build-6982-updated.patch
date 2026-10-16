@@ -1,0 +1,317 @@
+diff --git a/config/components/idl_tool/idl.gni b/config/components/idl_tool/idl.gni
+index 107cbf7caf586f67701c34e92244bc6d75cf8b7b..28e28f026aade6dc4693cb260415cce07a83a109 100644
+--- a/config/components/idl_tool/idl.gni
++++ b/config/components/idl_tool/idl.gni
+@@ -68,16 +68,10 @@ template("idl_gen_interface") {
+   idl_list = []
+   idl_callback_list = []
+   idl_common_list = []
+-  if (is_arkui_x){
+-    not_needed([ "idl_inner" ])
+-  }else {
+-    idl_inner = false
++  idl_inner = false
++  if (defined(invoker.idl_inner)) {
++    idl_inner = invoker.idl_inner
+   }
+-  
+-  if (defined(invoker.idl_inner) && invoker.idl_inner == true){
+-    idl_inner = true
+-  }
+-
+   if (defined(invoker.sources)) {
+     not_needed(invoker, [ "src_idl" ])
+ 
+@@ -86,7 +80,7 @@ template("idl_gen_interface") {
+   } else {
+     # src_idl support single idl file
+     assert(defined(invoker.src_idl), "src_idl is required")
+-    idl_list += [ invoker.src_idl ]
++    idl_list += [ rebase_path(invoker.src_idl) ]
+   }
+ 
+   if (defined(invoker.sources_callback)) {
+@@ -95,6 +89,8 @@ template("idl_gen_interface") {
+   if (defined(invoker.sources_common)) {
+     idl_common_list += invoker.sources_common
+   }
++  local_common_list = filter_exclude(idl_common_list, [ "//*" ])
++  external_common_list = filter_include(idl_common_list, [ "//*" ])
+ 
+   # language, default cpp, support c/cpp/rust
+   language = "cpp"
+@@ -137,6 +133,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -144,7 +144,8 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+     if (init_with_i) {
+-      sources_all += [ "${target_gen_dir}/" + "i" + name + ".h" ]
++      sources_all +=
++          [ "${target_gen_dir}/" + "i" + interface_header_name + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + name + ".h" ]
+     }
+@@ -157,7 +158,10 @@ template("idl_gen_interface") {
+     sources_proxy += [ "${target_gen_dir}/" + name + "_proxy.cpp" ]
+     sources_stub += [ "${target_gen_dir}/" + name + "_stub.cpp" ]
+     if (defined(invoker.client_enable) && invoker.client_enable) {
+-      sources_all += [ "${target_gen_dir}/" + name + "_client.cpp" ]
++      sources_all += [
++        "${target_gen_dir}/" + name + "_client.cpp",
++        "${target_gen_dir}/" + name + "_client.h",
++      ]
+       sources_proxy += [ "${target_gen_dir}/" + name + "_client.cpp" ]
+     }
+   }
+@@ -186,6 +190,10 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
++    if (init_with_i) {
++      interface_header_name = name
++    }
++
+     # second letter of result is '_'
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -196,7 +204,8 @@ template("idl_gen_interface") {
+     out_full_name = string_replace(idl_full_name, idl_name, name)
+ 
+     if (init_with_i) {
+-      out_full_name_i = string_replace(idl_full_name, idl_name, "i" + name)
++      out_full_name_i =
++          string_replace(idl_full_name, idl_name, "i" + interface_header_name)
+       sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+     } else {
+       sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
+@@ -212,7 +221,7 @@ template("idl_gen_interface") {
+   }
+ 
+   # common sources
+-  foreach(idl_full_name, idl_common_list) {
++  foreach(idl_full_name, local_common_list) {
+     idl_name = get_path_info(idl_full_name, "file")
+     i = 0
+     name = string_replace(idl_name, ".idl", "")
+@@ -227,7 +236,7 @@ template("idl_gen_interface") {
+     init_with_i = false
+     if (name_split[0] == "") {
+       init_with_i = true
+-      name = string_replace(name, "_i_", "i", 1)
++      name = string_replace(name, "_i_", "", 1)
+     }
+     name_split = []
+     name_split = string_split(name, "_")
+@@ -242,14 +251,11 @@ template("idl_gen_interface") {
+       name = string_replace(name, "_", "", 1)
+     }
+ 
+-    out_full_name = string_replace(idl_full_name, idl_name, name)
+-
+     if (init_with_i) {
+-      out_full_name_i = string_replace(idl_full_name, idl_name, "i" + name)
+-      sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+-    } else {
+-      sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
++      name = "i" + name
+     }
++    out_full_name = string_replace(idl_full_name, idl_name, name)
++    sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
+     sources_all += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+     sources_proxy += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+     sources_stub += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+@@ -257,17 +263,21 @@ template("idl_gen_interface") {
+ 
+   action("$target_name") {
+     inputs = idl_list
++    inputs += rebase_path(external_common_list)
++    # The depfile records recursive imports relative to each source IDL.
+     if (defined(invoker.inputs)) {
+       inputs += invoker.inputs
+     }
++    deps = []
+     if (is_arkui_x || idl_inner) {
+-      deps = idl_build_deps
++      deps += idl_build_deps
+     } else {
+-      if (!defined(external_deps)) {
+-        external_deps = []
+-      }
+-      external_deps += [ "idl_tool:idl(${host_toolchain})" ]
++      external_deps = [ "idl_tool:idl(${host_toolchain})" ]
++    }
++    if (defined(invoker.deps)) {
++      deps += invoker.deps
+     }
++    depfile = "$target_gen_dir/$target_name.d"
+ 
+     script = "//build/config/components/idl_tool/idl.py"
+     args = [
+@@ -281,6 +291,10 @@ template("idl_gen_interface") {
+       string_join(",", rebase_path(sources_all)),
+       "--language",
+       language,
++      "--depfile",
++      rebase_path(depfile, root_build_dir),
++      "--output-root",
++      rebase_path(root_gen_dir, root_build_dir),
+     ]
+     if (defined(invoker.log_domainid)) {
+       args += [
+diff --git a/config/components/idl_tool/idl.py b/config/components/idl_tool/idl.py
+index 4634e3ea4c4d8aa51a3b26aeffb08f3d2f0a3f2b..ad535759e83030c44d91eb8d5b974da2681dbdf4 100755
+--- a/config/components/idl_tool/idl.py
++++ b/config/components/idl_tool/idl.py
+@@ -18,6 +18,9 @@ import os
+ import subprocess
+ import argparse
+ import sys
++import re
++import tempfile
++from pathlib import Path
+ 
+ 
+ def parse_args():
+@@ -31,6 +34,8 @@ def parse_args():
+     parser.add_argument('--hitrace', help='hitrace switch, default off')
+     parser.add_argument('--language', help='language switch, default cpp')
+     parser.add_argument('--client-enable', help='gen client code')
++    parser.add_argument('--depfile', help='IDL import dependencies')
++    parser.add_argument('--output-root', help='root of generated outputs')
+     arguments = parser.parse_args()
+     return arguments
+ 
+@@ -38,49 +43,92 @@ def parse_args():
+ def run_command(cmd, execution_path):
+     print("cmd:", " ".join(cmd))
+     print("execution_path:", execution_path)
+-    proc = subprocess.Popen(cmd, cwd=execution_path, stdout=subprocess.PIPE)
+-    proc.wait()
++    proc = subprocess.run(cmd, cwd=execution_path)
+     return proc.returncode
+ 
+ 
+ def idl_gen_interface(input_arguments):
+-    if not os.path.exists(input_arguments.dst_path):
+-        try:
+-            os.makedirs(input_arguments.dst_path, 0o750, exist_ok=True)
+-        except (OSError, TypeError) as excep:
+-            raise excep
+-        finally:
+-            pass
+-
+-    print("idl_gen_interface run os.remove start")
+-    dst_file_list = input_arguments.dst_file.split(',')
+-    for dst_file in dst_file_list:
+-        if os.path.exists(dst_file):
+-            os.remove(dst_file)
+-            print("idl_gen_interface run os.remove", dst_file)
+-
+     gen_language = "-gen-cpp"
+     if input_arguments.language == "rust":
+         gen_language = "-gen-rust"
+     elif input_arguments.language == "ts":
+         gen_language = "-gen-ts"
+ 
+-    src_idl_list = input_arguments.src_idl.split(",")
+-    for src_idl in src_idl_list:
+-        cmd = [os.path.join(".", "idl"), gen_language, "-d", input_arguments.dst_path, "-c", src_idl]
+-        if input_arguments.log_domainid:
+-            cmd += ['-log-domainid', input_arguments.log_domainid]
+-        if input_arguments.log_tag:
+-            cmd += ['-log-tag', input_arguments.log_tag]
+-        if input_arguments.hitrace:
+-            cmd += ['-t', input_arguments.hitrace]
+-        if input_arguments.client_enable == 'true':
+-            cmd += ['-client-enable']
+-        ret = run_command(cmd, input_arguments.idl_tool_path)
+-        if ret != 0:
+-            return ret
++    sources = [Path(p).resolve() for p in input_arguments.src_idl.split(',')]
++    outputs = [Path(p).resolve() for p in input_arguments.dst_file.split(',')]
++    destination = Path(input_arguments.dst_path).resolve()
++    output_root = Path(input_arguments.output_root).resolve() if input_arguments.output_root else Path(
++        os.path.commonpath([str(destination)] + [str(p.parent) for p in outputs]))
++    relative_destination = destination.relative_to(output_root)
++    for output in outputs:
++        output.relative_to(output_root)
++    dependencies = collect_idl_inputs(sources)
++    tool_dir = Path(input_arguments.idl_tool_path).resolve()
++    tool = tool_dir / ('idl.exe' if os.name == 'nt' else 'idl')
++    output_root.mkdir(parents=True, exist_ok=True)
++    with tempfile.TemporaryDirectory(prefix='.idl-', dir=output_root) as temporary:
++        staging_root = Path(temporary)
++        staging = staging_root / relative_destination
++        staging.mkdir(parents=True, exist_ok=True)
++        for src_idl in sources:
++            cmd = [str(tool), gen_language, '-d', str(staging), '-c', str(src_idl)]
++            if input_arguments.log_domainid:
++                cmd += ['-log-domainid', input_arguments.log_domainid]
++            if input_arguments.log_tag:
++                cmd += ['-log-tag', input_arguments.log_tag]
++            if input_arguments.hitrace:
++                cmd += ['-t', input_arguments.hitrace]
++            if input_arguments.client_enable == 'true':
++                cmd += ['-client-enable']
++            ret = run_command(cmd, str(tool_dir))
++            if ret != 0:
++                return ret
++        # Validate the complete declared output set before replacing any file.
++        for output in outputs:
++            generated = staging_root / output.relative_to(output_root)
++            if not generated.is_file():
++                raise RuntimeError('IDL did not generate declared output: {}'.format(output))
++        for output in outputs:
++            generated = staging_root / output.relative_to(output_root)
++            publish_if_changed(generated, output)
++    if input_arguments.depfile:
++        write_depfile(input_arguments.depfile, outputs[0], dependencies | {tool})
+     return 0
+ 
+ 
++def collect_idl_inputs(sources):
++    dependencies = set()
++    pending = list(sources)
++    while pending:
++        source = pending.pop().resolve()
++        if source in dependencies:
++            continue
++        dependencies.add(source)
++        text = source.read_text(encoding='utf-8')
++        text = re.sub(r'/\*.*?\*/|//[^\n]*', '', text, flags=re.S)
++        for name in re.findall(r'\bimport\s+([\w./]+)\s*;', text):
++            pending.append(source.parent / (name + '.idl'))
++    return dependencies
++
++
++def publish_if_changed(source, destination):
++    content = source.read_bytes()
++    if destination.is_file() and destination.read_bytes() == content:
++        return
++    destination.parent.mkdir(parents=True, exist_ok=True)
++    os.replace(source, destination)
++
++
++def write_depfile(path, output, dependencies):
++    def escape(value):
++        value = os.path.relpath(value).replace(os.sep, '/')
++        return value.replace('$', '$$').replace('#', '\\#').replace(' ', '\\ ').replace(':', '\\:')
++
++    depfile = Path(path)
++    depfile.parent.mkdir(parents=True, exist_ok=True)
++    depfile.write_text('{}: {}\n'.format(escape(output), ' '.join(
++        escape(p) for p in sorted(dependencies))), encoding='utf-8')
++
++
+ if __name__ == '__main__':
+     sys.exit(idl_gen_interface(parse_args()))

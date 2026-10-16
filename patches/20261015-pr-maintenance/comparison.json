@@ -1,0 +1,209 @@
+[
+  {
+    "repo": "build",
+    "number": 6974,
+    "source_base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "files": [
+      "ohos/app/app_internal.gni",
+      "scripts/app_sign.py",
+      "scripts/compile_app.py",
+      "scripts/util/build_utils.py"
+    ],
+    "desired_tree": "364390ab2a9dcbb4bf66bf5e8caf4d0e07a7c8b2",
+    "effective_tree": "364390ab2a9dcbb4bf66bf5e8caf4d0e07a7c8b2",
+    "merge_ok": true,
+    "changed": [],
+    "stat": ""
+  },
+  {
+    "repo": "build",
+    "number": 6982,
+    "source_base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "files": [
+      "config/components/idl_tool/idl.gni",
+      "config/components/idl_tool/idl.py"
+    ],
+    "desired_tree": "0858d8c4d3949244e38383eb91b6126715fd67fd",
+    "effective_tree": "f2a8b5589d860209910acb3f07311225aabc9a60",
+    "merge_ok": true,
+    "changed": [
+      "config/components/idl_tool/idl.gni",
+      "config/components/idl_tool/idl.py"
+    ],
+    "stat": "config/components/idl_tool/idl.gni |  50 +++++++++++------\n config/components/idl_tool/idl.py  | 110 ++++++++++++++++++++++++++-----------\n 2 files changed, 111 insertions(+), 49 deletions(-)"
+  },
+  {
+    "repo": "build",
+    "number": 6999,
+    "source_base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "files": [
+      "config/components/idl_tool/idl.gni",
+      "ohos/app/app_internal.gni",
+      "ohos/common/BUILD.gn",
+      "ohos/common/generate_host_info.py",
+      "ohos/common/merge_all_subsystem.py",
+      "ohos/packages/BUILD.gn",
+      "ohos/packages/check_seccomp_library_name.py",
+      "ohos/packages/generate_host_symlink.py",
+      "ohos/packages/modules_install.py",
+      "ohos/packages/parts_install_info.py",
+      "ohos/packages/process_field_validate.py",
+      "ohos/packages/stabilize_json_file.py",
+      "ohos/sa_profile/sa_profile_binary.py",
+      "ohos/sa_profile/sa_profile_merge.py",
+      "ohos/sa_profile/sa_profile_source.py",
+      "ohos/sa_profile/src_sa_profile_process.py",
+      "scripts/app_sign.py",
+      "scripts/compile_app.py",
+      "scripts/util/build_utils.py",
+      "scripts/util/file_utils.py"
+    ],
+    "desired_tree": "f72738a1aa5eebd7fb53c3b2bd7898d6df4c09d7",
+    "effective_tree": "cfc8e8d559b67ad95a9ff9b53a7ba8100d46e991",
+    "merge_ok": true,
+    "changed": [
+      "config/components/idl_tool/idl.gni",
+      "ohos/packages/BUILD.gn",
+      "ohos/packages/modules_install.py",
+      "ohos/sa_profile/sa_profile_binary.py"
+    ],
+    "stat": "config/components/idl_tool/idl.gni   | 50 +++++++++++++++++++++++-------------\n ohos/packages/BUILD.gn               | 19 +++++++++++---\n ohos/packages/modules_install.py     |  2 +-\n ohos/sa_profile/sa_profile_binary.py |  4 ++-\n 4 files changed, 52 insertions(+), 23 deletions(-)"
+  },
+  {
+    "repo": "build",
+    "number": 7006,
+    "source_base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "files": [
+      "hb/util/loader/load_ohos_build.py",
+      "ohos/hisysevent/hisysevent_process.py"
+    ],
+    "desired_tree": "3cc063b41dfc3fe024521d677e20418a4bfad598",
+    "effective_tree": "3cc063b41dfc3fe024521d677e20418a4bfad598",
+    "merge_ok": true,
+    "changed": [],
+    "stat": ""
+  },
+  {
+    "repo": "build",
+    "number": 7009,
+    "source_base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "files": [
+      "ohos/generate_part_info.py",
+      "ohos/packages/BUILD.gn",
+      "ohos/packages/parts_install_info.py",
+      "scripts/util/file_utils.py"
+    ],
+    "desired_tree": "45abb60b5c25bed994cbad3f512459e88155b3ef",
+    "effective_tree": "4df9327c9116e6200bcc1a18acd9efa656d6f336",
+    "merge_ok": true,
+    "changed": [
+      "ohos/packages/BUILD.gn"
+    ],
+    "stat": "ohos/packages/BUILD.gn | 75 ++++++++++++++++++++++++++++++++++++++++++++++----\n 1 file changed, 69 insertions(+), 6 deletions(-)"
+  },
+  {
+    "repo": "build",
+    "number": 7046,
+    "source_base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "files": [
+      "ohos/common/binary_install_info.py",
+      "ohos/packages/modules_install.py"
+    ],
+    "desired_tree": "5990b729b5b6fdc63530527e7652dae12f83257a",
+    "effective_tree": "6f5533f75bf27bcb6542284ff0bd41ceb428d71a",
+    "merge_ok": true,
+    "changed": [
+      "ohos/packages/modules_install.py"
+    ],
+    "stat": "ohos/packages/modules_install.py | 15 +++++++++------\n 1 file changed, 9 insertions(+), 6 deletions(-)"
+  },
+  {
+    "repo": "build",
+    "number": 7048,
+    "source_base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "files": [
+      "ohos/notice/collect_module_notice_file.py",
+      "ohos/notice/collect_system_notice_files.py"
+    ],
+    "desired_tree": "6acec7c4e8057561da4aecef183742221d49263c",
+    "effective_tree": "6acec7c4e8057561da4aecef183742221d49263c",
+    "merge_ok": true,
+    "changed": [],
+    "stat": ""
+  },
+  {
+    "repo": "build",
+    "number": 7049,
+    "source_base": "a2b72e827add764f6312e00173dff0dd3db45e75",
+    "files": [
+      "ohos/sdk/parse_interface_sdk.py"
+    ],
+    "desired_tree": "2eec7215cd03c1d917ebe68693b725ec20d33515",
+    "effective_tree": "2eec7215cd03c1d917ebe68693b725ec20d33515",
+    "merge_ok": true,
+    "changed": [],
+    "stat": ""
+  },
+  {
+    "repo": "third_party_iptables",
+    "number": 62,
+    "source_base": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+    "files": [
+      "extensions/genInit.py"
+    ],
+    "desired_tree": "0be81a898658c7aa22714e22a571d1e3e0643c1b",
+    "effective_tree": "0be81a898658c7aa22714e22a571d1e3e0643c1b",
+    "merge_ok": true,
+    "changed": [],
+    "stat": ""
+  },
+  {
+    "repo": "developtools_packing_tool",
+    "number": 1556,
+    "source_base": "498ffd5552a076a491a33b5dae6d6b3a014c6096",
+    "files": [
+      "adapter/ohos/Compressor.java"
+    ],
+    "desired_tree": "055d3440d81d92b0d0f5769c1ecf2b30316dccc7",
+    "effective_tree": "055d3440d81d92b0d0f5769c1ecf2b30316dccc7",
+    "merge_ok": true,
+    "changed": [],
+    "stat": ""
+  },
+  {
+    "repo": "third_party_jsframework",
+    "number": 853,
+    "source_base": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+    "files": [
+      "js_framework_build.sh",
+      "BUILD.gn",
+      "test/ut/runtime.ts"
+    ],
+    "desired_tree": "aecd8b6d0f4cea32f5171b64f71714e4cb231ce0",
+    "effective_tree": "2e1ff7d6b99ee336d77b74ff51164fcbb4638c63",
+    "merge_ok": true,
+    "changed": [
+      "BUILD.gn",
+      "js_framework_build.sh",
+      "test/ut/runtime.ts"
+    ],
+    "stat": "BUILD.gn              | 43 +++++++++++++++++++++++++++++++++------\n js_framework_build.sh | 56 ++++++++++++++++++++++++---------------------------\n test/ut/runtime.ts    |  9 +++++++++\n 3 files changed, 72 insertions(+), 36 deletions(-)"
+  },
+  {
+    "repo": "third_party_sane-airscan",
+    "number": 22,
+    "source_base": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+    "files": [
+      "BUILD.gn",
+      "patch_install.py"
+    ],
+    "desired_tree": "b6a96211a9454107da4e42e9e51c6d4ba64d46d1",
+    "effective_tree": "3a2fd2b3e40c312d73d8e313dde9e6778e35831b",
+    "merge_ok": false,
+    "changed": [
+      "BUILD.gn",
+      "patch_install.py"
+    ],
+    "stat": "BUILD.gn         | 37 +++++++------------------------------\n patch_install.py | 52 ++++++++++++++++------------------------------------\n 2 files changed, 23 insertions(+), 66 deletions(-)"
+  }
+]

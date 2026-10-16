@@ -1,0 +1,13 @@
+{
+  "passed": [
+    "Four PR file scopes, UTF-8 and Python bytecode compilation",
+    "IDL: concrete outputs, transitive imports, partial/full clean recovery, stable mtime, failure safety",
+    "JSON: semantic comparison and deleted output recovery",
+    "JS shell syntax",
+    "airscan all 8 upstream patches match independent git apply",
+    "airscan all 34 output contents and mtimes stable",
+    "airscan missing header restored without changing siblings",
+    "airscan clean rebuild leaves all source files unchanged"
+  ],
+  "product_build_run": false
+}
