@@ -1,0 +1,41 @@
+{
+  "checked_utc": "2026-10-16T02:51:17.537075+00:00",
+  "changes": [
+    {
+      "repo": "third_party_jsframework",
+      "number": 853,
+      "new_comment_ids": [
+        194083585,
+        194083632
+      ],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "third_party_css-what",
+      "number": 29,
+      "new_comment_ids": [
+        194083555,
+        194083609
+      ],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    }
+  ],
+  "new_actionable_findings": [],
+  "completed_groups": [
+    "JS-CSS"
+  ]
+}
