@@ -1,0 +1,109 @@
+- banner:
+  - heading "OpenHarmony / interface_sdk-js" [level=2]:
+    - link:
+      - /url: /openharmony
+    - link "OpenHarmony":
+      - /url: /openharmony
+    - generic: /
+    - link "interface_sdk-js":
+      - /url: /openharmony/interface_sdk-js
+  - text: 按下
+  - generic: /
+  - text: 快速开启搜索
+  - textbox
+  - button "打开 AtomCode":
+    - generic: AtomCode
+  - generic: 探索更多
+  - link "工作台":
+    - /url: https://gitcode.com/dashboard
+    - generic: 工作台
+  - button "安装 AtomGit":
+  - button "新建":
+  - link "79":
+    - /url: https://gitcode.com/notice?message_sate=countNotRead
+    - generic: "79"
+- link "代码":
+  - /url: /openharmony/interface_sdk-js
+  - generic: 代码
+- link "Issues 706":
+  - /url: /openharmony/interface_sdk-js/issues
+  - generic: Issues
+  - generic: "706"
+- link "Pull Requests 368":
+  - /url: /openharmony/interface_sdk-js/pulls
+  - generic: Pull Requests
+  - generic: "368"
+- link "项目讨论":
+  - /url: /openharmony/interface_sdk-js/discussions
+  - generic: 项目讨论
+- link "Wiki":
+  - /url: /openharmony/interface_sdk-js/wiki
+  - generic: Wiki
+- link "分析":
+  - /url: /openharmony/interface_sdk-js/analysis
+  - generic: 分析
+- button "Watch 2":
+  - generic: Watch
+  - generic: "2"
+- generic: Star
+- generic: "74"
+- button "加入合集":
+- button "Fork":
+  - generic: Fork
+- link "2543":
+  - /url: /openharmony/interface_sdk-js/forks
+  - generic: "2543"
+- button "已存在的fork项目":
+- main:
+  - text: 已开启
+  - generic "补齐 SDK 拆分和声明裁剪的增量依赖":
+    - generic: "补齐 SDK 拆分和声明裁剪的增量依赖 #36540"
+  - generic: SmillySmillick
+  - text: 创建于
+  - generic: 7 小时前
+  - generic: 从
+  - link "SmillySmillick/interface_sdk-js：":
+    - /url: /SmillySmillick/interface_sdk-js
+  - link "fix/sdk-interface-incremental-20261015":
+    - /url: /SmillySmillick/interface_sdk-js/tree/fix%2Fsdk-interface-incremental-20261015
+  - text: 合入到
+  - link "openharmony/interface_sdk-js：":
+    - /url: /openharmony/interface_sdk-js
+  - link "master":
+    - /url: /openharmony/interface_sdk-js/tree/master
+  - generic: 落后目标分支 49 个提交
+  - navigation:
+    - link "讨论 5":
+      - /url: /openharmony/interface_sdk-js/pull/36540/discuss
+      - generic: 讨论
+      - generic: "5"
+    - link "提交 2":
+      - /url: /openharmony/interface_sdk-js/pull/36540/commit
+      - generic: 提交
+      - generic: "2"
+    - link "检查 2":
+      - /url: /openharmony/interface_sdk-js/pull/36540/check
+      - generic: 检查
+      - generic: "2"
+    - link "文件改动 3":
+      - /url: /openharmony/interface_sdk-js/pull/36540/diffs
+      - generic: 文件改动
+      - generic: "3"
+    - generic: 克隆/下载
+    - generic: 评审意见已解决
+    - generic: 0/0
+    - generic: "0"
+  - generic: 代码审查
+  - generic: 0/1
+  - generic: 代码测试
+  - generic: 0/1
+  - heading "代码审查未通过" [level=6]
+  - generic: 当前PR有如下代码审查要求
+  - generic: 已设置审查人数：1/1人
+  - generic: 已审查通过：0/1人
+- button "AtomCode":
+  - strong: AtomCode
+  - generic: 你的云端 AI 编程助手
+  - button "关闭":
+- region "Notifications (F8)":
+  - list

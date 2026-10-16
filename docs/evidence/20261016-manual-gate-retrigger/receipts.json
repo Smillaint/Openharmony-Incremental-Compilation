@@ -1,0 +1,35 @@
+[
+  {
+    "key": "sa",
+    "observed_at_utc": "2026-10-16T08:26:19.503Z",
+    "receipt": {
+      "id": "render_194176796",
+      "text": "部分构建失败,仅触发失败构建\n门禁构建开始,包含代码编译和测试【ohos-sdk-codearts-new编译, dayu200测试, master_inner_build编译, dayu200编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df3c64650f998bfe576e/runlist"
+    },
+    "command": {
+      "id": "render_194176632",
+      "text": "start build"
+    }
+  },
+  {
+    "key": "hap",
+    "observed_at_utc": "2026-10-16T08:26:19.672Z",
+    "receipt": {
+      "id": "render_194177048",
+      "text": "部分构建失败,仅触发失败构建\n门禁构建开始,包含代码编译【dayu200_tdd编译, master_inner_build编译, x86_64_virt_tdd编译, ohos-sdk-codearts-new编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist"
+    },
+    "command": {
+      "id": "render_194176816",
+      "text": "start build"
+    }
+  },
+  {
+    "key": "hap_companion",
+    "observed_at_utc": "2026-10-16T08:26:19.856Z",
+    "receipt": {
+      "id": "render_194177042",
+      "text": "部分构建失败,仅触发失败构建\n门禁构建开始,包含代码编译【dayu200_tdd编译, master_inner_build编译, x86_64_virt_tdd编译, ohos-sdk-codearts-new编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist"
+    },
+    "command": null
+  }
+]

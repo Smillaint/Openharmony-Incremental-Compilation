@@ -1,0 +1,465 @@
+- heading "developtools_ace_ets2bundle:基于 OpenHarmony 的 ETS 语法编译转换工具项目" [level=1]
+- img "favicon"
+- heading "OpenHarmony / developtools_ace_ets2bundle" [level=2]:
+  - link:
+    - /url: /openharmony
+  - link "OpenHarmony":
+    - /url: /openharmony
+  - generic: /
+  - link "developtools_ace_ets2bundle":
+    - /url: /openharmony/developtools_ace_ets2bundle
+- text: 按下
+- generic: /
+- text: 快速开启搜索
+- textbox
+- button "打开 AtomCode":
+  - generic: AtomCode
+- generic: 探索更多
+- link "工作台":
+  - /url: /dashboard
+  - generic: 工作台
+- button "新建":
+- link "79":
+  - /url: https://gitcode.com/notice?message_sate=countNotRead
+  - generic: "79"
+- link "代码":
+  - /url: /openharmony/developtools_ace_ets2bundle
+  - generic: 代码
+- link "Issues 73":
+  - /url: /openharmony/developtools_ace_ets2bundle/issues
+  - generic: Issues
+  - generic: "73"
+- link "Pull Requests 56":
+  - /url: /openharmony/developtools_ace_ets2bundle/pulls
+  - generic: Pull Requests
+  - generic: "56"
+- link "项目讨论":
+  - /url: /openharmony/developtools_ace_ets2bundle/discussions
+  - generic: 项目讨论
+- link "Wiki":
+  - /url: /openharmony/developtools_ace_ets2bundle/wiki
+  - generic: Wiki
+- link "分析":
+  - /url: /openharmony/developtools_ace_ets2bundle/analysis
+  - generic: 分析
+- generic: Watch
+- generic: "0"
+- generic: Star
+- generic: "14"
+- generic: Fork
+- generic: "257"
+- text: 已开启
+- generic "修复 SDK 插件和 wrapper 的重复构建":
+  - generic: "修复 SDK 插件和 wrapper 的重复构建 #7210"
+- generic: SmillySmillick
+- generic: 创建于 7 小时前
+- generic: 从
+- link "SmillySmillick/developtools_ace_ets2bundle：":
+  - /url: /SmillySmillick/developtools_ace_ets2bundle
+- link "fix/incremental-build-20261013":
+  - /url: /SmillySmillick/developtools_ace_ets2bundle/tree/fix%2Fincremental-build-20261013
+- text: 合入到
+- link "openharmony/developtools_ace_ets2bundle：":
+  - /url: /openharmony/developtools_ace_ets2bundle
+- link "master":
+  - /url: /openharmony/developtools_ace_ets2bundle/tree/master
+- generic: 落后目标分支 6 个提交
+- tablist:
+  - tab "讨论 5" [expanded]:
+    - generic: 讨论
+    - generic: "5"
+  - tab "提交 4":
+    - generic: 提交
+    - generic: "4"
+  - tab "检查 2":
+    - generic: 检查
+    - generic: "2"
+  - tab "文件改动 10":
+    - generic: 文件改动
+    - generic: "10"
+- generic: 克隆/下载
+- generic: 评审意见已解决
+- generic: 0/0
+- generic: "0"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 7 小时前
+- button:
+  - text: 
+- button:
+  - text: 
+- heading "相关的Issue" [level=3]
+- paragraph:
+  - link "修复安装模块依赖与元数据引起的无效增量构建":
+    - /url: https://gitcode.com/openharmony/build/issues/4704
+- heading "原因（目的、解决的问题等）" [level=3]
+- paragraph: 插件和 wrapper 在源码目录生成中间文件，目录形式的输入输出不能完整表达依赖；libarkts 输出也缺少隔离，容易引起重复构建，清理后可能缺少文件。
+- heading "描述（做了什么，变更了什么）" [level=3]
+- paragraph: 将插件和 wrapper 放到 out 内构建，用具体文件清单声明输入输出并按内容发布，补齐 package.json 和工具依赖，隔离 libarkts 输出；清单包含主干新增的校验文件。
+- heading "测试用例（新增、改动、可能影响的功能）" [level=3]
+- paragraph: 预期无改动时不重复发布 SDK 文件，清理 out 后可以恢复，源码目录不再产生这些构建中间文件。
+- text:  
+- img "like"
+- img "dislike"
+- heading "合并受阻" [level=6]
+- text: CODEOWNERS 未全部通过审查
+- paragraph: 前置 PR（只有当前置的 PR 合入后，当前 PR 才能被合并）
+- textbox "请选择前置的 PR"
+- checkbox "合并后关闭已关联的 Issue" [checked]
+- generic: 合并后关闭已关联的 Issue
+- checkbox "合并后删除源分支"
+- generic: 合并后删除源分支
+- checkbox "Squash 合并"
+- generic: Squash 合并
+- button "设为草稿":
+  - text: 
+  - generic: 设为草稿
+- button "关闭":
+  - text: 
+  - generic: 关闭
+- button "合入" [disabled]:
+  - text: 
+  - generic: 合入
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 7 小时前 关联了issue：修复安装模块依赖与元数据引起的无效增量构建
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 7 小时前
+- text: 添加了label：
+- generic: waiting_on_author
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 7 小时前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 "start build" 触发门禁，更多交互操作，请访问
+  - link "OpenHarmony社区支持命令清单":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: 。如果需要调整订阅PR、Issue的变更状态，请访问
+  - link "订阅链接":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fdeveloptools_ace_ets2bundle%2Fmerge_requests%2F7210&lang=zh&theme=white
+  - text: 。
+  - text: Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a "start build" comment to trigger the gated system. For more commands, please visit
+  - link "OpenHarmony Command List":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: . If you need to change the subscription of a Pull Request or Issue, please visit the
+  - link "link":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fdeveloptools_ace_ets2bundle%2Fmerge_requests%2F7210&lang=zh&theme=white
+  - text: .
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 7 小时前
+- text: 添加了label：
+- generic: dco检查成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 6 小时前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态
+  - text: "门禁构建开始,包含静态检查、代码编译和测试【dayu200_xts_static编译, ohos-host_mini_tdd编译, dayu600_7885测试, hap_build编译, hispark_taurus_Linux编译, x86_64_virt_tdd编译, master_inner_build编译, dayu200编译, ohos-sdk-codearts-new编译, new_part_compile编译, dayu600_7885编译, hispark_taurus_LiteOS测试, hispark_taurus_LiteOS编译, dayu200_tdd编译, x86_64_virt编译, dayu200_xts_acts编译, part_compile编译, dayu200_xts编译, ohos-sdk编译, mac-sdk编译, dayu200测试】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dfc64650f998bd4ac9f/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6ad17dfc64650f998bd4ac9f%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fdeveloptools_ace_ets2bundle%2Fmerge_requests%2F7210&lang=zh&theme=white
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 6 小时前
+- text: 添加了label：
+- generic: 静态检查失败
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 6 小时前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 代码门禁未通过
+  - text: "您可以通过如下链接查看门禁报告:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dfc64650f998bd4ac9f/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6ad17dfc64650f998bd4ac9f%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fdeveloptools_ace_ets2bundle%2Fmerge_requests%2F7210&lang=zh&theme=white
+  - text: "静态检查:"
+- table:
+  - rowgroup:
+    - row "# check type result report":
+      - columnheader "#"
+      - columnheader "check type"
+      - columnheader "result"
+      - columnheader "report"
+  - rowgroup:
+    - row "1 codeCheck noPass >>>":
+      - cell "1"
+      - cell "codeCheck"
+      - cell "noPass"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://dcp.openharmony.cn/workbench/cicd/detail/6ad17dfc64650f998bd4ac9f/runlist?pop=codecheck&taskId=MR_9fca7110469543e391477e0ba7e5eb7f
+- text: "编译测试:"
+- table:
+  - rowgroup:
+    - row "# Device build result package":
+      - columnheader "#"
+      - columnheader "Device"
+      - columnheader "build result"
+      - columnheader "package"
+  - rowgroup:
+    - row "1 hispark_taurus_LiteOS pending NA":
+      - cell "1"
+      - cell "hispark_taurus_LiteOS"
+      - cell "pending"
+      - cell "NA"
+    - row "2 hispark_taurus_Linux pending NA":
+      - cell "2"
+      - cell "hispark_taurus_Linux"
+      - cell "pending"
+      - cell "NA"
+    - row "3 ohos-sdk pending NA":
+      - cell "3"
+      - cell "ohos-sdk"
+      - cell "pending"
+      - cell "NA"
+    - row "4 dayu200 pending NA":
+      - cell "4"
+      - cell "dayu200"
+      - cell "pending"
+      - cell "NA"
+    - row "5 dayu200_xts pending NA":
+      - cell "5"
+      - cell "dayu200_xts"
+      - cell "pending"
+      - cell "NA"
+    - row "6 dayu200_tdd pending NA":
+      - cell "6"
+      - cell "dayu200_tdd"
+      - cell "pending"
+      - cell "NA"
+    - row "7 hap_build pending NA":
+      - cell "7"
+      - cell "hap_build"
+      - cell "pending"
+      - cell "NA"
+    - row "8 dayu200_xts_acts pending NA":
+      - cell "8"
+      - cell "dayu200_xts_acts"
+      - cell "pending"
+      - cell "NA"
+    - row "9 dayu200_xts_static pending NA":
+      - cell "9"
+      - cell "dayu200_xts_static"
+      - cell "pending"
+      - cell "NA"
+    - row "10 master_inner_build pending NA":
+      - cell "10"
+      - cell "master_inner_build"
+      - cell "pending"
+      - cell "NA"
+    - row "11 ohos-host_mini_tdd pending NA":
+      - cell "11"
+      - cell "ohos-host_mini_tdd"
+      - cell "pending"
+      - cell "NA"
+    - row "12 dayu600_7885 pending NA":
+      - cell "12"
+      - cell "dayu600_7885"
+      - cell "pending"
+      - cell "NA"
+    - row "13 x86_64_virt pending NA":
+      - cell "13"
+      - cell "x86_64_virt"
+      - cell "pending"
+      - cell "NA"
+    - row "14 x86_64_virt_tdd pending NA":
+      - cell "14"
+      - cell "x86_64_virt_tdd"
+      - cell "pending"
+      - cell "NA"
+    - row "15 part_compile pending NA":
+      - cell "15"
+      - cell "part_compile"
+      - cell "pending"
+      - cell "NA"
+    - row "16 new_part_compile pending NA":
+      - cell "16"
+      - cell "new_part_compile"
+      - cell "pending"
+      - cell "NA"
+    - row "17 mac-sdk pending NA":
+      - cell "17"
+      - cell "mac-sdk"
+      - cell "pending"
+      - cell "NA"
+    - row "18 ohos-sdk-codearts-new pending NA":
+      - cell "18"
+      - cell "ohos-sdk-codearts-new"
+      - cell "pending"
+      - cell "NA"
+- paragraph
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: "28 分钟前 审查状态已重置，审查人: VictorS67"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- text: 28 分钟前
+- text: "推送 1 个提交:"
+- link "e76639eb":
+  - /url: https://gitcode.com/openharmony/developtools_ace_ets2bundle/merge_requests/7210/diffs?diff_id=7993750&start_sha=a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6
+- text: "-Construct GN SDK input paths with POSIX semantics"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 28 分钟前
+- text: 删除了label：
+- generic: 静态检查失败
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 28 分钟前 评论：
+- button:
+  - text: 
+- paragraph: 代码有更新,重置PR验证状态
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 27 分钟前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 "start build" 触发门禁，更多交互操作，请访问
+  - link "OpenHarmony社区支持命令清单":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: 。如果需要调整订阅PR、Issue的变更状态，请访问
+  - link "订阅链接":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fdeveloptools_ace_ets2bundle%2Fmerge_requests%2F7210&lang=zh&theme=white
+  - text: 。
+  - text: Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a "start build" comment to trigger the gated system. For more commands, please visit
+  - link "OpenHarmony Command List":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: . If you need to change the subscription of a Pull Request or Issue, please visit the
+  - link "link":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Fdeveloptools_ace_ets2bundle%2Fmerge_requests%2F7210&lang=zh&theme=white
+  - text: .
+- text:   
+- img "like"
+- img "dislike"
+- text:   
+- textbox "回复"
+- heading "合并人" [level=5]:
+  - generic: 合并人
+- generic: 暂未分配
+- separator
+- heading "CODEOWNERS (1)" [level=5]:
+  - generic: CODEOWNERS (1)
+- list:
+  - generic "VictorS67":
+    - link "VictorS67":
+      - /url: /VictorS67
+- separator
+- heading "审查人 (2/1) 进行中" [level=5]:
+  - text: 审查人
+  - generic: (2/1)
+  - generic "进行中"
+- list:
+  - generic "hufeng20":
+    - link "hufeng20":
+      - /url: /hufeng20
+  - generic: C
+  - generic "chengongping":
+    - link "chengongping":
+      - /url: /chengongping
+- separator
+- heading "测试人 (1/1) 进行中" [level=5]:
+  - text: 测试人
+  - generic: (1/1)
+  - generic "进行中"
+- list:
+  - generic "openharmony_ci":
+    - link "openharmony_ci":
+      - /url: /openharmony_ci
+- separator
+- heading "评审人" [level=5]:
+  - generic: 评审人
+- generic: 暂未分配
+- separator
+- heading "Label" [level=5]:
+  - generic: Label
+- generic "waiting_on_author"
+- generic "dco检查成功"
+- separator
+- heading "里程碑" [level=5]:
+  - generic: 里程碑
+- generic: 暂无关联里程碑
+- separator
+- heading "看板" [level=5]:
+  - generic: 看板
+- generic: 暂无关联看板
+- separator
+- heading "关联Issue" [level=5]:
+  - generic: 关联Issue
+- 'link "修复安装模块依赖与元数据引起的无效增量构建 #4704 OpenHarmony / build"':
+  - /url: /openharmony/build/issues/4704
+  - generic "修复安装模块依赖与元数据引起的无效增量构建":
+    - text: 修复安装模块依赖与元数据引起的无效增量构建
+  - generic "OpenHarmony / build": "#4704 OpenHarmony / build"
+- separator
+- generic: 参与者
+- generic: "5"
+- link:
+  - /url: /openharmony_ci
+  - generic "openharmony_ci"
+- link:
+  - /url: /SmillySmillick
+  - generic "SmillySmillick"
+- link:
+  - /url: /hufeng20
+  - generic "hufeng20"
+- link:
+  - /url: /VictorS67
+  - generic "VictorS67"
+- link "C":
+  - /url: /chengongping
+  - generic "chengongping":
+    - generic: C

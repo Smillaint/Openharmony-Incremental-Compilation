@@ -84,3 +84,7 @@ build #4668、#4706、#4704、#4663 和 jsframework #323 的正文已替换为�
 IDL 构建中心实际六仓成员截图：
 
 ![IDL 联合门禁成员](evidence/20261015-companion-prs/screenshots/idl-joint-members.png)
+
+## 10 月 16 日门禁重跑
+
+SA、HAP 两组静态检查通过，已分别启动一次失败项重跑，见[启动回执及范围](oct16-manual-gate-retrigger.md)。自动巡检保持暂停。

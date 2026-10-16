@@ -279,56 +279,94 @@
       "issue": "https://gitcode.com/openharmony/build/issues/4663",
       "trigger_repo": "build",
       "trigger_number": 6974,
-      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist",
-      "command_id": 194069463,
-      "receipt_id": 194069579,
-      "started_at": "2026-10-16T09:29:57+08:00",
-      "status": "failed_pipeline_timeout",
+      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist",
+      "command_id": 194176816,
+      "receipt_id": 194177048,
+      "status": "running",
       "done": false,
       "members": [
         {
           "repo": "build",
           "number": 6974,
           "head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
-          "status": "failed_pipeline_timeout",
+          "status": "running",
           "done": false,
-          "result_comment_id": 194126102
+          "receipt_id": 194177048
         },
         {
           "repo": "developtools_packing_tool",
           "number": 1556,
           "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
-          "status": "failed_pipeline_timeout",
+          "status": "running",
           "done": false,
-          "result_comment_id": 194126103
+          "receipt_id": 194177042
         }
       ],
-      "last_checked_utc": "2026-10-16T07:48:49.925545+00:00",
+      "last_checked_utc": "2026-10-16T08:26:19.856Z",
       "head_verified": true,
-      "progress": "Final gate failed on dayu200_tdd pipeline timeout. Build log confirms compilation succeeded before timeout; archiving finished and artifact uploaded after the gate failed, then result upload was rejected with currentStatus error. All three smoke tests passed.",
-      "result_comment_ids": [
-        194126102,
-        194126103
-      ],
-      "final_report_pending": false,
-      "failure": {
-        "fingerprint": "6ad17e0a64650f998bd4b234:dayu200_tdd:pipeline_running_timeout:post_compile_archive:currentStatus_error",
-        "stage": "Post-compilation artifact archiving and gate-result reporting",
-        "classification": "pipeline_deadline_and_result_state_failure",
+      "progress": "部分构建失败,仅触发失败构建\n门禁构建开始,包含代码编译【dayu200_tdd编译, master_inner_build编译, x86_64_virt_tdd编译, ohos-sdk-codearts-new编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist",
+      "final_report_pending": true,
+      "previous_gate": {
+        "name": "HAP",
+        "issue": "https://gitcode.com/openharmony/build/issues/4663",
+        "trigger_repo": "build",
+        "trigger_number": 6974,
+        "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist",
+        "command_id": 194069463,
+        "receipt_id": 194069579,
+        "started_at": "2026-10-16T09:29:57+08:00",
+        "status": "failed_pipeline_timeout",
+        "done": false,
+        "members": [
+          {
+            "repo": "build",
+            "number": 6974,
+            "head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+            "status": "failed_pipeline_timeout",
+            "done": false,
+            "result_comment_id": 194126102
+          },
+          {
+            "repo": "developtools_packing_tool",
+            "number": 1556,
+            "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+            "status": "failed_pipeline_timeout",
+            "done": false,
+            "result_comment_id": 194126103
+          }
+        ],
+        "last_checked_utc": "2026-10-16T07:48:49.925545+00:00",
+        "head_verified": true,
+        "progress": "Final gate failed on dayu200_tdd pipeline timeout. Build log confirms compilation succeeded before timeout; archiving finished and artifact uploaded after the gate failed, then result upload was rejected with currentStatus error. All three smoke tests passed.",
         "result_comment_ids": [
           194126102,
           194126103
         ],
-        "report_url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist",
-        "build_log_url": "https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261016-1-00094/log/build.log.zip",
-        "evidence": "monitor/20261016T054826Z/hap-build-excerpt.json",
-        "first_log_error_line": 755480,
-        "first_log_error_time": "2026-10-16T13:31:02+08:00",
-        "details": "rk3568 build success at 13:14:33; archiving from 13:19:14 to 13:30:40 (exit 0). Gate timeout receipt at 13:30:08 preceded archive completion. 15.84GB artifact upload completed at 13:30:56 with HTTP 200; currentStatus error rejected result reporting at 13:31:02. No source compilation failure shown for this target.",
-        "inference": "The chronology supports the gate deadline being reached before artifact publication completed, followed by rejection of a late result. The configured deadline and server-side state transition require platform confirmation.",
-        "recommendation": "Ask CI maintainers to inspect total timeout accounting and late-result handling for CI 6ad17e0a64650f998bd4b234, dayu200_tdd artifact 20261016-1-00094, Beijing 13:14-13:31. Check whether archive time must fit inside the total limit, and whether the completed artifact can be accepted. Do not change HAP source solely for this failure or automatically retrigger.",
-        "notified": true
-      }
+        "final_report_pending": false,
+        "failure": {
+          "fingerprint": "6ad17e0a64650f998bd4b234:dayu200_tdd:pipeline_running_timeout:post_compile_archive:currentStatus_error",
+          "stage": "Post-compilation artifact archiving and gate-result reporting",
+          "classification": "pipeline_deadline_and_result_state_failure",
+          "result_comment_ids": [
+            194126102,
+            194126103
+          ],
+          "report_url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist",
+          "build_log_url": "https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261016-1-00094/log/build.log.zip",
+          "evidence": "monitor/20261016T054826Z/hap-build-excerpt.json",
+          "first_log_error_line": 755480,
+          "first_log_error_time": "2026-10-16T13:31:02+08:00",
+          "details": "rk3568 build success at 13:14:33; archiving from 13:19:14 to 13:30:40 (exit 0). Gate timeout receipt at 13:30:08 preceded archive completion. 15.84GB artifact upload completed at 13:30:56 with HTTP 200; currentStatus error rejected result reporting at 13:31:02. No source compilation failure shown for this target.",
+          "inference": "The chronology supports the gate deadline being reached before artifact publication completed, followed by rejection of a late result. The configured deadline and server-side state transition require platform confirmation.",
+          "recommendation": "Ask CI maintainers to inspect total timeout accounting and late-result handling for CI 6ad17e0a64650f998bd4b234, dayu200_tdd artifact 20261016-1-00094, Beijing 13:14-13:31. Check whether archive time must fit inside the total limit, and whether the completed artifact can be accepted. Do not change HAP source solely for this failure or automatically retrigger.",
+          "notified": true
+        }
+      },
+      "active_gate": true,
+      "gate_matches_current_heads": true,
+      "receipt_observed_at_utc": "2026-10-16T08:26:19.672Z",
+      "trigger_reason": "Manual request to trigger gates whose current static checks passed.",
+      "evidence": "../20261016-manual-gate-retrigger/receipts.json"
     },
     {
       "name": "loader",
@@ -369,31 +407,50 @@
     {
       "repo": "build",
       "number": 6965,
-      "status": "failed_test_trigger",
+      "status": "running",
       "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
-      "last_checked_utc": "2026-10-16T07:48:49.925545+00:00",
+      "last_checked_utc": "2026-10-16T08:26:19.856Z",
       "done": false,
-      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad165ef64650f998bcd430a/runlist",
-      "receipt_id": 194060838,
-      "failure": {
-        "fingerprint": "6ad165ef64650f998bcd430a:dayu200:trigger_ecotest_failed:E06:HTTP500",
-        "stage": "dayu200 EcoTest task submission",
-        "classification": "platform_test_service_trigger_failure",
-        "details": "Three HTTP 500 Internal Server Error responses at 08:18:25, 08:18:31 and 08:18:36 GMT+08 on 2026-10-16. Pipeline reports trigger_ecotest_failed / E06, testTaskId=error, testDuration=0. Later upload-version error and exit 1 are downstream failures.",
-        "first_error_time": "2026-10-16T08:18:25.921+08:00",
-        "first_error_line": 260228,
-        "report_url": "https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00010/log/build.log.zip",
-        "evidence": "monitor/20261016T031827Z/sa-build-excerpt.json",
-        "recommendation": "Ask the EcoTest platform maintainer to inspect service-side HTTP 500 exceptions from 2026-10-16 08:18:25 to 08:18:41 GMT+08 for dayu200 artifact 20261016-1-00010 and CI 6ad165ef64650f998bcd430a. There is no valid test task ID. Do not auto retry or infer an SA code fix from this failure.",
-        "notified": true,
-        "result_comment_id": 194102298,
-        "result_confirmed_at": "2026-10-16T11:19:55+08:00"
-      },
-      "progress": "Final gate receipt confirms failed(trigger_ecotest_failed) for dayu200; all non-ignored compilation and static checks passed. The same previously diagnosed EcoTest HTTP 500 failure remains; no new actionable finding.",
+      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df3c64650f998bfe576e/runlist",
+      "receipt_id": 194176796,
+      "progress": "部分构建失败,仅触发失败构建\n门禁构建开始,包含代码编译和测试【ohos-sdk-codearts-new编译, dayu200测试, master_inner_build编译, dayu200编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df3c64650f998bfe576e/runlist",
       "head_verified": true,
-      "final_report_pending": false,
-      "result_comment_id": 194102298,
-      "result_at": "2026-10-16T11:19:55+08:00"
+      "final_report_pending": true,
+      "previous_gate": {
+        "repo": "build",
+        "number": 6965,
+        "status": "failed_test_trigger",
+        "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+        "last_checked_utc": "2026-10-16T07:48:49.925545+00:00",
+        "done": false,
+        "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad165ef64650f998bcd430a/runlist",
+        "receipt_id": 194060838,
+        "failure": {
+          "fingerprint": "6ad165ef64650f998bcd430a:dayu200:trigger_ecotest_failed:E06:HTTP500",
+          "stage": "dayu200 EcoTest task submission",
+          "classification": "platform_test_service_trigger_failure",
+          "details": "Three HTTP 500 Internal Server Error responses at 08:18:25, 08:18:31 and 08:18:36 GMT+08 on 2026-10-16. Pipeline reports trigger_ecotest_failed / E06, testTaskId=error, testDuration=0. Later upload-version error and exit 1 are downstream failures.",
+          "first_error_time": "2026-10-16T08:18:25.921+08:00",
+          "first_error_line": 260228,
+          "report_url": "https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00010/log/build.log.zip",
+          "evidence": "monitor/20261016T031827Z/sa-build-excerpt.json",
+          "recommendation": "Ask the EcoTest platform maintainer to inspect service-side HTTP 500 exceptions from 2026-10-16 08:18:25 to 08:18:41 GMT+08 for dayu200 artifact 20261016-1-00010 and CI 6ad165ef64650f998bcd430a. There is no valid test task ID. Do not auto retry or infer an SA code fix from this failure.",
+          "notified": true,
+          "result_comment_id": 194102298,
+          "result_confirmed_at": "2026-10-16T11:19:55+08:00"
+        },
+        "progress": "Final gate receipt confirms failed(trigger_ecotest_failed) for dayu200; all non-ignored compilation and static checks passed. The same previously diagnosed EcoTest HTTP 500 failure remains; no new actionable finding.",
+        "head_verified": true,
+        "final_report_pending": false,
+        "result_comment_id": 194102298,
+        "result_at": "2026-10-16T11:19:55+08:00"
+      },
+      "active_gate": true,
+      "gate_matches_current_heads": true,
+      "command_id": 194176632,
+      "receipt_observed_at_utc": "2026-10-16T08:26:19.503Z",
+      "trigger_reason": "Manual request to trigger gates whose current static checks passed.",
+      "evidence": "../20261016-manual-gate-retrigger/receipts.json"
     },
     {
       "repo": "build",
@@ -467,5 +524,7 @@
   "automation_status": "PAUSED",
   "paused_at_utc": "2026-10-16T07:58:11.024715+00:00",
   "pause_reason": "Automatic inspection stopped; code-related static-check revisions handled once, platform failures retained.",
-  "maintenance_evidence": "../20261016-codecheck-fixes/publication-verification.json"
+  "maintenance_evidence": "../20261016-codecheck-fixes/publication-verification.json",
+  "last_manual_action_utc": "2026-10-16T08:26:19.856Z",
+  "manual_action_evidence": "../20261016-manual-gate-retrigger/receipts.json"
 }
