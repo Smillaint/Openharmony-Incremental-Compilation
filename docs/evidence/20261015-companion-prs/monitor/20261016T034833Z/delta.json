@@ -1,0 +1,29 @@
+{
+  "checked_utc": "2026-10-16T03:48:33.346988+00:00",
+  "changes": [
+    {
+      "repo": "build",
+      "number": 6965,
+      "new_comment_ids": [
+        194102298
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "冒烟测试失败",
+        "静态检查成功"
+      ],
+      "removed_labels": []
+    }
+  ],
+  "new_actionable_findings": [],
+  "completed_groups": [],
+  "skipped_completed_pr_count": 6,
+  "progress_changes": [
+    {
+      "group": "IDL",
+      "target": "x86_64_virt_tdd",
+      "before": "running",
+      "after": "passed(IGNORE)"
+    }
+  ]
+}

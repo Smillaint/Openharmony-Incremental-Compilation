@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-[2026-10-16 03:18 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T031827Z/summary.md)：SA #6965 的全部非忽略项编译已通过；dayu200 冒烟失败已定位到 EcoTest 提交接口连续三次 HTTP 500，任务未创建，需要平台侧检查。IDL、HAP、loader 仍有 TDD 编译运行，SDK split 和安装组原静态告警未变化。JS/CSS 已通过并停止检查。没有重复触发门禁。
+[2026-10-16 03:48 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T034833Z/summary.md)：SA #6965 正式回执确认原 EcoTest 触发失败，原因与[上轮诊断](evidence/20261015-companion-prs/monitor/20261016T031827Z/summary.md)一致。IDL 的 x86_64_virt_tdd 已通过，仍等待 dayu200_tdd；HAP、loader 仍有 TDD 编译运行。SDK split 和安装组原静态告警未变化，JS/CSS 已完成。本轮无新增可操作故障，没有重复触发门禁。
 
 ## PR、文件与作用
 
