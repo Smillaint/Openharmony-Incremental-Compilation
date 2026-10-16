@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-[2026-10-16 首轮巡检](evidence/20261015-companion-prs/monitor/20261016T014905Z/summary.md)：SDK split 与安装组因静态规则失败，具体告警已定位；其余四组仍执行中。SA 第三轮 dayu200 冒烟失败且报告未提供日志。四条历史 PR 的当前提交已有通过记录，移出后续巡检。详见记录中的原因、证据与建议。
+[2026-10-16 02:18 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T021827Z/summary.md)：没有新增可操作问题，原静态告警和 SA 缺日志状态未变化。JS/CSS 编译标签转为成功，冒烟仍在执行；整组尚未通过。[首轮故障分析](evidence/20261015-companion-prs/monitor/20261016T014905Z/summary.md)保留规则、行号与处理建议。
 
 ## PR、文件与作用
 

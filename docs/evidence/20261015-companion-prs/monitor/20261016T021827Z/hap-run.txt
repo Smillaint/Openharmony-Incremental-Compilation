@@ -1,0 +1,1702 @@
+- generic: OpenHarmony 数字化协作平台
+- generic: 登录
+- generic: 
+- complementary:
+  - text: 工作台
+  - menubar:
+    - menuitem "概览":
+      - generic "概览"
+    - menuitem "需求 ":
+      - generic "需求"
+      - generic: 
+      - text:  
+    - menuitem "设计 ":
+      - generic "设计"
+      - generic: 
+      - text:  
+    - menuitem "代码 ":
+      - generic "代码"
+      - generic: 
+      - text: 
+    - menuitem "CICD " [expanded]:
+      - generic "CICD"
+      - generic: 
+      - menu:
+        - menuitem "概览"
+        - menuitem "代码门禁"
+        - menuitem "每日构建"
+        - menuitem "编译专项 ":
+          - generic "编译专项"
+          - generic: 
+        - menuitem "代码质量 ":
+          - generic "代码质量"
+          - generic: 
+        - menuitem "安全合规 ":
+          - generic "安全合规"
+          - generic: 
+    - menuitem "Matrix ":
+      - generic "Matrix"
+      - generic: 
+      - text: 
+    - menuitem "测试 ":
+      - generic "测试"
+      - generic: 
+      - text: 
+    - menuitem "安全漏洞 ":
+      - generic "安全漏洞"
+      - generic: 
+      - text: 
+    - menuitem "供应链安全 ":
+      - generic "供应链安全"
+      - generic: 
+      - text: 
+    - menuitem "开源合规 ":
+      - generic "开源合规"
+      - generic: 
+      - text: 
+    - menuitem "补丁管理 ":
+      - generic "补丁管理"
+      - generic: 
+    - menuitem "发布归档 ":
+      - generic "发布归档"
+      - generic: 
+      - text: 
+    - menuitem "环境 ":
+      - generic "环境"
+      - generic: 
+      - text: 
+    - menuitem "SIG管理 ":
+      - generic "SIG管理"
+      - generic: 
+    - menuitem "Fuzz测试 ":
+      - generic "Fuzz测试"
+      - generic: 
+    - menuitem "研发效能度量 ":
+      - generic "研发效能度量"
+      - generic: 
+    - menuitem "基础设置":
+      - generic "基础设置"
+    - menuitem "TPC管理 ":
+      - generic "TPC管理"
+      - generic: 
+    - menuitem "研发AI装备 ":
+      - generic "研发AI装备"
+      - generic: 
+- generic: 
+- main:
+  - paragraph:
+    - text: 
+  - paragraph:
+    - text: 
+  - paragraph:
+  - text: 
+  - generic: 
+  - text: 
+  - generic:  
+  - navigation "Breadcrumb":
+    - link "代码门禁"
+    - generic: 
+    - link "运行状况"
+    - generic: 
+    - link "CI序列号：6ad17e0a64650f998bd4b234 / 触发人员：SmillySmillick"
+    - text: 
+  - main:
+    - heading "构建详情" [level=3]
+    - table:
+      - rowgroup:
+        - row "耗时 debug test InnerApi检测 构建等待时长 测试总时间 调度 升级 检查设备 测试执行 编译总时间 Cache命中率 init downloadCode fetchPr gitLfs preCompile mainCompile afterCompile archive upload":
+          - columnheader
+          - columnheader
+          - columnheader "耗时":
+            - text: 耗时
+          - columnheader "debug":
+            - generic: debug
+          - columnheader "test":
+            - generic: test
+          - columnheader "InnerApi检测":
+            - generic: InnerApi检测
+          - columnheader "构建等待时长":
+            - generic: 构建等待时长
+          - columnheader "测试总时间":
+            - text: 测试总时间
+          - columnheader "调度":
+            - generic: 调度
+          - columnheader "升级":
+            - generic: 升级
+          - columnheader "检查设备":
+            - generic: 检查设备
+          - columnheader "测试执行":
+            - text: 测试执行
+          - columnheader "编译总时间":
+            - generic: 编译总时间
+          - columnheader "Cache命中率":
+            - generic: Cache命中率
+          - columnheader "init":
+            - generic: init
+          - columnheader "downloadCode":
+            - generic: downloadCode
+          - columnheader "fetchPr":
+            - generic: fetchPr
+          - columnheader "gitLfs":
+            - generic: gitLfs
+          - columnheader "preCompile":
+            - generic: preCompile
+          - columnheader "mainCompile":
+            - generic: mainCompile
+          - columnheader "afterCompile":
+            - generic: afterCompile
+          - columnheader "archive":
+            - generic: archive
+          - columnheader "upload":
+            - generic: upload
+    - table:
+      - rowgroup:
+        - row "14min27s 通过 -- -- 1min45s -- -- -- -- -- 12min42s 99.81% 0 1min41s 3s 1min5s 54s 8min26s 0 0 1s":
+          - cell
+          - cell
+          - cell "14min27s":
+            - generic: 14min27s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min45s":
+            - generic: 1min45s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "12min42s":
+            - generic: 12min42s
+          - cell "99.81%":
+            - generic: 99.81%
+          - cell "0":
+            - generic: "0"
+          - cell "1min41s":
+            - generic: 1min41s
+          - cell "3s":
+            - generic: 3s
+          - cell "1min5s":
+            - generic: 1min5s
+          - cell "54s":
+            - generic: 54s
+          - cell "8min26s":
+            - generic: 8min26s
+          - cell "0":
+            - generic: "0"
+          - cell "0":
+            - generic: "0"
+          - cell "1s":
+            - generic: 1s
+        - row "8min17s 失败(忽略) -- -- 0s -- -- -- -- -- 8min17s -- -- -- -- -- -- -- -- -- --":
+          - cell
+          - cell
+          - cell "8min17s":
+            - generic: 8min17s
+          - cell "失败(忽略)":
+            - generic: 失败(忽略)
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "0s":
+            - generic: 0s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "8min17s":
+            - generic: 8min17s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+        - row "25min15s 通过 -- -- 6s -- -- -- -- -- 25min9s -- -- -- -- -- -- -- -- -- --":
+          - cell
+          - cell
+          - cell "25min15s":
+            - generic: 25min15s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "6s":
+            - generic: 6s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "25min9s":
+            - generic: 25min9s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+        - row "23min6s 通过 -- -- 1min54s -- -- -- -- -- 21min12s 99.97% 0 5min29s 4s 1min47s 3min19s 8min8s 0 1min46s 8s":
+          - cell
+          - cell
+          - cell "23min6s":
+            - generic: 23min6s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min54s":
+            - generic: 1min54s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "21min12s":
+            - generic: 21min12s
+          - cell "99.97%":
+            - generic: 99.97%
+          - cell "0":
+            - generic: "0"
+          - cell "5min29s":
+            - generic: 5min29s
+          - cell "4s":
+            - generic: 4s
+          - cell "1min47s":
+            - generic: 1min47s
+          - cell "3min19s":
+            - generic: 3min19s
+          - cell "8min8s":
+            - generic: 8min8s
+          - cell "0":
+            - generic: "0"
+          - cell "1min46s":
+            - generic: 1min46s
+          - cell "8s":
+            - generic: 8s
+        - row "13min36s 通过 -- -- 1min21s -- -- -- -- -- 12min15s 97.91% 0 2min48s 3s 1min13s 1min0s 1min49s 4min8s 20s 7s":
+          - cell
+          - cell
+          - cell "13min36s":
+            - generic: 13min36s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min21s":
+            - generic: 1min21s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "12min15s":
+            - generic: 12min15s
+          - cell "97.91%":
+            - generic: 97.91%
+          - cell "0":
+            - generic: "0"
+          - cell "2min48s":
+            - generic: 2min48s
+          - cell "3s":
+            - generic: 3s
+          - cell "1min13s":
+            - generic: 1min13s
+          - cell "1min0s":
+            - generic: 1min0s
+          - cell "1min49s":
+            - generic: 1min49s
+          - cell "4min8s":
+            - generic: 4min8s
+          - cell "20s":
+            - generic: 20s
+          - cell "7s":
+            - generic: 7s
+        - row "6min50s 通过 -- -- 1min20s -- -- -- -- -- 5min30s -- 0 2min13s 3s 1min4s 1min24s 1s 0 0 0":
+          - cell
+          - cell
+          - cell "6min50s":
+            - generic: 6min50s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min20s":
+            - generic: 1min20s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "5min30s":
+            - generic: 5min30s
+          - cell "--":
+            - generic: "--"
+          - cell "0":
+            - generic: "0"
+          - cell "2min13s":
+            - generic: 2min13s
+          - cell "3s":
+            - generic: 3s
+          - cell "1min4s":
+            - generic: 1min4s
+          - cell "1min24s":
+            - generic: 1min24s
+          - cell "1s":
+            - generic: 1s
+          - cell "0":
+            - generic: "0"
+          - cell "0":
+            - generic: "0"
+          - cell "0":
+            - generic: "0"
+        - row "26min55s 通过 执行中 通过 1min42s -- -- -- -- -- 25min13s 99.65% 0 2min10s 3s 1min4s 43s 19min20s 29s 41s 11s":
+          - cell
+          - cell
+          - cell "26min55s":
+            - generic: 26min55s
+          - cell "通过":
+            - generic: 通过
+          - cell "执行中":
+            - generic: 执行中
+          - cell "通过":
+            - generic: 通过
+          - cell "1min42s":
+            - generic: 1min42s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "25min13s":
+            - generic: 25min13s
+          - cell "99.65%":
+            - generic: 99.65%
+          - cell "0":
+            - generic: "0"
+          - cell "2min10s":
+            - generic: 2min10s
+          - cell "3s":
+            - generic: 3s
+          - cell "1min4s":
+            - generic: 1min4s
+          - cell "43s":
+            - generic: 43s
+          - cell "19min20s":
+            - generic: 19min20s
+          - cell "29s":
+            - generic: 29s
+          - cell "41s":
+            - generic: 41s
+          - cell "11s":
+            - generic: 11s
+        - row "11min8s 通过 通过 -- 1min30s -- -- -- -- -- 9min38s 98.74% 0 2min19s 2s 1min13s 46s 2min55s 1min20s 17s 3s":
+          - cell
+          - cell
+          - cell "11min8s":
+            - generic: 11min8s
+          - cell "通过":
+            - generic: 通过
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "1min30s":
+            - generic: 1min30s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "9min38s":
+            - generic: 9min38s
+          - cell "98.74%":
+            - generic: 98.74%
+          - cell "0":
+            - generic: "0"
+          - cell "2min19s":
+            - generic: 2min19s
+          - cell "2s":
+            - generic: 2s
+          - cell "1min13s":
+            - generic: 1min13s
+          - cell "46s":
+            - generic: 46s
+          - cell "2min55s":
+            - generic: 2min55s
+          - cell "1min20s":
+            - generic: 1min20s
+          - cell "17s":
+            - generic: 17s
+          - cell "3s":
+            - generic: 3s
+        - row "9min17s 失败(忽略) -- -- 1min52s -- -- -- -- -- 7min25s -- 0 1min50s 3s 59s 57s 3min14s -- -- --":
+          - cell
+          - cell
+          - cell "9min17s":
+            - generic: 9min17s
+          - cell "失败(忽略)":
+            - generic: 失败(忽略)
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min52s":
+            - generic: 1min52s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "7min25s":
+            - generic: 7min25s
+          - cell "--":
+            - generic: "--"
+          - cell "0":
+            - generic: "0"
+          - cell "1min50s":
+            - generic: 1min50s
+          - cell "3s":
+            - generic: 3s
+          - cell "59s":
+            - generic: 59s
+          - cell "57s":
+            - generic: 57s
+          - cell "3min14s":
+            - generic: 3min14s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+        - row "21min24s 通过 -- -- 1min50s -- -- -- -- -- 19min34s 99.83% 0 1min37s 2s 54s 47s 15min40s 0 1s 5s":
+          - cell
+          - cell
+          - cell "21min24s":
+            - generic: 21min24s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min50s":
+            - generic: 1min50s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "19min34s":
+            - generic: 19min34s
+          - cell "99.83%":
+            - generic: 99.83%
+          - cell "0":
+            - generic: "0"
+          - cell "1min37s":
+            - generic: 1min37s
+          - cell "2s":
+            - generic: 2s
+          - cell "54s":
+            - generic: 54s
+          - cell "47s":
+            - generic: 47s
+          - cell "15min40s":
+            - generic: 15min40s
+          - cell "0":
+            - generic: "0"
+          - cell "1s":
+            - generic: 1s
+          - cell "5s":
+            - generic: 5s
+        - row "-14h-9min-44s 执行中 -- -- 4min0s -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --":
+          - cell
+          - cell
+          - cell "-14h-9min-44s":
+            - generic: "-14h-9min-44s"
+          - cell "执行中":
+            - generic: 执行中
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "4min0s":
+            - generic: 4min0s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+        - row "-14h-9min-44s 执行中 -- -- 1min40s -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --":
+          - cell
+          - cell
+          - cell "-14h-9min-44s":
+            - generic: "-14h-9min-44s"
+          - cell "执行中":
+            - generic: 执行中
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min40s":
+            - generic: 1min40s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+        - row "18min55s 通过 -- -- 1min46s -- -- -- -- -- 17min9s 99.99% 0 2min53s 4s 1min21s 2min10s 9min10s 15s 12s 19s":
+          - cell
+          - cell
+          - cell "18min55s":
+            - generic: 18min55s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min46s":
+            - generic: 1min46s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "17min9s":
+            - generic: 17min9s
+          - cell "99.99%":
+            - generic: 99.99%
+          - cell "0":
+            - generic: "0"
+          - cell "2min53s":
+            - generic: 2min53s
+          - cell "4s":
+            - generic: 4s
+          - cell "1min21s":
+            - generic: 1min21s
+          - cell "2min10s":
+            - generic: 2min10s
+          - cell "9min10s":
+            - generic: 9min10s
+          - cell "15s":
+            - generic: 15s
+          - cell "12s":
+            - generic: 12s
+          - cell "19s":
+            - generic: 19s
+        - row "22min31s 通过 -- -- 1min31s -- -- -- -- -- 21min0s 99.93% 0 2min12s 3s 1min11s 45s 16min14s 0 4s 2s":
+          - cell
+          - cell
+          - cell "22min31s":
+            - generic: 22min31s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min31s":
+            - generic: 1min31s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "21min0s":
+            - generic: 21min0s
+          - cell "99.93%":
+            - generic: 99.93%
+          - cell "0":
+            - generic: "0"
+          - cell "2min12s":
+            - generic: 2min12s
+          - cell "3s":
+            - generic: 3s
+          - cell "1min11s":
+            - generic: 1min11s
+          - cell "45s":
+            - generic: 45s
+          - cell "16min14s":
+            - generic: 16min14s
+          - cell "0":
+            - generic: "0"
+          - cell "4s":
+            - generic: 4s
+          - cell "2s":
+            - generic: 2s
+        - row "20min9s 通过 -- -- 1min34s -- -- -- -- -- 18min35s 99.98% 0 4min55s 4s 1min35s 3min1s 8min18s 11s 1s 2s":
+          - cell
+          - cell
+          - cell "20min9s":
+            - generic: 20min9s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "1min34s":
+            - generic: 1min34s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "18min35s":
+            - generic: 18min35s
+          - cell "99.98%":
+            - generic: 99.98%
+          - cell "0":
+            - generic: "0"
+          - cell "4min55s":
+            - generic: 4min55s
+          - cell "4s":
+            - generic: 4s
+          - cell "1min35s":
+            - generic: 1min35s
+          - cell "3min1s":
+            - generic: 3min1s
+          - cell "8min18s":
+            - generic: 8min18s
+          - cell "11s":
+            - generic: 11s
+          - cell "1s":
+            - generic: 1s
+          - cell "2s":
+            - generic: 2s
+        - row "0 失败(忽略) -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --":
+          - cell
+          - cell
+          - cell "0":
+            - generic: "0"
+          - cell "失败(忽略)":
+            - generic: 失败(忽略)
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+    - table:
+      - rowgroup:
+        - row "构建目标 调度时间":
+          - columnheader "构建目标":
+            - generic: 构建目标
+          - columnheader "调度时间":
+            - generic: 调度时间
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+    - table:
+      - rowgroup:
+        - row "ohos-host_mini_tdd 2026-10-16 09:29:33":
+          - cell "ohos-host_mini_tdd":
+            - generic: ohos-host_mini_tdd
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "master_inner_build 2026-10-16 09:29:33":
+          - cell "master_inner_build":
+            - generic: master_inner_build
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "mac-sdk 2026-10-16 09:29:33":
+          - cell "mac-sdk":
+            - generic: mac-sdk
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "dayu200_xts_static 2026-10-16 09:29:33":
+          - cell "dayu200_xts_static":
+            - generic: dayu200_xts_static
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "hispark_taurus_Linux 2026-10-16 09:29:33":
+          - cell "hispark_taurus_Linux":
+            - generic: hispark_taurus_Linux
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "dayu200_xts 2026-10-16 09:29:33":
+          - cell "dayu200_xts":
+            - generic: dayu200_xts
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "dayu200 2026-10-16 09:29:33":
+          - cell "dayu200":
+            - generic: dayu200
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "hispark_taurus_LiteOS 2026-10-16 09:29:33":
+          - cell "hispark_taurus_LiteOS":
+            - generic: hispark_taurus_LiteOS
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "x86_64_virt_tdd 2026-10-16 09:29:33":
+          - cell "x86_64_virt_tdd":
+            - generic: x86_64_virt_tdd
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "x86_64_virt 2026-10-16 09:29:33":
+          - cell "x86_64_virt":
+            - generic: x86_64_virt
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "dayu600_7885 2026-10-16 09:29:33":
+          - cell "dayu600_7885":
+            - generic: dayu600_7885
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "dayu200_tdd 2026-10-16 09:29:33":
+          - cell "dayu200_tdd":
+            - generic: dayu200_tdd
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "ohos-sdk 2026-10-16 09:29:33":
+          - cell "ohos-sdk":
+            - generic: ohos-sdk
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "hap_build 2026-10-16 09:29:33":
+          - cell "hap_build":
+            - generic: hap_build
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "dayu200_xts_acts 2026-10-16 09:29:33":
+          - cell "dayu200_xts_acts":
+            - generic: dayu200_xts_acts
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "ohos-sdk-codearts-new 2026-10-16 09:29:33":
+          - cell "ohos-sdk-codearts-new":
+            - generic: ohos-sdk-codearts-new
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+    - heading "部件独立编译详情" [level=3]
+    - table:
+      - rowgroup:
+        - row "耗时 debug test 构建等待时长 测试总时间 调度 升级 检查设备 测试执行 编译总时间 Cache命中率 init downloadCode fetchPr gitLfs preCompile mainCompile afterCompile archive upload PR合入时间 HPM发布时间":
+          - columnheader
+          - columnheader
+          - columnheader "耗时":
+            - text: 耗时
+          - columnheader "debug":
+            - generic: debug
+          - columnheader "test":
+            - generic: test
+          - columnheader "构建等待时长":
+            - generic: 构建等待时长
+          - columnheader "测试总时间":
+            - text: 测试总时间
+          - columnheader "调度":
+            - generic: 调度
+          - columnheader "升级":
+            - generic: 升级
+          - columnheader "检查设备":
+            - generic: 检查设备
+          - columnheader "测试执行":
+            - text: 测试执行
+          - columnheader "编译总时间":
+            - generic: 编译总时间
+          - columnheader "Cache命中率":
+            - generic: Cache命中率
+          - columnheader "init":
+            - generic: init
+          - columnheader "downloadCode":
+            - generic: downloadCode
+          - columnheader "fetchPr":
+            - generic: fetchPr
+          - columnheader "gitLfs":
+            - generic: gitLfs
+          - columnheader "preCompile":
+            - generic: preCompile
+          - columnheader "mainCompile":
+            - generic: mainCompile
+          - columnheader "afterCompile":
+            - generic: afterCompile
+          - columnheader "archive":
+            - generic: archive
+          - columnheader "upload":
+            - generic: upload
+          - columnheader "PR合入时间":
+            - generic: PR合入时间
+          - columnheader "HPM发布时间":
+            - generic: HPM发布时间
+    - table:
+      - rowgroup:
+        - row "30min6s 通过 -- 1min23s -- -- -- -- -- 28min43s 99.65% 0 2min23s 3s 1min20s 55s 22min24s 0 49s 10s -- --":
+          - cell
+          - cell
+          - cell "30min6s":
+            - generic: 30min6s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "1min23s":
+            - generic: 1min23s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "28min43s":
+            - generic: 28min43s
+          - cell "99.65%":
+            - generic: 99.65%
+          - cell "0":
+            - generic: "0"
+          - cell "2min23s":
+            - generic: 2min23s
+          - cell "3s":
+            - generic: 3s
+          - cell "1min20s":
+            - generic: 1min20s
+          - cell "55s":
+            - generic: 55s
+          - cell "22min24s":
+            - generic: 22min24s
+          - cell "0":
+            - generic: "0"
+          - cell "49s":
+            - generic: 49s
+          - cell "10s":
+            - generic: 10s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+        - row "22min16s 通过 -- 2min1s -- -- -- -- -- 20min15s 99.98% 0 3s 3s 1min19s 55s 17min14s 0 0 4s -- --":
+          - cell
+          - cell
+          - cell "22min16s":
+            - generic: 22min16s
+          - cell "通过":
+            - generic: 通过
+          - cell "--":
+            - generic: "--"
+          - cell "2min1s":
+            - generic: 2min1s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "20min15s":
+            - generic: 20min15s
+          - cell "99.98%":
+            - generic: 99.98%
+          - cell "0":
+            - generic: "0"
+          - cell "3s":
+            - generic: 3s
+          - cell "3s":
+            - generic: 3s
+          - cell "1min19s":
+            - generic: 1min19s
+          - cell "55s":
+            - generic: 55s
+          - cell "17min14s":
+            - generic: 17min14s
+          - cell "0":
+            - generic: "0"
+          - cell "0":
+            - generic: "0"
+          - cell "4s":
+            - generic: 4s
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+    - table:
+      - rowgroup:
+        - row "构建目标 调度时间":
+          - columnheader "构建目标":
+            - generic: 构建目标
+          - columnheader "调度时间":
+            - generic: 调度时间
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+    - table:
+      - rowgroup:
+        - row "new_part_compile 2026-10-16 09:29:33":
+          - cell "new_part_compile":
+            - generic: new_part_compile
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+        - row "part_compile 2026-10-16 09:29:33":
+          - cell "part_compile":
+            - generic: part_compile
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+    - heading "关联PR代码检查" [level=3]
+    - table:
+      - rowgroup:
+        - row "合入请求 仓库 创建人 触发人员 更新时间 PermissionScan CodeInterfaceScanner CodeCheck BundleCheck 部件依赖Check":
+          - columnheader "合入请求":
+            - generic: 合入请求
+          - columnheader "仓库":
+            - generic: 仓库
+          - columnheader "创建人":
+            - generic: 创建人
+          - columnheader "触发人员":
+            - generic: 触发人员
+          - columnheader "更新时间":
+            - generic: 更新时间
+          - columnheader "PermissionScan":
+            - generic: PermissionScan
+          - columnheader "CodeInterfaceScanner":
+            - generic: CodeInterfaceScanner
+          - columnheader "CodeCheck":
+            - generic: CodeCheck
+          - columnheader "BundleCheck":
+            - generic: BundleCheck
+          - columnheader "部件依赖Check":
+            - generic: 部件依赖Check
+    - table:
+      - rowgroup:
+        - row "Fix incremental HAP signing outputs build SmillySmillick SmillySmillick 2026-10-15 18:29:19 -- -- 通过 通过 通过":
+          - cell "Fix incremental HAP signing outputs":
+            - generic: Fix incremental HAP signing outputs
+          - cell "build":
+            - generic: build
+          - cell "SmillySmillick":
+            - generic: SmillySmillick
+          - cell "SmillySmillick":
+            - generic: SmillySmillick
+          - cell "2026-10-15 18:29:19":
+            - generic: 2026-10-15 18:29:19
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "通过":
+            - generic: 通过
+          - cell "通过":
+            - generic: 通过
+          - cell "通过":
+            - generic: 通过
+        - row "Fix reproducible HAP entry timestamps developtools_packing_tool SmillySmillick SmillySmillick 2026-10-15 18:26:08 -- -- 通过 通过 通过":
+          - cell "Fix reproducible HAP entry timestamps":
+            - generic: Fix reproducible HAP entry timestamps
+          - cell "developtools_packing_tool":
+            - generic: developtools_packing_tool
+          - cell "SmillySmillick":
+            - generic: SmillySmillick
+          - cell "SmillySmillick":
+            - generic: SmillySmillick
+          - cell "2026-10-15 18:26:08":
+            - generic: 2026-10-15 18:26:08
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "通过":
+            - generic: 通过
+          - cell "通过":
+            - generic: 通过
+          - cell "通过":
+            - generic: 通过
+    - heading "关联PR格式化检查" [level=3]
+    - table:
+      - rowgroup:
+        - row "触发人员 开始时间 结束时间 耗时 报告详情 格式化检查":
+          - columnheader "触发人员":
+            - generic: 触发人员
+          - columnheader "开始时间":
+            - generic: 开始时间
+          - columnheader "结束时间":
+            - generic: 结束时间
+          - columnheader "耗时":
+            - generic: 耗时
+          - columnheader "报告详情":
+            - generic: 报告详情
+          - columnheader "格式化检查":
+            - generic: 格式化检查
+        - row "gn文件格式化检查 资料检查 接口检查 部件化检查":
+          - columnheader "gn文件格式化检查":
+            - text: gn文件格式化检查
+          - columnheader "资料检查":
+            - text: 资料检查
+          - columnheader "接口检查":
+            - text: 接口检查
+          - columnheader "部件化检查":
+            - text: 部件化检查
+    - table:
+      - rowgroup:
+        - row "SmillySmillick 2026-10-16 09:29:33 2026-10-16 09:32:00 2分钟27秒 下载详情 -- -- -- --":
+          - cell "SmillySmillick":
+            - generic: SmillySmillick
+          - cell "2026-10-16 09:29:33":
+            - generic: 2026-10-16 09:29:33
+          - cell "2026-10-16 09:32:00":
+            - generic: 2026-10-16 09:32:00
+          - cell "2分钟27秒":
+            - generic: 2分钟27秒
+          - cell "下载详情":
+            - generic: 下载详情
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+    - heading "影响点" [level=3]
+    - radiogroup:
+      - radio "产品型号" [checked]:
+        - radio "产品型号" [checked]
+        - generic: 产品型号
+      - radio "用例":
+        - radio "用例"
+        - generic: 用例
+    - generic: 图例：
+    - generic: 事件
+    - generic: 项目
+    - generic: 产品
+    - generic: 用例
+  - generic:  
+  - text: 
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic: 
+  - paragraph: OpenAtom OpenHarmony（简称“OpenHarmony”）是由开放原子开源基金会（OpenAtom Foundation）孵化及运营的开源项目
+  - link:
+    - /url: mailto:web@openharmony.io
+  - link:
+    - /url: https://gitcode.com/openharmony
+  - link:
+    - /url: https://space.bilibili.com/2029471800
+  - list:
+    - link "品牌指南":
+      - /url: https://www.openharmony.cn/Dictionary
+    - link "隐私政策":
+      - /url: https://www.openharmony.cn/Privacy
+    - link "使用条款":
+      - /url: https://www.openharmony.cn/UseClause
+    - link "项目群管理制度":
+      - /url: https://www.openharmony.cn/management
+  - paragraph: 开放原子开源基金会版权所有 | 京ICP备2020036654号-3 | 京公网安备11030102011662号
+  - paragraph: Copyright © 2025 OPENATOM FOUNDATION. All rights reserved.

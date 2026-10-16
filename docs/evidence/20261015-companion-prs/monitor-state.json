@@ -1,7 +1,7 @@
 {
   "automation_id": "openharmony-30",
   "interval_minutes": 30,
-  "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+  "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
   "groups": [
     {
       "name": "IDL",
@@ -46,7 +46,7 @@
           "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69"
         }
       ],
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
       "head_verified": true,
       "unresolved_subtasks": {
         "targets": [
@@ -57,7 +57,8 @@
         "classification": "undetermined",
         "note": "Main gate remains running. IDL failure-cell click returned no log detail. No compiler diagnostic available; do not infer code or environment cause from zero duration alone.",
         "notify": false
-      }
+      },
+      "progress": "More main builds passed; dayu200 test plus x86_64_virt_tdd, dayu600 and dayu200_tdd remain running. Prior zero-duration component failures are unchanged."
     },
     {
       "name": "JS-CSS",
@@ -82,7 +83,7 @@
           "head": "0ad16b63ecbad73335b62474499f205b8848382c"
         }
       ],
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
       "head_verified": true,
       "unresolved_subtasks": {
         "targets": [
@@ -92,7 +93,8 @@
         "classification": "undetermined",
         "note": "Main gate remains running. IDL failure-cell click returned no log detail. No compiler diagnostic available; do not infer code or environment cause from zero duration alone.",
         "notify": false
-      }
+      },
+      "progress": "Current PRs gained 编译成功 labels; main non-ignored builds and new_part_compile passed, dayu200/dayu600 tests remain running. part_compile still zero-duration failure without diagnostics. Entire gate is not passed."
     },
     {
       "name": "SDK-split",
@@ -117,7 +119,7 @@
           "head": "9e2c44a2cca432c7686c396ab9465ea51c1119da"
         }
       ],
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
       "head_verified": true,
       "failure": {
         "fingerprint": "9e2c44a2cca432c7686c396ab9465ea51c1119da:CodeCheck:G.FIO.04:process_internal.py:158,remove_internal.py:82",
@@ -159,7 +161,7 @@
           "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0"
         }
       ],
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
       "head_verified": true,
       "failure": {
         "fingerprint": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6:CodeCheck:G.FIO.05:168:WordsTool.110:10",
@@ -196,8 +198,9 @@
           "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc"
         }
       ],
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
-      "head_verified": true
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
+      "head_verified": true,
+      "progress": "new_part_compile and part_compile now passed; dayu200 test, dayu600 and dayu200_tdd remain running. No new blocking failure."
     },
     {
       "name": "loader",
@@ -217,8 +220,9 @@
           "head": "f0dd0bd6ea0708337120d8044115e87491794532"
         }
       ],
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
-      "head_verified": true
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
+      "head_verified": true,
+      "progress": "dayu200 and LiteOS tests passed; dayu600 test, x86_64_virt_tdd and dayu200_tdd builds remain running. No new blocking failure."
     }
   ],
   "other_existing_prs": [
@@ -227,7 +231,7 @@
       "number": 6965,
       "status": "running_with_test_failure",
       "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
       "done": false,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad165ef64650f998bcd430a/runlist",
       "receipt_id": 194060838,
@@ -265,7 +269,7 @@
       "number": 7048,
       "status": "not_triggered_current_head",
       "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
       "done": false,
       "active_gate": false,
       "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically."
@@ -295,12 +299,16 @@
       "number": 22,
       "status": "not_triggered_current_head",
       "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "last_checked_utc": "2026-10-16T02:21:51.181337+00:00",
       "done": false,
       "active_gate": false,
       "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically."
     }
   ],
-  "last_snapshot": "monitor/20261016T014905Z/summary.md",
-  "notification_policy": "Notify only new actionable findings or changed failure causes; unchanged failures stay quiet."
+  "last_snapshot": "monitor/20261016T021827Z/summary.md",
+  "notification_policy": "Notify only new actionable findings or changed failure causes; unchanged failures stay quiet.",
+  "last_notification": {
+    "required": false,
+    "reason": "No new actionable failure, diagnosis, or required user action; existing failure fingerprints unchanged."
+  }
 }
