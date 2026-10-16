@@ -1,0 +1,30 @@
+{
+  "checked_utc": "2026-10-16T05:18:21.257766+00:00",
+  "changes": [
+    {
+      "repo": "build",
+      "number": 7134,
+      "new_comment_ids": [
+        194122874,
+        194122883
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "编译成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    }
+  ],
+  "new_actionable_findings": [],
+  "completed_groups": [
+    "loader"
+  ],
+  "skipped_completed_pr_count": 12,
+  "completed_pr_count_after_check": 13,
+  "hap_stage_changes": []
+}
