@@ -1,0 +1,36 @@
+From e76639ebbd94be09cd2038c9ae377dfca1724333 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Fri, 16 Oct 2026 00:54:12 -0700
+Subject: [PATCH] Construct GN SDK input paths with POSIX semantics
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ sdk_files.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/sdk_files.py b/sdk_files.py
+index 5aaf18fa..58462a49 100755
+--- a/sdk_files.py
++++ b/sdk_files.py
+@@ -17,7 +17,7 @@
+ import argparse
+ import json
+ import os
+-from pathlib import Path
++from pathlib import Path, PurePosixPath
+ import shutil
+ import tempfile
+ 
+@@ -165,7 +165,8 @@ def main():
+         outputs = generated | set(copies)
+         if args.kind == 'plugins' and 'lib/ui-plugins/sysResource.js' in outputs:
+             raise RuntimeError('sysResource.js must remain owned by build_ets_sysResource')
+-        content = json.dumps({'inputs': ['//' + p.relative_to(root).as_posix() for p in sorted(inputs)],
++        content = json.dumps({'inputs': [PurePosixPath('//', p.relative_to(root).as_posix()).as_posix()
++                                         for p in sorted(inputs)],
+                               'outputs': sorted(outputs)}, indent=2) + '\n'
+         if args.output:
+             destination = Path(args.output)
+-- 
+2.51.0.windows.1
+

@@ -1,0 +1,25 @@
+[
+  {
+    "repo": "interface_sdk-js",
+    "number": 36540,
+    "before": "9e2c44a2cca432c7686c396ab9465ea51c1119da",
+    "after": "7b42242e2fec2fba4fd33b469d8bbf0bf49ab209",
+    "local_branch": "fix/sdk-interface-incremental-20261015",
+    "remote_branch": "fix/sdk-interface-incremental-20261015",
+    "files": [
+      "process_internal.py",
+      "remove_internal.py"
+    ]
+  },
+  {
+    "repo": "developtools_ace_ets2bundle",
+    "number": 7210,
+    "before": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+    "after": "e76639ebbd94be09cd2038c9ae377dfca1724333",
+    "local_branch": "fix/sdk-helpers-companion-20261015",
+    "remote_branch": "fix/incremental-build-20261013",
+    "files": [
+      "sdk_files.py"
+    ]
+  }
+]

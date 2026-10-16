@@ -1,0 +1,40 @@
+From 7b42242e2fec2fba4fd33b469d8bbf0bf49ab209 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Fri, 16 Oct 2026 00:54:12 -0700
+Subject: [PATCH] Make SDK staging directory cleanup explicit
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ process_internal.py | 2 +-
+ remove_internal.py  | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/process_internal.py b/process_internal.py
+index 0131ab1fa..1873dec39 100755
+--- a/process_internal.py
++++ b/process_internal.py
+@@ -176,7 +176,7 @@ def update_output(options):
+         remove_path(backup_path)
+     finally:
+         if staging_path and os.path.lexists(staging_path):
+-            remove_path(staging_path)
++            shutil.rmtree(staging_path)
+     return plan
+ 
+ 
+diff --git a/remove_internal.py b/remove_internal.py
+index ed6eb544e..edb71e074 100755
+--- a/remove_internal.py
++++ b/remove_internal.py
+@@ -98,7 +98,7 @@ def update_output(input_path, output_path):
+         remove_path(backup_path)
+     finally:
+         if staging_path and os.path.lexists(staging_path):
+-            remove_path(staging_path)
++            shutil.rmtree(staging_path)
+ 
+ 
+ def collect_input_dependencies(input_path):
+-- 
+2.51.0.windows.1
+

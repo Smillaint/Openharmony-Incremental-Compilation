@@ -1,0 +1,8 @@
+{
+  "id": "openharmony-30",
+  "kind": "heartbeat",
+  "name": "OpenHarmony 门禁每30分钟巡检",
+  "status": "PAUSED",
+  "target_thread_id": "01a08a8a-3b6f-7012-826e-d84c2978e5a4",
+  "updated_at": 1792137053588
+}

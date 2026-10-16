@@ -1,0 +1,423 @@
+{
+  "checked_utc": "2026-10-16T07:52:29.779634+00:00",
+  "items": [
+    {
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+      "number": 6982,
+      "repo": "build",
+      "head": "de69337b7f99f2328417e27fe591903862c9bbdc",
+      "state": "open",
+      "title": "Fix IDL output declarations",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "handyohos",
+          "accept": false
+        },
+        {
+          "login": "csliutt-private",
+          "accept": false
+        },
+        {
+          "login": "ringking0",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/account_os_account/merge_requests/3898",
+      "number": 3898,
+      "repo": "account_os_account",
+      "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+      "state": "open",
+      "title": "补齐账户 IDL 的 callback 和公共类型输出",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "linshuqing",
+          "accept": false
+        },
+        {
+          "login": "chennian",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/inputmethod_imf/merge_requests/2774",
+      "number": 2774,
+      "repo": "inputmethod_imf",
+      "head": "331a15a1cda376687080a3977999de42182ec3ec",
+      "state": "open",
+      "title": "补齐输入法 IDL 公共类型输出",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "zhao-linglan",
+          "accept": false
+        },
+        {
+          "login": "illybyy",
+          "accept": false
+        },
+        {
+          "login": "wuchengwen_oh",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/security_dlp_permission_service/merge_requests/953",
+      "number": 953,
+      "repo": "security_dlp_permission_service",
+      "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+      "state": "open",
+      "title": "补齐 DLP 权限 IDL 公共类型输出",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "chennian",
+          "accept": false
+        },
+        {
+          "login": "winnieHuYu",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/ability_dmsfwk/merge_requests/2123",
+      "number": 2123,
+      "repo": "ability_dmsfwk",
+      "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+      "state": "open",
+      "title": "补齐分布式能力 IDL 公共类型输出",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "hwzhangchuang",
+          "accept": false
+        },
+        {
+          "login": "hobbycao",
+          "accept": false
+        },
+        {
+          "login": "majiajun905338",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/multimedia_audio_framework/merge_requests/17444",
+      "number": 17444,
+      "repo": "multimedia_audio_framework",
+      "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+      "state": "open",
+      "title": "补齐音频 IDL callback 的生成依赖",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "liuyuehua1",
+          "accept": false
+        },
+        {
+          "login": "magekkkk",
+          "accept": false
+        },
+        {
+          "login": "imyuhang",
+          "accept": false
+        },
+        {
+          "login": "hangliebe",
+          "accept": false
+        },
+        {
+          "login": "huyue57",
+          "accept": false
+        },
+        {
+          "login": "boxwall",
+          "accept": false
+        },
+        {
+          "login": "songshenke",
+          "accept": false
+        },
+        {
+          "login": "lepage",
+          "accept": false
+        },
+        {
+          "login": "gregoire",
+          "accept": false
+        },
+        {
+          "login": "tianluowen",
+          "accept": false
+        },
+        {
+          "login": "junlintianxiawy",
+          "accept": false
+        },
+        {
+          "login": "hao-liangfei",
+          "accept": false
+        },
+        {
+          "login": "seveno0",
+          "accept": false
+        },
+        {
+          "login": "Gisaacj",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853",
+      "number": 853,
+      "repo": "third_party_jsframework",
+      "head": "4172098b9b45baf9b37fa3be021bf1ff6bea6359",
+      "state": "open",
+      "title": "fix: stabilize jsframework incremental actions",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "sunfei2021",
+          "accept": false
+        },
+        {
+          "login": "yan_shuifeng",
+          "accept": false
+        },
+        {
+          "login": "david_wu_lanxi",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/third_party_css-what/merge_requests/29",
+      "number": 29,
+      "repo": "third_party_css-what",
+      "head": "0ad16b63ecbad73335b62474499f205b8848382c",
+      "state": "open",
+      "title": "明确 CSS 源码和 fixture 的复制输出",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "shiyu_huang_plus",
+          "accept": false
+        },
+        {
+          "login": "david_wu_lanxi",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7134",
+      "number": 7134,
+      "repo": "build",
+      "head": "f0dd0bd6ea0708337120d8044115e87491794532",
+      "state": "open",
+      "title": "保留未变化的 components.json",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "handyohos",
+          "accept": false
+        },
+        {
+          "login": "csliutt-private",
+          "accept": false
+        },
+        {
+          "login": "ringking0",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6999",
+      "number": 6999,
+      "repo": "build",
+      "head": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+      "state": "open",
+      "title": "Stabilize package validation inputs",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "handyohos",
+          "accept": false
+        },
+        {
+          "login": "csliutt-private",
+          "accept": false
+        },
+        {
+          "login": "ringking0",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7009",
+      "number": 7009,
+      "repo": "build",
+      "head": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "state": "open",
+      "title": "Fix incremental notice file collection",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "handyohos",
+          "accept": false
+        },
+        {
+          "login": "csliutt-private",
+          "accept": false
+        },
+        {
+          "login": "ringking0",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7006",
+      "number": 7006,
+      "repo": "build",
+      "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+      "state": "open",
+      "title": "Stabilize HiSysEvent incremental inputs",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "handyohos",
+          "accept": false
+        },
+        {
+          "login": "csliutt-private",
+          "accept": false
+        },
+        {
+          "login": "ringking0",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    },
+    {
+      "url": "https://gitcode.com/openharmony/third_party_iptables/merge_requests/62",
+      "number": 62,
+      "repo": "third_party_iptables",
+      "head": "5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+      "state": "open",
+      "title": "修复 genInit 聚合文件无变化重写导致的 iptables 重复编译",
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ],
+      "assignees": [
+        {
+          "login": "k_lee9575",
+          "accept": false
+        },
+        {
+          "login": "cleverchap",
+          "accept": false
+        }
+      ],
+      "approval_reviewers": []
+    }
+  ]
+}

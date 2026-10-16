@@ -1,0 +1,406 @@
+{
+  "automation_id": "openharmony-30",
+  "interval_minutes": 30,
+  "last_checked_utc": "2026-10-16T07:18:29.991936+00:00",
+  "groups": [
+    {
+      "name": "IDL",
+      "issue": "https://gitcode.com/openharmony/build/issues/4668",
+      "trigger_repo": "build",
+      "trigger_number": 6982,
+      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dba64650f998bd49019/runlist",
+      "command_id": 194069100,
+      "receipt_id": 194069319,
+      "started_at": "2026-10-16T09:28:47+08:00",
+      "status": "passed",
+      "done": true,
+      "members": [
+        {
+          "repo": "build",
+          "number": 6982,
+          "head": "de69337b7f99f2328417e27fe591903862c9bbdc",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114104,
+          "passed_at": "2026-10-16T11:53:13+08:00"
+        },
+        {
+          "repo": "account_os_account",
+          "number": 3898,
+          "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114101,
+          "passed_at": "2026-10-16T11:53:12+08:00"
+        },
+        {
+          "repo": "inputmethod_imf",
+          "number": 2774,
+          "head": "331a15a1cda376687080a3977999de42182ec3ec",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114121,
+          "passed_at": "2026-10-16T11:53:16+08:00"
+        },
+        {
+          "repo": "security_dlp_permission_service",
+          "number": 953,
+          "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114115,
+          "passed_at": "2026-10-16T11:53:15+08:00"
+        },
+        {
+          "repo": "ability_dmsfwk",
+          "number": 2123,
+          "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114136,
+          "passed_at": "2026-10-16T11:53:21+08:00"
+        },
+        {
+          "repo": "multimedia_audio_framework",
+          "number": 17444,
+          "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114111,
+          "passed_at": "2026-10-16T11:53:14+08:00"
+        }
+      ],
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
+      "head_verified": true,
+      "progress": "All six current HEADs have successful final gate receipts for the recorded CI; stop polling this group.",
+      "result_comment_ids": [
+        194114104,
+        194114101,
+        194114121,
+        194114115,
+        194114136,
+        194114111
+      ],
+      "completed_at": "2026-10-16T11:53:21+08:00",
+      "resolved_subtasks": {
+        "part_compile": "Final report explicitly marks failed(IGNORE)(skip build); non-blocking.",
+        "new_part_compile": "Final report explicitly marks failed(IGNORE)(skip build); non-blocking.",
+        "master_inner_build": "failed(IGNORE)(联合门禁失败)",
+        "ohos-sdk-codearts-new": "failed(IGNORE)(skip build)"
+      }
+    },
+    {
+      "name": "JS-CSS",
+      "issue": "https://gitcode.com/openharmony/third_party_jsframework/issues/323",
+      "trigger_repo": "third_party_jsframework",
+      "trigger_number": 853,
+      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dce64650f998bd497ca/runlist",
+      "command_id": 194069203,
+      "receipt_id": 194069346,
+      "started_at": "2026-10-16T09:28:53+08:00",
+      "status": "passed",
+      "done": true,
+      "members": [
+        {
+          "repo": "third_party_jsframework",
+          "number": 853,
+          "head": "4172098b9b45baf9b37fa3be021bf1ff6bea6359",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194083585,
+          "passed_at": "2026-10-16T10:21:47+08:00"
+        },
+        {
+          "repo": "third_party_css-what",
+          "number": 29,
+          "head": "0ad16b63ecbad73335b62474499f205b8848382c",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194083555,
+          "passed_at": "2026-10-16T10:21:43+08:00"
+        }
+      ],
+      "last_checked_utc": "2026-10-16T02:51:17.537075+00:00",
+      "head_verified": true,
+      "progress": "Both current HEADs have successful final gate receipts for the recorded CI; stop polling this group.",
+      "result_comment_ids": [
+        194083585,
+        194083555
+      ],
+      "completed_at": "2026-10-16T10:21:47+08:00",
+      "resolved_subtasks": {
+        "part_compile": "Final report explicitly marks failed(IGNORE)(skip build); non-blocking.",
+        "new_part_compile": "success(IGNORE)",
+        "ohos-sdk-codearts-new": "failed(IGNORE)(codearts build exception)"
+      }
+    },
+    {
+      "name": "SDK-split",
+      "issue": "https://gitcode.com/openharmony/build/issues/4706",
+      "trigger_repo": "build",
+      "trigger_number": 7049,
+      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist",
+      "command_id": 194069312,
+      "receipt_id": 194069494,
+      "started_at": "2026-10-16T09:29:25+08:00",
+      "status": "failed_static_check",
+      "done": false,
+      "members": [
+        {
+          "repo": "build",
+          "number": 7049,
+          "head": "72115384f783e09832216c951e7743b944fd5893"
+        },
+        {
+          "repo": "interface_sdk-js",
+          "number": 36540,
+          "head": "9e2c44a2cca432c7686c396ab9465ea51c1119da"
+        }
+      ],
+      "last_checked_utc": "2026-10-16T07:18:29.991936+00:00",
+      "head_verified": true,
+      "failure": {
+        "fingerprint": "9e2c44a2cca432c7686c396ab9465ea51c1119da:CodeCheck:G.FIO.04:process_internal.py:158,remove_internal.py:82",
+        "stage": "CodeCheck",
+        "classification": "static_analysis_cleanup_visibility",
+        "result_comment_id": 194071706,
+        "report_url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist?pop=codecheck&taskId=MR_91bd80f2605940f7b49da2cd2637ba71",
+        "details": "2 serious G.FIO.04 findings on tempfile.mkdtemp. Both functions have finally -> remove_path -> shutil.rmtree cleanup; probable interprocedural cleanup false positives, not a demonstrated resource leak.",
+        "recommendation": "Make cleanup explicit in the same function or use a TemporaryDirectory owner with publication below it; preserve rollback and unchanged-output behavior. Recheck code style before requesting a new gate.",
+        "compile_status": "pending",
+        "notified": true
+      }
+    },
+    {
+      "name": "Install",
+      "issue": "https://gitcode.com/openharmony/build/issues/4704",
+      "trigger_repo": "build",
+      "trigger_number": 7046,
+      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dfc64650f998bd4ac9f/runlist",
+      "command_id": 194069388,
+      "receipt_id": 194069543,
+      "started_at": "2026-10-16T09:29:45+08:00",
+      "status": "failed_static_check",
+      "done": false,
+      "members": [
+        {
+          "repo": "build",
+          "number": 7046,
+          "head": "04a4ff52bbc53fa8104000748c9e38a16df53ca3"
+        },
+        {
+          "repo": "developtools_ace_ets2bundle",
+          "number": 7210,
+          "head": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6"
+        },
+        {
+          "repo": "graphic_graphic_3d",
+          "number": 676,
+          "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0"
+        }
+      ],
+      "last_checked_utc": "2026-10-16T07:18:29.991936+00:00",
+      "head_verified": true,
+      "failure": {
+        "fingerprint": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6:CodeCheck:G.FIO.05:168:WordsTool.110:10",
+        "stage": "CodeCheck",
+        "classification": "static_analysis_gn_path_and_existing_names",
+        "result_comment_id": 194071745,
+        "report_url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad17dfc64650f998bd4ac9f/runlist?pop=codecheck&taskId=MR_9fca7110469543e391477e0ba7e5eb7f",
+        "details": "11 general findings: sdk_files.py:168 uses string concatenation for GN // prefix; ten WordsTool.110 findings refer to preexisting insight-intent source/output file names in arkui-plugins/sdk_files.json.",
+        "recommendation": "Use an explicit POSIX path constructor while preserving GN // semantics. Ask the repository maintainer to review the ten existing-name findings as false positives; do not rename source files or remove manifest entries just to evade the scan.",
+        "compile_status": "pending",
+        "notified": true
+      }
+    },
+    {
+      "name": "HAP",
+      "issue": "https://gitcode.com/openharmony/build/issues/4663",
+      "trigger_repo": "build",
+      "trigger_number": 6974,
+      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist",
+      "command_id": 194069463,
+      "receipt_id": 194069579,
+      "started_at": "2026-10-16T09:29:57+08:00",
+      "status": "failed_pipeline_timeout",
+      "done": false,
+      "members": [
+        {
+          "repo": "build",
+          "number": 6974,
+          "head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+          "status": "failed_pipeline_timeout",
+          "done": false,
+          "result_comment_id": 194126102
+        },
+        {
+          "repo": "developtools_packing_tool",
+          "number": 1556,
+          "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+          "status": "failed_pipeline_timeout",
+          "done": false,
+          "result_comment_id": 194126103
+        }
+      ],
+      "last_checked_utc": "2026-10-16T07:18:29.991936+00:00",
+      "head_verified": true,
+      "progress": "Final gate failed on dayu200_tdd pipeline timeout. Build log confirms compilation succeeded before timeout; archiving finished and artifact uploaded after the gate failed, then result upload was rejected with currentStatus error. All three smoke tests passed.",
+      "result_comment_ids": [
+        194126102,
+        194126103
+      ],
+      "final_report_pending": false,
+      "failure": {
+        "fingerprint": "6ad17e0a64650f998bd4b234:dayu200_tdd:pipeline_running_timeout:post_compile_archive:currentStatus_error",
+        "stage": "Post-compilation artifact archiving and gate-result reporting",
+        "classification": "pipeline_deadline_and_result_state_failure",
+        "result_comment_ids": [
+          194126102,
+          194126103
+        ],
+        "report_url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist",
+        "build_log_url": "https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261016-1-00094/log/build.log.zip",
+        "evidence": "monitor/20261016T054826Z/hap-build-excerpt.json",
+        "first_log_error_line": 755480,
+        "first_log_error_time": "2026-10-16T13:31:02+08:00",
+        "details": "rk3568 build success at 13:14:33; archiving from 13:19:14 to 13:30:40 (exit 0). Gate timeout receipt at 13:30:08 preceded archive completion. 15.84GB artifact upload completed at 13:30:56 with HTTP 200; currentStatus error rejected result reporting at 13:31:02. No source compilation failure shown for this target.",
+        "inference": "The chronology supports the gate deadline being reached before artifact publication completed, followed by rejection of a late result. The configured deadline and server-side state transition require platform confirmation.",
+        "recommendation": "Ask CI maintainers to inspect total timeout accounting and late-result handling for CI 6ad17e0a64650f998bd4b234, dayu200_tdd artifact 20261016-1-00094, Beijing 13:14-13:31. Check whether archive time must fit inside the total limit, and whether the completed artifact can be accepted. Do not change HAP source solely for this failure or automatically retrigger.",
+        "notified": true
+      }
+    },
+    {
+      "name": "loader",
+      "issue": "https://gitcode.com/openharmony/build/issues/4761",
+      "trigger_repo": "build",
+      "trigger_number": 7134,
+      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e2c64650f998bd4c86f/runlist",
+      "command_id": 194069576,
+      "receipt_id": 194069658,
+      "started_at": "2026-10-16T09:30:24+08:00",
+      "status": "passed",
+      "done": true,
+      "members": [
+        {
+          "repo": "build",
+          "number": 7134,
+          "head": "f0dd0bd6ea0708337120d8044115e87491794532",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194122874,
+          "passed_at": "2026-10-16T12:54:44+08:00"
+        }
+      ],
+      "last_checked_utc": "2026-10-16T05:18:21.257766+00:00",
+      "head_verified": true,
+      "progress": "Current HEAD has a successful final gate receipt for the recorded CI; stop polling this group.",
+      "result_comment_ids": [
+        194122874
+      ],
+      "completed_at": "2026-10-16T12:54:44+08:00",
+      "resolved_subtasks": {
+        "master_inner_build": "failed(IGNORE)(联合门禁失败)",
+        "ohos-sdk-codearts-new": "failed(IGNORE)(codearts build exception)"
+      }
+    }
+  ],
+  "other_existing_prs": [
+    {
+      "repo": "build",
+      "number": 6965,
+      "status": "failed_test_trigger",
+      "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "last_checked_utc": "2026-10-16T07:18:29.991936+00:00",
+      "done": false,
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad165ef64650f998bcd430a/runlist",
+      "receipt_id": 194060838,
+      "failure": {
+        "fingerprint": "6ad165ef64650f998bcd430a:dayu200:trigger_ecotest_failed:E06:HTTP500",
+        "stage": "dayu200 EcoTest task submission",
+        "classification": "platform_test_service_trigger_failure",
+        "details": "Three HTTP 500 Internal Server Error responses at 08:18:25, 08:18:31 and 08:18:36 GMT+08 on 2026-10-16. Pipeline reports trigger_ecotest_failed / E06, testTaskId=error, testDuration=0. Later upload-version error and exit 1 are downstream failures.",
+        "first_error_time": "2026-10-16T08:18:25.921+08:00",
+        "first_error_line": 260228,
+        "report_url": "https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00010/log/build.log.zip",
+        "evidence": "monitor/20261016T031827Z/sa-build-excerpt.json",
+        "recommendation": "Ask the EcoTest platform maintainer to inspect service-side HTTP 500 exceptions from 2026-10-16 08:18:25 to 08:18:41 GMT+08 for dayu200 artifact 20261016-1-00010 and CI 6ad165ef64650f998bcd430a. There is no valid test task ID. Do not auto retry or infer an SA code fix from this failure.",
+        "notified": true,
+        "result_comment_id": 194102298,
+        "result_confirmed_at": "2026-10-16T11:19:55+08:00"
+      },
+      "progress": "Final gate receipt confirms failed(trigger_ecotest_failed) for dayu200; all non-ignored compilation and static checks passed. The same previously diagnosed EcoTest HTTP 500 failure remains; no new actionable finding.",
+      "head_verified": true,
+      "final_report_pending": false,
+      "result_comment_id": 194102298,
+      "result_at": "2026-10-16T11:19:55+08:00"
+    },
+    {
+      "repo": "build",
+      "number": 6999,
+      "status": "passed",
+      "head": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "done": true,
+      "result_comment_id": 185910731,
+      "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
+    },
+    {
+      "repo": "build",
+      "number": 7009,
+      "status": "passed",
+      "head": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "done": true,
+      "result_comment_id": 186786154,
+      "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
+    },
+    {
+      "repo": "build",
+      "number": 7048,
+      "status": "not_triggered_current_head",
+      "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+      "last_checked_utc": "2026-10-16T07:18:29.991936+00:00",
+      "done": false,
+      "active_gate": false,
+      "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically.",
+      "head_verified": true
+    },
+    {
+      "repo": "build",
+      "number": 7006,
+      "status": "passed",
+      "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "done": true,
+      "result_comment_id": 186383963,
+      "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
+    },
+    {
+      "repo": "third_party_iptables",
+      "number": 62,
+      "status": "passed",
+      "head": "5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+      "done": true,
+      "result_comment_id": 187728444,
+      "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
+    },
+    {
+      "repo": "third_party_sane-airscan",
+      "number": 22,
+      "status": "not_triggered_current_head",
+      "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+      "last_checked_utc": "2026-10-16T07:18:29.991936+00:00",
+      "done": false,
+      "active_gate": false,
+      "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically.",
+      "head_verified": true
+    }
+  ],
+  "last_snapshot": "monitor/20261016T071829Z/summary.md",
+  "notification_policy": "Notify only new actionable findings or changed failure causes; unchanged failures stay quiet.",
+  "last_notification": {
+    "required": false,
+    "reason": "All remaining current-HEAD final gate receipts, PR states, labels and comments are unchanged. Previously diagnosed failures have no new evidence or required action."
+  }
+}
