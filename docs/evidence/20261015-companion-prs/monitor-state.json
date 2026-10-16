@@ -1,7 +1,7 @@
 {
   "automation_id": "openharmony-30",
   "interval_minutes": 30,
-  "last_checked_utc": "2026-10-16T05:18:21.257766+00:00",
+  "last_checked_utc": "2026-10-16T05:48:26.728228+00:00",
   "groups": [
     {
       "name": "IDL",
@@ -157,7 +157,7 @@
           "head": "9e2c44a2cca432c7686c396ab9465ea51c1119da"
         }
       ],
-      "last_checked_utc": "2026-10-16T05:18:21.257766+00:00",
+      "last_checked_utc": "2026-10-16T05:48:26.728228+00:00",
       "head_verified": true,
       "failure": {
         "fingerprint": "9e2c44a2cca432c7686c396ab9465ea51c1119da:CodeCheck:G.FIO.04:process_internal.py:158,remove_internal.py:82",
@@ -199,7 +199,7 @@
           "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0"
         }
       ],
-      "last_checked_utc": "2026-10-16T05:18:21.257766+00:00",
+      "last_checked_utc": "2026-10-16T05:48:26.728228+00:00",
       "head_verified": true,
       "failure": {
         "fingerprint": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6:CodeCheck:G.FIO.05:168:WordsTool.110:10",
@@ -222,23 +222,52 @@
       "command_id": 194069463,
       "receipt_id": 194069579,
       "started_at": "2026-10-16T09:29:57+08:00",
-      "status": "running",
+      "status": "failed_pipeline_timeout",
       "done": false,
       "members": [
         {
           "repo": "build",
           "number": 6974,
-          "head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396"
+          "head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+          "status": "failed_pipeline_timeout",
+          "done": false,
+          "result_comment_id": 194126102
         },
         {
           "repo": "developtools_packing_tool",
           "number": 1556,
-          "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc"
+          "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+          "status": "failed_pipeline_timeout",
+          "done": false,
+          "result_comment_id": 194126103
         }
       ],
-      "last_checked_utc": "2026-10-16T05:18:21.257766+00:00",
+      "last_checked_utc": "2026-10-16T05:48:26.728228+00:00",
       "head_verified": true,
-      "progress": "dayu200, dayu600 and LiteOS tests passed. dayu200_tdd remains running; no final gate receipt."
+      "progress": "Final gate failed on dayu200_tdd pipeline timeout. Build log confirms compilation succeeded before timeout; archiving finished and artifact uploaded after the gate failed, then result upload was rejected with currentStatus error. All three smoke tests passed.",
+      "result_comment_ids": [
+        194126102,
+        194126103
+      ],
+      "final_report_pending": false,
+      "failure": {
+        "fingerprint": "6ad17e0a64650f998bd4b234:dayu200_tdd:pipeline_running_timeout:post_compile_archive:currentStatus_error",
+        "stage": "Post-compilation artifact archiving and gate-result reporting",
+        "classification": "pipeline_deadline_and_result_state_failure",
+        "result_comment_ids": [
+          194126102,
+          194126103
+        ],
+        "report_url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist",
+        "build_log_url": "https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261016-1-00094/log/build.log.zip",
+        "evidence": "monitor/20261016T054826Z/hap-build-excerpt.json",
+        "first_log_error_line": 755480,
+        "first_log_error_time": "2026-10-16T13:31:02+08:00",
+        "details": "rk3568 build success at 13:14:33; archiving from 13:19:14 to 13:30:40 (exit 0). Gate timeout receipt at 13:30:08 preceded archive completion. 15.84GB artifact upload completed at 13:30:56 with HTTP 200; currentStatus error rejected result reporting at 13:31:02. No source compilation failure shown for this target.",
+        "inference": "The chronology supports the gate deadline being reached before artifact publication completed, followed by rejection of a late result. The configured deadline and server-side state transition require platform confirmation.",
+        "recommendation": "Ask CI maintainers to inspect total timeout accounting and late-result handling for CI 6ad17e0a64650f998bd4b234, dayu200_tdd artifact 20261016-1-00094, Beijing 13:14-13:31. Check whether archive time must fit inside the total limit, and whether the completed artifact can be accepted. Do not change HAP source solely for this failure or automatically retrigger.",
+        "notified": true
+      }
     },
     {
       "name": "loader",
@@ -281,7 +310,7 @@
       "number": 6965,
       "status": "failed_test_trigger",
       "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
-      "last_checked_utc": "2026-10-16T05:18:21.257766+00:00",
+      "last_checked_utc": "2026-10-16T05:48:26.728228+00:00",
       "done": false,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad165ef64650f998bcd430a/runlist",
       "receipt_id": 194060838,
@@ -330,7 +359,7 @@
       "number": 7048,
       "status": "not_triggered_current_head",
       "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
-      "last_checked_utc": "2026-10-16T05:18:21.257766+00:00",
+      "last_checked_utc": "2026-10-16T05:48:26.728228+00:00",
       "done": false,
       "active_gate": false,
       "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically.",
@@ -361,17 +390,17 @@
       "number": 22,
       "status": "not_triggered_current_head",
       "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
-      "last_checked_utc": "2026-10-16T05:18:21.257766+00:00",
+      "last_checked_utc": "2026-10-16T05:48:26.728228+00:00",
       "done": false,
       "active_gate": false,
       "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically.",
       "head_verified": true
     }
   ],
-  "last_snapshot": "monitor/20261016T051821Z/summary.md",
+  "last_snapshot": "monitor/20261016T054826Z/summary.md",
   "notification_policy": "Notify only new actionable findings or changed failure causes; unchanged failures stay quiet.",
   "last_notification": {
-    "required": false,
-    "reason": "Loader passed and is removed from polling. HAP is unchanged; known failures have no new cause or required operation."
+    "required": true,
+    "reason": "New HAP timeout failure is located after successful compilation, during artifact publication and late result reporting; CI platform investigation is actionable."
   }
 }

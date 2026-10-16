@@ -1,0 +1,46 @@
+{
+  "checked_utc": "2026-10-16T05:48:26.728228+00:00",
+  "changes": [
+    {
+      "repo": "build",
+      "number": 6974,
+      "new_comment_ids": [
+        194126102
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_on_author",
+        "冒烟测试成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "developtools_packing_tool",
+      "number": 1556,
+      "new_comment_ids": [
+        194126103
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_on_author",
+        "冒烟测试成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_for_review"
+      ]
+    }
+  ],
+  "new_actionable_findings": [
+    {
+      "group": "HAP",
+      "classification": "pipeline_deadline_and_result_state_failure",
+      "evidence": "hap-build-excerpt.json"
+    }
+  ],
+  "completed_groups": [],
+  "skipped_completed_pr_count": 13
+}

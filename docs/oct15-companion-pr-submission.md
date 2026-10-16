@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-[2026-10-16 05:18 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T051821Z/summary.md)：loader #7134 已正式通过并停止检查，HAP 的 dayu200_tdd 仍运行。SDK split、安装组静态告警及 SA EcoTest 提交失败未变化。累计 13 条 PR 完成，联合组完成 3/6（IDL、JS/CSS、loader）；没有新增可操作故障，没有重复触发门禁。
+[2026-10-16 05:48 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T054826Z/summary.md)：HAP 新增 dayu200_tdd 超时失败，日志确认编译成功、归档和产物上传随后完成，但结果回写被 `currentStatus error` 拒绝，需要平台检查总时限与晚到结果处理。IDL、JS/CSS、loader 已通过；SDK split、安装组静态告警及 SA EcoTest 提交失败未变化。没有重触门禁或修改源码。
 
 ## PR、文件与作用
 

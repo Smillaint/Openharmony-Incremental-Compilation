@@ -1,0 +1,67 @@
+{
+  "source_url": "https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261016-1-00094/log/build.log.zip",
+  "archive_format": "tar",
+  "member": "ditribute_job_client",
+  "ci_id": "6ad17e0a64650f998bd4b234",
+  "artifact_id": "20261016-1-00094",
+  "line_count": 755486,
+  "records": [
+    {
+      "line": 755120,
+      "text": "[2026/10/16 13:14:44.178 GMT+08:00] 2026-10-16 13:14:33: [OHOS INFO]  rk3568 build success"
+    },
+    {
+      "line": 755201,
+      "text": "[2026/10/16 13:14:44.181 GMT+08:00] [CloudCache] 2026/10/16 13:14:36 7971f554-4989-4837-92cb-6940de9fb05d build success, cost 12468.54 s"
+    },
+    {
+      "line": 755247,
+      "text": "[2026/10/16 13:15:46.880 GMT+08:00] + bash entrance_script/generate_ci_build.sh upload"
+    },
+    {
+      "line": 755256,
+      "text": "[2026/10/16 13:15:47.402 GMT+08:00] 2026-10-16 13:15:47: [INFO]cp -rfL ./out/rk3568/tests ***//harmony_code/codearts_workspace/Archive/out"
+    },
+    {
+      "line": 755258,
+      "text": "[2026/10/16 13:19:23.980 GMT+08:00] 2026-10-16 13:19:13: [INFO]cp -rfL ./out/rk3568/build.ninja ***//harmony_code/codearts_workspace/Archive/out"
+    },
+    {
+      "line": 755270,
+      "text": "[2026/10/16 13:19:23.981 GMT+08:00] 2026-10-16 13:19:14: [INFO]cd ***//harmony_code/codearts_workspace/Archive/out;tar -I 'gzip --fast' -cf ../dayu200_tdd.tar.gz *"
+    },
+    {
+      "line": 755271,
+      "text": "[2026/10/16 13:30:45.960 GMT+08:00] 2026-10-16 13:30:40: [INFO]tar image result: 0 "
+    },
+    {
+      "line": 755468,
+      "text": "[---------------------------------------------------------] 100.00% 1.13GB/s 15.84GB/15.84GB 14.198s"
+    },
+    {
+      "line": 755472,
+      "text": "[2026/10/16 13:30:56.575 GMT+08:00] Upload successfully, 15.84GB, n/a, ***//harmony_code/codearts_workspace/Archive/Artifacts-dayu200_tdd-20261016-1-00094-version-dayu200_tdd.tar.gz --> obs://hm-verify/Artifacts/dayu200_tdd/20261016-1-00094/version/Artifacts-dayu200_tdd-20261016-1-00094-version-dayu200_tdd.tar.gz, cost [15210], status [200], request id [000001A14331208947CAA4A72662276B]"
+    },
+    {
+      "line": 755475,
+      "text": "[2026/10/16 13:31:03.165 GMT+08:00] trace_ok:  True"
+    },
+    {
+      "line": 755480,
+      "text": "[2026/10/16 13:31:03.165 GMT+08:00] 2026-10-16 13:31:02: [ERROR]currentStatus error, can not upload result to mongo"
+    },
+    {
+      "line": 755481,
+      "text": "[2026/10/16 13:31:03.165 GMT+08:00] [ERROR]: upload version  failed"
+    },
+    {
+      "line": 755482,
+      "text": "[2026/10/16 13:31:03.180 GMT+08:00] [ERROR]  : script returned exit code 1, exitMessage is: command run failed"
+    },
+    {
+      "line": 755486,
+      "text": "[2026/10/16 13:31:09.788 GMT+08:00] Finished: FAILURE"
+    }
+  ],
+  "selection": "Explicit compilation, archive, upload and result-report records only; environment and command configuration excluded."
+}
