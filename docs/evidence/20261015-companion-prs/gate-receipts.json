@@ -1,0 +1,276 @@
+{
+  "checked_utc": "2026-10-16T01:31:08.910783+00:00",
+  "trigger_start_utc": "2026-10-16T01:27:32.005Z",
+  "groups": [
+    {
+      "group": "IDL",
+      "repo": "build",
+      "number": 6982,
+      "sent_utc": "2026-10-16T01:27:43.911Z",
+      "head": "de69337b7f99f2328417e27fe591903862c9bbdc",
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ],
+      "comments": [
+        {
+          "id": 194069100,
+          "discussion_id": "cffd7e27ab3de5afb6ef69ff2727712a7764bd76",
+          "body": "start build",
+          "created_at": "2026-10-16T09:27:43+08:00",
+          "updated_at": "2026-10-16T09:27:43+08:00",
+          "user": {
+            "id": "67150ce628c7754a02de123a",
+            "login": "SmillySmillick",
+            "object_id": "67150ce628c7754a02de123a",
+            "name": "SmillySmillick",
+            "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+            "html_url": "https://gitcode.com/SmillySmillick"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194069319,
+          "discussion_id": "60291a38b9135f0be24cda3c8cb47e00f71a81d2",
+          "body": "本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态\n门禁构建开始,包含静态检查、代码编译和测试【master_inner_build编译, dayu200_xts编译, x86_64_virt_tdd编译, dayu600_7885编译, hispark_taurus_Linux编译, new_part_compile编译, x86_64_virt编译, part_compile编译, dayu200编译, hispark_taurus_LiteOS编译, dayu200测试, dayu200_tdd编译, hispark_taurus_LiteOS测试, ohos-host_mini_tdd编译, ohos-sdk-codearts-new编译, dayu200_xts_static编译, hap_build编译, ohos-sdk编译, mac-sdk编译, dayu200_xts_acts编译, dayu600_7885测试】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dba64650f998bd49019/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dba64650f998bd49019/runlist</a>",
+          "created_at": "2026-10-16T09:28:47+08:00",
+          "updated_at": "2026-10-16T09:28:47+08:00",
+          "user": {
+            "id": "6541ccea82d8f837210e92c3",
+            "login": "openharmony_ci",
+            "object_id": "6541ccea82d8f837210e92c3",
+            "name": "openharmony_ci",
+            "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+            "html_url": "https://gitcode.com/openharmony_ci"
+          },
+          "comment_type": "pr_comment"
+        }
+      ]
+    },
+    {
+      "group": "JS-CSS",
+      "repo": "third_party_jsframework",
+      "number": 853,
+      "sent_utc": "2026-10-16T01:28:20.015Z",
+      "head": "4172098b9b45baf9b37fa3be021bf1ff6bea6359",
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ],
+      "comments": [
+        {
+          "id": 194069203,
+          "discussion_id": "5ca72e24d76f1777ad2a3c66d4f938b9a03842f1",
+          "body": "start build",
+          "created_at": "2026-10-16T09:28:19+08:00",
+          "updated_at": "2026-10-16T09:28:19+08:00",
+          "user": {
+            "id": "67150ce628c7754a02de123a",
+            "login": "SmillySmillick",
+            "object_id": "67150ce628c7754a02de123a",
+            "name": "SmillySmillick",
+            "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+            "html_url": "https://gitcode.com/SmillySmillick"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194069346,
+          "discussion_id": "123ff3f6030466e9efbcc7eeaaeff77112682a8b",
+          "body": "本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态\n门禁构建开始,包含静态检查、代码编译和测试【ohos-host_mini_tdd编译, ohos-sdk编译, part_compile编译, dayu600_7885测试, dayu200编译, master_inner_build编译, x86_64_virt编译, dayu600_7885编译, ohos-sdk-codearts-new编译, new_part_compile编译, dayu200测试】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dce64650f998bd497ca/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dce64650f998bd497ca/runlist</a>",
+          "created_at": "2026-10-16T09:28:53+08:00",
+          "updated_at": "2026-10-16T09:28:53+08:00",
+          "user": {
+            "id": "6541ccea82d8f837210e92c3",
+            "login": "openharmony_ci",
+            "object_id": "6541ccea82d8f837210e92c3",
+            "name": "openharmony_ci",
+            "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+            "html_url": "https://gitcode.com/openharmony_ci"
+          },
+          "comment_type": "pr_comment"
+        }
+      ]
+    },
+    {
+      "group": "SDK-split",
+      "repo": "build",
+      "number": 7049,
+      "sent_utc": "2026-10-16T01:28:45.782Z",
+      "head": "72115384f783e09832216c951e7743b944fd5893",
+      "labels": [
+        "waiting_on_author",
+        "dco检查成功"
+      ],
+      "comments": [
+        {
+          "id": 194069312,
+          "discussion_id": "9f35a2ccb0f7eacfc4935c287fb79d06ec265b76",
+          "body": "start build",
+          "created_at": "2026-10-16T09:28:45+08:00",
+          "updated_at": "2026-10-16T09:28:45+08:00",
+          "user": {
+            "id": "67150ce628c7754a02de123a",
+            "login": "SmillySmillick",
+            "object_id": "67150ce628c7754a02de123a",
+            "name": "SmillySmillick",
+            "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+            "html_url": "https://gitcode.com/SmillySmillick"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194069494,
+          "discussion_id": "d50e293a59c2a88d6725b0611b3dcaece295347f",
+          "body": "首次触发\n门禁构建开始,包含静态检查、代码编译和测试【dayu200_xts_acts编译, ohos-sdk-codearts-new编译, dayu600_7885测试, mac-sdk编译, ohos-sdk编译, x86_64_virt_tdd编译, dayu200编译, ohos-host_mini_tdd编译, dayu200_tdd编译, dayu600_7885编译, x86_64_virt编译, dayu200_xts编译, hispark_taurus_LiteOS编译, dayu200测试, master_inner_build编译, dayu200_xts_static编译, 格式化检查, hap_build编译, hispark_taurus_LiteOS测试, hispark_taurus_Linux编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist</a>",
+          "created_at": "2026-10-16T09:29:25+08:00",
+          "updated_at": "2026-10-16T09:29:25+08:00",
+          "user": {
+            "id": "6541ccea82d8f837210e92c3",
+            "login": "openharmony_ci",
+            "object_id": "6541ccea82d8f837210e92c3",
+            "name": "openharmony_ci",
+            "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+            "html_url": "https://gitcode.com/openharmony_ci"
+          },
+          "comment_type": "pr_comment"
+        }
+      ]
+    },
+    {
+      "group": "Install",
+      "repo": "build",
+      "number": 7046,
+      "sent_utc": "2026-10-16T01:29:04.492Z",
+      "head": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ],
+      "comments": [
+        {
+          "id": 194069388,
+          "discussion_id": "772b460afe8d113928325bcf65c1742498d8bd81",
+          "body": "start build",
+          "created_at": "2026-10-16T09:29:04+08:00",
+          "updated_at": "2026-10-16T09:29:04+08:00",
+          "user": {
+            "id": "67150ce628c7754a02de123a",
+            "login": "SmillySmillick",
+            "object_id": "67150ce628c7754a02de123a",
+            "name": "SmillySmillick",
+            "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+            "html_url": "https://gitcode.com/SmillySmillick"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194069543,
+          "discussion_id": "2da9430b12bc6dfeaecf1b1794dcb7222c2aa46f",
+          "body": "本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态\n门禁构建开始,包含静态检查、代码编译和测试【dayu200_xts_static编译, ohos-host_mini_tdd编译, dayu600_7885测试, hap_build编译, hispark_taurus_Linux编译, x86_64_virt_tdd编译, master_inner_build编译, dayu200编译, ohos-sdk-codearts-new编译, new_part_compile编译, dayu600_7885编译, hispark_taurus_LiteOS测试, hispark_taurus_LiteOS编译, dayu200_tdd编译, x86_64_virt编译, dayu200_xts_acts编译, part_compile编译, dayu200_xts编译, ohos-sdk编译, mac-sdk编译, dayu200测试】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dfc64650f998bd4ac9f/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dfc64650f998bd4ac9f/runlist</a>",
+          "created_at": "2026-10-16T09:29:45+08:00",
+          "updated_at": "2026-10-16T09:29:45+08:00",
+          "user": {
+            "id": "6541ccea82d8f837210e92c3",
+            "login": "openharmony_ci",
+            "object_id": "6541ccea82d8f837210e92c3",
+            "name": "openharmony_ci",
+            "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+            "html_url": "https://gitcode.com/openharmony_ci"
+          },
+          "comment_type": "pr_comment"
+        }
+      ]
+    },
+    {
+      "group": "HAP",
+      "repo": "build",
+      "number": 6974,
+      "sent_utc": "2026-10-16T01:29:19.986Z",
+      "head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+      "labels": [
+        "dco检查成功",
+        "waiting_for_review"
+      ],
+      "comments": [
+        {
+          "id": 194069463,
+          "discussion_id": "a5e3b94b34accde274cbf0f7ea763f2e42187425",
+          "body": "start build",
+          "created_at": "2026-10-16T09:29:19+08:00",
+          "updated_at": "2026-10-16T09:29:19+08:00",
+          "user": {
+            "id": "67150ce628c7754a02de123a",
+            "login": "SmillySmillick",
+            "object_id": "67150ce628c7754a02de123a",
+            "name": "SmillySmillick",
+            "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+            "html_url": "https://gitcode.com/SmillySmillick"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194069579,
+          "discussion_id": "bc8fe168a8b4a581a510b951b02a1d50eb930b59",
+          "body": "本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态\n门禁构建开始,包含静态检查、代码编译和测试【dayu200_xts编译, hispark_taurus_LiteOS测试, master_inner_build编译, dayu200_xts_static编译, part_compile编译, dayu600_7885测试, ohos-host_mini_tdd编译, dayu200编译, hispark_taurus_Linux编译, ohos-sdk-codearts-new编译, dayu600_7885编译, hispark_taurus_LiteOS编译, hap_build编译, mac-sdk编译, x86_64_virt编译, dayu200测试, new_part_compile编译, dayu200_xts_acts编译, ohos-sdk编译, x86_64_virt_tdd编译, dayu200_tdd编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist</a>",
+          "created_at": "2026-10-16T09:29:57+08:00",
+          "updated_at": "2026-10-16T09:29:57+08:00",
+          "user": {
+            "id": "6541ccea82d8f837210e92c3",
+            "login": "openharmony_ci",
+            "object_id": "6541ccea82d8f837210e92c3",
+            "name": "openharmony_ci",
+            "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+            "html_url": "https://gitcode.com/openharmony_ci"
+          },
+          "comment_type": "pr_comment"
+        }
+      ]
+    },
+    {
+      "group": "loader",
+      "repo": "build",
+      "number": 7134,
+      "sent_utc": "2026-10-16T01:29:57.027Z",
+      "head": "f0dd0bd6ea0708337120d8044115e87491794532",
+      "labels": [
+        "waiting_on_author",
+        "dco检查成功"
+      ],
+      "comments": [
+        {
+          "id": 194069576,
+          "discussion_id": "3b75fb5ace3a087fbda7c9987ee0a5e390c9d230",
+          "body": "start build",
+          "created_at": "2026-10-16T09:29:57+08:00",
+          "updated_at": "2026-10-16T09:29:57+08:00",
+          "user": {
+            "id": "67150ce628c7754a02de123a",
+            "login": "SmillySmillick",
+            "object_id": "67150ce628c7754a02de123a",
+            "name": "SmillySmillick",
+            "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+            "html_url": "https://gitcode.com/SmillySmillick"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194069658,
+          "discussion_id": "0c119bb4810c4d7f59023f6d042218cf42759dc1",
+          "body": "首次触发\n门禁构建开始,包含静态检查、代码编译和测试【hispark_taurus_Linux编译, hispark_taurus_LiteOS测试, ohos-sdk编译, dayu200编译, hap_build编译, dayu600_7885测试, master_inner_build编译, ohos-sdk-codearts-new编译, x86_64_virt编译, dayu200_xts_acts编译, dayu200测试, dayu200_tdd编译, x86_64_virt_tdd编译, mac-sdk编译, dayu200_xts编译, hispark_taurus_LiteOS编译, ohos-host_mini_tdd编译, dayu600_7885编译, dayu200_xts_static编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e2c64650f998bd4c86f/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e2c64650f998bd4c86f/runlist</a>",
+          "created_at": "2026-10-16T09:30:24+08:00",
+          "updated_at": "2026-10-16T09:30:24+08:00",
+          "user": {
+            "id": "6541ccea82d8f837210e92c3",
+            "login": "openharmony_ci",
+            "object_id": "6541ccea82d8f837210e92c3",
+            "name": "openharmony_ci",
+            "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+            "html_url": "https://gitcode.com/openharmony_ci"
+          },
+          "comment_type": "pr_comment"
+        }
+      ]
+    }
+  ]
+}

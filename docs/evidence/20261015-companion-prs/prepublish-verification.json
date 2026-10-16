@@ -1,0 +1,19 @@
+{
+  "passed": [
+    "account_os_account: clean merge, scoped diff, UTF-8 and DCO",
+    "inputmethod_imf: clean merge, scoped diff, UTF-8 and DCO",
+    "security_dlp_permission_service: clean merge, scoped diff, UTF-8 and DCO",
+    "ability_dmsfwk: clean merge, scoped diff, UTF-8 and DCO",
+    "multimedia_audio_framework: clean merge, scoped diff, UTF-8 and DCO",
+    "third_party_css-what: clean merge, scoped diff, UTF-8 and DCO",
+    "developtools_ace_ets2bundle: clean merge, scoped diff, UTF-8 and DCO",
+    "graphic_graphic_3d: clean merge, scoped diff, UTF-8 and DCO",
+    "SDK remove_internal: unchanged stability, filtering, deleted output recovery, changed inputs, depfile, failure preservation",
+    "SDK process_internal: removal rules, unchanged stability, changed content, recovery and depfile",
+    "loader: semantic JSON comparison, stable mtime, ordered-list changes and deleted output recovery",
+    "SDK plugins: tracked inputs and generated JS manifest match merged master",
+    "SDK wrapper: tracked inputs and generated JS manifest match merged master"
+  ],
+  "product_build_run": false,
+  "community_gate_run": false
+}

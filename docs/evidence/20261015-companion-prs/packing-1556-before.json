@@ -1,0 +1,199 @@
+{
+  "id": 9027599,
+  "html_url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+  "number": 1556,
+  "state": "open",
+  "title": "Fix reproducible HAP entry timestamps",
+  "url": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_packing_tool/pulls/1556",
+  "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_packing_tool/pulls/1556/issues",
+  "body": "**IssueNo**:\nhttps://gitcode.com/openharmony/developtools_packing_tool/issues/1201\n**Description**:\nHAP 打包工具创建 ZIP entry 时使用当前时间。相同输入在不同时间打包后，ZIP entry 时间戳不同，从而导致生成的 HAP 字节内容和 SHA-256 不一致。\n### 修改内容\n\n- 为 HAP ZIP entry 定义统一的固定时间；\n- 对普通文件和 JSON entry 设置固定时间；\n- 对并行压缩的 native library entry 设置固定时间；\n- 对 STORED entry 和空目录 entry 设置固定时间；\n- 通过统一方法设置 ZIP entry 时间，避免不同打包路径遗漏。\n\n### 修复边界\n\n本修改解决：\n\n`相同输入 → ZIP entry 时间固定 → HAP 字节和 SHA-256 可重复`\n\n不解决：\n\n- 上游 native library 重复 dirty；\n- `compile_app.py` 声明输出问题；\n- 两个 HAP compile_app Action 是否完全退出第二轮构建。\n\n**稳定性自检：**\n| 自检项                                                       | 自检结果 |\n| ------------------------------------------------------------ | -------- |\n| 涉及跨进程调用的相关操作需要抛至主线程或加锁防止并发              | 不涉及   |\n| 成员变量进行赋值或创建需要排查并发                               | 不涉及   |\n| 谨慎在lambda表达式中使用引用捕获                                | 不涉及   |\n| 谨慎在未经拷贝的情况下使用外部传入的string、C字符串               | 不涉及   |\n| map\\vector\\list\\set等stl模板类使用时需要排查并发                | 不涉及   |\n| 谨慎考虑加锁范围                                               | 不涉及   |\n| 在IPC通信中谨慎使用同步通信方式                                 | 不涉及   |\n| 禁止传递this指针至其他模块或线程（特别是eventhandler任务）        | 不涉及   |\n| 禁止将外部传入的裸指针在内部直接构造智能指针                      | 不涉及   |\n| 禁止多个独立创建的智能指针管理同一地址                           | 不涉及   |\n| 禁止在析构函数中抛异步任务                                      | 不涉及   |\n| 禁止js对象在非js线程（例如在非js线程创建、使用或销毁）             | 不涉及   |\n| 禁止在对外接口中未经判空直接使用外部传入的指针                    | 不涉及   |\n| 禁止接口返回局部变量引用                                        | 不涉及   |\n| 禁止在信号函数中加锁                                            | 不涉及   |\n| 禁止在关键流程（SA启动、应用启动等主流程）执行耗时的操作           | 不涉及   |\n| 禁止将同一个cpp编译在不同的so中                                 | 不涉及   |\n\n**安全编码自检：**\n| 自检项                                                          | 自检结果 |\n| -------------------------------------------------------------- | -------- |\n| 裸指针避免通过隐式转换构造为sptr                                 | 不涉及   |\n| json对象在取值之前必须先判断类型，避免类型不匹配                   | 不涉及   |\n| 序列化时必须对传入的数组大小进行校验，避免出现超大数组              | 不涉及   |\n| 避免使用未明确位宽的整型，选择使用int8_t、uint8_t等类型            | 不涉及   |\n| 外部传入的路径要做规范化校验，对路径中的.、..、../等特殊字符严格校验 | 不涉及   |\n| 指针变量、表示资源描述符的变量、bool变量必须赋初值                  | 不涉及   |\n| readParcelable获取的对象使用前需要判空                            | 不涉及   |\n| 分配和释放内存的函数需要成对出现                                   | 不涉及   |\n| 申请内存后异常退出前需要及时进行内存释放                            | 不涉及   |\n| 内存申请前必须对内存大小进行合法性校验                              | 不涉及   |\n| 内存分配后必须判断是否成功                                         | 不涉及   |\n| 禁止使用realloc、alloca函数                                       | 不涉及   |\n| 禁止打印文件路径、口令等敏感信息，如有需要，使用private修饰          | 不涉及   |\n| 禁止打印内存地址                                                  | 不涉及   |\n| 整数之间运算时必须严格检查，确保不会出现溢出、反转、除0               | 不涉及   |\n| 禁止对有符号整数进行位操作符运算                                    | 不涉及   |\n| 禁止对指针进行逻辑或位运算                                         | 不涉及   |\n| 循环次数如果受外部数据控制，需要检验其合法性                         | 不涉及   |\n| 禁止使用内存操作类危险函数，需要使用安全函数                         | 不涉及   |\n| 谨慎使用不可重入函数                                               | 不涉及   |\n| 必须检查安全函数的返回值，并进行正确处理                            | 不涉及   |\n| 禁止仅通过TokenType类型判断绕过权限校验                             | 不涉及   |\n\n**TDD Result**:\n用 Telephony 和 Contacts 的真实输入分别执行两次 HAP 打包，两次输出的 SHA-256 分别保持一致；检查所有 ZIP entry 的时间均固定为 `2019-01-01 00:00`。\n**XTS Result**:\n\n### L0新增用例自检结果\n- [ ] 是，有新增L0用例，且完成自检\n- [ x] 否\n",
+  "assignees_number": 4,
+  "assignees": [
+    {
+      "id": "6721e78baaa4b0322f6a36d2",
+      "login": "jayleehw",
+      "name": "jayleehw",
+      "avatar_url": "https://cdn-img.gitcode.com/dc/bb/4d8c13860525b3be0805cb45a8fba32a1236b0b1219a81232e4c44ba30635d40.jpg",
+      "html_url": "https://gitcode.com/jayleehw",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    },
+    {
+      "id": "67248f36e2f3770132897eed",
+      "login": "wang19954",
+      "name": "wangtiantian",
+      "avatar_url": "https://cdn-img.gitcode.com/cb/ca/351c1941280373bca8cc8fb746f7bd11b7cb79f499e8be1edc1ba447ddbe9475.png?time=1757899076472",
+      "html_url": "https://gitcode.com/wang19954",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    },
+    {
+      "id": "673ae5b4bd7ba9479f277610",
+      "login": "wanghang904",
+      "name": "wanghang",
+      "html_url": "https://gitcode.com/wanghang904",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    },
+    {
+      "id": "673bf30fcf50714436d40101",
+      "login": "hanfeng6",
+      "name": "hanfeng6",
+      "html_url": "https://gitcode.com/hanfeng6",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    }
+  ],
+  "testers": [
+    {
+      "id": "6541ccea82d8f837210e92c3",
+      "login": "openharmony_ci",
+      "name": "openharmony_ci",
+      "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+      "html_url": "https://gitcode.com/openharmony_ci",
+      "assignee": false,
+      "code_owner": false,
+      "accept": true
+    }
+  ],
+  "approval_reviewers": [],
+  "labels": [
+    {
+      "id": 87,
+      "color": "#20c22e",
+      "name": "dco检查成功",
+      "repository_id": 4430820,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-08-13T11:59:13+08:00"
+    },
+    {
+      "id": 91,
+      "color": "#20c22e",
+      "name": "编译成功",
+      "repository_id": 4430820,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-08-14T11:15:41+08:00"
+    },
+    {
+      "id": 59,
+      "color": "#20c22e",
+      "name": "静态检查成功",
+      "repository_id": 4430820,
+      "created_at": "2025-04-22T20:33:33+08:00",
+      "updated_at": "2026-08-14T11:18:54+08:00"
+    },
+    {
+      "id": 100,
+      "color": "#20c22e",
+      "name": "冒烟测试成功",
+      "repository_id": 4430820,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-08-14T11:18:55+08:00"
+    },
+    {
+      "id": 131,
+      "color": "#1083d6",
+      "name": "waiting_for_review",
+      "repository_id": 4430820,
+      "created_at": "2025-04-22T20:34:00+08:00",
+      "updated_at": "2026-08-14T11:19:03+08:00"
+    }
+  ],
+  "created_at": "2026-08-13T11:52:49+08:00",
+  "updated_at": "2026-08-14T11:19:04+08:00",
+  "closed_at": "",
+  "merged_at": "",
+  "draft": false,
+  "can_merge_check": false,
+  "prune_branch": false,
+  "mergeable": true,
+  "user": {
+    "id": "67150ce628c7754a02de123a",
+    "login": "SmillySmillick",
+    "name": "SmillySmillick",
+    "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+    "html_url": "https://gitcode.com/SmillySmillick"
+  },
+  "head": {
+    "ref": "fix/hap-reproducible-archive",
+    "sha": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+    "label": "fix/hap-reproducible-archive",
+    "repo": {
+      "path": "developtools_packing_tool",
+      "name": "developtools_packing_tool",
+      "namespace": {
+        "path": "SmillySmillick"
+      },
+      "full_name": "SmillySmillick/developtools_packing_tool",
+      "html_url": "https://gitcode.com/SmillySmillick/developtools_packing_tool.git"
+    },
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    }
+  },
+  "base": {
+    "ref": "master",
+    "sha": "fb62826a299c705b95ea1e4e882dc522c5aae247",
+    "label": "master",
+    "repo": {
+      "path": "developtools_packing_tool",
+      "name": "developtools_packing_tool",
+      "namespace": {
+        "path": "openharmony"
+      },
+      "full_name": "openharmony/developtools_packing_tool",
+      "html_url": "https://gitcode.com/openharmony/developtools_packing_tool.git"
+    }
+  },
+  "mergeable_state": {
+    "merge_request_id": 9027599,
+    "state": false,
+    "status_without_user_auth": false,
+    "conflict_passed": true,
+    "branch_missing_passed": true,
+    "non_ff_passed": true,
+    "mr_state_passed": true,
+    "merged_by_user_passed": false,
+    "work_in_progress_passed": true,
+    "resolve_discussion_passed": true,
+    "ci_state_passed": true,
+    "merge_by_self_passed": true,
+    "can_force_merge": false,
+    "approval_reviewers_required_passed": true,
+    "approval_approvers_required_passed": false,
+    "approval_testers_required_passed": true,
+    "merge_request_switch": {
+      "review_mode": "approval",
+      "merge_method": "merge",
+      "only_allow_merge_if_all_discussions_are_resolved": false,
+      "disable_merge_by_self": true,
+      "only_allow_merge_if_pipeline_succeeds": false,
+      "disable_squash_merge": false,
+      "squash_merge_with_no_merge_commit": false,
+      "approval_required_reviewers_count": 0,
+      "approval_required_reviewers_branch": "*",
+      "add_notes_after_merged": true,
+      "mark_auto_merged_mr_as_closed": true,
+      "can_force_merge": true,
+      "can_reopen": true
+    },
+    "reason": {
+      "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+    },
+    "check_tasks_num": 2,
+    "all_depend_merge_request_merged_passed": true,
+    "approval_approvers_result": 1,
+    "approval_testers_result": 2
+  },
+  "visibility_reason": "public",
+  "close_related_issue": true,
+  "squash_merge": false
+}

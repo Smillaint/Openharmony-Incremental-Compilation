@@ -1,0 +1,49 @@
+[
+  {
+    "repo": "interface_sdk-js",
+    "local_path": "D:\\workspace\\repositories\\companion-prs-20261015\\interface_sdk-js",
+    "branch": "fix/sdk-interface-incremental-20261015",
+    "commit": "9e2c44a2cca432c7686c396ab9465ea51c1119da",
+    "upstream": "1a963a300d0e745e2239d331f63e11f362ea0823",
+    "files": [
+      "BUILD.gn",
+      "process_internal.py",
+      "remove_internal.py"
+    ],
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "build",
+    "local_path": "D:\\workspace\\repositories\\companion-prs-20261015\\build",
+    "branch": "fix/loader-components-incremental-20261015",
+    "commit": "f0dd0bd6ea0708337120d8044115e87491794532",
+    "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+    "files": [
+      "hb/services/loader.py",
+      "scripts/util/file_utils.py"
+    ],
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "developtools_ace_ets2bundle",
+    "local_path": "D:\\workspace\\repositories\\companion-prs-20261015\\developtools_ace_ets2bundle",
+    "local_branch": "fix/sdk-helpers-companion-20261015",
+    "branch": "fix/incremental-build-20261013",
+    "before": "1eabff15841a7ba11c860262bf2fbde2c3960db6",
+    "commit": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+    "upstream": "5444f03da530ddee9e2441084a577180e2d7bc50",
+    "files": [
+      "arkui-plugins/BUILD.gn",
+      "arkui-plugins/build_ui_plugins.py",
+      "arkui-plugins/sdk_files.json",
+      "ets1.2/BUILD.gn",
+      "ets1.2/libarkts/BUILD.gn",
+      "koala-wrapper/BUILD.gn",
+      "koala-wrapper/build_ts_wrapper.py",
+      "koala-wrapper/sdk_files.json",
+      "sdk_copy.gni",
+      "sdk_files.py"
+    ],
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "started_utc": "2026-10-16T01:27:32.005Z",
+  "starts": [
+    {
+      "group": "IDL",
+      "repo": "build",
+      "number": 6982,
+      "sent_utc": "2026-10-16T01:27:43.911Z"
+    },
+    {
+      "group": "JS-CSS",
+      "repo": "third_party_jsframework",
+      "number": 853,
+      "sent_utc": "2026-10-16T01:28:20.015Z"
+    },
+    {
+      "group": "SDK-split",
+      "repo": "build",
+      "number": 7049,
+      "sent_utc": "2026-10-16T01:28:45.782Z"
+    },
+    {
+      "group": "Install",
+      "repo": "build",
+      "number": 7046,
+      "sent_utc": "2026-10-16T01:29:04.492Z"
+    },
+    {
+      "group": "HAP",
+      "repo": "build",
+      "number": 6974,
+      "sent_utc": "2026-10-16T01:29:19.986Z"
+    },
+    {
+      "group": "loader",
+      "repo": "build",
+      "number": 7134,
+      "sent_utc": "2026-10-16T01:29:57.027Z"
+    }
+  ]
+}

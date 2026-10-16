@@ -1,0 +1,139 @@
+[
+  {
+    "repo": "account_os_account",
+    "commit": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+    "upstream": "61f117cedb8d99db15ebf8aae3fa156f11ad137d",
+    "clean_merge": true,
+    "tree": "cff9edd0f11f3f6db0ca876ec40eab563b67b117",
+    "repair_files": [
+      "frameworks/osaccount/native/BUILD.gn"
+    ],
+    "upstream_changed_repair_files": [],
+    "merged_diff_files": [
+      "frameworks/osaccount/native/BUILD.gn"
+    ]
+  },
+  {
+    "repo": "inputmethod_imf",
+    "commit": "331a15a1cda376687080a3977999de42182ec3ec",
+    "upstream": "341493e680beba68d7251876113368052b9ab9b2",
+    "clean_merge": true,
+    "tree": "35cdb44c03ae22897061d71604431e74b7650772",
+    "repair_files": [
+      "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+    ],
+    "upstream_changed_repair_files": [],
+    "merged_diff_files": [
+      "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+    ]
+  },
+  {
+    "repo": "security_dlp_permission_service",
+    "commit": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+    "upstream": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+    "clean_merge": true,
+    "tree": "4ba2ee3f184d331f98ac741202e84d8c07337462",
+    "repair_files": [
+      "interfaces/inner_api/dlp_permission/BUILD.gn"
+    ],
+    "upstream_changed_repair_files": [],
+    "merged_diff_files": [
+      "interfaces/inner_api/dlp_permission/BUILD.gn"
+    ]
+  },
+  {
+    "repo": "ability_dmsfwk",
+    "commit": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+    "upstream": "aa1b0347b10700d761def383c08749420dd3f71a",
+    "clean_merge": true,
+    "tree": "94c7a2d801d0983a81f66d286f0d9503526daf45",
+    "repair_files": [
+      "interfaces/innerkits/common/BUILD.gn"
+    ],
+    "upstream_changed_repair_files": [],
+    "merged_diff_files": [
+      "interfaces/innerkits/common/BUILD.gn"
+    ]
+  },
+  {
+    "repo": "multimedia_audio_framework",
+    "commit": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+    "upstream": "8a0cf9f2f2a853a30247e1c3bd8291ffc2824693",
+    "clean_merge": true,
+    "tree": "8808b5b8aeda22a3deadc16a310c7647c322399f",
+    "repair_files": [
+      "services/audio_service/idl/BUILD.gn"
+    ],
+    "upstream_changed_repair_files": [],
+    "merged_diff_files": [
+      "services/audio_service/idl/BUILD.gn"
+    ]
+  },
+  {
+    "repo": "third_party_css-what",
+    "commit": "0ad16b63ecbad73335b62474499f205b8848382c",
+    "upstream": "66c986b3597910d384f32d7b098112d2b48d4145",
+    "clean_merge": true,
+    "tree": "4038fbcc3a7d0210b902063d19dacd65ba927e79",
+    "repair_files": [
+      "BUILD.gn",
+      "bundle.json"
+    ],
+    "upstream_changed_repair_files": [],
+    "merged_diff_files": [
+      "BUILD.gn",
+      "bundle.json"
+    ]
+  },
+  {
+    "repo": "developtools_ace_ets2bundle",
+    "commit": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+    "upstream": "5444f03da530ddee9e2441084a577180e2d7bc50",
+    "clean_merge": true,
+    "tree": "5717ad7d7dc8cf7f61e1fc00552e70c0d76ad938",
+    "repair_files": [
+      "arkui-plugins/BUILD.gn",
+      "arkui-plugins/build_ui_plugins.py",
+      "arkui-plugins/sdk_files.json",
+      "ets1.2/BUILD.gn",
+      "ets1.2/libarkts/BUILD.gn",
+      "koala-wrapper/BUILD.gn",
+      "koala-wrapper/build_ts_wrapper.py",
+      "koala-wrapper/sdk_files.json",
+      "sdk_copy.gni",
+      "sdk_files.py"
+    ],
+    "upstream_changed_repair_files": [],
+    "merged_diff_files": [
+      "arkui-plugins/BUILD.gn",
+      "arkui-plugins/build_ui_plugins.py",
+      "arkui-plugins/sdk_files.json",
+      "ets1.2/BUILD.gn",
+      "ets1.2/libarkts/BUILD.gn",
+      "koala-wrapper/BUILD.gn",
+      "koala-wrapper/build_ts_wrapper.py",
+      "koala-wrapper/sdk_files.json",
+      "sdk_copy.gni",
+      "sdk_files.py"
+    ],
+    "original_published_commit": "1eabff15841a7ba11c860262bf2fbde2c3960db6",
+    "compatibility_update": {
+      "added_input": "//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/validators/rules/check-builder-decorator-arguments.ts",
+      "added_output": "lib/collectors/ui-collectors/validators/rules/check-builder-decorator-arguments.js"
+    }
+  },
+  {
+    "repo": "graphic_graphic_3d",
+    "commit": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+    "upstream": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+    "clean_merge": true,
+    "tree": "31be9c196bf0fc9891bba3fc026a59188b10b88c",
+    "repair_files": [
+      "lume/LumeEngine/tools/CompilerAsset.sh"
+    ],
+    "upstream_changed_repair_files": [],
+    "merged_diff_files": [
+      "lume/LumeEngine/tools/CompilerAsset.sh"
+    ]
+  }
+]

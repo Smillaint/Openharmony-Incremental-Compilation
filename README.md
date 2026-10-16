@@ -4,6 +4,8 @@
 
 ## 最新状态与继续工作入口
 
+[2026-10-15 配套 PR 与联合门禁](docs/oct15-companion-pr-submission.md)：**10 条配套 PR 已补齐，新增 loader Issue #4761，DCO 全部通过。六组联合门禁均已启动，16 条组内 PR 的任务回执和 HEAD 已核对。** HAP 两仓统一关联 #4663；实际 PR 地址、逐仓文件与作用、分支版本和 30 分钟巡检入口见交接。门禁最终结果仍在等待。
+
 [2026-10-15 Action、PR 与 Issue 对照](docs/action-pr-issue-map-20261015.md)：**13 个开放 Issue 已补齐完整修复及配套 PR 清单，正文和正式关联已回读核对。** 跨仓 PR 可以共用 Issue 联合门禁；同仓同目标分支的多个开放 PR 会被拦。IDL 六仓、JS/CSS 两仓和 SDK split 两仓的组别、尚缺的 PR 及官方规则见对照表。现有正式关联保持原样，本轮未触发新门禁。
 
 [2026-10-15 其他历史 PR 更新结果](docs/oct15-other-pr-refresh.md)：**IDL #6982、安装 #7046、JS #853、airscan #22 的源码与简短正文均已更新到 GitCode，4 个远端 HEAD 和正文已回读核对，新增提交均带 DCO。** 本地检查通过；其他旧 PR 已逐项核对。IDL 五仓及 css-what 共六条配套 PR 仍需创建，本轮未触发新门禁，逐仓作用、版本与发布证据见交接。

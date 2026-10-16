@@ -1,0 +1,157 @@
+[
+  {
+    "repo": "account_os_account",
+    "branch": "fix/incremental-build-20261013",
+    "commit": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+    "upstream": "61f117cedb8d99db15ebf8aae3fa156f11ad137d",
+    "files": [
+      "frameworks/osaccount/native/BUILD.gn"
+    ],
+    "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\base\\account\\os_account",
+    "title": "补齐账户 IDL 的 callback 和公共类型输出",
+    "issue": "https://gitcode.com/openharmony/build/issues/4668",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\n账户 IDL 的 callback 和公共类型头文件没有完整声明输出，生成关系不明确，清理产物后可能缺少头文件。\n\n### 描述（做了什么，变更了什么）\n在 frameworks_osaccount_interface 中声明 IDomainAccountCallback.idl 和 DomainAccountIpcData.idl 的输出，与 build 的 IDL 模板修复配套。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期生成文件由明确的目标负责，清理后能重新生成，无改动时不因缺少输出声明重复构建。\n",
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "inputmethod_imf",
+    "branch": "fix/incremental-build-20261013",
+    "commit": "331a15a1cda376687080a3977999de42182ec3ec",
+    "upstream": "341493e680beba68d7251876113368052b9ab9b2",
+    "files": [
+      "interfaces/inner_api/inputmethod_controller/BUILD.gn"
+    ],
+    "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\base\\inputmethod\\imf",
+    "title": "补齐输入法 IDL 公共类型输出",
+    "issue": "https://gitcode.com/openharmony/build/issues/4668",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nInputMethodClientTypes.idl 的公共头文件只作为生成副产物，构建图没有完整记录，清理后可能出现缺文件。\n\n### 描述（做了什么，变更了什么）\n在 input_client_interface 中通过 sources_common 声明 InputMethodClientTypes.idl 的公共输出。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共类型文件有明确的生成目标，清理后可恢复，输入不变时不再因输出缺项触发生成。\n",
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "security_dlp_permission_service",
+    "branch": "fix/incremental-build-20261013",
+    "commit": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+    "upstream": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+    "files": [
+      "interfaces/inner_api/dlp_permission/BUILD.gn"
+    ],
+    "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\base\\security\\dlp_permission_service",
+    "title": "补齐 DLP 权限 IDL 公共类型输出",
+    "issue": "https://gitcode.com/openharmony/build/issues/4668",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nDlpPermissionTypes.idl 的公共输出没有明确声明，依赖关系不完整，清理生成文件后可能编译失败。\n\n### 描述（做了什么，变更了什么）\n在 dlp_permission_interface 中通过 sources_common 声明 DlpPermissionTypes.idl。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共头文件按依赖生成，清理后能恢复，无改动时保留已有生成结果。\n",
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "ability_dmsfwk",
+    "branch": "fix/incremental-build-20261013",
+    "commit": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+    "upstream": "aa1b0347b10700d761def383c08749420dd3f71a",
+    "files": [
+      "interfaces/innerkits/common/BUILD.gn"
+    ],
+    "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\foundation\\ability\\dmsfwk",
+    "title": "补齐分布式能力 IDL 公共类型输出",
+    "issue": "https://gitcode.com/openharmony/build/issues/4668",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nDeviceConnectStatus.idl 的公共头文件没有完整的输出声明，后续目标依赖生成副产物，清理后可能缺少文件。\n\n### 描述（做了什么，变更了什么）\n在 dmsfwk_idl 中通过 sources_common 声明 DeviceConnectStatus.idl 的公共输出。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共类型文件由对应 IDL 目标生成，清理后可以重建，无改动时不重复发布。\n",
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "multimedia_audio_framework",
+    "branch": "fix/incremental-build-20261013",
+    "commit": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+    "upstream": "8a0cf9f2f2a853a30247e1c3bd8291ffc2824693",
+    "files": [
+      "services/audio_service/idl/BUILD.gn"
+    ],
+    "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\foundation\\multimedia\\audio_framework",
+    "title": "补齐音频 IDL callback 的生成依赖",
+    "issue": "https://gitcode.com/openharmony/build/issues/4668",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\n音频 callback 使用了另一 IDL 目标生成的共享类型，但没有依赖其生产者，清理后并行构建可能先使用尚未生成的文件。\n\n### 描述（做了什么，变更了什么）\n让 audio_service_idl_callback 显式依赖 audio_service_idl_interface，先生成共享类型，再处理 callback。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期 clean 后按正确顺序恢复生成文件，无改动时不因依赖断链重复构建。\n",
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "third_party_css-what",
+    "branch": "fix/incremental-build-20261013",
+    "commit": "0ad16b63ecbad73335b62474499f205b8848382c",
+    "upstream": "66c986b3597910d384f32d7b098112d2b48d4145",
+    "files": [
+      "BUILD.gn",
+      "bundle.json"
+    ],
+    "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\third_party\\css-what",
+    "title": "明确 CSS 源码和 fixture 的复制输出",
+    "issue": "https://gitcode.com/openharmony/third_party_jsframework/issues/323",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/third_party_jsframework/issues/323\n\n### 原因（目的、解决的问题等）\nCSS 使用目录复制，没有逐项声明输出，fixture 也没有完整的跨部件接口，影响 JS 构建依赖判断和清理后的恢复。\n\n### 描述（做了什么，变更了什么）\n将源码和 fixture 分别声明为具体文件复制目标，保留 runtime/src 布局，并在 bundle.json 中导出 fixture innerkit。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期 JS 构建能够跟踪实际 CSS 输入，无改动时不重复复制，清理后按依赖恢复所需文件。\n",
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "interface_sdk-js",
+    "local_path": "D:\\workspace\\repositories\\companion-prs-20261015\\interface_sdk-js",
+    "branch": "fix/sdk-interface-incremental-20261015",
+    "commit": "9e2c44a2cca432c7686c396ab9465ea51c1119da",
+    "upstream": "1a963a300d0e745e2239d331f63e11f362ea0823",
+    "files": [
+      "BUILD.gn",
+      "process_internal.py",
+      "remove_internal.py"
+    ],
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+    "title": "补齐 SDK 拆分和声明裁剪的增量依赖",
+    "issue": "https://gitcode.com/openharmony/build/issues/4706",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4706\n\n### 原因（目的、解决的问题等）\nSDK 拆分没有接入完成标记和 depfile；声明裁剪每轮复制文件并更新时间戳，导致下游反复判断输入变化。\n\n### 描述（做了什么，变更了什么）\n为拆分和声明裁剪接入 stamp、depfile，跟踪声明文件及裁剪规则。裁剪结果先生成到临时目录，内容相同时保留原输出；不带新参数的调用保留原有行为。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时保留输出时间戳，声明或裁剪规则变化时正常更新，清理输出后能够恢复。\n"
+  },
+  {
+    "repo": "developtools_ace_ets2bundle",
+    "local_path": "D:\\workspace\\repositories\\companion-prs-20261015\\developtools_ace_ets2bundle",
+    "local_branch": "fix/sdk-helpers-companion-20261015",
+    "branch": "fix/incremental-build-20261013",
+    "before": "1eabff15841a7ba11c860262bf2fbde2c3960db6",
+    "commit": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+    "upstream": "5444f03da530ddee9e2441084a577180e2d7bc50",
+    "files": [
+      "arkui-plugins/BUILD.gn",
+      "arkui-plugins/build_ui_plugins.py",
+      "arkui-plugins/sdk_files.json",
+      "ets1.2/BUILD.gn",
+      "ets1.2/libarkts/BUILD.gn",
+      "koala-wrapper/BUILD.gn",
+      "koala-wrapper/build_ts_wrapper.py",
+      "koala-wrapper/sdk_files.json",
+      "sdk_copy.gni",
+      "sdk_files.py"
+    ],
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+    "title": "修复 SDK 插件和 wrapper 的重复构建",
+    "issue": "https://gitcode.com/openharmony/build/issues/4704",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\n插件和 wrapper 在源码目录生成中间文件，目录形式的输入输出不能完整表达依赖；libarkts 输出也缺少隔离，容易引起重复构建，清理后可能缺少文件。\n\n### 描述（做了什么，变更了什么）\n将插件和 wrapper 放到 out 内构建，用具体文件清单声明输入输出并按内容发布，补齐 package.json 和工具依赖，隔离 libarkts 输出；清单包含主干新增的校验文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时不重复发布 SDK 文件，清理 out 后可以恢复，源码目录不再产生这些构建中间文件。\n"
+  },
+  {
+    "repo": "graphic_graphic_3d",
+    "branch": "fix/incremental-build-20261013",
+    "commit": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+    "upstream": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+    "files": [
+      "lume/LumeEngine/tools/CompilerAsset.sh"
+    ],
+    "local_path": "D:\\workspace\\repositories\\openharmony-repairs-20261014\\foundation\\graphic\\graphic_3d",
+    "title": "避免相同 ROFS 对象触发重复链接",
+    "issue": "https://gitcode.com/openharmony/build/issues/4704",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\n资源编译每次直接替换 ROFS 对象，即使对象内容相同也会更新时间戳，继续触发共享库链接和安装。\n\n### 描述（做了什么，变更了什么）\n在构建目录的临时目录生成对象，检查输出后比较内容，仅替换有变化的文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期相同对象保留时间戳，不再带动无效重链；对象被清理后能恢复，生成失败时保留已有有效对象。\n",
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+  },
+  {
+    "repo": "build",
+    "local_path": "D:\\workspace\\repositories\\companion-prs-20261015\\build",
+    "branch": "fix/loader-components-incremental-20261015",
+    "commit": "f0dd0bd6ea0708337120d8044115e87491794532",
+    "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+    "files": [
+      "hb/services/loader.py",
+      "scripts/util/file_utils.py"
+    ],
+    "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+    "title": "保留未变化的 components.json",
+    "issue": "https://gitcode.com/openharmony/build/issues/4761",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4761\n\n### 原因（目的、解决的问题等）\nloader 先删除 components.json 再写回，相同内容也会更新时间戳，内容变化检查无法生效；公共 JSON 比较还受字典键顺序影响。\n\n### 描述（做了什么，变更了什么）\n取消写回前的删除，使用 check_changes 比较后写入；公共 JSON 判断改为比较解析后的内容。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期组件清单未变化时保留文件及时间戳，实际组件变化时正常更新，缺失的输出可由写入工具重新生成。\n"
+  }
+]

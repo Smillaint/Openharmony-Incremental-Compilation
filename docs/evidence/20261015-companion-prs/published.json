@@ -1,0 +1,75 @@
+{
+  "verified_utc": "2026-10-16T01:13:21.907667+00:00",
+  "results": [
+    {
+      "repo": "account_os_account",
+      "branch": "fix/incremental-build-20261013",
+      "commit": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+      "verified_remote_sha": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "inputmethod_imf",
+      "branch": "fix/incremental-build-20261013",
+      "commit": "331a15a1cda376687080a3977999de42182ec3ec",
+      "verified_remote_sha": "331a15a1cda376687080a3977999de42182ec3ec",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "security_dlp_permission_service",
+      "branch": "fix/incremental-build-20261013",
+      "commit": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+      "verified_remote_sha": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "ability_dmsfwk",
+      "branch": "fix/incremental-build-20261013",
+      "commit": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+      "verified_remote_sha": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "multimedia_audio_framework",
+      "branch": "fix/incremental-build-20261013",
+      "commit": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+      "verified_remote_sha": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "third_party_css-what",
+      "branch": "fix/incremental-build-20261013",
+      "commit": "0ad16b63ecbad73335b62474499f205b8848382c",
+      "verified_remote_sha": "0ad16b63ecbad73335b62474499f205b8848382c",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "interface_sdk-js",
+      "branch": "fix/sdk-interface-incremental-20261015",
+      "commit": "9e2c44a2cca432c7686c396ab9465ea51c1119da",
+      "verified_remote_sha": "9e2c44a2cca432c7686c396ab9465ea51c1119da",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "developtools_ace_ets2bundle",
+      "branch": "fix/incremental-build-20261013",
+      "commit": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+      "verified_remote_sha": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "graphic_graphic_3d",
+      "branch": "fix/incremental-build-20261013",
+      "commit": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+      "verified_remote_sha": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    },
+    {
+      "repo": "build",
+      "branch": "fix/loader-components-incremental-20261015",
+      "commit": "f0dd0bd6ea0708337120d8044115e87491794532",
+      "verified_remote_sha": "f0dd0bd6ea0708337120d8044115e87491794532",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>"
+    }
+  ]
+}

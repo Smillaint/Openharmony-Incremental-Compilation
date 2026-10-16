@@ -1,0 +1,62 @@
+From f0dd0bd6ea0708337120d8044115e87491794532 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Thu, 15 Oct 2026 18:05:30 -0700
+Subject: [PATCH] Preserve unchanged component metadata during loading
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ hb/services/loader.py      |  3 +--
+ scripts/util/file_utils.py | 16 +++-------------
+ 2 files changed, 4 insertions(+), 15 deletions(-)
+
+diff --git a/hb/services/loader.py b/hb/services/loader.py
+index 8266cce7..c4ccfc66 100644
+--- a/hb/services/loader.py
++++ b/hb/services/loader.py
+@@ -191,8 +191,7 @@ class OHOSLoader(LoadInterface):
+                     and component not in add_parts:
+                 del new_components_data[component]
+         self._merge_components_info(new_components_data)
+-        os.remove(self.components_file)
+-        write_json_file(self.components_file, new_components_data)
++        write_json_file(self.components_file, new_components_data, check_changes=True)
+         
+ 
+ # check method
+diff --git a/scripts/util/file_utils.py b/scripts/util/file_utils.py
+index 65dcb4af..4b0ac9e4 100755
+--- a/scripts/util/file_utils.py
++++ b/scripts/util/file_utils.py
+@@ -16,7 +16,6 @@
+ import json
+ import os
+ import subprocess
+-import hashlib
+ import platform
+ 
+ 
+@@ -82,18 +81,9 @@ def write_json_file(output_file, content, check_changes=False):
+ 
+ 
+ def __check_changes(output_file, content):
+-    if os.path.exists(output_file) and os.path.isfile(output_file):
+-        # file content md5 val
+-        sha256_obj = hashlib.sha256()
+-        sha256_obj.update(str(read_json_file(output_file)).encode())
+-        hash_value = sha256_obj.hexdigest()
+-        # new content md5 val
+-        sha256_obj_new = hashlib.sha256()
+-        sha256_obj_new.update(str(content).encode())
+-        hash_value_new = sha256_obj_new.hexdigest()
+-        if hash_value_new == hash_value:
+-            return False
+-    return True
++    if not os.path.isfile(output_file):
++        return True
++    return read_json_file(output_file) != content
+ 
+ 
+ # Write file data
+-- 
+2.51.0.windows.1
+

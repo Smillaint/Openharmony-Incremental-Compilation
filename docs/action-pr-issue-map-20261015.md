@@ -1,5 +1,7 @@
 # Action、PR 与 Issue 对照（2026-10-15）
 
+后续提交状态见 [配套 PR 与联合门禁交接](oct15-companion-pr-submission.md)：下文为补齐前的分组快照；10 条配套 PR 已创建，HAP 关联已统一，六组门禁已启动。
+
 本批 13 条历史 PR 对应 13 个开放 Issue，重复 Issue build #4759 保持关闭。13 个 Issue 的正文均已补齐 Action、直接修复、跨仓配套及缺少的 PR；公开 API 回读与保存文本一致。现有正式 PR 关联保持原样，本次没有改源码、创建 PR 或触发门禁。
 
 完整安装链入口：[build Issue #4704](https://gitcode.com/openharmony/build/issues/4704)。Issue 正文中的参考链接用于追踪修复，不等于正式加入同一个联合门禁组。

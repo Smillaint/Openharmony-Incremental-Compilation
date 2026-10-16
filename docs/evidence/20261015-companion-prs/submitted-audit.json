@@ -1,0 +1,2662 @@
+{
+  "time_utc": "2026-10-16T01:27:04.296109+00:00",
+  "prs": [
+    {
+      "id": 9352344,
+      "html_url": "https://gitcode.com/openharmony/account_os_account/merge_requests/3898",
+      "number": 3898,
+      "state": "open",
+      "title": "补齐账户 IDL 的 callback 和公共类型输出",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/account_os_account/pulls/3898",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/account_os_account/pulls/3898/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\n账户 IDL 的 callback 和公共类型头文件没有完整声明输出，生成关系不明确，清理产物后可能缺少头文件。\n\n### 描述（做了什么，变更了什么）\n在 frameworks_osaccount_interface 中声明 IDomainAccountCallback.idl 和 DomainAccountIpcData.idl 的输出，与 build 的 IDL 模板修复配套。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期生成文件由明确的目标负责，清理后能重新生成，无改动时不因缺少输出声明重复构建。\n",
+      "assignees_number": 2,
+      "assignees": [
+        {
+          "id": "673ae57317c7df0fba3f5605",
+          "login": "linshuqing",
+          "name": "linshuqing",
+          "html_url": "https://gitcode.com/linshuqing",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673ae58d1c624d5d774861fb",
+          "login": "chennian",
+          "name": "chennian",
+          "html_url": "https://gitcode.com/chennian",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4429737,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:15:32+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4429737,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:15:40+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:15:03+08:00",
+      "updated_at": "2026-10-16T09:15:40+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/incremental-build-20261013",
+        "sha": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+        "label": "fix/incremental-build-20261013",
+        "repo": {
+          "path": "account_os_account",
+          "name": "account_os_account",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/account_os_account",
+          "html_url": "https://gitcode.com/SmillySmillick/account_os_account.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "61f117cedb8d99db15ebf8aae3fa156f11ad137d",
+        "label": "master",
+        "repo": {
+          "path": "account_os_account",
+          "name": "account_os_account",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/account_os_account",
+          "html_url": "https://gitcode.com/openharmony/account_os_account.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352344,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352361,
+      "html_url": "https://gitcode.com/openharmony/inputmethod_imf/merge_requests/2774",
+      "number": 2774,
+      "state": "open",
+      "title": "补齐输入法 IDL 公共类型输出",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/inputmethod_imf/pulls/2774",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/inputmethod_imf/pulls/2774/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nInputMethodClientTypes.idl 的公共头文件只作为生成副产物，构建图没有完整记录，清理后可能出现缺文件。\n\n### 描述（做了什么，变更了什么）\n在 input_client_interface 中通过 sources_common 声明 InputMethodClientTypes.idl 的公共输出。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共类型文件有明确的生成目标，清理后可恢复，输入不变时不再因输出缺项触发生成。\n",
+      "assignees_number": 3,
+      "assignees": [
+        {
+          "id": "672ccd8e33741160e673866f",
+          "login": "zhao-linglan",
+          "name": "zhaolinglan",
+          "avatar_url": "https://cdn-img.gitcode.com/fd/bc/532f84806889d9998bc9cf10624de4b3e252478c8d3fc82e22d7066eeca76269.png",
+          "html_url": "https://gitcode.com/zhao-linglan",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672d0a4efbbddc0c20089ac1",
+          "login": "illybyy",
+          "name": "illybyy",
+          "avatar_url": "https://cdn-img.gitcode.com/de/ce/371921d2e7c9e520a8451bd2e7e47cc35fcea304b3b86db04a3809438a0a0587.png",
+          "html_url": "https://gitcode.com/illybyy",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "6749765c04b1b5000517c3d4",
+          "login": "wuchengwen_oh",
+          "name": "吴成文",
+          "avatar_url": "https://cdn-img.gitcode.com/ae/ae/46aea4ef8f07790c42970075a03aabaa04b6e25e331ecaea018d95fe0187eec0.png?time=1757657538858",
+          "html_url": "https://gitcode.com/wuchengwen_oh",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4398247,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:19:28+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4398247,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:19:37+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:18:59+08:00",
+      "updated_at": "2026-10-16T09:19:37+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/incremental-build-20261013",
+        "sha": "331a15a1cda376687080a3977999de42182ec3ec",
+        "label": "fix/incremental-build-20261013",
+        "repo": {
+          "path": "inputmethod_imf",
+          "name": "inputmethod_imf",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/inputmethod_imf",
+          "html_url": "https://gitcode.com/SmillySmillick/inputmethod_imf.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "341493e680beba68d7251876113368052b9ab9b2",
+        "label": "master",
+        "repo": {
+          "path": "inputmethod_imf",
+          "name": "inputmethod_imf",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/inputmethod_imf",
+          "html_url": "https://gitcode.com/openharmony/inputmethod_imf.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352361,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352366,
+      "html_url": "https://gitcode.com/openharmony/security_dlp_permission_service/merge_requests/953",
+      "number": 953,
+      "state": "open",
+      "title": "补齐 DLP 权限 IDL 公共类型输出",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/security_dlp_permission_service/pulls/953",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/security_dlp_permission_service/pulls/953/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nDlpPermissionTypes.idl 的公共输出没有明确声明，依赖关系不完整，清理生成文件后可能编译失败。\n\n### 描述（做了什么，变更了什么）\n在 dlp_permission_interface 中通过 sources_common 声明 DlpPermissionTypes.idl。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共头文件按依赖生成，清理后能恢复，无改动时保留已有生成结果。\n",
+      "assignees_number": 2,
+      "assignees": [
+        {
+          "id": "673ae58d1c624d5d774861fb",
+          "login": "chennian",
+          "name": "chennian",
+          "html_url": "https://gitcode.com/chennian",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673ae9961c624d5d7748648d",
+          "login": "winnieHuYu",
+          "name": "winnieHuYu",
+          "html_url": "https://gitcode.com/winnieHuYu",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4379044,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:20:17+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4379044,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:20:25+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:19:47+08:00",
+      "updated_at": "2026-10-16T09:20:25+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/incremental-build-20261013",
+        "sha": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+        "label": "fix/incremental-build-20261013",
+        "repo": {
+          "path": "security_dlp_permission_service",
+          "name": "security_dlp_permission_service",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/security_dlp_permission_service",
+          "html_url": "https://gitcode.com/SmillySmillick/security_dlp_permission_service.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+        "label": "master",
+        "repo": {
+          "path": "security_dlp_permission_service",
+          "name": "security_dlp_permission_service",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/security_dlp_permission_service",
+          "html_url": "https://gitcode.com/openharmony/security_dlp_permission_service.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352366,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352372,
+      "html_url": "https://gitcode.com/openharmony/ability_dmsfwk/merge_requests/2123",
+      "number": 2123,
+      "state": "open",
+      "title": "补齐分布式能力 IDL 公共类型输出",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/ability_dmsfwk/pulls/2123",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/ability_dmsfwk/pulls/2123/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nDeviceConnectStatus.idl 的公共头文件没有完整的输出声明，后续目标依赖生成副产物，清理后可能缺少文件。\n\n### 描述（做了什么，变更了什么）\n在 dmsfwk_idl 中通过 sources_common 声明 DeviceConnectStatus.idl 的公共输出。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共类型文件由对应 IDL 目标生成，清理后可以重建，无改动时不重复发布。\n",
+      "assignees_number": 3,
+      "assignees": [
+        {
+          "id": "662f3f5a37e4d61be15b9db2",
+          "login": "hwzhangchuang",
+          "name": "zhangchuang",
+          "avatar_url": "https://cdn-img.gitcode.com/bf/aa/47bf88aab7bb030356d4e9ae1f3818b181fa231779043785de872343806eb07f.jpg",
+          "html_url": "https://gitcode.com/hwzhangchuang",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cda68fbbddc0c2008903c",
+          "login": "hobbycao",
+          "name": "hobbycao",
+          "avatar_url": "https://cdn-img.gitcode.com/ee/af/e37e405622af45591f7b13b26610e499c2353331283b1fc62a041ed70eb6fcb0.jpg",
+          "html_url": "https://gitcode.com/hobbycao",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "6867308087881000c8b41ff0",
+          "login": "majiajun905338",
+          "name": "majiajun905338",
+          "html_url": "https://gitcode.com/majiajun905338",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4408026,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:21:24+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4408026,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:21:30+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:20:48+08:00",
+      "updated_at": "2026-10-16T09:21:30+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/incremental-build-20261013",
+        "sha": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+        "label": "fix/incremental-build-20261013",
+        "repo": {
+          "path": "ability_dmsfwk",
+          "name": "ability_dmsfwk",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/ability_dmsfwk",
+          "html_url": "https://gitcode.com/SmillySmillick/ability_dmsfwk.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "aa1b0347b10700d761def383c08749420dd3f71a",
+        "label": "master",
+        "repo": {
+          "path": "ability_dmsfwk",
+          "name": "ability_dmsfwk",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/ability_dmsfwk",
+          "html_url": "https://gitcode.com/openharmony/ability_dmsfwk.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352372,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352376,
+      "html_url": "https://gitcode.com/openharmony/multimedia_audio_framework/merge_requests/17444",
+      "number": 17444,
+      "state": "open",
+      "title": "补齐音频 IDL callback 的生成依赖",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/multimedia_audio_framework/pulls/17444",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/multimedia_audio_framework/pulls/17444/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\n音频 callback 使用了另一 IDL 目标生成的共享类型，但没有依赖其生产者，清理后并行构建可能先使用尚未生成的文件。\n\n### 描述（做了什么，变更了什么）\n让 audio_service_idl_callback 显式依赖 audio_service_idl_interface，先生成共享类型，再处理 callback。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期 clean 后按正确顺序恢复生成文件，无改动时不因依赖断链重复构建。\n",
+      "assignees_number": 14,
+      "assignees": [
+        {
+          "id": "672cb3da269b322864051178",
+          "login": "liuyuehua1",
+          "name": "liuyuehua1",
+          "avatar_url": "https://cdn-img.gitcode.com/fa/df/21f771ad95735037f51ffb6de164cc62e638d40456a3319b35203a54cc1579ad.jpg",
+          "html_url": "https://gitcode.com/liuyuehua1",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672ccbdaae148c7b76650565",
+          "login": "magekkkk",
+          "name": "lixin",
+          "avatar_url": "https://cdn-img.gitcode.com/eb/fa/1eb455fa2aefe374fd5cde25c10edd852a45676a4d1b70c0562484d1c9a2a562.jpg",
+          "html_url": "https://gitcode.com/magekkkk",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cd7b168f60c72a6d5347c",
+          "login": "imyuhang",
+          "name": "imyuhang",
+          "avatar_url": "https://cdn-img.gitcode.com/de/af/3d364ea2ff1883e908dd8325825b7c553474695da50ea9514be50729fa0db224.jpg",
+          "html_url": "https://gitcode.com/imyuhang",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cd93f68f60c72a6d53527",
+          "login": "hangliebe",
+          "name": "hangliebe",
+          "avatar_url": "https://cdn-img.gitcode.com/ae/af/5a56e2a7f0245cbf8ca3443fd2630e70e5fcf850999706b199b7b001f96130ae.jpg",
+          "html_url": "https://gitcode.com/hangliebe",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cdcd768f60c72a6d536c4",
+          "login": "huyue57",
+          "name": "huyue57",
+          "avatar_url": "https://cdn-img.gitcode.com/ad/ea/adead34dbc37c1949736926feca5473a036034e51ab104a1ce4c3e127a061e80.jpg",
+          "html_url": "https://gitcode.com/huyue57",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cfff768f60c72a6d53fab",
+          "login": "boxwall",
+          "name": "boxwall",
+          "avatar_url": "https://cdn-img.gitcode.com/ca/aa/001361c68a189a67a5e33599dbd1d4944f7f926f346f69df16d8a9469b2eecad.jpg",
+          "html_url": "https://gitcode.com/boxwall",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672d6f7a68f60c72a6d55305",
+          "login": "songshenke",
+          "name": "songshenke",
+          "avatar_url": "https://cdn-img.gitcode.com/fb/da/628fb98556da139047204959c0ce7fb4f31620fae85eda50c7c3cc5105414a5c.jpg",
+          "html_url": "https://gitcode.com/songshenke",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672f554933741160e6747ef9",
+          "login": "lepage",
+          "name": "lepage",
+          "avatar_url": "https://cdn-img.gitcode.com/fc/ff/1f011cff5dc4c89d31759a0454c0a8736bcdb7ad5d026437026cdbf7600405ae.jpg",
+          "html_url": "https://gitcode.com/lepage",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672f940dfbbddc0c20099c03",
+          "login": "gregoire",
+          "name": "Noc",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/bf/c1e6bfe8096a99669eede490bb66eb45b3291d58bf6eaa08411ffac7a60a99b4.png?time=1759040450380",
+          "html_url": "https://gitcode.com/gregoire",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673b34ff6704dc4ab79fd425",
+          "login": "tianluowen",
+          "name": "tianluowen",
+          "avatar_url": "https://cdn-img.gitcode.com/de/cb/d7ec0387be3f5a3af719c3e2b90677606f7f3826a32a98909b7d31811737551b.jpg",
+          "html_url": "https://gitcode.com/tianluowen",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "678606b2f7201c694a1514e0",
+          "login": "junlintianxiawy",
+          "name": "王毅",
+          "html_url": "https://gitcode.com/junlintianxiawy",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "6792ecce486a2e49301ce3f1",
+          "login": "hao-liangfei",
+          "name": "郝亮飞",
+          "avatar_url": "https://cdn-img.gitcode.com/bb/ec/130405b6b431ecd07380f85235e74711a8ae04dd4e049ae1ab9471975d9b7931.png?time=1754119599671",
+          "html_url": "https://gitcode.com/hao-liangfei",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "6795aa91857d9a63bda9a901",
+          "login": "seveno0",
+          "name": "seveno0",
+          "avatar_url": "https://cdn-img.gitcode.com/fa/fd/f2a739fdfadc924ec80041d01859c2e5f151f5a6aa9b14598374eff7d85cec4b.jpg",
+          "html_url": "https://gitcode.com/seveno0",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "686cc72a87881000c8b6d9eb",
+          "login": "Gisaacj",
+          "name": "Gisaacj",
+          "html_url": "https://gitcode.com/Gisaacj",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4407831,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:22:18+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4407831,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:22:26+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:21:38+08:00",
+      "updated_at": "2026-10-16T09:22:26+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/incremental-build-20261013",
+        "sha": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+        "label": "fix/incremental-build-20261013",
+        "repo": {
+          "path": "multimedia_audio_framework",
+          "name": "multimedia_audio_framework",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/multimedia_audio_framework",
+          "html_url": "https://gitcode.com/SmillySmillick/multimedia_audio_framework.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "1efb19c3c5c015b1bfc0c0a47e4da6ed63d98964",
+        "label": "master",
+        "repo": {
+          "path": "multimedia_audio_framework",
+          "name": "multimedia_audio_framework",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/multimedia_audio_framework",
+          "html_url": "https://gitcode.com/openharmony/multimedia_audio_framework.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352376,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352381,
+      "html_url": "https://gitcode.com/openharmony/third_party_css-what/merge_requests/29",
+      "number": 29,
+      "state": "open",
+      "title": "明确 CSS 源码和 fixture 的复制输出",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/third_party_css-what/pulls/29",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/third_party_css-what/pulls/29/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/third_party_jsframework/issues/323\n\n### 原因（目的、解决的问题等）\nCSS 使用目录复制，没有逐项声明输出，fixture 也没有完整的跨部件接口，影响 JS 构建依赖判断和清理后的恢复。\n\n### 描述（做了什么，变更了什么）\n将源码和 fixture 分别声明为具体文件复制目标，保留 runtime/src 布局，并在 bundle.json 中导出 fixture innerkit。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期 JS 构建能够跟踪实际 CSS 输入，无改动时不重复复制，清理后按依赖恢复所需文件。\n",
+      "assignees_number": 2,
+      "assignees": [
+        {
+          "id": "673be475709f924fc32ba3c6",
+          "login": "shiyu_huang_plus",
+          "name": "shiyu_huang",
+          "html_url": "https://gitcode.com/shiyu_huang_plus",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673ea064cf50714436d4afbc",
+          "login": "david_wu_lanxi",
+          "name": "david_wu_lanxi",
+          "html_url": "https://gitcode.com/david_wu_lanxi",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4403614,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:22:53+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4403614,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:22:59+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:22:13+08:00",
+      "updated_at": "2026-10-16T09:22:59+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/incremental-build-20261013",
+        "sha": "0ad16b63ecbad73335b62474499f205b8848382c",
+        "label": "fix/incremental-build-20261013",
+        "repo": {
+          "path": "third_party_css-what",
+          "name": "third_party_css-what",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/third_party_css-what",
+          "html_url": "https://gitcode.com/SmillySmillick/third_party_css-what.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "66c986b3597910d384f32d7b098112d2b48d4145",
+        "label": "master",
+        "repo": {
+          "path": "third_party_css-what",
+          "name": "third_party_css-what",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/third_party_css-what",
+          "html_url": "https://gitcode.com/openharmony/third_party_css-what.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352381,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352389,
+      "html_url": "https://gitcode.com/openharmony/interface_sdk-js/merge_requests/36540",
+      "number": 36540,
+      "state": "open",
+      "title": "补齐 SDK 拆分和声明裁剪的增量依赖",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/interface_sdk-js/pulls/36540",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/interface_sdk-js/pulls/36540/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4706\n\n### 原因（目的、解决的问题等）\nSDK 拆分没有接入完成标记和 depfile；声明裁剪每轮复制文件并更新时间戳，导致下游反复判断输入变化。\n\n### 描述（做了什么，变更了什么）\n为拆分和声明裁剪接入 stamp、depfile，跟踪声明文件及裁剪规则。裁剪结果先生成到临时目录，内容相同时保留原输出；不带新参数的调用保留原有行为。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时保留输出时间戳，声明或裁剪规则变化时正常更新，清理输出后能够恢复。\n",
+      "assignees_number": 1,
+      "assignees": [
+        {
+          "id": "673ae61c17c7df0fba3f5692",
+          "login": "xiadengping20241118",
+          "name": "夏登平",
+          "html_url": "https://gitcode.com/xiadengping20241118",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4404548,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:23:32+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4404548,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:23:39+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:23:04+08:00",
+      "updated_at": "2026-10-16T09:23:39+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/sdk-interface-incremental-20261015",
+        "sha": "9e2c44a2cca432c7686c396ab9465ea51c1119da",
+        "label": "fix/sdk-interface-incremental-20261015",
+        "repo": {
+          "path": "interface_sdk-js",
+          "name": "interface_sdk-js",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/interface_sdk-js",
+          "html_url": "https://gitcode.com/SmillySmillick/interface_sdk-js.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "1a963a300d0e745e2239d331f63e11f362ea0823",
+        "label": "master",
+        "repo": {
+          "path": "interface_sdk-js",
+          "name": "interface_sdk-js",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/interface_sdk-js",
+          "html_url": "https://gitcode.com/openharmony/interface_sdk-js.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352389,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352392,
+      "html_url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/merge_requests/7210",
+      "number": 7210,
+      "state": "open",
+      "title": "修复 SDK 插件和 wrapper 的重复构建",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/pulls/7210",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/pulls/7210/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\n插件和 wrapper 在源码目录生成中间文件，目录形式的输入输出不能完整表达依赖；libarkts 输出也缺少隔离，容易引起重复构建，清理后可能缺少文件。\n\n### 描述（做了什么，变更了什么）\n将插件和 wrapper 放到 out 内构建，用具体文件清单声明输入输出并按内容发布，补齐 package.json 和工具依赖，隔离 libarkts 输出；清单包含主干新增的校验文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时不重复发布 SDK 文件，清理 out 后可以恢复，源码目录不再产生这些构建中间文件。\n",
+      "assignees_number": 3,
+      "assignees": [
+        {
+          "id": "672cf0f768f60c72a6d53d12",
+          "login": "hufeng20",
+          "name": "hufeng20",
+          "avatar_url": "https://cdn-img.gitcode.com/fb/cd/849fb9732250cde1ae372d7e4d861ac602577bc52cbd943b14c4aaa25413d4d9.png",
+          "html_url": "https://gitcode.com/hufeng20",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "682be4a4d3ca53650aa6b61c",
+          "login": "chengongping",
+          "name": "chengongping",
+          "html_url": "https://gitcode.com/chengongping",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "67317a2cbd7ba9479f24c505",
+          "login": "VictorS67",
+          "name": "VictorS67",
+          "avatar_url": "https://cdn-img.gitcode.com/bb/ce/1054b18b8c296729081ec3ffc866b690c545fd101cbf3f06fdad6901c09ca861.png",
+          "html_url": "https://gitcode.com/VictorS67",
+          "assignee": true,
+          "code_owner": true,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4401094,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:24:04+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4401094,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:24:11+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:23:33+08:00",
+      "updated_at": "2026-10-16T09:24:11+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/incremental-build-20261013",
+        "sha": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+        "label": "fix/incremental-build-20261013",
+        "repo": {
+          "path": "developtools_ace_ets2bundle",
+          "name": "developtools_ace_ets2bundle",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/developtools_ace_ets2bundle",
+          "html_url": "https://gitcode.com/SmillySmillick/developtools_ace_ets2bundle.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "5444f03da530ddee9e2441084a577180e2d7bc50",
+        "label": "master",
+        "repo": {
+          "path": "developtools_ace_ets2bundle",
+          "name": "developtools_ace_ets2bundle",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/developtools_ace_ets2bundle",
+          "html_url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352392,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352395,
+      "html_url": "https://gitcode.com/openharmony/graphic_graphic_3d/merge_requests/676",
+      "number": 676,
+      "state": "open",
+      "title": "避免相同 ROFS 对象触发重复链接",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/graphic_graphic_3d/pulls/676",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/graphic_graphic_3d/pulls/676/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\n资源编译每次直接替换 ROFS 对象，即使对象内容相同也会更新时间戳，继续触发共享库链接和安装。\n\n### 描述（做了什么，变更了什么）\n在构建目录的临时目录生成对象，检查输出后比较内容，仅替换有变化的文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期相同对象保留时间戳，不再带动无效重链；对象被清理后能恢复，生成失败时保留已有有效对象。\n",
+      "assignees_number": 3,
+      "assignees": [
+        {
+          "id": "673af11a9c1e7c4f071a2af8",
+          "login": "liuchao-huawei",
+          "name": "liuchao-huawei",
+          "html_url": "https://gitcode.com/liuchao-huawei",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "67499abe3bd4a53191960095",
+          "login": "zdustc",
+          "name": "zdustc",
+          "html_url": "https://gitcode.com/zdustc",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "68aec67629fdc1420e5fd636",
+          "login": "huxiaoming",
+          "name": "huxiaoming",
+          "html_url": "https://gitcode.com/huxiaoming",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4376922,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:24:30+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4376922,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:24:36+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:23:58+08:00",
+      "updated_at": "2026-10-16T09:24:37+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/incremental-build-20261013",
+        "sha": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+        "label": "fix/incremental-build-20261013",
+        "repo": {
+          "path": "graphic_graphic_3d",
+          "name": "graphic_graphic_3d",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/graphic_graphic_3d",
+          "html_url": "https://gitcode.com/SmillySmillick/graphic_graphic_3d.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+        "label": "master",
+        "repo": {
+          "path": "graphic_graphic_3d",
+          "name": "graphic_graphic_3d",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/graphic_graphic_3d",
+          "html_url": "https://gitcode.com/openharmony/graphic_graphic_3d.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352395,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    },
+    {
+      "id": 9352400,
+      "html_url": "https://gitcode.com/openharmony/build/merge_requests/7134",
+      "number": 7134,
+      "state": "open",
+      "title": "保留未变化的 components.json",
+      "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7134",
+      "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7134/issues",
+      "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4761\n\n### 原因（目的、解决的问题等）\nloader 先删除 components.json 再写回，相同内容也会更新时间戳，内容变化检查无法生效；公共 JSON 比较还受字典键顺序影响。\n\n### 描述（做了什么，变更了什么）\n取消写回前的删除，使用 check_changes 比较后写入；公共 JSON 判断改为比较解析后的内容。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期组件清单未变化时保留文件及时间戳，实际组件变化时正常更新，缺失的输出可由写入工具重新生成。\n",
+      "assignees_number": 3,
+      "assignees": [
+        {
+          "id": "6721f086f130a72704164a7f",
+          "login": "handyohos",
+          "name": "handyohos",
+          "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+          "html_url": "https://gitcode.com/handyohos",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cf248ae148c7b76651494",
+          "login": "csliutt-private",
+          "name": "csliutt-private",
+          "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+          "html_url": "https://gitcode.com/csliutt-private",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "testers": [
+        {
+          "id": "6541ccea82d8f837210e92c3",
+          "login": "openharmony_ci",
+          "name": "openharmony_ci",
+          "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+          "html_url": "https://gitcode.com/openharmony_ci",
+          "assignee": false,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "approval_reviewers": [],
+      "labels": [
+        {
+          "id": 130,
+          "color": "#1083d6",
+          "name": "waiting_on_author",
+          "repository_id": 4422307,
+          "created_at": "2025-04-22T20:34:00+08:00",
+          "updated_at": "2026-10-16T09:25:56+08:00"
+        },
+        {
+          "id": 87,
+          "color": "#20c22e",
+          "name": "dco检查成功",
+          "repository_id": 4422307,
+          "created_at": "2025-04-22T20:33:58+08:00",
+          "updated_at": "2026-10-16T09:26:04+08:00"
+        }
+      ],
+      "created_at": "2026-10-16T09:25:15+08:00",
+      "updated_at": "2026-10-16T09:26:04+08:00",
+      "closed_at": "",
+      "merged_at": "",
+      "draft": false,
+      "can_merge_check": false,
+      "prune_branch": false,
+      "mergeable": true,
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "head": {
+        "ref": "fix/loader-components-incremental-20261015",
+        "sha": "f0dd0bd6ea0708337120d8044115e87491794532",
+        "label": "fix/loader-components-incremental-20261015",
+        "repo": {
+          "path": "build",
+          "name": "build",
+          "namespace": {
+            "path": "SmillySmillick"
+          },
+          "full_name": "SmillySmillick/build",
+          "html_url": "https://gitcode.com/SmillySmillick/build.git"
+        },
+        "user": {
+          "id": "67150ce628c7754a02de123a",
+          "login": "SmillySmillick",
+          "name": "SmillySmillick",
+          "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+          "html_url": "https://gitcode.com/SmillySmillick"
+        }
+      },
+      "base": {
+        "ref": "master",
+        "sha": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+        "label": "master",
+        "repo": {
+          "path": "build",
+          "name": "build",
+          "namespace": {
+            "path": "openharmony"
+          },
+          "full_name": "openharmony/build",
+          "html_url": "https://gitcode.com/openharmony/build.git"
+        }
+      },
+      "mergeable_state": {
+        "merge_request_id": 9352400,
+        "state": false,
+        "status_without_user_auth": false,
+        "conflict_passed": true,
+        "branch_missing_passed": true,
+        "non_ff_passed": true,
+        "mr_state_passed": true,
+        "merged_by_user_passed": false,
+        "work_in_progress_passed": true,
+        "resolve_discussion_passed": true,
+        "ci_state_passed": true,
+        "merge_by_self_passed": true,
+        "can_force_merge": false,
+        "approval_reviewers_required_passed": true,
+        "approval_approvers_required_passed": false,
+        "approval_testers_required_passed": false,
+        "merge_request_switch": {
+          "review_mode": "approval",
+          "merge_method": "merge",
+          "only_allow_merge_if_all_discussions_are_resolved": false,
+          "disable_merge_by_self": true,
+          "only_allow_merge_if_pipeline_succeeds": false,
+          "disable_squash_merge": false,
+          "squash_merge_with_no_merge_commit": false,
+          "approval_required_reviewers_count": 0,
+          "approval_required_reviewers_branch": "*",
+          "add_notes_after_merged": true,
+          "mark_auto_merged_mr_as_closed": true,
+          "can_force_merge": true,
+          "can_reopen": true
+        },
+        "reason": {
+          "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+        },
+        "check_tasks_num": 2,
+        "all_depend_merge_request_merged_passed": true,
+        "approval_approvers_result": 1,
+        "approval_testers_result": 1
+      },
+      "visibility_reason": "public",
+      "close_related_issue": true,
+      "squash_merge": false
+    }
+  ],
+  "groups": [
+    {
+      "name": "IDL",
+      "issue": "https://gitcode.com/openharmony/build/issues/4668",
+      "expected_count": 6,
+      "actual_count": 6,
+      "unique_repo_branch": true,
+      "prs": [
+        {
+          "id": 9035718,
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+          "diff_url": "https://gitcode.com/openharmony/build/merge_requests/6982/diffs",
+          "number": 6982,
+          "state": "open",
+          "title": "Fix IDL output declarations",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nIDL 输出名称与实际文件不一致，部分 client、callback 和公共类型文件没有明确的生产者依赖，Ninja 会重复生成，清理产物后也可能因缺文件而编译失败。生成脚本每次先删除旧输出，也会使内容相同的文件更新时间戳。\n\n### 描述（做了什么，变更了什么）\n修正输出命名，补齐具体输出文件、生成目标依赖和递归 import 的 depfile。在 out 内临时生成，检查输出完整后按内容更新文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时不重复生成，IDL 或 import 文件变化时正常重建；清理生成文件后能恢复，生成失败时保留原有输出。",
+          "created_at": "2026-08-14T17:08:27.287+08:00",
+          "updated_at": "2026-10-16T08:12:55.739+08:00",
+          "head": {
+            "ref": "fix-idl-common-outputs",
+            "sha": "de69337b7f99f2328417e27fe591903862c9bbdc",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-08-14T17:09:07+08:00"
+            },
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T08:10:40+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352344,
+          "html_url": "https://gitcode.com/openharmony/account_os_account/merge_requests/3898",
+          "diff_url": "https://gitcode.com/openharmony/account_os_account/merge_requests/3898/diffs",
+          "number": 3898,
+          "state": "open",
+          "title": "补齐账户 IDL 的 callback 和公共类型输出",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\n账户 IDL 的 callback 和公共类型头文件没有完整声明输出，生成关系不明确，清理产物后可能缺少头文件。\n\n### 描述（做了什么，变更了什么）\n在 frameworks_osaccount_interface 中声明 IDomainAccountCallback.idl 和 DomainAccountIpcData.idl 的输出，与 build 的 IDL 模板修复配套。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期生成文件由明确的目标负责，清理后能重新生成，无改动时不因缺少输出声明重复构建。\n",
+          "created_at": "2026-10-16T09:15:03.101+08:00",
+          "updated_at": "2026-10-16T09:15:40.322+08:00",
+          "head": {
+            "ref": "fix/incremental-build-20261013",
+            "sha": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+            "repo": {
+              "path": "account_os_account",
+              "name": "account_os_account",
+              "full_name": "SmillySmillick/account_os_account"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "36cf1be9c73f0d205e5ac1cd1d0cd8b7bc998ffc",
+            "repo": {
+              "path": "account_os_account",
+              "name": "account_os_account",
+              "full_name": "openharmony/account_os_account"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:15:32+08:00"
+            },
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:15:40+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352361,
+          "html_url": "https://gitcode.com/openharmony/inputmethod_imf/merge_requests/2774",
+          "diff_url": "https://gitcode.com/openharmony/inputmethod_imf/merge_requests/2774/diffs",
+          "number": 2774,
+          "state": "open",
+          "title": "补齐输入法 IDL 公共类型输出",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nInputMethodClientTypes.idl 的公共头文件只作为生成副产物，构建图没有完整记录，清理后可能出现缺文件。\n\n### 描述（做了什么，变更了什么）\n在 input_client_interface 中通过 sources_common 声明 InputMethodClientTypes.idl 的公共输出。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共类型文件有明确的生成目标，清理后可恢复，输入不变时不再因输出缺项触发生成。\n",
+          "created_at": "2026-10-16T09:18:59.523+08:00",
+          "updated_at": "2026-10-16T09:19:37.723+08:00",
+          "head": {
+            "ref": "fix/incremental-build-20261013",
+            "sha": "331a15a1cda376687080a3977999de42182ec3ec",
+            "repo": {
+              "path": "inputmethod_imf",
+              "name": "inputmethod_imf",
+              "full_name": "SmillySmillick/inputmethod_imf"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "a87ccd38dd32850c1f7a4dd78be887068108ad84",
+            "repo": {
+              "path": "inputmethod_imf",
+              "name": "inputmethod_imf",
+              "full_name": "openharmony/inputmethod_imf"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:19:37+08:00"
+            },
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:19:28+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352366,
+          "html_url": "https://gitcode.com/openharmony/security_dlp_permission_service/merge_requests/953",
+          "diff_url": "https://gitcode.com/openharmony/security_dlp_permission_service/merge_requests/953/diffs",
+          "number": 953,
+          "state": "open",
+          "title": "补齐 DLP 权限 IDL 公共类型输出",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nDlpPermissionTypes.idl 的公共输出没有明确声明，依赖关系不完整，清理生成文件后可能编译失败。\n\n### 描述（做了什么，变更了什么）\n在 dlp_permission_interface 中通过 sources_common 声明 DlpPermissionTypes.idl。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共头文件按依赖生成，清理后能恢复，无改动时保留已有生成结果。\n",
+          "created_at": "2026-10-16T09:19:47.928+08:00",
+          "updated_at": "2026-10-16T09:20:25.308+08:00",
+          "head": {
+            "ref": "fix/incremental-build-20261013",
+            "sha": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+            "repo": {
+              "path": "security_dlp_permission_service",
+              "name": "security_dlp_permission_service",
+              "full_name": "SmillySmillick/security_dlp_permission_service"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "f5a82a3ea9e103bbb73cf2227dc1d3a22cf14fe9",
+            "repo": {
+              "path": "security_dlp_permission_service",
+              "name": "security_dlp_permission_service",
+              "full_name": "openharmony/security_dlp_permission_service"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:20:17+08:00"
+            },
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:20:25+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352372,
+          "html_url": "https://gitcode.com/openharmony/ability_dmsfwk/merge_requests/2123",
+          "diff_url": "https://gitcode.com/openharmony/ability_dmsfwk/merge_requests/2123/diffs",
+          "number": 2123,
+          "state": "open",
+          "title": "补齐分布式能力 IDL 公共类型输出",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nDeviceConnectStatus.idl 的公共头文件没有完整的输出声明，后续目标依赖生成副产物，清理后可能缺少文件。\n\n### 描述（做了什么，变更了什么）\n在 dmsfwk_idl 中通过 sources_common 声明 DeviceConnectStatus.idl 的公共输出。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共类型文件由对应 IDL 目标生成，清理后可以重建，无改动时不重复发布。\n",
+          "created_at": "2026-10-16T09:20:48.625+08:00",
+          "updated_at": "2026-10-16T09:21:30.107+08:00",
+          "head": {
+            "ref": "fix/incremental-build-20261013",
+            "sha": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+            "repo": {
+              "path": "ability_dmsfwk",
+              "name": "ability_dmsfwk",
+              "full_name": "SmillySmillick/ability_dmsfwk"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "aa1b0347b10700d761def383c08749420dd3f71a",
+            "repo": {
+              "path": "ability_dmsfwk",
+              "name": "ability_dmsfwk",
+              "full_name": "openharmony/ability_dmsfwk"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:21:24+08:00"
+            },
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:21:30+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352376,
+          "html_url": "https://gitcode.com/openharmony/multimedia_audio_framework/merge_requests/17444",
+          "diff_url": "https://gitcode.com/openharmony/multimedia_audio_framework/merge_requests/17444/diffs",
+          "number": 17444,
+          "state": "open",
+          "title": "补齐音频 IDL callback 的生成依赖",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\n音频 callback 使用了另一 IDL 目标生成的共享类型，但没有依赖其生产者，清理后并行构建可能先使用尚未生成的文件。\n\n### 描述（做了什么，变更了什么）\n让 audio_service_idl_callback 显式依赖 audio_service_idl_interface，先生成共享类型，再处理 callback。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期 clean 后按正确顺序恢复生成文件，无改动时不因依赖断链重复构建。\n",
+          "created_at": "2026-10-16T09:21:38.980+08:00",
+          "updated_at": "2026-10-16T09:22:26.449+08:00",
+          "head": {
+            "ref": "fix/incremental-build-20261013",
+            "sha": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+            "repo": {
+              "path": "multimedia_audio_framework",
+              "name": "multimedia_audio_framework",
+              "full_name": "SmillySmillick/multimedia_audio_framework"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "d128a212e695de931d425fba7c64ebd591de96bf",
+            "repo": {
+              "path": "multimedia_audio_framework",
+              "name": "multimedia_audio_framework",
+              "full_name": "openharmony/multimedia_audio_framework"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:22:18+08:00"
+            },
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:22:26+08:00"
+            }
+          ],
+          "can_merge_check": false
+        }
+      ],
+      "trigger_repo": "build",
+      "trigger_number": 6982
+    },
+    {
+      "name": "JS-CSS",
+      "issue": "https://gitcode.com/openharmony/third_party_jsframework/issues/323",
+      "expected_count": 2,
+      "actual_count": 2,
+      "unique_repo_branch": true,
+      "prs": [
+        {
+          "id": 8985430,
+          "html_url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853",
+          "diff_url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853/diffs",
+          "number": 853,
+          "state": "open",
+          "title": "fix: stabilize jsframework incremental actions",
+          "body": "### 一、内容说明（相关的 Issue）\nhttps://gitcode.com/openharmony/third_party_jsframework/issues/323\n\n生成的 JS 内容不变时仍被覆盖，共享 runtime 目录也会被构建过程修改；CSS 和测试输入依赖不完整，导致 gen_snapshot、ark_jsf 重复执行，清理生成目录后也可能缺少输入。\n\n### 二、变更内容\n普通和独立构建都在 out 内处理依赖副本，补齐 CSS、配置和测试文件依赖，保留 CSS 目标生成的文件。JS 内容不变时保留时间戳，并正确返回构建或测试的失败状态。\n\n### 三、研发自测点\n预期无改动时不重复生成 JS，CSS 或源码变化时正常重建；清理 out 后能够恢复，源码目录不再产生构建中间文件。\n",
+          "created_at": "2026-08-05T10:15:10.000+08:00",
+          "updated_at": "2026-10-16T08:14:34.288+08:00",
+          "head": {
+            "ref": "fix/jsframework-incremental-actions",
+            "sha": "4172098b9b45baf9b37fa3be021bf1ff6bea6359",
+            "repo": {
+              "path": "third_party_jsframework",
+              "name": "third_party_jsframework",
+              "full_name": "SmillySmillick/third_party_jsframework"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+            "repo": {
+              "path": "third_party_jsframework",
+              "name": "third_party_jsframework",
+              "full_name": "openharmony/third_party_jsframework"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-08-05T10:28:28+08:00"
+            },
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T08:10:49+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352381,
+          "html_url": "https://gitcode.com/openharmony/third_party_css-what/merge_requests/29",
+          "diff_url": "https://gitcode.com/openharmony/third_party_css-what/merge_requests/29/diffs",
+          "number": 29,
+          "state": "open",
+          "title": "明确 CSS 源码和 fixture 的复制输出",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/third_party_jsframework/issues/323\n\n### 原因（目的、解决的问题等）\nCSS 使用目录复制，没有逐项声明输出，fixture 也没有完整的跨部件接口，影响 JS 构建依赖判断和清理后的恢复。\n\n### 描述（做了什么，变更了什么）\n将源码和 fixture 分别声明为具体文件复制目标，保留 runtime/src 布局，并在 bundle.json 中导出 fixture innerkit。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期 JS 构建能够跟踪实际 CSS 输入，无改动时不重复复制，清理后按依赖恢复所需文件。\n",
+          "created_at": "2026-10-16T09:22:13.794+08:00",
+          "updated_at": "2026-10-16T09:22:59.771+08:00",
+          "head": {
+            "ref": "fix/incremental-build-20261013",
+            "sha": "0ad16b63ecbad73335b62474499f205b8848382c",
+            "repo": {
+              "path": "third_party_css-what",
+              "name": "third_party_css-what",
+              "full_name": "SmillySmillick/third_party_css-what"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "66c986b3597910d384f32d7b098112d2b48d4145",
+            "repo": {
+              "path": "third_party_css-what",
+              "name": "third_party_css-what",
+              "full_name": "openharmony/third_party_css-what"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:22:59+08:00"
+            },
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:22:53+08:00"
+            }
+          ],
+          "can_merge_check": false
+        }
+      ],
+      "trigger_repo": "third_party_jsframework",
+      "trigger_number": 853
+    },
+    {
+      "name": "SDK-split",
+      "issue": "https://gitcode.com/openharmony/build/issues/4706",
+      "expected_count": 2,
+      "actual_count": 2,
+      "unique_repo_branch": true,
+      "prs": [
+        {
+          "id": 9134577,
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7049",
+          "diff_url": "https://gitcode.com/openharmony/build/merge_requests/7049/diffs",
+          "number": 7049,
+          "state": "open",
+          "title": "补齐 SDK 接口拆分的完成标记与增量依赖",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4706\n\n### 原因（目的、解决的问题等）\nSDK 接口拆分脚本缺少可供调用方使用的 stamp、depfile 支持，不利于准确描述任务完成状态及真实输入变化\n\n### 描述（做了什么，变更了什么）\n新增可选 --stamp、--depfile 参数，收集接口源码、权限定义、Node、Python 脚本等依赖，排除版本管理目录，并在处理成功后生成完成标记\n\n### 测试用例（新增、改动、可能影响的功能）\n\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ x] 已验证\n- [ ] 不涉及。如不涉及，请写明理由\n",
+          "created_at": "2026-09-03T17:21:17.974+08:00",
+          "updated_at": "2026-09-29T03:55:20.983+08:00",
+          "head": {
+            "ref": "fix-sdk-split-incremental-deps",
+            "sha": "72115384f783e09832216c951e7743b944fd5893",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "42586a0f31139f5db2323ae702ed07a4674c31e1",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-09-03T17:21:56+08:00"
+            },
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-09-03T17:22:03+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352389,
+          "html_url": "https://gitcode.com/openharmony/interface_sdk-js/merge_requests/36540",
+          "diff_url": "https://gitcode.com/openharmony/interface_sdk-js/merge_requests/36540/diffs",
+          "number": 36540,
+          "state": "open",
+          "title": "补齐 SDK 拆分和声明裁剪的增量依赖",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4706\n\n### 原因（目的、解决的问题等）\nSDK 拆分没有接入完成标记和 depfile；声明裁剪每轮复制文件并更新时间戳，导致下游反复判断输入变化。\n\n### 描述（做了什么，变更了什么）\n为拆分和声明裁剪接入 stamp、depfile，跟踪声明文件及裁剪规则。裁剪结果先生成到临时目录，内容相同时保留原输出；不带新参数的调用保留原有行为。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时保留输出时间戳，声明或裁剪规则变化时正常更新，清理输出后能够恢复。\n",
+          "created_at": "2026-10-16T09:23:04.396+08:00",
+          "updated_at": "2026-10-16T09:23:39.858+08:00",
+          "head": {
+            "ref": "fix/sdk-interface-incremental-20261015",
+            "sha": "9e2c44a2cca432c7686c396ab9465ea51c1119da",
+            "repo": {
+              "path": "interface_sdk-js",
+              "name": "interface_sdk-js",
+              "full_name": "SmillySmillick/interface_sdk-js"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "1a963a300d0e745e2239d331f63e11f362ea0823",
+            "repo": {
+              "path": "interface_sdk-js",
+              "name": "interface_sdk-js",
+              "full_name": "openharmony/interface_sdk-js"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:23:39+08:00"
+            },
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:23:32+08:00"
+            }
+          ],
+          "can_merge_check": false
+        }
+      ],
+      "trigger_repo": "build",
+      "trigger_number": 7049
+    },
+    {
+      "name": "Install",
+      "issue": "https://gitcode.com/openharmony/build/issues/4704",
+      "expected_count": 3,
+      "actual_count": 3,
+      "unique_repo_branch": true,
+      "prs": [
+        {
+          "id": 9133487,
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7046",
+          "diff_url": "https://gitcode.com/openharmony/build/merge_requests/7046/diffs",
+          "number": 7046,
+          "state": "open",
+          "title": "Stabilize binary install metadata and optional input dependencies",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\nSA 依赖过滤使用追加操作，未真正排除对应文件；安装信息内容不变时仍被重写，部分可选依赖不存在，导致安装及下游 Action 重复执行。两份安装规则文件也没有声明为输入。\n\n### 描述（做了什么，变更了什么）\n修正 SA 依赖过滤，仅记录存在的可选输入；JSON 按内容比较，模块列表按内容写入，补齐空的 arm64e 输出，并将两份安装规则文件加入输入。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期内容不变时保留安装信息及时间戳，规则或模块实际变化时正常更新；输出被清理后能够重新生成。",
+          "created_at": "2026-09-03T15:40:50.751+08:00",
+          "updated_at": "2026-10-16T08:13:30.335+08:00",
+          "head": {
+            "ref": "fix-install-incremental-metadata",
+            "sha": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T08:10:41+08:00"
+            },
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-09-03T15:41:31+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352392,
+          "html_url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/merge_requests/7210",
+          "diff_url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/merge_requests/7210/diffs",
+          "number": 7210,
+          "state": "open",
+          "title": "修复 SDK 插件和 wrapper 的重复构建",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\n插件和 wrapper 在源码目录生成中间文件，目录形式的输入输出不能完整表达依赖；libarkts 输出也缺少隔离，容易引起重复构建，清理后可能缺少文件。\n\n### 描述（做了什么，变更了什么）\n将插件和 wrapper 放到 out 内构建，用具体文件清单声明输入输出并按内容发布，补齐 package.json 和工具依赖，隔离 libarkts 输出；清单包含主干新增的校验文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时不重复发布 SDK 文件，清理 out 后可以恢复，源码目录不再产生这些构建中间文件。\n",
+          "created_at": "2026-10-16T09:23:33.279+08:00",
+          "updated_at": "2026-10-16T09:24:11.884+08:00",
+          "head": {
+            "ref": "fix/incremental-build-20261013",
+            "sha": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+            "repo": {
+              "path": "developtools_ace_ets2bundle",
+              "name": "developtools_ace_ets2bundle",
+              "full_name": "SmillySmillick/developtools_ace_ets2bundle"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "5444f03da530ddee9e2441084a577180e2d7bc50",
+            "repo": {
+              "path": "developtools_ace_ets2bundle",
+              "name": "developtools_ace_ets2bundle",
+              "full_name": "openharmony/developtools_ace_ets2bundle"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:24:11+08:00"
+            },
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:24:04+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9352395,
+          "html_url": "https://gitcode.com/openharmony/graphic_graphic_3d/merge_requests/676",
+          "diff_url": "https://gitcode.com/openharmony/graphic_graphic_3d/merge_requests/676/diffs",
+          "number": 676,
+          "state": "open",
+          "title": "避免相同 ROFS 对象触发重复链接",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\n资源编译每次直接替换 ROFS 对象，即使对象内容相同也会更新时间戳，继续触发共享库链接和安装。\n\n### 描述（做了什么，变更了什么）\n在构建目录的临时目录生成对象，检查输出后比较内容，仅替换有变化的文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期相同对象保留时间戳，不再带动无效重链；对象被清理后能恢复，生成失败时保留已有有效对象。\n",
+          "created_at": "2026-10-16T09:23:58.197+08:00",
+          "updated_at": "2026-10-16T09:24:37.002+08:00",
+          "head": {
+            "ref": "fix/incremental-build-20261013",
+            "sha": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+            "repo": {
+              "path": "graphic_graphic_3d",
+              "name": "graphic_graphic_3d",
+              "full_name": "SmillySmillick/graphic_graphic_3d"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "14146052f5fcc96d1619fc31cbe8663cdcdcc3de",
+            "repo": {
+              "path": "graphic_graphic_3d",
+              "name": "graphic_graphic_3d",
+              "full_name": "openharmony/graphic_graphic_3d"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:24:30+08:00"
+            },
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:24:36+08:00"
+            }
+          ],
+          "can_merge_check": false
+        }
+      ],
+      "trigger_repo": "build",
+      "trigger_number": 7046
+    },
+    {
+      "name": "HAP",
+      "issue": "https://gitcode.com/openharmony/build/issues/4663",
+      "expected_count": 2,
+      "actual_count": 2,
+      "unique_repo_branch": true,
+      "prs": [
+        {
+          "id": 9009451,
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/6974",
+          "diff_url": "https://gitcode.com/openharmony/build/merge_requests/6974/diffs",
+          "number": 6974,
+          "state": "open",
+          "title": "Fix incremental HAP signing outputs",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4663\n\n### 原因（目的、解决的问题等）\n\n`app_sign` Action 将 `${target_name}.stamp` 声明为输出，但签名脚本不会生成该文件，同时 GN 会为目标生成同名 stamp，导致 Ninja 出现重复输出规则，并在增量构建中重复执行 HAP 签名\n\n此外，`unsigned_hap_path_list.json` 仅记录 HAP 路径且每次直接重写，无法准确反映 unsigned HAP 内容是否发生变化，容易引起无效的下游构建传播\n\n### 描述（做了什么，变更了什么）\n\n1. 使用独立的 `sign_result.json` 作为 HAP 签名 Action 输出，避免与 GN 自动生成的 target stamp 冲突。\n2. 在 unsigned HAP 路径清单中增加各 HAP 文件的 SHA-256。\n3. 签名完成后记录最终 HAP 路径及 SHA-256。\n4. 增加文件 SHA-256 计算及原子 JSON 写入方法。\n5. 输出内容未变化时保留文件时间戳；HAP 内容真实变化时仍能正常触发签名及下游构建。\n\n### 测试用例（新增、改动、可能影响的功能）\n\n1. 执行 Python 语法检查和补丁格式检查，检查通过。\n2. 验证相同 HAP 内容重复处理时，代理输出内容及时间戳保持不变。\n3. 验证 HAP 内容变化时，代理输出同步变化。\n4. 执行多轮 rk3568 完整构建，构建成功。\n5. HAP target stamp 重复生成警告消失。\n6. 原有 10 个重复签名目标中，8 个无内容变化的目标不再重复签名；另外2个目标因 unsigned HAP 字节内容真实变化而正常向下游传播。\n\n可能影响使用 `compile_app` 和 `app_sign` 模板生成、签名 HAP/HSP 的应用构建目标。\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：本修改针对 master 分支当前 HAP 构建模板的增量输出建模问题，无 release 分支同步需求。\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n本修改仅调整内部构建 Action 的输出建模和文件写入方式，不涉及用户接口及编译命令变化。\n\n### 是否已执行L0用例\n- [ ] 已验证\n- [x] 不涉及。如不涉及，请写明理由\n\n理由：本修改属于编译构建脚本及 GN Action 输出建模调整，不涉及运行时功能代码",
+          "created_at": "2026-08-10T10:41:42.738+08:00",
+          "updated_at": "2026-08-10T13:32:13.678+08:00",
+          "head": {
+            "ref": "fix-hap-sign-incremental-build",
+            "sha": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "69f5e3070cf7dd14868ddd93f031d3a0f69178ff",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 91,
+              "color": "#20c22e",
+              "name": "编译成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-08-10T13:31:56+08:00"
+            },
+            {
+              "id": 59,
+              "color": "#20c22e",
+              "name": "静态检查成功",
+              "created_at": "2025-04-22T20:33:33+08:00",
+              "updated_at": "2026-08-10T13:32:04+08:00"
+            },
+            {
+              "id": 100,
+              "color": "#20c22e",
+              "name": "冒烟测试成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-08-10T13:32:05+08:00"
+            },
+            {
+              "id": 131,
+              "color": "#1083d6",
+              "name": "waiting_for_review",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-08-10T13:32:13+08:00"
+            },
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-08-10T10:42:21+08:00"
+            }
+          ],
+          "can_merge_check": false
+        },
+        {
+          "id": 9027599,
+          "html_url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+          "diff_url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556/diffs",
+          "number": 1556,
+          "state": "open",
+          "title": "Fix reproducible HAP entry timestamps",
+          "body": "**IssueNo**:\nhttps://gitcode.com/openharmony/build/issues/4663\n**Description**:\nHAP 打包工具创建 ZIP entry 时使用当前时间。相同输入在不同时间打包后，ZIP entry 时间戳不同，从而导致生成的 HAP 字节内容和 SHA-256 不一致。\n### 修改内容\n\n- 为 HAP ZIP entry 定义统一的固定时间；\n- 对普通文件和 JSON entry 设置固定时间；\n- 对并行压缩的 native library entry 设置固定时间；\n- 对 STORED entry 和空目录 entry 设置固定时间；\n- 通过统一方法设置 ZIP entry 时间，避免不同打包路径遗漏。\n\n### 修复边界\n\n本修改解决：\n\n`相同输入 → ZIP entry 时间固定 → HAP 字节和 SHA-256 可重复`\n\n不解决：\n\n- 上游 native library 重复 dirty；\n- `compile_app.py` 声明输出问题；\n- 两个 HAP compile_app Action 是否完全退出第二轮构建。\n\n**稳定性自检：**\n| 自检项                                                       | 自检结果 |\n| ------------------------------------------------------------ | -------- |\n| 涉及跨进程调用的相关操作需要抛至主线程或加锁防止并发              | 不涉及   |\n| 成员变量进行赋值或创建需要排查并发                               | 不涉及   |\n| 谨慎在lambda表达式中使用引用捕获                                | 不涉及   |\n| 谨慎在未经拷贝的情况下使用外部传入的string、C字符串               | 不涉及   |\n| map\\vector\\list\\set等stl模板类使用时需要排查并发                | 不涉及   |\n| 谨慎考虑加锁范围                                               | 不涉及   |\n| 在IPC通信中谨慎使用同步通信方式                                 | 不涉及   |\n| 禁止传递this指针至其他模块或线程（特别是eventhandler任务）        | 不涉及   |\n| 禁止将外部传入的裸指针在内部直接构造智能指针                      | 不涉及   |\n| 禁止多个独立创建的智能指针管理同一地址                           | 不涉及   |\n| 禁止在析构函数中抛异步任务                                      | 不涉及   |\n| 禁止js对象在非js线程（例如在非js线程创建、使用或销毁）             | 不涉及   |\n| 禁止在对外接口中未经判空直接使用外部传入的指针                    | 不涉及   |\n| 禁止接口返回局部变量引用                                        | 不涉及   |\n| 禁止在信号函数中加锁                                            | 不涉及   |\n| 禁止在关键流程（SA启动、应用启动等主流程）执行耗时的操作           | 不涉及   |\n| 禁止将同一个cpp编译在不同的so中                                 | 不涉及   |\n\n**安全编码自检：**\n| 自检项                                                          | 自检结果 |\n| -------------------------------------------------------------- | -------- |\n| 裸指针避免通过隐式转换构造为sptr                                 | 不涉及   |\n| json对象在取值之前必须先判断类型，避免类型不匹配                   | 不涉及   |\n| 序列化时必须对传入的数组大小进行校验，避免出现超大数组              | 不涉及   |\n| 避免使用未明确位宽的整型，选择使用int8_t、uint8_t等类型            | 不涉及   |\n| 外部传入的路径要做规范化校验，对路径中的.、..、../等特殊字符严格校验 | 不涉及   |\n| 指针变量、表示资源描述符的变量、bool变量必须赋初值                  | 不涉及   |\n| readParcelable获取的对象使用前需要判空                            | 不涉及   |\n| 分配和释放内存的函数需要成对出现                                   | 不涉及   |\n| 申请内存后异常退出前需要及时进行内存释放                            | 不涉及   |\n| 内存申请前必须对内存大小进行合法性校验                              | 不涉及   |\n| 内存分配后必须判断是否成功                                         | 不涉及   |\n| 禁止使用realloc、alloca函数                                       | 不涉及   |\n| 禁止打印文件路径、口令等敏感信息，如有需要，使用private修饰          | 不涉及   |\n| 禁止打印内存地址                                                  | 不涉及   |\n| 整数之间运算时必须严格检查，确保不会出现溢出、反转、除0               | 不涉及   |\n| 禁止对有符号整数进行位操作符运算                                    | 不涉及   |\n| 禁止对指针进行逻辑或位运算                                         | 不涉及   |\n| 循环次数如果受外部数据控制，需要检验其合法性                         | 不涉及   |\n| 禁止使用内存操作类危险函数，需要使用安全函数                         | 不涉及   |\n| 谨慎使用不可重入函数                                               | 不涉及   |\n| 必须检查安全函数的返回值，并进行正确处理                            | 不涉及   |\n| 禁止仅通过TokenType类型判断绕过权限校验                             | 不涉及   |\n\n**TDD Result**:\n用 Telephony 和 Contacts 的真实输入分别执行两次 HAP 打包，两次输出的 SHA-256 分别保持一致；检查所有 ZIP entry 的时间均固定为 `2019-01-01 00:00`。\n**XTS Result**:\n\n### L0新增用例自检结果\n- [ ] 是，有新增L0用例，且完成自检\n- [ x] 否\n",
+          "created_at": "2026-08-13T11:52:49.463+08:00",
+          "updated_at": "2026-10-16T09:26:08.554+08:00",
+          "head": {
+            "ref": "fix/hap-reproducible-archive",
+            "sha": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+            "repo": {
+              "path": "developtools_packing_tool",
+              "name": "developtools_packing_tool",
+              "full_name": "SmillySmillick/developtools_packing_tool"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "9cac80b676fb5fe72fdd2039e7749087caaa85a9",
+            "repo": {
+              "path": "developtools_packing_tool",
+              "name": "developtools_packing_tool",
+              "full_name": "openharmony/developtools_packing_tool"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-08-13T11:59:13+08:00"
+            },
+            {
+              "id": 100,
+              "color": "#20c22e",
+              "name": "冒烟测试成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-08-14T11:18:55+08:00"
+            },
+            {
+              "id": 59,
+              "color": "#20c22e",
+              "name": "静态检查成功",
+              "created_at": "2025-04-22T20:33:33+08:00",
+              "updated_at": "2026-08-14T11:18:54+08:00"
+            },
+            {
+              "id": 91,
+              "color": "#20c22e",
+              "name": "编译成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-08-14T11:15:41+08:00"
+            },
+            {
+              "id": 131,
+              "color": "#1083d6",
+              "name": "waiting_for_review",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-08-14T11:19:03+08:00"
+            }
+          ],
+          "can_merge_check": false
+        }
+      ],
+      "trigger_repo": "build",
+      "trigger_number": 6974
+    },
+    {
+      "name": "loader",
+      "issue": "https://gitcode.com/openharmony/build/issues/4761",
+      "expected_count": 1,
+      "actual_count": 1,
+      "unique_repo_branch": true,
+      "prs": [
+        {
+          "id": 9352400,
+          "html_url": "https://gitcode.com/openharmony/build/merge_requests/7134",
+          "diff_url": "https://gitcode.com/openharmony/build/merge_requests/7134/diffs",
+          "number": 7134,
+          "state": "open",
+          "title": "保留未变化的 components.json",
+          "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4761\n\n### 原因（目的、解决的问题等）\nloader 先删除 components.json 再写回，相同内容也会更新时间戳，内容变化检查无法生效；公共 JSON 比较还受字典键顺序影响。\n\n### 描述（做了什么，变更了什么）\n取消写回前的删除，使用 check_changes 比较后写入；公共 JSON 判断改为比较解析后的内容。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期组件清单未变化时保留文件及时间戳，实际组件变化时正常更新，缺失的输出可由写入工具重新生成。\n",
+          "created_at": "2026-10-16T09:25:15.798+08:00",
+          "updated_at": "2026-10-16T09:26:04.449+08:00",
+          "head": {
+            "ref": "fix/loader-components-incremental-20261015",
+            "sha": "f0dd0bd6ea0708337120d8044115e87491794532",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "SmillySmillick/build"
+            },
+            "assigner": {
+              "login": "SmillySmillick",
+              "name": "SmillySmillick"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+            "repo": {
+              "path": "build",
+              "name": "build",
+              "full_name": "openharmony/build"
+            }
+          },
+          "assignees": [],
+          "testers": [],
+          "labels": [
+            {
+              "id": 87,
+              "color": "#20c22e",
+              "name": "dco检查成功",
+              "created_at": "2025-04-22T20:33:58+08:00",
+              "updated_at": "2026-10-16T09:26:04+08:00"
+            },
+            {
+              "id": 130,
+              "color": "#1083d6",
+              "name": "waiting_on_author",
+              "created_at": "2025-04-22T20:34:00+08:00",
+              "updated_at": "2026-10-16T09:25:56+08:00"
+            }
+          ],
+          "can_merge_check": false
+        }
+      ],
+      "trigger_repo": "build",
+      "trigger_number": 7134
+    }
+  ]
+}
