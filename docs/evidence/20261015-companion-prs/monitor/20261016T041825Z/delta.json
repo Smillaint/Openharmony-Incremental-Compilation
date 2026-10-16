@@ -1,0 +1,127 @@
+{
+  "checked_utc": "2026-10-16T04:18:25.533845+00:00",
+  "changes": [
+    {
+      "repo": "build",
+      "number": 6982,
+      "new_comment_ids": [
+        194114104,
+        194114162
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "编译成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "account_os_account",
+      "number": 3898,
+      "new_comment_ids": [
+        194114101,
+        194114147
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "编译成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "inputmethod_imf",
+      "number": 2774,
+      "new_comment_ids": [
+        194114121,
+        194114203
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "编译成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "security_dlp_permission_service",
+      "number": 953,
+      "new_comment_ids": [
+        194114115,
+        194114194
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "编译成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "ability_dmsfwk",
+      "number": 2123,
+      "new_comment_ids": [
+        194114136,
+        194114222
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "编译成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "multimedia_audio_framework",
+      "number": 17444,
+      "new_comment_ids": [
+        194114111,
+        194114179
+      ],
+      "edited_comment_ids": [],
+      "added_labels": [
+        "waiting_for_review",
+        "冒烟测试成功",
+        "编译成功",
+        "静态检查成功"
+      ],
+      "removed_labels": [
+        "waiting_on_author"
+      ]
+    }
+  ],
+  "new_actionable_findings": [],
+  "completed_groups": [
+    "IDL"
+  ],
+  "skipped_completed_pr_count": 6,
+  "completed_pr_count_after_check": 12,
+  "progress_changes": [
+    {
+      "group": "loader",
+      "target": "x86_64_virt_tdd",
+      "before": "running",
+      "after": "passed(IGNORE)"
+    }
+  ]
+}

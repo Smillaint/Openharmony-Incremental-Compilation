@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-[2026-10-16 03:48 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T034833Z/summary.md)：SA #6965 正式回执确认原 EcoTest 触发失败，原因与[上轮诊断](evidence/20261015-companion-prs/monitor/20261016T031827Z/summary.md)一致。IDL 的 x86_64_virt_tdd 已通过，仍等待 dayu200_tdd；HAP、loader 仍有 TDD 编译运行。SDK split 和安装组原静态告警未变化，JS/CSS 已完成。本轮无新增可操作故障，没有重复触发门禁。
+[2026-10-16 04:18 UTC 巡检](evidence/20261015-companion-prs/monitor/20261016T041825Z/summary.md)：IDL 六条 PR 已收到正式通过回执，与 JS/CSS 一起停止后续检查。HAP、loader 均只剩 dayu200_tdd 运行；SDK split、安装组静态告警及 SA EcoTest 提交失败未变化。累计 12 条 PR 完成，联合组完成 2/6；没有新增可操作故障，没有重复触发门禁。
 
 ## PR、文件与作用
 

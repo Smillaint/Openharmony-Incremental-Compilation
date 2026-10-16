@@ -1,7 +1,7 @@
 {
   "automation_id": "openharmony-30",
   "interval_minutes": 30,
-  "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+  "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
   "groups": [
     {
       "name": "IDL",
@@ -12,53 +12,82 @@
       "command_id": 194069100,
       "receipt_id": 194069319,
       "started_at": "2026-10-16T09:28:47+08:00",
-      "status": "running",
-      "done": false,
+      "status": "passed",
+      "done": true,
       "members": [
         {
           "repo": "build",
           "number": 6982,
-          "head": "de69337b7f99f2328417e27fe591903862c9bbdc"
+          "head": "de69337b7f99f2328417e27fe591903862c9bbdc",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114104,
+          "passed_at": "2026-10-16T11:53:13+08:00"
         },
         {
           "repo": "account_os_account",
           "number": 3898,
-          "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90"
+          "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114101,
+          "passed_at": "2026-10-16T11:53:12+08:00"
         },
         {
           "repo": "inputmethod_imf",
           "number": 2774,
-          "head": "331a15a1cda376687080a3977999de42182ec3ec"
+          "head": "331a15a1cda376687080a3977999de42182ec3ec",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114121,
+          "passed_at": "2026-10-16T11:53:16+08:00"
         },
         {
           "repo": "security_dlp_permission_service",
           "number": 953,
-          "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28"
+          "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114115,
+          "passed_at": "2026-10-16T11:53:15+08:00"
         },
         {
           "repo": "ability_dmsfwk",
           "number": 2123,
-          "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d"
+          "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114136,
+          "passed_at": "2026-10-16T11:53:21+08:00"
         },
         {
           "repo": "multimedia_audio_framework",
           "number": 17444,
-          "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69"
+          "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+          "status": "passed",
+          "done": true,
+          "result_comment_id": 194114111,
+          "passed_at": "2026-10-16T11:53:14+08:00"
         }
       ],
-      "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
       "head_verified": true,
-      "unresolved_subtasks": {
-        "targets": [
-          "new_part_compile",
-          "part_compile"
-        ],
-        "status": "zero_duration_failure_without_stage_details",
-        "classification": "undetermined",
-        "note": "Main gate remains running. IDL failure-cell click returned no log detail. No compiler diagnostic available; do not infer code or environment cause from zero duration alone.",
-        "notify": false
-      },
-      "progress": "dayu200, dayu600 and LiteOS tests passed. x86_64_virt_tdd now passed(IGNORE); dayu200_tdd remains running. Component zero-duration statuses unchanged; no final gate receipt."
+      "progress": "All six current HEADs have successful final gate receipts for the recorded CI; stop polling this group.",
+      "result_comment_ids": [
+        194114104,
+        194114101,
+        194114121,
+        194114115,
+        194114136,
+        194114111
+      ],
+      "completed_at": "2026-10-16T11:53:21+08:00",
+      "resolved_subtasks": {
+        "part_compile": "Final report explicitly marks failed(IGNORE)(skip build); non-blocking.",
+        "new_part_compile": "Final report explicitly marks failed(IGNORE)(skip build); non-blocking.",
+        "master_inner_build": "failed(IGNORE)(联合门禁失败)",
+        "ohos-sdk-codearts-new": "failed(IGNORE)(skip build)"
+      }
     },
     {
       "name": "JS-CSS",
@@ -128,7 +157,7 @@
           "head": "9e2c44a2cca432c7686c396ab9465ea51c1119da"
         }
       ],
-      "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
       "head_verified": true,
       "failure": {
         "fingerprint": "9e2c44a2cca432c7686c396ab9465ea51c1119da:CodeCheck:G.FIO.04:process_internal.py:158,remove_internal.py:82",
@@ -170,7 +199,7 @@
           "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0"
         }
       ],
-      "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
       "head_verified": true,
       "failure": {
         "fingerprint": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6:CodeCheck:G.FIO.05:168:WordsTool.110:10",
@@ -207,7 +236,7 @@
           "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc"
         }
       ],
-      "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
       "head_verified": true,
       "progress": "dayu200, dayu600 and LiteOS tests passed. dayu200_tdd remains running; no final gate receipt."
     },
@@ -229,9 +258,9 @@
           "head": "f0dd0bd6ea0708337120d8044115e87491794532"
         }
       ],
-      "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
       "head_verified": true,
-      "progress": "dayu200, dayu600 and LiteOS tests passed. x86_64_virt_tdd and dayu200_tdd remain running; no final gate receipt."
+      "progress": "dayu200, dayu600 and LiteOS tests passed. x86_64_virt_tdd now passed(IGNORE); dayu200_tdd remains running. No final gate receipt."
     }
   ],
   "other_existing_prs": [
@@ -240,7 +269,7 @@
       "number": 6965,
       "status": "failed_test_trigger",
       "head": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
-      "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
       "done": false,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad165ef64650f998bcd430a/runlist",
       "receipt_id": 194060838,
@@ -289,7 +318,7 @@
       "number": 7048,
       "status": "not_triggered_current_head",
       "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
-      "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
       "done": false,
       "active_gate": false,
       "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically.",
@@ -320,17 +349,17 @@
       "number": 22,
       "status": "not_triggered_current_head",
       "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
-      "last_checked_utc": "2026-10-16T03:48:33.346988+00:00",
+      "last_checked_utc": "2026-10-16T04:18:25.533845+00:00",
       "done": false,
       "active_gate": false,
       "note": "No current-head gate receipt; exclude from running/pass counts and do not trigger automatically.",
       "head_verified": true
     }
   ],
-  "last_snapshot": "monitor/20261016T034833Z/summary.md",
+  "last_snapshot": "monitor/20261016T041825Z/summary.md",
   "notification_policy": "Notify only new actionable findings or changed failure causes; unchanged failures stay quiet.",
   "last_notification": {
     "required": false,
-    "reason": "SA final receipt confirms the already reported EcoTest trigger failure. IDL compilation progressed; no new actionable fault, cause, or required operation."
+    "reason": "IDL passed and is removed from polling. Remaining failures are unchanged; no new actionable fault or required operation."
   }
 }
