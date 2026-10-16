@@ -1,0 +1,142 @@
+[
+  {
+    "repo": "build",
+    "number": 6999,
+    "commit": {
+      "url": "https://gitcode.com/api/v5/repos/openharmony/build/commits/f1a463340efbcaa8089df8f47e50409c14ee9322",
+      "sha": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+      "html_url": "https://gitcode.com/openharmony/build/commit/f1a463340efbcaa8089df8f47e50409c14ee9322",
+      "comments_url": "https://gitcode.com/api/v5/repos/openharmony/build/commits/f1a463340efbcaa8089df8f47e50409c14ee9322/comments",
+      "commit": {
+        "author": {
+          "name": "Smillick",
+          "date": "2026-08-20T17:52:47+08:00",
+          "email": "3185479846@qq.com"
+        },
+        "committer": {
+          "name": "Smillick",
+          "date": "2026-08-21T09:29:01+08:00",
+          "email": "3185479846@qq.com"
+        },
+        "message": "Stabilize package validation inputs\n\n\nPreserve unchanged install metadata, feed validators through stable JSON inputs, and declare their real cfg, seccomp, and whitelist dependencies with stable success markers.\n\nSigned-off-by: Smillick <3185479846@qq.com>\nChange-Id: Id298e0a3dd5e4870df0ef3bd86ad87cd7c7dfd7e\n"
+      },
+      "stats": {
+        "additions": 232,
+        "deletions": 47,
+        "total": 279
+      },
+      "parents": [
+        {
+          "sha": "45c3af2f0c30824953bd69647d23641c14faecc5",
+          "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/commits/45c3af2f0c30824953bd69647d23641c14faecc5"
+        }
+      ],
+      "co_authors": []
+    }
+  },
+  {
+    "repo": "build",
+    "number": 7009,
+    "commit": {
+      "url": "https://gitcode.com/api/v5/repos/openharmony/build/commits/edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "sha": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "html_url": "https://gitcode.com/openharmony/build/commit/edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "comments_url": "https://gitcode.com/api/v5/repos/openharmony/build/commits/edc427a875e5c0642e31c7b3dca4f7a8b0219b71/comments",
+      "commit": {
+        "author": {
+          "name": "Smillick",
+          "date": "2026-08-25T10:02:16+08:00",
+          "email": "3185479846@qq.com"
+        },
+        "committer": {
+          "name": "Smillick",
+          "date": "2026-08-25T10:02:16+08:00",
+          "email": "3185479846@qq.com"
+        },
+        "message": "Fix incremental notice file collection\n\n\nPreserve generated part installation metadata when its semantic content is unchanged. Stage the notice archive before publishing it so stale output timestamps do not repeatedly schedule notice collection and downstream merging.\n\nSigned-off-by: Smillick <3185479846@qq.com>\nChange-Id: I385d19be88725996dac340a31f23309cadb23647\n"
+      },
+      "stats": {
+        "additions": 25,
+        "deletions": 20,
+        "total": 45
+      },
+      "parents": [
+        {
+          "sha": "c55264de68091db1e234872ba847c8cfef80d35a",
+          "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/commits/c55264de68091db1e234872ba847c8cfef80d35a"
+        }
+      ],
+      "co_authors": []
+    }
+  },
+  {
+    "repo": "build",
+    "number": 7006,
+    "commit": {
+      "url": "https://gitcode.com/api/v5/repos/openharmony/build/commits/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+      "sha": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+      "html_url": "https://gitcode.com/openharmony/build/commit/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+      "comments_url": "https://gitcode.com/api/v5/repos/openharmony/build/commits/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29/comments",
+      "commit": {
+        "author": {
+          "name": "Smillick",
+          "date": "2026-08-24T11:06:53+08:00",
+          "email": "3185479846@qq.com"
+        },
+        "committer": {
+          "name": "Smillick",
+          "date": "2026-08-24T11:06:53+08:00",
+          "email": "3185479846@qq.com"
+        },
+        "message": "Stabilize HiSysEvent incremental inputs\n\n\nPreserve the generated HiSysEvent parts configuration and install metadata when their content is unchanged. Declare the selected HiSysEvent YAML files in the depfile so real configuration updates still rebuild the target.\n\nSigned-off-by: Smillick <3185479846@qq.com>\nChange-Id: I2a7c11af3498a5fd01befd8ddc8365210a39996f\n"
+      },
+      "stats": {
+        "additions": 8,
+        "deletions": 2,
+        "total": 10
+      },
+      "parents": [
+        {
+          "sha": "c55264de68091db1e234872ba847c8cfef80d35a",
+          "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/commits/c55264de68091db1e234872ba847c8cfef80d35a"
+        }
+      ],
+      "co_authors": []
+    }
+  },
+  {
+    "repo": "third_party_iptables",
+    "number": 62,
+    "commit": {
+      "url": "https://gitcode.com/api/v5/repos/openharmony/third_party_iptables/commits/5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+      "sha": "5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+      "html_url": "https://gitcode.com/openharmony/third_party_iptables/commit/5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+      "comments_url": "https://gitcode.com/api/v5/repos/openharmony/third_party_iptables/commits/5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c/comments",
+      "commit": {
+        "author": {
+          "name": "Smillick",
+          "date": "2026-09-01T17:31:38+08:00",
+          "email": "3185479846@qq.com"
+        },
+        "committer": {
+          "name": "Smillick",
+          "date": "2026-09-01T17:31:38+08:00",
+          "email": "3185479846@qq.com"
+        },
+        "message": "Avoid rewriting unchanged iptables init aggregates\n\n\nBuffer initext output and write it only when content changes or the file is missing. Preserve extension registration order and existing argument handling.\n\nSigned-off-by: Smillick <3185479846@qq.com>\nChange-Id: Iae45c59faeb583124ac4f819dd4d856d9baa7057\n"
+      },
+      "stats": {
+        "additions": 13,
+        "deletions": 5,
+        "total": 18
+      },
+      "parents": [
+        {
+          "sha": "ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47",
+          "url": "https://api.gitcode.com/api/v5/repos/openharmony/third_party_iptables/commits/ee2df27ef936cf1dac28c2bfb2dd17f6eb71fd47"
+        }
+      ],
+      "co_authors": []
+    }
+  }
+]

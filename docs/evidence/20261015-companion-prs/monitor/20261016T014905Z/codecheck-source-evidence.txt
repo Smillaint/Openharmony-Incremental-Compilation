@@ -1,0 +1,139 @@
+## interface_sdk-js/process_internal.py
+103:     return True
+104: 
+105: 
+106: def remove_path(path):
+107:     if os.path.isdir(path) and not os.path.islink(path):
+108:         shutil.rmtree(path)
+109:     elif os.path.lexists(path):
+110:         os.remove(path)
+111: 
+112: 
+113: def rebase_path(path, base_path):
+114:     absolute_path = os.path.abspath(path)
+115:     try:
+116:         return os.path.relpath(absolute_path, base_path)
+117:     except ValueError:
+118:         return absolute_path
+119: 
+120: 
+121: def escape_depfile_path(path):
+122:     escaped_path = path.replace("\\", "/").replace("$", "$$")
+123:     return escaped_path.replace(" ", "\\ ").replace("#", "\\#")
+124: 
+125: 
+126: def write_if_changed(path, content):
+127:     path = os.path.normpath(path)
+128:     try:
+129:         with open(path, "rb") as file:
+130:             if file.read() == content:
+131:                 return
+132:     except FileNotFoundError:
+133:         pass
+134:     output_parent = os.path.dirname(os.path.abspath(path))
+135:     os.makedirs(output_parent, exist_ok=True)
+136:     file_descriptor, temporary_path = tempfile.mkstemp(
+137:         prefix=f".{os.path.basename(path)}.", dir=output_parent)
+138:     try:
+139:         with os.fdopen(file_descriptor, "wb") as file:
+140:             file.write(content)
+141:         os.replace(temporary_path, path)
+142:     finally:
+143:         if os.path.exists(temporary_path):
+144:             os.remove(temporary_path)
+145: 
+146: 
+147: def stage_output_files(options, staging_path):
+148:     plan = copy_files(options)
+149:     for file_path in plan:
+150:         copy_with_rel_path(Path(file_path), options.input, staging_path)
+151:     return plan
+152: 
+153: 
+154: def update_output(options):
+155:     output_path = os.path.normpath(options.output)
+156:     output_parent = os.path.dirname(os.path.abspath(output_path))
+157:     os.makedirs(output_parent, exist_ok=True)
+158:     staging_path = tempfile.mkdtemp(
+159:         prefix=f".{os.path.basename(output_path)}.", dir=output_parent)
+160:     backup_path = f"{staging_path}.old"
+161:     plan = []
+162:     try:
+163:         os.makedirs(staging_path, exist_ok=True)
+164:         plan = stage_output_files(options, staging_path)
+165:         if directories_equal(staging_path, output_path):
+166:             return plan
+167:         if os.path.lexists(output_path):
+168:             os.replace(output_path, backup_path)
+169:         try:
+170:             os.replace(staging_path, output_path)
+171:             staging_path = None
+172:         except OSError:
+173:             if os.path.lexists(backup_path):
+174:                 os.replace(backup_path, output_path)
+175:             raise
+176:         remove_path(backup_path)
+177:     finally:
+178:         if staging_path and os.path.lexists(staging_path):
+179:             remove_path(staging_path)
+180:     return plan
+## interface_sdk-js/remove_internal.py
+71: def remove_path(path):
+72:     if os.path.isdir(path) and not os.path.islink(path):
+73:         shutil.rmtree(path)
+74:     elif os.path.lexists(path):
+75:         os.remove(path)
+76: 
+77: 
+78: def update_output(input_path, output_path):
+79:     output_path = os.path.normpath(output_path)
+80:     output_parent = os.path.dirname(os.path.abspath(output_path))
+81:     os.makedirs(output_parent, exist_ok=True)
+82:     staging_path = tempfile.mkdtemp(
+83:         prefix=f".{os.path.basename(output_path)}.", dir=output_parent)
+84:     backup_path = f"{staging_path}.old"
+85:     try:
+86:         copy_files_staging(input_path, staging_path)
+87:         if directories_equal(staging_path, output_path):
+88:             return
+89:         if os.path.lexists(output_path):
+90:             os.replace(output_path, backup_path)
+91:         try:
+92:             os.replace(staging_path, output_path)
+93:             staging_path = None
+94:         except OSError:
+95:             if os.path.lexists(backup_path):
+96:                 os.replace(backup_path, output_path)
+97:             raise
+98:         remove_path(backup_path)
+99:     finally:
+100:         if staging_path and os.path.lexists(staging_path):
+101:             remove_path(staging_path)
+## developtools_ace_ets2bundle/sdk_files.py
+155:     manifest.add_argument('--output', help='tracked SDK file list to refresh')
+156:     copy = sub.add_parser('copy')
+157:     copy.add_argument('manifest')
+158:     copy.add_argument('source')
+159:     copy.add_argument('destination')
+160:     copy.add_argument('state')
+161:     args = parser.parse_args()
+162:     if args.command == 'manifest':
+163:         inputs, generated, copies = describe(args.kind, args.source, include_tools=False)
+164:         root = Path(args.root).resolve()
+165:         outputs = generated | set(copies)
+166:         if args.kind == 'plugins' and 'lib/ui-plugins/sysResource.js' in outputs:
+167:             raise RuntimeError('sysResource.js must remain owned by build_ets_sysResource')
+168:         content = json.dumps({'inputs': ['//' + p.relative_to(root).as_posix() for p in sorted(inputs)],
+169:                               'outputs': sorted(outputs)}, indent=2) + '\n'
+170:         if args.output:
+171:             destination = Path(args.output)
+172:             if not destination.is_file() or destination.read_text(encoding='utf-8') != content:
+173:                 destination.write_text(content, encoding='utf-8')
+174:         else:
+175:             print(content, end='')
+## insight-intent source paths already present in ACE parent commit
+arkui-plugins/collectors/ui-collectors/records/annotations/insight-intent-class.ts
+arkui-plugins/collectors/ui-collectors/records/insight-intent-class.ts
+arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts
+arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts
+arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts

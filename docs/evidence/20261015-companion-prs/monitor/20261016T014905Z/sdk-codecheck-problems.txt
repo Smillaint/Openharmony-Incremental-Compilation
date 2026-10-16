@@ -1,0 +1,165 @@
+CodeCheck
+代码仓：
+buildinterface_sdk-js
+PR：
+补齐 SDK 拆分和声明裁剪的增量依赖
+代码检查结果：
+不通过
+创建人：
+SmillySmillick
+触发人员：
+SmillySmillick
+概览代码问题片段扫描
+过滤器
+清除选项
+问题级别
+致命
+0
+严重
+2
+一般
+0
+提示
+0
+问题状态
+未解决
+2
+已解决
+0
+已忽略
+0
+规则
+描述
+文件
+已显示 2 条, 共 2 条
+底线规则问题
+找人解决
+ 收起全部
+process_internal.py
+G.FIO.04 临时文件使用完毕应及时删除
+修改点个数 1
+Temporary file must delete after use,please delete staging_path file.
+ 严重
+未解决
+143
+if os.path.exists(temporary_path):
+144
+os.remove(temporary_path)
+145
+146
+147
+def stage_output_files(options, staging_path):
+148
+plan = copy_files(options)
+149
+for file_path in plan:
+150
+copy_with_rel_path(Path(file_path), options.input, staging_path)
+151
+return plan
+152
+153
+154
+def update_output(options):
+155
+output_path = os.path.normpath(options.output)
+156
+output_parent = os.path.dirname(os.path.abspath(output_path))
+157
+os.makedirs(output_parent, exist_ok=True)
+158
+staging_path = tempfile.mkdtemp(
+159
+prefix=f".{os.path.basename(output_path)}.", dir=output_parent)
+160
+backup_path = f"{staging_path}.old"
+161
+plan = []
+162
+try:
+163
+os.makedirs(staging_path, exist_ok=True)
+164
+plan = stage_output_files(options, staging_path)
+165
+if directories_equal(staging_path, output_path):
+166
+return plan
+167
+if os.path.lexists(output_path):
+168
+os.replace(output_path, backup_path)
+169
+try:
+170
+os.replace(staging_path, output_path)
+171
+staging_path = None
+172
+except OSError:
+173
+if os.path.lexists(backup_path):
+remove_internal.py
+G.FIO.04 临时文件使用完毕应及时删除
+修改点个数 1
+Temporary file must delete after use,please delete staging_path file.
+ 严重
+未解决
+67
+return False
+68
+return True
+69
+70
+71
+def remove_path(path):
+72
+if os.path.isdir(path) and not os.path.islink(path):
+73
+shutil.rmtree(path)
+74
+elif os.path.lexists(path):
+75
+os.remove(path)
+76
+77
+78
+def update_output(input_path, output_path):
+79
+output_path = os.path.normpath(output_path)
+80
+output_parent = os.path.dirname(os.path.abspath(output_path))
+81
+os.makedirs(output_parent, exist_ok=True)
+82
+staging_path = tempfile.mkdtemp(
+83
+prefix=f".{os.path.basename(output_path)}.", dir=output_parent)
+84
+backup_path = f"{staging_path}.old"
+85
+try:
+86
+copy_files_staging(input_path, staging_path)
+87
+if directories_equal(staging_path, output_path):
+88
+return
+89
+if os.path.lexists(output_path):
+90
+os.replace(output_path, backup_path)
+91
+try:
+92
+os.replace(staging_path, output_path)
+93
+staging_path = None
+94
+except OSError:
+95
+if os.path.lexists(backup_path):
+96
+os.replace(backup_path, output_path)
+97
+raise
