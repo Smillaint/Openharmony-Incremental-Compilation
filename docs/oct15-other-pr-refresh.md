@@ -1,10 +1,10 @@
-# 其他历史 PR 更新准备（2026-10-15）
+# 其他历史 PR 更新结果（2026-10-15）
 
-**当前状态：4 条旧 PR 的代码更新已在本地准备并检查，描述正文已确认；GitCode 推送认证尚未完成，远端源码与正文暂未更新。** 没有重新运行产品编译，没有新建 PR，也没有为这些 PR 触发门禁。
+**当前状态：4 条旧 PR 的源码分支均已正常推送，正文已通过浏览器替换为确认后的简短版本。GitCode API 回读的 4 个 HEAD 与发布提交一致，4 条正文与确认稿逐字一致（忽略首尾空白），PR 均保持 open。** 没有重新运行产品编译，没有新建 PR，也没有为这些 PR 触发门禁。
 
-## 需要更新的旧 PR
+## 已更新的旧 PR
 
-| PR / 原 Issue | 本次准备的提交 | 文件与作用 |
+| PR / 原 Issue | 已发布的提交 | 文件与作用 |
 | --- | --- | --- |
 | [build #6982](https://gitcode.com/openharmony/build/merge_requests/6982) / [#4668](https://gitcode.com/openharmony/build/issues/4668) | `de69337b7f99f2328417e27fe591903862c9bbdc` | `config/components/idl_tool/idl.gni`、`idl.py`：补齐 client 头文件、缩写命名、生成目标依赖和递归 import；out 内临时生成、完整检查后按内容发布，支持 clean 后恢复。保留最新上游的 OHOS 工具链分支。 |
 | [build #7046](https://gitcode.com/openharmony/build/merge_requests/7046) / [#4704](https://gitcode.com/openharmony/build/issues/4704) | `04a4ff52bbc53fa8104000748c9e38a16df53ca3` | `ohos/common/binary_install_info.py`、`ohos/packages/modules_install.py`、`ohos/packages/BUILD.gn`、`scripts/util/file_utils.py`：保留 SA 过滤与可选依赖修复，补齐稳定 JSON、模块列表、空 arm64e 输出和两项安装规则输入。包含 JSON 语义比较，避免依赖另一 PR 才能稳定字典顺序。 |
@@ -13,7 +13,9 @@
 
 这些提交保留原 PR 历史，将当前上游作为另一父提交，均可从旧 PR HEAD 正常快进，不需要强推。补丁范围按功能限定，没有把累计分支的全部修复混入单条 PR。DCO 均为 `Signed-off-by: Smillick <3185479846@qq.com>`。
 
-确认后的正文见 [四条旧 PR 描述](pr-drafts/20261015/existing-pr-descriptions.md)。代码推送成功后再替换描述，避免正文与实际 diff 不一致。
+正文见 [四条旧 PR 描述](pr-drafts/20261015/existing-pr-descriptions.md)，只保留触发原因、修改方式和预期结果。原 PR 编号、标题、源分支及 Issue 关联继续沿用。
+
+发布证据：[远端分支核对](../patches/20261015-pr-maintenance/published.json)、[PR HEAD 与正文回读](../patches/20261015-pr-maintenance/descriptions-updated.json)。页面截图：[IDL #6982](evidence/20261015-other-pr-refresh/build-6982.png)、[安装 #7046](evidence/20261015-other-pr-refresh/build-7046.png)、[JS #853](evidence/20261015-other-pr-refresh/jsframework-853.png)、[airscan #22](evidence/20261015-other-pr-refresh/airscan-22.png)。截图中的门禁标签属于历史运行，不代表本次提交已通过新门禁。
 
 ## 暂不追加代码的旧 PR
 
@@ -43,7 +45,7 @@ build #6999 历史分支包含 SA、HAP、旧 IDL 等前置提交。它自身的
 
 已读 build 仓 AGENTS、deps/external_deps、NOTICE 收集策略和 HAP 构建说明；保留公共 target、工具链选择和 NOTICE 产物边界，不更改 API/SDK 版本与既有编译指令。
 
-## 版本与发布恢复
+## 版本与发布记录
 
 本地独立仓：`D:/workspace/repositories/pr-maintenance-20261015/{build,third_party_jsframework,third_party_sane-airscan}`。更新分支为 `fix/pr-<编号>-refresh-20261015`，原有 17 仓源码快照不变。
 
@@ -51,12 +53,8 @@ build #6999 历史分支包含 SA、HAP、旧 IDL 等前置提交。它自身的
 
 更新前完整 bundle 和操作脚本位于 `D:/workspace/archives/20261015-pr-maintenance/`。
 
-当前 Windows 的 GitCode HTTPS 凭据未完成登录，配置的 GitCode SSH 密钥未获远端接受。SSH 远程机可以连接，但当前环境不存在原发布目录和原 GitCode 私钥，因此未继续尝试远程发布。临时准备文件保存在 `/srv/workspace/patch_backups/20261015_pr_maintenance/`；没有写入远程产品源码。
+最初使用当前 Windows SSH 别名连接到了另一套远程环境，因此错误判断原发布凭据不存在。随后根据历史成功脚本 `D:/workspace/archives/20261012-migration/run_remote_script.py` 找回实际发布连接；原发布目录与 SSH 凭据均仍有效，无需重新提供令牌。
 
-在终端完成 GitCode 认证后，执行以下正常推送，不使用 force。若提示远端分支已变化，先重新核对，不能覆盖。
+发布通过原远程环境中的独立目录 `/srv/workspace/patch_backups/20261015_pr_maintenance/` 完成，没有写入远程产品源码。脚本先核对旧 HEAD、祖先关系、DCO 和补丁范围，再按仓正常推送，并用 `ls-remote` 核对四个结果。源码推送后通过浏览器保存四条正文，最后使用公开只读 API 核对 HEAD 和正文。
 
-```powershell
-git -C D:\workspace\repositories\pr-maintenance-20261015\build push --atomic https://gitcode.com/SmillySmillick/build.git fix/pr-6982-refresh-20261015:refs/heads/fix-idl-common-outputs fix/pr-7046-refresh-20261015:refs/heads/fix-install-incremental-metadata
-git -C D:\workspace\repositories\pr-maintenance-20261015\third_party_jsframework push https://gitcode.com/SmillySmillick/third_party_jsframework.git fix/pr-853-refresh-20261015:refs/heads/fix/jsframework-incremental-actions
-git -C D:\workspace\repositories\pr-maintenance-20261015\third_party_sane-airscan push https://gitcode.com/SmillySmillick/third_party_sane-airscan.git fix/pr-22-refresh-20261015:refs/heads/fix/airscan-incremental-action
-```
+本地操作脚本与完整旧版本仍保存在 `D:/workspace/archives/20261015-pr-maintenance/`，发布脚本为 `remote_publish.py`，回读脚本为 `verify_publication.py`。后续发布先核对真实连接与分支状态，不以当前 SSH 别名替代历史发布连接，也不覆盖他人新增提交。

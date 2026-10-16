@@ -1,0 +1,80 @@
+{
+  "time_utc": "2026-10-16T00:10:05.518942+00:00",
+  "results": [
+    {
+      "repo": "build",
+      "number": 6982,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+      "branch": "fix-idl-common-outputs",
+      "local_branch": "fix/pr-6982-refresh-20261015",
+      "before": "4fa37075bfa8a0f3bb36f0394adf54577b0770f2",
+      "commit": "de69337b7f99f2328417e27fe591903862c9bbdc",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "files": [
+        "config/components/idl_tool/idl.gni",
+        "config/components/idl_tool/idl.py"
+      ],
+      "stat": "config/components/idl_tool/idl.gni |  66 +++++++++++++---------\n config/components/idl_tool/idl.py  | 110 ++++++++++++++++++++++++++-----------\n 2 files changed, 119 insertions(+), 57 deletions(-)",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "pushed": true,
+      "verified_remote_sha": "de69337b7f99f2328417e27fe591903862c9bbdc"
+    },
+    {
+      "repo": "build",
+      "number": 7046,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7046",
+      "branch": "fix-install-incremental-metadata",
+      "local_branch": "fix/pr-7046-refresh-20261015",
+      "before": "5be8fa471e23084eb4a884653746a55af554e7f2",
+      "commit": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+      "upstream": "e25cf4a7012bdaba7296b30b703201e87d89e390",
+      "files": [
+        "ohos/common/binary_install_info.py",
+        "ohos/packages/BUILD.gn",
+        "ohos/packages/modules_install.py",
+        "scripts/util/file_utils.py"
+      ],
+      "stat": "ohos/common/binary_install_info.py |  5 +++--\n ohos/packages/BUILD.gn             |  2 ++\n ohos/packages/modules_install.py   | 17 ++++++++++-------\n scripts/util/file_utils.py         | 16 +++-------------\n 4 files changed, 18 insertions(+), 22 deletions(-)",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "pushed": true,
+      "verified_remote_sha": "04a4ff52bbc53fa8104000748c9e38a16df53ca3"
+    },
+    {
+      "repo": "third_party_jsframework",
+      "number": 853,
+      "url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853",
+      "branch": "fix/jsframework-incremental-actions",
+      "local_branch": "fix/pr-853-refresh-20261015",
+      "before": "a280a42fe7f73d59528ecbde04f319cc61e5de0b",
+      "commit": "4172098b9b45baf9b37fa3be021bf1ff6bea6359",
+      "upstream": "a21a6f36694c08ac0b83d077577526a7ca086d57",
+      "files": [
+        "BUILD.gn",
+        "js_framework_build.sh",
+        "test/ut/runtime.ts"
+      ],
+      "stat": "BUILD.gn              | 43 ++++++++++++++++++++++++++++++-----\n js_framework_build.sh | 63 +++++++++++++++++++++++++++++++--------------------\n test/ut/runtime.ts    |  9 ++++++++\n 3 files changed, 84 insertions(+), 31 deletions(-)",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "pushed": true,
+      "verified_remote_sha": "4172098b9b45baf9b37fa3be021bf1ff6bea6359"
+    },
+    {
+      "repo": "third_party_sane-airscan",
+      "number": 22,
+      "url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+      "branch": "fix/airscan-incremental-action",
+      "local_branch": "fix/pr-22-refresh-20261015",
+      "before": "37de4f97f4f4be0f19cda483b7202fcd34efc28a",
+      "commit": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+      "upstream": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+      "files": [
+        "BUILD.gn",
+        "patch_install.py"
+      ],
+      "stat": "BUILD.gn         | 130 ++++++++++++++++++++++++++-----------------------\n patch_install.py | 146 ++++++++++++++++++++++++++++++++++++++++++++-----------\n 2 files changed, 188 insertions(+), 88 deletions(-)",
+      "dco": "Signed-off-by: Smillick <3185479846@qq.com>",
+      "pushed": true,
+      "verified_remote_sha": "142326aff6b6bc24785d49b860c1bf006bd3aa83"
+    }
+  ]
+}
