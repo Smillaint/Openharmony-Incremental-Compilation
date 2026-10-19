@@ -1,0 +1,31 @@
+[
+  {
+    "path": "ets1.2/compat/package.json",
+    "blob_sha": "e34e23f08a2760198db7138b1af62c41d0909327",
+    "url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/blob/master/ets1.2/compat/package.json",
+    "build_common_dependency": {
+      "devDependencies": "../build-common"
+    }
+  },
+  {
+    "path": "ets1.2/common/package.json",
+    "blob_sha": "fd88a270f9b9e495c34df84d5b6958318bf8363d",
+    "url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/blob/master/ets1.2/common/package.json",
+    "build_common_dependency": {
+      "devDependencies": "../build-common"
+    }
+  },
+  {
+    "path": "ets1.2/interop/package.json",
+    "blob_sha": "0dd3f0efdce83ba7bafae96963617849fa974bf8",
+    "url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/blob/master/ets1.2/interop/package.json",
+    "build_common_dependency": {
+      "dependencies": "../build-common"
+    }
+  },
+  {
+    "path": "ets1.2/build-common/tsconfig.json",
+    "blob_sha": "7b1bccf0a4dc9fd8797bb5993372cb5a0c7e7a3f",
+    "url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/blob/master/ets1.2/build-common/tsconfig.json"
+  }
+]

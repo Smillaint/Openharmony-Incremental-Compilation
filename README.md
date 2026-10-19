@@ -2,6 +2,8 @@
 
 本仓库记录 OpenHarmony `rk3568/phone` 增量构建中重复 Action 的根因、代码修改、PR 与验证证据。
 
+[2026-10-18 #7006 门禁排查](docs/oct18-pr7006-sdk-gate.md)：**自动重跑的 SDK 编译因 `@koalaui/build-common/tsconfig.json` 不可解析而失败；HiSysEvent 源码保持原版本。** 静态检查及三项冒烟通过，依赖准备问题先保留，未重触发门禁或发送检视回复。
+
 [2026-10-18 IDL 编码兼容复核](docs/oct18-idl-encoding-compatibility.md)：**原工具支持非 UTF-8 注释，新增扫描的严格解码会造成回退，已改为按字节收集 import 并更新 #6982，DCO 通过。** 原工具接受的 9 个样例生成结果逐字节一致，重复执行、缺失输出恢复及递归依赖检查通过；另 5 个原本非法的样例仍失败。完整产品构建和新提交门禁未运行，检视回复尚未发送。
 
 [2026-10-18 检视整改与原 PR 更新](docs/oct18-review-fixes.md)：**ArkUI-X、外部签名兼容、JSON 自愈及 IDL 注释已修订，7 条原 PR 已更新，DCO 全部通过。** 重复文件保持一致，11 项隔离检查通过；新提交的产品构建与门禁尚未验证。修改前 Git 标签、逐 PR 补丁和 [8 条待确认回复](docs/pr-drafts/20261018-ringking0-replies.md)均已保存。

@@ -1,0 +1,54 @@
+9449: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46:
+9450: [2026/10/19 10:04:48.344 GMT+08:00]
+9451: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] command failed: "***//harmony_code/codearts_workspace/prebuilts/build-tools/linux-x86/bin/ninja -w dupbuild=warn -C ***//harmony_code/codearts_workspace/out/sdk build_ohos_sdk" , ret_code: 1
+9452: [2026/10/19 10:04:48.344 GMT+08:00]
+9453: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46:
+9454: [2026/10/19 10:04:48.344 GMT+08:00]
+9455: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] [3299/59627] ACTION //developtools/ace_ets2bundle/ets1.2/interop:interop_compile(//build/toolchain/linux:clang_x64)
+9456: [2026/10/19 10:04:48.344 GMT+08:00]
+9457: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] FAILED: [code=1] clang_x64/obj/developtools/ace_ets2bundle/ets1.2/interop/interop_compile.stamp
+9458: [2026/10/19 10:04:48.344 GMT+08:00]
+9459: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] /usr/bin/env ../../developtools/ace_ets2bundle/ets1.2/gn/script/npm.py --stamp clang_x64/obj/developtools/ace_ets2bundle/ets1.2/interop/interop_compile.stamp --depfile clang_x64/gen/developtools/ace_ets2bundle/ets1.2/interop/interop_compile.d --depfile-deps ../../developtools/ace_ets2bundle/ets1.2/interop/build/lib/src/interop/index.js --project-path ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2 --panda-sdk-path ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2/libarkts/sdk --run-tasks compile:interop
+9460: [2026/10/19 10:04:48.344 GMT+08:00]
+9461: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm args: ['run', 'compile:interop']; project: ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2:
+9462: [2026/10/19 10:04:48.344 GMT+08:00]
+9463: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA]
+9464: [2026/10/19 10:04:48.344 GMT+08:00]
+9465: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] > root@ compile:interop ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2
+9466: [2026/10/19 10:04:48.344 GMT+08:00]
+9467: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] > npm run compile --prefix interop
+9468: [2026/10/19 10:04:48.344 GMT+08:00]
+9469: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA]
+9470: [2026/10/19 10:04:48.344 GMT+08:00]
+9471: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA]
+9472: [2026/10/19 10:04:48.344 GMT+08:00]
+9473: [2026/10/19 10:04:48.344 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] > @koalaui/interop@1.7.14 compile ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2/interop
+9474: [2026/10/19 10:04:48.344 GMT+08:00]
+9475: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] > tsc -b .
+9476: [2026/10/19 10:04:48.345 GMT+08:00]
+9477: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA]
+9478: [2026/10/19 10:04:48.345 GMT+08:00]
+9479: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] ../compat/tsconfig.json(2,16): error TS6053: File '@koalaui/build-common/tsconfig.json' not found.
+9480: [2026/10/19 10:04:48.345 GMT+08:00]
+9481: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] ../common/tsconfig.json(2,16): error TS6053: File '@koalaui/build-common/tsconfig.json' not found.
+9482: [2026/10/19 10:04:48.345 GMT+08:00]
+9483: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm args: ['run', 'compile:interop']; project: ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2:
+9484: [2026/10/19 10:04:48.345 GMT+08:00]
+9485: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm ERR! code ELIFECYCLE
+9486: [2026/10/19 10:04:48.345 GMT+08:00]
+9487: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm ERR! errno 1
+9488: [2026/10/19 10:04:48.345 GMT+08:00]
+9489: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm ERR! @koalaui/interop@1.7.14 compile: `tsc -b .`
+9490: [2026/10/19 10:04:48.345 GMT+08:00]
+9491: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm ERR! Exit status 1
+9492: [2026/10/19 10:04:48.345 GMT+08:00]
+9493: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm ERR!
+9494: [2026/10/19 10:04:48.345 GMT+08:00]
+9495: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm ERR! Failed at the @koalaui/interop@1.7.14 compile script.
+9496: [2026/10/19 10:04:48.345 GMT+08:00]
+9497: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+9498: [2026/10/19 10:04:48.345 GMT+08:00]
+9499: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA]
+9500: [2026/10/19 10:04:48.345 GMT+08:00]
+9501: [2026/10/19 10:04:48.345 GMT+08:00] 2026-10-19 10:04:46: [91m[OHOS ERROR][0m [NINJA] npm ERR! A complete log of this run can be found in:
+9502: [2026/10/19 10:04:48.345 GMT+08:00]

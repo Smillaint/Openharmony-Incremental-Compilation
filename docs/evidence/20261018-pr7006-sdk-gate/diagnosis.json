@@ -1,0 +1,25 @@
+{
+  "checked_at_utc": "2026-10-19T03:02:40.156010+00:00",
+  "pr_url": "https://gitcode.com/openharmony/build/merge_requests/7006",
+  "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+  "event_id": "6ad576e764650f998bfeab08",
+  "event_status": "close",
+  "event_result": "failed",
+  "run_url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad576e764650f998bfeab08/runlist",
+  "auto_triggered": true,
+  "manual_triggered": false,
+  "source_changed": false,
+  "review_replies_posted": false,
+  "classification": "sdk_dependency_preparation_failure_not_pr7006_regression",
+  "error": "TS6053: File '@koalaui/build-common/tsconfig.json' not found",
+  "stage": "Ninja ets1.2/interop/interop_compile -> npm run compile:interop -> tsc -b .",
+  "first_error_lines": [
+    9479,
+    9481
+  ],
+  "log_url": "https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261019-1-00249/log/build.log.zip",
+  "log_sha256": "fa8df39a3108d4dc7c50f632016a1435e1189f6ec30c4e15ef97b902529ad43d",
+  "archive_format": "tar despite .zip suffix",
+  "boundary": "No CI workspace access; prebuilt contents, install state and links cannot be distinguished from the published log. No usable independent SDK control run was obtained.",
+  "next_action": "Defer to gate dependency preparation; inspect build-common resolution in the failed SDK workspace before retrying."
+}

@@ -809,12 +809,32 @@
     {
       "repo": "build",
       "number": 7006,
-      "status": "passed",
+      "previous_gate": {
+        "repo": "build",
+        "number": 7006,
+        "status": "passed",
+        "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+        "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
+        "done": true,
+        "result_comment_id": 186383963,
+        "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
+      },
       "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
-      "last_checked_utc": "2026-10-16T01:56:26.812952+00:00",
-      "done": true,
-      "result_comment_id": 186383963,
-      "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
+      "status": "failed_sdk_dependency_preparation",
+      "done": false,
+      "active_gate": false,
+      "head_verified": true,
+      "final_report_pending": false,
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad576e764650f998bfeab08/runlist",
+      "last_checked_utc": "2026-10-19T03:02:40.156010+00:00",
+      "codecheck_status": "passed",
+      "failure": {
+        "classification": "sdk_dependency_preparation_failure_not_pr7006_regression",
+        "details": "TS6053: File '@koalaui/build-common/tsconfig.json' not found",
+        "stage": "Ninja ets1.2/interop/interop_compile -> npm run compile:interop -> tsc -b .",
+        "evidence": "../20261018-pr7006-sdk-gate/diagnosis.json"
+      },
+      "progress": "Automatic expiry rebuild failed in SDK Koala dependency resolution; defer environment/dependency preparation, no source change or manual retry."
     },
     {
       "repo": "third_party_iptables",
@@ -850,6 +870,6 @@
   "maintenance_evidence": "../20261018-review-fixes/publication-verification.json",
   "last_manual_action_utc": "2026-10-19T02:24:14.793701+00:00",
   "manual_action_evidence": "../20261016-manual-gate-retrigger/receipts.json",
-  "last_manual_snapshot": "../20261018-idl-encoding/publication-verification.json",
+  "last_manual_snapshot": "../20261018-pr7006-sdk-gate/diagnosis.json",
   "idl_encoding_evidence": "../20261018-idl-encoding/publication-verification.json"
 }

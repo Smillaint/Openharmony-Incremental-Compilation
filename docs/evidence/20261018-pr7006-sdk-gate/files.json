@@ -1,0 +1,74 @@
+[
+  {
+    "sha": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+    "filename": "hb/util/loader/load_ohos_build.py",
+    "additions": 5,
+    "deletions": 1,
+    "blob_id": "5cac80994b764ebdd47aa37319a24b45c6c3b7c0",
+    "blob_url": "https://gitcode.com/openharmony/build/blob/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29/hb/util/loader/load_ohos_build.py",
+    "raw_url": "https://raw.gitcode.com/openharmony/build/raw/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29/hb/util/loader/load_ohos_build.py",
+    "patch": {
+      "diff": "@@ -787,12 +787,16 @@ def process_other_parts(part_name, parts_config_dict, parts_info_output_path):\n         parts_info_file = os.path.join(parts_info_output_path,\n                                        part_name + \".json\")\n         if part_name == 'hisysevent_config':\n+            check_changes = True\n             parts_info_file = os.path.join(parts_info_output_path,\n                                            'hisysevent_configs' + \".json\")\n+        else:\n+            check_changes = False\n         if part_name == 'parts_inner_kits_info':\n             parts_info_file = os.path.join(parts_info_output_path,\n                                            'inner_kits_info' + \".json\")\n-        write_json_file(parts_info_file, parts_info)\n+        write_json_file(parts_info_file, parts_info,\n+                        check_changes=check_changes)\n         LogUtil.hb_info(\"generate '{}' info to '{}'\".format(part_name,\n                                                             parts_info_file), mode=Config.log_mode)\n \n",
+      "old_path": "hb/util/loader/load_ohos_build.py",
+      "new_path": "hb/util/loader/load_ohos_build.py",
+      "a_mode": "100644",
+      "b_mode": "100644",
+      "new_file": false,
+      "renamed_file": false,
+      "deleted_file": false,
+      "too_large": false,
+      "added_lines": 5,
+      "removed_lines": 1
+    },
+    "target_branch": "master",
+    "source_branch": "fix-hisysevent-incremental-build",
+    "source_project": {
+      "id": 10536272,
+      "full_name": "SmillySmillick/build",
+      "human_name": "SmillySmillick / build",
+      "path": "build"
+    },
+    "target_project": {
+      "id": 4422307,
+      "full_name": "openharmony/build",
+      "human_name": "OpenHarmony / build",
+      "path": "build"
+    }
+  },
+  {
+    "sha": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+    "filename": "ohos/hisysevent/hisysevent_process.py",
+    "additions": 3,
+    "deletions": 1,
+    "blob_id": "bd21745ab3f9f41673f9a36b941268a4e6c46a0c",
+    "blob_url": "https://gitcode.com/openharmony/build/blob/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29/ohos/hisysevent/hisysevent_process.py",
+    "raw_url": "https://raw.gitcode.com/openharmony/build/raw/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29/ohos/hisysevent/hisysevent_process.py",
+    "patch": {
+      "diff": "@@ -101,12 +101,14 @@ def main(argv):\n                                                     src_part_list,\n                                                     args.source_root_dir,\n                                                     args.gn_root_build_dir)\n+    depfiles.extend(hisysevent_config_files)\n \n     _output_path = os.path.dirname(args.hisysevent_install_info_file)\n     install_info_list = _get_install_info(hisysevent_config_files,\n                                           _output_path,\n                                           args.config_install_dest_dir)\n-    write_json_file(args.hisysevent_install_info_file, install_info_list)\n+    write_json_file(args.hisysevent_install_info_file, install_info_list,\n+                    check_changes=True)\n     build_utils.write_depfile(args.depfile, args.hisysevent_install_info_file,\n                               depfiles)\n \n",
+      "old_path": "ohos/hisysevent/hisysevent_process.py",
+      "new_path": "ohos/hisysevent/hisysevent_process.py",
+      "a_mode": "100755",
+      "b_mode": "100755",
+      "new_file": false,
+      "renamed_file": false,
+      "deleted_file": false,
+      "too_large": false,
+      "added_lines": 3,
+      "removed_lines": 1
+    },
+    "target_branch": "master",
+    "source_branch": "fix-hisysevent-incremental-build",
+    "source_project": {
+      "id": 10536272,
+      "full_name": "SmillySmillick/build",
+      "human_name": "SmillySmillick / build",
+      "path": "build"
+    },
+    "target_project": {
+      "id": 4422307,
+      "full_name": "openharmony/build",
+      "human_name": "OpenHarmony / build",
+      "path": "build"
+    }
+  }
+]
