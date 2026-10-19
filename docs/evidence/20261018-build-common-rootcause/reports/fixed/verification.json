@@ -1,0 +1,103 @@
+{
+  "run_directory": "/srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z",
+  "cases": [
+    {
+      "name": "seed-old-lock",
+      "returncode": 0,
+      "seconds": 2.37,
+      "errors": [],
+      "state": {
+        "lexists": false,
+        "exists": false,
+        "is_symlink": false,
+        "link": null,
+        "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/node_modules/@koalaui/build-common",
+        "tsconfig_exists": false,
+        "lock_has_build_common": false,
+        "lock_sha256": "2e208772f97a20fe077a14d035cd0bcd84bc5129826dc81c026e2c9ce8d23c7d",
+        "resolve_rc": 1,
+        "resolve_stdout": "",
+        "resolve_stderr": "Cannot find module '@koalaui/build-common/tsconfig.json'\nRequire stack:\n- /srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/[eval]\n"
+      }
+    },
+    {
+      "name": "install-current-source-with-old-lock",
+      "returncode": 0,
+      "seconds": 1.27,
+      "errors": [],
+      "state": {
+        "lexists": false,
+        "exists": false,
+        "is_symlink": false,
+        "link": null,
+        "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/node_modules/@koalaui/build-common",
+        "tsconfig_exists": false,
+        "lock_has_build_common": false,
+        "lock_sha256": "2e208772f97a20fe077a14d035cd0bcd84bc5129826dc81c026e2c9ce8d23c7d",
+        "resolve_rc": 1,
+        "resolve_stdout": "",
+        "resolve_stderr": "Cannot find module '@koalaui/build-common/tsconfig.json'\nRequire stack:\n- /srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/[eval]\n"
+      },
+      "compile": {
+        "name": "compile-with-old-lock",
+        "returncode": 1,
+        "seconds": 1.67,
+        "errors": [
+          "../compat/tsconfig.json(2,16): error TS6053: File '@koalaui/build-common/tsconfig.json' not found.",
+          "../common/tsconfig.json(2,16): error TS6053: File '@koalaui/build-common/tsconfig.json' not found."
+        ]
+      }
+    },
+    {
+      "name": "install-fixed-source-with-old-lock",
+      "returncode": 0,
+      "seconds": 1.29,
+      "errors": [],
+      "state": {
+        "lexists": true,
+        "exists": true,
+        "is_symlink": true,
+        "link": "../../build-common",
+        "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/build-common",
+        "tsconfig_exists": true,
+        "lock_has_build_common": true,
+        "lock_sha256": "029264b5736dedeaba01c6c9154e0dbaf12ccd562f94ab7b6ee00701fcc6676e",
+        "resolve_rc": 0,
+        "resolve_stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/build-common/tsconfig.json\n",
+        "resolve_stderr": ""
+      },
+      "compile": {
+        "name": "compile-fixed-with-old-lock",
+        "returncode": 0,
+        "seconds": 2.62,
+        "errors": []
+      }
+    },
+    {
+      "name": "install-current-source-without-lock",
+      "returncode": 0,
+      "seconds": 2.26,
+      "errors": [],
+      "state": {
+        "lexists": true,
+        "exists": true,
+        "is_symlink": true,
+        "link": "../../build-common",
+        "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/build-common",
+        "tsconfig_exists": true,
+        "lock_has_build_common": true,
+        "lock_sha256": "029264b5736dedeaba01c6c9154e0dbaf12ccd562f94ab7b6ee00701fcc6676e",
+        "resolve_rc": 0,
+        "resolve_stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/build-common/tsconfig.json\n",
+        "resolve_stderr": ""
+      },
+      "compile": {
+        "name": "compile-without-lock",
+        "returncode": 0,
+        "seconds": 0.61,
+        "errors": []
+      }
+    }
+  ],
+  "fixture_boundary": "Synthetic older local-package graph; not the unavailable CI package-lock.json."
+}

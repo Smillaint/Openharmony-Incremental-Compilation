@@ -1,0 +1,27 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "build:interop": "npm run build --prefix interop",
+    "compile:interop": "npm run compile --prefix interop",
+    "panda:sdk:reinstall:libarkts": "npm run panda:sdk:reinstall --prefix libarkts",
+    "regenerate:libarkts": "npm run regenerate --prefix libarkts",
+    "compile:js:libarkts": "npm run compile:js:lib --prefix libarkts"
+  },
+  "devDependencies": {
+    "@idlizer/arktscgen": "./arktscgen",
+    "@koalaui/interop": "./interop",
+    "@koalaui/libarkts": "./libarkts",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "node-addon-api": "^6.1.0",
+    "node-api-headers": "0.0.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.29.0",
+    "tslib": "^2.3.1",
+    "typescript": "4.9.5",
+    "commander": "10.0.1",
+    "json5": "2.2.3"
+  }
+}

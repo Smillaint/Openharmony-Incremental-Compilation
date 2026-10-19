@@ -1,0 +1,25 @@
+From 92f3fe9598c24f6118774101968176b20fc7b342 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Sun, 18 Oct 2026 20:56:42 -0700
+Subject: [PATCH] Declare build-common as a root build dependency
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ets1.2/package.json | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/ets1.2/package.json b/ets1.2/package.json
+index d59ca190..4ca81f38 100644
+--- a/ets1.2/package.json
++++ b/ets1.2/package.json
+@@ -10,6 +10,7 @@
+   },
+   "devDependencies": {
+     "@idlizer/arktscgen": "./arktscgen",
++    "@koalaui/build-common": "./build-common",
+     "@koalaui/interop": "./interop",
+     "@koalaui/libarkts": "./libarkts",
+     "@rollup/plugin-commonjs": "^25.0.0",
+-- 
+2.51.0.windows.1
+

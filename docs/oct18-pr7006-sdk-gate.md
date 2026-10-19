@@ -2,6 +2,8 @@
 
 [build #7006](https://gitcode.com/openharmony/build/merge_requests/7006) 本轮阻塞在 SDK 的 Koala TypeScript 依赖解析：`@koalaui/build-common/tsconfig.json` 不可解析，报 `TS6053`。后续核对门禁实物补丁和安装日志，未发现 PR 改写 npm 配置或使安装步骤跳过的证据。依赖为什么在安装调用后仍不可解析，根因尚未查明，不能仅凭缺文件就断言是环境故障。不修改 #7006，不重新触发门禁。
 
+后续已在门禁精确 ace 版本上[复现并修复 npm 6 旧锁文件漏装 build-common](oct18-build-common-dependency.md)，一行直接依赖修复追加到 ace #7210。失败 CI 节点的锁文件与链接未取得，因此该机制仍不能代替当次实物根因；#7006 与 #7210 的 Issue 分组不同，单独重跑 #7006 不会自动带入这条尚未合入的 ace 修复。
+
 本地记录日期为 America/Los_Angeles 的 2026-10-18，以下执行时间均为北京时间 2026-10-19。
 
 ## 当前提交及门禁

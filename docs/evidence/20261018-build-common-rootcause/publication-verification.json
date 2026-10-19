@@ -1,0 +1,30 @@
+{
+  "checked_utc": "2026-10-19T03:57:51.090092+00:00",
+  "pr": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/merge_requests/7210",
+  "state": "open",
+  "head": "92f3fe9598c24f6118774101968176b20fc7b342",
+  "before": "e76639ebbd94be09cd2038c9ae377dfca1724333",
+  "dco_signed": true,
+  "title_unchanged": true,
+  "body_unchanged": true,
+  "labels": [
+    {
+      "id": 130,
+      "color": "#1083d6",
+      "name": "waiting_on_author",
+      "repository_id": 4401094,
+      "created_at": "2025-04-22T20:34:00+08:00",
+      "updated_at": "2026-10-16T09:24:04+08:00"
+    },
+    {
+      "id": 87,
+      "color": "#20c22e",
+      "name": "dco检查成功",
+      "repository_id": 4401094,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-10-16T09:24:11+08:00"
+    }
+  ],
+  "gate_triggered_by_this_work": false,
+  "review_reply_posted": false
+}

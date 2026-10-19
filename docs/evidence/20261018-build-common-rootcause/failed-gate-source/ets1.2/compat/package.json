@@ -1,0 +1,43 @@
+{
+    "name": "@koalaui/compat",
+    "version": "1.7.14+devel",
+    "description": "",
+    "main": "build/src/index.js",
+    "types": "build/src/index.d.ts",
+    "files": [
+        "build/src/**/*.js",
+        "build/src/**/*.d.ts",
+        "src/**/*"
+    ],
+    "imports": {
+        "#platform": {
+            "ark": "./build/src/ohos/index.js",
+            "ios": "./build/src/typescript/index.js",
+            "browser": "./build/src/typescript/index.js",
+            "node": "./build/src/typescript/index.js",
+            "default": "./build/src/typescript/index.js"
+        }
+    },
+    "exports": {
+        ".": "./build/src/index.js"
+    },
+    "scripts": {
+        "clean": "rimraf build dist",
+        "compile": "tsc -b .",
+        "compile:release": "tsc -b .",
+        "build": "node ../fast-arktsc --config ./ui2abcconfig.json --compiler ../incremental/tools/panda/arkts/ui2abc --link-name ./build/compat.abc --simultaneous && PANDA_SDK_PATH=${PANDA_SDK_PATH:=../incremental/tools/panda/node_modules/@panda/sdk} ninja ${NINJA_OPTIONS} -f build/abc/build.ninja",
+        "format:src:ts": "npx prettier --config ../.prettierrc --write \"./src/**/*.ts\" \"!./src/**/arkts\""
+    },
+    "keywords": [],
+    "dependencies": {},
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "typescript": "4.9.5",
+        "@koalaui/build-common": "../build-common",
+        "@typescript-eslint/eslint-plugin": "^8.44.1",
+        "@typescript-eslint/parser": "^8.44.1",
+        "eslint": "9.28.0",
+        "eslint-plugin-unused-imports": "^4.2.0",
+        "source-map-support": "^0.5.21"
+    }
+}

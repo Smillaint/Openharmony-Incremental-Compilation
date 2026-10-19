@@ -309,17 +309,31 @@
         {
           "repo": "developtools_ace_ets2bundle",
           "number": 7210,
-          "head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
+          "head": "92f3fe9598c24f6118774101968176b20fc7b342",
           "previous_status": "failed_static_check",
-          "status": "failed_static_check",
-          "previous_head": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+          "status": "not_triggered_current_head",
+          "previous_head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
           "done": false,
-          "codecheck_status": "failed_words_only",
+          "codecheck_status": "not_run_current_head",
           "active_gate": false,
           "final_report_pending": false,
-          "last_checked_utc": "2026-10-19T01:36:35.990035+00:00",
-          "result_comment_id": 194414993,
-          "result_at": "2026-10-19T09:22:42+08:00"
+          "last_checked_utc": "2026-10-19T03:57:51.090092+00:00",
+          "previous_revision": {
+            "repo": "developtools_ace_ets2bundle",
+            "number": 7210,
+            "head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
+            "previous_status": "failed_static_check",
+            "status": "failed_static_check",
+            "previous_head": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+            "done": false,
+            "codecheck_status": "failed_words_only",
+            "active_gate": false,
+            "final_report_pending": false,
+            "last_checked_utc": "2026-10-19T01:36:35.990035+00:00",
+            "result_comment_id": 194414993,
+            "result_at": "2026-10-19T09:22:42+08:00"
+          },
+          "source_update_evidence": "../20261018-build-common-rootcause/publication-verification.json"
         },
         {
           "repo": "graphic_graphic_3d",
@@ -833,9 +847,10 @@
         "details": "TS6053: File '@koalaui/build-common/tsconfig.json' not found",
         "stage": "Ninja ets1.2/interop/interop_compile -> npm run compile:interop -> tsc -b .",
         "evidence": "../20261018-pr7006-sdk-gate/diagnosis.json",
-        "npm_audit_evidence": "../20261018-pr7006-npm-audit/verification.json"
+        "npm_audit_evidence": "../20261018-pr7006-npm-audit/verification.json",
+        "dependency_reproduction_evidence": "../20261018-build-common-rootcause/diagnosis.json"
       },
-      "progress": "Actual gate patch does not change npm configuration; ets1.2 npm installation invocation is logged. Six metadata branches retain payloads. Missing dependency root cause remains unconfirmed; no source change or manual retry."
+      "progress": "An npm6 stale-lock mechanism was reproduced against the exact ACE source in the failed manifest and fixed in ACE #7210. Actual CI lockfile and links remain unavailable; #7006 unchanged, no gate retry."
     },
     {
       "repo": "third_party_iptables",
@@ -872,5 +887,6 @@
   "last_manual_action_utc": "2026-10-19T02:24:14.793701+00:00",
   "manual_action_evidence": "../20261016-manual-gate-retrigger/receipts.json",
   "last_manual_snapshot": "../20261018-pr7006-sdk-gate/diagnosis.json",
-  "idl_encoding_evidence": "../20261018-idl-encoding/publication-verification.json"
+  "idl_encoding_evidence": "../20261018-idl-encoding/publication-verification.json",
+  "build_common_dependency_evidence": "../20261018-build-common-rootcause/diagnosis.json"
 }

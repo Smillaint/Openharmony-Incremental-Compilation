@@ -1,0 +1,86 @@
+{
+    "name": "@koalaui/libarkts",
+    "version": "1.7.14+devel",
+    "main": "./lib/libarkts.js",
+    "typesVersions": {
+        "*": {
+            "*": [
+                "./lib/types/src/index.d.ts"
+            ]
+        }
+    },
+    "exports": {
+        ".": "./lib/libarkts.js",
+        "./plugins/*": "./lib/plugins/*.js"
+    },
+    "files": [
+        "lib/**/*",
+        "build/**/*",
+        "plugins/build/src/**/*"
+    ],
+    "config": {
+        "panda_sdk_path": "../incremental/tools/panda/node_modules/@panda/sdk",
+        "panda_sdk_version": "next"
+    },
+    "dependencies": {
+        "@koalaui/build-common": "../build-common",
+        "@koalaui/compat": "../compat",
+        "@koalaui/common": "../common",
+        "@koalaui/interop": "../interop",
+        "node-addon-api": "^6.1.0",
+        "commander": "10.0.1"
+    },
+    "devDependencies": {
+        "tslib": "^2.3.1",
+        "rollup": "^3.29.0",
+        "@rollup/plugin-commonjs": "^25.0.0",
+        "@rollup/plugin-node-resolve": "^15.3.0",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "tsconfig-paths": "^4.2.0",
+        "rimraf": "^3.0.2",
+        "mocha": "^9.2.2",
+        "node-addon-api": "6.1.0",
+        "node-api-headers": "0.0.5"
+    },
+    "scripts": {
+        "clean": "../node_modules/.bin/rimraf generated build native/mingw_build native/build* ./.rollup.cache tsconfig.tsbuildinfo lib",
+        "clean:plugins": "rimraf plugins/build",
+        "compile:koala:interop": "npm run --prefix ../interop compile",
+        "compile:meson": "cd native && meson setup build && meson compile -C build",
+        "compile:meson:mingw": "cd native && meson setup --strip --cross-file ./mingw.cross mingw_build && meson install -C mingw_build",
+        "crosscompile:meson": "cd native && CXX=clang++ meson setup -D cross_compile=true build && CXX=clang++ meson compile -C build",
+        "copy:.node": "mkdir -p ./build/native/build && cp ./native/build/es2panda_*.node ./build/native/build",
+        "compile:native": "npm run compile:koala:interop && npm run compile:meson && npm run copy:.node",
+        "crosscompile:native": "npm run compile:koala:interop && npm run crosscompile:meson && npm run copy:.node",
+        "compile": "npm run regenerate && npm run compile:native && npm run compile:js",
+        "compile:current": "npm run regenerate:current && npm run compile:native && npm run compile:js",
+        "compile:release": "npm run regenerate && npm run crosscompile:native && npm run compile:js",
+        "compile:js": "rm -rf lib/ && ../node_modules/.bin/rollup -c rollup.libarkts.mjs && ../node_modules/.bin/rollup -c rollup.es2panda.mjs",
+        "compile:js:lib": "rm -rf lib/ && ../node_modules/.bin/rollup -c rollup.libarkts.mjs",
+        "compile:plugins": "../node_modules/.bin/rollup -c ./rollup.printer-plugin.mjs",
+        "direct": "fast-arktsc --config arktsconfig.json --compiler ../incremental/tools/panda/arkts/ui2abc --link-name ./build/abc/main.abc && ninja -f build/abc/build.ninja",
+        "simultaneous": "mkdir -p build/abc && bash ../incremental/tools/panda/arkts/ui2abc --simultaneous --arktsconfig arktsconfig.json --output ./build/abc/main.abc:./build/abc/library.abc plugins/input/main.ets:plugins/input/library.ets",
+        "run": "npm run compile && npm run compile:plugins && npm run simultaneous",
+        "run:current": "npm run compile:current && npm run compile:plugins && npm run simultaneous",
+        "run:memo": "npm run compile && npm run compile:plugins && npm run compile --prefix ../memo-plugin-ng && npm run memo",
+        "run:abc": "$npm_package_config_panda_sdk_path/linux_host_tools/bin/ark --load-runtimes=ets --boot-panda-files=$npm_package_config_panda_sdk_path/ets/etsstdlib.abc ./main.abc main.ETSGLOBAL::main",
+        "mocha": "PANDA_SDK_PATH=${PANDA_SDK_PATH:=$npm_package_config_panda_sdk_path} TS_NODE_PROJECT=./test/tsconfig.json mocha -r tsconfig-paths/register --reporter-option maxDiffSize=0",
+        "test:light": "npm run mocha",
+        "test": "npm run compile:native && npm run test:light",
+        "test:golden": "npm run compile:native && TEST_GOLDEN=1 npm run test:light",
+        "compile:playground": "cd playground && meson setup build && meson compile -C build",
+        "run:playground": "npm run compile:playground && mkdir -p build && ./playground/build/playground _ --extension ets --stdlib ../incremental/tools/panda/node_modules/@panda/sdk/ets/stdlib --output build/playground.abc ./playground/src/main.ets",
+        "panda:sdk:clean": "cd ../incremental/tools/panda && rimraf node_modules",
+        "panda:sdk:install": "cd ../incremental/tools/panda && echo \"Installing panda sdk $npm_package_config_panda_sdk_version\" && PANDA_SDK_VERSION=${PANDA_SDK_VERSION:-$npm_package_config_panda_sdk_version} npm run panda:sdk:install",
+        "panda:sdk:reinstall": "npm run panda:sdk:clean && npm run panda:sdk:install",
+        "regenerate:current": "rm -rf ./generated && npm run compile -C ../../arktscgen && node ../../arktscgen --panda-sdk-path $npm_package_config_panda_sdk_path --output-dir ../ --options-file ./generator/options.json5 --debug",
+        "regenerate": "rm -rf ./generated && NODE_OPTIONS=\"--require ./tools/patch-arktscgen.js\" ../node_modules/.bin/arktscgen --panda-sdk-path ${PANDA_SDK_PATH:=$npm_package_config_panda_sdk_path} --output-dir ../ --options-file ./generator/options.json5",
+        "regenerate:node14": "rm -rf ./generated && NODE_OPTIONS=\"--require ./tools/patch-arktscgen.js\" ../node_modules/.bin/arktscgen --panda-sdk-path ${PANDA_SDK_PATH:=$npm_package_config_panda_sdk_path} --output-dir ../ --options-file ./generator/options.json5",
+        "regenerate:node16": "rm -rf ./generated && arktscgen --panda-sdk-path ${PANDA_SDK_PATH:=$npm_package_config_panda_sdk_path} --output-dir ../ --options-file ./generator/options.json5",
+        "reinstall:regenerate": "npm run panda:sdk:reinstall && npm run regenerate && git diff --shortstat",
+        "format:src:ts": "npx prettier --config .prettierrc --write \"./src/**/*.ts\"",
+        "format:generated:ts": "npx prettier --config .prettierrc --write \"./generated/**/*.ts\"",
+        "format:ts": "npm run format:src:ts && npm run format:generated:ts"
+    }
+}

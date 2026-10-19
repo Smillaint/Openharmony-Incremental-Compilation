@@ -1,0 +1,20 @@
+{
+  "url": "https://cidownload.openharmony.cn/tag/openharmony/master/default-xml/20261019094633/manifest.xml",
+  "projects": [
+    {
+      "name": "build",
+      "revision": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "upstream": "master",
+      "dest-branch": "master",
+      "groups": "default,ohos:mini,ohos:small,ohos:standard,ohos:system,ohos:chipset"
+    },
+    {
+      "name": "developtools_ace_ets2bundle",
+      "path": "developtools/ace_ets2bundle",
+      "revision": "9e0f9e58a243d7aeab672c317a2322dc37efd1a7",
+      "upstream": "master",
+      "dest-branch": "master",
+      "groups": "default,ohos:small,ohos:standard,ohos:system"
+    }
+  ]
+}

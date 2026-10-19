@@ -1,0 +1,258 @@
+{
+  "run_directory": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq",
+  "source_ace_head": "46f944c25ba8662cc9e76c5e4905c77818d481c7",
+  "node": {
+    "returncode": 0,
+    "stdout": "v14.21.1\n",
+    "stderr": "",
+    "seconds": 0.0
+  },
+  "npm": {
+    "returncode": 0,
+    "stdout": "6.14.17\n",
+    "stderr": "",
+    "seconds": 0.13
+  },
+  "cases": [
+    {
+      "case": "original",
+      "directory": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2",
+      "package_before_sha256": "a894586c4b8a66b959f5e30d7f51b18c76a3f9fab159a757f65525a1d4f4879c",
+      "package_sha256": "a894586c4b8a66b959f5e30d7f51b18c76a3f9fab159a757f65525a1d4f4879c",
+      "install": {
+        "returncode": 0,
+        "seconds": 2.84
+      },
+      "install_tail": [
+        "npm verb notsup Required: {\"npm\":\">=8.0.0\",\"node\":\">=14.18.0\"}",
+        "npm verb notsup Actual:   {\"npm\":\"6.14.17\",\"node\":\"14.21.1\"}",
+        "npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules/rollup/node_modules/fsevents):",
+        "npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.3: wanted {\"os\":\"darwin\",\"arch\":\"any\"} (current: {\"os\":\"linux\",\"arch\":\"x64\"})",
+        "npm verb notsup SKIPPING OPTIONAL DEPENDENCY: Valid OS:    darwin",
+        "npm verb notsup SKIPPING OPTIONAL DEPENDENCY: Valid Arch:  any",
+        "npm verb notsup SKIPPING OPTIONAL DEPENDENCY: Actual OS:   linux",
+        "npm verb notsup SKIPPING OPTIONAL DEPENDENCY: Actual Arch: x64",
+        "",
+        "npm verb exit [ 0, true ]",
+        "npm timing npm Completed in 2700ms",
+        "npm info ok "
+      ],
+      "hooks": {
+        "build-common/package.json": {},
+        "arktscgen/package.json": {},
+        "interop/package.json": {},
+        "compat/package.json": {},
+        "common/package.json": {},
+        "libarkts/package.json": {}
+      },
+      "links": [
+        {
+          "folder": ".",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/node_modules/@koalaui/build-common",
+          "lexists": true,
+          "exists": true,
+          "is_symlink": true,
+          "target": "../../build-common",
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/build-common",
+          "tsconfig_exists": true,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        },
+        {
+          "folder": "common",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/common/node_modules/@koalaui/build-common",
+          "lexists": false,
+          "exists": false,
+          "is_symlink": false,
+          "target": null,
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/common/node_modules/@koalaui/build-common",
+          "tsconfig_exists": false,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        },
+        {
+          "folder": "compat",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/compat/node_modules/@koalaui/build-common",
+          "lexists": false,
+          "exists": false,
+          "is_symlink": false,
+          "target": null,
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/compat/node_modules/@koalaui/build-common",
+          "tsconfig_exists": false,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        },
+        {
+          "folder": "interop",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/interop/node_modules/@koalaui/build-common",
+          "lexists": false,
+          "exists": false,
+          "is_symlink": false,
+          "target": null,
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/interop/node_modules/@koalaui/build-common",
+          "tsconfig_exists": false,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        },
+        {
+          "folder": "libarkts",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/libarkts/node_modules/@koalaui/build-common",
+          "lexists": false,
+          "exists": false,
+          "is_symlink": false,
+          "target": null,
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/libarkts/node_modules/@koalaui/build-common",
+          "tsconfig_exists": false,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        }
+      ],
+      "compile": {
+        "returncode": 0,
+        "stdout": "\n> root@ compile:interop /srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2\n> npm run compile --prefix interop\n\n\n> @koalaui/interop@1.7.14 compile /srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/original/ets1.2/interop\n> tsc -b .\n\n",
+        "stderr": "",
+        "seconds": 2.8
+      }
+    },
+    {
+      "case": "explicit_build_common",
+      "directory": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2",
+      "package_before_sha256": "a894586c4b8a66b959f5e30d7f51b18c76a3f9fab159a757f65525a1d4f4879c",
+      "package_sha256": "2ea0ae531b77ec8b210a96d36a349266adad106e61761349c8c4886147b12108",
+      "install": {
+        "returncode": 0,
+        "seconds": 2.27
+      },
+      "install_tail": [
+        "npm verb notsup Required: {\"npm\":\">=8.0.0\",\"node\":\">=14.18.0\"}",
+        "npm verb notsup Actual:   {\"npm\":\"6.14.17\",\"node\":\"14.21.1\"}",
+        "npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.2 (node_modules/rollup/node_modules/fsevents):",
+        "npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.3: wanted {\"os\":\"darwin\",\"arch\":\"any\"} (current: {\"os\":\"linux\",\"arch\":\"x64\"})",
+        "npm verb notsup SKIPPING OPTIONAL DEPENDENCY: Valid OS:    darwin",
+        "npm verb notsup SKIPPING OPTIONAL DEPENDENCY: Valid Arch:  any",
+        "npm verb notsup SKIPPING OPTIONAL DEPENDENCY: Actual OS:   linux",
+        "npm verb notsup SKIPPING OPTIONAL DEPENDENCY: Actual Arch: x64",
+        "",
+        "npm verb exit [ 0, true ]",
+        "npm timing npm Completed in 2138ms",
+        "npm info ok "
+      ],
+      "hooks": {
+        "build-common/package.json": {},
+        "arktscgen/package.json": {},
+        "interop/package.json": {},
+        "compat/package.json": {},
+        "common/package.json": {},
+        "libarkts/package.json": {}
+      },
+      "links": [
+        {
+          "folder": ".",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/node_modules/@koalaui/build-common",
+          "lexists": true,
+          "exists": true,
+          "is_symlink": true,
+          "target": "../../build-common",
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/build-common",
+          "tsconfig_exists": true,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        },
+        {
+          "folder": "common",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/common/node_modules/@koalaui/build-common",
+          "lexists": false,
+          "exists": false,
+          "is_symlink": false,
+          "target": null,
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/common/node_modules/@koalaui/build-common",
+          "tsconfig_exists": false,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        },
+        {
+          "folder": "compat",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/compat/node_modules/@koalaui/build-common",
+          "lexists": false,
+          "exists": false,
+          "is_symlink": false,
+          "target": null,
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/compat/node_modules/@koalaui/build-common",
+          "tsconfig_exists": false,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        },
+        {
+          "folder": "interop",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/interop/node_modules/@koalaui/build-common",
+          "lexists": false,
+          "exists": false,
+          "is_symlink": false,
+          "target": null,
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/interop/node_modules/@koalaui/build-common",
+          "tsconfig_exists": false,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        },
+        {
+          "folder": "libarkts",
+          "path": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/libarkts/node_modules/@koalaui/build-common",
+          "lexists": false,
+          "exists": false,
+          "is_symlink": false,
+          "target": null,
+          "realpath": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/libarkts/node_modules/@koalaui/build-common",
+          "tsconfig_exists": false,
+          "resolve": {
+            "returncode": 0,
+            "stdout": "/srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/build-common/tsconfig.json\n",
+            "stderr": "",
+            "seconds": 0.03
+          }
+        }
+      ],
+      "compile": {
+        "returncode": 0,
+        "stdout": "\n> root@ compile:interop /srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2\n> npm run compile --prefix interop\n\n\n> @koalaui/interop@1.7.14 compile /srv/workspace/patch_backups/20261018_build_common_rootcause/fresh-install-kgcew7sq/explicit_build_common/ets1.2/interop\n> tsc -b .\n\n",
+        "stderr": "",
+        "seconds": 2.65
+      }
+    }
+  ]
+}

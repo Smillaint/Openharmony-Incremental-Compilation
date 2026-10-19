@@ -7,3 +7,12 @@ patches/**/*.json text eol=lf
 docs/evidence/20261012-migration/*.log -text -whitespace
 docs/evidence/20261018-pr7006-npm-audit/base/** -text -whitespace
 docs/evidence/20261018-pr7006-npm-audit/gate-patch/** -text -whitespace
+docs/evidence/20261018-build-common-rootcause/** -text whitespace=cr-at-eol
+docs/evidence/20261018-build-common-rootcause/**/*.log -text -whitespace
+docs/evidence/20261018-build-common-rootcause/*.log -text -whitespace
+docs/evidence/20261018-build-common-rootcause/*.patch -text -whitespace
+docs/evidence/20261018-build-common-rootcause/failed-gate-manifest.xml -text -whitespace
+docs/evidence/20261018-build-common-rootcause/failed-gate-source/** -text -whitespace
+docs/evidence/20261018-build-common-rootcause/before/** -text -whitespace
+docs/evidence/20261018-build-common-rootcause/*.gz binary
+docs/evidence/20261018-build-common-rootcause/*.bundle binary

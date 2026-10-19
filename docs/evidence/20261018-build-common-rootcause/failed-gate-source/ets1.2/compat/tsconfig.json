@@ -1,0 +1,14 @@
+{
+    "extends": "@koalaui/build-common/tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": ".",
+        "outDir": "build/",
+        "module": "CommonJS",
+        "composite": true,
+        "paths": {
+            "#platform": ["./src/typescript"]
+        }
+    },
+    "include": ["./src/index.ts", "./src/typescript/**/*"]
+}

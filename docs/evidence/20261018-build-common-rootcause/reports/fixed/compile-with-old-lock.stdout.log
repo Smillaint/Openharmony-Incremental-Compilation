@@ -1,0 +1,10 @@
+
+> root@ compile:interop /srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2
+> npm run compile --prefix interop
+
+
+> @koalaui/interop@1.7.14 compile /srv/workspace/patch_backups/20261018_build_common_rootcause/stale-lock-xbnudd2z/ets1.2/interop
+> tsc -b .
+
+../compat/tsconfig.json(2,16): error TS6053: File '@koalaui/build-common/tsconfig.json' not found.
+../common/tsconfig.json(2,16): error TS6053: File '@koalaui/build-common/tsconfig.json' not found.

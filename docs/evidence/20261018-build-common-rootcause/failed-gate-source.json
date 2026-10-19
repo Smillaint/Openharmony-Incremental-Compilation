@@ -1,0 +1,97 @@
+{
+  "revision": "9e0f9e58a243d7aeab672c317a2322dc37efd1a7",
+  "files": [
+    {
+      "path": "ets1.2/package.json",
+      "sha256": "a894586c4b8a66b959f5e30d7f51b18c76a3f9fab159a757f65525a1d4f4879c",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/package.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/interop/package.json",
+      "sha256": "f63f1aa6321d933d6b62ce7740834ce2ab4c4e9e011312a7db4f8a4d1921dc54",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/interop/package.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/libarkts/package.json",
+      "sha256": "cef2d3a7a7d009445a08641908ff833a26e03d2a0bf2836af8b89b6cc7713a26",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/libarkts/package.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/common/package.json",
+      "sha256": "4104180e0cbab80045e20a3800444049fb5558be404938fdcebcc433c1bd0fc2",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/common/package.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/compat/package.json",
+      "sha256": "a9562898f694236e5772e2764a2a3081dbf78b0d266db8bc02de3cc58747904d",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/compat/package.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/build-common/package.json",
+      "sha256": "7bfc1ef676ea7eef8a2b220eeb24f2848f8eecb0c56433e30f2e8566ac7f1490",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/build-common/package.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/common/tsconfig.json",
+      "sha256": "07185a854310c2d5a36e2dd7d75857e1cd6a051a68e3e3e5275394cdc96799d6",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/common/tsconfig.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/compat/tsconfig.json",
+      "sha256": "3d4123ff68f81495ad463326da3cfac26e5e0b6dfe4f66602bbfe3810e0b79bc",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/compat/tsconfig.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/build-common/tsconfig.json",
+      "sha256": "c6e434e56fabc88103f461f68f1bb338539d548b742409ec04fc0404377120ad",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/build-common/tsconfig.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    },
+    {
+      "path": "ets1.2/interop/tsconfig.json",
+      "sha256": "be1c623fdbc8110694f8f87ee7c4f5e3b252cc19f87ca5a176313b85d30ed692",
+      "api": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_ace_ets2bundle/contents/ets1.2/interop/tsconfig.json?ref=9e0f9e58a243d7aeab672c317a2322dc37efd1a7"
+    }
+  ],
+  "directory_entries": [
+    {
+      "name": "arktscgen",
+      "type": "dir"
+    },
+    {
+      "name": "build-common",
+      "type": "dir"
+    },
+    {
+      "name": "common",
+      "type": "dir"
+    },
+    {
+      "name": "compat",
+      "type": "dir"
+    },
+    {
+      "name": "gn",
+      "type": "dir"
+    },
+    {
+      "name": "interop",
+      "type": "dir"
+    },
+    {
+      "name": "libarkts",
+      "type": "dir"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file"
+    },
+    {
+      "name": "BUILD.gn",
+      "type": "file"
+    },
+    {
+      "name": "package.json",
+      "type": "file"
+    }
+  ]
+}
