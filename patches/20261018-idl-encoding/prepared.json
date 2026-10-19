@@ -1,0 +1,12 @@
+{
+  "number": 6982,
+  "before": "b4ca2d4124817b101a9335930bc758b491fc729d",
+  "after": "4e179e356e4ef508ea0c5f302459c6e366e58baa",
+  "local_branch": "fix/idl-byte-inputs-20261018",
+  "remote_branch": "fix-idl-common-outputs",
+  "files": [
+    "config/components/idl_tool/idl.py"
+  ],
+  "subject": "Preserve byte-oriented IDL input compatibility",
+  "backup_tag": "backup/idl-encoding-20261018"
+}

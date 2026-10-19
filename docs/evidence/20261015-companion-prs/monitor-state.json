@@ -15,14 +15,15 @@
         {
           "repo": "build",
           "number": 6982,
-          "head": "b4ca2d4124817b101a9335930bc758b491fc729d",
+          "head": "4e179e356e4ef508ea0c5f302459c6e366e58baa",
           "status": "not_triggered_current_head",
           "done": false,
-          "previous_head": "de69337b7f99f2328417e27fe591903862c9bbdc",
+          "previous_head": "b4ca2d4124817b101a9335930bc758b491fc729d",
           "active_gate": false,
           "final_report_pending": false,
           "codecheck_status": "not_run_current_head",
-          "last_checked_utc": "2026-10-19T02:00:58.400260+00:00"
+          "last_checked_utc": "2026-10-19T02:24:14.793701+00:00",
+          "source_update_evidence": "../20261018-idl-encoding/publication-verification.json"
         },
         {
           "repo": "account_os_account",
@@ -70,9 +71,9 @@
           "passed_at": "2026-10-16T11:53:14+08:00"
         }
       ],
-      "last_checked_utc": "2026-10-19T02:00:58.400260+00:00",
+      "last_checked_utc": "2026-10-19T02:24:14.793701+00:00",
       "head_verified": true,
-      "progress": "Review fixes published to existing member PRs. No new gate was triggered; previous_gate records the old revision results.",
+      "progress": "IDL byte-input compatibility fix published to #6982; no current-head gate triggered.",
       "previous_gate": {
         "name": "IDL",
         "issue": "https://gitcode.com/openharmony/build/issues/4668",
@@ -847,7 +848,8 @@
   "paused_at_utc": "2026-10-16T07:58:11.024715+00:00",
   "pause_reason": "Automatic inspection stopped; code-related static-check revisions handled once, platform failures retained.",
   "maintenance_evidence": "../20261018-review-fixes/publication-verification.json",
-  "last_manual_action_utc": "2026-10-19T02:00:58.400260+00:00",
+  "last_manual_action_utc": "2026-10-19T02:24:14.793701+00:00",
   "manual_action_evidence": "../20261016-manual-gate-retrigger/receipts.json",
-  "last_manual_snapshot": "../20261018-review-fixes/publication-verification.json"
+  "last_manual_snapshot": "../20261018-idl-encoding/publication-verification.json",
+  "idl_encoding_evidence": "../20261018-idl-encoding/publication-verification.json"
 }

@@ -1,0 +1,34 @@
+{
+  "pr": 6982,
+  "head": "4e179e356e4ef508ea0c5f302459c6e366e58baa",
+  "generator_head": "d45cc0a0cf24986b1c4f07a08dc7d6e3a3ee5c3b",
+  "tool_sha256": "decd467d6cdb8874f45b65cdd323336c9763e92298717f27ac1eeea1d609c7c7",
+  "accepted_cases": [
+    "ascii",
+    "utf8",
+    "gbk",
+    "gb18030",
+    "latin1",
+    "cp1252",
+    "shift_jis",
+    "mixed_imports",
+    "gbk_directory"
+  ],
+  "rejected_cases": [
+    "utf8_bom",
+    "utf16_le",
+    "utf16_be",
+    "invalid_gbk",
+    "unicode_import"
+  ],
+  "wrappers_sha256": {
+    "legacy": "993c65b037e2ae0864748138254fe239d7d0427ecbd093b6ac7d20ff7a42d2eb",
+    "strict": "ee7202a7e4c593f51a62a1ded6077f266b51b8c59748db2508db75e0e05fca58",
+    "repaired": "04589391b2d521c5427e71306b464baadf08b1e131ed36e8c5476873c2046449"
+  },
+  "python_compile_passed": true,
+  "diff_check_passed": true,
+  "full_product_build_run": false,
+  "gate_triggered": false,
+  "review_replies_posted": false
+}

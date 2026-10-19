@@ -1,0 +1,33 @@
+From 4e179e356e4ef508ea0c5f302459c6e366e58baa Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Sun, 18 Oct 2026 19:23:09 -0700
+Subject: [PATCH] Preserve byte-oriented IDL input compatibility
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ config/components/idl_tool/idl.py | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/config/components/idl_tool/idl.py b/config/components/idl_tool/idl.py
+index ad535759..b02adb3f 100755
+--- a/config/components/idl_tool/idl.py
++++ b/config/components/idl_tool/idl.py
+@@ -104,10 +104,11 @@ def collect_idl_inputs(sources):
+         if source in dependencies:
+             continue
+         dependencies.add(source)
+-        text = source.read_text(encoding='utf-8')
+-        text = re.sub(r'/\*.*?\*/|//[^\n]*', '', text, flags=re.S)
+-        for name in re.findall(r'\bimport\s+([\w./]+)\s*;', text):
+-            pending.append(source.parent / (name + '.idl'))
++        # Match the IDL lexer's byte input without decoding comment contents.
++        text = source.read_bytes()
++        text = re.sub(rb'/\*.*?\*/|//[^\n]*', b'', text, flags=re.S)
++        for name in re.findall(rb'\bimport\s+([\w./]+)\s*;', text):
++            pending.append(source.parent / (name.decode('ascii') + '.idl'))
+     return dependencies
+ 
+ 
+-- 
+2.51.0.windows.1
+

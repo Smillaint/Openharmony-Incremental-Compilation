@@ -2,6 +2,8 @@
 
 七条原 PR 的修订均已正常快进推送，公开 API 回读提交、源分支和文件范围一致，DCO 检查全部通过。PR 正文和 Issue 分组保持不变，检视回复尚未发送，新提交未触发门禁。
 
+后续[IDL 编码兼容复核](oct18-idl-encoding-compatibility.md)确认原工具支持非 UTF-8 注释，#6982 已追加字节扫描修复至 `4e179e356e4ef508ea0c5f302459c6e366e58baa`，DCO 通过。下面表格保留首轮七条修订的版本，#6982 当前版本以上述追加记录为准。
+
 记录日期采用 America/Los_Angeles 的 2026-10-18，GitCode 检视和发布回执为北京时间 2026-10-19。
 
 ## 修改及对应版本
@@ -18,7 +20,7 @@
 
 JSON 自愈只捕获 `json.decoder.JSONDecodeError`。正常文件继续作内容比较，内容不变不更新 mtime。五条 PR 的公共文件逐字节相同；两条 PR 的 `app_sign` 模板逐字节相同，其他模板与各自原代码保持一致。
 
-IDL 的 `collect_idl_inputs` 继续对读取失败、缺失 import 报错，没有加入跳过依赖的处理。UTF-8 BOM 可正常读取的验证与原检视分析保存在操作归档中。单文件 `rebase_path` 转换已核对为系统绝对路径。
+IDL 的 `collect_idl_inputs` 继续对读取失败、缺失 import 报错，没有加入跳过依赖的处理。后续验证发现整份文件严格按 UTF-8 解码会收紧原工具的输入范围，已改为按字节扫描 import。早先的 UTF-8 BOM 检查只验证 Python 能读取；原生成器实际拒绝该样例，不能将两者混为生成成功。单文件 `rebase_path` 转换已核对为系统绝对路径。
 
 ## 重复修改及合入边界
 

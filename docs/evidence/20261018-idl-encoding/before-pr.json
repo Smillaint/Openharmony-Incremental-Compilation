@@ -1,0 +1,166 @@
+{
+  "id": 9035718,
+  "html_url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+  "number": 6982,
+  "state": "open",
+  "title": "Fix IDL output declarations",
+  "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6982",
+  "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6982/issues",
+  "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nIDL 输出名称与实际文件不一致，部分 client、callback 和公共类型文件没有明确的生产者依赖，Ninja 会重复生成，清理产物后也可能因缺文件而编译失败。生成脚本每次先删除旧输出，也会使内容相同的文件更新时间戳。\n\n### 描述（做了什么，变更了什么）\n修正输出命名，补齐具体输出文件、生成目标依赖和递归 import 的 depfile。在 out 内临时生成，检查输出完整后按内容更新文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时不重复生成，IDL 或 import 文件变化时正常重建；清理生成文件后能恢复，生成失败时保留原有输出。",
+  "assignees_number": 3,
+  "assignees": [
+    {
+      "id": "6721f086f130a72704164a7f",
+      "login": "handyohos",
+      "name": "handyohos",
+      "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+      "html_url": "https://gitcode.com/handyohos",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    },
+    {
+      "id": "672cf248ae148c7b76651494",
+      "login": "csliutt-private",
+      "name": "csliutt-private",
+      "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+      "html_url": "https://gitcode.com/csliutt-private",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    },
+    {
+      "id": "673d3b1b6704dc4ab7a04162",
+      "login": "ringking0",
+      "name": "ringking0",
+      "html_url": "https://gitcode.com/ringking0",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    }
+  ],
+  "testers": [
+    {
+      "id": "6541ccea82d8f837210e92c3",
+      "login": "openharmony_ci",
+      "name": "openharmony_ci",
+      "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+      "html_url": "https://gitcode.com/openharmony_ci",
+      "assignee": false,
+      "code_owner": false,
+      "accept": false
+    }
+  ],
+  "approval_reviewers": [],
+  "labels": [
+    {
+      "id": 87,
+      "color": "#20c22e",
+      "name": "dco检查成功",
+      "repository_id": 4422307,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-08-14T17:09:07+08:00"
+    },
+    {
+      "id": 130,
+      "color": "#1083d6",
+      "name": "waiting_on_author",
+      "repository_id": 4422307,
+      "created_at": "2025-04-22T20:34:00+08:00",
+      "updated_at": "2026-10-19T10:00:58+08:00"
+    }
+  ],
+  "created_at": "2026-08-14T17:08:27+08:00",
+  "updated_at": "2026-10-19T10:09:30+08:00",
+  "closed_at": "",
+  "merged_at": "",
+  "draft": false,
+  "can_merge_check": false,
+  "prune_branch": false,
+  "mergeable": true,
+  "user": {
+    "id": "67150ce628c7754a02de123a",
+    "login": "SmillySmillick",
+    "name": "SmillySmillick",
+    "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+    "html_url": "https://gitcode.com/SmillySmillick"
+  },
+  "head": {
+    "ref": "fix-idl-common-outputs",
+    "sha": "b4ca2d4124817b101a9335930bc758b491fc729d",
+    "label": "fix-idl-common-outputs",
+    "repo": {
+      "path": "build",
+      "name": "build",
+      "namespace": {
+        "path": "SmillySmillick"
+      },
+      "full_name": "SmillySmillick/build",
+      "html_url": "https://gitcode.com/SmillySmillick/build.git"
+    },
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    }
+  },
+  "base": {
+    "ref": "master",
+    "sha": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+    "label": "master",
+    "repo": {
+      "path": "build",
+      "name": "build",
+      "namespace": {
+        "path": "openharmony"
+      },
+      "full_name": "openharmony/build",
+      "html_url": "https://gitcode.com/openharmony/build.git"
+    }
+  },
+  "mergeable_state": {
+    "merge_request_id": 9035718,
+    "state": false,
+    "status_without_user_auth": false,
+    "conflict_passed": true,
+    "branch_missing_passed": true,
+    "non_ff_passed": true,
+    "mr_state_passed": true,
+    "merged_by_user_passed": false,
+    "work_in_progress_passed": true,
+    "resolve_discussion_passed": true,
+    "ci_state_passed": true,
+    "merge_by_self_passed": true,
+    "can_force_merge": false,
+    "approval_reviewers_required_passed": true,
+    "approval_approvers_required_passed": false,
+    "approval_testers_required_passed": false,
+    "merge_request_switch": {
+      "review_mode": "approval",
+      "merge_method": "merge",
+      "only_allow_merge_if_all_discussions_are_resolved": false,
+      "disable_merge_by_self": true,
+      "only_allow_merge_if_pipeline_succeeds": false,
+      "disable_squash_merge": false,
+      "squash_merge_with_no_merge_commit": false,
+      "approval_required_reviewers_count": 0,
+      "approval_required_reviewers_branch": "*",
+      "add_notes_after_merged": true,
+      "mark_auto_merged_mr_as_closed": true,
+      "can_force_merge": true,
+      "can_reopen": true
+    },
+    "reason": {
+      "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+    },
+    "check_tasks_num": 2,
+    "all_depend_merge_request_merged_passed": true,
+    "approval_approvers_result": 1,
+    "approval_testers_result": 1
+  },
+  "visibility_reason": "public",
+  "close_related_issue": true,
+  "squash_merge": false
+}

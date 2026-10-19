@@ -1,0 +1,651 @@
+{
+  "tool_path": "/srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl",
+  "tool_sha256": "decd467d6cdb8874f45b65cdd323336c9763e92298717f27ac1eeea1d609c7c7",
+  "generator_head": "d45cc0a0cf24986b1c4f07a08dc7d6e3a3ee5c3b",
+  "generator_status": "",
+  "run_directory": "/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls",
+  "cases": [
+    {
+      "case": "ascii",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 5,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/ascii/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/ascii/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/ascii/strict/.idl-yhae5xha -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/ascii/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/ascii/repaired/.idl-jlsobo9q -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/ascii/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "f5e0e8aeec96148fc72c310c7dbe5c0605815c7cc50201bb8537342ce2d77725",
+          "encoding_probe_proxy.h": "ae35d02bfc5856e545eb6fa958d78a23a107d9bda2aad550c91670765965223b",
+          "iencoding_probe.h": "ea2e45de4c039189c84da129108fde68c9d141588423770ee150d4f21cb30710",
+          "encoding_probe_stub.h": "899ce7f7781a90ff451c02890f1da9b313c49ce26d6d66080f8414102634b1e5",
+          "encoding_probe_proxy.cpp": "6e89f0c9238f667db1bf3c64a1bf3216f14ca3621eb7f974d3fac223cc904275"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "f5e0e8aeec96148fc72c310c7dbe5c0605815c7cc50201bb8537342ce2d77725",
+          "encoding_probe_proxy.h": "ae35d02bfc5856e545eb6fa958d78a23a107d9bda2aad550c91670765965223b",
+          "iencoding_probe.h": "ea2e45de4c039189c84da129108fde68c9d141588423770ee150d4f21cb30710",
+          "encoding_probe_stub.h": "899ce7f7781a90ff451c02890f1da9b313c49ce26d6d66080f8414102634b1e5",
+          "encoding_probe_proxy.cpp": "6e89f0c9238f667db1bf3c64a1bf3216f14ca3621eb7f974d3fac223cc904275"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "f5e0e8aeec96148fc72c310c7dbe5c0605815c7cc50201bb8537342ce2d77725",
+          "encoding_probe_proxy.h": "ae35d02bfc5856e545eb6fa958d78a23a107d9bda2aad550c91670765965223b",
+          "iencoding_probe.h": "ea2e45de4c039189c84da129108fde68c9d141588423770ee150d4f21cb30710",
+          "encoding_probe_stub.h": "899ce7f7781a90ff451c02890f1da9b313c49ce26d6d66080f8414102634b1e5",
+          "encoding_probe_proxy.cpp": "6e89f0c9238f667db1bf3c64a1bf3216f14ca3621eb7f974d3fac223cc904275"
+        }
+      }
+    },
+    {
+      "case": "utf8",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 5,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8/strict/.idl-du1qoukj -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8/repaired/.idl-e3r6tvtl -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "947fd63f5eb3e29bf9c10d39be67f29bb36060bbff2c56facc37233befbc5ad9",
+          "encoding_probe_proxy.h": "3d72a4711a0644d29b52856516dfeb898c8ac1cf89dc45b7ebf1bd25ea0088be",
+          "iencoding_probe.h": "23057409e657742d3c0f21f28882aa3e460962e619671e752012d6146fa0a20b",
+          "encoding_probe_stub.h": "5c440ceb8c6a9dec17d7e53e208e42125075aed103a5eed4fd451944c782caec",
+          "encoding_probe_proxy.cpp": "96d491049c514264a7c774857630b4d3365268555fceaa624681473123457b57"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "947fd63f5eb3e29bf9c10d39be67f29bb36060bbff2c56facc37233befbc5ad9",
+          "encoding_probe_proxy.h": "3d72a4711a0644d29b52856516dfeb898c8ac1cf89dc45b7ebf1bd25ea0088be",
+          "iencoding_probe.h": "23057409e657742d3c0f21f28882aa3e460962e619671e752012d6146fa0a20b",
+          "encoding_probe_stub.h": "5c440ceb8c6a9dec17d7e53e208e42125075aed103a5eed4fd451944c782caec",
+          "encoding_probe_proxy.cpp": "96d491049c514264a7c774857630b4d3365268555fceaa624681473123457b57"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "947fd63f5eb3e29bf9c10d39be67f29bb36060bbff2c56facc37233befbc5ad9",
+          "encoding_probe_proxy.h": "3d72a4711a0644d29b52856516dfeb898c8ac1cf89dc45b7ebf1bd25ea0088be",
+          "iencoding_probe.h": "23057409e657742d3c0f21f28882aa3e460962e619671e752012d6146fa0a20b",
+          "encoding_probe_stub.h": "5c440ceb8c6a9dec17d7e53e208e42125075aed103a5eed4fd451944c782caec",
+          "encoding_probe_proxy.cpp": "96d491049c514264a7c774857630b4d3365268555fceaa624681473123457b57"
+        }
+      }
+    },
+    {
+      "case": "gbk",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 5,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gbk/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gbk/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xd6 in position 3: invalid continuation byte\n"
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gbk/repaired/.idl-liy9tbfx -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gbk/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "dd61c81597b95d0341730bfadfdda87b7f763f28b19b21d09c5253767a9ef877",
+          "encoding_probe_proxy.h": "494547eb14b929709e6b7a56ae55656855283527ff67c0f73188f8ac6fb2605a",
+          "iencoding_probe.h": "7f4bb56c6c99dd4d5fa0e55acad902f0a62427b3cbf6e7484d7d3017d5a0a3b2",
+          "encoding_probe_stub.h": "8e43f16c394c1b2fc5462897c200eaa1a4c642391649511730d54fdb7ff04ecd",
+          "encoding_probe_proxy.cpp": "c6f14ec06d6e282904542970fbc69c140115ff19d4ece39369ff6501d22a4395"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "dd61c81597b95d0341730bfadfdda87b7f763f28b19b21d09c5253767a9ef877",
+          "encoding_probe_proxy.h": "494547eb14b929709e6b7a56ae55656855283527ff67c0f73188f8ac6fb2605a",
+          "iencoding_probe.h": "7f4bb56c6c99dd4d5fa0e55acad902f0a62427b3cbf6e7484d7d3017d5a0a3b2",
+          "encoding_probe_stub.h": "8e43f16c394c1b2fc5462897c200eaa1a4c642391649511730d54fdb7ff04ecd",
+          "encoding_probe_proxy.cpp": "c6f14ec06d6e282904542970fbc69c140115ff19d4ece39369ff6501d22a4395"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "dd61c81597b95d0341730bfadfdda87b7f763f28b19b21d09c5253767a9ef877",
+          "encoding_probe_proxy.h": "494547eb14b929709e6b7a56ae55656855283527ff67c0f73188f8ac6fb2605a",
+          "iencoding_probe.h": "7f4bb56c6c99dd4d5fa0e55acad902f0a62427b3cbf6e7484d7d3017d5a0a3b2",
+          "encoding_probe_stub.h": "8e43f16c394c1b2fc5462897c200eaa1a4c642391649511730d54fdb7ff04ecd",
+          "encoding_probe_proxy.cpp": "c6f14ec06d6e282904542970fbc69c140115ff19d4ece39369ff6501d22a4395"
+        }
+      }
+    },
+    {
+      "case": "gb18030",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 5,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gb18030/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gb18030/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xd6 in position 3: invalid continuation byte\n"
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gb18030/repaired/.idl-kdfe6jf3 -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gb18030/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "a9c612f47f54a36e9350b2a821664e2756092467185ec95d6474bb824ad7a9ee",
+          "encoding_probe_proxy.h": "45cef28063b5c6590479a963a20dc80e79126b80488ef3a625c434e6cc35a56c",
+          "iencoding_probe.h": "3a714336b744dafa040dbb8670680a69aa8d6e4318f301e19cfda2dbf6ce8bdd",
+          "encoding_probe_stub.h": "884a16cf94097fe4465c92effa25295cc0d8667bf9ea633c9b2541bcfdf5055e",
+          "encoding_probe_proxy.cpp": "4455beb97837bc6aac7f1b3717ffc0d177ef22fac830c83d165d33852e990b56"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "a9c612f47f54a36e9350b2a821664e2756092467185ec95d6474bb824ad7a9ee",
+          "encoding_probe_proxy.h": "45cef28063b5c6590479a963a20dc80e79126b80488ef3a625c434e6cc35a56c",
+          "iencoding_probe.h": "3a714336b744dafa040dbb8670680a69aa8d6e4318f301e19cfda2dbf6ce8bdd",
+          "encoding_probe_stub.h": "884a16cf94097fe4465c92effa25295cc0d8667bf9ea633c9b2541bcfdf5055e",
+          "encoding_probe_proxy.cpp": "4455beb97837bc6aac7f1b3717ffc0d177ef22fac830c83d165d33852e990b56"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "a9c612f47f54a36e9350b2a821664e2756092467185ec95d6474bb824ad7a9ee",
+          "encoding_probe_proxy.h": "45cef28063b5c6590479a963a20dc80e79126b80488ef3a625c434e6cc35a56c",
+          "iencoding_probe.h": "3a714336b744dafa040dbb8670680a69aa8d6e4318f301e19cfda2dbf6ce8bdd",
+          "encoding_probe_stub.h": "884a16cf94097fe4465c92effa25295cc0d8667bf9ea633c9b2541bcfdf5055e",
+          "encoding_probe_proxy.cpp": "4455beb97837bc6aac7f1b3717ffc0d177ef22fac830c83d165d33852e990b56"
+        }
+      }
+    },
+    {
+      "case": "latin1",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 5,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/latin1/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/latin1/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 6: invalid continuation byte\n"
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/latin1/repaired/.idl-6yc2p4xy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/latin1/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "657b45fe24c2d57083394d0fb786c1820f17b94e0411f16094253797ffad9d2b",
+          "encoding_probe_proxy.h": "b0fa5a0eef6287063e8f3d207905a1c1cd3f22da4301d2eca58d13b7f2c6fce5",
+          "iencoding_probe.h": "1da7e5a7503f4ffe88e4f6b98583161107afd23e4befacbc7a18f7205c5d3834",
+          "encoding_probe_stub.h": "fe4afced66b310599b9d46f73b6aa8e2d0f48431841bbb71a65c941c2ed43115",
+          "encoding_probe_proxy.cpp": "0e38ebd834428fc7e5aac7557388f9e1b335945e0fdf4bdb741972a23cb28d48"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "657b45fe24c2d57083394d0fb786c1820f17b94e0411f16094253797ffad9d2b",
+          "encoding_probe_proxy.h": "b0fa5a0eef6287063e8f3d207905a1c1cd3f22da4301d2eca58d13b7f2c6fce5",
+          "iencoding_probe.h": "1da7e5a7503f4ffe88e4f6b98583161107afd23e4befacbc7a18f7205c5d3834",
+          "encoding_probe_stub.h": "fe4afced66b310599b9d46f73b6aa8e2d0f48431841bbb71a65c941c2ed43115",
+          "encoding_probe_proxy.cpp": "0e38ebd834428fc7e5aac7557388f9e1b335945e0fdf4bdb741972a23cb28d48"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "657b45fe24c2d57083394d0fb786c1820f17b94e0411f16094253797ffad9d2b",
+          "encoding_probe_proxy.h": "b0fa5a0eef6287063e8f3d207905a1c1cd3f22da4301d2eca58d13b7f2c6fce5",
+          "iencoding_probe.h": "1da7e5a7503f4ffe88e4f6b98583161107afd23e4befacbc7a18f7205c5d3834",
+          "encoding_probe_stub.h": "fe4afced66b310599b9d46f73b6aa8e2d0f48431841bbb71a65c941c2ed43115",
+          "encoding_probe_proxy.cpp": "0e38ebd834428fc7e5aac7557388f9e1b335945e0fdf4bdb741972a23cb28d48"
+        }
+      }
+    },
+    {
+      "case": "cp1252",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 5,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/cp1252/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/cp1252/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 4: invalid continuation byte\n"
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/cp1252/repaired/.idl-5spls760 -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/cp1252/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "ce7fbcd1070d8655eb4ee872561eb94d9860b281e09e8a99af6a9271db04824d",
+          "encoding_probe_proxy.h": "f07c008900e54b5072a6b0f9ff68a9dadf8294a453860a31f63ee6763956ad4e",
+          "iencoding_probe.h": "56862b3eaaeeec685e8a8358214d9765fa8a02b915549a749bc488081b9a8729",
+          "encoding_probe_stub.h": "9977d4119944bdccb06b5e58e7ac4e5dc52cc2e2d49dd369873429bdeb031fa0",
+          "encoding_probe_proxy.cpp": "8b23781c9dc45565d9840516206edab0966cdd43125ba647b7cc882b1c68ef50"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "ce7fbcd1070d8655eb4ee872561eb94d9860b281e09e8a99af6a9271db04824d",
+          "encoding_probe_proxy.h": "f07c008900e54b5072a6b0f9ff68a9dadf8294a453860a31f63ee6763956ad4e",
+          "iencoding_probe.h": "56862b3eaaeeec685e8a8358214d9765fa8a02b915549a749bc488081b9a8729",
+          "encoding_probe_stub.h": "9977d4119944bdccb06b5e58e7ac4e5dc52cc2e2d49dd369873429bdeb031fa0",
+          "encoding_probe_proxy.cpp": "8b23781c9dc45565d9840516206edab0966cdd43125ba647b7cc882b1c68ef50"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "ce7fbcd1070d8655eb4ee872561eb94d9860b281e09e8a99af6a9271db04824d",
+          "encoding_probe_proxy.h": "f07c008900e54b5072a6b0f9ff68a9dadf8294a453860a31f63ee6763956ad4e",
+          "iencoding_probe.h": "56862b3eaaeeec685e8a8358214d9765fa8a02b915549a749bc488081b9a8729",
+          "encoding_probe_stub.h": "9977d4119944bdccb06b5e58e7ac4e5dc52cc2e2d49dd369873429bdeb031fa0",
+          "encoding_probe_proxy.cpp": "8b23781c9dc45565d9840516206edab0966cdd43125ba647b7cc882b1c68ef50"
+        }
+      }
+    },
+    {
+      "case": "shift_jis",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 5,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/shift_jis/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/shift_jis/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0x93 in position 3: invalid start byte\n"
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/shift_jis/repaired/.idl-ij43a9je -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/shift_jis/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "5c2129c9285a735ded679d4b9679e2ae1a8504725d74075b7705bd5869d1048c",
+          "encoding_probe_proxy.h": "f392217d12d4886f923e295c4e8bfc8a657509c58a6d457741babc38d224bac7",
+          "iencoding_probe.h": "9e2f765b7c6a30b4bfb937931d549b6c9d3a7eea505598f5254967e5d33e6bdd",
+          "encoding_probe_stub.h": "96665fd6772c24fbe09c2e775175c241dca5ee0da85558fa4b0151e5ce15b688",
+          "encoding_probe_proxy.cpp": "5c6f914a15954380c818da369e9926be68e5a36e25c60b8cb77fc287927ecf77"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "5c2129c9285a735ded679d4b9679e2ae1a8504725d74075b7705bd5869d1048c",
+          "encoding_probe_proxy.h": "f392217d12d4886f923e295c4e8bfc8a657509c58a6d457741babc38d224bac7",
+          "iencoding_probe.h": "9e2f765b7c6a30b4bfb937931d549b6c9d3a7eea505598f5254967e5d33e6bdd",
+          "encoding_probe_stub.h": "96665fd6772c24fbe09c2e775175c241dca5ee0da85558fa4b0151e5ce15b688",
+          "encoding_probe_proxy.cpp": "5c6f914a15954380c818da369e9926be68e5a36e25c60b8cb77fc287927ecf77"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "5c2129c9285a735ded679d4b9679e2ae1a8504725d74075b7705bd5869d1048c",
+          "encoding_probe_proxy.h": "f392217d12d4886f923e295c4e8bfc8a657509c58a6d457741babc38d224bac7",
+          "iencoding_probe.h": "9e2f765b7c6a30b4bfb937931d549b6c9d3a7eea505598f5254967e5d33e6bdd",
+          "encoding_probe_stub.h": "96665fd6772c24fbe09c2e775175c241dca5ee0da85558fa4b0151e5ce15b688",
+          "encoding_probe_proxy.cpp": "5c6f914a15954380c818da369e9926be68e5a36e25c60b8cb77fc287927ecf77"
+        }
+      }
+    },
+    {
+      "case": "utf8_bom",
+      "supported_by_original": false,
+      "direct": {
+        "returncode": 255,
+        "stdout": "",
+        "stderr": "[IDL-GEN]: [ParseTypeDecls:511] [IEncodingProbe.idl:1:1] error:'\\xef' is not expected\n[IDL-GEN]: failed to parse file\n"
+      },
+      "generated_count": 0,
+      "wrappers": {
+        "legacy": {
+          "returncode": 255,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8_bom/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8_bom/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: [ParseTypeDecls:511] [IEncodingProbe.idl:1:1] error:'\\xef' is not expected\n[IDL-GEN]: failed to parse file\n"
+        },
+        "strict": {
+          "returncode": 255,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8_bom/strict/.idl-k6cpjij0 -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8_bom/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: [ParseTypeDecls:511] [IEncodingProbe.idl:1:1] error:'\\xef' is not expected\n[IDL-GEN]: failed to parse file\n"
+        },
+        "repaired": {
+          "returncode": 255,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8_bom/repaired/.idl-4z1ogoin -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf8_bom/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: [ParseTypeDecls:511] [IEncodingProbe.idl:1:1] error:'\\xef' is not expected\n[IDL-GEN]: failed to parse file\n"
+        }
+      }
+    },
+    {
+      "case": "utf16_le",
+      "supported_by_original": false,
+      "direct": {
+        "returncode": 255,
+        "stdout": "",
+        "stderr": "[MetadataBuilder]: The module is not validate.\n[IDL-GEN]: Generate metadata failed.\n"
+      },
+      "generated_count": 0,
+      "wrappers": {
+        "legacy": {
+          "returncode": 255,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf16_le/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf16_le/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[MetadataBuilder]: The module is not validate.\n[IDL-GEN]: Generate metadata failed.\n"
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n"
+        },
+        "repaired": {
+          "returncode": 255,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf16_le/repaired/.idl-uhoikah2 -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf16_le/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[MetadataBuilder]: The module is not validate.\n[IDL-GEN]: Generate metadata failed.\n"
+        }
+      }
+    },
+    {
+      "case": "utf16_be",
+      "supported_by_original": false,
+      "direct": {
+        "returncode": 255,
+        "stdout": "",
+        "stderr": "[IDL-GEN]: [ParseTypeDecls:511] [IEncodingProbe.idl:1:1] error:'\\xfe' is not expected\n[IDL-GEN]: failed to parse file\n"
+      },
+      "generated_count": 0,
+      "wrappers": {
+        "legacy": {
+          "returncode": 255,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf16_be/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf16_be/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: [ParseTypeDecls:511] [IEncodingProbe.idl:1:1] error:'\\xfe' is not expected\n[IDL-GEN]: failed to parse file\n"
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xfe in position 0: invalid start byte\n"
+        },
+        "repaired": {
+          "returncode": 255,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf16_be/repaired/.idl-nt08r7rl -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/utf16_be/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: [ParseTypeDecls:511] [IEncodingProbe.idl:1:1] error:'\\xfe' is not expected\n[IDL-GEN]: failed to parse file\n"
+        }
+      }
+    },
+    {
+      "case": "mixed_imports",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 15,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/mixed_imports/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/mixed_imports/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xd6 in position 3: invalid continuation byte\n"
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/mixed_imports/repaired/.idl-7oqgyxnc -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/mixed_imports/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "9b65b911bd583666fd384497fd9e284d893a66c826bd2f9b3196ea31dcc796ce",
+          "encoding_probe_proxy.h": "c6c24f18e07d67bcb9c461db0e2db6e60341ba0f72642f57678df935521ea2f8",
+          "leaf_proxy.cpp": "359dfa6d60c08d288364b7e9e42e416b6fbad7558f99eeaa394e44b2e1f514b3",
+          "leaf_stub.h": "9852bdc9eb187795fc634005c09d18109f6bcb5d73edcbe1b75fe51534865288",
+          "iencoding_probe.h": "d7a200d868f79c2b015424b29ddac8dd9182e03dfd47e4c5f4444ffdcae81df0",
+          "imported_proxy.h": "f4810ae575a21e968fcbdea5a8c0f0ef8f9879a815d6db18947887df4629b668",
+          "imported_stub.cpp": "f41ca871c6774c4adbf1bd2d28d6598f94ae839cbcbfb687a60d7a52c82a37c1",
+          "encoding_probe_stub.h": "fa5a88e6c169039e54f4472ca95fef797d8c0a018d70da3851c7066369add81d",
+          "imported_proxy.cpp": "2508bf0c7e0eea867948ba9d2d2912d86c6e1bd204c5f0da2d963724082eee20",
+          "iimported.h": "21760bc32cf150ed3b414acf938481a144cd9e5ad7eef78b50f8883821e5cb7a",
+          "leaf_proxy.h": "7fdd2387790f35b2c10cd2a5b8c4061fed017d70e0381f64b4a70d977f30edce",
+          "imported_stub.h": "d3e53e9e5e57e36d752e1a3e1792afc515dc2c75205ee37c415e453820d90a4a",
+          "encoding_probe_proxy.cpp": "2313fadf83ccaddf24c71fb7d84f2f7de54b37f547dce89d1147ec8c90d7bfd2",
+          "leaf_stub.cpp": "6c24e8c448fbe45928d4ac09445b8e2b4d557e5320ca641ab6771eaf53c011c9",
+          "ileaf.h": "667e6ead65fac3a17d5e2652d57335f79d398951d200e6cc8414e744bd568b0c"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "9b65b911bd583666fd384497fd9e284d893a66c826bd2f9b3196ea31dcc796ce",
+          "encoding_probe_proxy.h": "c6c24f18e07d67bcb9c461db0e2db6e60341ba0f72642f57678df935521ea2f8",
+          "leaf_proxy.cpp": "359dfa6d60c08d288364b7e9e42e416b6fbad7558f99eeaa394e44b2e1f514b3",
+          "leaf_stub.h": "9852bdc9eb187795fc634005c09d18109f6bcb5d73edcbe1b75fe51534865288",
+          "iencoding_probe.h": "d7a200d868f79c2b015424b29ddac8dd9182e03dfd47e4c5f4444ffdcae81df0",
+          "imported_proxy.h": "f4810ae575a21e968fcbdea5a8c0f0ef8f9879a815d6db18947887df4629b668",
+          "imported_stub.cpp": "f41ca871c6774c4adbf1bd2d28d6598f94ae839cbcbfb687a60d7a52c82a37c1",
+          "encoding_probe_stub.h": "fa5a88e6c169039e54f4472ca95fef797d8c0a018d70da3851c7066369add81d",
+          "imported_proxy.cpp": "2508bf0c7e0eea867948ba9d2d2912d86c6e1bd204c5f0da2d963724082eee20",
+          "iimported.h": "21760bc32cf150ed3b414acf938481a144cd9e5ad7eef78b50f8883821e5cb7a",
+          "leaf_proxy.h": "7fdd2387790f35b2c10cd2a5b8c4061fed017d70e0381f64b4a70d977f30edce",
+          "imported_stub.h": "d3e53e9e5e57e36d752e1a3e1792afc515dc2c75205ee37c415e453820d90a4a",
+          "encoding_probe_proxy.cpp": "2313fadf83ccaddf24c71fb7d84f2f7de54b37f547dce89d1147ec8c90d7bfd2",
+          "leaf_stub.cpp": "6c24e8c448fbe45928d4ac09445b8e2b4d557e5320ca641ab6771eaf53c011c9",
+          "ileaf.h": "667e6ead65fac3a17d5e2652d57335f79d398951d200e6cc8414e744bd568b0c"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "9b65b911bd583666fd384497fd9e284d893a66c826bd2f9b3196ea31dcc796ce",
+          "encoding_probe_proxy.h": "c6c24f18e07d67bcb9c461db0e2db6e60341ba0f72642f57678df935521ea2f8",
+          "leaf_proxy.cpp": "359dfa6d60c08d288364b7e9e42e416b6fbad7558f99eeaa394e44b2e1f514b3",
+          "leaf_stub.h": "9852bdc9eb187795fc634005c09d18109f6bcb5d73edcbe1b75fe51534865288",
+          "iencoding_probe.h": "d7a200d868f79c2b015424b29ddac8dd9182e03dfd47e4c5f4444ffdcae81df0",
+          "imported_proxy.h": "f4810ae575a21e968fcbdea5a8c0f0ef8f9879a815d6db18947887df4629b668",
+          "imported_stub.cpp": "f41ca871c6774c4adbf1bd2d28d6598f94ae839cbcbfb687a60d7a52c82a37c1",
+          "encoding_probe_stub.h": "fa5a88e6c169039e54f4472ca95fef797d8c0a018d70da3851c7066369add81d",
+          "imported_proxy.cpp": "2508bf0c7e0eea867948ba9d2d2912d86c6e1bd204c5f0da2d963724082eee20",
+          "iimported.h": "21760bc32cf150ed3b414acf938481a144cd9e5ad7eef78b50f8883821e5cb7a",
+          "leaf_proxy.h": "7fdd2387790f35b2c10cd2a5b8c4061fed017d70e0381f64b4a70d977f30edce",
+          "imported_stub.h": "d3e53e9e5e57e36d752e1a3e1792afc515dc2c75205ee37c415e453820d90a4a",
+          "encoding_probe_proxy.cpp": "2313fadf83ccaddf24c71fb7d84f2f7de54b37f547dce89d1147ec8c90d7bfd2",
+          "leaf_stub.cpp": "6c24e8c448fbe45928d4ac09445b8e2b4d557e5320ca641ab6771eaf53c011c9",
+          "ileaf.h": "667e6ead65fac3a17d5e2652d57335f79d398951d200e6cc8414e744bd568b0c"
+        }
+      }
+    },
+    {
+      "case": "gbk_directory",
+      "supported_by_original": true,
+      "direct": {
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "generated_count": 5,
+      "wrappers": {
+        "legacy": {
+          "returncode": 0,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gbk_directory space 中文/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gbk_directory space 中文/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xd6 in position 3: invalid continuation byte\n"
+        },
+        "repaired": {
+          "returncode": 0,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gbk_directory space 中文/repaired/.idl-vf02s80n -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/gbk_directory space 中文/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": ""
+        }
+      },
+      "unchanged_mtime": true,
+      "missing_output_recovered": true,
+      "missing_import_preserves_outputs": true,
+      "output_sha256": {
+        "direct": {
+          "encoding_probe_stub.cpp": "dd61c81597b95d0341730bfadfdda87b7f763f28b19b21d09c5253767a9ef877",
+          "encoding_probe_proxy.h": "494547eb14b929709e6b7a56ae55656855283527ff67c0f73188f8ac6fb2605a",
+          "iencoding_probe.h": "7f4bb56c6c99dd4d5fa0e55acad902f0a62427b3cbf6e7484d7d3017d5a0a3b2",
+          "encoding_probe_stub.h": "8e43f16c394c1b2fc5462897c200eaa1a4c642391649511730d54fdb7ff04ecd",
+          "encoding_probe_proxy.cpp": "c6f14ec06d6e282904542970fbc69c140115ff19d4ece39369ff6501d22a4395"
+        },
+        "legacy": {
+          "encoding_probe_stub.cpp": "dd61c81597b95d0341730bfadfdda87b7f763f28b19b21d09c5253767a9ef877",
+          "encoding_probe_proxy.h": "494547eb14b929709e6b7a56ae55656855283527ff67c0f73188f8ac6fb2605a",
+          "iencoding_probe.h": "7f4bb56c6c99dd4d5fa0e55acad902f0a62427b3cbf6e7484d7d3017d5a0a3b2",
+          "encoding_probe_stub.h": "8e43f16c394c1b2fc5462897c200eaa1a4c642391649511730d54fdb7ff04ecd",
+          "encoding_probe_proxy.cpp": "c6f14ec06d6e282904542970fbc69c140115ff19d4ece39369ff6501d22a4395"
+        },
+        "repaired": {
+          "encoding_probe_stub.cpp": "dd61c81597b95d0341730bfadfdda87b7f763f28b19b21d09c5253767a9ef877",
+          "encoding_probe_proxy.h": "494547eb14b929709e6b7a56ae55656855283527ff67c0f73188f8ac6fb2605a",
+          "iencoding_probe.h": "7f4bb56c6c99dd4d5fa0e55acad902f0a62427b3cbf6e7484d7d3017d5a0a3b2",
+          "encoding_probe_stub.h": "8e43f16c394c1b2fc5462897c200eaa1a4c642391649511730d54fdb7ff04ecd",
+          "encoding_probe_proxy.cpp": "c6f14ec06d6e282904542970fbc69c140115ff19d4ece39369ff6501d22a4395"
+        }
+      }
+    },
+    {
+      "case": "invalid_gbk",
+      "supported_by_original": false,
+      "direct": {
+        "returncode": 255,
+        "stdout": "",
+        "stderr": "[IDL-GEN]: [ParseMethodParamList:1158] [IEncodingProbe.idl:2:41] error:expected '(' before 'syntax' token\n[IDL-GEN]: [CheckParamAttr:1270] [IEncodingProbe.idl:2:41] error:expected '[' before 'syntax' token\n[IDL-GEN]: [ParseType:1336] [IEncodingProbe.idl:1:1] error:'' of type is illegal\n[IDL-GEN]: [ParseParam:1210] [IEncodingProbe.idl:1:1] error:expected param name before '' token\n[IDL-GEN]: [ParseMethodParamList:1194] [IEncodingProbe.idl:1:1] error:expected ',' or ')' before '' token\n[IDL-GEN]: [ParseMethod:1004] [IEncodingProbe.idl:1:1] error:expected ';' before '' token\n[IDL-GEN]: [ParseInterfaceBody:959] [IEncodingProbe.idl:1:1] error:expected '}' before '' token\n[IDL-GEN]: failed to parse file\n"
+      },
+      "generated_count": 0,
+      "wrappers": {
+        "legacy": {
+          "returncode": 255,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/invalid_gbk/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/invalid_gbk/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: [ParseMethodParamList:1158] [IEncodingProbe.idl:2:41] error:expected '(' before 'syntax' token\n[IDL-GEN]: [CheckParamAttr:1270] [IEncodingProbe.idl:2:41] error:expected '[' before 'syntax' token\n[IDL-GEN]: [ParseType:1336] [IEncodingProbe.idl:1:1] error:'' of type is illegal\n[IDL-GEN]: [ParseParam:1210] [IEncodingProbe.idl:1:1] error:expected param name before '' token\n[IDL-GEN]: [ParseMethodParamList:1194] [IEncodingProbe.idl:1:1] error:expected ',' or ')' before '' token\n[IDL-GEN]: [ParseMethod:1004] [IEncodingProbe.idl:1:1] error:expected ';' before '' token\n[IDL-GEN]: [ParseInterfaceBody:959] [IEncodingProbe.idl:1:1] error:expected '}' before '' token\n[IDL-GEN]: failed to parse file\n"
+        },
+        "strict": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 134, in <module>\n    sys.exit(idl_gen_interface(parse_args()))\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 65, in idl_gen_interface\n    dependencies = collect_idl_inputs(sources)\n  File \"/srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/strict.py\", line 107, in collect_idl_inputs\n    text = source.read_text(encoding='utf-8')\n  File \"/usr/lib/python3.10/pathlib.py\", line 1135, in read_text\n    return f.read()\n  File \"/usr/lib/python3.10/codecs.py\", line 322, in decode\n    (result, consumed) = self._buffer_decode(data, self.errors, final)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xd6 in position 3: invalid continuation byte\n"
+        },
+        "repaired": {
+          "returncode": 255,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/invalid_gbk/repaired/.idl-hjsutmdj -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/invalid_gbk/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: [ParseMethodParamList:1158] [IEncodingProbe.idl:2:41] error:expected '(' before 'syntax' token\n[IDL-GEN]: [CheckParamAttr:1270] [IEncodingProbe.idl:2:41] error:expected '[' before 'syntax' token\n[IDL-GEN]: [ParseType:1336] [IEncodingProbe.idl:1:1] error:'' of type is illegal\n[IDL-GEN]: [ParseParam:1210] [IEncodingProbe.idl:1:1] error:expected param name before '' token\n[IDL-GEN]: [ParseMethodParamList:1194] [IEncodingProbe.idl:1:1] error:expected ',' or ')' before '' token\n[IDL-GEN]: [ParseMethod:1004] [IEncodingProbe.idl:1:1] error:expected ';' before '' token\n[IDL-GEN]: [ParseInterfaceBody:959] [IEncodingProbe.idl:1:1] error:expected '}' before '' token\n[IDL-GEN]: failed to parse file\n"
+        }
+      }
+    },
+    {
+      "case": "unicode_import",
+      "supported_by_original": false,
+      "direct": {
+        "returncode": 255,
+        "stdout": "",
+        "stderr": "[IDL-GEN]: IEncodingProbe.idl:1:8: expected import name before '\\xe4' token\n[IDL-GEN]: failed to preprocess\n"
+      },
+      "generated_count": 0,
+      "wrappers": {
+        "legacy": {
+          "returncode": 255,
+          "stdout": "idl_gen_interface run os.remove start\ncmd: ./idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/unicode_import/legacy -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/unicode_import/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: IEncodingProbe.idl:1:8: expected import name before '\\xe4' token\n[IDL-GEN]: failed to preprocess\n"
+        },
+        "strict": {
+          "returncode": 255,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/unicode_import/strict/.idl-1rni51ii -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/unicode_import/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: IEncodingProbe.idl:1:8: expected import name before '\\xe4' token\n[IDL-GEN]: failed to preprocess\n"
+        },
+        "repaired": {
+          "returncode": 255,
+          "stdout": "cmd: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool/idl -gen-cpp -d /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/unicode_import/repaired/.idl-qsm3sr8q -c /srv/workspace/patch_backups/20261018_idl_encoding/contract-z56l1_ls/unicode_import/IEncodingProbe.idl\nexecution_path: /srv/workspace/openharmony_master_default_20261012175945_huawei_3f7104f86/code/out/rk3568/clang_x64/ability/idl_tool\n",
+          "stderr": "[IDL-GEN]: IEncodingProbe.idl:1:8: expected import name before '\\xe4' token\n[IDL-GEN]: failed to preprocess\n"
+        }
+      }
+    }
+  ]
+}
