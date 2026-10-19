@@ -1,0 +1,17 @@
+{
+  "passed": [
+    "process_internal: unchanged output and metadata timestamps; staging removed",
+    "process_internal: changed inputs, stale-file removal, missing output recovery and depfile",
+    "process_internal: staging failure preserves published files and cleans temporary directory",
+    "process_internal: failed publication rolls back old output and removes staging",
+    "remove_internal: unchanged output and metadata timestamps; staging removed",
+    "remove_internal: changed inputs, stale-file removal, missing output recovery and depfile",
+    "remove_internal: staging failure preserves published files and cleans temporary directory",
+    "remove_internal: failed publication rolls back old output and removes staging",
+    "plugins: manifest byte-identical to baseline including GN // prefix, spaces and Unicode; unchanged mtime",
+    "wrapper: manifest byte-identical to baseline including GN // prefix, spaces and Unicode; unchanged mtime",
+    "All modified Python files parse as UTF-8 and git diff --check passes"
+  ],
+  "community_codecheck_run": false,
+  "product_build_run": false
+}

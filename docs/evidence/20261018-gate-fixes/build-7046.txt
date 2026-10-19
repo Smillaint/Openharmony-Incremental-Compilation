@@ -1,0 +1,141 @@
+- heading "build:基于Gn和ninja的编译构建框架项目" [level=1]
+- img "favicon"
+- text: 按下
+- generic: /
+- text: 快速开启搜索
+- textbox
+- button "打开 AtomCode":
+  - generic: AtomCode
+- generic: 探索更多
+- link "工作台":
+  - /url: /dashboard
+  - generic: 工作台
+- button "新建":
+- link "87":
+  - /url: https://gitcode.com/notice?message_sate=countNotRead
+  - generic: "87"
+- link "代码":
+  - /url: /openharmony/build
+  - generic: 代码
+- link "Issues 83":
+  - /url: /openharmony/build/issues
+  - generic: Issues
+  - generic: "83"
+- link "Pull Requests 78":
+  - /url: /openharmony/build/pulls
+  - generic: Pull Requests
+  - generic: "78"
+- link "项目讨论":
+  - /url: /openharmony/build/discussions
+  - generic: 项目讨论
+- link "Wiki":
+  - /url: /openharmony/build/wiki
+  - generic: Wiki
+- link "分析":
+  - /url: /openharmony/build/analysis
+  - generic: 分析
+- generic: Watch
+- generic: "0"
+- generic: Star
+- generic: "23"
+- generic: Fork
+- generic: "482"
+- text: 已开启
+- generic "Stabilize binary install metadata and optional input dependencies":
+  - generic: "Stabilize binary install metadata and optional input dependencies #7046"
+- generic: SmillySmillick
+- generic: 创建于 9月3日
+- generic: 从
+- link "SmillySmillick/build：":
+  - /url: /SmillySmillick/build
+- link "fix-install-incremental-metadata":
+  - /url: /SmillySmillick/build/tree/fix-install-incremental-metadata
+- text: 合入到
+- link "openharmony/build：":
+  - /url: /openharmony/build
+- link "master":
+  - /url: /openharmony/build/tree/master
+- tablist:
+  - tab "讨论 14" [expanded]:
+    - generic: 讨论
+    - generic: "14"
+  - tab "提交 3":
+    - generic: 提交
+    - generic: "3"
+  - tab "检查 2":
+    - generic: 检查
+    - generic: "2"
+  - tab "文件改动 4":
+    - generic: 文件改动
+    - generic: "4"
+- generic: 克隆/下载
+- generic: 评审意见已解决
+- generic: 0/0
+- generic: "0"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 9月3日
+- button:
+  - text: 
+- button:
+  - text: 
+- text:  
+- img "like"
+- img "dislike"
+- heading "合并人" [level=5]:
+  - generic: 合并人
+- generic: 暂未分配
+- separator
+- heading "审查人 (0/1) 进行中" [level=5]:
+  - text: 审查人
+  - generic: (0/1)
+  - generic "进行中"
+- generic: 暂未分配
+- separator
+- heading "测试人 (0/1) 进行中" [level=5]:
+  - text: 测试人
+  - generic: (0/1)
+  - generic "进行中"
+- generic: 暂未分配
+- separator
+- heading "评审人" [level=5]:
+  - generic: 评审人
+- generic: 暂未分配
+- separator
+- heading "Label" [level=5]:
+  - generic: Label
+- generic "dco检查成功"
+- generic "waiting_on_author"
+- separator
+- heading "里程碑" [level=5]:
+  - generic: 里程碑
+- generic: 暂无关联里程碑
+- separator
+- heading "看板" [level=5]:
+  - generic: 看板
+- generic: 暂无关联看板
+- separator
+- heading "关联Issue" [level=5]:
+  - generic: 关联Issue
+- generic: 暂无关联 Issue
+- separator
+- generic: 参与者
+- generic: "5"
+- link:
+  - /url: /openharmony_ci
+  - generic "openharmony_ci"
+- link:
+  - /url: /SmillySmillick
+  - generic "SmillySmillick"
+- link:
+  - /url: /handyohos
+  - generic "handyohos"
+- link:
+  - /url: /csliutt-private
+  - generic "csliutt-private"
+- link "R":
+  - /url: /ringking0
+  - generic "ringking0":
+    - generic: R

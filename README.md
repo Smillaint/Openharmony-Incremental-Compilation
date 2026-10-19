@@ -2,6 +2,8 @@
 
 本仓库记录 OpenHarmony `rk3568/phone` 增量构建中重复 Action 的根因、代码修改、PR 与验证证据。
 
+[2026-10-18 门禁复核](docs/oct16-codecheck-fixes.md#10-月-18-日复核)：**16 条 PR 完整门禁通过；SDK CodeCheck 通过，完整门禁继续运行；安装组路径告警已消除，剩 10 条现有 InsightIntent 文件名词检查待维护者确认。** 新任务回执与源码路径证据已保存，自动巡检保持暂停。
+
 ## 最新状态与继续工作入口
 
 [2026-10-15 配套 PR 与联合门禁](docs/oct15-companion-pr-submission.md)：**10 条配套 PR 已补齐，新增 loader Issue #4761，DCO 全部通过。六组联合门禁均已启动，16 条组内 PR 的任务回执和 HEAD 已核对。** HAP 两仓统一关联 #4663；实际 PR 地址、逐仓文件与作用、分支版本和 30 分钟巡检入口见交接。门禁最终结果仍在等待。

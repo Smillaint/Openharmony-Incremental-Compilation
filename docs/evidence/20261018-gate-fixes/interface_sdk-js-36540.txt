@@ -1,0 +1,439 @@
+- heading "interface_sdk-js:基于 OpenHarmony 的 JS/TS API 声明及工具项目" [level=1]
+- img "favicon"
+- heading "OpenHarmony / interface_sdk-js" [level=2]:
+  - link:
+    - /url: /openharmony
+  - link "OpenHarmony":
+    - /url: /openharmony
+  - generic: /
+  - link "interface_sdk-js":
+    - /url: /openharmony/interface_sdk-js
+- text: 按下
+- generic: /
+- text: 快速开启搜索
+- textbox
+- button "打开 AtomCode":
+  - generic: AtomCode
+- generic: 探索更多
+- link "工作台":
+  - /url: /dashboard
+  - generic: 工作台
+- button "新建":
+- link "87":
+  - /url: https://gitcode.com/notice?message_sate=countNotRead
+  - generic: "87"
+- link "代码":
+  - /url: /openharmony/interface_sdk-js
+  - generic: 代码
+- link "Issues 707":
+  - /url: /openharmony/interface_sdk-js/issues
+  - generic: Issues
+  - generic: "707"
+- link "Pull Requests 360":
+  - /url: /openharmony/interface_sdk-js/pulls
+  - generic: Pull Requests
+  - generic: "360"
+- link "项目讨论":
+  - /url: /openharmony/interface_sdk-js/discussions
+  - generic: 项目讨论
+- link "Wiki":
+  - /url: /openharmony/interface_sdk-js/wiki
+  - generic: Wiki
+- link "分析":
+  - /url: /openharmony/interface_sdk-js/analysis
+  - generic: 分析
+- generic: Watch
+- generic: "2"
+- generic: Star
+- generic: "75"
+- generic: Fork
+- generic: "2546"
+- text: 已开启
+- generic "补齐 SDK 拆分和声明裁剪的增量依赖":
+  - generic: "补齐 SDK 拆分和声明裁剪的增量依赖 #36540"
+- generic: SmillySmillick
+- generic: 创建于 2 天前
+- generic: 从
+- link "SmillySmillick/interface_sdk-js：":
+  - /url: /SmillySmillick/interface_sdk-js
+- link "fix/sdk-interface-incremental-20261015":
+  - /url: /SmillySmillick/interface_sdk-js/tree/fix%2Fsdk-interface-incremental-20261015
+- text: 合入到
+- link "openharmony/interface_sdk-js：":
+  - /url: /openharmony/interface_sdk-js
+- link "master":
+  - /url: /openharmony/interface_sdk-js/tree/master
+- generic: 落后目标分支 134 个提交
+- tablist:
+  - tab "讨论 5" [expanded]:
+    - generic: 讨论
+    - generic: "5"
+  - tab "提交 2":
+    - generic: 提交
+    - generic: "2"
+  - tab "检查 2":
+    - generic: 检查
+    - generic: "2"
+  - tab "文件改动 3":
+    - generic: 文件改动
+    - generic: "3"
+- generic: 克隆/下载
+- generic: 评审意见已解决
+- generic: 0/0
+- generic: "0"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 2 天前
+- button:
+  - text: 
+- button:
+  - text: 
+- heading "相关的Issue" [level=3]
+- paragraph:
+  - link "补齐 SDK 接口拆分的完成标记与增量依":
+    - /url: https://gitcode.com/openharmony/build/issues/4706
+- heading "原因（目的、解决的问题等）" [level=3]
+- paragraph: SDK 拆分没有接入完成标记和 depfile；声明裁剪每轮复制文件并更新时间戳，导致下游反复判断输入变化。
+- heading "描述（做了什么，变更了什么）" [level=3]
+- paragraph: 为拆分和声明裁剪接入 stamp、depfile，跟踪声明文件及裁剪规则。裁剪结果先生成到临时目录，内容相同时保留原输出；不带新参数的调用保留原有行为。
+- heading "测试用例（新增、改动、可能影响的功能）" [level=3]
+- paragraph: 预期无改动时保留输出时间戳，声明或裁剪规则变化时正常更新，清理输出后能够恢复。
+- text:  
+- img "like"
+- img "dislike"
+- heading "合并受阻" [level=6]
+- text: 代码审查未通过（最低审查通过人数：1 人）
+- paragraph: 前置 PR（只有当前置的 PR 合入后，当前 PR 才能被合并）
+- textbox "请选择前置的 PR"
+- checkbox "合并后关闭已关联的 Issue" [checked]
+- generic: 合并后关闭已关联的 Issue
+- checkbox "合并后删除源分支"
+- generic: 合并后删除源分支
+- checkbox "Squash 合并"
+- generic: Squash 合并
+- button "设为草稿":
+  - text: 
+  - generic: 设为草稿
+- button "关闭":
+  - text: 
+  - generic: 关闭
+- button "合入" [disabled]:
+  - text: 
+  - generic: 合入
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- generic: 2 天前 关联了issue：补齐 SDK 接口拆分的完成标记与增量依
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 2 天前
+- text: 添加了label：
+- generic: waiting_on_author
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 2 天前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 "start build" 触发门禁，更多交互操作，请访问
+  - link "OpenHarmony社区支持命令清单":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: 。如果需要调整订阅PR、Issue的变更状态，请访问
+  - link "订阅链接":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Finterface_sdk-js%2Fmerge_requests%2F36540&lang=zh&theme=white
+  - text: 。
+  - text: Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a "start build" comment to trigger the gated system. For more commands, please visit
+  - link "OpenHarmony Command List":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: . If you need to change the subscription of a Pull Request or Issue, please visit the
+  - link "link":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Finterface_sdk-js%2Fmerge_requests%2F36540&lang=zh&theme=white
+  - text: .
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 2 天前
+- text: 添加了label：
+- generic: dco检查成功
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 2 天前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 首次触发
+  - text: "门禁构建开始,包含静态检查、代码编译和测试【dayu200_xts_acts编译, ohos-sdk-codearts-new编译, dayu600_7885测试, mac-sdk编译, ohos-sdk编译, x86_64_virt_tdd编译, dayu200编译, ohos-host_mini_tdd编译, dayu200_tdd编译, dayu600_7885编译, x86_64_virt编译, dayu200_xts编译, hispark_taurus_LiteOS编译, dayu200测试, master_inner_build编译, dayu200_xts_static编译, 格式化检查, hap_build编译, hispark_taurus_LiteOS测试, hispark_taurus_Linux编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6ad17ded64650f998bd4a4d2%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Finterface_sdk-js%2Fmerge_requests%2F36540&lang=zh&theme=white
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 2 天前
+- text: 添加了label：
+- generic: 静态检查失败
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 2 天前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 代码门禁未通过
+  - text: "您可以通过如下链接查看门禁报告:"
+  - link "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fworkbench%2Fcicd%2Fdetail%2F6ad17ded64650f998bd4a4d2%2Frunlist&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Finterface_sdk-js%2Fmerge_requests%2F36540&lang=zh&theme=white
+  - text: "静态检查:"
+- table:
+  - rowgroup:
+    - row "# check type result report":
+      - columnheader "#"
+      - columnheader "check type"
+      - columnheader "result"
+      - columnheader "report"
+  - rowgroup:
+    - row "1 codeCheck noPass >>>":
+      - cell "1"
+      - cell "codeCheck"
+      - cell "noPass"
+      - cell ">>>":
+        - link ">>>":
+          - /url: https://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist?pop=codecheck&taskId=MR_91bd80f2605940f7b49da2cd2637ba71
+- text: "编译测试:"
+- table:
+  - rowgroup:
+    - row "# Device build result package":
+      - columnheader "#"
+      - columnheader "Device"
+      - columnheader "build result"
+      - columnheader "package"
+  - rowgroup:
+    - row "1 hispark_taurus_LiteOS pending NA":
+      - cell "1"
+      - cell "hispark_taurus_LiteOS"
+      - cell "pending"
+      - cell "NA"
+    - row "2 hispark_taurus_Linux pending NA":
+      - cell "2"
+      - cell "hispark_taurus_Linux"
+      - cell "pending"
+      - cell "NA"
+    - row "3 ohos-sdk pending NA":
+      - cell "3"
+      - cell "ohos-sdk"
+      - cell "pending"
+      - cell "NA"
+    - row "4 dayu200 pending NA":
+      - cell "4"
+      - cell "dayu200"
+      - cell "pending"
+      - cell "NA"
+    - row "5 dayu200_xts pending NA":
+      - cell "5"
+      - cell "dayu200_xts"
+      - cell "pending"
+      - cell "NA"
+    - row "6 dayu200_tdd pending NA":
+      - cell "6"
+      - cell "dayu200_tdd"
+      - cell "pending"
+      - cell "NA"
+    - row "7 hap_build pending NA":
+      - cell "7"
+      - cell "hap_build"
+      - cell "pending"
+      - cell "NA"
+    - row "8 format_check pending NA":
+      - cell "8"
+      - cell "format_check"
+      - cell "pending"
+      - cell "NA"
+    - row "9 dayu200_xts_acts pending NA":
+      - cell "9"
+      - cell "dayu200_xts_acts"
+      - cell "pending"
+      - cell "NA"
+    - row "10 dayu200_xts_static pending NA":
+      - cell "10"
+      - cell "dayu200_xts_static"
+      - cell "pending"
+      - cell "NA"
+    - row "11 master_inner_build pending NA":
+      - cell "11"
+      - cell "master_inner_build"
+      - cell "pending"
+      - cell "NA"
+    - row "12 ohos-host_mini_tdd pending NA":
+      - cell "12"
+      - cell "ohos-host_mini_tdd"
+      - cell "pending"
+      - cell "NA"
+    - row "13 dayu600_7885 pending NA":
+      - cell "13"
+      - cell "dayu600_7885"
+      - cell "pending"
+      - cell "NA"
+    - row "14 x86_64_virt pending NA":
+      - cell "14"
+      - cell "x86_64_virt"
+      - cell "pending"
+      - cell "NA"
+    - row "15 x86_64_virt_tdd pending NA":
+      - cell "15"
+      - cell "x86_64_virt_tdd"
+      - cell "pending"
+      - cell "NA"
+    - row "16 mac-sdk pending NA":
+      - cell "16"
+      - cell "mac-sdk"
+      - cell "pending"
+      - cell "NA"
+    - row "17 ohos-sdk-codearts-new pending NA":
+      - cell "17"
+      - cell "ohos-sdk-codearts-new"
+      - cell "pending"
+      - cell "NA"
+- paragraph
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /SmillySmillick
+- link "SmillySmillick":
+  - /url: /SmillySmillick
+- text: 2 天前
+- text: "推送 1 个提交:"
+- link "7b42242e":
+  - /url: https://gitcode.com/openharmony/interface_sdk-js/merge_requests/36540/diffs?diff_id=7993748&start_sha=9e2c44a2cca432c7686c396ab9465ea51c1119da
+- text: "-Make SDK staging directory cleanup explicit"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- text: 2 天前
+- text: 删除了label：
+- generic: 静态检查失败
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 2 天前 评论：
+- button:
+  - text: 
+- paragraph: 代码有更新,重置PR验证状态
+- text:   
+- img "like"
+- img "dislike"
+- link:
+  - /url: /openharmony_ci
+- link "openharmony_ci":
+  - /url: /openharmony_ci
+- generic: 成员
+- generic: 2 天前 评论：
+- button:
+  - text: 
+- paragraph:
+  - text: 感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 "start build" 触发门禁，更多交互操作，请访问
+  - link "OpenHarmony社区支持命令清单":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: 。如果需要调整订阅PR、Issue的变更状态，请访问
+  - link "订阅链接":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Finterface_sdk-js%2Fmerge_requests%2F36540&lang=zh&theme=white
+  - text: 。
+  - text: Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a "start build" comment to trigger the gated system. For more commands, please visit
+  - link "OpenHarmony Command List":
+    - /url: https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md
+  - text: . If you need to change the subscription of a Pull Request or Issue, please visit the
+  - link "link":
+    - /url: https://link.gitcode.com/?target=http%3A%2F%2Fdcp.openharmony.cn%2Fsetting&from=https%3A%2F%2Fgitcode.com%2Fopenharmony%2Finterface_sdk-js%2Fmerge_requests%2F36540&lang=zh&theme=white
+  - text: .
+- text:   
+- img "like"
+- img "dislike"
+- text:   
+- textbox "回复"
+- heading "合并人" [level=5]:
+  - generic: 合并人
+- generic: 暂未分配
+- separator
+- heading "审查人 (1/1) 进行中" [level=5]:
+  - text: 审查人
+  - generic: (1/1)
+  - generic "进行中"
+- list:
+  - generic: 夏
+  - generic "夏登平":
+    - link "夏登平":
+      - /url: /xiadengping20241118
+- separator
+- heading "测试人 (1/1) 进行中" [level=5]:
+  - text: 测试人
+  - generic: (1/1)
+  - generic "进行中"
+- list:
+  - generic "openharmony_ci":
+    - link "openharmony_ci":
+      - /url: /openharmony_ci
+- separator
+- heading "评审人" [level=5]:
+  - generic: 评审人
+- generic: 暂未分配
+- separator
+- heading "Label" [level=5]:
+  - generic: Label
+- generic "waiting_on_author"
+- generic "dco检查成功"
+- separator
+- heading "里程碑" [level=5]:
+  - generic: 里程碑
+- generic: 暂无关联里程碑
+- separator
+- heading "看板" [level=5]:
+  - generic: 看板
+- generic: 暂无关联看板
+- separator
+- heading "关联Issue" [level=5]:
+  - generic: 关联Issue
+- 'link "补齐 SDK 接口拆分的完成标记与增量依 #4706 OpenHarmony / build"':
+  - /url: /openharmony/build/issues/4706
+  - generic "补齐 SDK 接口拆分的完成标记与增量依":
+    - text: 补齐 SDK 接口拆分的完成标记与增量依
+  - generic "OpenHarmony / build": "#4706 OpenHarmony / build"
+- separator
+- generic: 参与者
+- generic: "3"
+- link:
+  - /url: /openharmony_ci
+  - generic "openharmony_ci"
+- link:
+  - /url: /SmillySmillick
+  - generic "SmillySmillick"
+- link "夏":
+  - /url: /xiadengping20241118
+  - generic "夏登平":
+    - generic: 夏

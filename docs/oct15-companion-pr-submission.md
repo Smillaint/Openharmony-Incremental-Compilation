@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-自动任务 `openharmony-30` 已暂停。最后一次自动读取为 [2026-10-16 07:48 UTC](evidence/20261015-companion-prs/monitor/20261016T074849Z/summary.md)，状态没有变化。随后 SDK #36540 与 ace #7210 完成静态检查写法修订并推送原分支；新提交尚未重新触发门禁。SA、HAP 平台故障保留。修订版本、11 项验证及 ringking0 对应的五条通过 PR 见 [10 月 16 日交接](oct16-codecheck-fixes.md)。
+2026-10-18 手工复核 23 条 PR：16 条完整门禁通过，包含上次重跑的 SA 与 HAP；SDK、安装五条成员已启动新一轮联合门禁。SDK CodeCheck 已通过，安装组仅剩 ace 清单中的 10 条既有文件名 WordsTool 告警，NOTICE #7048、airscan #22 当前版本仍未触发。具体回执、修订版本和剩余问题见 [10 月 18 日复核](oct16-codecheck-fixes.md#10-月-18-日复核)。自动任务 openharmony-30 保持 PAUSED。
 
 ## PR、文件与作用
 

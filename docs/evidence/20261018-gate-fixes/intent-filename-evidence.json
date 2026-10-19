@@ -1,0 +1,82 @@
+{
+  "rule": "WordsTool.110 Intent",
+  "finding_count_in_old_report": 10,
+  "upstream_baseline": "5444f03da530ddee9e2441084a577180e2d7bc50",
+  "entries": [
+    {
+      "kind": "inputs",
+      "manifest_entry": "//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/insight-intent-class.ts",
+      "existing_source": "arkui-plugins/collectors/ui-collectors/records/annotations/insight-intent-class.ts",
+      "source_blob": "6d6136f4c935790a8b1686e3fa7e2e766d1554c9",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "inputs",
+      "manifest_entry": "//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/insight-intent-class.ts",
+      "existing_source": "arkui-plugins/collectors/ui-collectors/records/insight-intent-class.ts",
+      "source_blob": "84f0d15391970d58cab28ce51017a5603c5a2db3",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "inputs",
+      "manifest_entry": "//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts",
+      "existing_source": "arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts",
+      "source_blob": "3726770ebd7f5086e813a5d6f5179bdc95c83443",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "inputs",
+      "manifest_entry": "//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts",
+      "existing_source": "arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts",
+      "source_blob": "17e7bdac8fed3f609d306089dc0545e061dbc5e1",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "inputs",
+      "manifest_entry": "//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts",
+      "existing_source": "arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts",
+      "source_blob": "cb32088dbb06e71787eb1922b977a5d8f0dc03ec",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "outputs",
+      "manifest_entry": "lib/collectors/ui-collectors/records/annotations/insight-intent-class.js",
+      "existing_source": "arkui-plugins/collectors/ui-collectors/records/annotations/insight-intent-class.ts",
+      "source_blob": "6d6136f4c935790a8b1686e3fa7e2e766d1554c9",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "outputs",
+      "manifest_entry": "lib/collectors/ui-collectors/records/insight-intent-class.js",
+      "existing_source": "arkui-plugins/collectors/ui-collectors/records/insight-intent-class.ts",
+      "source_blob": "84f0d15391970d58cab28ce51017a5603c5a2db3",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "outputs",
+      "manifest_entry": "lib/ui-plugins/insight-intent/insight-intent-collector.js",
+      "existing_source": "arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts",
+      "source_blob": "3726770ebd7f5086e813a5d6f5179bdc95c83443",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "outputs",
+      "manifest_entry": "lib/ui-plugins/insight-intent/insight-intent-handler.js",
+      "existing_source": "arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts",
+      "source_blob": "17e7bdac8fed3f609d306089dc0545e061dbc5e1",
+      "identical_to_upstream_baseline": true
+    },
+    {
+      "kind": "outputs",
+      "manifest_entry": "lib/ui-plugins/insight-intent/resource-source-cache.js",
+      "existing_source": "arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts",
+      "source_blob": "cb32088dbb06e71787eb1922b977a5d8f0dc03ec",
+      "identical_to_upstream_baseline": true
+    }
+  ],
+  "review_note": "告警命中 SDK 文件清单中的现有 InsightIntent 源码及对应 JavaScript 输出路径。五个源文件与合并适配的主干版本逐字节一致；清单保留真实名称以明确 GN 输入输出。请按既有组件术语及文件名确认误报。",
+  "code_findings_already_revised": {
+    "G.FIO.04": "interface_sdk-js 7b42242e2fec2fba4fd33b469d8bbf0bf49ab209",
+    "G.FIO.05": "ace_ets2bundle e76639ebbd94be09cd2038c9ae377dfca1724333"
+  }
+}

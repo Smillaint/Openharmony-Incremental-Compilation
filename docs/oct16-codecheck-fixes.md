@@ -45,3 +45,16 @@ SDK 分支为 `fix/sdk-interface-incremental-20261015`；ace 远端分支为 `fi
 - 本地源码：`D:/workspace/repositories/companion-prs-20261015/interface_sdk-js` 和 `D:/workspace/repositories/companion-prs-20261015/developtools_ace_ets2bundle`。
 - 本地操作归档：`D:/workspace/archives/20261016-codecheck-fixes/`。
 - 远程发布备份：`/srv/workspace/patch_backups/20261016_codecheck_fixes/`。
+
+## 10 月 18 日复核
+
+本地日期为 America/Los_Angeles 的 2026-10-18，API 时间为 2026-10-19 UTC，北京门禁回执为 10 月 19 日。23 条 PR 全部回读当前 HEAD 和标签，16 条门禁通过、均未合入；另外五条属于重新启动的 SDK/安装联合组，NOTICE #7048 与 airscan #22 当前版本尚无门禁结果。
+
+- SA #6965 已通过上次重跑，最终回执 `194192597`，北京时间 10 月 16 日 17:08:36。
+- HAP #6974 / packing_tool #1556 已通过同一次联合重跑，最终回执 `194225803` / `194225794`，北京时间 10 月 16 日 19:40。
+- SDK 与 ace 的原代码告警已在 10 月 16 日提交 `7b42242e` / `e76639eb` 修订。本轮再次核对本地与远端提交，11 项本地回归通过，没有追加源码变更。
+- 安装组旧报告的 10 条 `WordsTool.110 Intent` 命中五个既有源文件和对应 JS 输出。源文件与合并适配的主干 `5444f03da530ddee9e2441084a577180e2d7bc50` 的 blob 完全相同，见路径及对象证据。清单保留完整的具体文件声明，需按既有功能术语确认误报。
+- 两条 `static-check` 最终分别返回：SDK `194414436` 为 pass，ace `194414463` 为 noPass。独立检查不代替完整门禁。
+- SDK、安装组随后各发起一次完整联合门禁：SDK `6ad56fa064650f998bfb70a8`；安装 `6ad56fc464650f998bfb7be7`。均收到机器人启动回执；SDK 两仓 CodeCheck 通过，接口检查、编译与冒烟仍需最终回执。安装组三仓中 build 和 graphic_3d 的 CodeCheck 通过，ace 只剩 10 条 `WordsTool.110`，`G.FIO.05` 已消除。不能把这五条计为完整门禁通过。
+
+回读、命令与启动回执、本地回归、路径证据见 [10 月 18 日证据](evidence/20261018-gate-fixes/)。自动巡检保持 PAUSED。

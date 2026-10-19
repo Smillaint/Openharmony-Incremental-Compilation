@@ -1,0 +1,195 @@
+{
+  "repo": "build",
+  "number": 7009,
+  "pr": {
+    "id": 9083112,
+    "html_url": "https://gitcode.com/openharmony/build/merge_requests/7009",
+    "number": 7009,
+    "state": "open",
+    "title": "Fix incremental notice file collection",
+    "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7009",
+    "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/7009/issues",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4684\n\n### 原因（目的、解决的问题等）\n部件安装信息 JSON 在语义内容未变化时仍被重新写入，导致文件时间戳变化。\nNOTICE 收集脚本采用内容感知方式生成 ZIP，内容相同时会保留旧 ZIP 的时间戳。\n最终 ZIP 的时间戳可能持续早于 depfile 中的部分输入，导致 Ninja 每轮都将收集 Action 判断为过期\n\n### 描述（做了什么，变更了什么）\n\n1. 对部件安装信息、依赖信息和 host 信息 JSON 启用内容变化检查，语义内容相同时保留原文件及时间戳。\n2. 使用 JSON 对象语义比较替代字符串哈希比较，避免字典字符串表示和顺序影响变化判断。\n3. 将 NOTICE 产物生成拆分为两个阶段：\n   - `stage_notice_files__<platform>` 保留原有 depfile 动态依赖追踪，并生成稳定的中间 ZIP；\n   - `collect_notice_files__<platform>` 使用现有 `copy_ex` 模板发布最终 `system_notice_files.zip`。\n4. 保持最终产物路径和下游依赖关系不变\n### 测试用例（新增、改动、可能影响的功能）\n直接进行编译\n\n无源码变更的第二轮构建中，以下目标均未执行：\n\n- `stage_notice_files__phone`\n- `collect_notice_files__phone`\n- `merge_system_notice_file_phone`\n\n中间 ZIP 和最终 ZIP 在两轮构建间保持一致：\n\n- inode 不变；\n- mtime 不变；\n- 文件大小不变；\n- SHA-256 不变。\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n### 是否已执行L0用例\n- [ ] 已验证\n- [x] 不涉及。如不涉及，请写明理由\n",
+    "assignees_number": 3,
+    "assignees": [
+      {
+        "id": "6721f086f130a72704164a7f",
+        "login": "handyohos",
+        "name": "handyohos",
+        "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+        "html_url": "https://gitcode.com/handyohos",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "672cf248ae148c7b76651494",
+        "login": "csliutt-private",
+        "name": "csliutt-private",
+        "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+        "html_url": "https://gitcode.com/csliutt-private",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "673d3b1b6704dc4ab7a04162",
+        "login": "ringking0",
+        "name": "ringking0",
+        "html_url": "https://gitcode.com/ringking0",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "testers": [
+      {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci",
+        "assignee": false,
+        "code_owner": false,
+        "accept": true
+      }
+    ],
+    "approval_reviewers": [],
+    "labels": [
+      {
+        "id": 87,
+        "color": "#20c22e",
+        "name": "dco检查成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-08-25T10:16:44+08:00"
+      },
+      {
+        "id": 91,
+        "color": "#20c22e",
+        "name": "编译成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-08-27T12:31:55+08:00"
+      },
+      {
+        "id": 59,
+        "color": "#20c22e",
+        "name": "静态检查成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:33+08:00",
+        "updated_at": "2026-08-27T12:32:31+08:00"
+      },
+      {
+        "id": 100,
+        "color": "#20c22e",
+        "name": "冒烟测试成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-08-27T12:32:32+08:00"
+      },
+      {
+        "id": 131,
+        "color": "#1083d6",
+        "name": "waiting_for_review",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:34:00+08:00",
+        "updated_at": "2026-08-27T12:32:39+08:00"
+      }
+    ],
+    "created_at": "2026-08-25T10:16:00+08:00",
+    "updated_at": "2026-08-27T12:32:40+08:00",
+    "closed_at": "",
+    "merged_at": "",
+    "draft": false,
+    "can_merge_check": false,
+    "prune_branch": false,
+    "mergeable": true,
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    },
+    "head": {
+      "ref": "fix-part-install-metadata-incremental-build",
+      "sha": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "label": "fix-part-install-metadata-incremental-build",
+      "repo": {
+        "path": "build",
+        "name": "build",
+        "namespace": {
+          "path": "SmillySmillick"
+        },
+        "full_name": "SmillySmillick/build",
+        "html_url": "https://gitcode.com/SmillySmillick/build.git"
+      },
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      }
+    },
+    "base": {
+      "ref": "master",
+      "sha": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "label": "master",
+      "repo": {
+        "path": "build",
+        "name": "build",
+        "namespace": {
+          "path": "openharmony"
+        },
+        "full_name": "openharmony/build",
+        "html_url": "https://gitcode.com/openharmony/build.git"
+      }
+    },
+    "mergeable_state": {
+      "merge_request_id": 9083112,
+      "state": false,
+      "status_without_user_auth": false,
+      "conflict_passed": true,
+      "branch_missing_passed": true,
+      "non_ff_passed": true,
+      "mr_state_passed": true,
+      "merged_by_user_passed": false,
+      "work_in_progress_passed": true,
+      "resolve_discussion_passed": true,
+      "ci_state_passed": true,
+      "merge_by_self_passed": true,
+      "can_force_merge": false,
+      "approval_reviewers_required_passed": true,
+      "approval_approvers_required_passed": false,
+      "approval_testers_required_passed": true,
+      "merge_request_switch": {
+        "review_mode": "approval",
+        "merge_method": "merge",
+        "only_allow_merge_if_all_discussions_are_resolved": false,
+        "disable_merge_by_self": true,
+        "only_allow_merge_if_pipeline_succeeds": false,
+        "disable_squash_merge": false,
+        "squash_merge_with_no_merge_commit": false,
+        "approval_required_reviewers_count": 0,
+        "approval_required_reviewers_branch": "*",
+        "add_notes_after_merged": true,
+        "mark_auto_merged_mr_as_closed": true,
+        "can_force_merge": true,
+        "can_reopen": true
+      },
+      "reason": {
+        "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+      },
+      "check_tasks_num": 2,
+      "all_depend_merge_request_merged_passed": true,
+      "approval_approvers_result": 1,
+      "approval_testers_result": 2
+    },
+    "visibility_reason": "public",
+    "close_related_issue": true,
+    "squash_merge": false
+  },
+  "comments": []
+}

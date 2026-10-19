@@ -1,0 +1,232 @@
+{
+  "repo": "interface_sdk-js",
+  "number": 36540,
+  "pr": {
+    "id": 9352389,
+    "html_url": "https://gitcode.com/openharmony/interface_sdk-js/merge_requests/36540",
+    "number": 36540,
+    "state": "open",
+    "title": "补齐 SDK 拆分和声明裁剪的增量依赖",
+    "url": "https://api.gitcode.com/api/v5/repos/openharmony/interface_sdk-js/pulls/36540",
+    "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/interface_sdk-js/pulls/36540/issues",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4706\n\n### 原因（目的、解决的问题等）\nSDK 拆分没有接入完成标记和 depfile；声明裁剪每轮复制文件并更新时间戳，导致下游反复判断输入变化。\n\n### 描述（做了什么，变更了什么）\n为拆分和声明裁剪接入 stamp、depfile，跟踪声明文件及裁剪规则。裁剪结果先生成到临时目录，内容相同时保留原输出；不带新参数的调用保留原有行为。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时保留输出时间戳，声明或裁剪规则变化时正常更新，清理输出后能够恢复。\n",
+    "assignees_number": 1,
+    "assignees": [
+      {
+        "id": "673ae61c17c7df0fba3f5692",
+        "login": "xiadengping20241118",
+        "name": "夏登平",
+        "html_url": "https://gitcode.com/xiadengping20241118",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "testers": [
+      {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci",
+        "assignee": false,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "approval_reviewers": [],
+    "labels": [
+      {
+        "id": 130,
+        "color": "#1083d6",
+        "name": "waiting_on_author",
+        "repository_id": 4404548,
+        "created_at": "2025-04-22T20:34:00+08:00",
+        "updated_at": "2026-10-16T09:23:32+08:00"
+      },
+      {
+        "id": 87,
+        "color": "#20c22e",
+        "name": "dco检查成功",
+        "repository_id": 4404548,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T09:23:39+08:00"
+      }
+    ],
+    "created_at": "2026-10-16T09:23:04+08:00",
+    "updated_at": "2026-10-16T15:57:13+08:00",
+    "closed_at": "",
+    "merged_at": "",
+    "draft": false,
+    "can_merge_check": false,
+    "prune_branch": false,
+    "mergeable": true,
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    },
+    "head": {
+      "ref": "fix/sdk-interface-incremental-20261015",
+      "sha": "7b42242e2fec2fba4fd33b469d8bbf0bf49ab209",
+      "label": "fix/sdk-interface-incremental-20261015",
+      "repo": {
+        "path": "interface_sdk-js",
+        "name": "interface_sdk-js",
+        "namespace": {
+          "path": "SmillySmillick"
+        },
+        "full_name": "SmillySmillick/interface_sdk-js",
+        "html_url": "https://gitcode.com/SmillySmillick/interface_sdk-js.git"
+      },
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      }
+    },
+    "base": {
+      "ref": "master",
+      "sha": "ac5bfe76813730f70f97345c6badaf454367374d",
+      "label": "master",
+      "repo": {
+        "path": "interface_sdk-js",
+        "name": "interface_sdk-js",
+        "namespace": {
+          "path": "openharmony"
+        },
+        "full_name": "openharmony/interface_sdk-js",
+        "html_url": "https://gitcode.com/openharmony/interface_sdk-js.git"
+      }
+    },
+    "mergeable_state": {
+      "merge_request_id": 9352389,
+      "state": false,
+      "status_without_user_auth": false,
+      "conflict_passed": true,
+      "branch_missing_passed": true,
+      "non_ff_passed": true,
+      "mr_state_passed": true,
+      "merged_by_user_passed": false,
+      "work_in_progress_passed": true,
+      "resolve_discussion_passed": true,
+      "ci_state_passed": true,
+      "merge_by_self_passed": true,
+      "can_force_merge": false,
+      "approval_reviewers_required_passed": true,
+      "approval_approvers_required_passed": false,
+      "approval_testers_required_passed": false,
+      "merge_request_switch": {
+        "review_mode": "approval",
+        "merge_method": "merge",
+        "only_allow_merge_if_all_discussions_are_resolved": false,
+        "disable_merge_by_self": true,
+        "only_allow_merge_if_pipeline_succeeds": false,
+        "disable_squash_merge": false,
+        "squash_merge_with_no_merge_commit": false,
+        "approval_required_reviewers_count": 0,
+        "approval_required_reviewers_branch": "*",
+        "add_notes_after_merged": true,
+        "mark_auto_merged_mr_as_closed": true,
+        "can_force_merge": true,
+        "can_reopen": true
+      },
+      "reason": {
+        "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+      },
+      "check_tasks_num": 2,
+      "all_depend_merge_request_merged_passed": true,
+      "approval_approvers_result": 1,
+      "approval_testers_result": 1
+    },
+    "visibility_reason": "public",
+    "close_related_issue": true,
+    "squash_merge": false
+  },
+  "comments": [
+    {
+      "id": 194068158,
+      "discussion_id": "a91ac8bdda7dfcdfb41614e0769e30f6577c5e9a",
+      "body": "<p>感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 \"start build\" 触发门禁，更多交互操作，请访问<a href=\"https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md\">OpenHarmony社区支持命令清单</a>。如果需要调整订阅PR、Issue的变更状态，请访问<a href=\"http://dcp.openharmony.cn/setting\">订阅链接</a>。<br></br><br>Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a \"start build\" comment to trigger the gated system. For more commands, please visit <a href=\"https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md\">OpenHarmony Command List</a>. If you need to change the subscription of a Pull Request or Issue, please visit the <a href=\"http://dcp.openharmony.cn/setting\">link</a>.</br>",
+      "created_at": "2026-10-16T09:23:38+08:00",
+      "updated_at": "2026-10-16T09:23:38+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194069489,
+      "discussion_id": "00ee64f9cadad06ef40946bdd41b3da3d387b417",
+      "body": "首次触发\n门禁构建开始,包含静态检查、代码编译和测试【dayu200_xts_acts编译, ohos-sdk-codearts-new编译, dayu600_7885测试, mac-sdk编译, ohos-sdk编译, x86_64_virt_tdd编译, dayu200编译, ohos-host_mini_tdd编译, dayu200_tdd编译, dayu600_7885编译, x86_64_virt编译, dayu200_xts编译, hispark_taurus_LiteOS编译, dayu200测试, master_inner_build编译, dayu200_xts_static编译, 格式化检查, hap_build编译, hispark_taurus_LiteOS测试, hispark_taurus_Linux编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist</a>",
+      "created_at": "2026-10-16T09:29:24+08:00",
+      "updated_at": "2026-10-16T09:29:24+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194071708,
+      "discussion_id": "6e8b2a9a802506ef8c4754c866f413f3b43efc4d",
+      "body": "代码门禁未通过  <br>您可以通过如下链接查看门禁报告:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist</a></br> <br>静态检查:</br> <table> <thead> <tr> <th>#</th> <th>check type</th> <th>result</th> <th>report</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>codeCheck</td> <td>noPass</td> <td><a href='https://dcp.openharmony.cn/workbench/cicd/detail/6ad17ded64650f998bd4a4d2/runlist?pop=codecheck&taskId=MR_91bd80f2605940f7b49da2cd2637ba71'>>>></a></td> </tr> </tbody> </table><br>编译测试:</br> <table> <thead> <tr> <th>#</th> <th>Device</th> <th>build result</th> <th>package</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>hispark_taurus_LiteOS</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>2</td> <td>hispark_taurus_Linux</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>3</td> <td>ohos-sdk</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>4</td> <td>dayu200</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>5</td> <td>dayu200_xts</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>6</td> <td>dayu200_tdd</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>7</td> <td>hap_build</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>8</td> <td>format_check</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>9</td> <td>dayu200_xts_acts</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>10</td> <td>dayu200_xts_static</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>11</td> <td>master_inner_build</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>12</td> <td>ohos-host_mini_tdd</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>13</td> <td>dayu600_7885</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>14</td> <td>x86_64_virt</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>15</td> <td>x86_64_virt_tdd</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>16</td> <td>mac-sdk</td> <td>pending</td> <td>NA</td> </tr> <tr> <td>17</td> <td>ohos-sdk-codearts-new</td> <td>pending</td> <td>NA</td> </tr> </tbody> </table>",
+      "created_at": "2026-10-16T09:38:16+08:00",
+      "updated_at": "2026-10-16T09:38:16+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194166559,
+      "discussion_id": "52566e77c9beab045d17916bcc60d46f0f3b8692",
+      "body": "代码有更新,重置PR验证状态",
+      "created_at": "2026-10-16T15:56:56+08:00",
+      "updated_at": "2026-10-16T15:56:56+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194166642,
+      "discussion_id": "bdb93b443992ccf43e525a87f9bdca60c49fd3d9",
+      "body": "<p>感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 \"start build\" 触发门禁，更多交互操作，请访问<a href=\"https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md\">OpenHarmony社区支持命令清单</a>。如果需要调整订阅PR、Issue的变更状态，请访问<a href=\"http://dcp.openharmony.cn/setting\">订阅链接</a>。<br></br><br>Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a \"start build\" comment to trigger the gated system. For more commands, please visit <a href=\"https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md\">OpenHarmony Command List</a>. If you need to change the subscription of a Pull Request or Issue, please visit the <a href=\"http://dcp.openharmony.cn/setting\">link</a>.</br>",
+      "created_at": "2026-10-16T15:57:11+08:00",
+      "updated_at": "2026-10-16T15:57:11+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    }
+  ]
+}

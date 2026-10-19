@@ -1,0 +1,29 @@
+{
+  "observed_at_utc": "2026-10-19T01:23:10.831886+00:00",
+  "complete_gate_pass_count": 16,
+  "sdk": {
+    "head": "7b42242e2fec2fba4fd33b469d8bbf0bf49ab209",
+    "codecheck": "passed",
+    "fixed_rule": "G.FIO.04",
+    "static_receipt_id": 194414436,
+    "gate_url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad56fa064650f998bfb70a8/runlist",
+    "full_gate": "pending"
+  },
+  "install": {
+    "ace_head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
+    "codecheck": "noPass",
+    "fixed_rule_no_longer_present": "G.FIO.05",
+    "remaining_rule": "WordsTool.110 Intent",
+    "remaining_count": 10,
+    "remaining_files": [
+      "arkui-plugins/sdk_files.json"
+    ],
+    "source_names_identical_to_upstream": true,
+    "static_receipt_id": 194414463,
+    "gate_url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad56fc464650f998bfb7be7/runlist",
+    "next_action": "Repository maintainer review of existing InsightIntent filenames"
+  },
+  "local_regression_pass_count": 11,
+  "new_source_commit_created": false,
+  "automation_status": "PAUSED"
+}

@@ -1,0 +1,664 @@
+- generic: OpenHarmony 数字化协作平台
+- generic: 登录
+- generic: 
+- complementary:
+  - text: 工作台
+  - menubar:
+    - menuitem "概览":
+      - generic "概览"
+    - menuitem "需求 ":
+      - generic "需求"
+      - generic: 
+      - text:  
+    - menuitem "设计 ":
+      - generic "设计"
+      - generic: 
+      - text:  
+    - menuitem "代码 ":
+      - generic "代码"
+      - generic: 
+      - text: 
+    - menuitem "CICD " [expanded]:
+      - generic "CICD"
+      - generic: 
+      - menu:
+        - menuitem "概览"
+        - menuitem "代码门禁"
+        - menuitem "每日构建"
+        - menuitem "编译专项 ":
+          - generic "编译专项"
+          - generic: 
+        - menuitem "代码质量 ":
+          - generic "代码质量"
+          - generic: 
+        - menuitem "安全合规 ":
+          - generic "安全合规"
+          - generic: 
+    - menuitem "Matrix ":
+      - generic "Matrix"
+      - generic: 
+      - text: 
+    - menuitem "测试 ":
+      - generic "测试"
+      - generic: 
+      - text: 
+    - menuitem "安全漏洞 ":
+      - generic "安全漏洞"
+      - generic: 
+      - text: 
+    - menuitem "供应链安全 ":
+      - generic "供应链安全"
+      - generic: 
+      - text: 
+    - menuitem "开源合规 ":
+      - generic "开源合规"
+      - generic: 
+      - text: 
+    - menuitem "补丁管理 ":
+      - generic "补丁管理"
+      - generic: 
+    - menuitem "发布归档 ":
+      - generic "发布归档"
+      - generic: 
+      - text: 
+    - menuitem "环境 ":
+      - generic "环境"
+      - generic: 
+      - text: 
+    - menuitem "SIG管理 ":
+      - generic "SIG管理"
+      - generic: 
+    - menuitem "Fuzz测试 ":
+      - generic "Fuzz测试"
+      - generic: 
+    - menuitem "研发效能度量 ":
+      - generic "研发效能度量"
+      - generic: 
+    - menuitem "基础设置":
+      - generic "基础设置"
+    - menuitem "TPC管理 ":
+      - generic "TPC管理"
+      - generic: 
+    - menuitem "研发AI装备 ":
+      - generic "研发AI装备"
+      - generic: 
+- generic: 
+- main:
+  - paragraph:
+    - text: 
+  - paragraph:
+    - text: 
+  - paragraph:
+  - text: 
+  - generic: 
+  - text: 
+  - generic:  
+  - navigation "Breadcrumb":
+    - link "代码门禁"
+    - generic: 
+    - link "运行状况"
+    - generic: 
+    - link "CI序列号：6ad56ef4cb1b15350a685f31 / 触发人员：null"
+    - text: 
+  - main:
+    - heading "构建详情" [level=3]
+    - table:
+      - rowgroup:
+        - row "耗时 debug test InnerApi检测 构建等待时长 测试总时间 调度 升级 检查设备 测试执行 编译总时间 Cache命中率 init downloadCode fetchPr gitLfs preCompile mainCompile afterCompile archive upload":
+          - columnheader
+          - columnheader
+          - columnheader "耗时":
+            - text: 耗时
+          - columnheader "debug":
+            - generic: debug
+          - columnheader "test":
+            - generic: test
+          - columnheader "InnerApi检测":
+            - generic: InnerApi检测
+          - columnheader "构建等待时长":
+            - generic: 构建等待时长
+          - columnheader "测试总时间":
+            - text: 测试总时间
+          - columnheader "调度":
+            - generic: 调度
+          - columnheader "升级":
+            - generic: 升级
+          - columnheader "检查设备":
+            - generic: 检查设备
+          - columnheader "测试执行":
+            - text: 测试执行
+          - columnheader "编译总时间":
+            - generic: 编译总时间
+          - columnheader "Cache命中率":
+            - generic: Cache命中率
+          - columnheader "init":
+            - generic: init
+          - columnheader "downloadCode":
+            - generic: downloadCode
+          - columnheader "fetchPr":
+            - generic: fetchPr
+          - columnheader "gitLfs":
+            - generic: gitLfs
+          - columnheader "preCompile":
+            - generic: preCompile
+          - columnheader "mainCompile":
+            - generic: mainCompile
+          - columnheader "afterCompile":
+            - generic: afterCompile
+          - columnheader "archive":
+            - generic: archive
+          - columnheader "upload":
+            - generic: upload
+    - table:
+      - rowgroup
+    - generic: 暂无数据
+    - table:
+      - rowgroup:
+        - row "构建目标 调度时间":
+          - columnheader "构建目标":
+            - generic: 构建目标
+          - columnheader "调度时间":
+            - generic: 调度时间
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+          - columnheader
+    - table:
+      - rowgroup
+    - heading "关联PR代码检查" [level=3]
+    - table:
+      - rowgroup:
+        - row "合入请求 仓库 创建人 触发人员 更新时间 PermissionScan CodeInterfaceScanner CodeCheck BundleCheck 部件依赖Check":
+          - columnheader "合入请求":
+            - generic: 合入请求
+          - columnheader "仓库":
+            - generic: 仓库
+          - columnheader "创建人":
+            - generic: 创建人
+          - columnheader "触发人员":
+            - generic: 触发人员
+          - columnheader "更新时间":
+            - generic: 更新时间
+          - columnheader "PermissionScan":
+            - generic: PermissionScan
+          - columnheader "CodeInterfaceScanner":
+            - generic: CodeInterfaceScanner
+          - columnheader "CodeCheck":
+            - generic: CodeCheck
+          - columnheader "BundleCheck":
+            - generic: BundleCheck
+          - columnheader "部件依赖Check":
+            - generic: 部件依赖Check
+    - table:
+      - rowgroup:
+        - row "MR_ffb8fa2bf0e241c087d2f5428ed3f0cb developtools_ace_ets2bundle -- -- 2026-10-18 18:14:27 -- -- 不通过 通过 通过":
+          - cell "MR_ffb8fa2bf0e241c087d2f5428ed3f0cb":
+            - generic: MR_ffb8fa2bf0e241c087d2f5428ed3f0cb
+          - cell "developtools_ace_ets2bundle":
+            - generic: developtools_ace_ets2bundle
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "2026-10-18 18:14:27":
+            - generic: 2026-10-18 18:14:27
+          - cell "--":
+            - generic: "--"
+          - cell "--":
+            - generic: "--"
+          - cell "不通过":
+            - generic: 不通过
+          - cell "通过":
+            - generic: 通过
+          - cell "通过":
+            - generic: 通过
+    - heading "关联PR格式化检查" [level=3]
+    - table:
+      - rowgroup:
+        - row "触发人员 开始时间 结束时间 耗时 报告详情 格式化检查":
+          - columnheader "触发人员":
+            - generic: 触发人员
+          - columnheader "开始时间":
+            - generic: 开始时间
+          - columnheader "结束时间":
+            - generic: 结束时间
+          - columnheader "耗时":
+            - generic: 耗时
+          - columnheader "报告详情":
+            - generic: 报告详情
+          - columnheader "格式化检查":
+            - generic: 格式化检查
+        - row "gn文件格式化检查 资料检查 接口检查 部件化检查":
+          - columnheader "gn文件格式化检查":
+            - text: gn文件格式化检查
+          - columnheader "资料检查":
+            - text: 资料检查
+          - columnheader "接口检查":
+            - text: 接口检查
+          - columnheader "部件化检查":
+            - text: 部件化检查
+    - table:
+      - rowgroup
+    - generic: 暂无数据
+    - heading "影响点" [level=3]
+    - radiogroup:
+      - radio "产品型号" [checked]:
+        - radio "产品型号" [checked]
+        - generic: 产品型号
+      - radio "用例":
+        - radio "用例"
+        - generic: 用例
+    - generic: 图例：
+    - generic: 事件
+    - generic: 项目
+    - generic: 产品
+    - generic: 用例
+  - generic:  
+  - dialog "dialog":
+    - heading "CodeCheck" [level=2]
+    - button "Close":
+      - generic: 
+    - heading "代码仓：" [level=3]
+    - generic: developtools_ace_ets2bundle
+    - list:
+      - generic: PR：
+      - generic: MR_ffb8fa2bf0e241c087d2f5428ed3f0cb
+      - generic: 代码检查结果：
+      - generic: 不通过
+      - generic: 创建人：
+      - generic: "--"
+      - generic: 触发人员：
+      - generic: "--"
+    - tablist:
+      - tab "概览"
+      - tab "代码问题" [selected]
+      - tab "片段扫描":
+        - generic: 片段扫描
+    - tabpanel "代码问题":
+      - complementary:
+        - generic: 过滤器
+        - generic: 
+        - generic: 清除选项
+        - tree:
+          - treeitem " 问题级别" [expanded]:
+            - generic: 
+            - generic "问题级别"
+            - treeitem "致命 0":
+              - text: 
+              - generic "致命"
+              - generic: "0"
+            - treeitem "严重 0":
+              - text: 
+              - generic "严重"
+              - generic: "0"
+            - treeitem "一般 10":
+              - text: 
+              - generic "一般"
+              - generic: "10"
+            - treeitem "提示 0":
+              - text: 
+              - generic "提示"
+              - generic: "0"
+          - treeitem " 问题状态" [expanded]:
+            - generic: 
+            - generic "问题状态"
+            - treeitem "未解决 10":
+              - text: 
+              - generic "未解决"
+              - generic: "10"
+            - treeitem "已解决 0":
+              - text: 
+              - generic "已解决"
+              - generic: "0"
+            - treeitem "已忽略 0":
+              - text: 
+              - generic "已忽略"
+              - generic: "0"
+          - treeitem " 规则":
+            - generic: 
+            - generic "规则"
+          - treeitem " 描述":
+            - generic: 
+            - generic "描述"
+          - treeitem " 文件":
+            - generic: 
+            - generic "文件"
+      - main:
+        - generic: 已显示 10 条, 共 10 条
+        - button
+        - checkbox "底线规则问题"
+        - generic: 底线规则问题
+        - generic: 找人解决
+        - generic: 
+        - text: 收起全部
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "1517"
+        - generic: "\"lib/ui-plugins/entry-translators/cache-factory.js\","
+        - generic "1518"
+        - generic: "\"lib/ui-plugins/entry-translators/entry-transformer.js\","
+        - generic "1519"
+        - generic: "\"lib/ui-plugins/entry-translators/factory.js\","
+        - generic "1520"
+        - generic: "\"lib/ui-plugins/entry-translators/utils.js\","
+        - generic "1521"
+        - generic: "\"lib/ui-plugins/index.js\","
+        - generic "1522"
+        - generic: "\"lib/ui-plugins/insight-intent/insight-intent-collector.js\","
+        - generic "1523"
+        - generic: "\"lib/ui-plugins/insight-intent/insight-intent-handler.js\","
+        - generic "1524"
+        - generic: "\"lib/ui-plugins/insight-intent/resource-source-cache.js\","
+        - generic "1525"
+        - generic: "\"lib/ui-plugins/interop/builder-interop.js\","
+        - generic "1526"
+        - generic: "\"lib/ui-plugins/interop/initstatevar.js\","
+        - generic "1527"
+        - generic: "\"lib/ui-plugins/interop/interop.js\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "754"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/cache-factory.ts\","
+        - generic "755"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/entry-transformer.ts\","
+        - generic "756"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/factory.ts\","
+        - generic "757"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/utils.ts\","
+        - generic "758"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/index.ts\","
+        - generic "759"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts\","
+        - generic "760"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts\","
+        - generic "761"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts\","
+        - generic "762"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/builder-interop.ts\","
+        - generic "763"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/initstatevar.ts\","
+        - generic "764"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/interop.ts\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "35"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/function-call.ts\","
+        - generic "36"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/function.ts\","
+        - generic "37"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/global-property.ts\","
+        - generic "38"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/index.ts\","
+        - generic "39"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/inner-component-function.ts\","
+        - generic "40"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/insight-intent-class.ts\","
+        - generic "41"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/new-class-instance.ts\","
+        - generic "42"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/normal-class-method.ts\","
+        - generic "43"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/normal-class-property.ts\","
+        - generic "44"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/normal-class.ts\","
+        - generic "45"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/normal-interface-property.ts\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "18"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/base.ts\","
+        - generic "19"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/call-declaration.ts\","
+        - generic "20"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/custom-component.ts\","
+        - generic "21"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/function.ts\","
+        - generic "22"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/index.ts\","
+        - generic "23"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/insight-intent-class.ts\","
+        - generic "24"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/normal-class-method.ts\","
+        - generic "25"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/normal-class-property.ts\","
+        - generic "26"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/normal-class.ts\","
+        - generic "27"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/normal-interface-property.ts\","
+        - generic "28"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/parameter.ts\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "755"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/entry-transformer.ts\","
+        - generic "756"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/factory.ts\","
+        - generic "757"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/utils.ts\","
+        - generic "758"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/index.ts\","
+        - generic "759"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts\","
+        - generic "760"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts\","
+        - generic "761"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts\","
+        - generic "762"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/builder-interop.ts\","
+        - generic "763"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/initstatevar.ts\","
+        - generic "764"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/interop.ts\","
+        - generic "765"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/legacy-transformer.ts\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "1111"
+        - generic: "\"lib/collectors/ui-collectors/records/function-call.js\","
+        - generic "1112"
+        - generic: "\"lib/collectors/ui-collectors/records/function.js\","
+        - generic "1113"
+        - generic: "\"lib/collectors/ui-collectors/records/global-property.js\","
+        - generic "1114"
+        - generic: "\"lib/collectors/ui-collectors/records/index.js\","
+        - generic "1115"
+        - generic: "\"lib/collectors/ui-collectors/records/inner-component-function.js\","
+        - generic "1116"
+        - generic: "\"lib/collectors/ui-collectors/records/insight-intent-class.js\","
+        - generic "1117"
+        - generic: "\"lib/collectors/ui-collectors/records/new-class-instance.js\","
+        - generic "1118"
+        - generic: "\"lib/collectors/ui-collectors/records/normal-class-method.js\","
+        - generic "1119"
+        - generic: "\"lib/collectors/ui-collectors/records/normal-class-property.js\","
+        - generic "1120"
+        - generic: "\"lib/collectors/ui-collectors/records/normal-class.js\","
+        - generic "1121"
+        - generic: "\"lib/collectors/ui-collectors/records/normal-interface-property.js\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "756"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/factory.ts\","
+        - generic "757"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/utils.ts\","
+        - generic "758"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/index.ts\","
+        - generic "759"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts\","
+        - generic "760"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts\","
+        - generic "761"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts\","
+        - generic "762"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/builder-interop.ts\","
+        - generic "763"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/initstatevar.ts\","
+        - generic "764"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/interop.ts\","
+        - generic "765"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/legacy-transformer.ts\","
+        - generic "766"
+        - generic: "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/predefines.ts\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "1094"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/base.js\","
+        - generic "1095"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/call-declaration.js\","
+        - generic "1096"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/custom-component.js\","
+        - generic "1097"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/function.js\","
+        - generic "1098"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/index.js\","
+        - generic "1099"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/insight-intent-class.js\","
+        - generic "1100"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/normal-class-method.js\","
+        - generic "1101"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/normal-class-property.js\","
+        - generic "1102"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/normal-class.js\","
+        - generic "1103"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/normal-interface-property.js\","
+        - generic "1104"
+        - generic: "\"lib/collectors/ui-collectors/records/annotations/parameter.js\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "1518"
+        - generic: "\"lib/ui-plugins/entry-translators/entry-transformer.js\","
+        - generic "1519"
+        - generic: "\"lib/ui-plugins/entry-translators/factory.js\","
+        - generic "1520"
+        - generic: "\"lib/ui-plugins/entry-translators/utils.js\","
+        - generic "1521"
+        - generic: "\"lib/ui-plugins/index.js\","
+        - generic "1522"
+        - generic: "\"lib/ui-plugins/insight-intent/insight-intent-collector.js\","
+        - generic "1523"
+        - generic: "\"lib/ui-plugins/insight-intent/insight-intent-handler.js\","
+        - generic "1524"
+        - generic: "\"lib/ui-plugins/insight-intent/resource-source-cache.js\","
+        - generic "1525"
+        - generic: "\"lib/ui-plugins/interop/builder-interop.js\","
+        - generic "1526"
+        - generic: "\"lib/ui-plugins/interop/initstatevar.js\","
+        - generic "1527"
+        - generic: "\"lib/ui-plugins/interop/interop.js\","
+        - generic "1528"
+        - generic: "\"lib/ui-plugins/interop/legacy-transformer.js\","
+        - text: 
+        - generic: arkui-plugins/sdk_files.json
+        - generic: WordsTool.110 Intent
+        - generic: 修改点个数 1
+        - generic: intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+        - generic: 一般
+        - generic: 未解决
+        - generic "1519"
+        - generic: "\"lib/ui-plugins/entry-translators/factory.js\","
+        - generic "1520"
+        - generic: "\"lib/ui-plugins/entry-translators/utils.js\","
+        - generic "1521"
+        - generic: "\"lib/ui-plugins/index.js\","
+        - generic "1522"
+        - generic: "\"lib/ui-plugins/insight-intent/insight-intent-collector.js\","
+        - generic "1523"
+        - generic: "\"lib/ui-plugins/insight-intent/insight-intent-handler.js\","
+        - generic "1524"
+        - generic: "\"lib/ui-plugins/insight-intent/resource-source-cache.js\","
+        - generic "1525"
+        - generic: "\"lib/ui-plugins/interop/builder-interop.js\","
+        - generic "1526"
+        - generic: "\"lib/ui-plugins/interop/initstatevar.js\","
+        - generic "1527"
+        - generic: "\"lib/ui-plugins/interop/interop.js\","
+        - generic "1528"
+        - generic: "\"lib/ui-plugins/interop/legacy-transformer.js\","
+        - generic "1529"
+        - generic: "\"lib/ui-plugins/interop/predefines.js\","
+        - text: 
+      - text: 
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic: 
+  - paragraph: OpenAtom OpenHarmony（简称“OpenHarmony”）是由开放原子开源基金会（OpenAtom Foundation）孵化及运营的开源项目
+  - link:
+    - /url: mailto:web@openharmony.io
+  - link:
+    - /url: https://gitcode.com/openharmony
+  - link:
+    - /url: https://space.bilibili.com/2029471800
+  - list:
+    - link "品牌指南":
+      - /url: https://www.openharmony.cn/Dictionary
+    - link "隐私政策":
+      - /url: https://www.openharmony.cn/Privacy
+    - link "使用条款":
+      - /url: https://www.openharmony.cn/UseClause
+    - link "项目群管理制度":
+      - /url: https://www.openharmony.cn/management
+  - paragraph: 开放原子开源基金会版权所有 | 京ICP备2020036654号-3 | 京公网安备11030102011662号
+  - paragraph: Copyright © 2025 OPENATOM FOUNDATION. All rights reserved.

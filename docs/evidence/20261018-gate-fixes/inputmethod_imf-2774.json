@@ -1,0 +1,196 @@
+{
+  "repo": "inputmethod_imf",
+  "number": 2774,
+  "pr": {
+    "id": 9352361,
+    "html_url": "https://gitcode.com/openharmony/inputmethod_imf/merge_requests/2774",
+    "number": 2774,
+    "state": "open",
+    "title": "补齐输入法 IDL 公共类型输出",
+    "url": "https://api.gitcode.com/api/v5/repos/openharmony/inputmethod_imf/pulls/2774",
+    "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/inputmethod_imf/pulls/2774/issues",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nInputMethodClientTypes.idl 的公共头文件只作为生成副产物，构建图没有完整记录，清理后可能出现缺文件。\n\n### 描述（做了什么，变更了什么）\n在 input_client_interface 中通过 sources_common 声明 InputMethodClientTypes.idl 的公共输出。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期公共类型文件有明确的生成目标，清理后可恢复，输入不变时不再因输出缺项触发生成。\n",
+    "assignees_number": 3,
+    "assignees": [
+      {
+        "id": "672ccd8e33741160e673866f",
+        "login": "zhao-linglan",
+        "name": "zhaolinglan",
+        "avatar_url": "https://cdn-img.gitcode.com/fd/bc/532f84806889d9998bc9cf10624de4b3e252478c8d3fc82e22d7066eeca76269.png",
+        "html_url": "https://gitcode.com/zhao-linglan",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "672d0a4efbbddc0c20089ac1",
+        "login": "illybyy",
+        "name": "illybyy",
+        "avatar_url": "https://cdn-img.gitcode.com/de/ce/371921d2e7c9e520a8451bd2e7e47cc35fcea304b3b86db04a3809438a0a0587.png",
+        "html_url": "https://gitcode.com/illybyy",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "6749765c04b1b5000517c3d4",
+        "login": "wuchengwen_oh",
+        "name": "吴成文",
+        "avatar_url": "https://cdn-img.gitcode.com/ae/ae/46aea4ef8f07790c42970075a03aabaa04b6e25e331ecaea018d95fe0187eec0.png?time=1757657538858",
+        "html_url": "https://gitcode.com/wuchengwen_oh",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "testers": [
+      {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci",
+        "assignee": false,
+        "code_owner": false,
+        "accept": true
+      }
+    ],
+    "approval_reviewers": [],
+    "labels": [
+      {
+        "id": 87,
+        "color": "#20c22e",
+        "name": "dco检查成功",
+        "repository_id": 4398247,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T09:19:37+08:00"
+      },
+      {
+        "id": 91,
+        "color": "#20c22e",
+        "name": "编译成功",
+        "repository_id": 4398247,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T11:51:54+08:00"
+      },
+      {
+        "id": 59,
+        "color": "#20c22e",
+        "name": "静态检查成功",
+        "repository_id": 4398247,
+        "created_at": "2025-04-22T20:33:33+08:00",
+        "updated_at": "2026-10-16T11:53:02+08:00"
+      },
+      {
+        "id": 100,
+        "color": "#20c22e",
+        "name": "冒烟测试成功",
+        "repository_id": 4398247,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T11:53:09+08:00"
+      },
+      {
+        "id": 131,
+        "color": "#1083d6",
+        "name": "waiting_for_review",
+        "repository_id": 4398247,
+        "created_at": "2025-04-22T20:34:00+08:00",
+        "updated_at": "2026-10-16T11:53:40+08:00"
+      }
+    ],
+    "created_at": "2026-10-16T09:18:59+08:00",
+    "updated_at": "2026-10-16T11:53:40+08:00",
+    "closed_at": "",
+    "merged_at": "",
+    "draft": false,
+    "can_merge_check": false,
+    "prune_branch": false,
+    "mergeable": true,
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    },
+    "head": {
+      "ref": "fix/incremental-build-20261013",
+      "sha": "331a15a1cda376687080a3977999de42182ec3ec",
+      "label": "fix/incremental-build-20261013",
+      "repo": {
+        "path": "inputmethod_imf",
+        "name": "inputmethod_imf",
+        "namespace": {
+          "path": "SmillySmillick"
+        },
+        "full_name": "SmillySmillick/inputmethod_imf",
+        "html_url": "https://gitcode.com/SmillySmillick/inputmethod_imf.git"
+      },
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      }
+    },
+    "base": {
+      "ref": "master",
+      "sha": "341493e680beba68d7251876113368052b9ab9b2",
+      "label": "master",
+      "repo": {
+        "path": "inputmethod_imf",
+        "name": "inputmethod_imf",
+        "namespace": {
+          "path": "openharmony"
+        },
+        "full_name": "openharmony/inputmethod_imf",
+        "html_url": "https://gitcode.com/openharmony/inputmethod_imf.git"
+      }
+    },
+    "mergeable_state": {
+      "merge_request_id": 9352361,
+      "state": false,
+      "status_without_user_auth": false,
+      "conflict_passed": true,
+      "branch_missing_passed": true,
+      "non_ff_passed": true,
+      "mr_state_passed": true,
+      "merged_by_user_passed": false,
+      "work_in_progress_passed": true,
+      "resolve_discussion_passed": true,
+      "ci_state_passed": true,
+      "merge_by_self_passed": true,
+      "can_force_merge": false,
+      "approval_reviewers_required_passed": true,
+      "approval_approvers_required_passed": false,
+      "approval_testers_required_passed": true,
+      "merge_request_switch": {
+        "review_mode": "approval",
+        "merge_method": "merge",
+        "only_allow_merge_if_all_discussions_are_resolved": false,
+        "disable_merge_by_self": true,
+        "only_allow_merge_if_pipeline_succeeds": false,
+        "disable_squash_merge": false,
+        "squash_merge_with_no_merge_commit": false,
+        "approval_required_reviewers_count": 0,
+        "approval_required_reviewers_branch": "*",
+        "add_notes_after_merged": true,
+        "mark_auto_merged_mr_as_closed": true,
+        "can_force_merge": true,
+        "can_reopen": true
+      },
+      "reason": {
+        "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+      },
+      "check_tasks_num": 2,
+      "all_depend_merge_request_merged_passed": true,
+      "approval_approvers_result": 1,
+      "approval_testers_result": 2
+    },
+    "visibility_reason": "public",
+    "close_related_issue": true,
+    "squash_merge": false
+  },
+  "comments": []
+}
