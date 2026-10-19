@@ -1,0 +1,52 @@
+{
+  "checked_utc": "2026-10-19T04:04:39.006626+00:00",
+  "trigger_repo": "developtools_ace_ets2bundle",
+  "trigger_number": 7210,
+  "command_id": 194464499,
+  "command_created_at": "2026-10-19T12:03:28+08:00",
+  "commands_submitted": 1,
+  "issue": "https://gitcode.com/openharmony/build/issues/4704",
+  "status": "started",
+  "automation_status": "PAUSED",
+  "review_reply_posted": false,
+  "new_bot_comments": [
+    {
+      "id": 194464617,
+      "discussion_id": "1a854b94f2ad0656a36e6fb05646c169d58c2e06",
+      "body": "本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态\n门禁构建开始,包含静态检查、代码编译和测试【ohos-sdk编译, master_inner_build编译, hispark_taurus_LiteOS编译, dayu600_7885测试, new_part_compile编译, hispark_taurus_Linux编译, dayu200测试, x86_64_virt_tdd编译, dayu200_xts_acts编译, dayu200_xts_static编译, ohos-sdk-codearts-new编译, mac-sdk编译, dayu600_7885编译, dayu200_tdd编译, dayu200_xts编译, hap_build编译, x86_64_virt编译, dayu200编译, part_compile编译, hispark_taurus_LiteOS测试, ohos-host_mini_tdd编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist</a>",
+      "created_at": "2026-10-19T12:04:05+08:00",
+      "updated_at": "2026-10-19T12:04:05+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    }
+  ],
+  "gate_id": "6ad596ab64650f998b0d95f2",
+  "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist",
+  "receipt_id": 194464617,
+  "receipt_created_at": "2026-10-19T12:04:05+08:00",
+  "gate_current_status": "pending",
+  "members": [
+    {
+      "repo": "developtools_ace_ets2bundle",
+      "number": 7210,
+      "head": "92f3fe9598c24f6118774101968176b20fc7b342"
+    },
+    {
+      "repo": "graphic_graphic_3d",
+      "number": 676,
+      "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0"
+    },
+    {
+      "repo": "build",
+      "number": 7046,
+      "head": "a82a8a03bd3a43c23c186d4ed32cd2602c010c93"
+    }
+  ]
+}

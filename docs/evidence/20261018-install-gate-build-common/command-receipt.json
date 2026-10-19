@@ -1,0 +1,19 @@
+{
+  "checked_utc": "2026-10-19T04:03:43.328088+00:00",
+  "command": {
+    "id": 194464499,
+    "discussion_id": "18dceee68fdf85c44b2eeb1c0990d89905bc56f8",
+    "body": "start build",
+    "created_at": "2026-10-19T12:03:28+08:00",
+    "updated_at": "2026-10-19T12:03:28+08:00",
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "object_id": "67150ce628c7754a02de123a",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    },
+    "comment_type": "pr_comment"
+  }
+}

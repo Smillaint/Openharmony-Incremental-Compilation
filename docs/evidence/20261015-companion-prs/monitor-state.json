@@ -289,8 +289,8 @@
       "issue": "https://gitcode.com/openharmony/build/issues/4704",
       "trigger_repo": "developtools_ace_ets2bundle",
       "trigger_number": 7210,
-      "url": null,
-      "status": "not_triggered_current_heads",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist",
+      "status": "started",
       "done": false,
       "members": [
         {
@@ -298,26 +298,27 @@
           "number": 7046,
           "head": "a82a8a03bd3a43c23c186d4ed32cd2602c010c93",
           "previous_status": "failed_static_check",
-          "status": "not_triggered_current_head",
+          "status": "pending",
           "done": false,
-          "codecheck_status": "not_run_current_head",
-          "active_gate": false,
-          "final_report_pending": false,
-          "last_checked_utc": "2026-10-19T02:00:58.400260+00:00",
-          "previous_head": "04a4ff52bbc53fa8104000748c9e38a16df53ca3"
+          "codecheck_status": "pending",
+          "active_gate": true,
+          "final_report_pending": true,
+          "last_checked_utc": "2026-10-19T04:04:39.006626+00:00",
+          "previous_head": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist"
         },
         {
           "repo": "developtools_ace_ets2bundle",
           "number": 7210,
           "head": "92f3fe9598c24f6118774101968176b20fc7b342",
           "previous_status": "failed_static_check",
-          "status": "not_triggered_current_head",
+          "status": "pending",
           "previous_head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
           "done": false,
-          "codecheck_status": "not_run_current_head",
-          "active_gate": false,
-          "final_report_pending": false,
-          "last_checked_utc": "2026-10-19T03:57:51.090092+00:00",
+          "codecheck_status": "pending",
+          "active_gate": true,
+          "final_report_pending": true,
+          "last_checked_utc": "2026-10-19T04:04:39.006626+00:00",
           "previous_revision": {
             "repo": "developtools_ace_ets2bundle",
             "number": 7210,
@@ -333,22 +334,24 @@
             "result_comment_id": 194414993,
             "result_at": "2026-10-19T09:22:42+08:00"
           },
-          "source_update_evidence": "../20261018-build-common-rootcause/publication-verification.json"
+          "source_update_evidence": "../20261018-build-common-rootcause/publication-verification.json",
+          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist"
         },
         {
           "repo": "graphic_graphic_3d",
           "number": 676,
           "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
           "previous_status": "failed_static_check",
-          "status": "blocked_by_joint_codecheck",
+          "status": "pending",
           "done": false,
-          "codecheck_status": "passed",
-          "active_gate": false,
-          "final_report_pending": false,
-          "last_checked_utc": "2026-10-19T01:36:35.990035+00:00"
+          "codecheck_status": "pending",
+          "active_gate": true,
+          "final_report_pending": true,
+          "last_checked_utc": "2026-10-19T04:04:39.006626+00:00",
+          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist"
         }
       ],
-      "last_checked_utc": "2026-10-19T02:00:58.400260+00:00",
+      "last_checked_utc": "2026-10-19T04:04:39.006626+00:00",
       "head_verified": true,
       "previous_gate": {
         "name": "Install",
@@ -465,10 +468,144 @@
           194414993
         ]
       },
-      "active_gate": false,
-      "gate_matches_current_heads": false,
-      "progress": "Review fixes published to existing member PRs. No new gate was triggered; previous_gate records the old revision results.",
-      "final_report_pending": false
+      "active_gate": true,
+      "gate_matches_current_heads": true,
+      "progress": "Latest three HEADs verified in gate; pending. One start build command submitted.",
+      "final_report_pending": true,
+      "previous_gate_before_20261018_dependency_fix": {
+        "name": "Install",
+        "issue": "https://gitcode.com/openharmony/build/issues/4704",
+        "trigger_repo": "developtools_ace_ets2bundle",
+        "trigger_number": 7210,
+        "url": null,
+        "status": "not_triggered_current_heads",
+        "done": false,
+        "last_checked_utc": "2026-10-19T02:00:58.400260+00:00",
+        "head_verified": true,
+        "previous_gate": {
+          "name": "Install",
+          "issue": "https://gitcode.com/openharmony/build/issues/4704",
+          "trigger_repo": "developtools_ace_ets2bundle",
+          "trigger_number": 7210,
+          "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad56fc464650f998bfb7be7/runlist",
+          "command_id": 194413650,
+          "receipt_id": 194413803,
+          "started_at": "2026-10-19T09:18:06+08:00",
+          "status": "failed_static_check",
+          "done": false,
+          "members": [
+            {
+              "repo": "build",
+              "number": 7046,
+              "head": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+              "previous_status": "failed_static_check",
+              "status": "blocked_by_joint_codecheck",
+              "done": false,
+              "codecheck_status": "passed",
+              "active_gate": false,
+              "final_report_pending": false,
+              "last_checked_utc": "2026-10-19T01:36:35.990035+00:00"
+            },
+            {
+              "repo": "developtools_ace_ets2bundle",
+              "number": 7210,
+              "head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
+              "previous_status": "failed_static_check",
+              "status": "failed_static_check",
+              "previous_head": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
+              "done": false,
+              "codecheck_status": "failed_words_only",
+              "active_gate": false,
+              "final_report_pending": false,
+              "last_checked_utc": "2026-10-19T01:36:35.990035+00:00",
+              "result_comment_id": 194414993,
+              "result_at": "2026-10-19T09:22:42+08:00"
+            },
+            {
+              "repo": "graphic_graphic_3d",
+              "number": 676,
+              "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+              "previous_status": "failed_static_check",
+              "status": "blocked_by_joint_codecheck",
+              "done": false,
+              "codecheck_status": "passed",
+              "active_gate": false,
+              "final_report_pending": false,
+              "last_checked_utc": "2026-10-19T01:36:35.990035+00:00"
+            }
+          ],
+          "last_checked_utc": "2026-10-19T01:36:35.990035+00:00",
+          "head_verified": true,
+          "previous_gate": {
+            "name": "Install",
+            "issue": "https://gitcode.com/openharmony/build/issues/4704",
+            "trigger_repo": "build",
+            "trigger_number": 7046,
+            "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad17dfc64650f998bd4ac9f/runlist",
+            "command_id": 194069388,
+            "receipt_id": 194069543,
+            "started_at": "2026-10-16T09:29:45+08:00",
+            "status": "not_triggered_current_heads",
+            "done": false,
+            "members": [
+              {
+                "repo": "build",
+                "number": 7046,
+                "head": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+                "previous_status": "failed_static_check",
+                "status": "pending_joint_gate"
+              },
+              {
+                "repo": "developtools_ace_ets2bundle",
+                "number": 7210,
+                "head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
+                "previous_status": "failed_static_check",
+                "status": "not_triggered_current_head",
+                "previous_head": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6"
+              },
+              {
+                "repo": "graphic_graphic_3d",
+                "number": 676,
+                "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+                "previous_status": "failed_static_check",
+                "status": "pending_joint_gate"
+              }
+            ],
+            "last_checked_utc": "2026-10-16T07:48:49.925545+00:00",
+            "head_verified": true,
+            "active_gate": false,
+            "gate_matches_current_heads": false,
+            "progress": "CodeCheck revision pushed to an existing member PR; no gate triggered for the new group HEADs. Previous gate diagnosis retained under previous_gate."
+          },
+          "active_gate": false,
+          "gate_matches_current_heads": true,
+          "progress": "Final joint gate failed at CodeCheck. ace has only 10 WordsTool.110 findings on existing source/output filenames. build and graphic_3d passed CodeCheck. Compilation did not run.",
+          "final_report_pending": false,
+          "codecheck_status": "failed_words_only",
+          "failure": {
+            "stage": "CodeCheck",
+            "classification": "existing_filename_word_check",
+            "rule": "WordsTool.110 Intent",
+            "count": 10,
+            "fingerprint": "e76639eb:WordsTool.110:10:existing-insight-intent-filenames",
+            "report_url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad56fc464650f998bfb7be7/runlist?pop=codecheck&taskId=MR_1c8b3a201d4a4cca8e4d87a7503297b9",
+            "evidence": "../20261018-gate-fixes/ace-followup-summary.json",
+            "recommendation": "Request maintainer terminology/false-positive review for exactly these 10 existing filename findings. Keep explicit GN files; do not rename sources or hide filename text solely to pass the checker.",
+            "result_comment_id": 194414993
+          },
+          "result_comment_ids": [
+            194414993
+          ]
+        },
+        "active_gate": false,
+        "gate_matches_current_heads": false,
+        "progress": "Review fixes published to existing member PRs. No new gate was triggered; previous_gate records the old revision results.",
+        "final_report_pending": false
+      },
+      "codecheck_status": "pending",
+      "command_id": 194464499,
+      "receipt_id": 194464617,
+      "current_gate_evidence": "../20261018-install-gate-build-common/gate-receipt.json"
     },
     {
       "name": "HAP",
@@ -884,8 +1021,8 @@
   "paused_at_utc": "2026-10-16T07:58:11.024715+00:00",
   "pause_reason": "Automatic inspection stopped; code-related static-check revisions handled once, platform failures retained.",
   "maintenance_evidence": "../20261018-review-fixes/publication-verification.json",
-  "last_manual_action_utc": "2026-10-19T02:24:14.793701+00:00",
-  "manual_action_evidence": "../20261016-manual-gate-retrigger/receipts.json",
+  "last_manual_action_utc": "2026-10-19T04:04:39.006626+00:00",
+  "manual_action_evidence": "../20261018-install-gate-build-common/gate-receipt.json",
   "last_manual_snapshot": "../20261018-pr7006-sdk-gate/diagnosis.json",
   "idl_encoding_evidence": "../20261018-idl-encoding/publication-verification.json",
   "build_common_dependency_evidence": "../20261018-build-common-rootcause/diagnosis.json"

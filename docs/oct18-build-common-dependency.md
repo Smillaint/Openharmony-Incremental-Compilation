@@ -2,7 +2,7 @@
 
 #7006 的 SDK 失败不是 npm 安装步骤被跳过。已在失败门禁的精确 ace 源码上复现另一种情况：npm 6 沿用缺少本地依赖的旧锁文件时，安装返回 0，仍不创建 `node_modules/@koalaui/build-common`，随后 interop 编译出现与门禁相同的两条 TS6053。根目录显式声明这个已有依赖后，旧锁文件与全新安装两种场景均能编译。
 
-一行兼容修复已追加到 [ace #7210](https://gitcode.com/openharmony/developtools_ace_ets2bundle/merge_requests/7210)，提交 `92f3fe9598c24f6118774101968176b20fc7b342`，带 `Signed-off-by: Smillick <3185479846@qq.com>`。公开 API 已回读新 HEAD 和 DCO 检查成功标签，PR 标题、正文及 Issue #4704 分组保持不变。没有修改 #7006、发送检视回复或触发新门禁。
+一行兼容修复已追加到 [ace #7210](https://gitcode.com/openharmony/developtools_ace_ets2bundle/merge_requests/7210)，提交 `92f3fe9598c24f6118774101968176b20fc7b342`，带 `Signed-off-by: Smillick <3185479846@qq.com>`。公开 API 已回读新 HEAD 和 DCO 检查成功标签，PR 标题、正文及 Issue #4704 分组保持不变。源码更新阶段没有修改 #7006、发送检视回复或触发新门禁；后续一次门禁触发见文末记录。
 
 失败节点的锁文件和 node_modules 没有取到，旧锁文件是受控复现条件，不能据此断言当次 CI 就是这个原因。华为云流水线入口无法访问，页面提示资源不存在。本记录区分可复现的代码兼容问题与尚未确认的 CI 实物状态。
 
@@ -75,3 +75,17 @@
 要确认当次故障，仍需失败节点的 package-lock.json、各级 node_modules 中 build-common 的链接和 realpath。维护者可以在原失败节点执行[只读采集脚本](evidence/20261018-build-common-rootcause/collect_failed_node.py)，参数为失败工作区的 ets1.2 路径，必要时用 `--node` 指定任务的 Node。脚本只读取相关包清单、锁文件条目、Git 版本和模块解析结果，不安装包、不清理文件，也不输出整段环境变量或认证配置。
 
 若实物不符合旧锁文件条件，应继续排查安装后的目录替换、链接目标或工作区恢复过程，不能直接套用本次复现结论。自动巡检保持暂停，既有检视回复草稿保持原内容且未发送。
+
+## 修复后的一次门禁触发
+
+2026-10-18 追加触发安装组一次门禁，命令评论 `194464499`，机器人开始回执 `194464617`。回执时间为北京时间 2026-10-19 12:04:05。任务为 [6ad596ab64650f998b0d95f2](https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist)。
+
+任务成员与实际 HEAD 已从门禁接口回读核对：
+
+| PR | HEAD |
+| --- | --- |
+| developtools_ace_ets2bundle #7210 | `92f3fe9598c24f6118774101968176b20fc7b342` |
+| graphic_graphic_3d #676 | `57e960e087a2f0aefbcc5f21b0f88b6cefc354f0` |
+| build #7046 | `a82a8a03bd3a43c23c186d4ed32cd2602c010c93` |
+
+受理时状态为 pending，仅表示门禁已启动并等待调度，静态检查、编译和测试均未确认通过。#7006 不在本次联合任务中。自动巡检保持暂停，检视回复未发送。
