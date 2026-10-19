@@ -1,0 +1,80 @@
+[
+  {
+    "repo": "build",
+    "number": 6965,
+    "before": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+    "remote_branch": "codex/fix-sa-profile-incremental-build",
+    "local_branch": "fix/review-pr-6965-20261018",
+    "backup_tag": "backup/review-fixes-20261018/pr-6965",
+    "files": [
+      "scripts/util/file_utils.py"
+    ]
+  },
+  {
+    "repo": "build",
+    "number": 6974,
+    "before": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+    "remote_branch": "fix-hap-sign-incremental-build",
+    "local_branch": "fix/review-pr-6974-20261018",
+    "backup_tag": "backup/review-fixes-20261018/pr-6974",
+    "files": [
+      "ohos/app/app_internal.gni"
+    ]
+  },
+  {
+    "repo": "build",
+    "number": 6982,
+    "before": "de69337b7f99f2328417e27fe591903862c9bbdc",
+    "remote_branch": "fix-idl-common-outputs",
+    "local_branch": "fix/review-pr-6982-20261018",
+    "backup_tag": "backup/review-fixes-20261018/pr-6982",
+    "files": [
+      "config/components/idl_tool/idl.gni"
+    ]
+  },
+  {
+    "repo": "build",
+    "number": 6999,
+    "before": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+    "remote_branch": "incremental-build-all-validation-20260820",
+    "local_branch": "fix/review-pr-6999-20261018",
+    "backup_tag": "backup/review-fixes-20261018/pr-6999",
+    "files": [
+      "ohos/app/app_internal.gni",
+      "scripts/util/file_utils.py"
+    ]
+  },
+  {
+    "repo": "build",
+    "number": 7009,
+    "before": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+    "remote_branch": "fix-part-install-metadata-incremental-build",
+    "local_branch": "fix/review-pr-7009-20261018",
+    "backup_tag": "backup/review-fixes-20261018/pr-7009",
+    "files": [
+      "scripts/util/file_utils.py"
+    ]
+  },
+  {
+    "repo": "build",
+    "number": 7046,
+    "before": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+    "remote_branch": "fix-install-incremental-metadata",
+    "local_branch": "fix/review-pr-7046-20261018",
+    "backup_tag": "backup/review-fixes-20261018/pr-7046",
+    "files": [
+      "scripts/util/file_utils.py"
+    ]
+  },
+  {
+    "repo": "build",
+    "number": 7134,
+    "before": "f0dd0bd6ea0708337120d8044115e87491794532",
+    "remote_branch": "fix/loader-components-incremental-20261015",
+    "local_branch": "fix/review-pr-7134-20261018",
+    "backup_tag": "backup/review-fixes-20261018/pr-7134",
+    "files": [
+      "scripts/util/file_utils.py"
+    ]
+  }
+]

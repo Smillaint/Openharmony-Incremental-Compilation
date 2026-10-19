@@ -1,0 +1,614 @@
+# Copyright (c) 2023-2024 Huawei Device Co., Ltd.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("//build/ohos.gni")
+
+if (ohos_indep_compiler_enable) {
+  idl_root = "//binarys/foundation/ability/idl_tool/innerapis/idl/clang_x64"
+} else {
+  idl_root = "//foundation/ability/idl_tool"
+}
+
+idl_build_deps = ""
+idl_out_root = ""
+
+build_root = "//build"
+
+if (host_cpu == "arm64") {
+  toolchain_linux = "$build_root/toolchain/linux:clang_arm64"
+  toolchain_mac = "$build_root/toolchain/mac:clang_arm64"
+} else {
+  toolchain_linux = "$build_root/toolchain/linux:clang_x64"
+  toolchain_mac = "$build_root/toolchain/mac:clang_x64"
+}
+toolchain_win = "$build_root/toolchain/mingw:mingw_x86_64"
+toolchain_ohos = "$build_root/toolchain/ohos:ohos_clang_arm64"
+
+if (host_toolchain == toolchain_mac) {
+  idl_out_root = get_label_info("$idl_root:idl($toolchain_mac)", "root_out_dir")
+  idl_build_deps = [ "$idl_root:idl($toolchain_mac)" ]
+} else if (host_toolchain == toolchain_win) {
+  idl_out_root = get_label_info("$idl_root:idl($toolchain_win)", "root_out_dir")
+  idl_build_deps = [ "$idl_root:idl($toolchain_win)" ]
+} else if (host_toolchain == toolchain_ohos) {
+  idl_out_root = get_label_info("$idl_root:idl($toolchain_ohos)", "root_out_dir")
+  idl_build_deps = [ "$idl_root:idl($toolchain_ohos)" ]
+} else {
+  idl_out_root =
+      get_label_info("$idl_root:idl($toolchain_linux)", "root_out_dir")
+  idl_build_deps = [ "$idl_root:idl($toolchain_linux)" ]
+}
+
+if (ohos_indep_compiler_enable) {
+  idl_build_path =
+      idl_out_root +
+      "/obj/binarys/foundation/ability/idl_tool/innerapis/idl/clang_x64/libs"
+} else {
+  idl_build_path = idl_out_root + "/ability/idl_tool"
+}
+
+template("idl_gen_interface") {
+  not_needed(invoker, [
+    "dst_file",
+    "client_version_script",
+    "server_version_script",
+  ])
+
+  # idl sources
+  idl_list = []
+  idl_callback_list = []
+  idl_common_list = []
+  idl_inner = false
+  if (defined(invoker.idl_inner)) {
+    idl_inner = invoker.idl_inner
+  }
+  if (is_arkui_x) {
+    # ArkUI-X short-circuits the idl_inner check when selecting the tool.
+    not_needed([ "idl_inner" ])
+  }
+  if (defined(invoker.sources)) {
+    not_needed(invoker, [ "src_idl" ])
+
+    # sources support multiple idl files
+    idl_list += rebase_path(invoker.sources)
+  } else {
+    # src_idl support single idl file
+    assert(defined(invoker.src_idl), "src_idl is required")
+    idl_list += [ rebase_path(invoker.src_idl) ]
+  }
+
+  if (defined(invoker.sources_callback)) {
+    idl_callback_list += invoker.sources_callback
+  }
+  if (defined(invoker.sources_common)) {
+    idl_common_list += invoker.sources_common
+  }
+  # Source-absolute common files are inputs only; their owning IDL targets
+  # generate the outputs. Callers must depend on those targets.
+  local_common_list = filter_exclude(idl_common_list, [ "//*" ])
+  external_common_list = filter_include(idl_common_list, [ "//*" ])
+
+  # language, default cpp, support c/cpp/rust
+  language = "cpp"
+  if (defined(invoker.language)) {
+    assert(invoker.language == "c" || invoker.language == "cpp" ||
+               invoker.language == "rust",
+           "the language must be set to 'c' or 'cpp' or 'rust', default 'cpp'")
+    language = invoker.language
+  }
+
+  # idl name transform
+  str_upper = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+  str_lower = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
+  str_upper_list = string_split(str_upper, " ")
+  str_lower_list = string_split(str_lower, " ")
+  sources_all = []
+  sources_proxy = []
+  sources_stub = []
+
+  # sources
+  foreach(idl_full_name, idl_list) {
+    name = get_path_info(idl_full_name, "name")
+    i = 0
+    foreach(s, str_upper_list) {
+      name = string_replace(name, s, "_" + str_lower_list[i])
+      i = i + 1
+    }
+
+    # first letter 'i'
+    name_split = []
+    name_split = string_split(name, "_i_")
+    init_with_i = false
+    if (name_split[0] == "") {
+      init_with_i = true
+      name = string_replace(name, "_i_", "", 1)
+    }
+    name_split = []
+    name_split = string_split(name, "_")
+    if (name_split[0] == "") {
+      name = string_replace(name, "_", "", 1)
+    }
+
+    if (init_with_i) {
+      interface_header_name = name
+    }
+
+    # second letter of result is '_'
+    name_split = []
+    name_split = string_split(name, "_")
+    if (filter_include(str_lower_list, [ name_split[0] ]) != []) {
+      name = string_replace(name, "_", "", 1)
+    }
+    if (init_with_i) {
+      sources_all +=
+          [ "${target_gen_dir}/" + "i" + interface_header_name + ".h" ]
+    } else {
+      sources_all += [ "${target_gen_dir}/" + name + ".h" ]
+    }
+    sources_all += [
+      "${target_gen_dir}/" + name + "_proxy.cpp",
+      "${target_gen_dir}/" + name + "_stub.cpp",
+      "${target_gen_dir}/" + name + "_proxy.h",
+      "${target_gen_dir}/" + name + "_stub.h",
+    ]
+    sources_proxy += [ "${target_gen_dir}/" + name + "_proxy.cpp" ]
+    sources_stub += [ "${target_gen_dir}/" + name + "_stub.cpp" ]
+    if (defined(invoker.client_enable) && invoker.client_enable) {
+      sources_all += [
+        "${target_gen_dir}/" + name + "_client.cpp",
+        "${target_gen_dir}/" + name + "_client.h",
+      ]
+      sources_proxy += [ "${target_gen_dir}/" + name + "_client.cpp" ]
+    }
+  }
+
+  # callback sources
+  foreach(idl_full_name, idl_callback_list) {
+    idl_name = get_path_info(idl_full_name, "file")
+    i = 0
+    name = string_replace(idl_name, ".idl", "")
+    foreach(s, str_upper_list) {
+      name = string_replace(name, s, "_" + str_lower_list[i])
+      i = i + 1
+    }
+
+    # first letter 'i'
+    name_split = []
+    name_split = string_split(name, "_i_")
+    init_with_i = false
+    if (name_split[0] == "") {
+      init_with_i = true
+      name = string_replace(name, "_i_", "", 1)
+    }
+    name_split = []
+    name_split = string_split(name, "_")
+    if (name_split[0] == "") {
+      name = string_replace(name, "_", "", 1)
+    }
+
+    if (init_with_i) {
+      interface_header_name = name
+    }
+
+    # second letter of result is '_'
+    name_split = []
+    name_split = string_split(name, "_")
+    if (filter_include(str_lower_list, [ name_split[0] ]) != []) {
+      name = string_replace(name, "_", "", 1)
+    }
+
+    out_full_name = string_replace(idl_full_name, idl_name, name)
+
+    if (init_with_i) {
+      out_full_name_i =
+          string_replace(idl_full_name, idl_name, "i" + interface_header_name)
+      sources_all += [ "${target_gen_dir}/" + out_full_name_i + ".h" ]
+    } else {
+      sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
+    }
+    sources_all += [
+      "${target_gen_dir}/" + out_full_name + "_proxy.cpp",
+      "${target_gen_dir}/" + out_full_name + "_stub.cpp",
+      "${target_gen_dir}/" + out_full_name + "_proxy.h",
+      "${target_gen_dir}/" + out_full_name + "_stub.h",
+    ]
+    sources_proxy += [ "${target_gen_dir}/" + out_full_name + "_stub.cpp" ]
+    sources_stub += [ "${target_gen_dir}/" + out_full_name + "_proxy.cpp" ]
+  }
+
+  # common sources
+  foreach(idl_full_name, local_common_list) {
+    idl_name = get_path_info(idl_full_name, "file")
+    i = 0
+    name = string_replace(idl_name, ".idl", "")
+    foreach(s, str_upper_list) {
+      name = string_replace(name, s, "_" + str_lower_list[i])
+      i = i + 1
+    }
+
+    # first letter 'i'
+    name_split = []
+    name_split = string_split(name, "_i_")
+    init_with_i = false
+    if (name_split[0] == "") {
+      init_with_i = true
+      name = string_replace(name, "_i_", "", 1)
+    }
+    name_split = []
+    name_split = string_split(name, "_")
+    if (name_split[0] == "") {
+      name = string_replace(name, "_", "", 1)
+    }
+
+    # second letter of result is '_'
+    name_split = []
+    name_split = string_split(name, "_")
+    if (filter_include(str_lower_list, [ name_split[0] ]) != []) {
+      name = string_replace(name, "_", "", 1)
+    }
+
+    if (init_with_i) {
+      name = "i" + name
+    }
+    out_full_name = string_replace(idl_full_name, idl_name, name)
+    sources_all += [ "${target_gen_dir}/" + out_full_name + ".h" ]
+    sources_all += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+    sources_proxy += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+    sources_stub += [ "${target_gen_dir}/" + out_full_name + ".cpp" ]
+  }
+
+  action("$target_name") {
+    inputs = idl_list
+    inputs += rebase_path(external_common_list)
+    # The depfile records recursive imports relative to each source IDL.
+    if (defined(invoker.inputs)) {
+      inputs += invoker.inputs
+    }
+    deps = []
+    if (is_arkui_x || idl_inner) {
+      deps += idl_build_deps
+    } else {
+      external_deps = [ "idl_tool:idl(${host_toolchain})" ]
+    }
+    # These deps order generation only, not client/server library linking.
+    if (defined(invoker.deps)) {
+      deps += invoker.deps
+    }
+    depfile = "$target_gen_dir/$target_name.d"
+
+    script = "//build/config/components/idl_tool/idl.py"
+    args = [
+      "--src-idl",
+      string_join(",", idl_list),
+      "--dst-path",
+      rebase_path(target_gen_dir),
+      "--idl-tool-path",
+      rebase_path(idl_build_path),
+      "--dst-file",
+      string_join(",", rebase_path(sources_all)),
+      "--language",
+      language,
+      "--depfile",
+      rebase_path(depfile, root_build_dir),
+      "--output-root",
+      rebase_path(root_gen_dir, root_build_dir),
+    ]
+    if (defined(invoker.log_domainid)) {
+      args += [
+        "--log-domainid",
+        invoker.log_domainid,
+      ]
+    }
+    if (defined(invoker.log_tag)) {
+      args += [
+        "--log-tag",
+        invoker.log_tag,
+      ]
+    }
+    if (defined(invoker.hitrace)) {
+      args += [
+        "--hitrace",
+        invoker.hitrace,
+      ]
+    }
+    if (defined(invoker.client_enable) && invoker.client_enable) {
+      args += [
+        "--client-enable",
+        "true",
+      ]
+    }
+    outputs = sources_all
+  }
+
+  idl_headers_config = target_name + "_idl_headers_config"
+  config("$idl_headers_config") {
+    include_dirs = [ target_gen_dir ]
+    if (defined(invoker.sub_include)) {
+      include_dirs += invoker.sub_include
+    }
+  }
+
+  if (invoker.target_type == "source_set" && defined(invoker.sources)) {
+    source_set_client = target_name + "_source_set_proxy"
+    source_set_server = target_name + "_source_set_stub"
+    action_target_name = ":" + target_name
+
+    # build client source_set
+    ohos_source_set(source_set_client) {
+      sources = []
+      if (defined(invoker.sources_cpp)) {
+        sources += invoker.sources_cpp
+      }
+      sources += sources_proxy
+      if (defined(invoker.configs)) {
+        configs = invoker.configs
+      }
+      public_configs = [ ":$idl_headers_config" ]
+      deps = [ action_target_name ]
+      if (is_standard_system) {
+        external_deps = [ "c_utils:utils" ]
+        if (defined(invoker.hitrace)) {
+          external_deps += [ "hitrace:hitrace_meter" ]
+        }
+        if (defined(invoker.log_domainid)) {
+          external_deps += [ "hilog:libhilog" ]
+        }
+        if (defined(invoker.sequenceable_ext_deps)) {
+          external_deps += invoker.sequenceable_ext_deps
+        }
+        if (language == "c") {
+          external_deps += [ "hdf_core:libhdf_ipc_adapter" ]
+        } else if (language == "cpp") {
+          external_deps += [ "ipc:ipc_single" ]
+        }
+      } else {
+        external_deps = [ "hilog:libhilog" ]
+      }
+      if (defined(invoker.subsystem_name)) {
+        subsystem_name = invoker.subsystem_name
+      }
+      if (defined(invoker.part_name)) {
+        part_name = invoker.part_name
+      }
+      if (defined(invoker.innerapi_tags)) {
+        innerapi_tags = invoker.innerapi_tags
+      }
+      if (defined(invoker.sanitize)) {
+        sanitize = invoker.sanitize
+      } else {
+        sanitize = {
+          cfi = true
+          cfi_cross_dso = true
+          debug = false
+        }
+      }
+      if (defined(invoker.cflags)) {
+        cflags = invoker.cflags
+      }
+      if (defined(invoker.cflags_cc)) {
+        cflags_cc = invoker.cflags_cc
+      }
+      if (defined(invoker.remove_configs)) {
+        remove_configs = invoker.remove_configs
+      }
+    }
+
+    # build server source_set
+    ohos_source_set(source_set_server) {
+      sources = []
+      if (defined(invoker.sources_cpp)) {
+        sources += invoker.sources_cpp
+      }
+      sources += sources_stub
+      if (defined(invoker.configs)) {
+        configs = invoker.configs
+      }
+      public_configs = [ ":$idl_headers_config" ]
+      deps = [ action_target_name ]
+      if (is_standard_system) {
+        external_deps = [ "c_utils:utils" ]
+        if (defined(invoker.hitrace)) {
+          external_deps += [ "hitrace:hitrace_meter" ]
+        }
+        if (defined(invoker.log_domainid)) {
+          external_deps += [ "hilog:libhilog" ]
+        }
+        if (defined(invoker.sequenceable_ext_deps)) {
+          external_deps += invoker.sequenceable_ext_deps
+        }
+        if (language == "c") {
+          external_deps += [ "hdf_core:libhdf_ipc_adapter" ]
+        } else if (language == "cpp") {
+          external_deps += [ "ipc:ipc_single" ]
+        }
+      } else {
+        external_deps = [ "hilog:libhilog" ]
+      }
+      if (defined(invoker.subsystem_name)) {
+        subsystem_name = invoker.subsystem_name
+      }
+      if (defined(invoker.part_name)) {
+        part_name = invoker.part_name
+      }
+      if (defined(invoker.sanitize)) {
+        sanitize = invoker.sanitize
+      } else {
+        sanitize = {
+          cfi = true
+          cfi_cross_dso = true
+          debug = false
+        }
+      }
+      if (defined(invoker.cflags)) {
+        cflags = invoker.cflags
+      }
+      if (defined(invoker.cflags_cc)) {
+        cflags_cc = invoker.cflags_cc
+      }
+      if (defined(invoker.remove_configs)) {
+        remove_configs = invoker.remove_configs
+      }
+    }
+  }
+
+  # build so
+  if ((language == "c" || language == "cpp" ||
+       invoker.target_type == "shared_library") && defined(invoker.sources)) {
+    lib_client = "lib" + target_name + "_proxy"
+    lib_server = "lib" + target_name + "_stub"
+    action_target_name = ":" + target_name
+
+    # build client so
+    ohos_shared_library(lib_client) {
+      sources = []
+      if (defined(invoker.sources_cpp)) {
+        sources += invoker.sources_cpp
+      }
+      sources += sources_proxy
+      if (defined(invoker.configs)) {
+        configs = invoker.configs
+      }
+      public_configs = [ ":$idl_headers_config" ]
+      deps = [ action_target_name ]
+      if (is_standard_system) {
+        public_deps = []
+        if (defined(invoker.sequenceable_pub_deps)) {
+          public_deps += invoker.sequenceable_pub_deps
+        }
+        external_deps = [ "c_utils:utils" ]
+        if (defined(invoker.hitrace)) {
+          external_deps += [ "hitrace:hitrace_meter" ]
+        }
+        if (defined(invoker.log_domainid)) {
+          external_deps += [ "hilog:libhilog" ]
+        }
+        if (defined(invoker.sequenceable_ext_deps)) {
+          external_deps += invoker.sequenceable_ext_deps
+        }
+        if (language == "c") {
+          external_deps += [ "hdf_core:libhdf_ipc_adapter" ]
+        } else if (language == "cpp") {
+          external_deps += [ "ipc:ipc_single" ]
+        }
+      } else {
+        external_deps = [ "hilog:libhilog" ]
+      }
+      if (defined(invoker.subsystem_name)) {
+        subsystem_name = invoker.subsystem_name
+      }
+      if (defined(invoker.part_name)) {
+        part_name = invoker.part_name
+      }
+      if (defined(invoker.innerapi_tags)) {
+        innerapi_tags = invoker.innerapi_tags
+      }
+      if (defined(invoker.sanitize)) {
+        sanitize = invoker.sanitize
+      } else {
+        sanitize = {
+          cfi = true
+          cfi_cross_dso = true
+          debug = false
+        }
+      }
+      if (defined(invoker.cflags)) {
+        cflags = invoker.cflags
+      }
+      if (defined(invoker.cflags_cc)) {
+        cflags_cc = invoker.cflags_cc
+      }
+      if (defined(invoker.remove_configs)) {
+        remove_configs = invoker.remove_configs
+      }
+      if (!use_clang_coverage) {
+        if (defined(invoker.client_version_script)) {
+          version_script = invoker.client_version_script
+        }
+      }
+    }
+
+    # build server so
+    ohos_shared_library(lib_server) {
+      sources = []
+      if (defined(invoker.sources_cpp)) {
+        sources += invoker.sources_cpp
+      }
+      sources += sources_stub
+      if (defined(invoker.configs)) {
+        configs = invoker.configs
+      }
+      public_configs = [ ":$idl_headers_config" ]
+      deps = [ action_target_name ]
+      if (!use_clang_coverage) {
+        if (defined(invoker.server_version_script)) {
+          version_script = invoker.server_version_script
+        }
+      }
+      if (is_standard_system) {
+        public_deps = []
+        if (defined(invoker.sequenceable_pub_deps)) {
+          public_deps += invoker.sequenceable_pub_deps
+        }
+        external_deps = [ "c_utils:utils" ]
+        if (defined(invoker.hitrace)) {
+          external_deps += [ "hitrace:hitrace_meter" ]
+        }
+        if (defined(invoker.log_domainid)) {
+          external_deps += [ "hilog:libhilog" ]
+        }
+        if (defined(invoker.sequenceable_ext_deps)) {
+          external_deps += invoker.sequenceable_ext_deps
+        }
+        if (language == "c") {
+          external_deps += [ "hdf_core:libhdf_ipc_adapter" ]
+        } else if (language == "cpp") {
+          external_deps += [ "ipc:ipc_single" ]
+        }
+      } else {
+        external_deps = [ "hilog:libhilog" ]
+      }
+      if (defined(invoker.subsystem_name)) {
+        subsystem_name = invoker.subsystem_name
+      }
+      if (defined(invoker.part_name)) {
+        part_name = invoker.part_name
+      }
+      if (defined(invoker.sanitize)) {
+        sanitize = invoker.sanitize
+      } else {
+        sanitize = {
+          cfi = true
+          cfi_cross_dso = true
+          debug = false
+        }
+      }
+      if (defined(invoker.cflags)) {
+        cflags = invoker.cflags
+      }
+      if (defined(invoker.cflags_cc)) {
+        cflags_cc = invoker.cflags_cc
+      }
+      if (defined(invoker.remove_configs)) {
+        remove_configs = invoker.remove_configs
+      }
+    }
+
+    # generate code and shared library
+    group("$target_name" + "_idl_target") {
+      deps = [
+        ":$lib_client",
+        ":$lib_server",
+      ]
+    }
+  }
+}

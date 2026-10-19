@@ -1,0 +1,267 @@
+{
+  "number": 6982,
+  "pr": {
+    "id": 9035718,
+    "html_url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+    "number": 6982,
+    "state": "open",
+    "title": "Fix IDL output declarations",
+    "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6982",
+    "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6982/issues",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4668\n\n### 原因（目的、解决的问题等）\nIDL 输出名称与实际文件不一致，部分 client、callback 和公共类型文件没有明确的生产者依赖，Ninja 会重复生成，清理产物后也可能因缺文件而编译失败。生成脚本每次先删除旧输出，也会使内容相同的文件更新时间戳。\n\n### 描述（做了什么，变更了什么）\n修正输出命名，补齐具体输出文件、生成目标依赖和递归 import 的 depfile。在 out 内临时生成，检查输出完整后按内容更新文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时不重复生成，IDL 或 import 文件变化时正常重建；清理生成文件后能恢复，生成失败时保留原有输出。",
+    "assignees_number": 3,
+    "assignees": [
+      {
+        "id": "6721f086f130a72704164a7f",
+        "login": "handyohos",
+        "name": "handyohos",
+        "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+        "html_url": "https://gitcode.com/handyohos",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "672cf248ae148c7b76651494",
+        "login": "csliutt-private",
+        "name": "csliutt-private",
+        "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+        "html_url": "https://gitcode.com/csliutt-private",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "673d3b1b6704dc4ab7a04162",
+        "login": "ringking0",
+        "name": "ringking0",
+        "html_url": "https://gitcode.com/ringking0",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "testers": [
+      {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci",
+        "assignee": false,
+        "code_owner": false,
+        "accept": true
+      }
+    ],
+    "approval_reviewers": [],
+    "labels": [
+      {
+        "id": 87,
+        "color": "#20c22e",
+        "name": "dco检查成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-08-14T17:09:07+08:00"
+      },
+      {
+        "id": 91,
+        "color": "#20c22e",
+        "name": "编译成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T11:51:57+08:00"
+      },
+      {
+        "id": 59,
+        "color": "#20c22e",
+        "name": "静态检查成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:33+08:00",
+        "updated_at": "2026-10-16T11:52:58+08:00"
+      },
+      {
+        "id": 100,
+        "color": "#20c22e",
+        "name": "冒烟测试成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T11:53:05+08:00"
+      },
+      {
+        "id": 131,
+        "color": "#1083d6",
+        "name": "waiting_for_review",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:34:00+08:00",
+        "updated_at": "2026-10-16T11:53:27+08:00"
+      }
+    ],
+    "created_at": "2026-08-14T17:08:27+08:00",
+    "updated_at": "2026-10-19T09:40:25+08:00",
+    "closed_at": "",
+    "merged_at": "",
+    "draft": false,
+    "can_merge_check": false,
+    "prune_branch": false,
+    "mergeable": true,
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    },
+    "head": {
+      "ref": "fix-idl-common-outputs",
+      "sha": "de69337b7f99f2328417e27fe591903862c9bbdc",
+      "label": "fix-idl-common-outputs",
+      "repo": {
+        "path": "build",
+        "name": "build",
+        "namespace": {
+          "path": "SmillySmillick"
+        },
+        "full_name": "SmillySmillick/build",
+        "html_url": "https://gitcode.com/SmillySmillick/build.git"
+      },
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      }
+    },
+    "base": {
+      "ref": "master",
+      "sha": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "label": "master",
+      "repo": {
+        "path": "build",
+        "name": "build",
+        "namespace": {
+          "path": "openharmony"
+        },
+        "full_name": "openharmony/build",
+        "html_url": "https://gitcode.com/openharmony/build.git"
+      }
+    },
+    "mergeable_state": {
+      "merge_request_id": 9035718,
+      "state": false,
+      "status_without_user_auth": false,
+      "conflict_passed": true,
+      "branch_missing_passed": true,
+      "non_ff_passed": true,
+      "mr_state_passed": true,
+      "merged_by_user_passed": false,
+      "work_in_progress_passed": true,
+      "resolve_discussion_passed": true,
+      "ci_state_passed": true,
+      "merge_by_self_passed": true,
+      "can_force_merge": false,
+      "approval_reviewers_required_passed": true,
+      "approval_approvers_required_passed": false,
+      "approval_testers_required_passed": true,
+      "merge_request_switch": {
+        "review_mode": "approval",
+        "merge_method": "merge",
+        "only_allow_merge_if_all_discussions_are_resolved": false,
+        "disable_merge_by_self": true,
+        "only_allow_merge_if_pipeline_succeeds": false,
+        "disable_squash_merge": false,
+        "squash_merge_with_no_merge_commit": false,
+        "approval_required_reviewers_count": 0,
+        "approval_required_reviewers_branch": "*",
+        "add_notes_after_merged": true,
+        "mark_auto_merged_mr_as_closed": true,
+        "can_force_merge": true,
+        "can_reopen": true
+      },
+      "reason": {
+        "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+      },
+      "check_tasks_num": 2,
+      "all_depend_merge_request_merged_passed": true,
+      "approval_approvers_result": 1,
+      "approval_testers_result": 2
+    },
+    "visibility_reason": "public",
+    "close_related_issue": true,
+    "squash_merge": false
+  },
+  "files": [
+    {
+      "sha": "de69337b7f99f2328417e27fe591903862c9bbdc",
+      "filename": "config/components/idl_tool/idl.gni",
+      "additions": 85,
+      "deletions": 71,
+      "blob_id": "28e28f026aade6dc4693cb260415cce07a83a109",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/de69337b7f99f2328417e27fe591903862c9bbdc/config/components/idl_tool/idl.gni",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/de69337b7f99f2328417e27fe591903862c9bbdc/config/components/idl_tool/idl.gni",
+      "patch": {
+        "diff": "@@ -68,16 +68,10 @@ template(\"idl_gen_interface\") {\n   idl_list = []\n   idl_callback_list = []\n   idl_common_list = []\n-  if (is_arkui_x){\n-    not_needed([ \"idl_inner\" ])\n-  }else {\n-    idl_inner = false\n+  idl_inner = false\n+  if (defined(invoker.idl_inner)) {\n+    idl_inner = invoker.idl_inner\n   }\n-  \n-  if (defined(invoker.idl_inner) && invoker.idl_inner == true){\n-    idl_inner = true\n-  }\n-\n   if (defined(invoker.sources)) {\n     not_needed(invoker, [ \"src_idl\" ])\n \n@@ -86,7 +80,7 @@ template(\"idl_gen_interface\") {\n   } else {\n     # src_idl support single idl file\n     assert(defined(invoker.src_idl), \"src_idl is required\")\n-    idl_list += [ invoker.src_idl ]\n+    idl_list += [ rebase_path(invoker.src_idl) ]\n   }\n \n   if (defined(invoker.sources_callback)) {\n@@ -95,6 +89,8 @@ template(\"idl_gen_interface\") {\n   if (defined(invoker.sources_common)) {\n     idl_common_list += invoker.sources_common\n   }\n+  local_common_list = filter_exclude(idl_common_list, [ \"//*\" ])\n+  external_common_list = filter_include(idl_common_list, [ \"//*\" ])\n \n   # language, default cpp, support c/cpp/rust\n   language = \"cpp\"\n@@ -137,6 +133,10 @@ template(\"idl_gen_interface\") {\n       name = string_replace(name, \"_\", \"\", 1)\n     }\n \n+    if (init_with_i) {\n+      interface_header_name = name\n+    }\n+\n     # second letter of result is '_'\n     name_split = []\n     name_split = string_split(name, \"_\")\n@@ -144,7 +144,8 @@ template(\"idl_gen_interface\") {\n       name = string_replace(name, \"_\", \"\", 1)\n     }\n     if (init_with_i) {\n-      sources_all += [ \"${target_gen_dir}/\" + \"i\" + name + \".h\" ]\n+      sources_all +=\n+          [ \"${target_gen_dir}/\" + \"i\" + interface_header_name + \".h\" ]\n     } else {\n       sources_all += [ \"${target_gen_dir}/\" + name + \".h\" ]\n     }\n@@ -157,7 +158,10 @@ template(\"idl_gen_interface\") {\n     sources_proxy += [ \"${target_gen_dir}/\" + name + \"_proxy.cpp\" ]\n     sources_stub += [ \"${target_gen_dir}/\" + name + \"_stub.cpp\" ]\n     if (defined(invoker.client_enable) && invoker.client_enable) {\n-      sources_all += [ \"${target_gen_dir}/\" + name + \"_client.cpp\" ]\n+      sources_all += [\n+        \"${target_gen_dir}/\" + name + \"_client.cpp\",\n+        \"${target_gen_dir}/\" + name + \"_client.h\",\n+      ]\n       sources_proxy += [ \"${target_gen_dir}/\" + name + \"_client.cpp\" ]\n     }\n   }\n@@ -186,6 +190,60 @@ template(\"idl_gen_interface\") {\n       name = string_replace(name, \"_\", \"\", 1)\n     }\n \n+    if (init_with_i) {\n+      interface_header_name = name\n+    }\n+\n+    # second letter of result is '_'\n+    name_split = []\n+    name_split = string_split(name, \"_\")\n+    if (filter_include(str_lower_list, [ name_split[0] ]) != []) {\n+      name = string_replace(name, \"_\", \"\", 1)\n+    }\n+\n+    out_full_name = string_replace(idl_full_name, idl_name, name)\n+\n+    if (init_with_i) {\n+      out_full_name_i =\n+          string_replace(idl_full_name, idl_name, \"i\" + interface_header_name)\n+      sources_all += [ \"${target_gen_dir}/\" + out_full_name_i + \".h\" ]\n+    } else {\n+      sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".h\" ]\n+    }\n+    sources_all += [\n+      \"${target_gen_dir}/\" + out_full_name + \"_proxy.cpp\",\n+      \"${target_gen_dir}/\" + out_full_name + \"_stub.cpp\",\n+      \"${target_gen_dir}/\" + out_full_name + \"_proxy.h\",\n+      \"${target_gen_dir}/\" + out_full_name + \"_stub.h\",\n+    ]\n+    sources_proxy += [ \"${target_gen_dir}/\" + out_full_name + \"_stub.cpp\" ]\n+    sources_stub += [ \"${target_gen_dir}/\" + out_full_name + \"_proxy.cpp\" ]\n+  }\n+\n+  # common sources\n+  foreach(idl_full_name, local_common_list) {\n+    idl_name = get_path_info(idl_full_name, \"file\")\n+    i = 0\n+    name = string_replace(idl_name, \".idl\", \"\")\n+    foreach(s, str_upper_list) {\n+      name = string_replace(name, s, \"_\" + str_lower_list[i])\n+      i = i + 1\n+    }\n+\n+    # first letter 'i'\n+    name_split = []\n+    name_split = string_split(name, \"_i_\")\n+    init_with_i = false\n+    if (name_split[0] == \"\") {\n+      init_with_i = true\n+      name = string_replace(name, \"_i_\", \"\", 1)\n+    }\n+    name_split = []\n+    name_split = string_split(name, \"_\")\n+    if (name_split[0] == \"\") {\n+      name = string_replace(name, \"_\", \"\", 1)\n+    }\n+\n     # second letter of result is '_'\n     name_split = []\n     name_split = string_split(name, \"_\")\n@@ -193,63 +251,11 @@ template(\"idl_gen_interface\") {\n       name = string_replace(name, \"_\", \"\", 1)\n     }\n \n-    out_full_name = string_replace(idl_full_name, idl_name, name)\n-\n     if (init_with_i) {\n-      out_full_name_i = string_replace(idl_full_name, idl_name, \"i\" + name)\n-      sources_all += [ \"${target_gen_dir}/\" + out_full_name_i + \".h\" ]\n-    } else {\n-      sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".h\" ]\n+      name = \"i\" + name\n     }\n-    sources_all += [\n-      \"${target_gen_dir}/\" + out_full_name + \"_proxy.cpp\",\n-      \"${target_gen_dir}/\" + out_full_name + \"_stub.cpp\",\n-      \"${target_gen_dir}/\" + out_full_name + \"_proxy.h\",\n-      \"${target_gen_dir}/\" + out_full_name + \"_stub.h\",\n-    ]\n-    sources_proxy += [ \"${target_gen_dir}/\" + out_full_name + \"_stub.cpp\" ]\n-    sources_stub += [ \"${target_gen_dir}/\" + out_full_name + \"_proxy.cpp\" ]\n-  }\n-\n-  # common sources\n-  foreach(idl_full_name, idl_common_list) {\n-    idl_name = get_path_info(idl_full_name, \"file\")\n-    i = 0\n-    name = string_replace(idl_name, \".idl\", \"\")\n-    foreach(s, str_upper_list) {\n-      name = string_replace(name, s, \"_\" + str_lower_list[i])\n-      i = i + 1\n-    }\n-\n-    # first letter 'i'\n-    name_split = []\n-    name_split = string_split(name, \"_i_\")\n-    init_with_i = false\n-    if (name_split[0] == \"\") {\n-      init_with_i = true\n-      name = string_replace(name, \"_i_\", \"i\", 1)\n-    }\n-    name_split = []\n-    name_split = string_split(name, \"_\")\n-    if (name_split[0] == \"\") {\n-      name = string_replace(name, \"_\", \"\", 1)\n-    }\n-\n-    # second letter of result is '_'\n-    name_split = []\n-    name_split = string_split(name, \"_\")\n-    if (filter_include(str_lower_list, [ name_split[0] ]) != []) {\n-      name = string_replace(name, \"_\", \"\", 1)\n-    }\n-\n     out_full_name = string_replace(idl_full_name, idl_name, name)\n-\n-    if (init_with_i) {\n-      out_full_name_i = string_replace(idl_full_name, idl_name, \"i\" + name)\n-      sources_all += [ \"${target_gen_dir}/\" + out_full_name_i + \".h\" ]\n-    } else {\n-      sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".h\" ]\n-    }\n+    sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".h\" ]\n     sources_all += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n     sources_proxy += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n     sources_stub += [ \"${target_gen_dir}/\" + out_full_name + \".cpp\" ]\n@@ -257,17 +263,21 @@ template(\"idl_gen_interface\") {\n \n   action(\"$target_name\") {\n     inputs = idl_list\n+    inputs += rebase_path(external_common_list)\n+    # The depfile records recursive imports relative to each source IDL.\n     if (defined(invoker.inputs)) {\n       inputs += invoker.inputs\n     }\n+    deps = []\n     if (is_arkui_x || idl_inner) {\n-      deps = idl_build_deps\n+      deps += idl_build_deps\n     } else {\n-      if (!defined(external_deps)) {\n-        external_deps = []\n-      }\n-      external_deps += [ \"idl_tool:idl(${host_toolchain})\" ]\n+      external_deps = [ \"idl_tool:idl(${host_toolchain})\" ]\n     }\n+    if (defined(invoker.deps)) {\n+      deps += invoker.deps\n+    }\n+    depfile = \"$target_gen_dir/$target_name.d\"\n \n     script = \"//build/config/components/idl_tool/idl.py\"\n     args = [\n@@ -281,6 +291,10 @@ template(\"idl_gen_interface\") {\n       string_join(\",\", rebase_path(sources_all)),\n       \"--language\",\n       language,\n+      \"--depfile\",\n+      rebase_path(depfile, root_build_dir),\n+      \"--output-root\",\n+      rebase_path(root_gen_dir, root_build_dir),\n     ]\n     if (defined(invoker.log_domainid)) {\n       args += [\n",
+        "old_path": "config/components/idl_tool/idl.gni",
+        "new_path": "config/components/idl_tool/idl.gni",
+        "a_mode": "100644",
+        "b_mode": "100644",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 85,
+        "removed_lines": 71
+      },
+      "target_branch": "master",
+      "source_branch": "fix-idl-common-outputs",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    },
+    {
+      "sha": "de69337b7f99f2328417e27fe591903862c9bbdc",
+      "filename": "config/components/idl_tool/idl.py",
+      "additions": 79,
+      "deletions": 31,
+      "blob_id": "ad535759e83030c44d91eb8d5b974da2681dbdf4",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/de69337b7f99f2328417e27fe591903862c9bbdc/config/components/idl_tool/idl.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/de69337b7f99f2328417e27fe591903862c9bbdc/config/components/idl_tool/idl.py",
+      "patch": {
+        "diff": "@@ -18,6 +18,9 @@ import os\n import subprocess\n import argparse\n import sys\n+import re\n+import tempfile\n+from pathlib import Path\n \n \n def parse_args():\n@@ -31,6 +34,8 @@ def parse_args():\n     parser.add_argument('--hitrace', help='hitrace switch, default off')\n     parser.add_argument('--language', help='language switch, default cpp')\n     parser.add_argument('--client-enable', help='gen client code')\n+    parser.add_argument('--depfile', help='IDL import dependencies')\n+    parser.add_argument('--output-root', help='root of generated outputs')\n     arguments = parser.parse_args()\n     return arguments\n \n@@ -38,49 +43,92 @@ def parse_args():\n def run_command(cmd, execution_path):\n     print(\"cmd:\", \" \".join(cmd))\n     print(\"execution_path:\", execution_path)\n-    proc = subprocess.Popen(cmd, cwd=execution_path, stdout=subprocess.PIPE)\n-    proc.wait()\n+    proc = subprocess.run(cmd, cwd=execution_path)\n     return proc.returncode\n \n \n def idl_gen_interface(input_arguments):\n-    if not os.path.exists(input_arguments.dst_path):\n-        try:\n-            os.makedirs(input_arguments.dst_path, 0o750, exist_ok=True)\n-        except (OSError, TypeError) as excep:\n-            raise excep\n-        finally:\n-            pass\n-\n-    print(\"idl_gen_interface run os.remove start\")\n-    dst_file_list = input_arguments.dst_file.split(',')\n-    for dst_file in dst_file_list:\n-        if os.path.exists(dst_file):\n-            os.remove(dst_file)\n-            print(\"idl_gen_interface run os.remove\", dst_file)\n-\n     gen_language = \"-gen-cpp\"\n     if input_arguments.language == \"rust\":\n         gen_language = \"-gen-rust\"\n     elif input_arguments.language == \"ts\":\n         gen_language = \"-gen-ts\"\n \n-    src_idl_list = input_arguments.src_idl.split(\",\")\n-    for src_idl in src_idl_list:\n-        cmd = [os.path.join(\".\", \"idl\"), gen_language, \"-d\", input_arguments.dst_path, \"-c\", src_idl]\n-        if input_arguments.log_domainid:\n-            cmd += ['-log-domainid', input_arguments.log_domainid]\n-        if input_arguments.log_tag:\n-            cmd += ['-log-tag', input_arguments.log_tag]\n-        if input_arguments.hitrace:\n-            cmd += ['-t', input_arguments.hitrace]\n-        if input_arguments.client_enable == 'true':\n-            cmd += ['-client-enable']\n-        ret = run_command(cmd, input_arguments.idl_tool_path)\n-        if ret != 0:\n-            return ret\n+    sources = [Path(p).resolve() for p in input_arguments.src_idl.split(',')]\n+    outputs = [Path(p).resolve() for p in input_arguments.dst_file.split(',')]\n+    destination = Path(input_arguments.dst_path).resolve()\n+    output_root = Path(input_arguments.output_root).resolve() if input_arguments.output_root else Path(\n+        os.path.commonpath([str(destination)] + [str(p.parent) for p in outputs]))\n+    relative_destination = destination.relative_to(output_root)\n+    for output in outputs:\n+        output.relative_to(output_root)\n+    dependencies = collect_idl_inputs(sources)\n+    tool_dir = Path(input_arguments.idl_tool_path).resolve()\n+    tool = tool_dir / ('idl.exe' if os.name == 'nt' else 'idl')\n+    output_root.mkdir(parents=True, exist_ok=True)\n+    with tempfile.TemporaryDirectory(prefix='.idl-', dir=output_root) as temporary:\n+        staging_root = Path(temporary)\n+        staging = staging_root / relative_destination\n+        staging.mkdir(parents=True, exist_ok=True)\n+        for src_idl in sources:\n+            cmd = [str(tool), gen_language, '-d', str(staging), '-c', str(src_idl)]\n+            if input_arguments.log_domainid:\n+                cmd += ['-log-domainid', input_arguments.log_domainid]\n+            if input_arguments.log_tag:\n+                cmd += ['-log-tag', input_arguments.log_tag]\n+            if input_arguments.hitrace:\n+                cmd += ['-t', input_arguments.hitrace]\n+            if input_arguments.client_enable == 'true':\n+                cmd += ['-client-enable']\n+            ret = run_command(cmd, str(tool_dir))\n+            if ret != 0:\n+                return ret\n+        # Validate the complete declared output set before replacing any file.\n+        for output in outputs:\n+            generated = staging_root / output.relative_to(output_root)\n+            if not generated.is_file():\n+                raise RuntimeError('IDL did not generate declared output: {}'.format(output))\n+        for output in outputs:\n+            generated = staging_root / output.relative_to(output_root)\n+            publish_if_changed(generated, output)\n+    if input_arguments.depfile:\n+        write_depfile(input_arguments.depfile, outputs[0], dependencies | {tool})\n     return 0\n \n \n+def collect_idl_inputs(sources):\n+    dependencies = set()\n+    pending = list(sources)\n+    while pending:\n+        source = pending.pop().resolve()\n+        if source in dependencies:\n+            continue\n+        dependencies.add(source)\n+        text = source.read_text(encoding='utf-8')\n+        text = re.sub(r'/\\*.*?\\*/|//[^\\n]*', '', text, flags=re.S)\n+        for name in re.findall(r'\\bimport\\s+([\\w./]+)\\s*;', text):\n+            pending.append(source.parent / (name + '.idl'))\n+    return dependencies\n+\n+\n+def publish_if_changed(source, destination):\n+    content = source.read_bytes()\n+    if destination.is_file() and destination.read_bytes() == content:\n+        return\n+    destination.parent.mkdir(parents=True, exist_ok=True)\n+    os.replace(source, destination)\n+\n+\n+def write_depfile(path, output, dependencies):\n+    def escape(value):\n+        value = os.path.relpath(value).replace(os.sep, '/')\n+        return value.replace('$', '$$').replace('#', '\\\\#').replace(' ', '\\\\ ').replace(':', '\\\\:')\n+\n+    depfile = Path(path)\n+    depfile.parent.mkdir(parents=True, exist_ok=True)\n+    depfile.write_text('{}: {}\\n'.format(escape(output), ' '.join(\n+        escape(p) for p in sorted(dependencies))), encoding='utf-8')\n+\n+\n if __name__ == '__main__':\n     sys.exit(idl_gen_interface(parse_args()))\n",
+        "old_path": "config/components/idl_tool/idl.py",
+        "new_path": "config/components/idl_tool/idl.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 79,
+        "removed_lines": 31
+      },
+      "target_branch": "master",
+      "source_branch": "fix-idl-common-outputs",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+From 577fed97c0cf1ee5973c6d264eb32e17513059fa Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Sun, 18 Oct 2026 18:58:49 -0700
+Subject: [PATCH] Recover malformed generated JSON before comparing outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ scripts/util/file_utils.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/scripts/util/file_utils.py b/scripts/util/file_utils.py
+index 4b0ac9e4..7b15586c 100755
+--- a/scripts/util/file_utils.py
++++ b/scripts/util/file_utils.py
+@@ -83,7 +83,11 @@ def write_json_file(output_file, content, check_changes=False):
+ def __check_changes(output_file, content):
+     if not os.path.isfile(output_file):
+         return True
+-    return read_json_file(output_file) != content
++    try:
++        return read_json_file(output_file) != content
++    except json.decoder.JSONDecodeError:
++        # Rewrite malformed generated output left by an interrupted build.
++        return True
+ 
+ 
+ # Write file data
+-- 
+2.51.0.windows.1
+

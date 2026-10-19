@@ -1,0 +1,973 @@
+{
+  "checked_at_utc": "2026-10-19T01:46:15.867008+00:00",
+  "items": [
+    {
+      "repo": "build",
+      "number": 6965,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6965",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 23,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "build",
+      "number": 6974,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6974",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 12,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "build",
+      "number": 6982,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 25,
+      "reviewer_comments": [
+        {
+          "id": 194418948,
+          "discussion_id": "e8f511a4bc0a434a65a7a6559be6dd43b99d3010",
+          "body": "if (is_arkui_x){ 这个逻辑为啥没了？可能会影响ark_ui_x的编译",
+          "created_at": "2026-10-19T09:39:07+08:00",
+          "updated_at": "2026-10-19T09:39:07+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 71,
+            "end_new_line": 71,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419143,
+          "discussion_id": "7057e847aba66374edd661fd40d1a50ebcb42594",
+          "body": "检视结论：整体思路正确，核心修复已对照 `idl_tool` 生成器源码（`idl_tool_2/codegen/code_emitter.cpp` 的 `FileName()`）验证一致，无阻塞问题；有 3 点 low 级建议见行内评论，供合入前评估。\n\n已验证正确的关键点：\n\n- `interface_header_name` 修复正确：工具仅对首字符省略下划线（如接口 `IABc` 生成 `ia_bc.h`），proxy/stub/client 使用去 `I` 的 baseName（`abc_proxy.*`），与本次 gni 声明一致；旧代码声明的 `iabc.h` 与实际产物不符。\n- 新增 `_client.h` 输出与 `sa_cpp_client_code_emitter.cpp` 的生成行为一致。\n- `subprocess.run` 替换 `Popen(stdout=PIPE)+wait()`，消除了工具大量输出时管道不被读取导致的死锁隐患。\n- 暂存目录 + 输出完整性校验 + 按内容发布的设计正确：生成失败保留旧输出、内容相同不更新时间戳。\n- depfile 记录递归 import 与工具二进制；import 解析（importer 目录 + `name + '.idl'`）与生成器 `GenCppPath` 的解析规则一致。\n- 模板内对 `src_idl` 的二次 `rebase_path` 安全：GN 单参数 `rebase_path` 返回系统绝对路径，绝对路径输入不会被再次改写（已用 GN 实测验证）。\n\n另提醒：本 PR 对 `idl.gni` 的改动与 #6999 的同文件改动重叠（#6999 为本 PR 子集），两个 PR 需要协调合并顺序。",
+          "created_at": "2026-10-19T09:39:56+08:00",
+          "updated_at": "2026-10-19T09:39:56+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194419155,
+          "discussion_id": "afda25840f45729be5bf2a698e2d7f849edf0493",
+          "body": "**低** `[config/components/idl_tool/idl.py:107]` `collect_idl_inputs` 对异常输入直接抛错\n\n`read_text(encoding='utf-8')` 遇到带 BOM 或非 UTF-8 编码的 `.idl` 文件会抛异常；import 按 `source.parent / (name + '.idl')` 解析，遇到无法按该规则落地的 import 会在下一轮读取时抛 `FileNotFoundError`。由于生成器按相同规则解析 import，正常场景两者会同生共死，风险较低，但异常信息不够直观。\n\n建议：\n- 捕获读取异常，给出包含源文件路径的明确报错\n- 如需更稳妥，import 无法解析时跳过并打 warning，交由工具自身报错",
+          "created_at": "2026-10-19T09:39:57+08:00",
+          "updated_at": "2026-10-19T09:39:57+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 107,
+            "end_new_line": 107,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419161,
+          "discussion_id": "aee9e67fbde0ec4b7a26e0f1035f6bfd087962ba",
+          "body": "**低** `[config/components/idl_tool/idl.gni:93]` `external_common_list` 的设计意图建议补充注释\n\n当前全代码树没有调用方在 `sources_common` 中传 `//` 风格路径，`external_common_list` 实际恒为空，属于预留能力。该分支下外部 common 只作为 action `inputs`，不声明输出、也不加入 `sources_proxy`/`sources_stub`，即外部 common 的产物完全由属主部件自己的 `idl_gen_interface` 目标生成。\n\n建议：\n- 在 gni 中补充注释说明该意图，避免后续使用方误以为外部 common 会在本目标生成产物",
+          "created_at": "2026-10-19T09:39:58+08:00",
+          "updated_at": "2026-10-19T09:39:58+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 93,
+            "end_new_line": 93,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419169,
+          "discussion_id": "d0e7b15d09606d2db655ecc7eb98ce81a8a51978",
+          "body": "**低** `[config/components/idl_tool/idl.gni:278]` `invoker.deps` 仅转发到 action 的语义需要确认\n\n旧模板完全忽略 `invoker.deps`，本 PR 将其转发给 action（约束生成顺序），但 `source_set`/`shared_library` 目标仍不消费该 deps，无法形成链接依赖。对历史上把 deps 当链接依赖传入的调用方（此前被静默忽略），行为仍是\"不链接\"；同时新引入的依赖边在个别调用方上存在潜在环路风险。\n\n建议：\n- 在模板注释中说明 deps 仅约束生成动作\n- 如需支持链接依赖，可评估向 `source_set_client`/`source_set_server` 等目标转发",
+          "created_at": "2026-10-19T09:40:00+08:00",
+          "updated_at": "2026-10-19T09:40:00+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 278,
+            "end_new_line": 278,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419266,
+          "discussion_id": "b881f8e524cea8e944b5393d7826200ab568e3da",
+          "body": "这个路径是否对比过？",
+          "created_at": "2026-10-19T09:40:24+08:00",
+          "updated_at": "2026-10-19T09:40:24+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 83,
+            "end_new_line": 83,
+            "position_type": "text"
+          }
+        }
+      ],
+      "discussion_comments": [
+        {
+          "id": 194418948,
+          "discussion_id": "e8f511a4bc0a434a65a7a6559be6dd43b99d3010",
+          "body": "if (is_arkui_x){ 这个逻辑为啥没了？可能会影响ark_ui_x的编译",
+          "created_at": "2026-10-19T09:39:07+08:00",
+          "updated_at": "2026-10-19T09:39:07+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 71,
+            "end_new_line": 71,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419143,
+          "discussion_id": "7057e847aba66374edd661fd40d1a50ebcb42594",
+          "body": "检视结论：整体思路正确，核心修复已对照 `idl_tool` 生成器源码（`idl_tool_2/codegen/code_emitter.cpp` 的 `FileName()`）验证一致，无阻塞问题；有 3 点 low 级建议见行内评论，供合入前评估。\n\n已验证正确的关键点：\n\n- `interface_header_name` 修复正确：工具仅对首字符省略下划线（如接口 `IABc` 生成 `ia_bc.h`），proxy/stub/client 使用去 `I` 的 baseName（`abc_proxy.*`），与本次 gni 声明一致；旧代码声明的 `iabc.h` 与实际产物不符。\n- 新增 `_client.h` 输出与 `sa_cpp_client_code_emitter.cpp` 的生成行为一致。\n- `subprocess.run` 替换 `Popen(stdout=PIPE)+wait()`，消除了工具大量输出时管道不被读取导致的死锁隐患。\n- 暂存目录 + 输出完整性校验 + 按内容发布的设计正确：生成失败保留旧输出、内容相同不更新时间戳。\n- depfile 记录递归 import 与工具二进制；import 解析（importer 目录 + `name + '.idl'`）与生成器 `GenCppPath` 的解析规则一致。\n- 模板内对 `src_idl` 的二次 `rebase_path` 安全：GN 单参数 `rebase_path` 返回系统绝对路径，绝对路径输入不会被再次改写（已用 GN 实测验证）。\n\n另提醒：本 PR 对 `idl.gni` 的改动与 #6999 的同文件改动重叠（#6999 为本 PR 子集），两个 PR 需要协调合并顺序。",
+          "created_at": "2026-10-19T09:39:56+08:00",
+          "updated_at": "2026-10-19T09:39:56+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194419155,
+          "discussion_id": "afda25840f45729be5bf2a698e2d7f849edf0493",
+          "body": "**低** `[config/components/idl_tool/idl.py:107]` `collect_idl_inputs` 对异常输入直接抛错\n\n`read_text(encoding='utf-8')` 遇到带 BOM 或非 UTF-8 编码的 `.idl` 文件会抛异常；import 按 `source.parent / (name + '.idl')` 解析，遇到无法按该规则落地的 import 会在下一轮读取时抛 `FileNotFoundError`。由于生成器按相同规则解析 import，正常场景两者会同生共死，风险较低，但异常信息不够直观。\n\n建议：\n- 捕获读取异常，给出包含源文件路径的明确报错\n- 如需更稳妥，import 无法解析时跳过并打 warning，交由工具自身报错",
+          "created_at": "2026-10-19T09:39:57+08:00",
+          "updated_at": "2026-10-19T09:39:57+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 107,
+            "end_new_line": 107,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419161,
+          "discussion_id": "aee9e67fbde0ec4b7a26e0f1035f6bfd087962ba",
+          "body": "**低** `[config/components/idl_tool/idl.gni:93]` `external_common_list` 的设计意图建议补充注释\n\n当前全代码树没有调用方在 `sources_common` 中传 `//` 风格路径，`external_common_list` 实际恒为空，属于预留能力。该分支下外部 common 只作为 action `inputs`，不声明输出、也不加入 `sources_proxy`/`sources_stub`，即外部 common 的产物完全由属主部件自己的 `idl_gen_interface` 目标生成。\n\n建议：\n- 在 gni 中补充注释说明该意图，避免后续使用方误以为外部 common 会在本目标生成产物",
+          "created_at": "2026-10-19T09:39:58+08:00",
+          "updated_at": "2026-10-19T09:39:58+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 93,
+            "end_new_line": 93,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419169,
+          "discussion_id": "d0e7b15d09606d2db655ecc7eb98ce81a8a51978",
+          "body": "**低** `[config/components/idl_tool/idl.gni:278]` `invoker.deps` 仅转发到 action 的语义需要确认\n\n旧模板完全忽略 `invoker.deps`，本 PR 将其转发给 action（约束生成顺序），但 `source_set`/`shared_library` 目标仍不消费该 deps，无法形成链接依赖。对历史上把 deps 当链接依赖传入的调用方（此前被静默忽略），行为仍是\"不链接\"；同时新引入的依赖边在个别调用方上存在潜在环路风险。\n\n建议：\n- 在模板注释中说明 deps 仅约束生成动作\n- 如需支持链接依赖，可评估向 `source_set_client`/`source_set_server` 等目标转发",
+          "created_at": "2026-10-19T09:40:00+08:00",
+          "updated_at": "2026-10-19T09:40:00+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 278,
+            "end_new_line": 278,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419266,
+          "discussion_id": "b881f8e524cea8e944b5393d7826200ab568e3da",
+          "body": "这个路径是否对比过？",
+          "created_at": "2026-10-19T09:40:24+08:00",
+          "updated_at": "2026-10-19T09:40:24+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 83,
+            "end_new_line": 83,
+            "position_type": "text"
+          }
+        }
+      ],
+      "head": "de69337b7f99f2328417e27fe591903862c9bbdc",
+      "state": "open",
+      "reviewers": [
+        {
+          "id": "6721f086f130a72704164a7f",
+          "login": "handyohos",
+          "name": "handyohos",
+          "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+          "html_url": "https://gitcode.com/handyohos",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cf248ae148c7b76651494",
+          "login": "csliutt-private",
+          "name": "csliutt-private",
+          "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+          "html_url": "https://gitcode.com/csliutt-private",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6999,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/6999",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 13,
+      "reviewer_comments": [
+        {
+          "id": 194419192,
+          "discussion_id": "b90d812daefcce4b95918afc9ed56bbeec24d5a5",
+          "body": "检视结论：整体方向正确且包含多处高价值修复，但有 1 个 high 级问题建议修复后再合入，详见行内评论。\n\n已确认的修复价值：\n\n- `check_seccomp_filter_name`/`process_field_validate` 的结果文件此前从未被脚本写入（\"result is not used in script\"），声明的 output 永远缺失、ninja 边每轮 dirty；本次补写 marker 并在失败时删除，正确。\n- `modules_install.py` 的 arm64e 输出在非 arm64e 平台此前被跳过写入，同样导致声明 output 缺失、边永久 dirty；本次改为无条件写（空时写 `{}`），正确。\n- `generate_host_info` 拆分 + 条目确定性排序 + `check_changes`，host symlink 收集/生成分离并补 depfile（真实追踪 part/module 元数据），设计合理。\n- hermetic zip + `atomic_output` 内容比较，确定性成立。\n\n另有 1 点 medium 建议见行内评论。协调提醒：`idl.gni` 改动与 #6982 重叠（#6982 为超集，含 `interface_header_name` 等补充修复）；`file_utils.py`/`parts_install_info.py` 与 #7134/#7009 为相同 hunk；`packages/BUILD.gn` 与 #7009 在同一 foreach 循环，需要协调合并顺序并 rebase。",
+          "created_at": "2026-10-19T09:40:04+08:00",
+          "updated_at": "2026-10-19T09:40:04+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194419196,
+          "discussion_id": "f07b581c73a5461e638d214a2b694f80d5f85e5a",
+          "body": "**高** `[ohos/app/app_internal.gni:590]` `--output-file` 无条件传入会破坏外部签名脚本链路\n\n`app_sign` 模板在 `sign_hap_py_path`（产品配置 `ext_sign_hap_py_path`）与 `compatible_version` 同时定义时会切换到厂商提供的外部签名脚本（`_sign_hap_py_path = sign_hap_py_path`），但本次新增的 `--output-file` 参数与 `.sign_result.json` 输出声明是无条件的。\n\n树内已有使用该路径的目标：`base/notification/distributed_notification_service/services/dialog_ui/enable_notification_dialog/BUILD.gn:31`、`base/powermgr/power_manager/power_dialog/BUILD.gn:40`。对这类目标：\n\n- 外部脚本若用 argparse 严格解析，遇到未知参数 `--output-file` 会直接构建失败；\n- 即使容忍未知参数，外部脚本也不会写 `.sign_result.json`，声明的唯一 output 永远缺失，action 每轮 dirty——正是本 PR 要消除的问题。\n\nmaster 产品不配置 `ext_sign_hap_py_path`，CI 门禁无法覆盖该场景。\n\n建议：\n- 仅在使用内置脚本（`_sign_hap_py_path == \"//build/scripts/app_sign.py\"`）时传 `--output-file` 并声明 `.sign_result.json` 输出；外部脚本分支维持原有 `.stamp` 输出\n- 或先与外部脚本约定新参数的兼容策略后再放开",
+          "created_at": "2026-10-19T09:40:05+08:00",
+          "updated_at": "2026-10-19T09:40:05+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 590,
+            "end_new_line": 590,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419200,
+          "discussion_id": "e9a6e4ffa59a6dec226f7fc29db32b56369177fb",
+          "body": "**中** `[ohos/packages/generate_host_symlink.py:59]` `ln -sf` 增加 `check=True` 的失败语义变化需确认\n\n旧代码 `subprocess.run(['ln', '-sf', ...])` 不检查返回值，创建失败被静默忽略（且旧代码失败时仍把条目写入 `output_result`，JSON 记录与实际不符）；本次 `check=True` 让失败显性化，方向正确。但两点需要确认：\n\n- Windows 宿主构建若执行到该步骤，`ln` 不存在，旧代码静默跳过、新代码会硬失败；\n- 目标路径已存在同名目录等边缘场景，旧代码\"带病通过\"，新代码直接失败。\n\n建议：\n- 确认 Windows 宿主构建是否涉及该 action；如涉及，按 `os.name` 分支改用 `os.symlink` 或给出明确报错\n- 失败信息中带上目标路径与源路径，便于定位",
+          "created_at": "2026-10-19T09:40:07+08:00",
+          "updated_at": "2026-10-19T09:40:07+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 59,
+            "end_new_line": 59,
+            "position_type": "text"
+          }
+        }
+      ],
+      "discussion_comments": [
+        {
+          "id": 194419192,
+          "discussion_id": "b90d812daefcce4b95918afc9ed56bbeec24d5a5",
+          "body": "检视结论：整体方向正确且包含多处高价值修复，但有 1 个 high 级问题建议修复后再合入，详见行内评论。\n\n已确认的修复价值：\n\n- `check_seccomp_filter_name`/`process_field_validate` 的结果文件此前从未被脚本写入（\"result is not used in script\"），声明的 output 永远缺失、ninja 边每轮 dirty；本次补写 marker 并在失败时删除，正确。\n- `modules_install.py` 的 arm64e 输出在非 arm64e 平台此前被跳过写入，同样导致声明 output 缺失、边永久 dirty；本次改为无条件写（空时写 `{}`），正确。\n- `generate_host_info` 拆分 + 条目确定性排序 + `check_changes`，host symlink 收集/生成分离并补 depfile（真实追踪 part/module 元数据），设计合理。\n- hermetic zip + `atomic_output` 内容比较，确定性成立。\n\n另有 1 点 medium 建议见行内评论。协调提醒：`idl.gni` 改动与 #6982 重叠（#6982 为超集，含 `interface_header_name` 等补充修复）；`file_utils.py`/`parts_install_info.py` 与 #7134/#7009 为相同 hunk；`packages/BUILD.gn` 与 #7009 在同一 foreach 循环，需要协调合并顺序并 rebase。",
+          "created_at": "2026-10-19T09:40:04+08:00",
+          "updated_at": "2026-10-19T09:40:04+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194419196,
+          "discussion_id": "f07b581c73a5461e638d214a2b694f80d5f85e5a",
+          "body": "**高** `[ohos/app/app_internal.gni:590]` `--output-file` 无条件传入会破坏外部签名脚本链路\n\n`app_sign` 模板在 `sign_hap_py_path`（产品配置 `ext_sign_hap_py_path`）与 `compatible_version` 同时定义时会切换到厂商提供的外部签名脚本（`_sign_hap_py_path = sign_hap_py_path`），但本次新增的 `--output-file` 参数与 `.sign_result.json` 输出声明是无条件的。\n\n树内已有使用该路径的目标：`base/notification/distributed_notification_service/services/dialog_ui/enable_notification_dialog/BUILD.gn:31`、`base/powermgr/power_manager/power_dialog/BUILD.gn:40`。对这类目标：\n\n- 外部脚本若用 argparse 严格解析，遇到未知参数 `--output-file` 会直接构建失败；\n- 即使容忍未知参数，外部脚本也不会写 `.sign_result.json`，声明的唯一 output 永远缺失，action 每轮 dirty——正是本 PR 要消除的问题。\n\nmaster 产品不配置 `ext_sign_hap_py_path`，CI 门禁无法覆盖该场景。\n\n建议：\n- 仅在使用内置脚本（`_sign_hap_py_path == \"//build/scripts/app_sign.py\"`）时传 `--output-file` 并声明 `.sign_result.json` 输出；外部脚本分支维持原有 `.stamp` 输出\n- 或先与外部脚本约定新参数的兼容策略后再放开",
+          "created_at": "2026-10-19T09:40:05+08:00",
+          "updated_at": "2026-10-19T09:40:05+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 590,
+            "end_new_line": 590,
+            "position_type": "text"
+          }
+        },
+        {
+          "id": 194419200,
+          "discussion_id": "e9a6e4ffa59a6dec226f7fc29db32b56369177fb",
+          "body": "**中** `[ohos/packages/generate_host_symlink.py:59]` `ln -sf` 增加 `check=True` 的失败语义变化需确认\n\n旧代码 `subprocess.run(['ln', '-sf', ...])` 不检查返回值，创建失败被静默忽略（且旧代码失败时仍把条目写入 `output_result`，JSON 记录与实际不符）；本次 `check=True` 让失败显性化，方向正确。但两点需要确认：\n\n- Windows 宿主构建若执行到该步骤，`ln` 不存在，旧代码静默跳过、新代码会硬失败；\n- 目标路径已存在同名目录等边缘场景，旧代码\"带病通过\"，新代码直接失败。\n\n建议：\n- 确认 Windows 宿主构建是否涉及该 action；如涉及，按 `os.name` 分支改用 `os.symlink` 或给出明确报错\n- 失败信息中带上目标路径与源路径，便于定位",
+          "created_at": "2026-10-19T09:40:07+08:00",
+          "updated_at": "2026-10-19T09:40:07+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 59,
+            "end_new_line": 59,
+            "position_type": "text"
+          }
+        }
+      ],
+      "head": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+      "state": "open",
+      "reviewers": [
+        {
+          "id": "6721f086f130a72704164a7f",
+          "login": "handyohos",
+          "name": "handyohos",
+          "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+          "html_url": "https://gitcode.com/handyohos",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cf248ae148c7b76651494",
+          "login": "csliutt-private",
+          "name": "csliutt-private",
+          "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+          "html_url": "https://gitcode.com/csliutt-private",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7006,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7006",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 10,
+      "reviewer_comments": [
+        {
+          "id": 194419209,
+          "discussion_id": "f48a1d1a08abd53454d6151156143f8eb71047d6",
+          "body": "检视结论：无阻塞问题，质量很高的小型修复，可合入。\n\n- `hisysevent_configs.json` 此前经 depfile 被 ninja 跟踪，而 loader 每轮无条件覆盖导致 mtime 更新、`phone_hisysevent_install_info` 每轮被重复调度；本次 `check_changes=True` 闭环成立。\n- 将实际读取的 YAML 配置加入 depfile 是真实的正确性修复：此前修改 HiSysEvent YAML 不会触发该 action 重建，存在配置陈旧入镜像的风险。\n- `hisysevent_install_info.json` 启用 `check_changes`，阻断无效时间戳向 `install_modules` 传播。\n- `load_ohos_build.py` 中 `check_changes` 变量在两个分支均有定义；作用域刻意限定 hisysevent、其余 parts_info 行为不变，与 PR 描述一致。\n\n后续建议（非本 PR 范围）：`inner_kits_info.json` 等 loader 输出仍每轮无条件重写，可用同法逐步收敛。",
+          "created_at": "2026-10-19T09:40:09+08:00",
+          "updated_at": "2026-10-19T09:40:09+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194419212,
+          "discussion_id": "5567057458b730dbe82b1163b8c33caa3be80084",
+          "body": "确认：`depfiles.extend(hisysevent_config_files)` 补齐了真实依赖\n\n此前 depfile 只含 `--parts-config-file`，实际读取的各部件 YAML 不在任何依赖声明中，YAML 变更不会触发重建。此处补齐后 YAML 编辑可正确触发 `phone_hisysevent_install_info`；且路径为 root_build_dir 相对路径，与 action 工作目录一致，depfile 格式正确。",
+          "created_at": "2026-10-19T09:40:10+08:00",
+          "updated_at": "2026-10-19T09:40:10+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 104,
+            "end_new_line": 104,
+            "position_type": "text"
+          }
+        }
+      ],
+      "discussion_comments": [
+        {
+          "id": 194419209,
+          "discussion_id": "f48a1d1a08abd53454d6151156143f8eb71047d6",
+          "body": "检视结论：无阻塞问题，质量很高的小型修复，可合入。\n\n- `hisysevent_configs.json` 此前经 depfile 被 ninja 跟踪，而 loader 每轮无条件覆盖导致 mtime 更新、`phone_hisysevent_install_info` 每轮被重复调度；本次 `check_changes=True` 闭环成立。\n- 将实际读取的 YAML 配置加入 depfile 是真实的正确性修复：此前修改 HiSysEvent YAML 不会触发该 action 重建，存在配置陈旧入镜像的风险。\n- `hisysevent_install_info.json` 启用 `check_changes`，阻断无效时间戳向 `install_modules` 传播。\n- `load_ohos_build.py` 中 `check_changes` 变量在两个分支均有定义；作用域刻意限定 hisysevent、其余 parts_info 行为不变，与 PR 描述一致。\n\n后续建议（非本 PR 范围）：`inner_kits_info.json` 等 loader 输出仍每轮无条件重写，可用同法逐步收敛。",
+          "created_at": "2026-10-19T09:40:09+08:00",
+          "updated_at": "2026-10-19T09:40:09+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194419212,
+          "discussion_id": "5567057458b730dbe82b1163b8c33caa3be80084",
+          "body": "确认：`depfiles.extend(hisysevent_config_files)` 补齐了真实依赖\n\n此前 depfile 只含 `--parts-config-file`，实际读取的各部件 YAML 不在任何依赖声明中，YAML 变更不会触发重建。此处补齐后 YAML 编辑可正确触发 `phone_hisysevent_install_info`；且路径为 root_build_dir 相对路径，与 action 工作目录一致，depfile 格式正确。",
+          "created_at": "2026-10-19T09:40:10+08:00",
+          "updated_at": "2026-10-19T09:40:10+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 104,
+            "end_new_line": 104,
+            "position_type": "text"
+          }
+        }
+      ],
+      "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+      "state": "open",
+      "reviewers": [
+        {
+          "id": "6721f086f130a72704164a7f",
+          "login": "handyohos",
+          "name": "handyohos",
+          "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+          "html_url": "https://gitcode.com/handyohos",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cf248ae148c7b76651494",
+          "login": "csliutt-private",
+          "name": "csliutt-private",
+          "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+          "html_url": "https://gitcode.com/csliutt-private",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7009,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7009",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 12,
+      "reviewer_comments": [
+        {
+          "id": 194419208,
+          "discussion_id": "ad2fd306787487da5076f996110b9c44b9c12aea",
+          "body": "检视结论：无阻塞问题，设计验证通过，可合入。\n\n- 两段式 NOTICE 产物（`stage_notice_files__<platform>` 生成到 gen 目录 + `copy_ex` 内容感知发布）设计正确：`copy_ex.py` 的 `copy_file` 使用 `filecmp.cmp(shallow=False)`，内容相同不复制，最终 `system_notice_files.zip` 的 mtime 只在真实变化时更新，下游 `merge_system_notice_file` 不再被无效调度。\n- 确定性成立：`zip_dir` 走 `atomic_output`（only_if_changed），`add_to_zip_hermetic` 使用固定时间戳 + 排序写入，相同输入产出相同字节，内容比较有效。\n- `generate_part_info.py`/`parts_install_info.py` 输出启用 `check_changes`，切断 module 元数据时间戳向 NOTICE 链路的传播；最终产物路径与下游依赖关系保持不变。\n\n协调提醒：`file_utils.py`/`parts_install_info.py` 与 #7134/#6999 是相同 hunk，`packages/BUILD.gn` 与 #6999 在同一 foreach 循环内改不同段落，合入顺序需要协调 rebase。",
+          "created_at": "2026-10-19T09:40:08+08:00",
+          "updated_at": "2026-10-19T09:40:08+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        }
+      ],
+      "discussion_comments": [
+        {
+          "id": 194419208,
+          "discussion_id": "ad2fd306787487da5076f996110b9c44b9c12aea",
+          "body": "检视结论：无阻塞问题，设计验证通过，可合入。\n\n- 两段式 NOTICE 产物（`stage_notice_files__<platform>` 生成到 gen 目录 + `copy_ex` 内容感知发布）设计正确：`copy_ex.py` 的 `copy_file` 使用 `filecmp.cmp(shallow=False)`，内容相同不复制，最终 `system_notice_files.zip` 的 mtime 只在真实变化时更新，下游 `merge_system_notice_file` 不再被无效调度。\n- 确定性成立：`zip_dir` 走 `atomic_output`（only_if_changed），`add_to_zip_hermetic` 使用固定时间戳 + 排序写入，相同输入产出相同字节，内容比较有效。\n- `generate_part_info.py`/`parts_install_info.py` 输出启用 `check_changes`，切断 module 元数据时间戳向 NOTICE 链路的传播；最终产物路径与下游依赖关系保持不变。\n\n协调提醒：`file_utils.py`/`parts_install_info.py` 与 #7134/#6999 是相同 hunk，`packages/BUILD.gn` 与 #6999 在同一 foreach 循环内改不同段落，合入顺序需要协调 rebase。",
+          "created_at": "2026-10-19T09:40:08+08:00",
+          "updated_at": "2026-10-19T09:40:08+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        }
+      ],
+      "head": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "state": "open",
+      "reviewers": [
+        {
+          "id": "6721f086f130a72704164a7f",
+          "login": "handyohos",
+          "name": "handyohos",
+          "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+          "html_url": "https://gitcode.com/handyohos",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cf248ae148c7b76651494",
+          "login": "csliutt-private",
+          "name": "csliutt-private",
+          "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+          "html_url": "https://gitcode.com/csliutt-private",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7046,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7046",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 16,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "build",
+      "number": 7048,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7048",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 2,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "build",
+      "number": 7049,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7049",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 7,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "build",
+      "number": 7134,
+      "url": "https://gitcode.com/openharmony/build/merge_requests/7134",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 7,
+      "reviewer_comments": [
+        {
+          "id": 194419175,
+          "discussion_id": "6143ef823f118010d62459c6ff99b4a4158b4bb9",
+          "body": "检视结论：无阻塞问题，可合入。\n\n- `components.json` 改为 `check_changes=True` 写入：内容不变时保留文件与时间戳，正确解决 loader 每轮删除重写导致的增量失效。\n- `__check_changes` 从 `str(dict)` 哈希比较改为字典语义比较，修复键序差异被误判为\"有变化\"的问题，正确。\n- 移除 `os.remove` 顺带消除了文件不存在时 `FileNotFoundError` 的隐患；对本调用点，损坏 JSON 使 `read_json_file` 抛错属于既有行为（同函数上游已读取该文件），未引入新的失败模式。\n\n有 1 点 low 级建议见行内评论。",
+          "created_at": "2026-10-19T09:40:01+08:00",
+          "updated_at": "2026-10-19T09:40:01+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194419185,
+          "discussion_id": "59e201626dbd8befe100d1d994dd284bd1ece8b8",
+          "body": "**低** `[scripts/util/file_utils.py:86]` `__check_changes` 对损坏 JSON 会抛异常，建议自愈\n\n旧实现在此调用点之前先 `os.remove`，损坏文件可被覆盖自愈；新实现直接 `read_json_file` 解析旧文件，遇到截断/损坏的 JSON 会 `raise`。`loader.py` 该调用点因上游已读取过同一文件，风险是既有的；但 `write_json_file(check_changes=True)` 是公共工具，#6999、#7009 已大量引入新调用方，\"旧文件损坏\"场景（如构建中途被杀导致半写）会直接构建失败，需手动清理 out 目录。\n\n建议：\n- 在 `__check_changes` 中捕获 `json.decoder.JSONDecodeError`，返回 `True` 触发重写自愈",
+          "created_at": "2026-10-19T09:40:02+08:00",
+          "updated_at": "2026-10-19T09:46:12+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 86,
+            "end_new_line": 86,
+            "position_type": "text"
+          }
+        }
+      ],
+      "discussion_comments": [
+        {
+          "id": 194419175,
+          "discussion_id": "6143ef823f118010d62459c6ff99b4a4158b4bb9",
+          "body": "检视结论：无阻塞问题，可合入。\n\n- `components.json` 改为 `check_changes=True` 写入：内容不变时保留文件与时间戳，正确解决 loader 每轮删除重写导致的增量失效。\n- `__check_changes` 从 `str(dict)` 哈希比较改为字典语义比较，修复键序差异被误判为\"有变化\"的问题，正确。\n- 移除 `os.remove` 顺带消除了文件不存在时 `FileNotFoundError` 的隐患；对本调用点，损坏 JSON 使 `read_json_file` 抛错属于既有行为（同函数上游已读取该文件），未引入新的失败模式。\n\n有 1 点 low 级建议见行内评论。",
+          "created_at": "2026-10-19T09:40:01+08:00",
+          "updated_at": "2026-10-19T09:40:01+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "pr_comment"
+        },
+        {
+          "id": 194419185,
+          "discussion_id": "59e201626dbd8befe100d1d994dd284bd1ece8b8",
+          "body": "**低** `[scripts/util/file_utils.py:86]` `__check_changes` 对损坏 JSON 会抛异常，建议自愈\n\n旧实现在此调用点之前先 `os.remove`，损坏文件可被覆盖自愈；新实现直接 `read_json_file` 解析旧文件，遇到截断/损坏的 JSON 会 `raise`。`loader.py` 该调用点因上游已读取过同一文件，风险是既有的；但 `write_json_file(check_changes=True)` 是公共工具，#6999、#7009 已大量引入新调用方，\"旧文件损坏\"场景（如构建中途被杀导致半写）会直接构建失败，需手动清理 out 目录。\n\n建议：\n- 在 `__check_changes` 中捕获 `json.decoder.JSONDecodeError`，返回 `True` 触发重写自愈",
+          "created_at": "2026-10-19T09:40:02+08:00",
+          "updated_at": "2026-10-19T09:46:12+08:00",
+          "user": {
+            "id": "673d3b1b6704dc4ab7a04162",
+            "login": "ringking0",
+            "object_id": "673d3b1b6704dc4ab7a04162",
+            "name": "ringking0",
+            "html_url": "https://gitcode.com/ringking0"
+          },
+          "comment_type": "diff_comment",
+          "resolved": false,
+          "diff_position": {
+            "start_new_line": 86,
+            "end_new_line": 86,
+            "position_type": "text"
+          }
+        }
+      ],
+      "head": "f0dd0bd6ea0708337120d8044115e87491794532",
+      "state": "open",
+      "reviewers": [
+        {
+          "id": "6721f086f130a72704164a7f",
+          "login": "handyohos",
+          "name": "handyohos",
+          "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+          "html_url": "https://gitcode.com/handyohos",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "672cf248ae148c7b76651494",
+          "login": "csliutt-private",
+          "name": "csliutt-private",
+          "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+          "html_url": "https://gitcode.com/csliutt-private",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        },
+        {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0",
+          "assignee": true,
+          "code_owner": false,
+          "accept": false
+        }
+      ],
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "account_os_account",
+      "number": 3898,
+      "url": "https://gitcode.com/openharmony/account_os_account/merge_requests/3898",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 4,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "inputmethod_imf",
+      "number": 2774,
+      "url": "https://gitcode.com/openharmony/inputmethod_imf/merge_requests/2774",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 4,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "security_dlp_permission_service",
+      "number": 953,
+      "url": "https://gitcode.com/openharmony/security_dlp_permission_service/merge_requests/953",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 4,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "ability_dmsfwk",
+      "number": 2123,
+      "url": "https://gitcode.com/openharmony/ability_dmsfwk/merge_requests/2123",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 4,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "multimedia_audio_framework",
+      "number": 17444,
+      "url": "https://gitcode.com/openharmony/multimedia_audio_framework/merge_requests/17444",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 4,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "third_party_jsframework",
+      "number": 853,
+      "url": "https://gitcode.com/openharmony/third_party_jsframework/merge_requests/853",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 21,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "third_party_css-what",
+      "number": 29,
+      "url": "https://gitcode.com/openharmony/third_party_css-what/merge_requests/29",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 4,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "interface_sdk-js",
+      "number": 36540,
+      "url": "https://gitcode.com/openharmony/interface_sdk-js/merge_requests/36540",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 9,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "developtools_ace_ets2bundle",
+      "number": 7210,
+      "url": "https://gitcode.com/openharmony/developtools_ace_ets2bundle/merge_requests/7210",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 10,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "graphic_graphic_3d",
+      "number": 676,
+      "url": "https://gitcode.com/openharmony/graphic_graphic_3d/merge_requests/676",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 6,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "developtools_packing_tool",
+      "number": 1556,
+      "url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 17,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "third_party_iptables",
+      "number": 62,
+      "url": "https://gitcode.com/openharmony/third_party_iptables/merge_requests/62",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 5,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    },
+    {
+      "repo": "third_party_sane-airscan",
+      "number": 22,
+      "url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+      "pages": 1,
+      "complete": true,
+      "comment_count": 7,
+      "reviewer_comments": [],
+      "discussion_comments": []
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 本仓库记录 OpenHarmony `rk3568/phone` 增量构建中重复 Action 的根因、代码修改、PR 与验证证据。
 
+[2026-10-18 检视整改与原 PR 更新](docs/oct18-review-fixes.md)：**ArkUI-X、外部签名兼容、JSON 自愈及 IDL 注释已修订，7 条原 PR 已更新，DCO 全部通过。** 重复文件保持一致，11 项隔离检查通过；新提交的产品构建与门禁尚未验证。修改前 Git 标签、逐 PR 补丁和 [8 条待确认回复](docs/pr-drafts/20261018-ringking0-replies.md)均已保存。
+
 [2026-10-18 门禁复核](docs/oct16-codecheck-fixes.md#10-月-18-日复核)：**16 条 PR 完整门禁通过；SDK CodeCheck 通过，完整门禁结果待回读；安装组本轮已在静态阶段失败，ace 剩 10 条既有 InsightIntent 文件名术语告警。** [追加排查与可转交说明](docs/oct16-codecheck-fixes.md#ace-7210-追加排查)包含最终回执、十条位置及主干文件对象对照，需维护者审核误报。自动巡检保持暂停。
 
 ## 最新状态与继续工作入口

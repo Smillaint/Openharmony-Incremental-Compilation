@@ -1,0 +1,49 @@
+From fb6add1534863be35a9df323a8d78d5168521f6d Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Sun, 18 Oct 2026 18:58:47 -0700
+Subject: [PATCH] Preserve external HAP signer arguments and outputs
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ohos/app/app_internal.gni | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
+
+diff --git a/ohos/app/app_internal.gni b/ohos/app/app_internal.gni
+index 87143596..c6071bce 100644
+--- a/ohos/app/app_internal.gni
++++ b/ohos/app/app_internal.gni
+@@ -561,8 +561,13 @@ template("app_sign") {
+       _certificate_file,
+     ]
+ 
+-    _sign_result = "${target_out_dir}/${target_name}.sign_result.json"
+-    outputs = [ _sign_result ]
++    if (_sign_hap_py_path == "//build/scripts/app_sign.py") {
++      _sign_result = "${target_out_dir}/${target_name}.sign_result.json"
++      outputs = [ _sign_result ]
++    } else {
++      # External signers retain their existing arguments and stamp output.
++      outputs = [ "${target_out_dir}/${target_name}.stamp" ]
++    }
+ 
+     args = [
+       "--keyPwd",
+@@ -587,9 +592,13 @@ template("app_sign") {
+       rebase_path(hap_out_dir, root_build_dir),
+       "--hap-name",
+       hap_name,
+-      "--output-file",
+-      rebase_path(_sign_result, root_build_dir),
+     ]
++    if (_sign_hap_py_path == "//build/scripts/app_sign.py") {
++      args += [
++        "--output-file",
++        rebase_path(_sign_result, root_build_dir),
++      ]
++    }
+     if (defined(invoker.hap_list)) {
+       args += [
+         "--hap-list",
+-- 
+2.51.0.windows.1
+

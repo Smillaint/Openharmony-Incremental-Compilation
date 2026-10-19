@@ -1,0 +1,339 @@
+{
+  "number": 6974,
+  "pr": {
+    "id": 9009451,
+    "html_url": "https://gitcode.com/openharmony/build/merge_requests/6974",
+    "number": 6974,
+    "state": "open",
+    "title": "Fix incremental HAP signing outputs",
+    "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6974",
+    "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6974/issues",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4663\n\n### 原因（目的、解决的问题等）\n\n`app_sign` Action 将 `${target_name}.stamp` 声明为输出，但签名脚本不会生成该文件，同时 GN 会为目标生成同名 stamp，导致 Ninja 出现重复输出规则，并在增量构建中重复执行 HAP 签名\n\n此外，`unsigned_hap_path_list.json` 仅记录 HAP 路径且每次直接重写，无法准确反映 unsigned HAP 内容是否发生变化，容易引起无效的下游构建传播\n\n### 描述（做了什么，变更了什么）\n\n1. 使用独立的 `sign_result.json` 作为 HAP 签名 Action 输出，避免与 GN 自动生成的 target stamp 冲突。\n2. 在 unsigned HAP 路径清单中增加各 HAP 文件的 SHA-256。\n3. 签名完成后记录最终 HAP 路径及 SHA-256。\n4. 增加文件 SHA-256 计算及原子 JSON 写入方法。\n5. 输出内容未变化时保留文件时间戳；HAP 内容真实变化时仍能正常触发签名及下游构建。\n\n### 测试用例（新增、改动、可能影响的功能）\n\n1. 执行 Python 语法检查和补丁格式检查，检查通过。\n2. 验证相同 HAP 内容重复处理时，代理输出内容及时间戳保持不变。\n3. 验证 HAP 内容变化时，代理输出同步变化。\n4. 执行多轮 rk3568 完整构建，构建成功。\n5. HAP target stamp 重复生成警告消失。\n6. 原有 10 个重复签名目标中，8 个无内容变化的目标不再重复签名；另外2个目标因 unsigned HAP 字节内容真实变化而正常向下游传播。\n\n可能影响使用 `compile_app` 和 `app_sign` 模板生成、签名 HAP/HSP 的应用构建目标。\n\n### 是否需要同步至release（如： monthly_20221018,OpenHarmony-3.2-Beta5  ... ）分支？\n\n必须选择一项（在MarkDown模式下用[x]替换[ ]即可勾选对应选项）:\n- [ ] 是，需要同步的分支：\n- [x] 否\n\n理由：本修改针对 master 分支当前 HAP 构建模板的增量输出建模问题，无 release 分支同步需求。\n\n### 是否需要刷新社区文档？\n\n[编译构建社区文档](https://gitee.com/openharmony/docs/blob/master/zh-cn/device-dev/subsystems/subsys-build-all.md)\n\n- [ ] 是，刷新社区文档pr链接：\n- [x] 否\n\n本修改仅调整内部构建 Action 的输出建模和文件写入方式，不涉及用户接口及编译命令变化。\n\n### 是否已执行L0用例\n- [ ] 已验证\n- [x] 不涉及。如不涉及，请写明理由\n\n理由：本修改属于编译构建脚本及 GN Action 输出建模调整，不涉及运行时功能代码",
+    "assignees_number": 3,
+    "assignees": [
+      {
+        "id": "6721f086f130a72704164a7f",
+        "login": "handyohos",
+        "name": "handyohos",
+        "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+        "html_url": "https://gitcode.com/handyohos",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "672cf248ae148c7b76651494",
+        "login": "csliutt-private",
+        "name": "csliutt-private",
+        "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+        "html_url": "https://gitcode.com/csliutt-private",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "673d3b1b6704dc4ab7a04162",
+        "login": "ringking0",
+        "name": "ringking0",
+        "html_url": "https://gitcode.com/ringking0",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "testers": [
+      {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci",
+        "assignee": false,
+        "code_owner": false,
+        "accept": true
+      }
+    ],
+    "approval_reviewers": [],
+    "labels": [
+      {
+        "id": 87,
+        "color": "#20c22e",
+        "name": "dco检查成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-08-10T10:42:21+08:00"
+      },
+      {
+        "id": 59,
+        "color": "#20c22e",
+        "name": "静态检查成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:33+08:00",
+        "updated_at": "2026-10-16T13:30:04+08:00"
+      },
+      {
+        "id": 100,
+        "color": "#20c22e",
+        "name": "冒烟测试成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T13:30:06+08:00"
+      },
+      {
+        "id": 91,
+        "color": "#20c22e",
+        "name": "编译成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T19:40:15+08:00"
+      },
+      {
+        "id": 131,
+        "color": "#1083d6",
+        "name": "waiting_for_review",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:34:00+08:00",
+        "updated_at": "2026-10-16T19:40:35+08:00"
+      }
+    ],
+    "created_at": "2026-08-10T10:41:42+08:00",
+    "updated_at": "2026-10-16T19:40:36+08:00",
+    "closed_at": "",
+    "merged_at": "",
+    "draft": false,
+    "can_merge_check": false,
+    "prune_branch": false,
+    "mergeable": true,
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    },
+    "head": {
+      "ref": "fix-hap-sign-incremental-build",
+      "sha": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+      "label": "fix-hap-sign-incremental-build",
+      "repo": {
+        "path": "build",
+        "name": "build",
+        "namespace": {
+          "path": "SmillySmillick"
+        },
+        "full_name": "SmillySmillick/build",
+        "html_url": "https://gitcode.com/SmillySmillick/build.git"
+      },
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      }
+    },
+    "base": {
+      "ref": "master",
+      "sha": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "label": "master",
+      "repo": {
+        "path": "build",
+        "name": "build",
+        "namespace": {
+          "path": "openharmony"
+        },
+        "full_name": "openharmony/build",
+        "html_url": "https://gitcode.com/openharmony/build.git"
+      }
+    },
+    "mergeable_state": {
+      "merge_request_id": 9009451,
+      "state": false,
+      "status_without_user_auth": false,
+      "conflict_passed": true,
+      "branch_missing_passed": true,
+      "non_ff_passed": true,
+      "mr_state_passed": true,
+      "merged_by_user_passed": false,
+      "work_in_progress_passed": true,
+      "resolve_discussion_passed": true,
+      "ci_state_passed": true,
+      "merge_by_self_passed": true,
+      "can_force_merge": false,
+      "approval_reviewers_required_passed": true,
+      "approval_approvers_required_passed": false,
+      "approval_testers_required_passed": true,
+      "merge_request_switch": {
+        "review_mode": "approval",
+        "merge_method": "merge",
+        "only_allow_merge_if_all_discussions_are_resolved": false,
+        "disable_merge_by_self": true,
+        "only_allow_merge_if_pipeline_succeeds": false,
+        "disable_squash_merge": false,
+        "squash_merge_with_no_merge_commit": false,
+        "approval_required_reviewers_count": 0,
+        "approval_required_reviewers_branch": "*",
+        "add_notes_after_merged": true,
+        "mark_auto_merged_mr_as_closed": true,
+        "can_force_merge": true,
+        "can_reopen": true
+      },
+      "reason": {
+        "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+      },
+      "check_tasks_num": 2,
+      "all_depend_merge_request_merged_passed": true,
+      "approval_approvers_result": 1,
+      "approval_testers_result": 2
+    },
+    "visibility_reason": "public",
+    "close_related_issue": true,
+    "squash_merge": false
+  },
+  "files": [
+    {
+      "sha": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+      "filename": "ohos/app/app_internal.gni",
+      "additions": 4,
+      "deletions": 1,
+      "blob_id": "87143596d0d3d18390d553f114f082fbd99b2993",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/34aa8cba0c5fcb3344e2dd652c18027d69a71396/ohos/app/app_internal.gni",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/34aa8cba0c5fcb3344e2dd652c18027d69a71396/ohos/app/app_internal.gni",
+      "patch": {
+        "diff": "@@ -561,7 +561,8 @@ template(\"app_sign\") {\n       _certificate_file,\n     ]\n \n-    outputs = [ \"${target_out_dir}/${target_name}.stamp\" ]\n+    _sign_result = \"${target_out_dir}/${target_name}.sign_result.json\"\n+    outputs = [ _sign_result ]\n \n     args = [\n       \"--keyPwd\",\n@@ -586,6 +587,8 @@ template(\"app_sign\") {\n       rebase_path(hap_out_dir, root_build_dir),\n       \"--hap-name\",\n       hap_name,\n+      \"--output-file\",\n+      rebase_path(_sign_result, root_build_dir),\n     ]\n     if (defined(invoker.hap_list)) {\n       args += [\n",
+        "old_path": "ohos/app/app_internal.gni",
+        "new_path": "ohos/app/app_internal.gni",
+        "a_mode": "100644",
+        "b_mode": "100644",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 4,
+        "removed_lines": 1
+      },
+      "target_branch": "master",
+      "source_branch": "fix-hap-sign-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    },
+    {
+      "sha": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+      "filename": "scripts/app_sign.py",
+      "additions": 11,
+      "deletions": 0,
+      "blob_id": "8267a87309919b11a261453b74581b2822a837db",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/app_sign.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/app_sign.py",
+      "patch": {
+        "diff": "@@ -44,6 +44,7 @@ def parse_args(args):\n     parser.add_argument('--certificate-file', help='')\n     parser.add_argument('--hap-name', help='')\n     parser.add_argument('--hap-list', help='')\n+    parser.add_argument('--output-file', help='signing result output file')\n     options = parser.parse_args(args)\n     return options\n \n@@ -76,6 +77,8 @@ def main(args):\n     if not options.hap_out_dir:\n         sign_app(options, options.inFile, options.outFile)\n     else:\n+        if not options.output_file:\n+            raise ValueError('--output-file is required when --hap-out-dir is set')\n         if not os.path.exists(options.hap_out_dir):\n             os.makedirs(options.hap_out_dir, exist_ok=True)\n         unsigned_hap_path_list = file_utils.read_json_file(options.unsigned_hap_path_list)\n@@ -90,6 +93,7 @@ def main(args):\n                     signed_hap_names[f'{names[0]}.hap'] = f'{names[1]}.hap'\n                 else:\n                     raise ValueError(f'Value hap_list {hap_list} not compliant with format')\n+        signed_hap_result = []\n         for unsigned_hap_path in unsigned_hap_path_list.get('unsigned_hap_path_list'):\n             signed_hap_path = unsigned_hap_path.replace('unsigned', 'signed')\n             output_hap_name = f'{options.hap_name}-{os.path.basename(signed_hap_path)}'\n@@ -106,6 +110,13 @@ def main(args):\n                     output_hap_name = signed_hap_names.get(unsigned_hap_name)\n             output_hap = os.path.join(options.hap_out_dir, output_hap_name)\n             sign_app(options, unsigned_hap_path, output_hap)\n+            signed_hap_result.append({\n+                'path': output_hap,\n+                'sha256': build_utils.get_file_sha256(output_hap),\n+            })\n+        build_utils.write_json_atomic({\n+            'signed_hap_list': signed_hap_result,\n+        }, options.output_file)\n \n \n if __name__ == '__main__':\n",
+        "old_path": "scripts/app_sign.py",
+        "new_path": "scripts/app_sign.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 11,
+        "removed_lines": 0
+      },
+      "target_branch": "master",
+      "source_branch": "fix-hap-sign-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    },
+    {
+      "sha": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+      "filename": "scripts/compile_app.py",
+      "additions": 10,
+      "deletions": 3,
+      "blob_id": "dc70416c2175377c81b0af72bdde5e7e8ff5c46c",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/compile_app.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/compile_app.py",
+      "patch": {
+        "diff": "@@ -199,7 +199,6 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value\n     :param cwd: app project directory\n     :return: None\n     '''\n-    unsigned_hap_path_json = {}\n     unsigned_hap_path_list = []\n     with open(build_profile, 'r') as input_f:\n         build_info = json5.load(input_f)\n@@ -216,8 +215,16 @@ def gen_unsigned_hap_path_json(build_profile: str, cwd: str, options, hash_value\n                 unsigned_hap_path, '*-unsigned.hsp')\n             if hsp_file:\n                 unsigned_hap_path_list.extend(hsp_file)\n-        unsigned_hap_path_json['unsigned_hap_path_list'] = unsigned_hap_path_list\n-    file_utils.write_json_file(options.output_file, unsigned_hap_path_json)\n+    unsigned_hap_path_list.sort()\n+    unsigned_hap_sha256 = {\n+        hap_path: build_utils.get_file_sha256(hap_path)\n+        for hap_path in unsigned_hap_path_list\n+    }\n+    unsigned_hap_path_json = {\n+        'unsigned_hap_path_list': unsigned_hap_path_list,\n+        'unsigned_hap_sha256': unsigned_hap_sha256,\n+    }\n+    build_utils.write_json_atomic(unsigned_hap_path_json, options.output_file)\n \n \n def copy_libs(cwd: str, system_lib_module_info_list: list, ohos_app_abi: str, module_libs_dir: str):\n",
+        "old_path": "scripts/compile_app.py",
+        "new_path": "scripts/compile_app.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 10,
+        "removed_lines": 3
+      },
+      "target_branch": "master",
+      "source_branch": "fix-hap-sign-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    },
+    {
+      "sha": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+      "filename": "scripts/util/build_utils.py",
+      "additions": 22,
+      "deletions": 0,
+      "blob_id": "1a1860e3e7de39565663e0bd556cc8d17b82c121",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/util/build_utils.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/34aa8cba0c5fcb3344e2dd652c18027d69a71396/scripts/util/build_utils.py",
+      "patch": {
+        "diff": "@@ -10,6 +10,7 @@ import contextlib\n from distutils import extension\n import filecmp\n import fnmatch\n+import hashlib\n import json\n import os\n import pipes\n@@ -179,6 +180,27 @@ def atomic_output(path, only_if_changed=True):\n                 os.unlink(f.name)\n \n \n+def get_file_sha256(path):\n+    \"\"\"Return the SHA-256 digest of a file.\"\"\"\n+    digest = hashlib.sha256()\n+    with open(path, 'rb') as input_file:\n+        for chunk in iter(lambda: input_file.read(1024 * 1024), b''):\n+            digest.update(chunk)\n+    return digest.hexdigest()\n+\n+\n+def write_json_atomic(obj, path):\n+    \"\"\"Write deterministic JSON atomically without touching unchanged files.\"\"\"\n+    output_dir = os.path.dirname(os.path.abspath(path))\n+    os.makedirs(output_dir, exist_ok=True)\n+    json_content = json.dumps(obj,\n+                              sort_keys=True,\n+                              indent=2,\n+                              separators=(',', ': '))\n+    with atomic_output(path) as output_file:\n+        output_file.write(json_content.encode('utf-8'))\n+\n+\n class CalledProcessError(Exception):\n     \"\"\"This exception is raised when the process run by check_output\n     exits with a non-zero exit code.\n",
+        "old_path": "scripts/util/build_utils.py",
+        "new_path": "scripts/util/build_utils.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 22,
+        "removed_lines": 0
+      },
+      "target_branch": "master",
+      "source_branch": "fix-hap-sign-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    }
+  ]
+}

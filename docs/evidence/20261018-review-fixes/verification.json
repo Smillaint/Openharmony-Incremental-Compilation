@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "name": "PR 6965: JSON recovery, unchanged mtime, changed/missing output and I/O errors",
+      "passed": true
+    },
+    {
+      "name": "PR 6999: JSON recovery, unchanged mtime, changed/missing output and I/O errors",
+      "passed": true
+    },
+    {
+      "name": "PR 7009: JSON recovery, unchanged mtime, changed/missing output and I/O errors",
+      "passed": true
+    },
+    {
+      "name": "PR 7046: JSON recovery, unchanged mtime, changed/missing output and I/O errors",
+      "passed": true
+    },
+    {
+      "name": "PR 7134: JSON recovery, unchanged mtime, changed/missing output and I/O errors",
+      "passed": true
+    },
+    {
+      "name": "Five duplicate file_utils versions remain byte-identical",
+      "passed": true
+    },
+    {
+      "name": "PR 6974: exact app_sign template passes four signer configurations and strict vendor parser",
+      "passed": true
+    },
+    {
+      "name": "PR 6999: exact app_sign template passes four signer configurations and strict vendor parser",
+      "passed": true
+    },
+    {
+      "name": "Both duplicate app_sign templates remain identical",
+      "passed": true
+    },
+    {
+      "name": "IDL generation dependencies and ArkUI-X pass all six flag combinations",
+      "passed": true
+    },
+    {
+      "name": "All changed files parse as UTF-8, Python bytecode and GN syntax",
+      "passed": true
+    }
+  ],
+  "gn_version": "2598 (f90c3d9df882)",
+  "product_build_run": false,
+  "community_gate_triggered": false
+}

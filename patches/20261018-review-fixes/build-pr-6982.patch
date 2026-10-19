@@ -1,0 +1,46 @@
+From b4ca2d4124817b101a9335930bc758b491fc729d Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Sun, 18 Oct 2026 18:58:48 -0700
+Subject: [PATCH] Preserve ArkUI-X IDL handling and clarify generation
+ dependencies
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ config/components/idl_tool/idl.gni | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/config/components/idl_tool/idl.gni b/config/components/idl_tool/idl.gni
+index 28e28f02..5d522493 100644
+--- a/config/components/idl_tool/idl.gni
++++ b/config/components/idl_tool/idl.gni
+@@ -72,6 +72,10 @@ template("idl_gen_interface") {
+   if (defined(invoker.idl_inner)) {
+     idl_inner = invoker.idl_inner
+   }
++  if (is_arkui_x) {
++    # ArkUI-X short-circuits the idl_inner check when selecting the tool.
++    not_needed([ "idl_inner" ])
++  }
+   if (defined(invoker.sources)) {
+     not_needed(invoker, [ "src_idl" ])
+ 
+@@ -89,6 +93,8 @@ template("idl_gen_interface") {
+   if (defined(invoker.sources_common)) {
+     idl_common_list += invoker.sources_common
+   }
++  # Source-absolute common files are inputs only; their owning IDL targets
++  # generate the outputs. Callers must depend on those targets.
+   local_common_list = filter_exclude(idl_common_list, [ "//*" ])
+   external_common_list = filter_include(idl_common_list, [ "//*" ])
+ 
+@@ -274,6 +280,7 @@ template("idl_gen_interface") {
+     } else {
+       external_deps = [ "idl_tool:idl(${host_toolchain})" ]
+     }
++    # These deps order generation only, not client/server library linking.
+     if (defined(invoker.deps)) {
+       deps += invoker.deps
+     }
+-- 
+2.51.0.windows.1
+

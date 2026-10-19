@@ -1,0 +1,375 @@
+{
+  "number": 6965,
+  "pr": {
+    "id": 8991755,
+    "html_url": "https://gitcode.com/openharmony/build/merge_requests/6965",
+    "number": 6965,
+    "state": "open",
+    "title": "Stabilize SA profile incremental outputs",
+    "url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6965",
+    "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/build/pulls/6965/issues",
+    "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4657\n\n### 原因（目的、解决的问题等）\nSA 元数据顺序不固定，JSON 内容未变化时仍会覆盖文件；ZIP 内的元数据使用当前时间，重复打包也会产生差异，导致源 SA、二进制 SA 和合并安装信息继续触发下游构建。\n\n### 描述（做了什么，变更了什么）\n对 SA 元数据按 label 排序，JSON 仅在内容变化时写入；ZIP 先生成临时文件再比较替换，并固定元数据时间戳。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期内容不变时保留 JSON、ZIP 及其时间戳，内容变化时正常更新，输出文件被删除后能够重新生成。",
+    "assignees_number": 3,
+    "assignees": [
+      {
+        "id": "6721f086f130a72704164a7f",
+        "login": "handyohos",
+        "name": "handyohos",
+        "avatar_url": "https://cdn-img.gitcode.com/fd/ac/f11995dacb871b3414ad4b049ee2196c107ec2af89f0d3cfa23ead225483bb2a.jpg",
+        "html_url": "https://gitcode.com/handyohos",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "672cf248ae148c7b76651494",
+        "login": "csliutt-private",
+        "name": "csliutt-private",
+        "avatar_url": "https://cdn-img.gitcode.com/cc/ca/603c494c2c8a58299da54c7894e4a54aacc6d10e9a2d3b052b98aa4a869626ab.jpg",
+        "html_url": "https://gitcode.com/csliutt-private",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "673d3b1b6704dc4ab7a04162",
+        "login": "ringking0",
+        "name": "ringking0",
+        "html_url": "https://gitcode.com/ringking0",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "testers": [
+      {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci",
+        "assignee": false,
+        "code_owner": false,
+        "accept": true
+      }
+    ],
+    "approval_reviewers": [],
+    "labels": [
+      {
+        "id": 87,
+        "color": "#20c22e",
+        "name": "dco检查成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-08-06T11:28:36+08:00"
+      },
+      {
+        "id": 59,
+        "color": "#20c22e",
+        "name": "静态检查成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:33+08:00",
+        "updated_at": "2026-10-16T11:19:54+08:00"
+      },
+      {
+        "id": 91,
+        "color": "#20c22e",
+        "name": "编译成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T16:51:04+08:00"
+      },
+      {
+        "id": 100,
+        "color": "#20c22e",
+        "name": "冒烟测试成功",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-16T17:08:32+08:00"
+      },
+      {
+        "id": 131,
+        "color": "#1083d6",
+        "name": "waiting_for_review",
+        "repository_id": 4422307,
+        "created_at": "2025-04-22T20:34:00+08:00",
+        "updated_at": "2026-10-16T17:08:39+08:00"
+      }
+    ],
+    "created_at": "2026-08-06T11:25:54+08:00",
+    "updated_at": "2026-10-16T17:08:40+08:00",
+    "closed_at": "",
+    "merged_at": "",
+    "draft": false,
+    "can_merge_check": false,
+    "prune_branch": false,
+    "mergeable": true,
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    },
+    "head": {
+      "ref": "codex/fix-sa-profile-incremental-build",
+      "sha": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "label": "codex/fix-sa-profile-incremental-build",
+      "repo": {
+        "path": "build",
+        "name": "build",
+        "namespace": {
+          "path": "SmillySmillick"
+        },
+        "full_name": "SmillySmillick/build",
+        "html_url": "https://gitcode.com/SmillySmillick/build.git"
+      },
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      }
+    },
+    "base": {
+      "ref": "master",
+      "sha": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "label": "master",
+      "repo": {
+        "path": "build",
+        "name": "build",
+        "namespace": {
+          "path": "openharmony"
+        },
+        "full_name": "openharmony/build",
+        "html_url": "https://gitcode.com/openharmony/build.git"
+      }
+    },
+    "mergeable_state": {
+      "merge_request_id": 8991755,
+      "state": false,
+      "status_without_user_auth": false,
+      "conflict_passed": true,
+      "branch_missing_passed": true,
+      "non_ff_passed": true,
+      "mr_state_passed": true,
+      "merged_by_user_passed": false,
+      "work_in_progress_passed": true,
+      "resolve_discussion_passed": true,
+      "ci_state_passed": true,
+      "merge_by_self_passed": true,
+      "can_force_merge": false,
+      "approval_reviewers_required_passed": true,
+      "approval_approvers_required_passed": false,
+      "approval_testers_required_passed": true,
+      "merge_request_switch": {
+        "review_mode": "approval",
+        "merge_method": "merge",
+        "only_allow_merge_if_all_discussions_are_resolved": false,
+        "disable_merge_by_self": true,
+        "only_allow_merge_if_pipeline_succeeds": false,
+        "disable_squash_merge": false,
+        "squash_merge_with_no_merge_commit": false,
+        "approval_required_reviewers_count": 0,
+        "approval_required_reviewers_branch": "*",
+        "add_notes_after_merged": true,
+        "mark_auto_merged_mr_as_closed": true,
+        "can_force_merge": true,
+        "can_reopen": true
+      },
+      "reason": {
+        "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+      },
+      "check_tasks_num": 2,
+      "all_depend_merge_request_merged_passed": true,
+      "approval_approvers_result": 1,
+      "approval_testers_result": 2
+    },
+    "visibility_reason": "public",
+    "close_related_issue": true,
+    "squash_merge": false
+  },
+  "files": [
+    {
+      "sha": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "filename": "ohos/sa_profile/sa_profile_binary.py",
+      "additions": 13,
+      "deletions": 9,
+      "blob_id": "d0bbbb15043d2f299000a369ec39dea04449d7d4",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/ohos/sa_profile/sa_profile_binary.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/ohos/sa_profile/sa_profile_binary.py",
+      "patch": {
+        "diff": "@@ -94,15 +94,19 @@ def main():\n             generate_binary_sa_archive(parts_list,\n                                        args.sa_profile_archive_info_file,\n                                        args.sa_output_dir, depfiles))\n-    with zipfile.ZipFile(args.sa_output_zipfile, 'w') as outfile:\n-        for part_name, sa_file_path, sa_file in sa_files_tuples:\n-            part_name_map[sa_file] = part_name\n-            build_utils.add_to_zip_hermetic(outfile,\n-                                         sa_file,\n-                                         src_path=sa_file_path)\n-        if part_name_map:\n-            metadata_content = json.dumps(part_name_map, indent=2, sort_keys=True)\n-            outfile.writestr(\"part_name_info.json\", metadata_content)\n+    with build_utils.atomic_output(args.sa_output_zipfile) as output_file:\n+        with zipfile.ZipFile(output_file, 'w') as outfile:\n+            for part_name, sa_file_path, sa_file in sa_files_tuples:\n+                part_name_map[sa_file] = part_name\n+                build_utils.add_to_zip_hermetic(outfile,\n+                                                sa_file,\n+                                                src_path=sa_file_path)\n+            if part_name_map:\n+                metadata_content = json.dumps(part_name_map, indent=2,\n+                                              sort_keys=True)\n+                metadata_info = zipfile.ZipInfo(\"part_name_info.json\",\n+                                                build_utils.HERMETIC_TIMESTAMP)\n+                outfile.writestr(metadata_info, metadata_content)\n     build_utils.write_depfile(args.depfile, args.sa_output_zipfile, depfiles)\n     return 0\n \n",
+        "old_path": "ohos/sa_profile/sa_profile_binary.py",
+        "new_path": "ohos/sa_profile/sa_profile_binary.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 13,
+        "removed_lines": 9
+      },
+      "target_branch": "master",
+      "source_branch": "codex/fix-sa-profile-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    },
+    {
+      "sha": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "filename": "ohos/sa_profile/sa_profile_merge.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_id": "1c5e7693290208de44f194d91591715660f96ee1",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/ohos/sa_profile/sa_profile_merge.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/ohos/sa_profile/sa_profile_merge.py",
+      "patch": {
+        "diff": "@@ -114,7 +114,8 @@ def _generate_install_info(sa_result_file_dict: dict, sa_info_install_dest_dir:\n             'dest': [_install_dest]\n         }\n         module_install_info_list.append(module_install_info)\n-    write_json_file(sa_install_info_file, module_install_info_list)\n+    write_json_file(sa_install_info_file, module_install_info_list,\n+                    check_changes=True)\n \n \n def main():\n",
+        "old_path": "ohos/sa_profile/sa_profile_merge.py",
+        "new_path": "ohos/sa_profile/sa_profile_merge.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 2,
+        "removed_lines": 1
+      },
+      "target_branch": "master",
+      "source_branch": "codex/fix-sa-profile-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    },
+    {
+      "sha": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "filename": "ohos/sa_profile/sa_profile_source.py",
+      "additions": 2,
+      "deletions": 1,
+      "blob_id": "40b054ee6c5bbc3737b2451a56b880d3885b2e0a",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/ohos/sa_profile/sa_profile_source.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/ohos/sa_profile/sa_profile_source.py",
+      "patch": {
+        "diff": "@@ -60,7 +60,8 @@ def main():\n     src_parts_info = get_src_parts(args.system_install_info_file)\n     sa_install_infos = get_sa_install_info(args.src_sa_info_file,\n                                            src_parts_info)\n-    write_json_file(args.src_sa_install_info_file, sa_install_infos)\n+    write_json_file(args.src_sa_install_info_file, sa_install_infos,\n+                    check_changes=True)\n     return 0\n \n \n",
+        "old_path": "ohos/sa_profile/sa_profile_source.py",
+        "new_path": "ohos/sa_profile/sa_profile_source.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 2,
+        "removed_lines": 1
+      },
+      "target_branch": "master",
+      "source_branch": "codex/fix-sa-profile-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    },
+    {
+      "sha": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "filename": "ohos/sa_profile/src_sa_profile_process.py",
+      "additions": 4,
+      "deletions": 2,
+      "blob_id": "d5ced17efa1edf962dd217ae525e6ef6f1dd3fa8",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/ohos/sa_profile/src_sa_profile_process.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/ohos/sa_profile/src_sa_profile_process.py",
+      "patch": {
+        "diff": "@@ -43,7 +43,8 @@ def sa_info_process(sa_profile_infos_file: str, toolchain_platform: dict):\n         _sa_info['part_name'] = part_name\n         _sa_info['origin_part_name'] = origin_part_name\n         processed_sa_infos.append(_sa_info)\n-    return processed_sa_infos\n+    return sorted(processed_sa_infos,\n+                  key=lambda info: info.get('label', ''))\n \n \n def main():\n@@ -62,7 +63,8 @@ def main():\n     toolchain_platform = variants_toolchain_info.get('toolchain_platform')\n     processed_sa_infos = sa_info_process(args.sa_profile_infos_file,\n                                          toolchain_platform)\n-    write_json_file(args.output_file, processed_sa_infos)\n+    write_json_file(args.output_file, processed_sa_infos,\n+                    check_changes=True)\n     build_utils.write_depfile(args.depfile, args.output_file, depfiles)\n     return 0\n \n",
+        "old_path": "ohos/sa_profile/src_sa_profile_process.py",
+        "new_path": "ohos/sa_profile/src_sa_profile_process.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 4,
+        "removed_lines": 2
+      },
+      "target_branch": "master",
+      "source_branch": "codex/fix-sa-profile-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    },
+    {
+      "sha": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "filename": "scripts/util/file_utils.py",
+      "additions": 3,
+      "deletions": 13,
+      "blob_id": "4b0ac9e406d7d377be522ddc25e0b342299003be",
+      "blob_url": "https://gitcode.com/openharmony/build/blob/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/scripts/util/file_utils.py",
+      "raw_url": "https://raw.gitcode.com/openharmony/build/raw/f15f9bded74ae12a75b8a9ef729c1397a7202ec2/scripts/util/file_utils.py",
+      "patch": {
+        "diff": "@@ -16,7 +16,6 @@\n import json\n import os\n import subprocess\n-import hashlib\n import platform\n \n \n@@ -82,18 +81,9 @@ def write_json_file(output_file, content, check_changes=False):\n \n \n def __check_changes(output_file, content):\n-    if os.path.exists(output_file) and os.path.isfile(output_file):\n-        # file content md5 val\n-        sha256_obj = hashlib.sha256()\n-        sha256_obj.update(str(read_json_file(output_file)).encode())\n-        hash_value = sha256_obj.hexdigest()\n-        # new content md5 val\n-        sha256_obj_new = hashlib.sha256()\n-        sha256_obj_new.update(str(content).encode())\n-        hash_value_new = sha256_obj_new.hexdigest()\n-        if hash_value_new == hash_value:\n-            return False\n-    return True\n+    if not os.path.isfile(output_file):\n+        return True\n+    return read_json_file(output_file) != content\n \n \n # Write file data\n",
+        "old_path": "scripts/util/file_utils.py",
+        "new_path": "scripts/util/file_utils.py",
+        "a_mode": "100755",
+        "b_mode": "100755",
+        "new_file": false,
+        "renamed_file": false,
+        "deleted_file": false,
+        "too_large": false,
+        "added_lines": 3,
+        "removed_lines": 13
+      },
+      "target_branch": "master",
+      "source_branch": "codex/fix-sa-profile-incremental-build",
+      "source_project": {
+        "id": 10536272,
+        "full_name": "SmillySmillick/build",
+        "human_name": "SmillySmillick / build",
+        "path": "build"
+      },
+      "target_project": {
+        "id": 4422307,
+        "full_name": "openharmony/build",
+        "human_name": "OpenHarmony / build",
+        "path": "build"
+      }
+    }
+  ]
+}

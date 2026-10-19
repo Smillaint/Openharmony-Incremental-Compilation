@@ -1,0 +1,57 @@
+{
+  "args": [
+    "--keyPwd",
+    "fixture-key",
+    "--sign-algo",
+    "fixture-algorithm",
+    "--profileFile",
+    "../fixture.p7b",
+    "--keyalias",
+    "fixture-alias",
+    "--keystoreFile",
+    "../fixture.keystore",
+    "--keystorePwd",
+    "fixture-password",
+    "--certificate-file",
+    "../fixture.cer",
+    "--hapsigner",
+    "../fixture.jar",
+    "--unsigned-hap-path-list",
+    "../unsigned.json",
+    "--hap-out-dir",
+    "haps",
+    "--hap-name",
+    "sample",
+    "--hap-list",
+    "../hap_list.json",
+    "--compatible_version",
+    "fixture-version"
+  ],
+  "check_includes_strict": false,
+  "deps": [],
+  "inputs": [
+    "//fixture.jar",
+    "//fixture.p7b",
+    "//fixture.keystore",
+    "//fixture.cer"
+  ],
+  "metadata": {
+    "install_modules": [
+      {
+        "module_def": "sample"
+      }
+    ],
+    "test_list_info": []
+  },
+  "outputs": [
+    "//out/obj/sample.stamp"
+  ],
+  "public": "*",
+  "script": "//vendor_sign.py",
+  "testonly": false,
+  "toolchain": "//:tc",
+  "type": "action",
+  "visibility": [
+    "*"
+  ]
+}

@@ -1,0 +1,68 @@
+From 37406489bf81204ef8d1479d4f6621e1a23e7437 Mon Sep 17 00:00:00 2001
+From: Smillick <3185479846@qq.com>
+Date: Sun, 18 Oct 2026 18:58:48 -0700
+Subject: [PATCH] Preserve external signer compatibility and recover generated
+ JSON
+
+Signed-off-by: Smillick <3185479846@qq.com>
+---
+ ohos/app/app_internal.gni  | 17 +++++++++++++----
+ scripts/util/file_utils.py |  6 +++++-
+ 2 files changed, 18 insertions(+), 5 deletions(-)
+
+diff --git a/ohos/app/app_internal.gni b/ohos/app/app_internal.gni
+index 266a9124..f71d8fb9 100644
+--- a/ohos/app/app_internal.gni
++++ b/ohos/app/app_internal.gni
+@@ -561,8 +561,13 @@ template("app_sign") {
+       _certificate_file,
+     ]
+ 
+-    _sign_result = "${target_out_dir}/${target_name}.sign_result.json"
+-    outputs = [ _sign_result ]
++    if (_sign_hap_py_path == "//build/scripts/app_sign.py") {
++      _sign_result = "${target_out_dir}/${target_name}.sign_result.json"
++      outputs = [ _sign_result ]
++    } else {
++      # External signers retain their existing arguments and stamp output.
++      outputs = [ "${target_out_dir}/${target_name}.stamp" ]
++    }
+ 
+     args = [
+       "--keyPwd",
+@@ -587,9 +592,13 @@ template("app_sign") {
+       rebase_path(hap_out_dir, root_build_dir),
+       "--hap-name",
+       hap_name,
+-      "--output-file",
+-      rebase_path(_sign_result, root_build_dir),
+     ]
++    if (_sign_hap_py_path == "//build/scripts/app_sign.py") {
++      args += [
++        "--output-file",
++        rebase_path(_sign_result, root_build_dir),
++      ]
++    }
+     if (defined(invoker.hap_list)) {
+       args += [
+         "--hap-list",
+diff --git a/scripts/util/file_utils.py b/scripts/util/file_utils.py
+index 4b0ac9e4..7b15586c 100755
+--- a/scripts/util/file_utils.py
++++ b/scripts/util/file_utils.py
+@@ -83,7 +83,11 @@ def write_json_file(output_file, content, check_changes=False):
+ def __check_changes(output_file, content):
+     if not os.path.isfile(output_file):
+         return True
+-    return read_json_file(output_file) != content
++    try:
++        return read_json_file(output_file) != content
++    except json.decoder.JSONDecodeError:
++        # Rewrite malformed generated output left by an interrupted build.
++        return True
+ 
+ 
+ # Write file data
+-- 
+2.51.0.windows.1
+

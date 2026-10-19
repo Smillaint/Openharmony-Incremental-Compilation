@@ -1,0 +1,155 @@
+{
+  "checked_at_utc": "2026-10-19T02:00:58.400260+00:00",
+  "items": [
+    {
+      "repo": "build",
+      "number": 6965,
+      "before": "f15f9bded74ae12a75b8a9ef729c1397a7202ec2",
+      "remote_branch": "codex/fix-sa-profile-incremental-build",
+      "local_branch": "fix/review-pr-6965-20261018",
+      "backup_tag": "backup/review-fixes-20261018/pr-6965",
+      "files": [
+        "scripts/util/file_utils.py"
+      ],
+      "after": "270bdc5c3cd438cdc2fdd9e86a85c65dafe59559",
+      "subject": "Recover malformed generated JSON before comparing outputs",
+      "published": true,
+      "verified_public_sha": "270bdc5c3cd438cdc2fdd9e86a85c65dafe59559",
+      "body_unchanged": true,
+      "pr_file_scope_unchanged": true,
+      "observed_labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6974,
+      "before": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
+      "remote_branch": "fix-hap-sign-incremental-build",
+      "local_branch": "fix/review-pr-6974-20261018",
+      "backup_tag": "backup/review-fixes-20261018/pr-6974",
+      "files": [
+        "ohos/app/app_internal.gni"
+      ],
+      "after": "fb6add1534863be35a9df323a8d78d5168521f6d",
+      "subject": "Preserve external HAP signer arguments and outputs",
+      "published": true,
+      "verified_public_sha": "fb6add1534863be35a9df323a8d78d5168521f6d",
+      "body_unchanged": true,
+      "pr_file_scope_unchanged": true,
+      "observed_labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6982,
+      "before": "de69337b7f99f2328417e27fe591903862c9bbdc",
+      "remote_branch": "fix-idl-common-outputs",
+      "local_branch": "fix/review-pr-6982-20261018",
+      "backup_tag": "backup/review-fixes-20261018/pr-6982",
+      "files": [
+        "config/components/idl_tool/idl.gni"
+      ],
+      "after": "b4ca2d4124817b101a9335930bc758b491fc729d",
+      "subject": "Preserve ArkUI-X IDL handling and clarify generation dependencies",
+      "published": true,
+      "verified_public_sha": "b4ca2d4124817b101a9335930bc758b491fc729d",
+      "body_unchanged": true,
+      "pr_file_scope_unchanged": true,
+      "observed_labels": [
+        "dco检查成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6999,
+      "before": "f1a463340efbcaa8089df8f47e50409c14ee9322",
+      "remote_branch": "incremental-build-all-validation-20260820",
+      "local_branch": "fix/review-pr-6999-20261018",
+      "backup_tag": "backup/review-fixes-20261018/pr-6999",
+      "files": [
+        "ohos/app/app_internal.gni",
+        "scripts/util/file_utils.py"
+      ],
+      "after": "37406489bf81204ef8d1479d4f6621e1a23e7437",
+      "subject": "Preserve external signer compatibility and recover generated JSON",
+      "published": true,
+      "verified_public_sha": "37406489bf81204ef8d1479d4f6621e1a23e7437",
+      "body_unchanged": true,
+      "pr_file_scope_unchanged": true,
+      "observed_labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7009,
+      "before": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
+      "remote_branch": "fix-part-install-metadata-incremental-build",
+      "local_branch": "fix/review-pr-7009-20261018",
+      "backup_tag": "backup/review-fixes-20261018/pr-7009",
+      "files": [
+        "scripts/util/file_utils.py"
+      ],
+      "after": "577fed97c0cf1ee5973c6d264eb32e17513059fa",
+      "subject": "Recover malformed generated JSON before comparing outputs",
+      "published": true,
+      "verified_public_sha": "577fed97c0cf1ee5973c6d264eb32e17513059fa",
+      "body_unchanged": true,
+      "pr_file_scope_unchanged": true,
+      "observed_labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7046,
+      "before": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
+      "remote_branch": "fix-install-incremental-metadata",
+      "local_branch": "fix/review-pr-7046-20261018",
+      "backup_tag": "backup/review-fixes-20261018/pr-7046",
+      "files": [
+        "scripts/util/file_utils.py"
+      ],
+      "after": "a82a8a03bd3a43c23c186d4ed32cd2602c010c93",
+      "subject": "Recover malformed generated JSON before comparing outputs",
+      "published": true,
+      "verified_public_sha": "a82a8a03bd3a43c23c186d4ed32cd2602c010c93",
+      "body_unchanged": true,
+      "pr_file_scope_unchanged": true,
+      "observed_labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7134,
+      "before": "f0dd0bd6ea0708337120d8044115e87491794532",
+      "remote_branch": "fix/loader-components-incremental-20261015",
+      "local_branch": "fix/review-pr-7134-20261018",
+      "backup_tag": "backup/review-fixes-20261018/pr-7134",
+      "files": [
+        "scripts/util/file_utils.py"
+      ],
+      "after": "f5de052afaf6b4c7b6801f013418797ace4d2203",
+      "subject": "Recover malformed generated JSON before comparing outputs",
+      "published": true,
+      "verified_public_sha": "f5de052afaf6b4c7b6801f013418797ace4d2203",
+      "body_unchanged": true,
+      "pr_file_scope_unchanged": true,
+      "observed_labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    }
+  ],
+  "review_replies_posted": false,
+  "gate_triggered": false
+}
