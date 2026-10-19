@@ -21,7 +21,10 @@
     "source_names_identical_to_upstream": true,
     "static_receipt_id": 194414463,
     "gate_url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad56fc464650f998bfb7be7/runlist",
-    "next_action": "Repository maintainer review of existing InsightIntent filenames"
+    "next_action": "Repository maintainer review of existing InsightIntent filenames",
+    "full_gate": "failed",
+    "final_result_comment_id": 194414993,
+    "followup_checked_at_utc": "2026-10-19T01:36:35.990035+00:00"
   },
   "local_regression_pass_count": 11,
   "new_source_commit_created": false,

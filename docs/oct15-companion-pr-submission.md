@@ -8,7 +8,7 @@
 
 ## 最新巡检
 
-2026-10-18 手工复核 23 条 PR：16 条完整门禁通过，包含上次重跑的 SA 与 HAP；SDK、安装五条成员已启动新一轮联合门禁。SDK CodeCheck 已通过，安装组仅剩 ace 清单中的 10 条既有文件名 WordsTool 告警，NOTICE #7048、airscan #22 当前版本仍未触发。具体回执、修订版本和剩余问题见 [10 月 18 日复核](oct16-codecheck-fixes.md#10-月-18-日复核)。自动任务 openharmony-30 保持 PAUSED。
+2026-10-18 手工复核 23 条 PR：16 条完整门禁通过，包含上次重跑的 SA 与 HAP；SDK、安装五条成员已启动新一轮联合门禁。SDK CodeCheck 已通过，完整结果待回读。安装组最终回执 `194414993` 确认在静态阶段失败，仅剩 ace 清单中的 10 条既有文件名 WordsTool 告警，编译尚未执行；NOTICE #7048、airscan #22 当前版本仍未触发。具体回执、修订版本和剩余问题见 [10 月 18 日复核](oct16-codecheck-fixes.md#10-月-18-日复核)及[ace 追加排查](oct16-codecheck-fixes.md#ace-7210-追加排查)。自动任务 openharmony-30 保持 PAUSED。
 
 ## PR、文件与作用
 

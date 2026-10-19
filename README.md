@@ -2,7 +2,7 @@
 
 本仓库记录 OpenHarmony `rk3568/phone` 增量构建中重复 Action 的根因、代码修改、PR 与验证证据。
 
-[2026-10-18 门禁复核](docs/oct16-codecheck-fixes.md#10-月-18-日复核)：**16 条 PR 完整门禁通过；SDK CodeCheck 通过，完整门禁继续运行；安装组路径告警已消除，剩 10 条现有 InsightIntent 文件名词检查待维护者确认。** 新任务回执与源码路径证据已保存，自动巡检保持暂停。
+[2026-10-18 门禁复核](docs/oct16-codecheck-fixes.md#10-月-18-日复核)：**16 条 PR 完整门禁通过；SDK CodeCheck 通过，完整门禁结果待回读；安装组本轮已在静态阶段失败，ace 剩 10 条既有 InsightIntent 文件名术语告警。** [追加排查与可转交说明](docs/oct16-codecheck-fixes.md#ace-7210-追加排查)包含最终回执、十条位置及主干文件对象对照，需维护者审核误报。自动巡检保持暂停。
 
 ## 最新状态与继续工作入口
 

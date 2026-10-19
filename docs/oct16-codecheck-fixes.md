@@ -58,3 +58,17 @@ SDK 分支为 `fix/sdk-interface-incremental-20261015`；ace 远端分支为 `fi
 - SDK、安装组随后各发起一次完整联合门禁：SDK `6ad56fa064650f998bfb70a8`；安装 `6ad56fc464650f998bfb7be7`。均收到机器人启动回执；SDK 两仓 CodeCheck 通过，接口检查、编译与冒烟仍需最终回执。安装组三仓中 build 和 graphic_3d 的 CodeCheck 通过，ace 只剩 10 条 `WordsTool.110`，`G.FIO.05` 已消除。不能把这五条计为完整门禁通过。
 
 回读、命令与启动回执、本地回归、路径证据见 [10 月 18 日证据](evidence/20261018-gate-fixes/)。自动巡检保持 PAUSED。
+
+### ace #7210 追加排查
+
+安装组本轮已经结束。[最终门禁报告](https://dcp.openharmony.cn/workbench/cicd/detail/6ad56fc464650f998bfb7be7/runlist)由机器人在北京时间 2026-10-19 09:22:42 回写，评论 `194414993` 明确为“代码门禁未通过”。当前 ace HEAD 仍为 `e76639ebbd94be09cd2038c9ae377dfca1724333`。build #7046 和 graphic_graphic_3d #676 的 CodeCheck 通过，但联合组因 ace 被拦，不能计为完整门禁通过；报告中的编译项为 pending，并非仍在编译。
+
+[当前 CodeCheck 详情](https://dcp.openharmony.cn/workbench/cicd/detail/6ad56fc464650f998bfb7be7/runlist?pop=codecheck&taskId=MR_1c8b3a201d4a4cca8e4d87a7503297b9)只有 10 条一般级别的 `WordsTool.110 Intent`，没有致命或严重问题，也没有之前的 `G.FIO.05`。十条均位于 `arkui-plugins/sdk_files.json`：输入行 23、40、759、760、761，输出行 1099、1116、1522、1523、1524。
+
+这些行声明现有五个 TypeScript 文件和对应的五个 JavaScript 输出。清单将真实文件名显式列入 GN 依赖，词检查因其中的 `insight-intent` 报告术语告警。五个源文件与合并适配的主干 `5444f03da530ddee9e2441084a577180e2d7bc50` 的 Git blob 相同，PR 没有引入这项功能或修改其命名。应对这十条申请既有术语的误报审核；源码改名、删减输入输出、转义字符串或关闭扫描都不适合作为本次增量修复。
+
+DCP 当前处于未登录状态，报告未显示可用的告警处置入口。没有提交忽略操作或新的门禁命令，源码和 PR 描述均未修改。下文是可交给维护者的说明草稿，尚未发送：
+
+> `sdk_files.json` 中这 10 条 `WordsTool.110 Intent` 告警来自现有 `insight-intent` 文件名，分别是 5 个 TS 输入和对应的 5 个 JS 输出。源码文件和主干版本一致，这次只是把它们列为明确的 GN 输入输出。请审核这 10 条既有文件名告警，确认后按误报处理，清单中的真实依赖需要保留。
+
+证据：[最新 PR 与评论快照](evidence/20261018-gate-fixes/ace-followup-latest.json)、[最终结果与十条位置](evidence/20261018-gate-fixes/ace-followup-summary.json)、[主干对象对照](evidence/20261018-gate-fixes/intent-filename-evidence.json)、[CodeCheck 页面截图](evidence/20261018-gate-fixes/ace-followup-codecheck.png)。归档前版本保存在 `backup/ace-static-followup-20261018`。

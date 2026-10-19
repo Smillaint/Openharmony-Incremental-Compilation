@@ -218,7 +218,7 @@
       "command_id": 194413650,
       "receipt_id": 194413803,
       "started_at": "2026-10-19T09:18:06+08:00",
-      "status": "running",
+      "status": "failed_static_check",
       "done": false,
       "members": [
         {
@@ -226,31 +226,42 @@
           "number": 7046,
           "head": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
           "previous_status": "failed_static_check",
-          "status": "running",
+          "status": "blocked_by_joint_codecheck",
           "done": false,
-          "codecheck_status": "passed"
+          "codecheck_status": "passed",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-19T01:36:35.990035+00:00"
         },
         {
           "repo": "developtools_ace_ets2bundle",
           "number": 7210,
           "head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
           "previous_status": "failed_static_check",
-          "status": "running",
+          "status": "failed_static_check",
           "previous_head": "a9bc178d4d9bcc0f1179f24ef1b620d51537f4d6",
           "done": false,
-          "codecheck_status": "failed_words_only"
+          "codecheck_status": "failed_words_only",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-19T01:36:35.990035+00:00",
+          "result_comment_id": 194414993,
+          "result_at": "2026-10-19T09:22:42+08:00"
         },
         {
           "repo": "graphic_graphic_3d",
           "number": 676,
           "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
           "previous_status": "failed_static_check",
-          "status": "running",
+          "status": "blocked_by_joint_codecheck",
           "done": false,
-          "codecheck_status": "passed"
+          "codecheck_status": "passed",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-19T01:36:35.990035+00:00"
         }
       ],
-      "last_checked_utc": "2026-10-19T01:21:23.116140+00:00",
+      "last_checked_utc": "2026-10-19T01:36:35.990035+00:00",
       "head_verified": true,
       "previous_gate": {
         "name": "Install",
@@ -293,10 +304,10 @@
         "gate_matches_current_heads": false,
         "progress": "CodeCheck revision pushed to an existing member PR; no gate triggered for the new group HEADs. Previous gate diagnosis retained under previous_gate."
       },
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
-      "progress": "Path-construction warning disappeared. Ten WordsTool.110 findings remain on existing InsightIntent filenames; full gate final receipt pending.",
-      "final_report_pending": true,
+      "progress": "Final joint gate failed at CodeCheck. ace has only 10 WordsTool.110 findings on existing source/output filenames. build and graphic_3d passed CodeCheck. Compilation did not run.",
+      "final_report_pending": false,
       "codecheck_status": "failed_words_only",
       "failure": {
         "stage": "CodeCheck",
@@ -304,10 +315,14 @@
         "rule": "WordsTool.110 Intent",
         "count": 10,
         "fingerprint": "e76639eb:WordsTool.110:10:existing-insight-intent-filenames",
-        "report_url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad56ef4cb1b15350a685f31/runlist?pop=staticCheck&taskId=MR_ffb8fa2bf0e241c087d2f5428ed3f0cb",
-        "evidence": "../20261018-gate-fixes/intent-filename-evidence.json",
-        "recommendation": "Repository maintainers should review these as existing feature names; keep all explicit GN input/output entries."
-      }
+        "report_url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad56fc464650f998bfb7be7/runlist?pop=codecheck&taskId=MR_1c8b3a201d4a4cca8e4d87a7503297b9",
+        "evidence": "../20261018-gate-fixes/ace-followup-summary.json",
+        "recommendation": "Request maintainer terminology/false-positive review for exactly these 10 existing filename findings. Keep explicit GN files; do not rename sources or hide filename text solely to pass the checker.",
+        "result_comment_id": 194414993
+      },
+      "result_comment_ids": [
+        194414993
+      ]
     },
     {
       "name": "HAP",
@@ -579,7 +594,7 @@
   "paused_at_utc": "2026-10-16T07:58:11.024715+00:00",
   "pause_reason": "Automatic inspection stopped; code-related static-check revisions handled once, platform failures retained.",
   "maintenance_evidence": "../20261016-codecheck-fixes/publication-verification.json",
-  "last_manual_action_utc": "2026-10-19T01:21:23.116140+00:00",
+  "last_manual_action_utc": "2026-10-19T01:36:35.990035+00:00",
   "manual_action_evidence": "../20261016-manual-gate-retrigger/receipts.json",
-  "last_manual_snapshot": "../20261018-gate-fixes/status.json"
+  "last_manual_snapshot": "../20261018-gate-fixes/ace-followup-summary.json"
 }
