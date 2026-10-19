@@ -1,0 +1,317 @@
+CodeCheck
+代码仓：
+graphic_graphic_3ddeveloptools_ace_ets2bundlebuild
+PR：
+修复 SDK 插件和 wrapper 的重复构建
+代码检查结果：
+不通过
+创建人：
+SmillySmillick
+触发人员：
+SmillySmillick
+概览代码问题片段扫描
+过滤器
+清除选项
+问题级别
+致命
+0
+严重
+0
+一般
+10
+提示
+0
+问题状态
+未解决
+10
+已解决
+0
+已忽略
+0
+规则
+描述
+文件
+已显示 10 条, 共 10 条
+底线规则问题
+找人解决
+ 收起全部
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+1517
+"lib/ui-plugins/entry-translators/cache-factory.js",
+1518
+"lib/ui-plugins/entry-translators/entry-transformer.js",
+1519
+"lib/ui-plugins/entry-translators/factory.js",
+1520
+"lib/ui-plugins/entry-translators/utils.js",
+1521
+"lib/ui-plugins/index.js",
+1522
+"lib/ui-plugins/insight-intent/insight-intent-collector.js",
+1523
+"lib/ui-plugins/insight-intent/insight-intent-handler.js",
+1524
+"lib/ui-plugins/insight-intent/resource-source-cache.js",
+1525
+"lib/ui-plugins/interop/builder-interop.js",
+1526
+"lib/ui-plugins/interop/initstatevar.js",
+1527
+"lib/ui-plugins/interop/interop.js",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+754
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/cache-factory.ts",
+755
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/entry-transformer.ts",
+756
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/factory.ts",
+757
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/utils.ts",
+758
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/index.ts",
+759
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts",
+760
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts",
+761
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts",
+762
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/builder-interop.ts",
+763
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/initstatevar.ts",
+764
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/interop.ts",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+35
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/function-call.ts",
+36
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/function.ts",
+37
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/global-property.ts",
+38
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/index.ts",
+39
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/inner-component-function.ts",
+40
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/insight-intent-class.ts",
+41
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/new-class-instance.ts",
+42
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/normal-class-method.ts",
+43
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/normal-class-property.ts",
+44
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/normal-class.ts",
+45
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/normal-interface-property.ts",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+18
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/base.ts",
+19
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/call-declaration.ts",
+20
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/custom-component.ts",
+21
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/function.ts",
+22
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/index.ts",
+23
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/insight-intent-class.ts",
+24
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/normal-class-method.ts",
+25
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/normal-class-property.ts",
+26
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/normal-class.ts",
+27
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/normal-interface-property.ts",
+28
+"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/parameter.ts",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+755
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/entry-transformer.ts",
+756
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/factory.ts",
+757
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/utils.ts",
+758
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/index.ts",
+759
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts",
+760
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts",
+761
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts",
+762
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/builder-interop.ts",
+763
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/initstatevar.ts",
+764
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/interop.ts",
+765
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/legacy-transformer.ts",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+1111
+"lib/collectors/ui-collectors/records/function-call.js",
+1112
+"lib/collectors/ui-collectors/records/function.js",
+1113
+"lib/collectors/ui-collectors/records/global-property.js",
+1114
+"lib/collectors/ui-collectors/records/index.js",
+1115
+"lib/collectors/ui-collectors/records/inner-component-function.js",
+1116
+"lib/collectors/ui-collectors/records/insight-intent-class.js",
+1117
+"lib/collectors/ui-collectors/records/new-class-instance.js",
+1118
+"lib/collectors/ui-collectors/records/normal-class-method.js",
+1119
+"lib/collectors/ui-collectors/records/normal-class-property.js",
+1120
+"lib/collectors/ui-collectors/records/normal-class.js",
+1121
+"lib/collectors/ui-collectors/records/normal-interface-property.js",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+756
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/factory.ts",
+757
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/entry-translators/utils.ts",
+758
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/index.ts",
+759
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts",
+760
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts",
+761
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts",
+762
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/builder-interop.ts",
+763
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/initstatevar.ts",
+764
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/interop.ts",
+765
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/legacy-transformer.ts",
+766
+"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/interop/predefines.ts",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+1094
+"lib/collectors/ui-collectors/records/annotations/base.js",
+1095
+"lib/collectors/ui-collectors/records/annotations/call-declaration.js",
+1096
+"lib/collectors/ui-collectors/records/annotations/custom-component.js",
+1097
+"lib/collectors/ui-collectors/records/annotations/function.js",
+1098
+"lib/collectors/ui-collectors/records/annotations/index.js",
+1099
+"lib/collectors/ui-collectors/records/annotations/insight-intent-class.js",
+1100
+"lib/collectors/ui-collectors/records/annotations/normal-class-method.js",
+1101
+"lib/collectors/ui-collectors/records/annotations/normal-class-property.js",
+1102
+"lib/collectors/ui-collectors/records/annotations/normal-class.js",
+1103
+"lib/collectors/ui-collectors/records/annotations/normal-interface-property.js",
+1104
+"lib/collectors/ui-collectors/records/annotations/parameter.js",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+1518
+"lib/ui-plugins/entry-translators/entry-transformer.js",
+1519
+"lib/ui-plugins/entry-translators/factory.js",
+1520
+"lib/ui-plugins/entry-translators/utils.js",
+1521
+"lib/ui-plugins/index.js",
+1522
+"lib/ui-plugins/insight-intent/insight-intent-collector.js",
+1523
+"lib/ui-plugins/insight-intent/insight-intent-handler.js",
+1524
+"lib/ui-plugins/insight-intent/resource-source-cache.js",
+1525
+"lib/ui-plugins/interop/builder-interop.js",
+1526
+"lib/ui-plugins/interop/initstatevar.js",
+1527
+"lib/ui-plugins/interop/interop.js",
+1528
+"lib/ui-plugins/interop/legacy-transformer.js",
+arkui-plugins/sdk_files.json
+WordsTool.110 Intent
+修改点个数 1
+intent in open source code should be common or original in the industry, and descriptions that may cause ambiguity should be avoided.
+ 一般
+未解决
+1519
+"lib/ui-plugins/entry-translators/factory.js",
+1520
+"lib/ui-plugins/entry-translators/utils.js",
+1521
+"lib/ui-plugins/index.js",
+1522
+"lib/ui-plugins/insight-intent/insight-intent-collector.js",
+1523
+"lib/ui-plugins/insight-intent/insight-intent-handler.js",
+1524
+"lib/ui-plugins/insight-intent/resource-source-cache.js",
+1525
+"lib/ui-plugins/interop/builder-interop.js",
+1526
+"lib/ui-plugins/interop/initstatevar.js",
+1527
+"lib/ui-plugins/interop/interop.js",
+1528
+"lib/ui-plugins/interop/legacy-transformer.js",
+1529
+"lib/ui-plugins/interop/predefines.js",

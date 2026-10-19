@@ -1,0 +1,50 @@
+{
+  "checked_utc": "2026-10-19T06:44:32.429111+00:00",
+  "hisysevent_pass_gate": "6ad58a7364650f998b07fb47",
+  "hisysevent_head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+  "hisysevent_passed": true,
+  "retry_trigger_user": "ohci1",
+  "hisysevent_sdk_success_log": "https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261019-1-00501/log/build.log.zip",
+  "success_manifest_url": "https://cidownload.openharmony.cn/tag/openharmony/master/default-xml/20261019110751/manifest.xml",
+  "success_projects": [
+    {
+      "name": "build",
+      "revision": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "upstream": "master",
+      "dest-branch": "master",
+      "groups": "default,ohos:mini,ohos:small,ohos:standard,ohos:system,ohos:chipset"
+    },
+    {
+      "name": "developtools_ace_ets2bundle",
+      "path": "developtools/ace_ets2bundle",
+      "revision": "9e0f9e58a243d7aeab672c317a2322dc37efd1a7",
+      "upstream": "master",
+      "dest-branch": "master",
+      "groups": "default,ohos:small,ohos:standard,ohos:system"
+    }
+  ],
+  "success_install_and_interop_lines": [
+    {
+      "line": 1976,
+      "text": "[2026/10/19 11:20:27.001 GMT+08:00] 2026-10-19 11:20:19: ==> process npm_install"
+    },
+    {
+      "line": 2008,
+      "text": "[2026/10/19 11:20:27.001 GMT+08:00] 2026-10-19 11:20:19: run npm install in ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2"
+    },
+    {
+      "line": 2012,
+      "text": "[2026/10/19 11:20:27.001 GMT+08:00] 2026-10-19 11:20:19: ==> process npm_install_lite"
+    },
+    {
+      "line": 13240,
+      "text": "[2026/10/19 11:21:36.905 GMT+08:00] 2026-10-19 11:21:36: [OHOS INFO] [NINJA] [5246/59627] ACTION //developtools/ace_ets2bundle/ets1.2/interop:interop_compile(//build/toolchain/linux:clang_x64)"
+    }
+  ],
+  "sdk_split_gate": "6ad56fa064650f998bfb70a8",
+  "sdk_split_passed": true,
+  "sdk_split_heads": {
+    "interface_sdk-js": "7b42242e2fec2fba4fd33b469d8bbf0bf49ab209",
+    "build": "72115384f783e09832216c951e7743b944fd5893"
+  }
+}

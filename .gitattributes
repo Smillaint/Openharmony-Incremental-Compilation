@@ -16,3 +16,4 @@ docs/evidence/20261018-build-common-rootcause/failed-gate-source/** -text -white
 docs/evidence/20261018-build-common-rootcause/before/** -text -whitespace
 docs/evidence/20261018-build-common-rootcause/*.gz binary
 docs/evidence/20261018-build-common-rootcause/*.bundle binary
+docs/evidence/20261018-install-gate-followup/hisysevent-success-manifest.xml -text -whitespace

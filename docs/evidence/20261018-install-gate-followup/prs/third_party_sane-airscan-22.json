@@ -1,0 +1,157 @@
+{
+  "id": 8987050,
+  "html_url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+  "number": 22,
+  "state": "open",
+  "title": "fix: stabilize airscan incremental build outputs",
+  "url": "https://api.gitcode.com/api/v5/repos/openharmony/third_party_sane-airscan/pulls/22",
+  "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/third_party_sane-airscan/pulls/22/issues",
+  "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/third_party_sane-airscan/issues/19\n\n### 原因（目的、解决的问题等）\n构建时直接在源码目录应用补丁，输入源码随构建变化，声明输出也与实际文件不一致，导致 airscan_action 重复执行。旧分支还与主干新增的补丁处理发生冲突。\n\n### 描述（做了什么，变更了什么）\n保留主干现有八项补丁，在 out/gen/patched 生成副本，明确输入和输出文件，共享库使用生成副本编译；内容相同的输出不重写。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时不重复打补丁或编译，清理生成目录后能够恢复，构建过程不修改源码文件。",
+  "assignees_number": 2,
+  "assignees": [
+    {
+      "id": "66ff50c7d1aa8e111c8614a8",
+      "login": "guoshengbang",
+      "name": "郭盛帮",
+      "avatar_url": "https://cdn-img.gitcode.com/db/bd/449d48bbd509d890903582124f6dd1443e7766726f85453cbb2a2d1be6030233.jpg",
+      "html_url": "https://gitcode.com/guoshengbang",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    },
+    {
+      "id": "672f494f33741160e67479f0",
+      "login": "zheng_zhi_hao",
+      "name": "zheng_zhi_hao",
+      "avatar_url": "https://cdn-img.gitcode.com/fc/ad/38fc9ad9482dc1a550c983ae2dba8694aa19bebf0cf3b8956a56c9cdb62396ac.jpg",
+      "html_url": "https://gitcode.com/zheng_zhi_hao",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    }
+  ],
+  "testers": [
+    {
+      "id": "6541ccea82d8f837210e92c3",
+      "login": "openharmony_ci",
+      "name": "openharmony_ci",
+      "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+      "html_url": "https://gitcode.com/openharmony_ci",
+      "assignee": false,
+      "code_owner": false,
+      "accept": false
+    }
+  ],
+  "approval_reviewers": [],
+  "labels": [
+    {
+      "id": 87,
+      "color": "#20c22e",
+      "name": "dco检查成功",
+      "repository_id": 7218429,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-08-05T14:49:45+08:00"
+    },
+    {
+      "id": 130,
+      "color": "#1083d6",
+      "name": "waiting_on_author",
+      "repository_id": 7218429,
+      "created_at": "2025-04-22T20:34:00+08:00",
+      "updated_at": "2026-10-16T08:10:43+08:00"
+    }
+  ],
+  "created_at": "2026-08-05T14:48:59+08:00",
+  "updated_at": "2026-10-16T08:14:53+08:00",
+  "closed_at": "",
+  "merged_at": "",
+  "draft": false,
+  "can_merge_check": false,
+  "prune_branch": false,
+  "mergeable": true,
+  "user": {
+    "id": "67150ce628c7754a02de123a",
+    "login": "SmillySmillick",
+    "name": "SmillySmillick",
+    "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+    "html_url": "https://gitcode.com/SmillySmillick"
+  },
+  "head": {
+    "ref": "fix/airscan-incremental-action",
+    "sha": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+    "label": "fix/airscan-incremental-action",
+    "repo": {
+      "path": "third_party_sane-airscan",
+      "name": "third_party_sane-airscan",
+      "namespace": {
+        "path": "SmillySmillick"
+      },
+      "full_name": "SmillySmillick/third_party_sane-airscan",
+      "html_url": "https://gitcode.com/SmillySmillick/third_party_sane-airscan.git"
+    },
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    }
+  },
+  "base": {
+    "ref": "master",
+    "sha": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+    "label": "master",
+    "repo": {
+      "path": "third_party_sane-airscan",
+      "name": "third_party_sane-airscan",
+      "namespace": {
+        "path": "openharmony"
+      },
+      "full_name": "openharmony/third_party_sane-airscan",
+      "html_url": "https://gitcode.com/openharmony/third_party_sane-airscan.git"
+    }
+  },
+  "mergeable_state": {
+    "merge_request_id": 8987050,
+    "state": false,
+    "status_without_user_auth": false,
+    "conflict_passed": true,
+    "branch_missing_passed": true,
+    "non_ff_passed": true,
+    "mr_state_passed": true,
+    "merged_by_user_passed": false,
+    "work_in_progress_passed": true,
+    "resolve_discussion_passed": true,
+    "ci_state_passed": true,
+    "merge_by_self_passed": true,
+    "can_force_merge": false,
+    "approval_reviewers_required_passed": true,
+    "approval_approvers_required_passed": false,
+    "approval_testers_required_passed": false,
+    "merge_request_switch": {
+      "review_mode": "approval",
+      "merge_method": "merge",
+      "only_allow_merge_if_all_discussions_are_resolved": false,
+      "disable_merge_by_self": true,
+      "only_allow_merge_if_pipeline_succeeds": false,
+      "disable_squash_merge": false,
+      "squash_merge_with_no_merge_commit": false,
+      "approval_required_reviewers_count": 0,
+      "approval_required_reviewers_branch": "*",
+      "add_notes_after_merged": true,
+      "mark_auto_merged_mr_as_closed": true,
+      "can_force_merge": true,
+      "can_reopen": true
+    },
+    "reason": {
+      "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+    },
+    "check_tasks_num": 2,
+    "all_depend_merge_request_merged_passed": true,
+    "approval_approvers_result": 1,
+    "approval_testers_result": 1
+  },
+  "visibility_reason": "public",
+  "close_related_issue": true,
+  "squash_merge": false
+}

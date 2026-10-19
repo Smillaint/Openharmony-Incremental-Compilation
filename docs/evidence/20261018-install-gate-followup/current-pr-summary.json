@@ -1,0 +1,327 @@
+{
+  "checked_utc": "2026-10-19T06:43:21.082351+00:00",
+  "prs": [
+    {
+      "repo": "build",
+      "number": 6982,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "4e179e356e4ef508ea0c5f302459c6e366e58baa",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "account_os_account",
+      "number": 3898,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "inputmethod_imf",
+      "number": 2774,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "331a15a1cda376687080a3977999de42182ec3ec",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "security_dlp_permission_service",
+      "number": 953,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "ability_dmsfwk",
+      "number": 2123,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "multimedia_audio_framework",
+      "number": 17444,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "third_party_jsframework",
+      "number": 853,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "4172098b9b45baf9b37fa3be021bf1ff6bea6359",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "third_party_css-what",
+      "number": 29,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "0ad16b63ecbad73335b62474499f205b8848382c",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7049,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "72115384f783e09832216c951e7743b944fd5893",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "格式化检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "interface_sdk-js",
+      "number": 36540,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "7b42242e2fec2fba4fd33b469d8bbf0bf49ab209",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "格式化检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7046,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "a82a8a03bd3a43c23c186d4ed32cd2602c010c93",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author",
+        "静态检查成功"
+      ]
+    },
+    {
+      "repo": "developtools_ace_ets2bundle",
+      "number": 7210,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "92f3fe9598c24f6118774101968176b20fc7b342",
+      "head_unchanged": true,
+      "labels": [
+        "waiting_on_author",
+        "dco检查成功",
+        "静态检查失败"
+      ]
+    },
+    {
+      "repo": "graphic_graphic_3d",
+      "number": 676,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+      "head_unchanged": true,
+      "labels": [
+        "waiting_on_author",
+        "dco检查成功",
+        "静态检查成功"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6974,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "fb6add1534863be35a9df323a8d78d5168521f6d",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "developtools_packing_tool",
+      "number": 1556,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7134,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "f5de052afaf6b4c7b6801f013418797ace4d2203",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6965,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "270bdc5c3cd438cdc2fdd9e86a85c65dafe59559",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6999,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "37406489bf81204ef8d1479d4f6621e1a23e7437",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7009,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "577fed97c0cf1ee5973c6d264eb32e17513059fa",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7048,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+      "head_unchanged": true,
+      "labels": [
+        "waiting_on_author",
+        "dco检查成功"
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7006,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "编译成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "third_party_iptables",
+      "number": 62,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "5b884558dcc2c9e4b380edf8ef5aeaea8740cb0c",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "编译成功",
+        "静态检查成功",
+        "冒烟测试成功",
+        "waiting_for_review"
+      ]
+    },
+    {
+      "repo": "third_party_sane-airscan",
+      "number": 22,
+      "state": "open",
+      "merged": null,
+      "merged_at": "",
+      "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+      "head_unchanged": true,
+      "labels": [
+        "dco检查成功",
+        "waiting_on_author"
+      ]
+    }
+  ]
+}

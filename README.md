@@ -2,9 +2,11 @@
 
 本仓库记录 OpenHarmony `rk3568/phone` 增量构建中重复 Action 的根因、代码修改、PR 与验证证据。
 
-[2026-10-18 SDK 依赖兼容修复](docs/oct18-build-common-dependency.md)：**已在失败门禁的精确 ace 源码上复现 npm 6 旧锁文件漏装 build-common，并将一行直接依赖修复更新到 ace #7210，带 DCO。** 旧锁文件与全新安装两种条件的 interop 编译通过；失败 CI 节点的锁文件尚未取得，不能据此确认其最终根因。安装组三条最新提交已追加触发[一次联合门禁](https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist)，受理时排队中。#7006 源码保持原版本，检视回复未发送。
+[2026-10-18 门禁结果复核](docs/oct18-install-gate-followup.md)：**SDK split 两条 PR 与 HiSysEvent #7006 已通过；安装组停在 ace #7210 的十条既有文件名术语告警。** build #7046、graphic_3d #676 静态通过，联合组未进入编译。五个被告警源文件与门禁实际基线完全相同，需要维护者审核术语；本轮没有追加源码修改或重触发任务。
 
-[2026-10-18 #7006 门禁排查](docs/oct18-pr7006-sdk-gate.md)：**自动重跑的 SDK 编译因 `@koalaui/build-common/tsconfig.json` 不可解析而失败。** 已核对门禁实物补丁，npm 配置未改，当次 ets1.2 安装有执行记录，六种部件元数据分支的输出内容一致。
+[2026-10-18 SDK 依赖兼容修复](docs/oct18-build-common-dependency.md)：**已在失败门禁的精确 ace 源码上复现 npm 6 旧锁文件漏装 build-common，并将一行直接依赖修复更新到 ace #7210，带 DCO。** 旧锁文件与全新安装两种条件的 interop 编译通过；失败 CI 节点的锁文件尚未取得，不能据此确认其最终根因。随后一次安装组联合门禁已在静态阶段失败，详见顶部复核。#7006 经维护者重跑已通过，检视回复未发送。
+
+[2026-10-18 #7006 门禁排查](docs/oct18-pr7006-sdk-gate.md)：保存自动重跑时 `@koalaui/build-common/tsconfig.json` 不可解析的历史失败。已核对门禁实物补丁，npm 配置未改，当次 ets1.2 安装有执行记录，六种部件元数据分支的输出内容一致；之后维护者用相同 build/ace 版本重跑失败项成功。
 
 [2026-10-18 IDL 编码兼容复核](docs/oct18-idl-encoding-compatibility.md)：**原工具支持非 UTF-8 注释，新增扫描的严格解码会造成回退，已改为按字节收集 import 并更新 #6982，DCO 通过。** 原工具接受的 9 个样例生成结果逐字节一致，重复执行、缺失输出恢复及递归依赖检查通过；另 5 个原本非法的样例仍失败。完整产品构建和新提交门禁未运行，检视回复尚未发送。
 

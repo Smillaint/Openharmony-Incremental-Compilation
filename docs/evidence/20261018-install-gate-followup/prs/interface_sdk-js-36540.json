@@ -1,0 +1,178 @@
+{
+  "id": 9352389,
+  "html_url": "https://gitcode.com/openharmony/interface_sdk-js/merge_requests/36540",
+  "number": 36540,
+  "state": "open",
+  "title": "补齐 SDK 拆分和声明裁剪的增量依赖",
+  "url": "https://api.gitcode.com/api/v5/repos/openharmony/interface_sdk-js/pulls/36540",
+  "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/interface_sdk-js/pulls/36540/issues",
+  "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4706\n\n### 原因（目的、解决的问题等）\nSDK 拆分没有接入完成标记和 depfile；声明裁剪每轮复制文件并更新时间戳，导致下游反复判断输入变化。\n\n### 描述（做了什么，变更了什么）\n为拆分和声明裁剪接入 stamp、depfile，跟踪声明文件及裁剪规则。裁剪结果先生成到临时目录，内容相同时保留原输出；不带新参数的调用保留原有行为。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期无改动时保留输出时间戳，声明或裁剪规则变化时正常更新，清理输出后能够恢复。\n",
+  "assignees_number": 1,
+  "assignees": [
+    {
+      "id": "673ae61c17c7df0fba3f5692",
+      "login": "xiadengping20241118",
+      "name": "夏登平",
+      "html_url": "https://gitcode.com/xiadengping20241118",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    }
+  ],
+  "testers": [
+    {
+      "id": "6541ccea82d8f837210e92c3",
+      "login": "openharmony_ci",
+      "name": "openharmony_ci",
+      "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+      "html_url": "https://gitcode.com/openharmony_ci",
+      "assignee": false,
+      "code_owner": false,
+      "accept": true
+    }
+  ],
+  "approval_reviewers": [],
+  "labels": [
+    {
+      "id": 87,
+      "color": "#20c22e",
+      "name": "dco检查成功",
+      "repository_id": 4404548,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-10-16T09:23:39+08:00"
+    },
+    {
+      "id": 102,
+      "color": "#20c22e",
+      "name": "格式化检查成功",
+      "repository_id": 4404548,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-10-19T09:32:45+08:00"
+    },
+    {
+      "id": 91,
+      "color": "#20c22e",
+      "name": "编译成功",
+      "repository_id": 4404548,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-10-19T11:11:25+08:00"
+    },
+    {
+      "id": 59,
+      "color": "#20c22e",
+      "name": "静态检查成功",
+      "repository_id": 4404548,
+      "created_at": "2025-04-22T20:33:33+08:00",
+      "updated_at": "2026-10-19T11:11:33+08:00"
+    },
+    {
+      "id": 100,
+      "color": "#20c22e",
+      "name": "冒烟测试成功",
+      "repository_id": 4404548,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-10-19T11:11:35+08:00"
+    },
+    {
+      "id": 131,
+      "color": "#1083d6",
+      "name": "waiting_for_review",
+      "repository_id": 4404548,
+      "created_at": "2025-04-22T20:34:00+08:00",
+      "updated_at": "2026-10-19T11:11:48+08:00"
+    }
+  ],
+  "created_at": "2026-10-16T09:23:04+08:00",
+  "updated_at": "2026-10-19T11:11:49+08:00",
+  "closed_at": "",
+  "merged_at": "",
+  "draft": false,
+  "can_merge_check": false,
+  "prune_branch": false,
+  "mergeable": true,
+  "user": {
+    "id": "67150ce628c7754a02de123a",
+    "login": "SmillySmillick",
+    "name": "SmillySmillick",
+    "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+    "html_url": "https://gitcode.com/SmillySmillick"
+  },
+  "head": {
+    "ref": "fix/sdk-interface-incremental-20261015",
+    "sha": "7b42242e2fec2fba4fd33b469d8bbf0bf49ab209",
+    "label": "fix/sdk-interface-incremental-20261015",
+    "repo": {
+      "path": "interface_sdk-js",
+      "name": "interface_sdk-js",
+      "namespace": {
+        "path": "SmillySmillick"
+      },
+      "full_name": "SmillySmillick/interface_sdk-js",
+      "html_url": "https://gitcode.com/SmillySmillick/interface_sdk-js.git"
+    },
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    }
+  },
+  "base": {
+    "ref": "master",
+    "sha": "02a7e76f2648ba68829cf25c3c2546f238f3af6a",
+    "label": "master",
+    "repo": {
+      "path": "interface_sdk-js",
+      "name": "interface_sdk-js",
+      "namespace": {
+        "path": "openharmony"
+      },
+      "full_name": "openharmony/interface_sdk-js",
+      "html_url": "https://gitcode.com/openharmony/interface_sdk-js.git"
+    }
+  },
+  "mergeable_state": {
+    "merge_request_id": 9352389,
+    "state": false,
+    "status_without_user_auth": false,
+    "conflict_passed": true,
+    "branch_missing_passed": true,
+    "non_ff_passed": true,
+    "mr_state_passed": true,
+    "merged_by_user_passed": false,
+    "work_in_progress_passed": true,
+    "resolve_discussion_passed": true,
+    "ci_state_passed": true,
+    "merge_by_self_passed": true,
+    "can_force_merge": false,
+    "approval_reviewers_required_passed": true,
+    "approval_approvers_required_passed": false,
+    "approval_testers_required_passed": true,
+    "merge_request_switch": {
+      "review_mode": "approval",
+      "merge_method": "merge",
+      "only_allow_merge_if_all_discussions_are_resolved": false,
+      "disable_merge_by_self": true,
+      "only_allow_merge_if_pipeline_succeeds": false,
+      "disable_squash_merge": false,
+      "squash_merge_with_no_merge_commit": false,
+      "approval_required_reviewers_count": 0,
+      "approval_required_reviewers_branch": "*",
+      "add_notes_after_merged": true,
+      "mark_auto_merged_mr_as_closed": true,
+      "can_force_merge": true,
+      "can_reopen": true
+    },
+    "reason": {
+      "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+    },
+    "check_tasks_num": 2,
+    "all_depend_merge_request_merged_passed": true,
+    "approval_approvers_result": 1,
+    "approval_testers_result": 2
+  },
+  "visibility_reason": "public",
+  "close_related_issue": true,
+  "squash_merge": false
+}

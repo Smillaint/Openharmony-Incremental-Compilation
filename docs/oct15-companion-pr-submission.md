@@ -8,6 +8,8 @@
 
 ## 最新巡检
 
+2026-10-18 最新结果：SDK split 两条当前 HEAD 已通过完整门禁，HiSysEvent #7006 经维护者重跑失败项后通过。安装组新任务 `6ad596ab64650f998b0d95f2` 已在静态阶段失败，ace 仍为十条既有文件名术语告警，build 和 graphic_3d 静态通过；组内编译未启动。详见[结果复核](oct18-install-gate-followup.md)，后文启动时的 pending 属于历史快照。
+
 2026-10-18 SDK 依赖排查追加更新 ace #7210 至 `92f3fe9598c24f6118774101968176b20fc7b342`，只在 ets1.2 根 package.json 中声明已有本地 build-common 开发依赖。旧锁文件与全新安装的实际 interop 编译均通过，DCO 检查成功；失败 CI 节点实物未取得。随后安装组三条最新 HEAD 已触发[一次联合门禁](https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist)，机器人开始回执为 `194464617`，受理时 pending。版本、复现条件与分组边界见[依赖修复交接](oct18-build-common-dependency.md)。
 
 2026-10-18 检视整改已更新 build #6965、#6974、#6982、#6999、#7009、#7046、#7134。七条均已回读新 HEAD，DCO 通过；旧门禁回执不代表新提交已通过。逐仓修订、重复修改边界、Git 备份及待确认检视回复见[本轮交接](oct18-review-fixes.md)。以下计数是此次源码更新前的历史复核结果。

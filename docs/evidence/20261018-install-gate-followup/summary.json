@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-10-19T06:46:14.854685+00:00",
+  "installation_gate": "6ad596ab64650f998b0d95f2",
+  "installation_result": "failed",
+  "ace_head": "92f3fe9598c24f6118774101968176b20fc7b342",
+  "ace_codecheck": "failed_words_only",
+  "alert_count": 10,
+  "alert_rule": "WordsTool.110 Intent",
+  "source_files_match_actual_gate_base": true,
+  "gn_input_output_entries_retained": true,
+  "build_and_graphic_codecheck": "passed",
+  "installation_compile_started": false,
+  "source_changed": false,
+  "gate_triggered": false,
+  "review_reply_posted": false,
+  "automation_status": "PAUSED",
+  "hisysevent_retry_gate": "6ad58a7364650f998b07fb47",
+  "hisysevent_result": "passed",
+  "hisysevent_retry_trigger_user": "ohci1",
+  "sdk_split_gate": "6ad56fa064650f998bfb70a8",
+  "sdk_split_result": "passed",
+  "actual_previous_sdk_missing_dependency_root_cause": "unconfirmed; same source revisions reran successfully without ACE #7210"
+}

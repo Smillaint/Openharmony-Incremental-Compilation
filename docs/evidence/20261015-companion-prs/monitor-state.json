@@ -214,34 +214,42 @@
       "issue": "https://gitcode.com/openharmony/build/issues/4706",
       "trigger_repo": "interface_sdk-js",
       "trigger_number": 36540,
-      "url": "http://dcp.openharmony.cn/workbench/cicd/detail/6ad56fa064650f998bfb70a8/runlist",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad56fa064650f998bfb70a8/runlist",
       "command_id": 194413532,
       "receipt_id": 194413658,
       "started_at": "2026-10-19T09:17:28+08:00",
-      "status": "running",
-      "done": false,
+      "status": "passed",
+      "done": true,
       "members": [
         {
           "repo": "build",
           "number": 7049,
           "head": "72115384f783e09832216c951e7743b944fd5893",
           "previous_status": "failed_static_check",
-          "status": "running",
-          "done": false,
-          "codecheck_status": "passed"
+          "status": "passed",
+          "done": true,
+          "codecheck_status": "passed",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-19T06:46:14.854685+00:00",
+          "result_evidence": "../20261018-install-gate-followup/sdk-event.json"
         },
         {
           "repo": "interface_sdk-js",
           "number": 36540,
           "head": "7b42242e2fec2fba4fd33b469d8bbf0bf49ab209",
           "previous_status": "failed_static_check",
-          "status": "running",
+          "status": "passed",
           "previous_head": "9e2c44a2cca432c7686c396ab9465ea51c1119da",
-          "done": false,
-          "codecheck_status": "passed"
+          "done": true,
+          "codecheck_status": "passed",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-19T06:46:14.854685+00:00",
+          "result_evidence": "../20261018-install-gate-followup/sdk-event.json"
         }
       ],
-      "last_checked_utc": "2026-10-19T01:21:23.116140+00:00",
+      "last_checked_utc": "2026-10-19T06:46:14.854685+00:00",
       "head_verified": true,
       "previous_gate": {
         "name": "SDK-split",
@@ -277,12 +285,13 @@
         "gate_matches_current_heads": false,
         "progress": "CodeCheck revision pushed to an existing member PR; no gate triggered for the new group HEADs. Previous gate diagnosis retained under previous_gate."
       },
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
-      "progress": "CodeCheck passed for the repaired SDK scripts and build PR. Full gate and interface checks remain pending.",
-      "final_report_pending": true,
+      "progress": "Current SDK split HEADs passed the full gate; exact event and PR heads verified.",
+      "final_report_pending": false,
       "codecheck_status": "passed",
-      "codecheck_report": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad56ececb1b15350a685f28/runlist?pop=staticCheck&taskId=MR_1dc7fecdd34142e2acdd4e742359075d"
+      "codecheck_report": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad56ececb1b15350a685f28/runlist?pop=staticCheck&taskId=MR_1dc7fecdd34142e2acdd4e742359075d",
+      "result_evidence": "../20261018-install-gate-followup/sdk-event.json"
     },
     {
       "name": "Install",
@@ -290,7 +299,7 @@
       "trigger_repo": "developtools_ace_ets2bundle",
       "trigger_number": 7210,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist",
-      "status": "started",
+      "status": "failed_static_check",
       "done": false,
       "members": [
         {
@@ -298,12 +307,12 @@
           "number": 7046,
           "head": "a82a8a03bd3a43c23c186d4ed32cd2602c010c93",
           "previous_status": "failed_static_check",
-          "status": "pending",
+          "status": "blocked_by_group_static_failure",
           "done": false,
-          "codecheck_status": "pending",
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-19T04:04:39.006626+00:00",
+          "codecheck_status": "passed",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-19T06:46:14.854685+00:00",
           "previous_head": "04a4ff52bbc53fa8104000748c9e38a16df53ca3",
           "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist"
         },
@@ -312,13 +321,13 @@
           "number": 7210,
           "head": "92f3fe9598c24f6118774101968176b20fc7b342",
           "previous_status": "failed_static_check",
-          "status": "pending",
+          "status": "failed_static_check",
           "previous_head": "e76639ebbd94be09cd2038c9ae377dfca1724333",
           "done": false,
-          "codecheck_status": "pending",
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-19T04:04:39.006626+00:00",
+          "codecheck_status": "failed_words_only",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-19T06:46:14.854685+00:00",
           "previous_revision": {
             "repo": "developtools_ace_ets2bundle",
             "number": 7210,
@@ -342,16 +351,16 @@
           "number": 676,
           "head": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
           "previous_status": "failed_static_check",
-          "status": "pending",
+          "status": "blocked_by_group_static_failure",
           "done": false,
-          "codecheck_status": "pending",
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-19T04:04:39.006626+00:00",
+          "codecheck_status": "passed",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-19T06:46:14.854685+00:00",
           "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad596ab64650f998b0d95f2/runlist"
         }
       ],
-      "last_checked_utc": "2026-10-19T04:04:39.006626+00:00",
+      "last_checked_utc": "2026-10-19T06:46:14.854685+00:00",
       "head_verified": true,
       "previous_gate": {
         "name": "Install",
@@ -468,10 +477,10 @@
           194414993
         ]
       },
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
-      "progress": "Latest three HEADs verified in gate; pending. One start build command submitted.",
-      "final_report_pending": true,
+      "progress": "Gate ended at static checks: ACE has ten existing filename terminology alerts; build and graphic CodeCheck passed. Compilation not started.",
+      "final_report_pending": false,
       "previous_gate_before_20261018_dependency_fix": {
         "name": "Install",
         "issue": "https://gitcode.com/openharmony/build/issues/4704",
@@ -602,10 +611,11 @@
         "progress": "Review fixes published to existing member PRs. No new gate was triggered; previous_gate records the old revision results.",
         "final_report_pending": false
       },
-      "codecheck_status": "pending",
+      "codecheck_status": "failed_ace_words_only",
       "command_id": 194464499,
       "receipt_id": 194464617,
-      "current_gate_evidence": "../20261018-install-gate-build-common/gate-receipt.json"
+      "current_gate_evidence": "../20261018-install-gate-build-common/gate-receipt.json",
+      "result_evidence": "../20261018-install-gate-followup/summary.json"
     },
     {
       "name": "HAP",
@@ -971,23 +981,40 @@
         "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
       },
       "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
-      "status": "failed_sdk_dependency_resolution",
-      "done": false,
+      "status": "passed",
+      "done": true,
       "active_gate": false,
       "head_verified": true,
       "final_report_pending": false,
-      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad576e764650f998bfeab08/runlist",
-      "last_checked_utc": "2026-10-19T03:02:40.156010+00:00",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad58a7364650f998b07fb47/runlist",
+      "last_checked_utc": "2026-10-19T06:46:14.854685+00:00",
       "codecheck_status": "passed",
-      "failure": {
-        "classification": "sdk_dependency_resolution_failure_root_cause_unconfirmed",
-        "details": "TS6053: File '@koalaui/build-common/tsconfig.json' not found",
-        "stage": "Ninja ets1.2/interop/interop_compile -> npm run compile:interop -> tsc -b .",
-        "evidence": "../20261018-pr7006-sdk-gate/diagnosis.json",
-        "npm_audit_evidence": "../20261018-pr7006-npm-audit/verification.json",
-        "dependency_reproduction_evidence": "../20261018-build-common-rootcause/diagnosis.json"
+      "progress": "ohci1 retried failed builds and the gate passed. Build and ACE revisions match the earlier failed SDK; no ACE #7210 patch was applied.",
+      "previous_failed_gate": {
+        "repo": "build",
+        "number": 7006,
+        "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+        "status": "failed_sdk_dependency_resolution",
+        "done": false,
+        "active_gate": false,
+        "head_verified": true,
+        "final_report_pending": false,
+        "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad576e764650f998bfeab08/runlist",
+        "last_checked_utc": "2026-10-19T03:02:40.156010+00:00",
+        "codecheck_status": "passed",
+        "failure": {
+          "classification": "sdk_dependency_resolution_failure_root_cause_unconfirmed",
+          "details": "TS6053: File '@koalaui/build-common/tsconfig.json' not found",
+          "stage": "Ninja ets1.2/interop/interop_compile -> npm run compile:interop -> tsc -b .",
+          "evidence": "../20261018-pr7006-sdk-gate/diagnosis.json",
+          "npm_audit_evidence": "../20261018-pr7006-npm-audit/verification.json",
+          "dependency_reproduction_evidence": "../20261018-build-common-rootcause/diagnosis.json"
+        },
+        "progress": "An npm6 stale-lock mechanism was reproduced against the exact ACE source in the failed manifest and fixed in ACE #7210. Actual CI lockfile and links remain unavailable; #7006 unchanged, no gate retry."
       },
-      "progress": "An npm6 stale-lock mechanism was reproduced against the exact ACE source in the failed manifest and fixed in ACE #7210. Actual CI lockfile and links remain unavailable; #7006 unchanged, no gate retry."
+      "result_comment_id": 194455074,
+      "passed_at": "2026-10-19T11:31:58+08:00",
+      "result_evidence": "../20261018-install-gate-followup/pass-verification.json"
     },
     {
       "repo": "third_party_iptables",
@@ -1023,7 +1050,8 @@
   "maintenance_evidence": "../20261018-review-fixes/publication-verification.json",
   "last_manual_action_utc": "2026-10-19T04:04:39.006626+00:00",
   "manual_action_evidence": "../20261018-install-gate-build-common/gate-receipt.json",
-  "last_manual_snapshot": "../20261018-pr7006-sdk-gate/diagnosis.json",
+  "last_manual_snapshot": "../20261018-install-gate-followup/summary.json",
   "idl_encoding_evidence": "../20261018-idl-encoding/publication-verification.json",
-  "build_common_dependency_evidence": "../20261018-build-common-rootcause/diagnosis.json"
+  "build_common_dependency_evidence": "../20261018-build-common-rootcause/diagnosis.json",
+  "current_pr_snapshot": "../20261018-install-gate-followup/current-pr-summary.json"
 }

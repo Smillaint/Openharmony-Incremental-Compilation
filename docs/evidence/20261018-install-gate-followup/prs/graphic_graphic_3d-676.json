@@ -1,0 +1,172 @@
+{
+  "id": 9352395,
+  "html_url": "https://gitcode.com/openharmony/graphic_graphic_3d/merge_requests/676",
+  "number": 676,
+  "state": "open",
+  "title": "避免相同 ROFS 对象触发重复链接",
+  "url": "https://api.gitcode.com/api/v5/repos/openharmony/graphic_graphic_3d/pulls/676",
+  "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/graphic_graphic_3d/pulls/676/issues",
+  "body": "### 相关的Issue\nhttps://gitcode.com/openharmony/build/issues/4704\n\n### 原因（目的、解决的问题等）\n资源编译每次直接替换 ROFS 对象，即使对象内容相同也会更新时间戳，继续触发共享库链接和安装。\n\n### 描述（做了什么，变更了什么）\n在构建目录的临时目录生成对象，检查输出后比较内容，仅替换有变化的文件。\n\n### 测试用例（新增、改动、可能影响的功能）\n预期相同对象保留时间戳，不再带动无效重链；对象被清理后能恢复，生成失败时保留已有有效对象。\n",
+  "assignees_number": 3,
+  "assignees": [
+    {
+      "id": "673af11a9c1e7c4f071a2af8",
+      "login": "liuchao-huawei",
+      "name": "liuchao-huawei",
+      "html_url": "https://gitcode.com/liuchao-huawei",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    },
+    {
+      "id": "67499abe3bd4a53191960095",
+      "login": "zdustc",
+      "name": "zdustc",
+      "html_url": "https://gitcode.com/zdustc",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    },
+    {
+      "id": "68aec67629fdc1420e5fd636",
+      "login": "huxiaoming",
+      "name": "huxiaoming",
+      "html_url": "https://gitcode.com/huxiaoming",
+      "assignee": true,
+      "code_owner": false,
+      "accept": false
+    }
+  ],
+  "testers": [
+    {
+      "id": "6541ccea82d8f837210e92c3",
+      "login": "openharmony_ci",
+      "name": "openharmony_ci",
+      "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+      "html_url": "https://gitcode.com/openharmony_ci",
+      "assignee": false,
+      "code_owner": false,
+      "accept": false
+    }
+  ],
+  "approval_reviewers": [],
+  "labels": [
+    {
+      "id": 130,
+      "color": "#1083d6",
+      "name": "waiting_on_author",
+      "repository_id": 4376922,
+      "created_at": "2025-04-22T20:34:00+08:00",
+      "updated_at": "2026-10-16T09:24:30+08:00"
+    },
+    {
+      "id": 87,
+      "color": "#20c22e",
+      "name": "dco检查成功",
+      "repository_id": 4376922,
+      "created_at": "2025-04-22T20:33:58+08:00",
+      "updated_at": "2026-10-16T09:24:36+08:00"
+    },
+    {
+      "id": 59,
+      "color": "#20c22e",
+      "name": "静态检查成功",
+      "repository_id": 4376922,
+      "created_at": "2025-04-22T20:33:33+08:00",
+      "updated_at": "2026-10-19T12:13:00+08:00"
+    }
+  ],
+  "created_at": "2026-10-16T09:23:58+08:00",
+  "updated_at": "2026-10-19T12:13:03+08:00",
+  "closed_at": "",
+  "merged_at": "",
+  "draft": false,
+  "can_merge_check": false,
+  "prune_branch": false,
+  "mergeable": true,
+  "user": {
+    "id": "67150ce628c7754a02de123a",
+    "login": "SmillySmillick",
+    "name": "SmillySmillick",
+    "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+    "html_url": "https://gitcode.com/SmillySmillick"
+  },
+  "head": {
+    "ref": "fix/incremental-build-20261013",
+    "sha": "57e960e087a2f0aefbcc5f21b0f88b6cefc354f0",
+    "label": "fix/incremental-build-20261013",
+    "repo": {
+      "path": "graphic_graphic_3d",
+      "name": "graphic_graphic_3d",
+      "namespace": {
+        "path": "SmillySmillick"
+      },
+      "full_name": "SmillySmillick/graphic_graphic_3d",
+      "html_url": "https://gitcode.com/SmillySmillick/graphic_graphic_3d.git"
+    },
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    }
+  },
+  "base": {
+    "ref": "master",
+    "sha": "6608c68779cc05bcb7ebe265a65ade7c126f5473",
+    "label": "master",
+    "repo": {
+      "path": "graphic_graphic_3d",
+      "name": "graphic_graphic_3d",
+      "namespace": {
+        "path": "openharmony"
+      },
+      "full_name": "openharmony/graphic_graphic_3d",
+      "html_url": "https://gitcode.com/openharmony/graphic_graphic_3d.git"
+    }
+  },
+  "mergeable_state": {
+    "merge_request_id": 9352395,
+    "state": false,
+    "status_without_user_auth": false,
+    "conflict_passed": true,
+    "branch_missing_passed": true,
+    "non_ff_passed": true,
+    "mr_state_passed": true,
+    "merged_by_user_passed": false,
+    "work_in_progress_passed": true,
+    "resolve_discussion_passed": true,
+    "ci_state_passed": true,
+    "merge_by_self_passed": true,
+    "can_force_merge": false,
+    "approval_reviewers_required_passed": true,
+    "approval_approvers_required_passed": false,
+    "approval_testers_required_passed": false,
+    "merge_request_switch": {
+      "review_mode": "approval",
+      "merge_method": "merge",
+      "only_allow_merge_if_all_discussions_are_resolved": false,
+      "disable_merge_by_self": true,
+      "only_allow_merge_if_pipeline_succeeds": false,
+      "disable_squash_merge": false,
+      "squash_merge_with_no_merge_commit": false,
+      "approval_required_reviewers_count": 0,
+      "approval_required_reviewers_branch": "*",
+      "add_notes_after_merged": true,
+      "mark_auto_merged_mr_as_closed": true,
+      "can_force_merge": true,
+      "can_reopen": true
+    },
+    "reason": {
+      "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+    },
+    "check_tasks_num": 2,
+    "all_depend_merge_request_merged_passed": true,
+    "approval_approvers_result": 1,
+    "approval_testers_result": 1
+  },
+  "visibility_reason": "public",
+  "close_related_issue": true,
+  "squash_merge": false
+}

@@ -1,5 +1,7 @@
 # #7006 SDK 门禁失败排查（2026-10-18）
 
+最新结果：维护者 `ohci1` 已重跑失败项，[任务 6ad58a7364650f998b07fb47](https://dcp.openharmony.cn/workbench/cicd/detail/6ad58a7364650f998b07fb47/runlist)通过，机器人回执 `194455074`。成功与旧失败任务的 build/ace 源码版本相同，没有带入 ace #7210；详见[结果复核](oct18-install-gate-followup.md)。下文保留原失败排查过程。
+
 [build #7006](https://gitcode.com/openharmony/build/merge_requests/7006) 本轮阻塞在 SDK 的 Koala TypeScript 依赖解析：`@koalaui/build-common/tsconfig.json` 不可解析，报 `TS6053`。后续核对门禁实物补丁和安装日志，未发现 PR 改写 npm 配置或使安装步骤跳过的证据。依赖为什么在安装调用后仍不可解析，根因尚未查明，不能仅凭缺文件就断言是环境故障。不修改 #7006，不重新触发门禁。
 
 后续已在门禁精确 ace 版本上[复现并修复 npm 6 旧锁文件漏装 build-common](oct18-build-common-dependency.md)，一行直接依赖修复追加到 ace #7210。失败 CI 节点的锁文件与链接未取得，因此该机制仍不能代替当次实物根因；#7006 与 #7210 的 Issue 分组不同，单独重跑 #7006 不会自动带入这条尚未合入的 ace 修复。

@@ -1,0 +1,79 @@
+{
+  "head": "92f3fe9598c24f6118774101968176b20fc7b342",
+  "actual_gate_base": "268bd17d50ae5f646fa44db1ed86981b4ed49191",
+  "manifest_alert_lines": [
+    {
+      "line": 23,
+      "value": "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/annotations/insight-intent-class.ts\","
+    },
+    {
+      "line": 40,
+      "value": "\"//developtools/ace_ets2bundle/arkui-plugins/collectors/ui-collectors/records/insight-intent-class.ts\","
+    },
+    {
+      "line": 759,
+      "value": "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts\","
+    },
+    {
+      "line": 760,
+      "value": "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts\","
+    },
+    {
+      "line": 761,
+      "value": "\"//developtools/ace_ets2bundle/arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts\","
+    },
+    {
+      "line": 1099,
+      "value": "\"lib/collectors/ui-collectors/records/annotations/insight-intent-class.js\","
+    },
+    {
+      "line": 1116,
+      "value": "\"lib/collectors/ui-collectors/records/insight-intent-class.js\","
+    },
+    {
+      "line": 1522,
+      "value": "\"lib/ui-plugins/insight-intent/insight-intent-collector.js\","
+    },
+    {
+      "line": 1523,
+      "value": "\"lib/ui-plugins/insight-intent/insight-intent-handler.js\","
+    },
+    {
+      "line": 1524,
+      "value": "\"lib/ui-plugins/insight-intent/resource-source-cache.js\","
+    }
+  ],
+  "source_files": [
+    {
+      "path": "arkui-plugins/collectors/ui-collectors/records/annotations/insight-intent-class.ts",
+      "head_blob": "6d6136f4c935790a8b1686e3fa7e2e766d1554c9",
+      "base_blob": "6d6136f4c935790a8b1686e3fa7e2e766d1554c9",
+      "identical": true
+    },
+    {
+      "path": "arkui-plugins/collectors/ui-collectors/records/insight-intent-class.ts",
+      "head_blob": "84f0d15391970d58cab28ce51017a5603c5a2db3",
+      "base_blob": "84f0d15391970d58cab28ce51017a5603c5a2db3",
+      "identical": true
+    },
+    {
+      "path": "arkui-plugins/ui-plugins/insight-intent/insight-intent-collector.ts",
+      "head_blob": "3726770ebd7f5086e813a5d6f5179bdc95c83443",
+      "base_blob": "3726770ebd7f5086e813a5d6f5179bdc95c83443",
+      "identical": true
+    },
+    {
+      "path": "arkui-plugins/ui-plugins/insight-intent/insight-intent-handler.ts",
+      "head_blob": "17e7bdac8fed3f609d306089dc0545e061dbc5e1",
+      "base_blob": "17e7bdac8fed3f609d306089dc0545e061dbc5e1",
+      "identical": true
+    },
+    {
+      "path": "arkui-plugins/ui-plugins/insight-intent/resource-source-cache.ts",
+      "head_blob": "cb32088dbb06e71787eb1922b977a5d8f0dc03ec",
+      "base_blob": "cb32088dbb06e71787eb1922b977a5d8f0dc03ec",
+      "identical": true
+    }
+  ],
+  "source_changed": false
+}
