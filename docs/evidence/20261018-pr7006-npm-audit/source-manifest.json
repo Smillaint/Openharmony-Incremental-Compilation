@@ -1,0 +1,131 @@
+{
+  "base": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+  "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+  "base_files": [
+    {
+      "path": "hb/util/loader/load_ohos_build.py",
+      "base": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "blob_sha": "1c496831e434f3d71efbc4b8678292ab9fd07712",
+      "sha256": "2920740e8c3f54c899a6ad002874b16014fc908c7c68b7ff6e888904fb8777ba"
+    },
+    {
+      "path": "ohos/hisysevent/hisysevent_process.py",
+      "base": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "blob_sha": "5feacbf05f131a36a5835b436accd381092d6fc7",
+      "sha256": "85aa14b3713ed6c98665c10443b6585e67ef0894a707f22dcae82ad21f4a312e"
+    },
+    {
+      "path": "scripts/util/file_utils.py",
+      "base": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "blob_sha": "65dcb4af9cc96e5313bbb33e8fa90ca9d8eb470a",
+      "sha256": "898eba0639bbc91c47a5ef966ba12e154a110e4986a5cf5d128567b3fadd022d"
+    },
+    {
+      "path": "prebuilts_download.sh",
+      "base": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "blob_sha": "99a4308993792f82e5eae97b60ed40fb5915981b",
+      "sha256": "39eb5eba75e9a7a2f3783e8ca5fedd95c452596d61cbdbb117298259d7210d0c"
+    },
+    {
+      "path": "prebuilts_download.py",
+      "base": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "blob_sha": "50821996d0947ef2a2540611c22006e671f467d8",
+      "sha256": "83abcb52c54717787c06f358609df63607160690b782d8791c8b168ec6539abf"
+    },
+    {
+      "path": "prebuilts_config.json",
+      "base": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+      "blob_sha": "4cce563b1040b76de6b01e9670156b851ee74bc2",
+      "sha256": "9cd6a95721895aff6eb44a8c314d36e4a79543ddbf9865e25da602c8b4d4f850"
+    }
+  ],
+  "gate_patch_url": "https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261019-1-00249/patch/openharmony_build_7006/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29.tar.gz",
+  "gate_patch_sha256": "f597e0c49895dcf11968f20c6580f88be9ae3140e00b9f6b9bb96ff021f1cf23",
+  "gate_patch_members": [
+    {
+      "name": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29.json",
+      "size": 88,
+      "isfile": true
+    },
+    {
+      "name": "new",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "new/ohos",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "new/ohos/hisysevent",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "new/ohos/hisysevent/hisysevent_process.py",
+      "size": 4952,
+      "isfile": true
+    },
+    {
+      "name": "new/hb",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "new/hb/util",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "new/hb/util/loader",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "new/hb/util/loader/load_ohos_build.py",
+      "size": 41764,
+      "isfile": true
+    },
+    {
+      "name": "old",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "old/ohos",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "old/ohos/hisysevent",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "old/ohos/hisysevent/hisysevent_process.py",
+      "size": 4867,
+      "isfile": true
+    },
+    {
+      "name": "old/hb",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "old/hb/util",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "old/hb/util/loader",
+      "size": 0,
+      "isfile": false
+    },
+    {
+      "name": "old/hb/util/loader/load_ohos_build.py",
+      "size": 41630,
+      "isfile": true
+    }
+  ]
+}

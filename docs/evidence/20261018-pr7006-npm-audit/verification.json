@@ -1,0 +1,84 @@
+{
+  "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
+  "base": "6b6d6533967db07e8e7d40d140fc63d0faabacbd",
+  "gate_patch_matches_pr": true,
+  "gate_old_matches_exact_base": true,
+  "only_changed_files": [
+    "hb/util/loader/load_ohos_build.py",
+    "ohos/hisysevent/hisysevent_process.py"
+  ],
+  "npm_install_invoked": {
+    "line": 2007,
+    "text": "[2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2"
+  },
+  "metadata_branch_checks": [
+    {
+      "branch": "parts_variants",
+      "initial_bytes_identical": true,
+      "dependency_payload_identical": true,
+      "real_change_written": true,
+      "missing_output_restored": true,
+      "unchanged_mtime_preserved": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "branch": "parts_inner_kits_info",
+      "initial_bytes_identical": true,
+      "dependency_payload_identical": true,
+      "real_change_written": true,
+      "missing_output_restored": true,
+      "unchanged_mtime_preserved": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "branch": "parts_targets",
+      "initial_bytes_identical": true,
+      "dependency_payload_identical": true,
+      "real_change_written": true,
+      "missing_output_restored": true,
+      "unchanged_mtime_preserved": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "branch": "phony_target",
+      "initial_bytes_identical": true,
+      "dependency_payload_identical": true,
+      "real_change_written": true,
+      "missing_output_restored": true,
+      "unchanged_mtime_preserved": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "branch": "hisysevent_config",
+      "initial_bytes_identical": true,
+      "dependency_payload_identical": true,
+      "real_change_written": true,
+      "missing_output_restored": true,
+      "unchanged_mtime_preserved": {
+        "old": false,
+        "new": true
+      }
+    },
+    {
+      "branch": "parts_deps",
+      "initial_bytes_identical": true,
+      "dependency_payload_identical": true,
+      "real_change_written": true,
+      "missing_output_restored": true,
+      "unchanged_mtime_preserved": {
+        "old": false,
+        "new": false
+      }
+    }
+  ],
+  "test_boundary": "Actual loader function and exact-base JSON writer; logging/config display are stubbed. No complete product GN/Ninja or npm installation was run.",
+  "root_cause_boundary": "Installation was invoked; install output and CI node_modules state are insufficient to explain the later TS6053."
+}

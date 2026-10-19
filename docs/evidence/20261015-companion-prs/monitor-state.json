@@ -820,7 +820,7 @@
         "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
       },
       "head": "3dc5695a126e2c9b3de9336ad8a290d2b66c8d29",
-      "status": "failed_sdk_dependency_preparation",
+      "status": "failed_sdk_dependency_resolution",
       "done": false,
       "active_gate": false,
       "head_verified": true,
@@ -829,12 +829,13 @@
       "last_checked_utc": "2026-10-19T03:02:40.156010+00:00",
       "codecheck_status": "passed",
       "failure": {
-        "classification": "sdk_dependency_preparation_failure_not_pr7006_regression",
+        "classification": "sdk_dependency_resolution_failure_root_cause_unconfirmed",
         "details": "TS6053: File '@koalaui/build-common/tsconfig.json' not found",
         "stage": "Ninja ets1.2/interop/interop_compile -> npm run compile:interop -> tsc -b .",
-        "evidence": "../20261018-pr7006-sdk-gate/diagnosis.json"
+        "evidence": "../20261018-pr7006-sdk-gate/diagnosis.json",
+        "npm_audit_evidence": "../20261018-pr7006-npm-audit/verification.json"
       },
-      "progress": "Automatic expiry rebuild failed in SDK Koala dependency resolution; defer environment/dependency preparation, no source change or manual retry."
+      "progress": "Actual gate patch does not change npm configuration; ets1.2 npm installation invocation is logged. Six metadata branches retain payloads. Missing dependency root cause remains unconfirmed; no source change or manual retry."
     },
     {
       "repo": "third_party_iptables",

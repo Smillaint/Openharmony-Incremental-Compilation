@@ -1,0 +1,54 @@
+1971: [2026/10/19 10:03:45.563 GMT+08:00] 2026-10-19 10:03:44: ==> hvigor_command-line-tools is unchanged, skip
+1972: [2026/10/19 10:03:45.563 GMT+08:00]
+1973: [2026/10/19 10:03:45.563 GMT+08:00] 2026-10-19 10:03:44:
+1974: [2026/10/19 10:03:45.563 GMT+08:00]
+1975: [2026/10/19 10:03:45.563 GMT+08:00] 2026-10-19 10:03:44: ==> process npm_install
+1976: [2026/10/19 10:03:45.563 GMT+08:00]
+1977: [2026/10/19 10:03:45.563 GMT+08:00] 2026-10-19 10:03:44: start npm install, please wait.
+1978: [2026/10/19 10:03:45.563 GMT+08:00]
+1979: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in parallel mode, please wait.
+1980: [2026/10/19 10:03:45.564 GMT+08:00]
+1981: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/compiler
+1982: [2026/10/19 10:03:45.564 GMT+08:00]
+1983: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/third_party/jsframework
+1984: [2026/10/19 10:03:45.564 GMT+08:00]
+1985: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/third_party/weex-loader
+1986: [2026/10/19 10:03:45.564 GMT+08:00]
+1987: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/arkcompiler/ets_frontend/legacy_bin/api8
+1988: [2026/10/19 10:03:45.564 GMT+08:00]
+1989: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/interface/sdk-js/build-tools
+1990: [2026/10/19 10:03:45.564 GMT+08:00]
+1991: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/arkcompiler/ets_frontend/arkguard
+1992: [2026/10/19 10:03:45.564 GMT+08:00]
+1993: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/arkcompiler/ets_frontend/ets2panda/driver/build_system
+1994: [2026/10/19 10:03:45.564 GMT+08:00]
+1995: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/arkcompiler/ets_frontend/ets2panda/driver/interop_toolkits/gluegen
+1996: [2026/10/19 10:03:45.564 GMT+08:00]
+1997: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/arkcompiler/ets_frontend/ets2panda/linter
+1998: [2026/10/19 10:03:45.564 GMT+08:00]
+1999: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/arkcompiler/ets_frontend/ets2panda/bindings
+2000: [2026/10/19 10:03:45.564 GMT+08:00]
+2001: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/arkcompiler/runtime_core/static_core/plugins/ets/tools/declgen_ts2sts
+2002: [2026/10/19 10:03:45.564 GMT+08:00]
+2003: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/koala-wrapper
+2004: [2026/10/19 10:03:45.564 GMT+08:00]
+2005: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/arkui-plugins
+2006: [2026/10/19 10:03:45.564 GMT+08:00]
+2007: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/developtools/ace_ets2bundle/ets1.2
+2008: [2026/10/19 10:03:45.564 GMT+08:00]
+2009: [2026/10/19 10:03:45.564 GMT+08:00] 2026-10-19 10:03:44:
+2010: [2026/10/19 10:03:45.564 GMT+08:00]
+2011: [2026/10/19 10:03:45.565 GMT+08:00] 2026-10-19 10:03:44: ==> process npm_install_lite
+2012: [2026/10/19 10:03:45.565 GMT+08:00]
+2013: [2026/10/19 10:03:45.565 GMT+08:00] 2026-10-19 10:03:44: start npm install, please wait.
+2014: [2026/10/19 10:03:45.565 GMT+08:00]
+2015: [2026/10/19 10:03:45.565 GMT+08:00] 2026-10-19 10:03:44: run npm install in parallel mode, please wait.
+2016: [2026/10/19 10:03:45.565 GMT+08:00]
+2017: [2026/10/19 10:03:45.565 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/developtools/ace_js2bundle/ace-loader
+2018: [2026/10/19 10:03:45.565 GMT+08:00]
+2019: [2026/10/19 10:03:45.565 GMT+08:00] 2026-10-19 10:03:44: run npm install in ***//harmony_code/codearts_workspace/third_party/parse5/packages/parse5
+2020: [2026/10/19 10:03:45.565 GMT+08:00]
+2021: [2026/10/19 10:03:45.565 GMT+08:00] 2026-10-19 10:03:44:
+2022: [2026/10/19 10:03:45.565 GMT+08:00]
+2023: [2026/10/19 10:03:45.565 GMT+08:00] 2026-10-19 10:03:44: ==> process node_modules_copy
+2024: [2026/10/19 10:03:45.565 GMT+08:00]

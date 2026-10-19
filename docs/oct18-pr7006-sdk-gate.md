@@ -1,6 +1,6 @@
 # #7006 SDK 门禁失败排查（2026-10-18）
 
-[build #7006](https://gitcode.com/openharmony/build/merge_requests/7006) 本轮阻塞在 SDK 的 Koala TypeScript 依赖解析：`@koalaui/build-common/tsconfig.json` 不可解析，报 `TS6053`。没有发现 HiSysEvent 修复引起的报错；先按门禁依赖准备问题保留，不修改 #7006，不重新触发门禁。具体是预置依赖包不完整、安装未完成还是 node_modules 链接异常，公开日志不足以进一步区分。
+[build #7006](https://gitcode.com/openharmony/build/merge_requests/7006) 本轮阻塞在 SDK 的 Koala TypeScript 依赖解析：`@koalaui/build-common/tsconfig.json` 不可解析，报 `TS6053`。后续核对门禁实物补丁和安装日志，未发现 PR 改写 npm 配置或使安装步骤跳过的证据。依赖为什么在安装调用后仍不可解析，根因尚未查明，不能仅凭缺文件就断言是环境故障。不修改 #7006，不重新触发门禁。
 
 本地记录日期为 America/Los_Angeles 的 2026-10-18，以下执行时间均为北京时间 2026-10-19。
 
@@ -56,3 +56,38 @@ FAILED: [code=1] clang_x64/obj/developtools/ace_ets2bundle/ets1.2/interop/intero
 - 自动巡检仍暂停；检视回复草稿没有修改或发送，未标记讨论已解决。
 
 本轮只进行只读故障定位，没有产品源码修订，也没有运行新的产品编译。源码保留已有 DCO 提交，#7006 当前完整门禁状态应记录为 SDK 依赖失败，不能继续沿用 8 月旧任务的通过状态。
+
+## npm 安装与依赖列表复核
+
+针对安装步骤是否跳过、依赖列表是否变化，补充以下检查。该复核仍使用同一门禁 HEAD 和构建基线，源分支没有更新。
+
+### 门禁实际补丁
+
+下载失败任务发布的 [PR 补丁包](https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261019-1-00249/patch/openharmony_build_7006/3dc5695a126e2c9b3de9336ad8a290d2b66c8d29.tar.gz)。包内变更清单只有上述两个 Python 文件；old 文件逐字节等于精确基线 `6b6d6533`，new 文件逐字节等于 PR HEAD `3dc5695a`。没有额外覆盖 npm、SDK 或 GN 配置。
+
+PR 未改 `package.json`、锁文件、`prebuilts_download.sh`、`prebuilts_config.json`、安装脚本或 npm 的 GN 模板。基线 `prebuilts_config.json` 的 `npm_install_path` 包含 `developtools/ace_ets2bundle/ets1.2`，该配置未出现在补丁中。
+
+### 当次安装步骤有执行记录
+
+同一失败日志第 1975–2007 行，内部时间 10:03:44：
+
+```text
+==> process npm_install
+start npm install, please wait.
+run npm install in parallel mode, please wait.
+run npm install in .../developtools/ace_ets2bundle/ets1.2
+```
+
+这排除了整个 ets1.2 安装步骤被跳过的假设，但不证明安装产物齐全或链接有效。公开日志没有该目录完整的 npm stdout、依赖目录清单和 realpath 结果，不能从启动记录推断安装完整成功。
+
+### 生成的部件依赖未被改写
+
+用补丁 old/new 中实际的 `process_other_parts`，配合同一精确基线的 JSON 写入工具，对六个元数据分支分别比较首次生成、相同内容再次调用、真实依赖变化和删除输出后恢复。两版文件内容逐字节一致，真实变化正常写入，缺失文件正常恢复；只有 hisysevent_config 在内容相同时保留 mtime。`parts_deps`、`parts_targets`、`inner_kits_info` 等分支仍沿用原写入行为，不会因该条件把部件依赖列表改掉。
+
+这些是实际函数的隔离检查，只替代日志显示对象，没有运行完整产品 GN/Ninja 或重新执行 npm 安装，不据此声称完整构建已通过。
+
+另一处 `depfiles.extend(hisysevent_config_files)` 的确增加了依赖，但增加的是 HiSysEvent action 所读取的 YAML 文件，原有 depfile 输入未删除；它不是 npm 的 dependencies/devDependencies 或安装目录列表。
+
+结论：没有发现“#7006 改变 npm 安装配置、安装被跳过、npm 依赖清单变化或生成部件依赖内容变化”的情况。TS6053 的最终根因仍需检查失败节点的安装输出和依赖实物；暂不为这一未确认原因修改源码，也未发送检视回复。
+
+[补丁、基线身份、六分支结果和安装日志节选](evidence/20261018-pr7006-npm-audit/)已归档。此次交接更新前标签为 `backup/pr7006-npm-audit-20261018`。
