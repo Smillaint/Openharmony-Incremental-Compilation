@@ -1,0 +1,448 @@
+{
+  "prepared_utc": "2026-10-20T09:17:50.515063+00:00",
+  "replies": [
+    {
+      "number": 6982,
+      "parent_id": 194418948,
+      "body": "已补 ArkUI-X 下对 `idl_inner` 的 `not_needed` 处理。`is_arkui_x=true` 时后面的 `||` 会短路，变量未使用会导致 GN 报错。",
+      "parent": {
+        "id": 194418948,
+        "discussion_id": "e8f511a4bc0a434a65a7a6559be6dd43b99d3010",
+        "body": "if (is_arkui_x){ 这个逻辑为啥没了？可能会影响ark_ui_x的编译",
+        "created_at": "2026-10-19T09:39:07+08:00",
+        "updated_at": "2026-10-19T09:39:07+08:00",
+        "user": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "comment_type": "diff_comment",
+        "resolved": false,
+        "diff_position": {
+          "start_new_line": 71,
+          "end_new_line": 71,
+          "position_type": "text"
+        }
+      }
+    },
+    {
+      "number": 6982,
+      "parent_id": 194419266,
+      "body": "单参数 `rebase_path` 会把 `src_idl` 转成系统绝对路径，再次转换不会改变路径。让单文件输入与 `sources` 多文件输入保持一致，避免后续脚本按工具目录解析相对路径。",
+      "parent": {
+        "id": 194419266,
+        "discussion_id": "b881f8e524cea8e944b5393d7826200ab568e3da",
+        "body": "这个路径是否对比过？",
+        "created_at": "2026-10-19T09:40:24+08:00",
+        "updated_at": "2026-10-19T09:40:24+08:00",
+        "user": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "comment_type": "diff_comment",
+        "resolved": false,
+        "diff_position": {
+          "start_new_line": 87,
+          "end_new_line": 87,
+          "position_type": "text"
+        }
+      }
+    },
+    {
+      "number": 6982,
+      "parent_id": 194419155,
+      "body": "这里保留读取失败和缺失 import 直接报错，避免继续构建时漏掉 depfile 依赖。原工具按字节读取，允许 GBK 等编码的注释；已将依赖扫描改为按字节识别 import，源文件原样交给生成器。",
+      "parent": {
+        "id": 194419155,
+        "discussion_id": "afda25840f45729be5bf2a698e2d7f849edf0493",
+        "body": "**低** `[config/components/idl_tool/idl.py:107]` `collect_idl_inputs` 对异常输入直接抛错\n\n`read_text(encoding='utf-8')` 遇到带 BOM 或非 UTF-8 编码的 `.idl` 文件会抛异常；import 按 `source.parent / (name + '.idl')` 解析，遇到无法按该规则落地的 import 会在下一轮读取时抛 `FileNotFoundError`。由于生成器按相同规则解析 import，正常场景两者会同生共死，风险较低，但异常信息不够直观。\n\n建议：\n- 捕获读取异常，给出包含源文件路径的明确报错\n- 如需更稳妥，import 无法解析时跳过并打 warning，交由工具自身报错",
+        "created_at": "2026-10-19T09:39:57+08:00",
+        "updated_at": "2026-10-19T09:39:57+08:00",
+        "user": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "comment_type": "diff_comment",
+        "resolved": false,
+        "diff_position": {
+          "start_new_line": 107,
+          "end_new_line": 107,
+          "position_type": "text"
+        },
+        "reply": [
+          {
+            "id": 194431972,
+            "body": "changed this line on [4e179e35](https://gitcode.com/openharmony/build/commits/detail/4e179e356e4ef508ea0c5f302459c6e366e58baa?ref=fix-idl-common-outputs&prId=6982) view [diff detail](https://gitcode.com/openharmony/build/merge_requests/6982/diffs?diffId=8016775&start_sha=b4ca2d4124817b101a9335930bc758b491fc729d&filePath=config/components/idl_tool/idl.py#e25b09d7ade326c3c48a6e81041e754798f8792c_0_107)",
+            "created_at": "2026-10-19T10:24:12+08:00",
+            "updated_at": "2026-10-19T10:24:12+08:00",
+            "user": {
+              "id": "67150ce628c7754a02de123a",
+              "login": "SmillySmillick",
+              "object_id": "67150ce628c7754a02de123a",
+              "name": "SmillySmillick",
+              "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+              "html_url": "https://gitcode.com/SmillySmillick"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "number": 6982,
+      "parent_id": 194419161,
+      "body": "已补注释：`//` 开头的 common 文件在当前目标中只作输入，产物由所属 IDL 目标生成，调用方需要依赖对应的生成目标。",
+      "parent": {
+        "id": 194419161,
+        "discussion_id": "aee9e67fbde0ec4b7a26e0f1035f6bfd087962ba",
+        "body": "**低** `[config/components/idl_tool/idl.gni:93]` `external_common_list` 的设计意图建议补充注释\n\n当前全代码树没有调用方在 `sources_common` 中传 `//` 风格路径，`external_common_list` 实际恒为空，属于预留能力。该分支下外部 common 只作为 action `inputs`，不声明输出、也不加入 `sources_proxy`/`sources_stub`，即外部 common 的产物完全由属主部件自己的 `idl_gen_interface` 目标生成。\n\n建议：\n- 在 gni 中补充注释说明该意图，避免后续使用方误以为外部 common 会在本目标生成产物",
+        "created_at": "2026-10-19T09:39:58+08:00",
+        "updated_at": "2026-10-19T09:39:58+08:00",
+        "user": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "comment_type": "diff_comment",
+        "resolved": false,
+        "diff_position": {
+          "start_new_line": 99,
+          "end_new_line": 99,
+          "position_type": "text"
+        }
+      }
+    },
+    {
+      "number": 6982,
+      "parent_id": 194419169,
+      "body": "已补注释，`deps` 只传给 IDL 生成 action，用来保证生成顺序，不转发到 client/server 库的链接目标。",
+      "parent": {
+        "id": 194419169,
+        "discussion_id": "d0e7b15d09606d2db655ecc7eb98ce81a8a51978",
+        "body": "**低** `[config/components/idl_tool/idl.gni:278]` `invoker.deps` 仅转发到 action 的语义需要确认\n\n旧模板完全忽略 `invoker.deps`，本 PR 将其转发给 action（约束生成顺序），但 `source_set`/`shared_library` 目标仍不消费该 deps，无法形成链接依赖。对历史上把 deps 当链接依赖传入的调用方（此前被静默忽略），行为仍是\"不链接\"；同时新引入的依赖边在个别调用方上存在潜在环路风险。\n\n建议：\n- 在模板注释中说明 deps 仅约束生成动作\n- 如需支持链接依赖，可评估向 `source_set_client`/`source_set_server` 等目标转发",
+        "created_at": "2026-10-19T09:40:00+08:00",
+        "updated_at": "2026-10-19T09:40:00+08:00",
+        "user": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "comment_type": "diff_comment",
+        "resolved": false,
+        "diff_position": {
+          "start_new_line": 285,
+          "end_new_line": 285,
+          "position_type": "text"
+        }
+      }
+    },
+    {
+      "number": 6999,
+      "parent_id": 194419196,
+      "body": "已修复，并同步到 #6974。只有内置 `app_sign.py` 接收 `--output-file` 并声明 `.sign_result.json`；外部签名脚本保留原有参数和 `.stamp` 输出。配置了外部脚本但没有 `compatible_version` 时，回退到内置签名。",
+      "parent": {
+        "id": 194419196,
+        "discussion_id": "f07b581c73a5461e638d214a2b694f80d5f85e5a",
+        "body": "**高** `[ohos/app/app_internal.gni:590]` `--output-file` 无条件传入会破坏外部签名脚本链路\n\n`app_sign` 模板在 `sign_hap_py_path`（产品配置 `ext_sign_hap_py_path`）与 `compatible_version` 同时定义时会切换到厂商提供的外部签名脚本（`_sign_hap_py_path = sign_hap_py_path`），但本次新增的 `--output-file` 参数与 `.sign_result.json` 输出声明是无条件的。\n\n树内已有使用该路径的目标：`base/notification/distributed_notification_service/services/dialog_ui/enable_notification_dialog/BUILD.gn:31`、`base/powermgr/power_manager/power_dialog/BUILD.gn:40`。对这类目标：\n\n- 外部脚本若用 argparse 严格解析，遇到未知参数 `--output-file` 会直接构建失败；\n- 即使容忍未知参数，外部脚本也不会写 `.sign_result.json`，声明的唯一 output 永远缺失，action 每轮 dirty——正是本 PR 要消除的问题。\n\nmaster 产品不配置 `ext_sign_hap_py_path`，CI 门禁无法覆盖该场景。\n\n建议：\n- 仅在使用内置脚本（`_sign_hap_py_path == \"//build/scripts/app_sign.py\"`）时传 `--output-file` 并声明 `.sign_result.json` 输出；外部脚本分支维持原有 `.stamp` 输出\n- 或先与外部脚本约定新参数的兼容策略后再放开",
+        "created_at": "2026-10-19T09:40:05+08:00",
+        "updated_at": "2026-10-19T09:40:05+08:00",
+        "user": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "comment_type": "diff_comment",
+        "resolved": false,
+        "diff_position": {
+          "start_new_line": 590,
+          "end_new_line": 590,
+          "position_type": "text"
+        },
+        "reply": [
+          {
+            "id": 194424813,
+            "body": "changed this line on [37406489](https://gitcode.com/openharmony/build/commits/detail/37406489bf81204ef8d1479d4f6621e1a23e7437?ref=incremental-build-all-validation-20260820&prId=6999) view [diff detail](https://gitcode.com/openharmony/build/merge_requests/6999/diffs?diffId=8016226&start_sha=f1a463340efbcaa8089df8f47e50409c14ee9322&filePath=ohos/app/app_internal.gni#eeb9f20e720d567efbe8726b6916df389858769f_589_590)",
+            "created_at": "2026-10-19T10:00:02+08:00",
+            "updated_at": "2026-10-19T10:00:02+08:00",
+            "user": {
+              "id": "67150ce628c7754a02de123a",
+              "login": "SmillySmillick",
+              "object_id": "67150ce628c7754a02de123a",
+              "name": "SmillySmillick",
+              "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+              "html_url": "https://gitcode.com/SmillySmillick"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "number": 6999,
+      "parent_id": 194419200,
+      "body": "找不到 `ln` 时，旧代码也会抛 `FileNotFoundError`；已存在的同名目录会被前面的存在性判断跳过，保留 `check=True`，让命令返回非零时停止构建。",
+      "parent": {
+        "id": 194419200,
+        "discussion_id": "e9a6e4ffa59a6dec226f7fc29db32b56369177fb",
+        "body": "**中** `[ohos/packages/generate_host_symlink.py:59]` `ln -sf` 增加 `check=True` 的失败语义变化需确认\n\n旧代码 `subprocess.run(['ln', '-sf', ...])` 不检查返回值，创建失败被静默忽略（且旧代码失败时仍把条目写入 `output_result`，JSON 记录与实际不符）；本次 `check=True` 让失败显性化，方向正确。但两点需要确认：\n\n- Windows 宿主构建若执行到该步骤，`ln` 不存在，旧代码静默跳过、新代码会硬失败；\n- 目标路径已存在同名目录等边缘场景，旧代码\"带病通过\"，新代码直接失败。\n\n建议：\n- 确认 Windows 宿主构建是否涉及该 action；如涉及，按 `os.name` 分支改用 `os.symlink` 或给出明确报错\n- 失败信息中带上目标路径与源路径，便于定位",
+        "created_at": "2026-10-19T09:40:07+08:00",
+        "updated_at": "2026-10-19T09:40:07+08:00",
+        "user": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "comment_type": "diff_comment",
+        "resolved": false,
+        "diff_position": {
+          "start_new_line": 59,
+          "end_new_line": 59,
+          "position_type": "text"
+        }
+      }
+    },
+    {
+      "number": 7134,
+      "parent_id": 194419185,
+      "body": "已补充：旧生成文件解析出现 `JSONDecodeError` 时视为内容变化，重新写入；权限和其他 I/O 错误继续报错。相同修改已同步到 #6965、#6999、#7009、#7046。",
+      "parent": {
+        "id": 194419185,
+        "discussion_id": "59e201626dbd8befe100d1d994dd284bd1ece8b8",
+        "body": "**低** `[scripts/util/file_utils.py:86]` `__check_changes` 对损坏 JSON 会抛异常，建议自愈\n\n旧实现在此调用点之前先 `os.remove`，损坏文件可被覆盖自愈；新实现直接 `read_json_file` 解析旧文件，遇到截断/损坏的 JSON 会 `raise`。`loader.py` 该调用点因上游已读取过同一文件，风险是既有的；但 `write_json_file(check_changes=True)` 是公共工具，#6999、#7009 已大量引入新调用方，\"旧文件损坏\"场景（如构建中途被杀导致半写）会直接构建失败，需手动清理 out 目录。\n\n建议：\n- 在 `__check_changes` 中捕获 `json.decoder.JSONDecodeError`，返回 `True` 触发重写自愈",
+        "created_at": "2026-10-19T09:40:02+08:00",
+        "updated_at": "2026-10-19T09:46:18+08:00",
+        "user": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "comment_type": "diff_comment",
+        "resolved": true,
+        "resolved_by": {
+          "id": "673d3b1b6704dc4ab7a04162",
+          "login": "ringking0",
+          "object_id": "673d3b1b6704dc4ab7a04162",
+          "name": "ringking0",
+          "html_url": "https://gitcode.com/ringking0"
+        },
+        "diff_position": {
+          "start_new_line": 86,
+          "end_new_line": 86,
+          "position_type": "text"
+        },
+        "reply": [
+          {
+            "id": 194424807,
+            "body": "changed this line on [f5de052a](https://gitcode.com/openharmony/build/commits/detail/f5de052afaf6b4c7b6801f013418797ace4d2203?ref=fix/loader-components-incremental-20261015&prId=7134) view [diff detail](https://gitcode.com/openharmony/build/merge_requests/7134/diffs?diffId=8016225&start_sha=f0dd0bd6ea0708337120d8044115e87491794532&filePath=scripts/util/file_utils.py#37217fdee213a808159e0f96390d47fe40911883_97_86)",
+            "created_at": "2026-10-19T10:00:01+08:00",
+            "updated_at": "2026-10-19T10:00:01+08:00",
+            "user": {
+              "id": "67150ce628c7754a02de123a",
+              "login": "SmillySmillick",
+              "object_id": "67150ce628c7754a02de123a",
+              "name": "SmillySmillick",
+              "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+              "html_url": "https://gitcode.com/SmillySmillick"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "gates": [
+    {
+      "repo": "build",
+      "number": 6982,
+      "head": "4e179e356e4ef508ea0c5f302459c6e366e58baa",
+      "issue_repo": "build",
+      "issue": 4668,
+      "members": [
+        {
+          "url": "https://gitcode.com/openharmony/build/merge_requests/6982",
+          "head": "4e179e356e4ef508ea0c5f302459c6e366e58baa",
+          "state": "open",
+          "repo": "build",
+          "base_ref": "master"
+        },
+        {
+          "url": "https://gitcode.com/openharmony/account_os_account/merge_requests/3898",
+          "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+          "state": "open",
+          "repo": "account_os_account",
+          "base_ref": "master"
+        },
+        {
+          "url": "https://gitcode.com/openharmony/inputmethod_imf/merge_requests/2774",
+          "head": "331a15a1cda376687080a3977999de42182ec3ec",
+          "state": "open",
+          "repo": "inputmethod_imf",
+          "base_ref": "master"
+        },
+        {
+          "url": "https://gitcode.com/openharmony/security_dlp_permission_service/merge_requests/953",
+          "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+          "state": "open",
+          "repo": "security_dlp_permission_service",
+          "base_ref": "master"
+        },
+        {
+          "url": "https://gitcode.com/openharmony/ability_dmsfwk/merge_requests/2123",
+          "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+          "state": "open",
+          "repo": "ability_dmsfwk",
+          "base_ref": "master"
+        },
+        {
+          "url": "https://gitcode.com/openharmony/multimedia_audio_framework/merge_requests/17444",
+          "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+          "state": "open",
+          "repo": "multimedia_audio_framework",
+          "base_ref": "master"
+        }
+      ],
+      "latest_comment_id": 194432182
+    },
+    {
+      "repo": "build",
+      "number": 6999,
+      "head": "37406489bf81204ef8d1479d4f6621e1a23e7437",
+      "issue_repo": "build",
+      "issue": 4678,
+      "members": [
+        {
+          "url": "https://gitcode.com/openharmony/build/merge_requests/6999",
+          "head": "37406489bf81204ef8d1479d4f6621e1a23e7437",
+          "state": "open",
+          "repo": "build",
+          "base_ref": "master"
+        }
+      ],
+      "latest_comment_id": 194427543
+    },
+    {
+      "repo": "build",
+      "number": 7134,
+      "head": "f5de052afaf6b4c7b6801f013418797ace4d2203",
+      "issue_repo": "build",
+      "issue": 4761,
+      "members": [
+        {
+          "url": "https://gitcode.com/openharmony/build/merge_requests/7134",
+          "head": "f5de052afaf6b4c7b6801f013418797ace4d2203",
+          "state": "open",
+          "repo": "build",
+          "base_ref": "master"
+        }
+      ],
+      "latest_comment_id": 194425184
+    },
+    {
+      "repo": "build",
+      "number": 6965,
+      "head": "270bdc5c3cd438cdc2fdd9e86a85c65dafe59559",
+      "issue_repo": "build",
+      "issue": 4657,
+      "members": [
+        {
+          "url": "https://gitcode.com/openharmony/build/merge_requests/6965",
+          "head": "270bdc5c3cd438cdc2fdd9e86a85c65dafe59559",
+          "state": "open",
+          "repo": "build",
+          "base_ref": "master"
+        }
+      ],
+      "latest_comment_id": 194425143
+    },
+    {
+      "repo": "build",
+      "number": 6974,
+      "head": "fb6add1534863be35a9df323a8d78d5168521f6d",
+      "issue_repo": "build",
+      "issue": 4663,
+      "members": [
+        {
+          "url": "https://gitcode.com/openharmony/build/merge_requests/6974",
+          "head": "fb6add1534863be35a9df323a8d78d5168521f6d",
+          "state": "open",
+          "repo": "build",
+          "base_ref": "master"
+        },
+        {
+          "url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+          "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+          "state": "open",
+          "repo": "developtools_packing_tool",
+          "base_ref": "master"
+        }
+      ],
+      "latest_comment_id": 194425158
+    },
+    {
+      "repo": "build",
+      "number": 7009,
+      "head": "577fed97c0cf1ee5973c6d264eb32e17513059fa",
+      "issue_repo": "build",
+      "issue": 4684,
+      "members": [
+        {
+          "url": "https://gitcode.com/openharmony/build/merge_requests/7009",
+          "head": "577fed97c0cf1ee5973c6d264eb32e17513059fa",
+          "state": "open",
+          "repo": "build",
+          "base_ref": "master"
+        }
+      ],
+      "latest_comment_id": 194425166
+    },
+    {
+      "repo": "build",
+      "number": 7048,
+      "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+      "issue_repo": "build",
+      "issue": 4705,
+      "members": [
+        {
+          "url": "https://gitcode.com/openharmony/build/merge_requests/7048",
+          "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+          "state": "open",
+          "repo": "build",
+          "base_ref": "master"
+        }
+      ],
+      "latest_comment_id": 192032839
+    },
+    {
+      "repo": "third_party_sane-airscan",
+      "number": 22,
+      "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+      "issue_repo": "third_party_sane-airscan",
+      "issue": 19,
+      "members": [
+        {
+          "url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+          "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+          "state": "open",
+          "repo": "third_party_sane-airscan",
+          "base_ref": "master"
+        }
+      ],
+      "latest_comment_id": 194061727
+    }
+  ]
+}

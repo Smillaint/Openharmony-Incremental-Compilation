@@ -1,5 +1,7 @@
 # IDL 输入编码兼容复核（2026-10-18）
 
+2026-10-20 后续：[检视回复与修订版门禁](oct20-review-replies-and-gates.md)记录八条已发布回复和八组新任务；以下内容保留各自阶段的历史状态。
+
 原生成器允许注释中包含非 UTF-8 字节。新增 `collect_idl_inputs` 对整个文件做 UTF-8 解码，会使原本能生成的 IDL 在依赖扫描阶段提前失败。这是兼容性回退，已在原 [build #6982](https://gitcode.com/openharmony/build/merge_requests/6982) 修复，提交为 `4e179e356e4ef508ea0c5f302459c6e366e58baa`，DCO 检查通过。检视回复尚未发送，新提交没有触发门禁。
 
 记录日期采用 America/Los_Angeles 的 2026-10-18，远程测试与 GitCode 回执为北京时间 2026-10-19。

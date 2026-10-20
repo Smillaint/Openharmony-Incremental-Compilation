@@ -1,0 +1,356 @@
+{
+  "code": "20000",
+  "message": "请求成功",
+  "data": {
+    "id": "6ad7342c64650f998ba2669d",
+    "docsCheckFormatVo": null,
+    "uuid": "cc3bc8b94f9cc38eda606ff90b4880f6",
+    "codeCheckStatusWithYCodeCheck": null,
+    "causeAction": "issue",
+    "causeUrl": "https://gitcode.com/openharmony/third_party_sane-airscan/issues/19",
+    "commentUrl": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22#note_c9fdf75489706927322f63e902f413afb3727db1",
+    "currentStatus": "pending",
+    "pipelineList": [],
+    "prMsg": [
+      {
+        "name": "fix: stabilize airscan incremental build outputs",
+        "url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+        "createdAt": "2026-08-05T14:48:59+08:00",
+        "updatedAt": "2026-10-20T17:27:40+08:00",
+        "headCommitId": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+        "baseCommitId": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+        "owner": "SmillySmillick",
+        "committer": "SmillySmillick",
+        "repoName": "third_party_sane-airscan",
+        "repoBranch": null,
+        "sobCodeCheckResult": " -- ",
+        "interFaceResult": null,
+        "interFaceReport": null,
+        "permissionScanResult": null,
+        "permissionScanReport": null,
+        "bundleCheckResult": 1,
+        "xtsCheckResult": null,
+        "cdrCheckResult": null,
+        "subCodeCheckItemsForPrMsg": null
+      }
+    ],
+    "projectName": "openharmony",
+    "repoBranch": "master",
+    "result": "",
+    "timestamp": "20261020172800",
+    "triggerUser": "SmillySmillick",
+    "duration": null,
+    "endTimestamp": null,
+    "builds": [
+      {
+        "buildTarget": "dayu600_7885",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": null,
+        "debug": {
+          "startTime": null,
+          "endTime": null,
+          "duration": null,
+          "waitTime": null,
+          "result": null,
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": "pending",
+          "buildNumber": null
+        },
+        "test": {
+          "startTime": null,
+          "endTime": null,
+          "duration": null,
+          "waitTime": null,
+          "result": null,
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": null,
+          "buildNumber": null
+        },
+        "stages": null,
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "ohos-host_mini_tdd",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": null,
+        "debug": {
+          "startTime": null,
+          "endTime": null,
+          "duration": null,
+          "waitTime": null,
+          "result": null,
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": "pending",
+          "buildNumber": null
+        },
+        "test": null,
+        "stages": null,
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "master_inner_build",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": null,
+        "debug": {
+          "startTime": null,
+          "endTime": null,
+          "duration": null,
+          "waitTime": null,
+          "result": null,
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": "pending",
+          "buildNumber": null
+        },
+        "test": null,
+        "stages": null,
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "part_compile",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": null,
+        "debug": {
+          "startTime": null,
+          "endTime": null,
+          "duration": null,
+          "waitTime": null,
+          "result": null,
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": "pending",
+          "buildNumber": null
+        },
+        "test": null,
+        "stages": null,
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "dayu200",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": null,
+        "debug": {
+          "startTime": null,
+          "endTime": null,
+          "duration": null,
+          "waitTime": null,
+          "result": null,
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": "pending",
+          "buildNumber": null
+        },
+        "test": {
+          "startTime": null,
+          "endTime": null,
+          "duration": null,
+          "waitTime": null,
+          "result": null,
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": null,
+          "buildNumber": null
+        },
+        "stages": null,
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "x86_64_virt",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": null,
+        "debug": {
+          "startTime": null,
+          "endTime": null,
+          "duration": null,
+          "waitTime": null,
+          "result": null,
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": "pending",
+          "buildNumber": null
+        },
+        "test": null,
+        "stages": null,
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      }
+    ],
+    "downloadUrl": "https://cidownload.openharmony.cn/",
+    "codeCheckSummary": [],
+    "codeCheckInfo": {
+      "codeCheckStatus": "running",
+      "checkStartTime": "20261020172815",
+      "checkEndTime": null,
+      "duration": null
+    },
+    "projectId": null,
+    "effectTree": {
+      "third_party_sane-airscan": {
+        "ohos-host": [],
+        "ohos-mini": [],
+        "arm64_virt": [],
+        "x86_64_virt": [],
+        "ohos_mini_tdd": [],
+        "dayu600_7885": [
+          "Y"
+        ],
+        "part_compile": [
+          "Y"
+        ],
+        "new_part_compile": [],
+        "part_compile_tdd": [],
+        "dayu200": [
+          "Y"
+        ],
+        "ohos-host_mini_tdd": [],
+        "dayu200-codearts": [
+          "Y"
+        ],
+        "dayu200_xts-codearts": []
+      }
+    },
+    "exportData": {
+      "triggerUser": "SmillySmillick",
+      "timestamp": "10-20 17:28:00",
+      "duration": "--",
+      "result": null,
+      "uuid": null,
+      "codecheckResult": null,
+      "builds": [
+        {
+          "targetName": "dayu600_7885~debug",
+          "result": "等待中",
+          "isOnline": "true"
+        },
+        {
+          "targetName": "dayu600_7885~test",
+          "result": "执行中",
+          "isOnline": null
+        },
+        {
+          "targetName": "ohos-host_mini_tdd~debug",
+          "result": "等待中",
+          "isOnline": "true"
+        },
+        {
+          "targetName": "master_inner_build~debug",
+          "result": "等待中",
+          "isOnline": "false"
+        },
+        {
+          "targetName": "part_compile~debug",
+          "result": "等待中",
+          "isOnline": "false"
+        },
+        {
+          "targetName": "dayu200~debug",
+          "result": "等待中",
+          "isOnline": "true"
+        },
+        {
+          "targetName": "dayu200~test",
+          "result": "执行中",
+          "isOnline": null
+        },
+        {
+          "targetName": "x86_64_virt~debug",
+          "result": "等待中",
+          "isOnline": "true"
+        }
+      ],
+      "codeCheckTotalResult": "执行中",
+      "prStatus": "未合入",
+      "prCommitter": "SmillySmillick",
+      "prUrl": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+      "eventDetailUrl": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7342c64650f998ba2669d/runlist"
+    },
+    "innerCodecheckStatus": null,
+    "innerCodecheckResult": null,
+    "codeCheckItems": null,
+    "codeCheckStartTime": null,
+    "codeCheckEndTime": null,
+    "codeCheckDuration": null,
+    "finalTotalResult": "running",
+    "innerApiResult": "--",
+    "syncMrStatus": null,
+    "syncMrTime": null
+  }
+}

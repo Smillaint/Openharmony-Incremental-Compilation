@@ -1,6 +1,6 @@
 # ringking0 检视回复草稿（2026-10-18）
 
-状态：代码修订已推送，下面八条回复尚未发送，也未将讨论标为已解决。新提交均带 `Signed-off-by: Smillick <3185479846@qq.com>`。
+状态：2026-10-20 八条回复已按下列原文发布到对应检视线程，正文及所属 discussion 均已回读核对。讨论解决状态未改动。新提交均带 `Signed-off-by: Smillick <3185479846@qq.com>`。回复 ID、门禁任务和提交版本见[发布交接](../oct20-review-replies-and-gates.md)。
 
 ## build #6982：ArkUI-X
 
