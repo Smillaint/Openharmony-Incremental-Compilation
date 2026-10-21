@@ -1,0 +1,238 @@
+{
+  "pr": 6982,
+  "target": "dayu600_7885",
+  "url": "https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00921/log/build.log.zip",
+  "archive_sha256": "17c57e563a2f8a10364fa56993f12ad16ac42b96d6f566f790b5e9a8c94633cc",
+  "lines": 172294,
+  "first_fail_line": null,
+  "excerpts": [
+    {
+      "line": 143512,
+      "text": "[2026/10/20 18:02:09.297 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [1/1] [2ffbfa6e] Hvigor info: > hvigor BUILD SUCCESSFUL in 40 s 241 ms "
+    },
+    {
+      "line": 143514,
+      "text": "[2026/10/20 18:02:09.297 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 143516,
+      "text": "[2026/10/20 18:02:09.297 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 143518,
+      "text": "[2026/10/20 18:02:09.297 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 143520,
+      "text": "[2026/10/20 18:02:09.297 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 143522,
+      "text": "[2026/10/20 18:02:09.297 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 143530,
+      "text": "[2026/10/20 18:02:09.298 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 143534,
+      "text": "[2026/10/20 18:02:09.298 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 143536,
+      "text": "[2026/10/20 18:02:09.298 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 145500,
+      "text": "[2026/10/20 18:02:09.388 GMT+08:00] 2026-10-20 18:02:08: [OHOS INFO] [NINJA] [2/2] [2ffbfa6e] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 145904,
+      "text": "[2026/10/20 18:02:09.915 GMT+08:00] 2026-10-20 18:02:09: [OHOS INFO] [NINJA] [1/1] [c34f669b] Hvigor info: > hvigor BUILD SUCCESSFUL in 16 s 55 ms "
+    },
+    {
+      "line": 145906,
+      "text": "[2026/10/20 18:02:09.915 GMT+08:00] 2026-10-20 18:02:09: [OHOS INFO] [NINJA] [2/2] [c34f669b] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 145908,
+      "text": "[2026/10/20 18:02:09.915 GMT+08:00] 2026-10-20 18:02:09: [OHOS INFO] [NINJA] [2/2] [c34f669b] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 145910,
+      "text": "[2026/10/20 18:02:09.915 GMT+08:00] 2026-10-20 18:02:09: [OHOS INFO] [NINJA] [2/2] [c34f669b] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 145912,
+      "text": "[2026/10/20 18:02:09.915 GMT+08:00] 2026-10-20 18:02:09: [OHOS INFO] [NINJA] [2/2] [c34f669b] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 145914,
+      "text": "[2026/10/20 18:02:09.915 GMT+08:00] 2026-10-20 18:02:09: [OHOS INFO] [NINJA] [2/2] [c34f669b] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 145918,
+      "text": "[2026/10/20 18:02:09.915 GMT+08:00] 2026-10-20 18:02:09: [OHOS INFO] [NINJA] [2/2] [c34f669b] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 147424,
+      "text": "[2026/10/20 18:02:09.958 GMT+08:00] 2026-10-20 18:02:09: [OHOS INFO] [NINJA] [2/2] [c34f669b] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 147842,
+      "text": "[2026/10/20 18:02:11.095 GMT+08:00] 2026-10-20 18:02:10: [OHOS INFO] [NINJA] [1/1] [5d1a5bc0] Hvigor info: > hvigor BUILD SUCCESSFUL in 17 s 102 ms "
+    },
+    {
+      "line": 147844,
+      "text": "[2026/10/20 18:02:11.095 GMT+08:00] 2026-10-20 18:02:10: [OHOS INFO] [NINJA] [2/2] [5d1a5bc0] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 147846,
+      "text": "[2026/10/20 18:02:11.095 GMT+08:00] 2026-10-20 18:02:10: [OHOS INFO] [NINJA] [2/2] [5d1a5bc0] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 147848,
+      "text": "[2026/10/20 18:02:11.095 GMT+08:00] 2026-10-20 18:02:10: [OHOS INFO] [NINJA] [2/2] [5d1a5bc0] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 147850,
+      "text": "[2026/10/20 18:02:11.095 GMT+08:00] 2026-10-20 18:02:10: [OHOS INFO] [NINJA] [2/2] [5d1a5bc0] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 147852,
+      "text": "[2026/10/20 18:02:11.095 GMT+08:00] 2026-10-20 18:02:10: [OHOS INFO] [NINJA] [2/2] [5d1a5bc0] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 147856,
+      "text": "[2026/10/20 18:02:11.096 GMT+08:00] 2026-10-20 18:02:10: [OHOS INFO] [NINJA] [2/2] [5d1a5bc0] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 149120,
+      "text": "[2026/10/20 18:02:11.131 GMT+08:00] 2026-10-20 18:02:10: [OHOS INFO] [NINJA] [2/2] [5d1a5bc0] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 151596,
+      "text": "[2026/10/20 18:02:15.825 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [1/1] [a2127be5] Hvigor info: > hvigor BUILD SUCCESSFUL in 47 s 138 ms "
+    },
+    {
+      "line": 151598,
+      "text": "[2026/10/20 18:02:15.825 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 151600,
+      "text": "[2026/10/20 18:02:15.825 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 151602,
+      "text": "[2026/10/20 18:02:15.825 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 151604,
+      "text": "[2026/10/20 18:02:15.825 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 151606,
+      "text": "[2026/10/20 18:02:15.825 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 151610,
+      "text": "[2026/10/20 18:02:15.825 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 151614,
+      "text": "[2026/10/20 18:02:15.826 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 151616,
+      "text": "[2026/10/20 18:02:15.826 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 155126,
+      "text": "[2026/10/20 18:02:16.030 GMT+08:00] 2026-10-20 18:02:15: [OHOS INFO] [NINJA] [2/2] [a2127be5] Hvigor warning: > hvigor WARN: ERROR: ld.so: object 'libxcache_hook.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored."
+    },
+    {
+      "line": 172146,
+      "text": "[2026/10/20 18:13:06.099 GMT+08:00] 2026-10-20 18:13:05: [OHOS INFO]  wukong100 build success"
+    },
+    {
+      "line": 172180,
+      "text": "[2026/10/20 18:13:06.100 GMT+08:00] [CloudCache] 2026/10/20 18:13:06 5bf349ed-f916-47fe-a6b6-576b855d8c5a build success, cost 1779.40 s"
+    },
+    {
+      "line": 172201,
+      "text": "[2026/10/20 18:13:07.126 GMT+08:00] 2026-10-20 18:13:06: [INFO] under path ***//harmony_code/codearts_workspace, exec:  timeout 1800s sh -c 'git config --global user.email you@example.com;git config --global user.name Your Name;rm -rf screenshot && cp -r developtools/integration_verification/cases/smoke/basic/screenshotP7885 screenshot'"
+    },
+    {
+      "line": 172205,
+      "text": "[2026/10/20 18:13:07.637 GMT+08:00] [CloudCache] 2026/10/20 18:13:07 5bf349ed-f916-47fe-a6b6-576b855d8c5a build success, cost 1.02 s"
+    },
+    {
+      "line": 172244,
+      "text": "[2026/10/20 18:14:19.685 GMT+08:00] ecoTest parm: {'updateInfo': {'upgrade_upgradeLocation': 'https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00921/version/Artifacts-dayu600_7885-20261020-1-00921-version-dayu600_7885.tar.gz', 'upgrade_rootLocation': '', 'upgrade_version': '', 'manifest_branch': 'master'}, 'templateName': 'L2_P7885_DOOR', 'userDefine': {'PR': 'https://gitcode.com/openharmony/multimedia_audio_framework/merge_requests/17444'}}"
+    },
+    {
+      "line": 172245,
+      "text": "[2026/10/20 18:14:22.244 GMT+08:00] trigger_ecotest result 200 {\"statusCode\":1,\"status\":\"Success\",\"result\":\"Success\",\"failReason\":\"调度系统执行成功,未出现异常\",\"taskId\":2307291,\"blockId\":\"\"}"
+    },
+    {
+      "line": 172246,
+      "text": "[2026/10/20 18:14:22.245 GMT+08:00] trigger ecoTest result: {'statusCode': 1, 'status': 'Success', 'result': 'Success', 'failReason': '调度系统执行成功,未出现异常', 'taskId': 2307291, 'blockId': ''}"
+    },
+    {
+      "line": 172247,
+      "text": "[2026/10/20 18:14:22.245 GMT+08:00] 2026-10-20 18:14:22: [INFO]trigger ecoTest success: {'statusCode': 1, 'status': 'Success', 'result': 'Success', 'failReason': '调度系统执行成功,未出现异常', 'taskId': 2307291, 'blockId': ''}"
+    },
+    {
+      "line": 172249,
+      "text": "[2026/10/20 18:14:22.245 GMT+08:00] {'topic': 'pipeline', 'key': '7c696c0605f3652f90cead0a8a46a884', 'message': {'component': 'dayu600_7885', 'testStartTime': '20261020181422', 'testTaskId': 2307291, 'testType': 'L2_P7885_DOOR', 'trigger_ecotest_param': {'version_url': 'https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00921/version/Artifacts-dayu600_7885-20261020-1-00921-version-dayu600_7885.tar.gz', 'user_define': {'PR': 'https://gitcode.com/openharmony/multimedia_audio_framework/merge_requests/17444'}}}}"
+    },
+    {
+      "line": 172283,
+      "text": "[2026/10/20 18:14:23.545 GMT+08:00]   Hits:               0 /     0"
+    },
+    {
+      "line": 172284,
+      "text": "[2026/10/20 18:14:23.545 GMT+08:00]   Misses:             0"
+    },
+    {
+      "line": 172285,
+      "text": "[2026/10/20 18:14:23.545 GMT+08:00]   Cache size (GB): 9.02 / 50.00 (18.04 %)"
+    },
+    {
+      "line": 172286,
+      "text": "[2026/10/20 18:14:23.545 GMT+08:00] "
+    },
+    {
+      "line": 172287,
+      "text": "[2026/10/20 18:14:23.545 GMT+08:00] Use the -v/--verbose option for more details."
+    },
+    {
+      "line": 172288,
+      "text": "[2026/10/20 18:14:23.574 GMT+08:00] [INFO] [after_compile_and_upload:user_properties] : 该步骤开始执行"
+    },
+    {
+      "line": 172289,
+      "text": "[2026/10/20 18:14:23.799 GMT+08:00] [INFO] [after_compile_and_upload:user_properties] : 该步骤执行完成"
+    },
+    {
+      "line": 172290,
+      "text": "[2026/10/20 18:14:25.069 GMT+08:00] [INFO]  : find empty location by state: YMoiC1kA"
+    },
+    {
+      "line": 172291,
+      "text": "[2026/10/20 18:14:25.125 GMT+08:00] [INFO]  : [JobStatusPlugin] onCompleted: j_xJCcObWQ #1"
+    },
+    {
+      "line": 172292,
+      "text": "[2026/10/20 18:14:30.133 GMT+08:00] [INFO]  : [frame] current slave-type: k8sdockerondocker"
+    },
+    {
+      "line": 172293,
+      "text": "[2026/10/20 18:14:30.134 GMT+08:00] [INFO]  : [frame] add fixed directory information into global configuration."
+    },
+    {
+      "line": 172294,
+      "text": "[2026/10/20 18:14:30.293 GMT+08:00] Finished: SUCCESS"
+    }
+  ]
+}

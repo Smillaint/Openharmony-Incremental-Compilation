@@ -1,0 +1,90 @@
+[
+  {
+    "line": 48410,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] "
+  },
+  {
+    "line": 48411,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] 2026-10-20 17:41:15: [OHOS ERROR] [NINJA] command failed: \"***//harmony_code/codearts_workspace/prebuilts/build-tools/linux-x86/bin/ninja -w dupbuild=warn -C ***//harmony_code/codearts_workspace/out/x86_64_virt precise -j50\" , ret_code: 1"
+  },
+  {
+    "line": 48412,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] "
+  },
+  {
+    "line": 48413,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] 2026-10-20 17:41:15: "
+  },
+  {
+    "line": 48414,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] "
+  },
+  {
+    "line": 48415,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] 2026-10-20 17:41:15: [OHOS ERROR] [NINJA] ninja: error: 'clang_x64/obj/arkcompiler/toolchain/inspector/test/unittest.stamp', needed by 'precise', missing and no known rule to make it"
+  },
+  {
+    "line": 48416,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] "
+  },
+  {
+    "line": 48417,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] 2026-10-20 17:41:15: "
+  },
+  {
+    "line": 48418,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] "
+  },
+  {
+    "line": 48419,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] 2026-10-20 17:41:15: [OHOS INFO]  User Cpu%: 1.0%"
+  },
+  {
+    "line": 48420,
+    "text": "[2026/10/20 17:41:16.777 GMT+08:00] "
+  },
+  {
+    "line": 48546,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] "
+  },
+  {
+    "line": 48547,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [OHOS ERROR] [NINJA] Reason:      NINJA Failed! Please check error in ***//harmony_code/codearts_workspace/out/x86_64_virt/error.log, and for more build information in ***//harmony_code/codearts_workspace/out/x86_64_virt/build.log"
+  },
+  {
+    "line": 48548,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] "
+  },
+  {
+    "line": 48549,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [OHOS ERROR] [NINJA]"
+  },
+  {
+    "line": 48550,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] "
+  },
+  {
+    "line": 48551,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [OHOS ERROR] [NINJA] Error Type:  ninja build error: missing and no known rule to make it"
+  },
+  {
+    "line": 48552,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] "
+  },
+  {
+    "line": 48553,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [OHOS ERROR] [NINJA]"
+  },
+  {
+    "line": 48554,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] "
+  },
+  {
+    "line": 48555,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [OHOS ERROR] [NINJA] Description: Ninja build error. The ninja build system cannot find the target."
+  },
+  {
+    "line": 48556,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] "
+  }
+]

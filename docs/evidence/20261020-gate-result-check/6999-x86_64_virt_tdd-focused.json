@@ -1,0 +1,134 @@
+[
+  {
+    "line": 48511,
+    "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     self._target_compilation()"
+  },
+  {
+    "line": 48513,
+    "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/modules/ohos_build_module.py\", line 133, in _target_compilation"
+  },
+  {
+    "line": 48515,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     self.target_compiler.run()"
+  },
+  {
+    "line": 48517,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/services/ninja.py\", line 39, in run"
+  },
+  {
+    "line": 48519,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     self._execute_ninja_cmd()"
+  },
+  {
+    "line": 48521,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/services/ninja.py\", line 70, in _execute_ninja_cmd"
+  },
+  {
+    "line": 48523,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     SystemUtil.exec_command("
+  },
+  {
+    "line": 48525,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/util/system_util.py\", line 142, in exec_command"
+  },
+  {
+    "line": 48527,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     LogUtil.get_failed_log(log_path, cmd)"
+  },
+  {
+    "line": 48529,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/util/log_util.py\", line 220, in get_failed_log"
+  },
+  {
+    "line": 48531,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     LogUtil.get_ninja_failed_log(log_path)"
+  },
+  {
+    "line": 48533,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/util/log_util.py\", line 173, in get_ninja_failed_log"
+  },
+  {
+    "line": 48535,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     raise OHOSException("
+  },
+  {
+    "line": 48537,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA] exceptions.ohos_exception.OHOSException: NINJA Failed! Please check error in ***//harmony_code/codearts_workspace/out/x86_64_virt/error.log, and for more build information in ***//harmony_code/codearts_workspace/out/x86_64_virt/build.log"
+  },
+  {
+    "line": 48539,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]"
+  },
+  {
+    "line": 48541,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: "
+  },
+  {
+    "line": 48543,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA] Code:        4016"
+  },
+  {
+    "line": 48545,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]"
+  },
+  {
+    "line": 48547,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA] Reason:      NINJA Failed! Please check error in ***//harmony_code/codearts_workspace/out/x86_64_virt/error.log, and for more build information in ***//harmony_code/codearts_workspace/out/x86_64_virt/build.log"
+  },
+  {
+    "line": 48549,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]"
+  },
+  {
+    "line": 48551,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA] Error Type:  ninja build [91merror[0m: missing and no known rule to make it"
+  },
+  {
+    "line": 48553,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]"
+  },
+  {
+    "line": 48555,
+    "text": "[2026/10/20 17:41:16.780 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA] Description: Ninja build error. The ninja build system cannot find the target."
+  },
+  {
+    "line": 48557,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]"
+  },
+  {
+    "line": 48559,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA] Solution:    Please check the target file is exists."
+  },
+  {
+    "line": 48561,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]"
+  },
+  {
+    "line": 48563,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15: [31m=====build  error=====[0m"
+  },
+  {
+    "line": 48565,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15: ----------------------------------------------------------------------"
+  },
+  {
+    "line": 48567,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15: build finish, return code: 1"
+  },
+  {
+    "line": 48569,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15: "
+  },
+  {
+    "line": 48571,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15: [Step 5] Precise build results"
+  },
+  {
+    "line": 48573,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15:   precise_build_result.txt (***//harmony_code/codearts_workspace/out/x86_64_virt/precise_build_result.txt):"
+  },
+  {
+    "line": 48575,
+    "text": "[2026/10/20 17:41:16.781 GMT+08:00] 2026-10-20 17:41:15:   total targets: 36065"
+  }
+]

@@ -1,0 +1,523 @@
+{
+  "pr": {
+    "id": 9027599,
+    "html_url": "https://gitcode.com/openharmony/developtools_packing_tool/merge_requests/1556",
+    "number": 1556,
+    "state": "open",
+    "title": "Fix reproducible HAP entry timestamps",
+    "url": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_packing_tool/pulls/1556",
+    "issue_url": "https://api.gitcode.com/api/v5/repos/openharmony/developtools_packing_tool/pulls/1556/issues",
+    "body": "**IssueNo**:\nhttps://gitcode.com/openharmony/build/issues/4663\n**Description**:\nHAP 打包工具创建 ZIP entry 时使用当前时间。相同输入在不同时间打包后，ZIP entry 时间戳不同，从而导致生成的 HAP 字节内容和 SHA-256 不一致。\n### 修改内容\n\n- 为 HAP ZIP entry 定义统一的固定时间；\n- 对普通文件和 JSON entry 设置固定时间；\n- 对并行压缩的 native library entry 设置固定时间；\n- 对 STORED entry 和空目录 entry 设置固定时间；\n- 通过统一方法设置 ZIP entry 时间，避免不同打包路径遗漏。\n\n### 修复边界\n\n本修改解决：\n\n`相同输入 → ZIP entry 时间固定 → HAP 字节和 SHA-256 可重复`\n\n不解决：\n\n- 上游 native library 重复 dirty；\n- `compile_app.py` 声明输出问题；\n- 两个 HAP compile_app Action 是否完全退出第二轮构建。\n\n**稳定性自检：**\n| 自检项                                                       | 自检结果 |\n| ------------------------------------------------------------ | -------- |\n| 涉及跨进程调用的相关操作需要抛至主线程或加锁防止并发              | 不涉及   |\n| 成员变量进行赋值或创建需要排查并发                               | 不涉及   |\n| 谨慎在lambda表达式中使用引用捕获                                | 不涉及   |\n| 谨慎在未经拷贝的情况下使用外部传入的string、C字符串               | 不涉及   |\n| map\\vector\\list\\set等stl模板类使用时需要排查并发                | 不涉及   |\n| 谨慎考虑加锁范围                                               | 不涉及   |\n| 在IPC通信中谨慎使用同步通信方式                                 | 不涉及   |\n| 禁止传递this指针至其他模块或线程（特别是eventhandler任务）        | 不涉及   |\n| 禁止将外部传入的裸指针在内部直接构造智能指针                      | 不涉及   |\n| 禁止多个独立创建的智能指针管理同一地址                           | 不涉及   |\n| 禁止在析构函数中抛异步任务                                      | 不涉及   |\n| 禁止js对象在非js线程（例如在非js线程创建、使用或销毁）             | 不涉及   |\n| 禁止在对外接口中未经判空直接使用外部传入的指针                    | 不涉及   |\n| 禁止接口返回局部变量引用                                        | 不涉及   |\n| 禁止在信号函数中加锁                                            | 不涉及   |\n| 禁止在关键流程（SA启动、应用启动等主流程）执行耗时的操作           | 不涉及   |\n| 禁止将同一个cpp编译在不同的so中                                 | 不涉及   |\n\n**安全编码自检：**\n| 自检项                                                          | 自检结果 |\n| -------------------------------------------------------------- | -------- |\n| 裸指针避免通过隐式转换构造为sptr                                 | 不涉及   |\n| json对象在取值之前必须先判断类型，避免类型不匹配                   | 不涉及   |\n| 序列化时必须对传入的数组大小进行校验，避免出现超大数组              | 不涉及   |\n| 避免使用未明确位宽的整型，选择使用int8_t、uint8_t等类型            | 不涉及   |\n| 外部传入的路径要做规范化校验，对路径中的.、..、../等特殊字符严格校验 | 不涉及   |\n| 指针变量、表示资源描述符的变量、bool变量必须赋初值                  | 不涉及   |\n| readParcelable获取的对象使用前需要判空                            | 不涉及   |\n| 分配和释放内存的函数需要成对出现                                   | 不涉及   |\n| 申请内存后异常退出前需要及时进行内存释放                            | 不涉及   |\n| 内存申请前必须对内存大小进行合法性校验                              | 不涉及   |\n| 内存分配后必须判断是否成功                                         | 不涉及   |\n| 禁止使用realloc、alloca函数                                       | 不涉及   |\n| 禁止打印文件路径、口令等敏感信息，如有需要，使用private修饰          | 不涉及   |\n| 禁止打印内存地址                                                  | 不涉及   |\n| 整数之间运算时必须严格检查，确保不会出现溢出、反转、除0               | 不涉及   |\n| 禁止对有符号整数进行位操作符运算                                    | 不涉及   |\n| 禁止对指针进行逻辑或位运算                                         | 不涉及   |\n| 循环次数如果受外部数据控制，需要检验其合法性                         | 不涉及   |\n| 禁止使用内存操作类危险函数，需要使用安全函数                         | 不涉及   |\n| 谨慎使用不可重入函数                                               | 不涉及   |\n| 必须检查安全函数的返回值，并进行正确处理                            | 不涉及   |\n| 禁止仅通过TokenType类型判断绕过权限校验                             | 不涉及   |\n\n**TDD Result**:\n用 Telephony 和 Contacts 的真实输入分别执行两次 HAP 打包，两次输出的 SHA-256 分别保持一致；检查所有 ZIP entry 的时间均固定为 `2019-01-01 00:00`。\n**XTS Result**:\n\n### L0新增用例自检结果\n- [ ] 是，有新增L0用例，且完成自检\n- [ x] 否\n",
+    "assignees_number": 4,
+    "assignees": [
+      {
+        "id": "6721e78baaa4b0322f6a36d2",
+        "login": "jayleehw",
+        "name": "jayleehw",
+        "avatar_url": "https://cdn-img.gitcode.com/dc/bb/4d8c13860525b3be0805cb45a8fba32a1236b0b1219a81232e4c44ba30635d40.jpg",
+        "html_url": "https://gitcode.com/jayleehw",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "67248f36e2f3770132897eed",
+        "login": "wang19954",
+        "name": "wangtiantian",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/ca/351c1941280373bca8cc8fb746f7bd11b7cb79f499e8be1edc1ba447ddbe9475.png?time=1757899076472",
+        "html_url": "https://gitcode.com/wang19954",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "673ae5b4bd7ba9479f277610",
+        "login": "wanghang904",
+        "name": "wanghang",
+        "html_url": "https://gitcode.com/wanghang904",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      },
+      {
+        "id": "673bf30fcf50714436d40101",
+        "login": "hanfeng6",
+        "name": "hanfeng6",
+        "html_url": "https://gitcode.com/hanfeng6",
+        "assignee": true,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "testers": [
+      {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci",
+        "assignee": false,
+        "code_owner": false,
+        "accept": false
+      }
+    ],
+    "approval_reviewers": [],
+    "labels": [
+      {
+        "id": 87,
+        "color": "#20c22e",
+        "name": "dco检查成功",
+        "repository_id": 4430820,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-08-13T11:59:13+08:00"
+      },
+      {
+        "id": 91,
+        "color": "#20c22e",
+        "name": "编译成功",
+        "repository_id": 4430820,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-20T20:54:56+08:00"
+      },
+      {
+        "id": 59,
+        "color": "#20c22e",
+        "name": "静态检查成功",
+        "repository_id": 4430820,
+        "created_at": "2025-04-22T20:33:33+08:00",
+        "updated_at": "2026-10-20T20:55:06+08:00"
+      },
+      {
+        "id": 101,
+        "color": "#ec0019",
+        "name": "冒烟测试失败",
+        "repository_id": 4430820,
+        "created_at": "2025-04-22T20:33:58+08:00",
+        "updated_at": "2026-10-20T20:55:08+08:00"
+      },
+      {
+        "id": 130,
+        "color": "#1083d6",
+        "name": "waiting_on_author",
+        "repository_id": 4430820,
+        "created_at": "2025-04-22T20:34:00+08:00",
+        "updated_at": "2026-10-20T20:55:15+08:00"
+      }
+    ],
+    "created_at": "2026-08-13T11:52:49+08:00",
+    "updated_at": "2026-10-20T20:55:15+08:00",
+    "closed_at": "",
+    "merged_at": "",
+    "draft": false,
+    "can_merge_check": false,
+    "prune_branch": false,
+    "mergeable": true,
+    "user": {
+      "id": "67150ce628c7754a02de123a",
+      "login": "SmillySmillick",
+      "name": "SmillySmillick",
+      "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+      "html_url": "https://gitcode.com/SmillySmillick"
+    },
+    "head": {
+      "ref": "fix/hap-reproducible-archive",
+      "sha": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+      "label": "fix/hap-reproducible-archive",
+      "repo": {
+        "path": "developtools_packing_tool",
+        "name": "developtools_packing_tool",
+        "namespace": {
+          "path": "SmillySmillick"
+        },
+        "full_name": "SmillySmillick/developtools_packing_tool",
+        "html_url": "https://gitcode.com/SmillySmillick/developtools_packing_tool.git"
+      },
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      }
+    },
+    "base": {
+      "ref": "master",
+      "sha": "53234fff17b98407f9453ca180c8124e8ce8a81a",
+      "label": "master",
+      "repo": {
+        "path": "developtools_packing_tool",
+        "name": "developtools_packing_tool",
+        "namespace": {
+          "path": "openharmony"
+        },
+        "full_name": "openharmony/developtools_packing_tool",
+        "html_url": "https://gitcode.com/openharmony/developtools_packing_tool.git"
+      }
+    },
+    "mergeable_state": {
+      "merge_request_id": 9027599,
+      "state": false,
+      "status_without_user_auth": false,
+      "conflict_passed": true,
+      "branch_missing_passed": true,
+      "non_ff_passed": true,
+      "mr_state_passed": true,
+      "merged_by_user_passed": false,
+      "work_in_progress_passed": true,
+      "resolve_discussion_passed": true,
+      "ci_state_passed": true,
+      "merge_by_self_passed": true,
+      "can_force_merge": false,
+      "approval_reviewers_required_passed": true,
+      "approval_approvers_required_passed": false,
+      "approval_testers_required_passed": false,
+      "merge_request_switch": {
+        "review_mode": "approval",
+        "merge_method": "merge",
+        "only_allow_merge_if_all_discussions_are_resolved": false,
+        "disable_merge_by_self": true,
+        "only_allow_merge_if_pipeline_succeeds": false,
+        "disable_squash_merge": false,
+        "squash_merge_with_no_merge_commit": false,
+        "approval_required_reviewers_count": 0,
+        "approval_required_reviewers_branch": "*",
+        "add_notes_after_merged": true,
+        "mark_auto_merged_mr_as_closed": true,
+        "can_force_merge": true,
+        "can_reopen": true
+      },
+      "reason": {
+        "merged_by_user_passed": "You are in project members list, but do not have PUSH permission, please check it."
+      },
+      "check_tasks_num": 2,
+      "all_depend_merge_request_merged_passed": true,
+      "approval_approvers_result": 1,
+      "approval_testers_result": 1
+    },
+    "visibility_reason": "public",
+    "close_related_issue": true,
+    "squash_merge": false
+  },
+  "comments": [
+    {
+      "id": 184589380,
+      "discussion_id": "876909b5222d546ec29302b4a42e9cf1610bcc42",
+      "body": "<p>感谢提交 Pull Requests ！此PR未通过DCO校验。<br>校验失败可能原因：</br><br>1. 未签署“DCO协议”（开发者原创声明协议），<a href=\"https://dco.openharmony.cn/sign/Z2l0ZWUlMkZvcGVuX2hhcm1vbnk=\">在线签署、查看签署状态</a>。</br><br>2. Commits 中未包含 Signed-off-by信息，<a href=\"https://gitcode.com/openharmony/docs/blob/master/zh-cn/contribute/FAQ.md\">参考FAQ处理</a>。</br><br>修复上述问题后，在PR的评论框输入“check dco” ，单击”评论”，系统将再次进行DCO校验。</br><br>当前检测到如下Commits的Signed-off-by邮箱未签署DCO协议：</br><ul><li><a href=\"https://gitcode.com/openharmony/developtools_packing_tool/commits/detail/ebbb276ed54590413001979c7a501d42a7cf1cfc?ref=master&prId=1556\">ebbb276</a></li></ul><hr></hr><p>Thanks for submitting a pull request. This pull request has not passed the DCO check.<br>Possible causes:</br><br>1. You have not signed the Developer Certificate of Origin (DCO). <a href=\"https://dco.openharmony.cn/sign/Z2l0ZWUlMkZvcGVuX2hhcm1vbnk=\">Sign the DCO and check DCO status</a>.</br><br>2. The commits do not contain the Signed-off-by information. To resolve this issue, <a href=\"https://gitcode.com/openharmony/docs/blob/master/en/contribute/faqs.md\">see FAQs</a>.</br><br>After resolving the preceding issues, enter check dco in the comment box of this pull request and click Comment. The system will check DCO status again.</br><br>The Signed-off-by emails in the following commits have not signed the DCO:</br><ul><li><a href=\"https://gitcode.com/openharmony/developtools_packing_tool/commits/detail/ebbb276ed54590413001979c7a501d42a7cf1cfc?ref=master&prId=1556\">ebbb276</a></li></ul>",
+      "created_at": "2026-08-13T11:53:23+08:00",
+      "updated_at": "2026-08-13T11:53:23+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184590697,
+      "discussion_id": "e4f2de4b4260213fa5141b7403fa4a0590f63388",
+      "body": "<p>感谢提交 Pull Requests！如果您提交的PR已经开发完毕，请评论 \"start build\" 触发门禁，更多交互操作，请访问<a href=\"https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md\">OpenHarmony社区支持命令清单</a>。如果需要调整订阅PR、Issue的变更状态，请访问<a href=\"http://dcp.openharmony.cn/setting\">订阅链接</a>。<br></br><br>Thanks for submitting the pull request. If your Pull Request has already been developed, you can leave a \"start build\" comment to trigger the gated system. For more commands, please visit <a href=\"https://gitcode.com/openharmony/community/blob/master/zh/infrastructure/build_command.md\">OpenHarmony Command List</a>. If you need to change the subscription of a Pull Request or Issue, please visit the <a href=\"http://dcp.openharmony.cn/setting\">link</a>.</br>",
+      "created_at": "2026-08-13T11:59:12+08:00",
+      "updated_at": "2026-08-13T11:59:12+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184602197,
+      "discussion_id": "28bf7450b257c827f9013c699221b768092143ff",
+      "body": "start build",
+      "created_at": "2026-08-13T14:05:08+08:00",
+      "updated_at": "2026-08-13T14:05:08+08:00",
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "object_id": "67150ce628c7754a02de123a",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184602327,
+      "discussion_id": "02cdf9ecb07fd890ac468afc674cfc23fa3ba9f9",
+      "body": "首次触发\n门禁构建开始,包含静态检查、代码编译和测试【dayu200测试, dayu200_xts_static编译, dayu600_7885编译, ohos-host_mini_tdd编译, master_inner_build编译, dayu600_7885测试, hispark_taurus_Linux编译, dayu200_xts_acts编译, ohos-sdk编译, dayu200_xts编译, hispark_taurus_LiteOS测试, dayu200_tdd编译, part_compile编译, x86_64_virt编译, hap_build编译, dayu200编译, hispark_taurus_LiteOS编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6a7d5eb364650f998b07594b/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6a7d5eb364650f998b07594b/runlist</a>",
+      "created_at": "2026-08-13T14:05:43+08:00",
+      "updated_at": "2026-08-13T14:05:43+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184618401,
+      "discussion_id": "12b845b2a12a2b98d69b206111a3ee8d94fbca0a",
+      "body": "代码门禁未通过  <br>您可以通过如下链接查看门禁报告:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6a7d5eb364650f998b07594b/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6a7d5eb364650f998b07594b/runlist</a></br> <br>静态检查:</br> <table> <thead> <tr> <th>#</th> <th>check type</th> <th>result</th> <th>report</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>codeCheck</td> <td>pass</td> <td><a href='https://dcp.openharmony.cn/workbench/cicd/detail/6a7d5eb364650f998b07594b/runlist?pop=codecheck&taskId=MR_25d8718c97fe4d72b1af5fbe7bb39c76'>>>></a></td> </tr> </tbody> </table><br>编译测试:</br> <table> <thead> <tr> <th>#</th> <th>Device</th> <th>build result</th> <th>test result</th> <th>package</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>hispark_taurus_LiteOS</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20260813-1-00476/log/build.log'>failed(compile failed)</a></td> <td>NA</td> <td><a href='None'>>>></a></td> </tr> <tr> <td>2</td> <td>hispark_taurus_Linux</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20260813-1-00475/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20260813-1-00475/version/Artifacts-hispark_taurus_Linux-20260813-1-00475-version-hispark_taurus_Linux.tar.gz'>>>></a></td> </tr> <tr> <td>3</td> <td>ohos-sdk</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20260813-1-00440/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20260813-1-00440/version/Artifacts-ohos-sdk-20260813-1-00440-version-ohos-sdk.zip'>>>></a></td> </tr> <tr> <td>4</td> <td>dayu200</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200/20260813-1-00436/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2192736/block_rbeuk929wfp3xcmnweki4umtogr2c51gg8g95yu8qt2mk4va_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200/20260813-1-00436/version/Artifacts-dayu200-20260813-1-00436-version-dayu200.tar.gz'>>>></a></td> </tr> <tr> <td>5</td> <td>dayu200_xts</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20260813-1-00281/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20260813-1-00281/version/Artifacts-dayu200_xts-20260813-1-00281-version-dayu200_xts.tar.gz'>>>></a></td> </tr> <tr> <td>6</td> <td>dayu200_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20260813-1-00439/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20260813-1-00439/version/Artifacts-dayu200_tdd-20260813-1-00439-version-dayu200_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>7</td> <td>hap_build</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hap_build/20260813-1-00474/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hap_build/20260813-1-00474/version/Artifacts-hap_build-20260813-1-00474-version-hap_build.tar.gz'>>>></a></td> </tr> <tr> <td>8</td> <td>part_compile</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/part_compile/20260813-1-00441/log/build.log'>success(IGNORE)</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/part_compile/20260813-1-00441/version/Artifacts-part_compile-20260813-1-00441-version-part_compile.tar.gz'>>>></a></td> </tr> <tr> <td>9</td> <td>dayu200_xts_acts</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20260813-1-00282/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20260813-1-00282/version/Artifacts-dayu200_xts_acts-20260813-1-00282-version-dayu200_xts_acts.tar.gz'>>>></a></td> </tr> <tr> <td>10</td> <td>dayu200_xts_static</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20260813-1-00441/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20260813-1-00441/version/Artifacts-dayu200_xts_static-20260813-1-00441-version-dayu200_xts_static.tar.gz'>>>></a></td> </tr> <tr> <td>11</td> <td>master_inner_build</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6a7d5eb364650f998b07594b/runlist'>failed(IGNORE)(联合门禁失败)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6a7d5eb364650f998b07594b/runlist'>>>></a></td> </tr> <tr> <td>12</td> <td>ohos-host_mini_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20260813-1-00294/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20260813-1-00294/version/Artifacts-ohos-host_mini_tdd-20260813-1-00294-version-ohos-host_mini_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>13</td> <td>dayu600_7885</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20260813-1-00370/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2192774/block_4wmqjfnuwq3xmvm23ybcl0gy2jxu5hb9txwxu7hvqbhe5c00_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20260813-1-00370/version/Artifacts-dayu600_7885-20260813-1-00370-version-dayu600_7885.tar.gz'>>>></a></td> </tr> <tr> <td>14</td> <td>x86_64_virt</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20260813-1-00316/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20260813-1-00316/version/Artifacts-x86_64_virt-20260813-1-00316-version-x86_64_virt.tar.gz'>>>></a></td> </tr> </tbody> </table>",
+      "created_at": "2026-08-13T15:03:02+08:00",
+      "updated_at": "2026-08-13T15:03:02+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184631654,
+      "discussion_id": "11cea2bed9fac1580359344ab2034f9c0eec75e1",
+      "body": "start build",
+      "created_at": "2026-08-13T15:44:50+08:00",
+      "updated_at": "2026-08-13T15:44:50+08:00",
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "object_id": "67150ce628c7754a02de123a",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184631833,
+      "discussion_id": "6fa76e8d68cd923966b01fa42147d8a5de059210",
+      "body": "部分构建失败,仅触发失败构建\n门禁构建开始,包含代码编译和测试【master_inner_build编译, hispark_taurus_LiteOS编译, hispark_taurus_LiteOS测试】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6a7d760c64650f998b117776/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6a7d760c64650f998b117776/runlist</a>",
+      "created_at": "2026-08-13T15:45:21+08:00",
+      "updated_at": "2026-08-13T15:45:21+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184670289,
+      "discussion_id": "0ecf229e27680c2cd4302777b3ffaa8c692868d3",
+      "body": "代码门禁未通过  <br>您可以通过如下链接查看门禁报告:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6a7d760c64650f998b117776/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6a7d760c64650f998b117776/runlist</a></br> <table> <thead> <tr> <th>#</th> <th>Device</th> <th>build result</th> <th>test result</th> <th>package</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>hispark_taurus_LiteOS</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20260813-1-00646/log/build.log'>success</a></td> <td><a href='None'>failed(ecotest timeout)</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20260813-1-00646/version/Artifacts-hispark_taurus_LiteOS-20260813-1-00646-version-hispark_taurus_LiteOS.tar.gz'>>>></a></td> </tr> <tr> <td>2</td> <td>master_inner_build</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6a7d760c64650f998b117776/runlist'>failed(IGNORE)(联合门禁失败)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6a7d760c64650f998b117776/runlist'>>>></a></td> </tr> </tbody> </table>",
+      "created_at": "2026-08-13T17:47:21+08:00",
+      "updated_at": "2026-08-13T17:47:21+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184762699,
+      "discussion_id": "e752f9c4e618e89b0da5341be41cef52f77663a1",
+      "body": "start build",
+      "created_at": "2026-08-14T10:18:48+08:00",
+      "updated_at": "2026-08-14T10:18:48+08:00",
+      "user": {
+        "id": "67150ce628c7754a02de123a",
+        "login": "SmillySmillick",
+        "object_id": "67150ce628c7754a02de123a",
+        "name": "SmillySmillick",
+        "avatar_url": "https://cdn-img.gitcode.com/ce/ce/96713c3e82ce6e06fa937e2b87a3b35dac105eeeed6904b56f8f47c2887eb5ff.png?time=1785857194398",
+        "html_url": "https://gitcode.com/SmillySmillick"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184762842,
+      "discussion_id": "cf1c2bc2e4cd19cc8818f8d9d395b30da18460a6",
+      "body": "上次构建已超过12小时,重新全量验证,重置所有关联PR的验证状态\n门禁构建开始,包含静态检查、代码编译和测试【dayu200_xts_static编译, ohos-host_mini_tdd编译, part_compile编译, dayu200编译, x86_64_virt编译, hispark_taurus_Linux编译, hap_build编译, hispark_taurus_LiteOS编译, dayu200测试, dayu200_xts编译, dayu600_7885编译, master_inner_build编译, dayu600_7885测试, hispark_taurus_LiteOS测试, dayu200_xts_acts编译, ohos-sdk编译, dayu200_tdd编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6a7e7b2564650f998b648b74/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6a7e7b2564650f998b648b74/runlist</a>",
+      "created_at": "2026-08-14T10:19:23+08:00",
+      "updated_at": "2026-08-14T10:19:23+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184781197,
+      "discussion_id": "e658226b35c5afce918a11d3ffcefb2a5b70781d",
+      "body": "代码门禁通过 <br>您可以通过如下链接查看门禁报告:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6a7e7b2564650f998b648b74/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6a7e7b2564650f998b648b74/runlist</a></br> <br>静态检查:</br> <table> <thead> <tr> <th>#</th> <th>check type</th> <th>result</th> <th>report</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>codeCheck</td> <td>pass</td> <td><a href='https://dcp.openharmony.cn/workbench/cicd/detail/6a7e7b2564650f998b648b74/runlist?pop=codecheck&taskId=MR_a550eaa23f874e6caca5b8da9e8fc217'>>>></a></td> </tr> </tbody> </table><br>编译测试:</br> <table> <thead> <tr> <th>#</th> <th>Device</th> <th>build result</th> <th>test result</th> <th>package</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>hispark_taurus_LiteOS</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20260814-1-00187/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2195033/block_gylokf53x4kuylop1g9rxm6ta70ytjy1if7e4izuc5fc8bha_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20260814-1-00187/version/Artifacts-hispark_taurus_LiteOS-20260814-1-00187-version-hispark_taurus_LiteOS.tar.gz'>>>></a></td> </tr> <tr> <td>2</td> <td>hispark_taurus_Linux</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20260814-1-00186/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20260814-1-00186/version/Artifacts-hispark_taurus_Linux-20260814-1-00186-version-hispark_taurus_Linux.tar.gz'>>>></a></td> </tr> <tr> <td>3</td> <td>ohos-sdk</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20260814-1-00256/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20260814-1-00256/version/Artifacts-ohos-sdk-20260814-1-00256-version-ohos-sdk.zip'>>>></a></td> </tr> <tr> <td>4</td> <td>dayu200</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200/20260814-1-00216/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2195079/block_6nejzncgfc423gni0po5qqbizqfr96k8mo5qxt3ninzzcezg_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200/20260814-1-00216/version/Artifacts-dayu200-20260814-1-00216-version-dayu200.tar.gz'>>>></a></td> </tr> <tr> <td>5</td> <td>dayu200_xts</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20260814-1-00102/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20260814-1-00102/version/Artifacts-dayu200_xts-20260814-1-00102-version-dayu200_xts.tar.gz'>>>></a></td> </tr> <tr> <td>6</td> <td>dayu200_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20260814-1-00205/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20260814-1-00205/version/Artifacts-dayu200_tdd-20260814-1-00205-version-dayu200_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>7</td> <td>hap_build</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hap_build/20260814-1-00184/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hap_build/20260814-1-00184/version/Artifacts-hap_build-20260814-1-00184-version-hap_build.tar.gz'>>>></a></td> </tr> <tr> <td>8</td> <td>part_compile</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/part_compile/20260814-1-00257/log/build.log'>success(IGNORE)</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/part_compile/20260814-1-00257/version/Artifacts-part_compile-20260814-1-00257-version-part_compile.tar.gz'>>>></a></td> </tr> <tr> <td>9</td> <td>dayu200_xts_acts</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20260814-1-00103/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20260814-1-00103/version/Artifacts-dayu200_xts_acts-20260814-1-00103-version-dayu200_xts_acts.tar.gz'>>>></a></td> </tr> <tr> <td>10</td> <td>dayu200_xts_static</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20260814-1-00208/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20260814-1-00208/version/Artifacts-dayu200_xts_static-20260814-1-00208-version-dayu200_xts_static.tar.gz'>>>></a></td> </tr> <tr> <td>11</td> <td>master_inner_build</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6a7e7b2564650f998b648b74/runlist'>failed(IGNORE)(联合门禁失败)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6a7e7b2564650f998b648b74/runlist'>>>></a></td> </tr> <tr> <td>12</td> <td>ohos-host_mini_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20260814-1-00174/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20260814-1-00174/version/Artifacts-ohos-host_mini_tdd-20260814-1-00174-version-ohos-host_mini_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>13</td> <td>dayu600_7885</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20260814-1-00203/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2195141/block_iu0uxjg2mih1dpn51lvvom3w4faytt2n4kx61gmgvhvxkl96_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20260814-1-00203/version/Artifacts-dayu600_7885-20260814-1-00203-version-dayu600_7885.tar.gz'>>>></a></td> </tr> <tr> <td>14</td> <td>x86_64_virt</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20260814-1-00184/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20260814-1-00184/version/Artifacts-x86_64_virt-20260814-1-00184-version-x86_64_virt.tar.gz'>>>></a></td> </tr> </tbody> </table>",
+      "created_at": "2026-08-14T11:19:00+08:00",
+      "updated_at": "2026-08-14T11:19:00+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 184781217,
+      "discussion_id": "66f2e61a2220b3430eef23bbf5088fa3089e8f1e",
+      "body": "您好，Committer [@jayleehw](https://gitcode.com/jayleehw) [@wang19954](https://gitcode.com/wang19954) [@wanghang904](https://gitcode.com/wanghang904) [@hanfeng6](https://gitcode.com/hanfeng6) ，请分配检视人员检视该PR，可以通过命令\"assign [@someone_id]\"分配检视人员，也可以直接评论\"assign\"分配给自己进行检视。<br></br><br>Hello, Committer [@jayleehw](https://gitcode.com/jayleehw) [@wang19954](https://gitcode.com/wang19954) [@wanghang904](https://gitcode.com/wanghang904) [@hanfeng6](https://gitcode.com/hanfeng6) . Please assign someone to review the PR. You can assign a reviewer by using the command \"assign [@someone_id]\", or you can comment \"assign\" to review the PR by yourself.</br>",
+      "created_at": "2026-08-14T11:19:04+08:00",
+      "updated_at": "2026-08-14T11:19:04+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194069566,
+      "discussion_id": "ec31fdb595865de542f9f4b66adcf88fa3ea787c",
+      "body": "本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态\n门禁构建开始,包含静态检查、代码编译和测试【dayu200_xts编译, hispark_taurus_LiteOS测试, master_inner_build编译, dayu200_xts_static编译, part_compile编译, dayu600_7885测试, ohos-host_mini_tdd编译, dayu200编译, hispark_taurus_Linux编译, ohos-sdk-codearts-new编译, dayu600_7885编译, hispark_taurus_LiteOS编译, hap_build编译, mac-sdk编译, x86_64_virt编译, dayu200测试, new_part_compile编译, dayu200_xts_acts编译, ohos-sdk编译, x86_64_virt_tdd编译, dayu200_tdd编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist</a>",
+      "created_at": "2026-10-16T09:29:55+08:00",
+      "updated_at": "2026-10-16T09:29:55+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194126103,
+      "discussion_id": "2b5bd577c9c403323f0e784bfb89b34f9f2f2f40",
+      "body": "代码门禁未通过  <br>您可以通过如下链接查看门禁报告:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist</a></br> <br>静态检查:</br> <table> <thead> <tr> <th>#</th> <th>check type</th> <th>result</th> <th>report</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>codeCheck</td> <td>pass</td> <td><a href='https://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist?pop=codecheck&taskId=MR_21c4ae7aca094c73b1eb89ac47071774'>>>></a></td> </tr> </tbody> </table><br>编译测试:</br> <table> <thead> <tr> <th>#</th> <th>Device</th> <th>build result</th> <th>test result</th> <th>package</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>hispark_taurus_LiteOS</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20261016-1-00097/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2299212/block_6o5i54wmwrm3wfmhlo5mngcw7v2f1e3zwdx5dwtm1opxxdrc_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20261016-1-00097/version/Artifacts-hispark_taurus_LiteOS-20261016-1-00097-version-hispark_taurus_LiteOS.tar.gz'>>>></a></td> </tr> <tr> <td>2</td> <td>hispark_taurus_Linux</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20261016-1-00096/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20261016-1-00096/version/Artifacts-hispark_taurus_Linux-20261016-1-00096-version-hispark_taurus_Linux.tar.gz'>>>></a></td> </tr> <tr> <td>3</td> <td>ohos-sdk</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261016-1-00206/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261016-1-00206/version/Artifacts-ohos-sdk-20261016-1-00206-version-ohos-sdk.zip'>>>></a></td> </tr> <tr> <td>4</td> <td>dayu200</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00079/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2299272/block_jkvod7y7y5dryzg3633lp9gwao2qeobc3piwgfzlz7bqp7l2_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200/20261016-1-00079/version/Artifacts-dayu200-20261016-1-00079-version-dayu200.tar.gz'>>>></a></td> </tr> <tr> <td>5</td> <td>dayu200_xts</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20261016-1-00058/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20261016-1-00058/version/Artifacts-dayu200_xts-20261016-1-00058-version-dayu200_xts.tar.gz'>>>></a></td> </tr> <tr> <td>6</td> <td>dayu200_tdd</td> <td>failed(pipeline running timeout)</td> <td>NA</td> <td><a href='None'>>>></a></td> </tr> <tr> <td>7</td> <td>hap_build</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hap_build/20261016-1-00095/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hap_build/20261016-1-00095/version/Artifacts-hap_build-20261016-1-00095-version-hap_build.tar.gz'>>>></a></td> </tr> <tr> <td>8</td> <td>dayu200_xts_acts</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20261016-1-00059/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20261016-1-00059/version/Artifacts-dayu200_xts_acts-20261016-1-00059-version-dayu200_xts_acts.tar.gz'>>>></a></td> </tr> <tr> <td>9</td> <td>dayu200_xts_static</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20261016-1-00095/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20261016-1-00095/version/Artifacts-dayu200_xts_static-20261016-1-00095-version-dayu200_xts_static.tar.gz'>>>></a></td> </tr> <tr> <td>10</td> <td>master_inner_build</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist'>failed(IGNORE)(联合门禁失败)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist'>>>></a></td> </tr> <tr> <td>11</td> <td>ohos-host_mini_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20261016-1-00148/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20261016-1-00148/version/Artifacts-ohos-host_mini_tdd-20261016-1-00148-version-ohos-host_mini_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>12</td> <td>dayu600_7885</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261016-1-00100/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2299375/block_vttx61ng8mtq8fw4big6b5gz1ojr2ra1ftnynump4d6a8fvc_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261016-1-00100/version/Artifacts-dayu600_7885-20261016-1-00100-version-dayu600_7885.tar.gz'>>>></a></td> </tr> <tr> <td>13</td> <td>x86_64_virt</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20261016-1-00135/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20261016-1-00135/version/Artifacts-x86_64_virt-20261016-1-00135-version-x86_64_virt.tar.gz'>>>></a></td> </tr> <tr> <td>14</td> <td>x86_64_virt_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt_tdd/20261016-1-00136/log/build.log'>failed(IGNORE)(compile failed)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist'>>>></a></td> </tr> <tr> <td>15</td> <td>part_compile</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/part_compile/20261016-1-00208/log/build.log'>success(IGNORE)</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/part_compile/20261016-1-00208/version/Artifacts-part_compile-20261016-1-00208-version-part_compile.tar.gz'>>>></a></td> </tr> <tr> <td>16</td> <td>new_part_compile</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/new_part_compile/20261016-1-00205/log/build.log'>success(IGNORE)</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/new_part_compile/20261016-1-00205/version/Artifacts-new_part_compile-20261016-1-00205-version-new_part_compile.tar.gz'>>>></a></td> </tr> <tr> <td>17</td> <td>mac-sdk</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/mac/c73afe3fa2fa4d968fe910646c18f87c/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://devcloud.cn-north-4.huaweicloud.com/cicd/project/3da31c5b0306465ca256eb1821ae26f4/pipeline/detail/7c940f5dcdb540b5922388d0bf51762c/c73afe3fa2fa4d968fe910646c18f87c'>>>></a></td> </tr> <tr> <td>18</td> <td>ohos-sdk-codearts-new</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist'>failed(IGNORE)(codearts build exception)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad17e0a64650f998bd4b234/runlist'>>>></a></td> </tr> </tbody> </table>",
+      "created_at": "2026-10-16T13:30:09+08:00",
+      "updated_at": "2026-10-16T13:30:09+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194177042,
+      "discussion_id": "486c0dbccf6c80ea71b73b789217e8126a7e5667",
+      "body": "部分构建失败,仅触发失败构建\n门禁构建开始,包含代码编译【dayu200_tdd编译, master_inner_build编译, x86_64_virt_tdd编译, ohos-sdk-codearts-new编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist</a>",
+      "created_at": "2026-10-16T16:25:17+08:00",
+      "updated_at": "2026-10-16T16:25:17+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194225794,
+      "discussion_id": "d164677f6edb6a5652b5cb36705d227580ae88fe",
+      "body": "代码门禁通过 <br>您可以通过如下链接查看门禁报告:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist</a></br> <table> <thead> <tr> <th>#</th> <th>Device</th> <th>build result</th> <th>package</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>dayu200_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261016-1-00586/log/build.log'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261016-1-00586/version/Artifacts-dayu200_tdd-20261016-1-00586-version-dayu200_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>2</td> <td>master_inner_build</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist'>failed(IGNORE)(联合门禁失败)</a></td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad1df6864650f998bfe6baf/runlist'>>>></a></td> </tr> <tr> <td>3</td> <td>x86_64_virt_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt_tdd/20261016-1-00891/log/build.log'>success(IGNORE)</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt_tdd/20261016-1-00891/version/Artifacts-x86_64_virt_tdd-20261016-1-00891-version-x86_64_virt_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>4</td> <td>ohos-sdk-codearts-new</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk-codearts-new/20261016-1-01244/log/build.log'>success(IGNORE)</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk-codearts-new/20261016-1-01244/version/Artifacts-ohos-sdk-codearts-new-20261016-1-01244-version-ohos-sdk-codearts-new.zip'>>>></a></td> </tr> </tbody> </table>",
+      "created_at": "2026-10-16T19:40:24+08:00",
+      "updated_at": "2026-10-16T19:40:24+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194225810,
+      "discussion_id": "2120f73c34adee0b8c56f5318768aa4290e5346b",
+      "body": "您好，Committer [@jayleehw](https://gitcode.com/jayleehw) [@wang19954](https://gitcode.com/wang19954) [@wanghang904](https://gitcode.com/wanghang904) [@hanfeng6](https://gitcode.com/hanfeng6) ，请分配检视人员检视该PR，可以通过命令\"assign [@someone_id]\"分配检视人员，也可以直接评论\"assign\"分配给自己进行检视。<br></br><br>Hello, Committer [@jayleehw](https://gitcode.com/jayleehw) [@wang19954](https://gitcode.com/wang19954) [@wanghang904](https://gitcode.com/wanghang904) [@hanfeng6](https://gitcode.com/hanfeng6) . Please assign someone to review the PR. You can assign a reviewer by using the command \"assign [@someone_id]\", or you can comment \"assign\" to review the PR by yourself.</br>",
+      "created_at": "2026-10-16T19:40:32+08:00",
+      "updated_at": "2026-10-16T19:40:32+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194425003,
+      "discussion_id": "56baf4002d8d057fcbe7b92ebba817d1a51c9957",
+      "body": "<ISSUE: 4663>中PR:https://gitcode.com/openharmony/build/merge_requests/6974 代码有更新,重置所有关联PR的验证状态",
+      "created_at": "2026-10-19T10:00:33+08:00",
+      "updated_at": "2026-10-19T10:00:33+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194782864,
+      "discussion_id": "8c3d4d7e33cd8b78bf6a749818e5ab66721b230d",
+      "body": "本地或库上代码有更新,全量重新构建,重置所有关联PR的验证状态\n门禁构建开始,包含静态检查、代码编译和测试【hispark_taurus_LiteOS编译, dayu600_7885测试, dayu200编译, dayu200测试, x86_64_virt_tdd编译, hispark_taurus_LiteOS测试, ohos-host_mini_tdd编译, hap_build编译, master_inner_build编译, part_compile编译, dayu600_7885编译, ohos-sdk-codearts-new编译, mac-sdk编译, dayu200_xts编译, dayu200_xts_acts编译, ohos-sdk编译, dayu200_tdd编译, hispark_taurus_Linux编译, x86_64_virt编译, dayu200_xts_static编译】,预计在60分钟内完成,门禁结果会同步发送到注册邮箱。您可以通过如下链接跟踪门禁进展:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist</a>",
+      "created_at": "2026-10-20T17:27:28+08:00",
+      "updated_at": "2026-10-20T17:27:28+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    },
+    {
+      "id": 194833003,
+      "discussion_id": "3ed521dbbd4fb0698a7b5e97031756b6f0c33ba8",
+      "body": "代码门禁未通过  <br>您可以通过如下链接查看门禁报告:<a href=\"http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist\">http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist</a></br> <br>静态检查:</br> <table> <thead> <tr> <th>#</th> <th>check type</th> <th>result</th> <th>report</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>codeCheck</td> <td>pass</td> <td><a href='https://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist?pop=codecheck&taskId=MR_9c693677c4ae4fe6947321845e73dcc9'>>>></a></td> </tr> </tbody> </table><br>编译测试:</br> <table> <thead> <tr> <th>#</th> <th>Device</th> <th>build result</th> <th>test result</th> <th>package</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>hispark_taurus_LiteOS</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20261020-1-00668/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2307172/block_02aaupeyqb0cb818u8blav24maay2pxf8a5qa63tqa97bht3_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_LiteOS/20261020-1-00668/version/Artifacts-hispark_taurus_LiteOS-20261020-1-00668-version-hispark_taurus_LiteOS.tar.gz'>>>></a></td> </tr> <tr> <td>2</td> <td>hispark_taurus_Linux</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20261020-1-00666/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hispark_taurus_Linux/20261020-1-00666/version/Artifacts-hispark_taurus_Linux-20261020-1-00666-version-hispark_taurus_Linux.tar.gz'>>>></a></td> </tr> <tr> <td>3</td> <td>ohos-sdk</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261020-1-01207/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-sdk/20261020-1-01207/version/Artifacts-ohos-sdk-20261020-1-01207-version-ohos-sdk.zip'>>>></a></td> </tr> <tr> <td>4</td> <td>dayu200</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200/20261020-1-00641/log/build.log'>success</a></td> <td><a href='http://download.ci.openharmony.cn/log/ecoTest/task_2307250/block_8mow8qmlfkrn7a93dql09bp4gumm2p2ceayw0pbwbdipeogj_1/report.zip'>success</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200/20261020-1-00641/version/Artifacts-dayu200-20261020-1-00641-version-dayu200.tar.gz'>>>></a></td> </tr> <tr> <td>5</td> <td>dayu200_xts</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20261020-1-00390/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts/20261020-1-00390/version/Artifacts-dayu200_xts-20261020-1-00390-version-dayu200_xts.tar.gz'>>>></a></td> </tr> <tr> <td>6</td> <td>dayu200_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261020-1-00698/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261020-1-00698/version/Artifacts-dayu200_tdd-20261020-1-00698-version-dayu200_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>7</td> <td>hap_build</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hap_build/20261020-1-00661/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/hap_build/20261020-1-00661/version/Artifacts-hap_build-20261020-1-00661-version-hap_build.tar.gz'>>>></a></td> </tr> <tr> <td>8</td> <td>dayu200_xts_acts</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20261020-1-00394/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_acts/20261020-1-00394/version/Artifacts-dayu200_xts_acts-20261020-1-00394-version-dayu200_xts_acts.tar.gz'>>>></a></td> </tr> <tr> <td>9</td> <td>dayu200_xts_static</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20261020-1-00708/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu200_xts_static/20261020-1-00708/version/Artifacts-dayu200_xts_static-20261020-1-00708-version-dayu200_xts_static.tar.gz'>>>></a></td> </tr> <tr> <td>10</td> <td>master_inner_build</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist'>failed(IGNORE)(联合门禁失败)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist'>>>></a></td> </tr> <tr> <td>11</td> <td>ohos-host_mini_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20261020-1-00607/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/ohos-host_mini_tdd/20261020-1-00607/version/Artifacts-ohos-host_mini_tdd-20261020-1-00607-version-ohos-host_mini_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>12</td> <td>dayu600_7885</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00924/log/build.log'>success</a></td> <td><a href=''>failed(ecotest timeout)</a></td> <td><a href='https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00924/version/Artifacts-dayu600_7885-20261020-1-00924-version-dayu600_7885.tar.gz'>>>></a></td> </tr> <tr> <td>13</td> <td>x86_64_virt</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20261020-1-01078/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt/20261020-1-01078/version/Artifacts-x86_64_virt-20261020-1-01078-version-x86_64_virt.tar.gz'>>>></a></td> </tr> <tr> <td>14</td> <td>x86_64_virt_tdd</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt_tdd/20261020-1-01079/log/build.log'>success(IGNORE)</a></td> <td>NA</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/x86_64_virt_tdd/20261020-1-01079/version/Artifacts-x86_64_virt_tdd-20261020-1-01079-version-x86_64_virt_tdd.tar.gz'>>>></a></td> </tr> <tr> <td>15</td> <td>part_compile</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist'>failed(IGNORE)(skip build)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist'>>>></a></td> </tr> <tr> <td>16</td> <td>mac-sdk</td> <td><a href='https://cidownload.openharmony.cn/Artifacts/mac/a2cf6a9c66704aab85b938ca1abe4570/log/build.log'>success</a></td> <td>NA</td> <td><a href='https://devcloud.cn-north-4.huaweicloud.com/cicd/project/3da31c5b0306465ca256eb1821ae26f4/pipeline/detail/7c940f5dcdb540b5922388d0bf51762c/a2cf6a9c66704aab85b938ca1abe4570'>>>></a></td> </tr> <tr> <td>17</td> <td>ohos-sdk-codearts-new</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist'>failed(IGNORE)(skip build)</a></td> <td>NA</td> <td><a href='http://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist'>>>></a></td> </tr> </tbody> </table>",
+      "created_at": "2026-10-20T20:55:11+08:00",
+      "updated_at": "2026-10-20T20:55:11+08:00",
+      "user": {
+        "id": "6541ccea82d8f837210e92c3",
+        "login": "openharmony_ci",
+        "object_id": "6541ccea82d8f837210e92c3",
+        "name": "openharmony_ci",
+        "avatar_url": "https://cdn-img.gitcode.com/cb/be/5cb10620b4e9195576142df69cd44bb84df15d769c2a04eff5bf7324b903022c.png?time=1723462328974",
+        "html_url": "https://gitcode.com/openharmony_ci"
+      },
+      "comment_type": "pr_comment"
+    }
+  ]
+}

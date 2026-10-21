@@ -1,0 +1,318 @@
+{
+  "pr": 6999,
+  "target": "x86_64_virt_tdd",
+  "url": "https://cidownload.openharmony.cn/Artifacts/x86_64_virt_tdd/20261020-1-01064/log/build.log.zip",
+  "archive_sha256": "73bbb66d47ab14f4e80645924c481ff40bb02577960c630ebafafdf607ce9344",
+  "lines": 375486,
+  "first_fail_line": 48479,
+  "excerpts": [
+    {
+      "line": 48476,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48477,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: "
+    },
+    {
+      "line": 48478,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48479,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA] Traceback (most recent call last):"
+    },
+    {
+      "line": 48480,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48481,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/containers/status.py\", line 47, in wrapper"
+    },
+    {
+      "line": 48482,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48483,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     return func(*args, **kwargs)"
+    },
+    {
+      "line": 48484,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48485,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]            ^^^^^^^^^^^^^^^^^^^^^"
+    },
+    {
+      "line": 48486,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48487,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/modules/ohos_build_module.py\", line 71, in run"
+    },
+    {
+      "line": 48488,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48489,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     raise exception"
+    },
+    {
+      "line": 48490,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48491,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/modules/ohos_build_module.py\", line 68, in run"
+    },
+    {
+      "line": 48492,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48493,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]     super().run()"
+    },
+    {
+      "line": 48494,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 48495,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] 2026-10-20 17:41:15: [91m[OHOS ERROR][0m [NINJA]   File \"***//harmony_code/codearts_workspace/build/hb/modules/interface/build_module_interface.py\", line 70, in run"
+    },
+    {
+      "line": 48496,
+      "text": "[2026/10/20 17:41:16.779 GMT+08:00] "
+    },
+    {
+      "line": 266139,
+      "text": "[2026/10/20 17:41:28.430 GMT+08:00] 2026-10-20 17:41:26:     Deep search Action://foundation/distributeddatamgr/data_share/test/unittest/native/consumer:DataShareHelperTimeoutTest_resource_copy"
+    },
+    {
+      "line": 270009,
+      "text": "[2026/10/20 17:41:28.535 GMT+08:00] 2026-10-20 17:41:26:     Deep search GN File://foundation/distributeddatamgr/relational_store/test/native/rdb/unittest/mock_timeout_test:MockNativeRdbTest"
+    },
+    {
+      "line": 270011,
+      "text": "[2026/10/20 17:41:28.535 GMT+08:00] 2026-10-20 17:41:26:     Deep search Action://foundation/distributeddatamgr/relational_store/test/native/rdb/unittest/mock_timeout_test:MockNativeRdbTest_resource_copy"
+    },
+    {
+      "line": 297971,
+      "text": "[2026/10/20 17:41:29.804 GMT+08:00] 2026-10-20 17:41:26:     Deep search GN File://foundation/resourceschedule/work_scheduler/test/fuzztest/workschedulerislastworktimeout_fuzzer:WorkSchedulerIsLastWorkTimeOutFuzzTest"
+    },
+    {
+      "line": 297973,
+      "text": "[2026/10/20 17:41:29.804 GMT+08:00] 2026-10-20 17:41:26:     Deep search GN File://foundation/resourceschedule/work_scheduler/test/fuzztest/workschedulerislastworktimeout_fuzzer:WorkSchedulerIsLastWorkTimeOutFuzzTest_copy_fuzz_config_file"
+    },
+    {
+      "line": 297975,
+      "text": "[2026/10/20 17:41:29.804 GMT+08:00] 2026-10-20 17:41:26:     Deep search Action://foundation/resourceschedule/work_scheduler/test/fuzztest/workschedulerislastworktimeout_fuzzer:WorkSchedulerIsLastWorkTimeOutFuzzTest_resource_copy"
+    },
+    {
+      "line": 297977,
+      "text": "[2026/10/20 17:41:29.804 GMT+08:00] 2026-10-20 17:41:26:     Deep search GN File://foundation/resourceschedule/work_scheduler/test/fuzztest/workschedulerislastworktimeout_fuzzer:fuzztest"
+    },
+    {
+      "line": 314593,
+      "text": "[2026/10/20 17:41:30.217 GMT+08:00] 2026-10-20 17:41:26:     //foundation/ability/ability_runtime/test/fuzztest/extensionrunningtimeoutmonitor_fuzzer:ExtensionRunningTimeoutMonitorFuzzTest"
+    },
+    {
+      "line": 316065,
+      "text": "[2026/10/20 17:41:30.254 GMT+08:00] 2026-10-20 17:41:26:     //foundation/ability/ability_runtime/test/fuzztest/forcetimeoutfortest_fuzzer:ForceTimeoutForTestFuzzTest"
+    },
+    {
+      "line": 316807,
+      "text": "[2026/10/20 17:41:30.273 GMT+08:00] 2026-10-20 17:41:26:     //base/hiviewdfx/hitrace/test/unittest:HitraceAsyncReadTimeoutTest"
+    },
+    {
+      "line": 316809,
+      "text": "[2026/10/20 17:41:30.273 GMT+08:00] 2026-10-20 17:41:26:     //base/hiviewdfx/hitrace/test/unittest:HitraceAsyncWriteTimeoutTest"
+    },
+    {
+      "line": 318989,
+      "text": "[2026/10/20 17:41:30.326 GMT+08:00] 2026-10-20 17:41:26:     //drivers/peripheral/usb/test/fuzztest/usbserialsettimeout_fuzzer:UsbSerialSetTimeoutFuzzTest"
+    },
+    {
+      "line": 320987,
+      "text": "[2026/10/20 17:41:30.375 GMT+08:00] 2026-10-20 17:41:26:     //foundation/distributeddatamgr/relational_store/test/native/rdb/unittest/mock_timeout_test:MockNativeRdbTest"
+    },
+    {
+      "line": 322839,
+      "text": "[2026/10/20 17:41:30.421 GMT+08:00] 2026-10-20 17:41:26:     //drivers/peripheral/input/test/fuzztest/hidreadtimeout_fuzzer:HidReadTimeoutFuzzTest"
+    },
+    {
+      "line": 326733,
+      "text": "[2026/10/20 17:41:30.518 GMT+08:00] 2026-10-20 17:41:26:     //foundation/distributeddatamgr/data_share/test/native:SlientTimeoutTest"
+    },
+    {
+      "line": 329739,
+      "text": "[2026/10/20 17:41:30.597 GMT+08:00] 2026-10-20 17:41:26:     //foundation/ability/ability_runtime/test/moduletest/ability_test:ability_post_event_timeout_test"
+    },
+    {
+      "line": 330449,
+      "text": "[2026/10/20 17:41:30.615 GMT+08:00] 2026-10-20 17:41:26:     //foundation/ability/ability_runtime/test/unittest/timeout_state_utils_test:timeout_state_utils_test"
+    },
+    {
+      "line": 330485,
+      "text": "[2026/10/20 17:41:30.615 GMT+08:00] 2026-10-20 17:41:26:     //foundation/distributeddatamgr/data_share/test/unittest/native/consumer:DataShareHelperTimeoutTest"
+    },
+    {
+      "line": 331143,
+      "text": "[2026/10/20 17:41:30.632 GMT+08:00] 2026-10-20 17:41:26:     //foundation/resourceschedule/work_scheduler/test/fuzztest/workschedulerislastworktimeout_fuzzer:WorkSchedulerIsLastWorkTimeOutFuzzTest"
+    },
+    {
+      "line": 331225,
+      "text": "[2026/10/20 17:41:30.634 GMT+08:00] 2026-10-20 17:41:26:     //foundation/ability/ability_runtime/test/unittest/ability_timeout_test:ability_timeout_test"
+    },
+    {
+      "line": 334031,
+      "text": "[2026/10/20 17:41:30.703 GMT+08:00] 2026-10-20 17:41:26:     //base/hiviewdfx/hitrace/test/unittest:HitraceAsyncReadTimeoutTest_resource_copy"
+    },
+    {
+      "line": 334037,
+      "text": "[2026/10/20 17:41:30.703 GMT+08:00] 2026-10-20 17:41:26:     //base/hiviewdfx/hitrace/test/unittest:HitraceAsyncWriteTimeoutTest_resource_copy"
+    },
+    {
+      "line": 335771,
+      "text": "[2026/10/20 17:41:30.745 GMT+08:00] 2026-10-20 17:41:26:     //foundation/ability/ability_runtime/test/fuzztest/abilityattachtimeout_fuzzer:AbilityAttachTimeOutFuzzTest"
+    },
+    {
+      "line": 346737,
+      "text": "[2026/10/20 17:41:31.018 GMT+08:00] 2026-10-20 17:41:26:     //drivers/peripheral/input/test/fuzztest/hidreadtimeout_fuzzer:fuzztest"
+    },
+    {
+      "line": 346739,
+      "text": "[2026/10/20 17:41:31.018 GMT+08:00] 2026-10-20 17:41:26:     //drivers/peripheral/input/test/fuzztest/hidreadtimeout_fuzzer:HidReadTimeoutFuzzTest_resource_copy"
+    },
+    {
+      "line": 347007,
+      "text": "[2026/10/20 17:41:31.024 GMT+08:00] 2026-10-20 17:41:26:     //drivers/peripheral/usb/test/fuzztest/usbserialsettimeout_fuzzer:UsbSerialSetTimeoutFuzzTest_resource_copy"
+    },
+    {
+      "line": 347117,
+      "text": "[2026/10/20 17:41:31.027 GMT+08:00] 2026-10-20 17:41:26:     //drivers/peripheral/usb/test/fuzztest/usbserialsettimeout_fuzzer:fuzztest"
+    },
+    {
+      "line": 348281,
+      "text": "[2026/10/20 17:41:31.057 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/fuzztest/extensionrunningtimeoutmonitor_fuzzer:ExtensionRunningTimeoutMonitorFuzzTest_resource_copy"
+    },
+    {
+      "line": 348527,
+      "text": "[2026/10/20 17:41:31.064 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/fuzztest/forcetimeoutfortest_fuzzer:ForceTimeoutForTestFuzzTest_resource_copy"
+    },
+    {
+      "line": 348571,
+      "text": "[2026/10/20 17:41:31.065 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/fuzztest/abilityattachtimeout_fuzzer:AbilityAttachTimeOutFuzzTest_resource_copy"
+    },
+    {
+      "line": 348715,
+      "text": "[2026/10/20 17:41:31.069 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/moduletest/ability_test:ability_post_event_timeout_test_resource_copy"
+    },
+    {
+      "line": 348777,
+      "text": "[2026/10/20 17:41:31.070 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/unittest/timeout_state_utils_test:timeout_state_utils_test_resource_copy"
+    },
+    {
+      "line": 349645,
+      "text": "[2026/10/20 17:41:31.094 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/unittest/ability_timeout_test:ability_timeout_test_resource_copy"
+    },
+    {
+      "line": 350235,
+      "text": "[2026/10/20 17:41:31.109 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/fuzztest/abilityattachtimeout_fuzzer:fuzztest"
+    },
+    {
+      "line": 351021,
+      "text": "[2026/10/20 17:41:31.128 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/fuzztest/extensionrunningtimeoutmonitor_fuzzer:fuzztest"
+    },
+    {
+      "line": 351027,
+      "text": "[2026/10/20 17:41:31.128 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/fuzztest/forcetimeoutfortest_fuzzer:fuzztest"
+    },
+    {
+      "line": 351685,
+      "text": "[2026/10/20 17:41:31.144 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/unittest/ability_timeout_test:unittest"
+    },
+    {
+      "line": 352645,
+      "text": "[2026/10/20 17:41:31.238 GMT+08:00] 2026-10-20 17:41:27:     //foundation/ability/ability_runtime/test/unittest/timeout_state_utils_test:unittest"
+    },
+    {
+      "line": 359565,
+      "text": "[2026/10/20 17:41:31.411 GMT+08:00] 2026-10-20 17:41:27:     //foundation/distributeddatamgr/data_share/test/native:SlientTimeoutTest_resource_copy"
+    },
+    {
+      "line": 359577,
+      "text": "[2026/10/20 17:41:31.411 GMT+08:00] 2026-10-20 17:41:27:     //foundation/distributeddatamgr/data_share/test/unittest/native/consumer:DataShareHelperTimeoutTest_resource_copy"
+    },
+    {
+      "line": 361249,
+      "text": "[2026/10/20 17:41:31.453 GMT+08:00] 2026-10-20 17:41:27:     //foundation/distributeddatamgr/relational_store/test/native/rdb/unittest/mock_timeout_test:MockNativeRdbTest_resource_copy"
+    },
+    {
+      "line": 374053,
+      "text": "[2026/10/20 17:41:31.775 GMT+08:00] 2026-10-20 17:41:27:     //foundation/resourceschedule/work_scheduler/test/fuzztest/workschedulerislastworktimeout_fuzzer:WorkSchedulerIsLastWorkTimeOutFuzzTest_resource_copy"
+    },
+    {
+      "line": 374109,
+      "text": "[2026/10/20 17:41:31.776 GMT+08:00] 2026-10-20 17:41:27:     //foundation/resourceschedule/work_scheduler/test/fuzztest/workschedulerislastworktimeout_fuzzer:fuzztest"
+    },
+    {
+      "line": 375471,
+      "text": "[2026/10/20 17:41:31.810 GMT+08:00] [CloudCache] 2026/10/20 17:41:28 build failed, cmd: [bash -c bash ***//entrance_script/generate_ci_build.sh compile_build] err: exit status 1"
+    },
+    {
+      "line": 375475,
+      "text": "[2026/10/20 17:41:31.826 GMT+08:00] [ERROR] [tbuild_execute:tbuild_execute#tbuild_execute] : TBuild failed, 执行脚本失败"
+    },
+    {
+      "line": 375476,
+      "text": "[2026/10/20 17:41:34.216 GMT+08:00] [INFO] [tbuild_execute:tbuild_execute#tbuild_execute] : JobName:ditribute_job_client : ip:***.***.***.***"
+    },
+    {
+      "line": 375477,
+      "text": "[2026/10/20 17:41:34.218 GMT+08:00] [ERROR] [tbuild_execute:tbuild_execute#tbuild_execute] : 错误信息: 执行脚本失败"
+    },
+    {
+      "line": 375478,
+      "text": "[2026/10/20 17:41:34.315 GMT+08:00] [ERROR] [tbuild_execute:tbuild_execute#tbuild_execute] : 该步骤执行失败"
+    },
+    {
+      "line": 375479,
+      "text": "[2026/10/20 17:41:34.318 GMT+08:00] [ERROR]  : 该步骤执行失败,错误信息:执行脚本失败"
+    },
+    {
+      "line": 375480,
+      "text": "[2026/10/20 17:41:35.963 GMT+08:00] 4.0.0: Pulling from ci-service/openharmony-standard-build-env-22.04"
+    },
+    {
+      "line": 375481,
+      "text": "[2026/10/20 17:41:35.963 GMT+08:00] Digest: sha256:5265a0fe56968a60101641b70d68e84e12953d077247ca49a2c8565abcc11431"
+    },
+    {
+      "line": 375482,
+      "text": "[2026/10/20 17:41:35.963 GMT+08:00] Status: Image is up to date for swr.cn-north-4.myhuaweicloud.com/ci-service/openharmony-standard-build-env-22.04:4.0.0"
+    },
+    {
+      "line": 375483,
+      "text": "[2026/10/20 17:41:38.070 GMT+08:00] [INFO]  : [JobStatusPlugin] onCompleted: j_T1o7cwWJ #1"
+    },
+    {
+      "line": 375484,
+      "text": "[2026/10/20 17:41:43.192 GMT+08:00] [INFO]  : [frame] current slave-type: k8sdockerondocker"
+    },
+    {
+      "line": 375485,
+      "text": "[2026/10/20 17:41:43.193 GMT+08:00] [INFO]  : [frame] add fixed directory information into global configuration."
+    },
+    {
+      "line": 375486,
+      "text": "[2026/10/20 17:41:43.348 GMT+08:00] Finished: FAILURE"
+    }
+  ]
+}

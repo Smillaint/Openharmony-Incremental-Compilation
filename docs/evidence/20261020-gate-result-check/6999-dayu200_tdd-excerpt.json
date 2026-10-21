@@ -1,0 +1,6 @@
+{
+  "pr": 6999,
+  "target": "dayu200_tdd",
+  "url": "https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261020-1-00694/log/build.log.zip",
+  "error": "Compressed log exceeds 64 MiB"
+}

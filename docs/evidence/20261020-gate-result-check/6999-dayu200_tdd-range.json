@@ -1,0 +1,231 @@
+{
+  "url": "https://cidownload.openharmony.cn/Artifacts/dayu200_tdd/20261020-1-00694/log/build.log.zip",
+  "status": 206,
+  "content_range": "bytes 95643648-97740799/97740800",
+  "length": "2097152",
+  "type": "application/zip",
+  "bytes_read": 2097152,
+  "initial_magic": "3a32333a30333a20",
+  "excerpts": [
+    {
+      "tail_line": 1509,
+      "text": "[2026/10/20 20:24:20.023 GMT+08:00] 2026-10-20 20:24:19: [OHOS INFO] [NINJA] [349062/357163] LINK tests/unittest/ability_runtime/ability_runtime/state_utils_test/timeout_state_utils_test"
+    },
+    {
+      "tail_line": 1511,
+      "text": "[2026/10/20 20:24:20.023 GMT+08:00] 2026-10-20 20:24:19: [OHOS INFO] [NINJA] [349063/357163] STAMP obj/foundation/ability/ability_runtime/test/unittest/timeout_state_utils_test/unittest.stamp"
+    },
+    {
+      "tail_line": 4221,
+      "text": "[2026/10/20 20:34:27.908 GMT+08:00] 2026-10-20 20:34:22: [OHOS INFO] [NINJA] [350418/357163] LINK tests/unittest/data_share/data_share/native/consumer/DataShareHelperTimeoutTest"
+    },
+    {
+      "tail_line": 10162,
+      "text": "[2026/10/20 21:00:10.403 GMT+08:00] 2026-10-20 21:00:02: [OHOS INFO] [NINJA] [353388/357163] LINK tests/unittest/hitrace/hitrace/HitraceAsyncReadTimeoutTest"
+    },
+    {
+      "tail_line": 10164,
+      "text": "[2026/10/20 21:00:10.403 GMT+08:00] 2026-10-20 21:00:02: [OHOS INFO] [NINJA] [353389/357163] LINK tests/unittest/hitrace/hitrace/HitraceAsyncWriteTimeoutTest"
+    },
+    {
+      "tail_line": 14068,
+      "text": "[2026/10/20 21:10:32.650 GMT+08:00] 2026-10-20 21:10:29: [OHOS INFO] [NINJA] [355341/357163] LINK tests/unittest/data_share/data_share/inner_tests/SlientTimeoutTest"
+    },
+    {
+      "tail_line": 17012,
+      "text": "[2026/10/20 21:17:17.309 GMT+08:00] 2026-10-20 21:17:12: [OHOS INFO] [NINJA] [356813/357163] LINK tests/unittest/player_framework/player_framework/player/player_timeout_unit_test"
+    },
+    {
+      "tail_line": 18401,
+      "text": "[---------------------------------------------------->________] 86.18% 858.48MB/s 13.77GB/15.97GB 2s"
+    },
+    {
+      "tail_line": 18402,
+      "text": "[----------------------------------------------------->_______] 87.82% 882.74MB/s 14.03GB/15.97GB 2s"
+    },
+    {
+      "tail_line": 18403,
+      "text": "[------------------------------------------------------>______] 89.18% 882.74MB/s 14.25GB/15.97GB 2s"
+    },
+    {
+      "tail_line": 18404,
+      "text": "[------------------------------------------------------->_____] 90.37% 882.74MB/s 14.44GB/15.97GB 1s"
+    },
+    {
+      "tail_line": 18405,
+      "text": "[------------------------------------------------------->_____] 91.29% 886.96MB/s 14.58GB/15.97GB 1s"
+    },
+    {
+      "tail_line": 18406,
+      "text": "[-------------------------------------------------------->____] 92.47% 886.96MB/s 14.77GB/15.97GB 1s"
+    },
+    {
+      "tail_line": 18407,
+      "text": "[--------------------------------------------------------->___] 93.61% 886.96MB/s 14.95GB/15.97GB 1s"
+    },
+    {
+      "tail_line": 18408,
+      "text": "[--------------------------------------------------------->___] 94.86% 892.18MB/s 15.15GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18409,
+      "text": "[---------------------------------------------------------->__] 95.91% 892.18MB/s 15.32GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18410,
+      "text": "[----------------------------------------------------------->_] 97.28% 892.18MB/s 15.54GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18411,
+      "text": "[------------------------------------------------------------>] 98.56% 900.02MB/s 15.74GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18412,
+      "text": "[------------------------------------------------------------>] 99.43% 900.02MB/s 15.88GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18413,
+      "text": "[------------------------------------------------------------>] 99.74% 900.02MB/s 15.93GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18414,
+      "text": "[------------------------------------------------------------>] 99.74% 862.68MB/s 15.93GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18415,
+      "text": "[------------------------------------------------------------>] 99.75% 862.68MB/s 15.93GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18416,
+      "text": "[------------------------------------------------------------>] 99.75% 862.68MB/s 15.93GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18417,
+      "text": "[------------------------------------------------------------>] 99.75% 807.24MB/s 15.93GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18418,
+      "text": "[------------------------------------------------------------>] 99.75% 807.24MB/s 15.93GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18419,
+      "text": "[------------------------------------------------------------>] 99.78% 807.24MB/s 15.94GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18420,
+      "text": "[------------------------------------------------------------>] 99.80% 755.98MB/s 15.94GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18421,
+      "text": "[------------------------------------------------------------>] 99.81% 755.98MB/s 15.94GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18422,
+      "text": "[------------------------------------------------------------>] 99.82% 755.98MB/s 15.95GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18423,
+      "text": "[------------------------------------------------------------>] 99.84% 707.95MB/s 15.95GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18424,
+      "text": "[------------------------------------------------------------>] 99.85% 707.95MB/s 15.95GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18425,
+      "text": "[------------------------------------------------------------>] 99.88% 707.95MB/s 15.95GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18426,
+      "text": "[------------------------------------------------------------>] 99.88% 662.89MB/s 15.95GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18427,
+      "text": "[------------------------------------------------------------>] 99.90% 662.89MB/s 15.96GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18428,
+      "text": "[------------------------------------------------------------>] 99.92% 662.89MB/s 15.96GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18429,
+      "text": "[------------------------------------------------------------>] 99.96% 621.64MB/s 15.97GB/15.97GB 0s"
+    },
+    {
+      "tail_line": 18430,
+      "text": "[-------------------------------------------------------] 100.00% 576.80MB/s 15.97GB/15.97GB 28.572s"
+    },
+    {
+      "tail_line": 18431,
+      "text": "Waiting for the uploaded key to be completed on server side."
+    },
+    {
+      "tail_line": 18432,
+      "text": "[2026/10/20 21:38:13.480 GMT+08:00] "
+    },
+    {
+      "tail_line": 18433,
+      "text": "[2026/10/20 21:38:13.480 GMT+08:00] "
+    },
+    {
+      "tail_line": 18434,
+      "text": "[2026/10/20 21:38:13.480 GMT+08:00] Upload successfully, 15.97GB, n/a, ***//harmony_code/codearts_workspace/Archive/Artifacts-dayu200_tdd-20261020-1-00694-version-dayu200_tdd.tar.gz --> obs://hm-verify/Artifacts/dayu200_tdd/20261020-1-00694/version/Artifacts-dayu200_tdd-20261020-1-00694-version-dayu200_tdd.tar.gz, cost [29582], status [200], request id [000001A15988AED544D0B3A98A679127]"
+    },
+    {
+      "tail_line": 18435,
+      "text": "[2026/10/20 21:38:20.048 GMT+08:00] find build.trace.gz and path is:out/rk3568/final_build.trace.gz"
+    },
+    {
+      "tail_line": 18436,
+      "text": "[2026/10/20 21:38:20.048 GMT+08:00] out/rk3568/build.trace.gz"
+    },
+    {
+      "tail_line": 18437,
+      "text": "[2026/10/20 21:38:20.048 GMT+08:00] trace_ok:  True"
+    },
+    {
+      "tail_line": 18438,
+      "text": "[2026/10/20 21:38:20.048 GMT+08:00] requestId: 000001A15988C8E947C8734E6E005E68"
+    },
+    {
+      "tail_line": 18439,
+      "text": "[2026/10/20 21:38:20.048 GMT+08:00] etag: \"7c4fab152650246616ceaeec6904c0d3\""
+    },
+    {
+      "tail_line": 18440,
+      "text": "[2026/10/20 21:38:20.048 GMT+08:00] requestId: 000001A15988CA5244143080D1201837"
+    },
+    {
+      "tail_line": 18441,
+      "text": "[2026/10/20 21:38:20.048 GMT+08:00] etag: \"1cc6feacb5ad225ad30d7aadffb84a01\""
+    },
+    {
+      "tail_line": 18442,
+      "text": "[2026/10/20 21:38:20.049 GMT+08:00] 2026-10-20 21:38:19: [ERROR]currentStatus error, can not upload result to mongo"
+    },
+    {
+      "tail_line": 18443,
+      "text": "[2026/10/20 21:38:20.049 GMT+08:00] [ERROR]: upload version  failed"
+    },
+    {
+      "tail_line": 18444,
+      "text": "[2026/10/20 21:38:20.063 GMT+08:00] [ERROR]  : script returned exit code 1, exitMessage is: command run failed"
+    },
+    {
+      "tail_line": 18445,
+      "text": "[2026/10/20 21:38:21.476 GMT+08:00] [INFO]  : [JobStatusPlugin] onCompleted: j_5G7jgEVn #1"
+    },
+    {
+      "tail_line": 18446,
+      "text": "[2026/10/20 21:38:26.494 GMT+08:00] [INFO]  : [frame] current slave-type: k8sdockerondocker"
+    },
+    {
+      "tail_line": 18447,
+      "text": "[2026/10/20 21:38:26.495 GMT+08:00] [INFO]  : [frame] add fixed directory information into global configuration."
+    },
+    {
+      "tail_line": 18448,
+      "text": "[2026/10/20 21:38:26.667 GMT+08:00] Finished: FAILURE"
+    }
+  ]
+}

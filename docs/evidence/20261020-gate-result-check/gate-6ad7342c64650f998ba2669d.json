@@ -1,0 +1,537 @@
+{
+  "code": "20000",
+  "message": "请求成功",
+  "data": {
+    "id": "6ad7342c64650f998ba2669d",
+    "docsCheckFormatVo": {
+      "uuid": "cc3bc8b94f9cc38eda606ff90b4880f6",
+      "eventId": "6ad7342c64650f998ba2669d",
+      "unique": null,
+      "insertTime": "20261020173200",
+      "createTime": "20261020172800",
+      "project": null,
+      "branch": null,
+      "formatCheckVo": {
+        "api_check": {
+          "result": "-",
+          "detail": ""
+        },
+        "DocCodeCheck": {
+          "result": "-",
+          "detail": ""
+        },
+        "gn_format_check": {
+          "result": "-",
+          "detail": ""
+        },
+        "docs_check": {
+          "result": "-",
+          "detail": ""
+        },
+        "csct_online_entry": {
+          "result": "-",
+          "detail": ""
+        }
+      },
+      "formatCheckUrl": null,
+      "message": null,
+      "repoList": null,
+      "currentStatus": "end",
+      "result": "success",
+      "failedReason": null,
+      "triggerUser": "SmillySmillick",
+      "triggerTime": null,
+      "faultSummary": null,
+      "scanCaseNum": null,
+      "passCaseNum": null,
+      "failCaseNum": null,
+      "scanResult": null,
+      "prlist": null
+    },
+    "uuid": "cc3bc8b94f9cc38eda606ff90b4880f6",
+    "codeCheckStatusWithYCodeCheck": null,
+    "causeAction": "issue",
+    "causeUrl": "https://gitcode.com/openharmony/third_party_sane-airscan/issues/19",
+    "commentUrl": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22#note_c9fdf75489706927322f63e902f413afb3727db1",
+    "currentStatus": "close",
+    "pipelineList": [],
+    "prMsg": [
+      {
+        "name": "fix: stabilize airscan incremental build outputs",
+        "url": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+        "createdAt": "2026-08-05T14:48:59+08:00",
+        "updatedAt": "2026-10-20T17:27:40+08:00",
+        "headCommitId": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+        "baseCommitId": "23f08604c5e46b11c0952f8a52ae5cd20a464b48",
+        "owner": "SmillySmillick",
+        "committer": "SmillySmillick",
+        "repoName": "third_party_sane-airscan",
+        "repoBranch": null,
+        "sobCodeCheckResult": " -- ",
+        "interFaceResult": null,
+        "interFaceReport": null,
+        "permissionScanResult": null,
+        "permissionScanReport": null,
+        "bundleCheckResult": 1,
+        "xtsCheckResult": null,
+        "cdrCheckResult": 1,
+        "subCodeCheckItemsForPrMsg": null
+      }
+    ],
+    "projectName": "openharmony",
+    "repoBranch": "master",
+    "result": "failed",
+    "timestamp": "20261020172800",
+    "triggerUser": "SmillySmillick",
+    "duration": 5611.0,
+    "endTimestamp": "20261020190131",
+    "builds": [
+      {
+        "buildTarget": "dayu600_7885",
+        "pubResults": null,
+        "buildFailReson": "ecotest timeout",
+        "buildFailType": "E01",
+        "waitTime": "2min32s",
+        "debug": {
+          "startTime": "20261020173637",
+          "endTime": "20261020180118",
+          "duration": "1481",
+          "waitTime": null,
+          "result": "success",
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": "Artifacts/dayu600_7885/20261020-1-00916",
+          "pipelineUrl": "https://devcloud.cn-north-4.huaweicloud.com/cicd/project/88a29c87eba84293b0a4c95ade1b6499/pipeline/detail/97bccd7101ac4e44b59d7544628ade98/8aa215eb85bf41c48dc65666cb7ab1fc",
+          "currentStatus": "end",
+          "buildNumber": "20261020-1-00916"
+        },
+        "test": {
+          "startTime": "2026-10-20 18:01:20",
+          "endTime": "2026-10-20 19:01:26",
+          "duration": "3606.0",
+          "waitTime": null,
+          "result": "failed",
+          "buildFailReason": "ecotest timeout",
+          "buildFailType": "E01",
+          "Artifacts": null,
+          "pipelineUrl": "https://devcloud.cn-north-4.huaweicloud.com/cicd/project/88a29c87eba84293b0a4c95ade1b6499/pipeline/detail/97bccd7101ac4e44b59d7544628ade98/8aa215eb85bf41c48dc65666cb7ab1fc",
+          "currentStatus": null,
+          "buildNumber": null
+        },
+        "stages": {
+          "init": 0,
+          "downloadCode": 133,
+          "fetchPr": 1,
+          "gitLfs": 59,
+          "preCompile": 195,
+          "mainCompile": 1005,
+          "afterCompile": 0,
+          "archive": 48,
+          "upload": 11,
+          "ccacheSummary": {
+            "hitDirect": "0",
+            "hitPreprocessed": "0",
+            "miss": "0\n 1202",
+            "hitRate": "99.96%",
+            "misRate": "NA"
+          }
+        },
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "ohos-host_mini_tdd",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": "1min32s",
+        "debug": {
+          "startTime": "20261020173537",
+          "endTime": "20261020174842",
+          "duration": "785",
+          "waitTime": null,
+          "result": "success",
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": "Artifacts/ohos-host_mini_tdd/20261020-1-00600",
+          "pipelineUrl": "https://devcloud.cn-north-4.huaweicloud.com/cicd/project/d9233bed7e83489890719531acee0e5f/pipeline/detail/eea45ec4836c4ebc949fc52f307239e9/1cd1e9dd93994199877aed62b1cc27bc",
+          "currentStatus": "end",
+          "buildNumber": "20261020-1-00600"
+        },
+        "test": null,
+        "stages": {
+          "init": 0,
+          "downloadCode": 102,
+          "fetchPr": 2,
+          "gitLfs": 75,
+          "preCompile": 57,
+          "mainCompile": 515,
+          "afterCompile": 0,
+          "archive": 0,
+          "upload": 1,
+          "ccacheSummary": {
+            "hitDirect": "0\n 0\n 0",
+            "hitPreprocessed": "0\n 0\n 0",
+            "miss": "0\n 0\n 0",
+            "hitRate": "99.98%",
+            "misRate": "NA"
+          }
+        },
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "master_inner_build",
+        "pubResults": null,
+        "buildFailReson": "联合门禁失败",
+        "buildFailType": "E04",
+        "waitTime": "0s",
+        "debug": {
+          "startTime": "20261020173405",
+          "endTime": "20261020173851",
+          "duration": "286",
+          "waitTime": null,
+          "result": "failed",
+          "buildFailReason": "联合门禁失败",
+          "buildFailType": "E04",
+          "Artifacts": null,
+          "pipelineUrl": null,
+          "currentStatus": "end",
+          "buildNumber": null
+        },
+        "test": null,
+        "stages": null,
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "part_compile",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": "2min1s",
+        "debug": {
+          "startTime": "20261020173606",
+          "endTime": "20261020175821",
+          "duration": "1335",
+          "waitTime": null,
+          "result": "success",
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": "Artifacts/part_compile/20261020-1-01190",
+          "pipelineUrl": "https://devcloud.huaweicloud.com/cicd/project/4aeaa658e46e424893dcd5bd65f2a999/pipeline/detail/de607800be894ce0ba0b9841c52ef4fc/6ef3c37371f74223b14340a1dcec53cc",
+          "currentStatus": "end",
+          "buildNumber": "20261020-1-01190"
+        },
+        "test": null,
+        "stages": {
+          "init": 0,
+          "downloadCode": 106,
+          "fetchPr": 1,
+          "gitLfs": 65,
+          "preCompile": 46,
+          "mainCompile": 1076,
+          "afterCompile": 0,
+          "archive": 0,
+          "upload": 5,
+          "ccacheSummary": {
+            "hitDirect": "0",
+            "hitPreprocessed": "0",
+            "miss": "0\n 3360",
+            "hitRate": "99.78%",
+            "misRate": "NA"
+          }
+        },
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "dayu200",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": "4min2s",
+        "debug": {
+          "startTime": "20261020173807",
+          "endTime": "20261020180724",
+          "duration": "1757",
+          "waitTime": null,
+          "result": "success",
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": "Artifacts/dayu200/20261020-1-00642",
+          "pipelineUrl": "https://devcloud.huaweicloud.com/cicd/project/4aeaa658e46e424893dcd5bd65f2a999/pipeline/detail/1392ad9ea29d4a5382b4a4dde44a2931/90890b4b515b4ee0b1e3550462496266",
+          "currentStatus": "end",
+          "buildNumber": "20261020-1-00642"
+        },
+        "test": {
+          "startTime": "2026-10-20 18:07:27",
+          "endTime": "2026-10-20 18:28:20",
+          "duration": "1253.0",
+          "waitTime": null,
+          "result": "success",
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": "log/ecoTest/task_2307262/block_6jukg1ouo8bp58hgbkei7u8i001027bfjtd8cvb51pc74i51_1",
+          "pipelineUrl": "https://devcloud.huaweicloud.com/cicd/project/4aeaa658e46e424893dcd5bd65f2a999/pipeline/detail/1392ad9ea29d4a5382b4a4dde44a2931/90890b4b515b4ee0b1e3550462496266",
+          "currentStatus": null,
+          "buildNumber": null
+        },
+        "stages": {
+          "init": 0,
+          "downloadCode": 145,
+          "fetchPr": 1,
+          "gitLfs": 79,
+          "preCompile": 52,
+          "mainCompile": 1348,
+          "afterCompile": 41,
+          "archive": 49,
+          "upload": 8,
+          "ccacheSummary": {
+            "hitDirect": "0",
+            "hitPreprocessed": "0",
+            "miss": "0\n 3354",
+            "hitRate": "99.61%",
+            "misRate": "NA"
+          }
+        },
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      },
+      {
+        "buildTarget": "x86_64_virt",
+        "pubResults": null,
+        "buildFailReson": null,
+        "buildFailType": null,
+        "waitTime": "4min51s",
+        "debug": {
+          "startTime": "20261020173856",
+          "endTime": "20261020175621",
+          "duration": "1045",
+          "waitTime": null,
+          "result": "success",
+          "buildFailReason": null,
+          "buildFailType": null,
+          "Artifacts": "Artifacts/x86_64_virt/20261020-1-01065",
+          "pipelineUrl": "https://devcloud.huaweicloud.com/cicd/project/4aeaa658e46e424893dcd5bd65f2a999/pipeline/detail/a23196cef08b4da7b507bd1df6cf03e5/9c8b29e8d0544ffca7a12be6a673a9ea",
+          "currentStatus": "end",
+          "buildNumber": "20261020-1-01065"
+        },
+        "test": null,
+        "stages": {
+          "init": 0,
+          "downloadCode": 98,
+          "fetchPr": 1,
+          "gitLfs": 55,
+          "preCompile": 48,
+          "mainCompile": 809,
+          "afterCompile": 0,
+          "archive": 0,
+          "upload": 4,
+          "ccacheSummary": {
+            "hitDirect": "0",
+            "hitPreprocessed": "0",
+            "miss": "0",
+            "hitRate": "99.45%",
+            "misRate": "NA"
+          }
+        },
+        "logStatus": null,
+        "dispatchDuration": null,
+        "upgradeDeviceDuration": null,
+        "testExecutionDuration": null,
+        "detectDeviceTime": null,
+        "interceptReason": null,
+        "timeThreshold": null,
+        "cacheThreshold": null,
+        "partDurationTop5": null
+      }
+    ],
+    "downloadUrl": "https://cidownload.openharmony.cn/",
+    "codeCheckSummary": [
+      {
+        "uuid": "cc3bc8b94f9cc38eda606ff90b4880f6",
+        "mrUrl": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+        "projectId": null,
+        "id": "6ad7351305e7272b0b714d83",
+        "date": null,
+        "sigNameCn": null,
+        "sigNameEn": null,
+        "repoNameCn": null,
+        "repoNameEn": null,
+        "repoAttrs": null,
+        "committers": null,
+        "manufacturer": null,
+        "projectName": null,
+        "executeTime": null,
+        "result": "pass",
+        "ignoreCount": null,
+        "codeCheckStatus": "Success",
+        "branchRepoId": null,
+        "clocSyncState": 0,
+        "taskOfInclude": null,
+        "check_type": "source",
+        "code_line": 116,
+        "code_line_total": 149,
+        "code_quality": 100.0,
+        "comment_lines": 0,
+        "comment_ratio": "0.0",
+        "complexity_count": 17,
+        "created_at": "2025-10-14T16:08:01Z",
+        "creator_id": "0925cb7d34800ff01fc6c015a50af8f0",
+        "duplicated_blocks": 0,
+        "duplicated_lines": 0,
+        "duplication_ratio": "0.0",
+        "git_branch": "master",
+        "gitUrl": null,
+        "issue_count": 0,
+        "last_check_time": "2026-10-20T09:28:15Z",
+        "last_exec_time": "2026-10-20T09:28:15Z",
+        "risk_coefficient": 100,
+        "task_id": "MR_780abf4125264185a6fdffb5fe2d3b19",
+        "task_name": "third_party_sane-airscan",
+        "cyclomatic_complexity_per_method": "3.4",
+        "cyclomatic_complexity_per_file": "0.0",
+        "new_count": 0,
+        "solve_count": 0,
+        "critical_count": "0",
+        "major_count": "0",
+        "minor_count": "0",
+        "suggestion_count": "0",
+        "file_duplication_ratio": "0.0"
+      }
+    ],
+    "codeCheckInfo": {
+      "codeCheckStatus": "end",
+      "checkStartTime": "20261020172815",
+      "checkEndTime": "20261020173405",
+      "duration": null
+    },
+    "projectId": null,
+    "effectTree": {
+      "third_party_sane-airscan": {
+        "ohos-host": [],
+        "ohos-mini": [],
+        "arm64_virt": [],
+        "x86_64_virt": [],
+        "ohos_mini_tdd": [],
+        "dayu600_7885": [
+          "Y"
+        ],
+        "part_compile": [
+          "Y"
+        ],
+        "new_part_compile": [],
+        "part_compile_tdd": [],
+        "dayu200": [
+          "Y"
+        ],
+        "ohos-host_mini_tdd": [],
+        "dayu200-codearts": [
+          "Y"
+        ],
+        "dayu200_xts-codearts": []
+      }
+    },
+    "exportData": {
+      "triggerUser": "SmillySmillick",
+      "timestamp": "10-20 17:28:00",
+      "duration": "93min",
+      "result": null,
+      "uuid": null,
+      "codecheckResult": null,
+      "builds": [
+        {
+          "targetName": "dayu600_7885~debug",
+          "result": "成功",
+          "isOnline": "true"
+        },
+        {
+          "targetName": "dayu600_7885~test",
+          "result": "构建超时异常",
+          "isOnline": null
+        },
+        {
+          "targetName": "ohos-host_mini_tdd~debug",
+          "result": "成功",
+          "isOnline": "true"
+        },
+        {
+          "targetName": "master_inner_build~debug",
+          "result": "编译失败",
+          "isOnline": "false"
+        },
+        {
+          "targetName": "part_compile~debug",
+          "result": "成功",
+          "isOnline": "false"
+        },
+        {
+          "targetName": "dayu200~debug",
+          "result": "成功",
+          "isOnline": "true"
+        },
+        {
+          "targetName": "dayu200~test",
+          "result": "成功",
+          "isOnline": null
+        },
+        {
+          "targetName": "x86_64_virt~debug",
+          "result": "成功",
+          "isOnline": "true"
+        }
+      ],
+      "codeCheckTotalResult": "--",
+      "prStatus": "未合入",
+      "prCommitter": "SmillySmillick",
+      "prUrl": "https://gitcode.com/openharmony/third_party_sane-airscan/merge_requests/22",
+      "eventDetailUrl": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7342c64650f998ba2669d/runlist"
+    },
+    "innerCodecheckStatus": null,
+    "innerCodecheckResult": null,
+    "codeCheckItems": null,
+    "codeCheckStartTime": null,
+    "codeCheckEndTime": null,
+    "codeCheckDuration": null,
+    "finalTotalResult": "end",
+    "innerApiResult": "--",
+    "syncMrStatus": "finished",
+    "syncMrTime": null
+  }
+}

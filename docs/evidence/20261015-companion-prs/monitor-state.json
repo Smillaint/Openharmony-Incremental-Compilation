@@ -1,7 +1,7 @@
 {
   "automation_id": "openharmony-30",
   "interval_minutes": 30,
-  "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+  "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
   "groups": [
     {
       "name": "IDL",
@@ -9,87 +9,99 @@
       "trigger_repo": "build",
       "trigger_number": 6982,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist",
-      "status": "pending",
+      "status": "failed_ecotest_timeout",
       "done": false,
       "members": [
         {
           "repo": "build",
           "number": 6982,
           "head": "4e179e356e4ef508ea0c5f302459c6e366e58baa",
-          "status": "pending",
+          "status": "failed_ecotest_timeout",
           "done": false,
           "previous_head": "b4ca2d4124817b101a9335930bc758b491fc729d",
-          "active_gate": true,
-          "final_report_pending": true,
-          "codecheck_status": "pending",
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+          "active_gate": false,
+          "final_report_pending": false,
+          "codecheck_status": "passed",
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
           "source_update_evidence": "../20261018-idl-encoding/publication-verification.json",
-          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist"
+          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist",
+          "result_comment_id": 194814100,
+          "result_at": "2026-10-20T19:50:46+08:00"
         },
         {
           "repo": "account_os_account",
           "number": 3898,
           "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
-          "status": "pending",
+          "status": "failed_ecotest_timeout",
           "done": false,
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
           "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist",
-          "codecheck_status": "pending"
+          "codecheck_status": "passed",
+          "result_comment_id": 194814090,
+          "result_at": "2026-10-20T19:50:45+08:00"
         },
         {
           "repo": "inputmethod_imf",
           "number": 2774,
           "head": "331a15a1cda376687080a3977999de42182ec3ec",
-          "status": "pending",
+          "status": "failed_ecotest_timeout",
           "done": false,
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
           "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist",
-          "codecheck_status": "pending"
+          "codecheck_status": "passed",
+          "result_comment_id": 194814094,
+          "result_at": "2026-10-20T19:50:45+08:00"
         },
         {
           "repo": "security_dlp_permission_service",
           "number": 953,
           "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
-          "status": "pending",
+          "status": "failed_ecotest_timeout",
           "done": false,
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
           "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist",
-          "codecheck_status": "pending"
+          "codecheck_status": "passed",
+          "result_comment_id": 194814097,
+          "result_at": "2026-10-20T19:50:46+08:00"
         },
         {
           "repo": "ability_dmsfwk",
           "number": 2123,
           "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
-          "status": "pending",
+          "status": "failed_ecotest_timeout",
           "done": false,
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
           "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist",
-          "codecheck_status": "pending"
+          "codecheck_status": "passed",
+          "result_comment_id": 194814092,
+          "result_at": "2026-10-20T19:50:45+08:00"
         },
         {
           "repo": "multimedia_audio_framework",
           "number": 17444,
           "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
-          "status": "pending",
+          "status": "failed_ecotest_timeout",
           "done": false,
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
           "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist",
-          "codecheck_status": "pending"
+          "codecheck_status": "passed",
+          "result_comment_id": 194814105,
+          "result_at": "2026-10-20T19:50:46+08:00"
         }
       ],
-      "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+      "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
       "head_verified": true,
-      "progress": "One full gate accepted; exact current member heads verified. Queued, no final result.",
+      "progress": "Final gate blocked by EcoTest timeout; #6999 also has a pipeline timeout after compilation success. No automatic retry.",
       "previous_gate": {
         "name": "IDL",
         "issue": "https://gitcode.com/openharmony/build/issues/4668",
@@ -176,9 +188,9 @@
           "ohos-sdk-codearts-new": "failed(IGNORE)(skip build)"
         }
       },
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
-      "final_report_pending": true,
+      "final_report_pending": false,
       "before_manual_gate_20261020": {
         "url": null,
         "status": "not_triggered_current_heads",
@@ -251,7 +263,23 @@
       "started_at": "2026-10-20T17:26:29+08:00",
       "trigger_reason": "Manual request after approved review replies; one full gate for each pending revision group.",
       "evidence": "../20261020-review-replies-gates/receipts.json",
-      "codecheck_status": "pending"
+      "codecheck_status": "passed",
+      "gate_start_snapshot_20261020": {
+        "status": "pending",
+        "done": false,
+        "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+        "active_gate": true,
+        "final_report_pending": true
+      },
+      "result_comment_id": 194814100,
+      "result_at": "2026-10-20T19:50:46+08:00",
+      "result_evidence": "../20261020-gate-result-check/diagnosis.json",
+      "failure": {
+        "classification": "failed_ecotest_timeout",
+        "stage": "EcoTest",
+        "evidence": "../20261020-gate-result-check/diagnosis.json",
+        "details": "Current static checks passed; final receipts confirm timeouts. Exact device/test timeout cause remains unconfirmed."
+      }
     },
     {
       "name": "JS-CSS",
@@ -712,40 +740,44 @@
       "trigger_repo": "build",
       "trigger_number": 6974,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist",
-      "status": "pending",
+      "status": "failed_ecotest_timeout",
       "done": false,
       "members": [
         {
           "repo": "build",
           "number": 6974,
           "head": "fb6add1534863be35a9df323a8d78d5168521f6d",
-          "status": "pending",
+          "status": "failed_ecotest_timeout",
           "done": false,
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
           "previous_head": "34aa8cba0c5fcb3344e2dd652c18027d69a71396",
-          "codecheck_status": "pending",
-          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist"
+          "codecheck_status": "passed",
+          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist",
+          "result_comment_id": 194833012,
+          "result_at": "2026-10-20T20:55:13+08:00"
         },
         {
           "repo": "developtools_packing_tool",
           "number": 1556,
           "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
-          "status": "pending",
+          "status": "failed_ecotest_timeout",
           "done": false,
           "receipt_id": 194177042,
-          "active_gate": true,
-          "final_report_pending": true,
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+          "active_gate": false,
+          "final_report_pending": false,
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
           "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist",
-          "codecheck_status": "pending"
+          "codecheck_status": "passed",
+          "result_comment_id": 194833003,
+          "result_at": "2026-10-20T20:55:11+08:00"
         }
       ],
-      "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+      "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
       "head_verified": true,
-      "progress": "One full gate accepted; exact current member heads verified. Queued, no final result.",
-      "final_report_pending": true,
+      "progress": "Final gate blocked by EcoTest timeout; #6999 also has a pipeline timeout after compilation success. No automatic retry.",
+      "final_report_pending": false,
       "previous_gate": {
         "name": "HAP",
         "issue": "https://gitcode.com/openharmony/build/issues/4663",
@@ -857,7 +889,7 @@
         ],
         "completed_at": "2026-10-16T19:40:28+08:00"
       },
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
       "receipt_observed_at_utc": "2026-10-16T08:26:19.672Z",
       "trigger_reason": "Manual request after approved review replies; one full gate for each pending revision group.",
@@ -899,7 +931,23 @@
       "command_id": 194782662,
       "receipt_id": 194782869,
       "started_at": "2026-10-20T17:27:28+08:00",
-      "codecheck_status": "pending"
+      "codecheck_status": "passed",
+      "gate_start_snapshot_20261020": {
+        "status": "pending",
+        "done": false,
+        "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+        "final_report_pending": true,
+        "active_gate": true
+      },
+      "result_comment_id": 194833012,
+      "result_at": "2026-10-20T20:55:13+08:00",
+      "result_evidence": "../20261020-gate-result-check/diagnosis.json",
+      "failure": {
+        "classification": "failed_ecotest_timeout",
+        "stage": "EcoTest",
+        "evidence": "../20261020-gate-result-check/diagnosis.json",
+        "details": "Current static checks passed; final receipts confirm timeouts. Exact device/test timeout cause remains unconfirmed."
+      }
     },
     {
       "name": "loader",
@@ -907,26 +955,29 @@
       "trigger_repo": "build",
       "trigger_number": 7134,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7337e64650f998ba20458/runlist",
-      "status": "pending",
-      "done": false,
+      "status": "passed",
+      "done": true,
       "members": [
         {
           "repo": "build",
           "number": 7134,
           "head": "f5de052afaf6b4c7b6801f013418797ace4d2203",
-          "status": "pending",
-          "done": false,
+          "status": "passed",
+          "done": true,
           "previous_head": "f0dd0bd6ea0708337120d8044115e87491794532",
-          "active_gate": true,
-          "final_report_pending": true,
-          "codecheck_status": "pending",
-          "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
-          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7337e64650f998ba20458/runlist"
+          "active_gate": false,
+          "final_report_pending": false,
+          "codecheck_status": "passed",
+          "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
+          "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7337e64650f998ba20458/runlist",
+          "result_comment_id": 194831479,
+          "result_at": "2026-10-20T20:48:51+08:00",
+          "passed_at": "2026-10-20T20:48:51+08:00"
         }
       ],
-      "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+      "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
       "head_verified": true,
-      "progress": "One full gate accepted; exact current member heads verified. Queued, no final result.",
+      "progress": "Current HEAD final gate passed.",
       "previous_gate": {
         "name": "loader",
         "issue": "https://gitcode.com/openharmony/build/issues/4761",
@@ -961,9 +1012,9 @@
           "ohos-sdk-codearts-new": "failed(IGNORE)(codearts build exception)"
         }
       },
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
-      "final_report_pending": true,
+      "final_report_pending": false,
       "before_manual_gate_20261020": {
         "url": null,
         "status": "not_triggered_current_heads",
@@ -990,21 +1041,32 @@
       "started_at": "2026-10-20T17:25:23+08:00",
       "trigger_reason": "Manual request after approved review replies; one full gate for each pending revision group.",
       "evidence": "../20261020-review-replies-gates/receipts.json",
-      "codecheck_status": "pending"
+      "codecheck_status": "passed",
+      "gate_start_snapshot_20261020": {
+        "status": "pending",
+        "done": false,
+        "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+        "active_gate": true,
+        "final_report_pending": true
+      },
+      "result_comment_id": 194831479,
+      "result_at": "2026-10-20T20:48:51+08:00",
+      "result_evidence": "../20261020-gate-result-check/diagnosis.json",
+      "passed_at": "2026-10-20T20:48:51+08:00"
     }
   ],
   "other_existing_prs": [
     {
       "repo": "build",
       "number": 6965,
-      "status": "pending",
+      "status": "failed_ecotest_timeout",
       "head": "270bdc5c3cd438cdc2fdd9e86a85c65dafe59559",
-      "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+      "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
       "done": false,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733e364650f998ba2405e/runlist",
-      "progress": "One full gate accepted; exact current member heads verified. Queued, no final result.",
+      "progress": "Final gate blocked by EcoTest timeout; #6999 also has a pipeline timeout after compilation success. No automatic retry.",
       "head_verified": true,
-      "final_report_pending": true,
+      "final_report_pending": false,
       "previous_gate": {
         "repo": "build",
         "number": 6965,
@@ -1055,7 +1117,7 @@
         "result_comment_id": 194192597,
         "passed_at": "2026-10-16T17:08:36+08:00"
       },
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
       "receipt_observed_at_utc": "2026-10-16T08:26:19.503Z",
       "trigger_reason": "Manual request after approved review replies; one full gate for each pending revision group.",
@@ -1072,14 +1134,30 @@
       "command_id": 194782499,
       "receipt_id": 194782731,
       "started_at": "2026-10-20T17:27:03+08:00",
-      "codecheck_status": "pending"
+      "codecheck_status": "passed",
+      "gate_start_snapshot_20261020": {
+        "status": "pending",
+        "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+        "done": false,
+        "final_report_pending": true,
+        "active_gate": true
+      },
+      "result_comment_id": 194832742,
+      "result_at": "2026-10-20T20:53:39+08:00",
+      "result_evidence": "../20261020-gate-result-check/diagnosis.json",
+      "failure": {
+        "classification": "failed_ecotest_timeout",
+        "stage": "EcoTest",
+        "evidence": "../20261020-gate-result-check/diagnosis.json",
+        "details": "Current static checks passed; final receipts confirm timeouts. Exact device/test timeout cause remains unconfirmed."
+      }
     },
     {
       "repo": "build",
       "number": 6999,
-      "status": "pending",
+      "status": "failed_pipeline_timeout_and_ecotest_timeout",
       "head": "37406489bf81204ef8d1479d4f6621e1a23e7437",
-      "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+      "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
       "done": false,
       "previous_gate": {
         "repo": "build",
@@ -1092,11 +1170,11 @@
         "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
       },
       "previous_head": "f1a463340efbcaa8089df8f47e50409c14ee9322",
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
-      "final_report_pending": true,
+      "final_report_pending": false,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733b164650f998ba21ed3/runlist",
-      "progress": "One full gate accepted; exact current member heads verified. Queued, no final result.",
+      "progress": "Final gate blocked by EcoTest timeout; #6999 also has a pipeline timeout after compilation success. No automatic retry.",
       "before_manual_gate_20261020": {
         "status": "not_triggered_current_head",
         "head": "37406489bf81204ef8d1479d4f6621e1a23e7437",
@@ -1111,15 +1189,31 @@
       "started_at": "2026-10-20T17:26:14+08:00",
       "trigger_reason": "Manual request after approved review replies; one full gate for each pending revision group.",
       "evidence": "../20261020-review-replies-gates/receipts.json",
-      "codecheck_status": "pending"
+      "codecheck_status": "passed",
+      "gate_start_snapshot_20261020": {
+        "status": "pending",
+        "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+        "done": false,
+        "active_gate": true,
+        "final_report_pending": true
+      },
+      "result_comment_id": 194840503,
+      "result_at": "2026-10-20T21:27:28+08:00",
+      "result_evidence": "../20261020-gate-result-check/diagnosis.json",
+      "failure": {
+        "classification": "failed_pipeline_timeout_and_ecotest_timeout",
+        "stage": "EcoTest and pipeline duration limit/result reporting",
+        "evidence": "../20261020-gate-result-check/diagnosis.json",
+        "details": "Current static checks passed; final receipts confirm timeouts. Exact device/test timeout cause remains unconfirmed."
+      }
     },
     {
       "repo": "build",
       "number": 7009,
-      "status": "pending",
+      "status": "passed",
       "head": "577fed97c0cf1ee5973c6d264eb32e17513059fa",
-      "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
-      "done": false,
+      "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
+      "done": true,
       "previous_gate": {
         "repo": "build",
         "number": 7009,
@@ -1131,11 +1225,11 @@
         "verification": "Current head commit date precedes successful latest gate; current pass labels remain and no newer reset/start is present. See passed-head-commits.json and full comment snapshot."
       },
       "previous_head": "edc427a875e5c0642e31c7b3dca4f7a8b0219b71",
-      "active_gate": true,
+      "active_gate": false,
       "gate_matches_current_heads": true,
-      "final_report_pending": true,
+      "final_report_pending": false,
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7340464650f998ba24fe4/runlist",
-      "progress": "One full gate accepted; exact current member heads verified. Queued, no final result.",
+      "progress": "Current HEAD final gate passed.",
       "before_manual_gate_20261020": {
         "status": "not_triggered_current_head",
         "head": "577fed97c0cf1ee5973c6d264eb32e17513059fa",
@@ -1150,16 +1244,27 @@
       "started_at": "2026-10-20T17:27:37+08:00",
       "trigger_reason": "Manual request after approved review replies; one full gate for each pending revision group.",
       "evidence": "../20261020-review-replies-gates/receipts.json",
-      "codecheck_status": "pending"
+      "codecheck_status": "passed",
+      "gate_start_snapshot_20261020": {
+        "status": "pending",
+        "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+        "done": false,
+        "active_gate": true,
+        "final_report_pending": true
+      },
+      "result_comment_id": 194833060,
+      "result_at": "2026-10-20T20:55:25+08:00",
+      "result_evidence": "../20261020-gate-result-check/diagnosis.json",
+      "passed_at": "2026-10-20T20:55:25+08:00"
     },
     {
       "repo": "build",
       "number": 7048,
-      "status": "pending",
+      "status": "passed",
       "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
-      "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
-      "done": false,
-      "active_gate": true,
+      "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
+      "done": true,
+      "active_gate": false,
       "head_verified": true,
       "before_manual_gate_20261020": {
         "status": "not_triggered_current_head",
@@ -1170,14 +1275,25 @@
       },
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7341764650f998ba25b13/runlist",
       "gate_matches_current_heads": true,
-      "final_report_pending": true,
+      "final_report_pending": false,
       "command_id": 194782849,
       "receipt_id": 194783085,
       "started_at": "2026-10-20T17:27:58+08:00",
       "trigger_reason": "Manual request after approved review replies; one full gate for each pending revision group.",
       "evidence": "../20261020-review-replies-gates/receipts.json",
-      "progress": "One full gate accepted; exact current member heads verified. Queued, no final result.",
-      "codecheck_status": "pending"
+      "progress": "Current HEAD final gate passed.",
+      "codecheck_status": "passed",
+      "gate_start_snapshot_20261020": {
+        "status": "pending",
+        "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+        "done": false,
+        "active_gate": true,
+        "final_report_pending": true
+      },
+      "result_comment_id": 194796696,
+      "result_at": "2026-10-20T18:40:46+08:00",
+      "result_evidence": "../20261020-gate-result-check/diagnosis.json",
+      "passed_at": "2026-10-20T18:40:46+08:00"
     },
     {
       "repo": "build",
@@ -1243,11 +1359,11 @@
     {
       "repo": "third_party_sane-airscan",
       "number": 22,
-      "status": "pending",
+      "status": "failed_ecotest_timeout",
       "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
-      "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+      "last_checked_utc": "2026-10-21T03:49:56.258571+00:00",
       "done": false,
-      "active_gate": true,
+      "active_gate": false,
       "head_verified": true,
       "before_manual_gate_20261020": {
         "status": "not_triggered_current_head",
@@ -1258,14 +1374,30 @@
       },
       "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7342c64650f998ba2669d/runlist",
       "gate_matches_current_heads": true,
-      "final_report_pending": true,
+      "final_report_pending": false,
       "command_id": 194782950,
       "receipt_id": 194783188,
       "started_at": "2026-10-20T17:28:16+08:00",
       "trigger_reason": "Manual request after approved review replies; one full gate for each pending revision group.",
       "evidence": "../20261020-review-replies-gates/receipts.json",
-      "progress": "One full gate accepted; exact current member heads verified. Queued, no final result.",
-      "codecheck_status": "pending"
+      "progress": "Final gate blocked by EcoTest timeout; #6999 also has a pipeline timeout after compilation success. No automatic retry.",
+      "codecheck_status": "passed",
+      "gate_start_snapshot_20261020": {
+        "status": "pending",
+        "last_checked_utc": "2026-10-20T09:28:24.276302+00:00",
+        "done": false,
+        "active_gate": true,
+        "final_report_pending": true
+      },
+      "result_comment_id": 194799886,
+      "result_at": "2026-10-20T19:01:29+08:00",
+      "result_evidence": "../20261020-gate-result-check/diagnosis.json",
+      "failure": {
+        "classification": "failed_ecotest_timeout",
+        "stage": "EcoTest",
+        "evidence": "../20261020-gate-result-check/diagnosis.json",
+        "details": "Current static checks passed; final receipts confirm timeouts. Exact device/test timeout cause remains unconfirmed."
+      }
     }
   ],
   "last_snapshot": "monitor/20261016T074849Z/summary.md",
@@ -1280,8 +1412,8 @@
   "maintenance_evidence": "../20261018-review-fixes/publication-verification.json",
   "last_manual_action_utc": "2026-10-20T09:28:24.276302+00:00",
   "manual_action_evidence": "../20261020-review-replies-gates/receipts.json",
-  "last_manual_snapshot": "../20261020-review-replies-gates/receipts.json",
+  "last_manual_snapshot": "../20261020-gate-result-check/summary.json",
   "idl_encoding_evidence": "../20261018-idl-encoding/publication-verification.json",
   "build_common_dependency_evidence": "../20261018-build-common-rootcause/diagnosis.json",
-  "current_pr_snapshot": "../20261020-review-replies-gates/receipts.json"
+  "current_pr_snapshot": "../20261020-gate-result-check/summary.json"
 }

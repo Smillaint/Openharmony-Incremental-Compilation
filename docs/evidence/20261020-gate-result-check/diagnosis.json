@@ -1,0 +1,466 @@
+{
+  "queried_utc": "2026-10-21T03:49:56.258571+00:00",
+  "new_groups": [
+    {
+      "repo": "build",
+      "number": 6982,
+      "id": "6ad733af64650f998ba21c45",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733af64650f998ba21c45/runlist",
+      "status": "failed_ecotest_timeout",
+      "result": "failed",
+      "heads_match": true,
+      "codecheck_status": "passed",
+      "result_comment_id": 194814100,
+      "result_at": "2026-10-20T19:50:46+08:00",
+      "members": [
+        {
+          "repo": "build",
+          "number": 6982,
+          "head": "4e179e356e4ef508ea0c5f302459c6e366e58baa",
+          "result_comment_id": 194814100,
+          "result_at": "2026-10-20T19:50:46+08:00",
+          "labels": [
+            "dco检查成功",
+            "waiting_on_author",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败"
+          ]
+        },
+        {
+          "repo": "multimedia_audio_framework",
+          "number": 17444,
+          "head": "c1aafc5d32b0b1ad6a429149090fda7b187ddf69",
+          "result_comment_id": 194814105,
+          "result_at": "2026-10-20T19:50:46+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败",
+            "waiting_on_author"
+          ]
+        },
+        {
+          "repo": "ability_dmsfwk",
+          "number": 2123,
+          "head": "6d99e0fef7fe7b69f63f2445c8852303f055506d",
+          "result_comment_id": 194814092,
+          "result_at": "2026-10-20T19:50:45+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败",
+            "waiting_on_author"
+          ]
+        },
+        {
+          "repo": "security_dlp_permission_service",
+          "number": 953,
+          "head": "c5f19c2aad14e30ea3bf00c5ef49e9fbd2a74f28",
+          "result_comment_id": 194814097,
+          "result_at": "2026-10-20T19:50:46+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败",
+            "waiting_on_author"
+          ]
+        },
+        {
+          "repo": "inputmethod_imf",
+          "number": 2774,
+          "head": "331a15a1cda376687080a3977999de42182ec3ec",
+          "result_comment_id": 194814094,
+          "result_at": "2026-10-20T19:50:45+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败",
+            "waiting_on_author"
+          ]
+        },
+        {
+          "repo": "account_os_account",
+          "number": 3898,
+          "head": "b55c624c20ca24d4c64e98304fb5d3f975606a90",
+          "result_comment_id": 194814090,
+          "result_at": "2026-10-20T19:50:45+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败",
+            "waiting_on_author"
+          ]
+        }
+      ],
+      "failed_rows": [
+        {
+          "text": "10   master_inner_build    failed(IGNORE)(联合门禁失败)    NA    >>>",
+          "ignored": true
+        },
+        {
+          "text": "12   dayu600_7885    success     failed(ecotest timeout)     >>>",
+          "ignored": false
+        },
+        {
+          "text": "15   part_compile    failed(IGNORE)(skip build)    NA    >>>",
+          "ignored": true
+        },
+        {
+          "text": "17   ohos-sdk-codearts-new    failed(IGNORE)(skip build)    NA    >>>",
+          "ignored": true
+        }
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6999,
+      "id": "6ad733b164650f998ba21ed3",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733b164650f998ba21ed3/runlist",
+      "status": "failed_pipeline_timeout_and_ecotest_timeout",
+      "result": "failed",
+      "heads_match": true,
+      "codecheck_status": "passed",
+      "result_comment_id": 194840503,
+      "result_at": "2026-10-20T21:27:28+08:00",
+      "members": [
+        {
+          "repo": "build",
+          "number": 6999,
+          "head": "37406489bf81204ef8d1479d4f6621e1a23e7437",
+          "result_comment_id": 194840503,
+          "result_at": "2026-10-20T21:27:28+08:00",
+          "labels": [
+            "dco检查成功",
+            "waiting_on_author",
+            "静态检查成功",
+            "冒烟测试失败"
+          ]
+        }
+      ],
+      "failed_rows": [
+        {
+          "text": "6   dayu200_tdd   failed(pipeline running timeout)   NA    >>>",
+          "ignored": false
+        },
+        {
+          "text": "10   master_inner_build    failed(IGNORE)(联合门禁失败)    NA    >>>",
+          "ignored": true
+        },
+        {
+          "text": "12   dayu600_7885    success     failed(ecotest timeout)     >>>",
+          "ignored": false
+        },
+        {
+          "text": "14   x86_64_virt_tdd    failed(IGNORE)(compile failed)    NA    >>>",
+          "ignored": true
+        }
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7134,
+      "id": "6ad7337e64650f998ba20458",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7337e64650f998ba20458/runlist",
+      "status": "passed",
+      "result": "success",
+      "heads_match": true,
+      "codecheck_status": "passed",
+      "result_comment_id": 194831479,
+      "result_at": "2026-10-20T20:48:51+08:00",
+      "members": [
+        {
+          "repo": "build",
+          "number": 7134,
+          "head": "f5de052afaf6b4c7b6801f013418797ace4d2203",
+          "result_comment_id": 194831479,
+          "result_at": "2026-10-20T20:48:51+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试成功",
+            "waiting_for_review"
+          ]
+        }
+      ],
+      "failed_rows": [
+        {
+          "text": "10   master_inner_build    failed(IGNORE)(联合门禁失败)    NA    >>>",
+          "ignored": true
+        }
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6965,
+      "id": "6ad733e364650f998ba2405e",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733e364650f998ba2405e/runlist",
+      "status": "failed_ecotest_timeout",
+      "result": "failed",
+      "heads_match": true,
+      "codecheck_status": "passed",
+      "result_comment_id": 194832742,
+      "result_at": "2026-10-20T20:53:39+08:00",
+      "members": [
+        {
+          "repo": "build",
+          "number": 6965,
+          "head": "270bdc5c3cd438cdc2fdd9e86a85c65dafe59559",
+          "result_comment_id": 194832742,
+          "result_at": "2026-10-20T20:53:39+08:00",
+          "labels": [
+            "dco检查成功",
+            "waiting_on_author",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败"
+          ]
+        }
+      ],
+      "failed_rows": [
+        {
+          "text": "10   master_inner_build    failed(IGNORE)(联合门禁失败)    NA    >>>",
+          "ignored": true
+        },
+        {
+          "text": "12   dayu600_7885    success     failed(ecotest timeout)     >>>",
+          "ignored": false
+        }
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 6974,
+      "id": "6ad733f664650f998ba24803",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad733f664650f998ba24803/runlist",
+      "status": "failed_ecotest_timeout",
+      "result": "failed",
+      "heads_match": true,
+      "codecheck_status": "passed",
+      "result_comment_id": 194833012,
+      "result_at": "2026-10-20T20:55:13+08:00",
+      "members": [
+        {
+          "repo": "build",
+          "number": 6974,
+          "head": "fb6add1534863be35a9df323a8d78d5168521f6d",
+          "result_comment_id": 194833012,
+          "result_at": "2026-10-20T20:55:13+08:00",
+          "labels": [
+            "dco检查成功",
+            "waiting_on_author",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败"
+          ]
+        },
+        {
+          "repo": "developtools_packing_tool",
+          "number": 1556,
+          "head": "dcbbc78ada8c90cb31542ecc385bb7d5b5faddbc",
+          "result_comment_id": 194833003,
+          "result_at": "2026-10-20T20:55:11+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败",
+            "waiting_on_author"
+          ]
+        }
+      ],
+      "failed_rows": [
+        {
+          "text": "10   master_inner_build    failed(IGNORE)(联合门禁失败)    NA    >>>",
+          "ignored": true
+        },
+        {
+          "text": "12   dayu600_7885    success     failed(ecotest timeout)     >>>",
+          "ignored": false
+        },
+        {
+          "text": "15   part_compile    failed(IGNORE)(skip build)    NA    >>>",
+          "ignored": true
+        },
+        {
+          "text": "17   ohos-sdk-codearts-new    failed(IGNORE)(skip build)    NA    >>>",
+          "ignored": true
+        }
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7009,
+      "id": "6ad7340464650f998ba24fe4",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7340464650f998ba24fe4/runlist",
+      "status": "passed",
+      "result": "success",
+      "heads_match": true,
+      "codecheck_status": "passed",
+      "result_comment_id": 194833060,
+      "result_at": "2026-10-20T20:55:25+08:00",
+      "members": [
+        {
+          "repo": "build",
+          "number": 7009,
+          "head": "577fed97c0cf1ee5973c6d264eb32e17513059fa",
+          "result_comment_id": 194833060,
+          "result_at": "2026-10-20T20:55:25+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试成功",
+            "waiting_for_review"
+          ]
+        }
+      ],
+      "failed_rows": [
+        {
+          "text": "10   master_inner_build    failed(IGNORE)(联合门禁失败)    NA    >>>",
+          "ignored": true
+        }
+      ]
+    },
+    {
+      "repo": "build",
+      "number": 7048,
+      "id": "6ad7341764650f998ba25b13",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7341764650f998ba25b13/runlist",
+      "status": "passed",
+      "result": "success",
+      "heads_match": true,
+      "codecheck_status": "passed",
+      "result_comment_id": 194796696,
+      "result_at": "2026-10-20T18:40:46+08:00",
+      "members": [
+        {
+          "repo": "build",
+          "number": 7048,
+          "head": "6840a0ba024b40ca67d0ab26aceee2a3458e7dbd",
+          "result_comment_id": 194796696,
+          "result_at": "2026-10-20T18:40:46+08:00",
+          "labels": [
+            "dco检查成功",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试成功",
+            "waiting_for_review"
+          ]
+        }
+      ],
+      "failed_rows": [
+        {
+          "text": "16   ohos-sdk-codearts-new    failed(IGNORE)(skip build)    NA    >>>",
+          "ignored": true
+        }
+      ]
+    },
+    {
+      "repo": "third_party_sane-airscan",
+      "number": 22,
+      "id": "6ad7342c64650f998ba2669d",
+      "url": "https://dcp.openharmony.cn/workbench/cicd/detail/6ad7342c64650f998ba2669d/runlist",
+      "status": "failed_ecotest_timeout",
+      "result": "failed",
+      "heads_match": true,
+      "codecheck_status": "passed",
+      "result_comment_id": 194799886,
+      "result_at": "2026-10-20T19:01:29+08:00",
+      "members": [
+        {
+          "repo": "third_party_sane-airscan",
+          "number": 22,
+          "head": "142326aff6b6bc24785d49b860c1bf006bd3aa83",
+          "result_comment_id": 194799886,
+          "result_at": "2026-10-20T19:01:29+08:00",
+          "labels": [
+            "dco检查成功",
+            "waiting_on_author",
+            "编译成功",
+            "静态检查成功",
+            "冒烟测试失败"
+          ]
+        }
+      ],
+      "failed_rows": [
+        {
+          "text": "2   master_inner_build    failed(IGNORE)(联合门禁失败)    NA    >>>",
+          "ignored": true
+        },
+        {
+          "text": "4   dayu600_7885    success     failed(ecotest timeout)     >>>",
+          "ignored": false
+        }
+      ]
+    }
+  ],
+  "ecotest": [
+    {
+      "pr": 6982,
+      "task_id": 2307291,
+      "block_id": "",
+      "trigger_line": 172245,
+      "trigger_evidence": "[2026/10/20 18:14:22.244 GMT+08:00] trigger_ecotest result 200 {\"statusCode\":1,\"status\":\"Success\",\"result\":\"Success\",\"failReason\":\"调度系统执行成功,未出现异常\",\"taskId\":2307291,\"blockId\":\"\"}",
+      "build_log": "https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00921/log/build.log.zip",
+      "build_finished_success": true
+    },
+    {
+      "pr": 6999,
+      "task_id": 2307324,
+      "block_id": "",
+      "trigger_line": 177607,
+      "trigger_evidence": "[2026/10/20 18:21:31.890 GMT+08:00] trigger_ecotest result 200 {\"statusCode\":1,\"status\":\"Success\",\"result\":\"Success\",\"failReason\":\"调度系统执行成功,未出现异常\",\"taskId\":2307324,\"blockId\":\"\"}",
+      "build_log": "https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00913/log/build.log.zip",
+      "build_finished_success": true
+    },
+    {
+      "pr": 6965,
+      "task_id": 2307321,
+      "block_id": "",
+      "trigger_line": 172865,
+      "trigger_evidence": "[2026/10/20 18:20:53.335 GMT+08:00] trigger_ecotest result 200 {\"statusCode\":1,\"status\":\"Success\",\"result\":\"Success\",\"failReason\":\"调度系统执行成功,未出现异常\",\"taskId\":2307321,\"blockId\":\"\"}",
+      "build_log": "https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00926/log/build.log.zip",
+      "build_finished_success": true
+    },
+    {
+      "pr": 6974,
+      "task_id": 2307318,
+      "block_id": "",
+      "trigger_line": 177712,
+      "trigger_evidence": "[2026/10/20 18:20:02.253 GMT+08:00] trigger_ecotest result 200 {\"statusCode\":1,\"status\":\"Success\",\"result\":\"Success\",\"failReason\":\"调度系统执行成功,未出现异常\",\"taskId\":2307318,\"blockId\":\"\"}",
+      "build_log": "https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00924/log/build.log.zip",
+      "build_finished_success": true
+    },
+    {
+      "pr": 22,
+      "task_id": 2307232,
+      "block_id": "",
+      "trigger_line": 55285,
+      "trigger_evidence": "[2026/10/20 18:01:21.665 GMT+08:00] trigger_ecotest result 200 {\"statusCode\":1,\"status\":\"Success\",\"result\":\"Success\",\"failReason\":\"调度系统执行成功,未出现异常\",\"taskId\":2307232,\"blockId\":\"\"}",
+      "build_log": "https://cidownload.openharmony.cn/Artifacts/dayu600_7885/20261020-1-00916/log/build.log.zip",
+      "build_finished_success": true
+    }
+  ],
+  "summary": {
+    "passed_groups": 3,
+    "failed_groups": 5,
+    "matched_pr_members": 14,
+    "new_static_failure": false,
+    "overall_passed_open_prs": 8,
+    "merged_prs": 1,
+    "failed_open_prs": 14,
+    "running_groups": 0
+  },
+  "limitations": [
+    "Five EcoTest tasks were accepted successfully but returned no test report. Device allocation, flashing and test execution details are unavailable; exact timeout cause is not confirmed.",
+    "Build #6999 dayu200_tdd completed all 357163 Ninja tasks and reported rk3568 build success at 21:20 Beijing time, but exceeded the gate timeout and later could not write results to mongo.",
+    "Build #6999 x86 precise target inspector/test/unittest.stamp has no producer. The final report explicitly marks this compile failure IGNORE; no precise/inspector change appears in the PR diff."
+  ]
+}

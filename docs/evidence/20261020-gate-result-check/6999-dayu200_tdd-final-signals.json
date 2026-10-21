@@ -1,0 +1,38 @@
+[
+  {
+    "tail_line": 17712,
+    "text": "[2026/10/20 21:20:28.565 GMT+08:00] 2026-10-20 21:20:13: [OHOS INFO] [NINJA] [357163/357163] STAMP obj/out/rk3568/build_configs/parts_test.stamp"
+  },
+  {
+    "tail_line": 18010,
+    "text": "[2026/10/20 21:20:28.574 GMT+08:00] 2026-10-20 21:20:14: [OHOS INFO]  rk3568 build success"
+  },
+  {
+    "tail_line": 18091,
+    "text": "[2026/10/20 21:20:28.576 GMT+08:00] [CloudCache] 2026/10/20 21:20:16 427ead2e-05f5-4c31-92b2-3d93d400d08e build success, cost 13242.84 s"
+  },
+  {
+    "tail_line": 18128,
+    "text": "[2026/10/20 21:20:48.453 GMT+08:00] [CloudCache] 2026/10/20 21:20:46 427ead2e-05f5-4c31-92b2-3d93d400d08e build success, cost 29.84 s"
+  },
+  {
+    "tail_line": 18434,
+    "text": "[2026/10/20 21:38:13.480 GMT+08:00] Upload successfully, 15.97GB, n/a, ***//harmony_code/codearts_workspace/Archive/Artifacts-dayu200_tdd-20261020-1-00694-version-dayu200_tdd.tar.gz --> obs://hm-verify/Artifacts/dayu200_tdd/20261020-1-00694/version/Artifacts-dayu200_tdd-20261020-1-00694-version-dayu200_tdd.tar.gz, cost [29582], status [200], request id [000001A15988AED544D0B3A98A679127]"
+  },
+  {
+    "tail_line": 18442,
+    "text": "[2026/10/20 21:38:20.049 GMT+08:00] 2026-10-20 21:38:19: [ERROR]currentStatus error, can not upload result to mongo"
+  },
+  {
+    "tail_line": 18443,
+    "text": "[2026/10/20 21:38:20.049 GMT+08:00] [ERROR]: upload version  failed"
+  },
+  {
+    "tail_line": 18444,
+    "text": "[2026/10/20 21:38:20.063 GMT+08:00] [ERROR]  : script returned exit code 1, exitMessage is: command run failed"
+  },
+  {
+    "tail_line": 18448,
+    "text": "[2026/10/20 21:38:26.667 GMT+08:00] Finished: FAILURE"
+  }
+]
